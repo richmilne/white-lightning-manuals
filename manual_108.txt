@@ -1,0 +1,47 @@
+# TODO: Remove this comment once this file has been proofread
+
+HLD	-- addr
+
+A user variable that holds the address of the latest character of text during
+numeric output conversion.
+HOLD	c --10
+
+Uaed between <1 and N> to insert an ASCII character into a picturr'rl numric output string.
+
+e.g. ZE iDID will place a decimal point.
+I	-- n	C,LD	'
+Used within a DO-LOOP to copy the loop Index to the stack. Other use is iaQlmentation dependent. See R
+ID.	addr -
+Print a definition's name from its ruse field address. IF f -- (nun-time)
+-_ addr n	(ompile)	P,C2,IA
+occurs in a oolon-definition in the form:
+IF (tp) ... ElAIP
+IF (tp) ... ELSE (fp) ... BNDiP
+At run-tLre, IF selects execution based on a 6ooleen flag. If f is a true
+I
+(non-zero), execution continues ahead through the true part. If f is false (zero), execution skips till just after ELSE to execute the false part. After either part, execution reaures after ENDIP. ELSE and its false part are optional; if missing, false execution skips to just after FNDIF.
+
+At compile tiae, IF arnpiles 0BRANCH and reserves space for an offset at addr. eddr and n are used later for resolution of the offset and error testing.
+IMMEDIATE
+
+Mark the most recently reds definition so that when encountered at crnplle time it will be executed rather than oatpiled, i.e. the precedence bit in its header is set, This method allows definitions to handle unusual ealpiling situations, rather than build than into the fundamental compiler. The user may force ornpilation of an immediate definition by preceding it with (CUBIIS).
+IN	-- yddr	ID
+A user variable containing the byte offset within the current input text buffer	' (terminal or disc) fax which the next text will be accepted. wottD uses and moves
+the value of IN. 107
+'JDFX	from to
+rint the first line of each screen over the range from, to. This le and r,r vlr I he convent lines of an area of text on disc acr,vns.
+INTERPRET
+che outer text interpreter, which sequentially executes or ~tipilea lewt (,.On 11M input strew (terminal or disc) depending cn ;tl•A'17:. If the word ram ,~ ,-~r Iw round after a search of (xJPTI'IX'C and then (.UUtt?lf, it is converted to e,ew/w, icoorrli+g to the current base. That also failing, an error message rA,lry tlr -ore with a'7• will be given. Tact input will be taken according to the convention for WORD. If a decimal point la found as part of a number, • AaJdw rnunbar value will ha left. The decimal point Ime no other purpose than 1„ M1,rrft this action. See tUtBE2,
+KEY	- a
+Leave the ASCII value of the next terminal k" struck.
+:ATEST ;.exve the name field address of the tqMmt word in the current vocabulary.
+LEAVE	C, I'D
+Force termination of a 0o-[OOP at the next opportunity by setting the loop Ilwll equal to the current value of the index. The index itself remains IateMrqrt, y,t :xecution proceeds rornally until [COP or +IODP is encountered.
+LFA	pin - lfa
+'covert the paraneter field address of a dictionary definition to its link [leLt xddress.
+LIMIT	In
+a constant leaving the address just above the highest maaory available for a dim ,atffer. Usually, this is the highest system Inawry. LINE	n --- a
+:.eave address of line n of current screen. This address will 6e in the disc coffer area.
+LIST
+,isplay the ASCII text of screen n on the se.lected output device. 9(R contains --he screen ntanber during and after this process.
+toa

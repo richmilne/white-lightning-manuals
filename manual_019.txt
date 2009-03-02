@@ -1,0 +1,78 @@
+# TODO: Remove this comment once this file has been proofread
+
+1
+AN INTRODUCTION TO SPECTRA FORTH
+
+This introduction does rot set out to teach Forth proyramning, but rather to serve as a supplement to available texts on the subject; references include:
+
+'Starting Forth' by Drodie, published by Prentice Hall. 'Introduction to Forth' by Knecht, published by Prentice Hall 'Discover Forth' by tiogan, published by McGraw Hill.
+
+
+White_ Lightning syntax consists of Forth words or literals, separated by spaces and terminated by a carriage return. A valid name must not contain any embedded spaces since Ghis will be interpreted as two distinct words, and most be' less than 31 characters in length. If a word is entered which does not exist or has been spelt wrongly, or the number entered is hot valid in the current base, then an error message will be displayed. To compile and execute programs created using the Editor type LOAD <CR>. Throughout these examples <CR> means 'PRESS ENTERI.
+
+e.g. -FINE	will generate an error message 0 since the word does not exist.
+
+HEX 17FZ will generate an error message 0 since 7Z is not valid in hexadecimal base.
+
+Other error messages include-.
+
+STACK 04M STACK FULL DICTICVMY FULL
+
+In order to program in white Lightning, it is necessary to define new words based on the words already in the vocabulary. Values to be passed to these words we pushed onto the stack and if required, the word will pull these values from the stack, operate on than, and push the result onto the stack for use by another Lightning Word. As wentionod previously, Spectra Forth (as with all Forths) uReverse Polish Notation and integer numbers, therefore no precedence of operators is available, thus all operations are performed in the sequence in which they are found on the stack.
+
+e.g.	1 2 + 3* is equivalent to 3*(1+2)
+
+As can be seen, in RPN, the operators are input after the numbers on which they have to operate have been input.
+
+We will now discuss same of the words in greater depth. 1. INPUT/OUTPUT Opxators.
+
+
+EMIT	. This will take the number held on the top of the stack and display it on the terminal, as its original ASCII character.
+
+e.g.	FE( 41 EMIT CR <Cti>
+
+will instruct the Forth to move into hexadecimal mode, push 41H onto the stack, and then take that number and display it on the terminal - in this example the character displayed will be an "A". The actual character displayed my be any of the reoognisable ASCII characers, a graphic character, or a control code depending m the value of the number on the stack.
+19
+EMITC : As EMIT but Control characters are also dealt with.
+
+
+KEY	. This will poll the keyboard, wait for a key to be pressed and push the ASCII code for that key onto the stack, without displaying it on the terminal.
+
+e.g. KEY	Press "A" m the keyboard
+
+will instruct the computer to wait for a key to be pressed (press the "A") and then push the ASCII value of this key, in this case 41H (where the 'H' implies Hexadecimal 41 ie 65 decimal) onto the top of the stack. In order to display this character, try the following example:
+
+Type:
+
+KEY EMIT «72>
+
+but be sure to hit the <CR> very quickly.
+
+Now hit any key and its ASCII value will be printed followed by OK. So if you type "A" it would print "PAK". If you were too slow you've now got two cursors: Ignore the top one and try again. This problem only occurs because when you press <CR> to enter the example, it immediately executes and you've possibly still got <CR> held down. In a normal Forth definition you won't have this problem.
+
+
+CR	. This will transmit a carriage return and line feed to the display.
+
+
+: Convert the number held on the stack using the current BASE and print it an the screen with a trailing space.
+
+e.g SLTpose the stack contains 16H and BASE is decimal (10), then . will print 22 (this is 16 + 6); if BASE wore hexadecimal (16), then . would print 16.
+
+In order to see this Working we will alter the BASE and push numbers onto the stack - remember, that just by typing in a valid number will result in it being pushed onto the stack. There are two words to alter the BASE:
+
+HEX	: Use hexadecimal base DECIMAL: Use decimal base
+
+Try:
+
+(i) HEX 1F7 . <CR> (Where <CR> means press ENTER). This will print 1F7
+
+(ii) DECIMAL 2048 . <CR> This will print 2048
+
+(iii) DECIMAL 2048 t= . <CR>
+This will print 800, since this is the HEX equivalent, of 2048.
+Rem~nber that . will remove the number from the stack that it. is printing.
+
+
+U.	. Prints the number held on the top of the stack as an unsigned number. e.g. HEX C000 U. «72>
+will push C000 onto the stack and then print it.
+20

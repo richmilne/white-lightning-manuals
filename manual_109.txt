@@ -1,0 +1,60 @@
+# TODO: Remove this comment once this file has been proofread
+
+C,IU
+LIT
+Within a colon-definition, LIT is automatically compiled before each 16 bit literal number encountered in input text- Later execution of LIT causes the contents of the next dictionary address to be pushed to the stack
+
+
+LITERAL	n _-- (compiling)	P,C2,LO
+if compiling, then compile the stack value n as a 16 bit literal. This definition
+is immediate so that it will execute during a eolon-definition. The intended U5e
+is:	.
+pcx (calculate) LITERAL •	Compilation Compilation is suspended for the compile time calculation of a value. Crngi
+is resumed and LITERAL comPiles this value.
+IA
+LOAD	n -
+Begin interpretation of screen n. Loading will terminate at the end of the screen or at ;S. See ;S and `>•
+LOOP	addr n -- (compiling)	P,C2,IA
+Occurs in a wlon-definit~ip in the form:
+At run-time, LOOP selectively controls branching back to the corresponding based on the loop index and limit. The loop index is incremented by one and compared to the limit. The branch back ~~roccurs sdiscardedeanddexe~ons or exceeds the limit; at that time, the parameters continues ahead.
+At compile time, LOOP compiles (LOOP) and uses addr to calculate an ofcset to LO• n is used for error testing.
+M•	nl n2 -- d	i A mixed magnitude math operation which leaves the double number signed product of two signed numbers.
+M/	d n1 - n2 n3
+A mixed magnitude math operator which leaves the signed reminder n2 and signed quotient n3, from a double number dividend and divisor nl. The reminder takes
+its sign from the dividend.
+
+
+M/MOD	ud1 u2 - u3 ud4
+An unsigned mixed magnitude math operation which leaves a double quotient ud4 and reminder u3, from a double dividend udl and single divisor u2.
+MAX	nl n2 -- max	ID Leaves the greater of boo number
+MESSAGE	n -
+
+.,int m the selected output device the text of line n relative to screen 4 of
+rye 0. n nay be positive or negative. MESSAGE my be Used to Print incidental
+xt such as report headers. If VEeRNING is zero, the message will simply be inted as a number (disc unavailable).
+
+
+MIN	nl n2 - min	ID I xvve the scalier f ten numbers.
+MINUS	rtl - n2 i,,3ve the two's complement of a number.
+MOD	nl n2 - mod	If.)
+
+ova the remainder of nl/n2, with the same sign as nl.
+NEXT
+This is the inner interpreter that uses the interpretive IF to execute compiled Forth definitions. It is not directly executed but is the return point for all -de procedures. It acts by fetching the address pointed by IP, and storing this vTlue in register W. It then jurps to the address pointed to by the address ;,:,inted to by W. W points to the code field of a definition which contains the ,ddress of the code which executes for that definition. This usage of indirect threaded code is a major contributor to the power, portability and extensibility
+L Forth.
+
+
+NFA	pfa -- nfa
+
+c.vert the parameter field address of a definition to its name field. See PFA. NUMBER	addr - d
+
+'rnvert a character string left at addr with a preceeding count, to a signed louble number, using the current numeric base. If a decimal point is encountered :.a the text, its position will be given in DPL, but no other effect occurs. If -reric conversion is rot possible, an error message will be given.
+
+
+-FFSET,	--- addr	U
+
+user variable which way contain a block offset to disc drives. The contents of ~'F5E'C is added to the stack number by BLOCK. Messages by MESSAGE are independent ~_ OFFSET. See E1j3cK, DRO, azl, MESSAGE.
+
+
+OR	nl n2 -- or	U) I,oxve the bit-wise logical "OR" of two 16 bit values.
+110

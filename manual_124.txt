@@ -1,0 +1,80 @@
+# TODO: Remove this comment once this file has been proofread
+
+DSPRITE	SPN	Delete Sprite and recover bytes Eran below.
+
+ISPRITE	SPN• Wr• LEN	Create Sprite and move current Sprites down to a-m.,7ete.
+
+WIPE	gN	Delete Sprite and recover bytes from ahove.
+
+SPRITE	S['N, tGT, LEN	Create Sprite at free space after last
+Sprite.
+
+RELOCATE hII,EN	Relocate Sprite space by signed 16 bit length MLEN.
+
+COLDM	SPSI, Si.FN	Reset Sprite spaoe to begin at SPSC with SLEN bytes cleared to zeros.
+
+SETAV	!CT, LEN. COL. Fill the screen window with the current
+ROW	attributes.
+SETAM	SPN	Fill the sprite with the current attributes.
+CLSV	t1GT, LEN, COL,	Clear the screen window and fill with the
+ROW	current attributes.
+
+CLAM	SFN	Clear the Sprite.
+
+ADJV	IU'1', LEN, ODL,	Adjust the screen window to lie on the
+[(,W	screen.
+.
+ADJM	SPN, ODLr ROW	Adjust COL, ROW, tGT, LEN, 9C01, SltdA such that Gel", and PVI5 lie m the screen.
+
+RND	NI	Leave a random number between 0 and N1 an the stack.
+
+OUT~	N1, N2	Output LSB of N1 to 16 bit port address N2.
+
+INk	Nl	Leave m the stack, byte from 16 bit port
+address N1.
+
+ZAPINT	create run tine program with interrupt
+facility.
+
+ZAP	Create run time program without interrupt facility.
+
+CALL	NI	Dcecute machine code subroutine at address N1.
+
+KB	Nl, N2	Test for key press at row la, ool N2 and stack true or false flag.
+
+gCANy	WI„ ppN	The character position is scanned for screen data ard a true or false flag stacked.
+
+SCANM SPN	The sprite is scanned for data and a true or false flag stacked.
+
+BLEEP	N1, N2	Sinclair SEEP. N1 is duration, N2 is pitch. 123
+ATTDN	Enable attribute witch.
+AnOFF	Disable attribute witch.
+FORTH I BASIC GLOSSARY
+
+
+WORD	PARAMETERS	ACTION
+
+COPY	Capy screen to ylt-printer.
+AT	N1, N2	Move print position to N1,N2.
+BORDER	Ni	Set border mlour to td
+
+CLS	Clear whole screen, hare cursor and fill with Current attributes.
+
+DRAW-ARC HI, N2, N3	± X;tY,ANC[E, AS Sinclair's own,
+
+CIRCLE	N1, NZ, N3	X,Y,RADILS. As Sinclair's own.
+DRAW	Nl, N2	±X,+-Y. As Sinclair's own.
+
+PLOT	N1, N2	X,Y. As Sinclair's cm.
+SCREENS Nl, N2	leave on the stack the ASCII Code of the character at JEW Nl, COL N2,
+ATTR	N1, N2	Leave on the stack the attribute code of the character at ROW N1, pDL N2.
+POINT	N1, N2	Test pixel at N1,N2 and leave a true or
+false flag on the stack.
+TAB	HI
+Set print position to COL N1,
+OVER Ni Zero or one, as Sinclair's own, INVERSE HI Zero or one, as Sinclair's own. BRIGHT HI Zero oy. Ore, as Sinclalr'S own. FLASH	N1	Zero Of one, as Sinclair's ahf1.
+PAPER	N1
+Set paper colour, as Sinclair's own.
+INK	HI
+Set ink colour, as Sinclair's own.
+124

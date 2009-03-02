@@ -1,0 +1,72 @@
+# TODO: Remove this comment once this file has been proofread
+
+ADJM	This command is used to ensure the execution of group2 GET and PVf instructions. The parameters are SPN, COL and ROW. First fGl' and LEN are set to the dimensions of the sprite whose number is held in SPN. If QJL or ROW are "off screen" or if COL + LEN, (Gf + RCfn are off screen, then the parameters COL, ROW, HGT, LEN, 500L, SRU.V are set such that the sprite will be partially PUT to the screen or 07f from the screen. This is an extremely useful command and can be used in conjunction with any of the group 2 GETs and PUTS.
+
+Example:
+
+-1 COL :-1 ROW : 1 SPN : ADJh1 PViBLS
+
+This will PUT part of sprite 1 in the top left hand corner. After execution, COL and ROW will have been made 0 and SCOL and SROW will have the value 1.
+
+ADJV	Essentially the same idea as A0.7M but this time the screen window defined by iGT, LEN, WL, ROW is adjusted to lie "on screen"
+
+SCANM	The sprite whose number is held in SPN is scanned for pixel data. If data is found a true (non-zero) flag is placed m the stack, otherwise a false (zero) flag is placed m the stack. This mmiand is used extensively for collision detection.
+
+SCANV The charater cell at screen positions defined by COL and ROW is scanned for screen data and a true or false flag stacked accordingly. This command executes more rapidly than SCAM.
+
+FIND	Replace the value at the top of the stack by a random number between zero and the value at the top of the stack.
+
+Example:
+
+10 RND
+
+will leave a number between 0 and 10 on the stack.
+
+OUT*	Output the second value on the stack to the port address at the top of the stack.
+
+INa Replace the port address an the top of the stack by the 16 bit representation of the 8 bit number read from the port.
+
+Example:
+
+The following will poll the Rmq>ston Joystick and execute one of 8 words depending m the joystick position. Finally, the fire button will be tested. Type:
+: JOYSTICK 31 INM DUP CASE <Q2>
+0 OF " CEN1RP,i" ENDOF <(R> 1 OF ." RIGHT " FNDOF <Q(> 2 OF ." LEFT " ENDOF <Q2> 4 OF ." IXYnN " II~IDOF ~y6t> 8 OF . " UP " FNCOF < SQ2
+9 OP ." UPRIGHT " ENDOF «(> 10 OF ." UPLEFP " ENDOF <Q2>
+5 OF . " IX7ntrRIGRT " fAIIJOF <Q2> 6 OF ." LONTILYFf ' ENDOF «2> ENIX'!SE <Q(>
+15 > IF . " FIRE " FNDIF ; <CR>
+: Jl'tSS BEUIN JOYSTICK (R 1 1 KB UNTIL ;«2>
+
+To run type:
+
+J'1YSf «72>
+
+To halt press CAPS SHIFT
+
+
+KB	This command is provided for the detection of multiple key presses. All it does, in fact, is test the specified key
+and stack a true flag if the key is pressed and a false flag if it is not. The key to he tested is specified by the top two numbers on the stack. The second value specifies the half RAW and the top value the ODL(IM1. For a full description of the OOLU9IS and ROWS of the Spectrum keyboard see page 160 of the Spectrum manual. Below is a summary.
+
+ROW	1(EYS
+
+1	CAPS SHIFT to V
+2	Ato G
+3	Qto T
+4	1to5
+5	Oto6
+6	Pto 7
+7	kNfE7i to H
+8	SPACE to B
+
+
+Columns are organised from 1 to 5 and counted from the outside in. This is the order above.
+
+
+BLEEP	This operates in the same way as the Spectrum's BEEP
+command with the second number on the stack providing
+duration and top number pitch.
+Example:
+
+100 200 BLEEP
+
+
+ATTON	After the execution of A'PIbN, group 1 GETS and PVPS will GET and PUT attribut?e data at the same time as they GET and PUf pixel data. The- bl and Fw commands, however, are unaffected by A`FNN or AT[OFl' and always use separate commands to move pixel data. After the execution of a (W or 91 command the attribute switch is always set to 'OFF'.

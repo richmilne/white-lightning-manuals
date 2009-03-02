@@ -1,0 +1,69 @@
+# TODO: Remove this comment once this file has been proofread
+
+rpTg; xiTR = 0 leaves the attributes of the sprite as they areA17R = 1 takes the attributes from the screen and places than
+into the sprite.
+1 GETORS, ORS the screen data With (screen np~is~play u:ya~eceed)~d leaves the result in the sprite s2 G};pXRS, XORS the screen data with the data of a pre-defined
+sprite, and leaves the result in the sprite, (screen display unaffected).
+3Q,~pNDS, pNps the screen data with the data of a pre-defined sprite, and leaves the result in the sprite (screen display ",affected).
+p	Activates the POT functions.	option PUTS a sprite
+You will be given four options. Each oP
+whose number is Specified in the variable "Sprite t3unber" onto the sprite screen, having a top left-hand corner at the sprite screen cursor positions.
+NpTi;; ATIR = 0 leaves the Screen Attributes unaffected.
+ATiR = 1 PUTS sprite Attributes to the sprite Screen.
+I pU'PetS is a Straightforward PUP, placing data directly to the sprite screen, destroying anything that is on that part of the screen (Sprite unaffected).
+2 PURJRS, ORS the sprite data with the data c0 the sprite screen' leaving the result on the screen (Sprite unaffected).
+3 PVMS, mRS the sprite data with the data on the Sprite screen, leaving the result on the screen (Sprite unaffected). QPLITCS~s the sprite data with the data on the sprite screen,
+leaving the result on the screen (Sprite unaffected).
+O	Activates the CLEAR CHRS S{fi function. Sets all ()IRS SGR bits to zero.
+SYMBOL screen Activates of all CLEAR aand attributes.
+function. Clears the sprite
+SHIFT S
+SPRITE SCREEN H FT
+O
+(<_)
+R	Activates the ROTATE SPRITE function. degrees, leaving the original Rotates a sprite, in i~d~orY, by sprite unaffected. The new Rotated sprite must be given a new sprite numoer, as asked for. Attributes are autanatically Rotated with the pixel data.
+S	Activates the SPRITE NlA1BPR variable.
+Permits the defining of sprites and asks for a sprite number in the range 1 to 255
+N71E: If a sprite to be defined is given an existing sprite number, a warning is displayed, advising you of this fact. The existing sprite, or the new sPrite, are in no Way corrupted.
+85
+L
+Activates the TEST SPRITE function.
+Performs a test on the sprite whose number is held in the "Sprite Number" variable, and does the following:
+
+1. Places the sprite height into the "Sprite height" variable. 2. Places the sprite length into the "Sprite length" variable. 3. Places the address in mmory of where the sprite data starts,
+into the "Sprite" variable.
+4. Places the address of the start of sprite space into the variable
+"SPS'p"
+5. Places the address of the end of sprite space into the
+variable "SPND".
+6. Calculates the remaining memory available for sprite
+storage and places it into the "Mawry Left" variable.
+
+^77PE: The screen display of these variables will be updated if necessary.
+
+Activates the PICK CP ATI12ZBl7fk5 function.
+Picks up the attributes of the character from the sprite screen, indicated by the position of the sprite screen cursors and Loads then into the four Attribute variables.
+
+.	Activates the FLASH variable. This is one of the four attributes. Press 1 to put witch ON.
+Press 0 to put witch OFT,.
+
+.	Activates the WIPE SPRITE function.
+Wipes the sprite indicated by the "Sprite number" variable totally fran memory. All other sprites stored in memory below that sprite are moved up to fill the space previously occupied by the Wiped sprite.
+
+Activate the IN)( variable which is one of the four attributes. Press any key between 0 and 7 to set the colour indicated above the key.
+
+Activates the YES, positive response to (Y/N) questions.
+
+Activates the pre-defined ARCADE CHARACTER function.
+Place a pre-defined Arcade Character to the sprite screen. The top left hand corner of the character is indicated by the sprite screen cursors. Input a number between 1 and 167 followed by ENTER .
+
+*APE: Each character, with its number, can be seen on the Dem g tape. A list is given at the back of this section.
+
+NOT	Activates the SAVE SPRITES TO TAPE facility.
+ISYMBOL Place a Suitable cassette in your cassette recorder and
+SHIFT	position as desired. Press NOT, enter your filename (1 to 8 characters). The program will save three groups of data; an array and two sections of code.
+After S4VE:ing, you will be asked to rewind the tape and VERIFY - be sure to only press PLAY on your cassette recorder. If the programs VERIFY, the Sprite Development Program will returnto oamand level with the Text Line cleared.
+
+KYCE:: If the program breaks because of failure to VERIFY,
+type IX)'N 3 and execute a WARM ST0.RT; your data will not be lost.
+88

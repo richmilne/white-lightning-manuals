@@ -1,0 +1,89 @@
+# TODO: Remove this comment once this file has been proofread
+
+/	a This will divide the second number on the stack by the first number, and leave the result on the top of the stack. i.e.	N1 = N2 / N1
+
+e.g.	DECIMAL 1000 500 / . <(7t> will print 2
+
+
+MAX	: This will leave the greater of the top tAo numbers on the stack.
+
+e.g.	371 309 WVC . <Qt> will print 371
+
+
+MIN	.'1'hls will leave the smaller of the bw numbers on the stack.
+
+e.g.	371 309 MM . <CR> will print 309
+
+
+ASS	. This will leave the alKOlute value of the top number on the stack as an unsigned number.
+i.e.	NL - AfiS(Nl)
+
+e.g.	47 AaS . <CR> will print 47
+
+-47 AdS . <Q2> will print 47
+
+
+MINUS : This will negate the top number on the stack. i.e.	N1 - -N1
+
+e.g.	418 MINUS . <CR> will print -418
+
+-418 MINUS <CR.> will print 418
+
+
+1+	: add 1 to the top number on the stack Nl=Nl+ 1
+
+
+2+	: add 2 to the top number an the stack Nl=N1+2
+
+
+1.	subtract 1 from the top number on the stack Nl=Nl-1
+
+
+2.	: subtract 2 from the top number on the stack HI =Nl-2
+
+e.g.	196 2- . <Qi> will print 194
+23
+MOD	I This will leave the remainder of N7/N1 on the top of the stack with the same sign as N2
+
+.q. 17 3 MOD . «R> will print 2 (17/3 - 5 remainder 2)
+
+
+:MOD : This will leave the remainder and the quotient on the stack of N2/N1 such that the quotient b9o3mez the bop number on the stack and the remainder	the gooona.
+
+e.g.	17 3 /!oD . Cit . <Q2> will print 5 (quotient) 2 (remainder)
+3. STACK OPERATORS
+
+
+OUP	: This will duplicate the top number on the stack.
+
+e.g.	719 OUP . . <CR> will print 719 719
+
+
+DROP	: This will drop the number from the top of the stack.
+
+e.g.	ill 222 CROP . <t3t> will print 111
+
+
+SWAP : This will swap the top two numbers on the stack.
+
+e.g.	111 222 SwhP . . <cR> will print 111 222
+
+
+OVER	: This will copy the second number on the stack, making it a new number at the top of the stack without destroying the other numbers.
+
+e.g.	111 222 OVER . CR . Q2 . GQt> will print 111
+222
+ill
+
+since the stack before OVER was:
+
+222	70S 111
+
+and after OVER is:
+
+ill	705 copy 222
+111
+
+
+ROT	: This will rotate the top three numbers on the stack, bringing the third number to the top of the stack.
+24

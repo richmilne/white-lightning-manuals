@@ -1,0 +1,64 @@
+# TODO: Remove this comment once this file has been proofread
+
+_., If a word ending in V(screen operation) does not execute, it is almost always because the window you have defined does not lie wholly on the screen. That is to say, that COL + LEN is nott in the range 1 to 32, or ROW +:GT is not in the range 1 to 24. See AA1V.
+
+;5. I£ a word ending in S (screen/sprite operation) does not execute, then again, it is almost always because the sprite width + COL is net in the range L to 32 or the sprite height + hC.W is not in Lie range 1 to 24. See eDl'1.
+
+5. If a word ending in S that is also a window cnrmarxl (second letter W) does not execute, it may x for the reasons outlined in 16, or it may be that SLOL + LEN or SRW7 +;1<,T do not lie within the width and height of the sprite containing the window.
+
+18. If a word ending in M that is not a window command does not execute, the sprite probably does not exist; if it is a wiu:aw mmand, then it is likely that the width of the first sprite + ROW or the height of the first sprite + SCpL do not lie within the width and height of the sprite containing the window.
+
+_9. Remember that the SPIN mieiand needs a second sprite to rotate into, and that its dimensions should be the reverse of the sprite to be spun. For real speed, it is best to store the sprite in each of its 4 orientations.
+
+20. If you wish to do a vertical mirror, just SPIN, do a horizontal mirror, and SPIN back.
+
+21. It is good policy always to mike the sprite one character higher and wider than the graphic character itself; this will enable you to scrolll the character within the sprite and give pixel resolution when using the PUT camvsnds.
+
+22. If memory permits, it is a good idea to keep a "back-up" of each sprite held under a different number, so that iff an error is made and a sprite corrupted, it can he copied back from the copy. They can always be deleted frcm the final program.
+
+23. Never execute the Wq or CLEAR commands when in BASIC.
+
+24. If a sprite driven under interrupt disappears fran the screen or flickers, it is probably a timing related problem and re-ordering the code will almost certainly solve the problem.
+
+21. Screens can be :roved up and down rreimry using the Q40VE word. Each screen occupies 512 bytes and the addresses are listed in Table 1, the Table of Screen Addresses.
+
+15. If you are using the Background facility, the top 16 bytes of RAM will be used, so any data stored there will be corrupted. To avoid this, rake sire you have enough scrolling buffer and keep the top of sprite space below 65520.
+
+27. If you execute SETAN or SE1'AV in background, set the FLASH attribute in the background program.
+
+28. If you wish sprite space to "grow" upward use SPRITE and WIPE, otherwise always use ISPR1'1'E and D6PRITE for sprite allocation.
+
+29. BAD RAMl'OP error, usually means you have not RESERVED sufficient space for your &1SIC program.
+47
+SPRITE UTILITIES
+
+All the sprite utilities described in this section are available at run-time, but we strongly re-mend that all sprite allocation is undertaken at the sprite development stage to save laboriously reloading sprite data if an error is made at run-time. They are provided for advanced programing applications only and should never be executed in background.
+
+
+COLD #
+
+This command sets the end of sprite space pointer SPND, to the value in SPSl', the start of sprite space pointer. It then clears memory above SPST. The size of the memory cleared is specified in S[M. Each time a sprite is allocated space using the SPRITE mmand, SPND is updated. Vertical scroll data (pixel and attribute) uses the space immediately above SPtiD so a COLAA is necessary at some stage before executing the ooitrrands. The amount of data required is given by the product of the scroll width and the number of pixels scrolled. sprites are stored in the following fo~.t:
+
+First byte is the sprite number	(1 to 255)
+Second and third bytes hold the address of the next sprite in memory. Fourth byte is the sprite width	(1 to 255)
+Fifth byte is the sprite height	(1 to 255) The next 8-height-length bytes hold pixel data. The final height"length bytes hold the attributes. Therefore, each sprite requires 9-height-length.5 bytes.
+
+It should be noted that sprite numbers need not be allocated in any particular order. The best position for sprite space is at the top - - sensory and it is net difficult to calculate space required, although the de-7opnent package does this auta~atically.
+
+To calculate the total sprite space that will he used, use 9*length*height+5 for each sprite and then add buffer space for vertical scrolls, 256 should be sufficient for nest applications. This total should be assigned to SLFS7. SFST should then be assigned with 65520-5[2iN.
+
+
+Ex,'lrtlple:
+
+Suppose you wished to allocate space for 10 4 by 4 spritss, 3 8 by 6;?rite-s and a 5 by 4 sprite. Suppose also that a 4 pixel. scroll will be required for a 4 character wide sprite, and a screen window 9 characters wide will need to I~ scrolled 3 pixels. The 8 by 6 sprite is also to be rotated. The following procedure to calculate sprite space is required.
+
+10 4 by 4 sprites require	10*(4*4*9+5) = 1490 bytes
+3 8 by 6 sprites require	3*(8*6*9+5) = 1311 bytes
+1 5 by 4 sprite requires	1*(i*4*9+5) = 185 bytes
+TOTAL = 2986 bytes
+
+The 4 character wide sprite scrolling 4 pixels would require 16 bytes.
+The 9 character wide screen window scrolling 3 pixels would require 27 bytes.
+If we allow 27, then this will cover both eventualities and o.e can forget the 16 bytes for the first case.
+TOTAL = 27 bytes
+48

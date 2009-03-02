@@ -1,0 +1,59 @@
+# TODO: Remove this comment once this file has been proofread
+
+9. 4d2 implies that the data will be scrolled with wrap. 10. S: implies that data will be scrolled without wrap.
+
+11. (3a "Get Window" implies that data is being moved Eran a window into a sprite.
+
+12. FW "Put Window" implies that data is being put into a window frrm a sprite. 13. ODP implies an operation between two sprites with the same dimensions. 'P)7[e best MBy to beCQl12 familiar with the language is to use itl There are also sane general points worth noting.
+
+
+GENERALPOINTS
+
+1. Vertical scrolls will require sane buffer space at the end of sprite space, so nuke sure that either you have set up sprite space with the developnent package (the default of 256 is usually adequate), or that at least one NIDk has been executed to make pace. The space required for a scroll is obtained by multiplying the width of the sprite, by the number of pixels to be scrolled. Horizontal scrolls do rot require buffer space. When White Lightning is first loaded without sprites, a COLD# is automatically executed and sets the buffer to 256 bytes.
+
+2. All attribute scrolls are "with wrap'.
+
+3. Canlands prefixed with cET or PUT are operations between a whole sprite and a screen window. These are very fast and can be made even faster by suppressing the movement of attribute data, if its transference is not required. To suppress attribute data use the word ATTOFF. If you wish to switch data flow back on at a later stage, use AT1C)N. The switch remains in its state until changed by the execution of me of these two words r the execution of a aord beginning with 6'7 or FW and ending with S(group 2(iE.'TS and PUTS). NEVER assume the state of the switch at the start of the program: one of your first words at the beginning of your program should be ATfON or ATIOFP.
+
+4. If a sprite is dynamically allocated space at runtime it will probably contain garbage in its pixel and attribute data, so both will reed to be set up. It is all too easy to forget the attributes.
+
+5. Sometimes the dynamically created sprites will contain zeroes; if you set up the pixel data and forget the attribute data then execute a PUT to the screen with the attributes on - a black rectangle will appear. See SETPM.
+
+6. If you want to wipe a sprite off the screen but not affect any other pixel data within its screen window, use PIRacIiS. Reaanber, though, that if you have carried out any operations on the original sprite since doing the original PUTBIS or PUD(RS it my hot work.
+
+7. If you want to leave a sprite on the screen but clear all other pixel data in its screen window use PLUMS. Again, be sure that no intermediary operations have taken place.
+45
+8. If you wish to PUT a sprite onto the screen over the top of the existing data in the window, then you should use PUIORS.
+
+9. Points 6-8 apply to operations in ~ory, although the wrds used are of course different.
+
+10. The best way to get to knew the P[Jl's and GETS is to experiment with than; you will soon realise how to move sprites. For those of you not yet familiar with what "AND", "OR" and "XOR" mean, rote the following:
+
+a) If two sprites are AND'ed, then only those pixels set in both will remain set when the sprites are AND'ed together.
+
+b) If t~ sprites are CR'ed, then all those pixels set in either sprite will be set in thee result.
+
+c) If two sprites are XOR'ed, then all those pixels set in either sprite will be set in the result, but this time, all pixels where both were set will now be reset.
+
+d) All "Block Shift" convarxls will destroy whatever aes previously in the window.
+
+U. It is possible to set up "masks" in duimy sprites and use the boolean operations Q2, MR and AND to move windows around etc.
+
+12. If you wish to mike scmething appear at lightning speed, leave the data on the screen and fill the window with zero attributes or attributes with the same INK and PAPER colour. To make the sprite appear you need only download the attributes usinq RVATPS; to make it disappear use PWATIS again, but this time, download stored attributes with the saffe ink and paper colour, or use SFMV.
+
+13. It is possible to use the IpST mmend to gain direct access
+to the attributes in the sprite ucz-ry. They are located at DP'iR+ 8*LEN•F[,R' and can be easily block filled.
+
+14. Most animation routines use only the variables:
+
+WS'1' Height of window
+L,EI< Width of window
+o0L Screen column of top left character ROW Screeni row of top left character SLOL Sprite column of top left character 5~-20tV Sprite row of top left character SPN Sprite number
+SP1 Number of first sprite in a double sprite operation SP2 Nu:nber of second sprite in a double sprite operation
+
+Col*.mms are measured in characters (8 pixels by 8 pixels) and are counted `_ran the left, 0 to 31.
+
+Rows are measured in characters and are count~l from the top 0 to 23.
+
+Remember, never change a variable unless you need to, they are not reset between instructions (with the exception of AI17M and a[.17V), and you can always write your code to order the operations in such a way as to minimise the resetting o`. variables.
+46

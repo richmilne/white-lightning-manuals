@@ -1,0 +1,51 @@
+# TODO: Remove this comment once this file has been proofread
+
+THE THREE VEHICLE SCROLLING DEMO
+
+This demonstrates the 3 precisions of scrolls available - 1, 4 And 8 pixels. Sprite 1, the vintage car, demonstrates the fine 1 pixel scroll wing 9CLlV. Sprite 2, the van, demnstrates the faster 4 pixel scroll using XI,4V.
+
+Sprite 3, the dragster, danonstratea• the very fast 8 pixel, or 1 character scroll, using 9::L8V.
+THE TELEVISION
+
+The television, sprite 13, is placed on the screen, a window is defined inside the screen.
+
+Sprite 5, the dancer is used to demonstrate the 1 pixel scroll with wrap, MRR'-%. Sprite 4, the duck, is used to demonstrate the 4 pixel scrooll with wrap, 4RR4V. Sprite 6, the rocket, is used to demonstrate the 8 pixel scroll with wrap,
+THE THREE SPACESHIPS
+
+In this demonstration the 3 epeceshipa, sprite 15, are placed an the screen along with their shadows, sprite 16.
+
+They are scrolled to the right by 1 pixel, with alternate I pixel »p and down scrolls, to give a sense of motion.
+
+The attributes of the forground, sprite 17, and the background, sprite 11, are scrolled to the left. The background being scrolled at one character per execution with the fore9ovd being scrolled two characters per execution to give a sense of perspective.
+THE BOUNCING MAN WITH HAT
+
+The baincing man is animated using sprites 28 and 29. The sprites are placed on the screw using PVD(RS, and removed again using PU[7Gts, such that the character
+
+appears to move behind the 'MITE LIGH7NING' text without destroying it. Simple DD IDOPS omtrol his path.
+
+Disabling interrupts, using DI, during the animation appeared to reduce the sli,{ht , flicker of the character, the interrupts ,#,ere enabled again using El.	i
+
+I
+THE CIRCLE OF ROTATING INVADERS
+
+From the original invader, sprite 24, sprites 25, 26 and 27 were created usi^_1 the . ~RD'II,1E' facility of the sprite development package.
+!
+This dero shows how the oentre inveder, scrolling left by 1 pixel in background, moves at a constant smooth rate, irxlepe+dalt from that of the increasing and then decreasing rate of the rotating invaders in the outer circle.
+177
++E PLAGUE OF CRABS
+i'he crabs, sprite 33, are placed m the screen using PV18[S.
+-,e RON and OD[. varables for the RIIBL.S are loaded up each time by a random number roduced by using the Forth word IND.
+f HE BOUNCING BALL
+'his is a sprite or to be more precise, 4 sprites, moving in background. The ball s defined in four orientations to give half character resolution. The veverent
+s obtained by doing a PVt7GE5, calculating the next oo-ordinates, blotting out the 1d sprite with a second PV17¢tS and then repeating the cycle. The listing for this crew is given in section 3 under the heading - Proqramtable Sprites.
+HE LUNAR SPACE SHIP
+'he radar dish m top of the space ship, sprite 34, is animated by sequentially ,lacing sprites 35 to 42, giving the effect of constant rotation.
+~,.ist before the spaceship takes off, an explosion, sprite 43, is )47Red over the ;paceahlp using PVflOtS. It is removed again by a second PLMat5,
+he spaceship la then scrolled up in a vertical window by 1 pixel. The Uner ~rface, sprite 44, is also scolled by 1 pixel, to the right using NRR1V.
+THE ROTATING BALLS
+;our sprites were used to give the impression of rotation, these being sprites 45, 16, 47, and 48.
+,ce the sprites were created, animation was a staple proceas of saqueritiatly .acing the sprites to the screen with an increasing and decreasing time delay -tween each PVTB(S.
+4E CREOITS
+in achieve the text scrolling up fran the bottan of the screen, the bottom line ~s set with 0 INK and 0 PAPER eolours, while the rest of the screen had 7 IM and ` PAPER colours.
+-ach line of text was printed into that line and then the whole screen scrolled up 3' 1 pixel, such that the text data scrolls into the screen that has 7 INK ,ctributes and thus appears to smoothly scroll onto the screen.
+128

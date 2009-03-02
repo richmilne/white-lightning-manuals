@@ -1,0 +1,70 @@
+# TODO: Remove this comment once this file has been proofread
+
+SPOT	Used to hold the start address of sprite space.
+
+SPND Used to hold the end of sprite space, i.e. the first free byte after the last sprite. This is the address of the foreground scrollinq buffer.
+
+SLEN	Used to hold the length of sprite space to be cleared by the WLU# command.
+
+MIEN Used to hold the size and direction of the relocation. A positive value relocates sprites to higher memory and a negative value to lower memory.
+
+SPTR	On return from the TEST command, SP'Rt points to the start of the sprite.
+
+DPTR	On return from the TEST crnnand, DP'!R points to the start of the pixel data.
+Alternate Vari.bles
+Eleven of the previously listed variables are replecated for use by the background program (see Foreground/Background). These are %7W', COL', LEN', WI", NPX'. SPN', SPl', S-21, Sltdri', S:OL' and SPND'.
+
+When a word is executed in background, the eleven alternate variables are automatically switched with the eleven foreground variables; when execution is eanplete, the variables are switched again to restore then to their former state.
+
+Suppose, for example, that the background program is to scroll left 1 pixel with wrap (tdiLlV), with an area of screen 6 characters wide and 4 characters high, with top left co-ordinates row = 5, column 7.
+
+Now type the following:
+
+QS 6 LEN' ! 4 H3'f' ! 5 ROW ! 7 COL' !' FIItL1V II7C-0N <G2>
+
+The window is now scrollinq but you can't see it, because there is no data in the window.
+
+Type VLSST <CR> and watch the data as it scrolls Uu~ough the winda- The data in the window will be slanting to the LEFT, because the foreground program was scrolling up at the same time as the background program scrolled left.
+
+Leaving the background program running, type:
+
+10 EEN' ! <CR>
+
+and the window will widen.
+
+Type:
+
+INf-0FP ' hRFtBV INt-ON <Qi>
+
+and the screen will scroll to the right, this time much more rapidly. Now type: INfOFF <Q2>
+
+to halt the background program.
+41
+In the above example we set background variables from foreground. If we were to set the background variables actually in the background program, then foreground and background variables would already have been switched before execution. To set up the same windows, we would now have to use ROW, COL, WT and LEN and not ROW, COL', HGT, and IEN'
+
+To define a word to do this, type:
+
+: FRED 6 LEN ! 4 NUT I 1%7W ! 2 OOt. ! WRL1V ;«t> To run "FRED" in background, type: ' FRED INt-ON <Q2>
+
+Since the variables were this time being assigned values in the background program itself, the alternate variables set was being accessed with the normal names. Now type:
+
+INfOFF FORGET FRED <CR>
+
+to halt the background program and clear the definition.
+
+Operating in this way, a word will work in foreground or background without any need to change variable names. The alternate variables are only used directly by a foreground program that is required to change background variables, or a background program that is required to change foreground variables. if the previous example is a little confusing at first, carry out your wm experimentation until it becomes clear.
+
+
+ERRORS
+The graphics commands do not in many cases provide the user with error messages, but instead, if an attempt is made to executa a ornntvid which is not possible, for instance scrolling a screen window which lies partly off the screen, the command will simply rot execute. This does have the advantage that the user is freed from testing edge conditions, but does man that a little extra care needs to be exercised. See the words Iila7M and AU1V. Errors are generated if an attapt is made to access a non-existent sprite, or to insert an already existing sprite using ISPRITR.
+
+
+SPRITE AND BUFFER ORGANISATION
+
+9efore discussing the s:rite manipulation cvnmr><Is in detail, it is worth describing the orgar.isation of sprites in some detail. The user does not need this information, but it is made available for interest and an overall appreciation of the language structure.
+
+Sprites we stored as one contiguous block of data whose start address is held in the variable SPST. The first free byte after the final sprite contains a zero and this address is held in the variable SPND. The format of each sprite is as follows:
+
+Pirst byte	Holds the sprite number which must be in the range 1 to 255.
+
+;econd and	Hoid the arl.3ress of the start of the next third bytes	sprite.

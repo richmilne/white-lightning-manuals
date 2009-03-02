@@ -1,0 +1,57 @@
+# TODO: Remove this comment once this file has been proofread
+
+EnIerBement
+One command is provided for enlarging a sprite and its attributes into a second sprite which has dimansluns exactly double those of the sprite being enlarged.
+Parameter	Use
+Spl	Nimd-r of the sprite into which the enlargement is carried out.
+SP2	Number of the sprite being enlarged.
+
+
+Command	Action
+
+DSPM	Enlarge sprite SP2 into sprite SP1. Note:
+If the dimensions of sprite SR1 are not twice those of sprite SP2 the cvmiand wi11 not execute.
+INTERRUPT RELATED WORDS
+
+Six interrupt related words are provided which control the Foreground/Background execution of White Lightning words. The first four have no parameters.
+Command	Action
+
+HALT	Suspend CPU operation until the next interrupt. Executing HALT in background mode will freeze the system permanently.
+
+El	Enable the interrupt.
+
+DI	Disable the interrupt.
+
+EXX	Exchange IDEAL variables with the alternate MEAL variables. This command is executed automatically each time an interrupt occurs and at the end of the interrupt routine to restore foreground variables. If a background program
+is not being used IXX can 6e used to provide extra variables.
+
+INT-ON	The specified word (see next example) is executed on the receipt of each interrupt.
+
+INT-OFF	Following execution of INP-0FF the ZBO returns to interrupt mode 1 and polls the keyboard 50 titres a second. The background program ceases execution.
+Example:
+
+To set a word running in background type:	. WARD WT-ON
+
+Where "WDf2D" is the word to be run in background.
+61
+BASIC INTERFACE WORDS
+These words are provided to enable you to mix BASIC and Forth in your program. The section covering the access of BASIC should be read carefully before an attempt is made to use these cqmtsnds
+Ccmnnd	Action
+PROG	Enter BASIC at wmand level.
+RESERVE Reserve space in the dictionary for the insertion of BASIC source. The size of the space to be reserved is taken from the stack.
+Example:
+1024 RESERVE
+will reserve lk from the current value of HERE.
+GOTO	The BASIC program is executed from the line number held on the stack. Forth can 6e called fran BASIC using RANDOMISE ISR 30000 and Forth can be re-entered using PRINT [SR 30006.
+
+Example:
+100 OdiO
+will commence execution of the BASIC source from line 100.
+RETUSR	Control is returned to the BASIC proyrmn from Forth. Execution of the BASIC program proceeds with the first instruction after the RANDOMISE USR 30000 with which Forth was called. Do not execute a REILSR in Forth if Forth has not been called using a RANDDMISL: tbR 30000 call.
+MISCELLANEOUS WORDS
+There are 18 words provided which cover general asp-ts of games develop-nt. Canmand	Action
+SETAV	Set the attributes to the current INK and PAPER oolours in the screen window defined by tG'P, LEN, COL, ROW.
+SETAM	Set the attributes to the current INK and PAPER colours in the sprite whose number is held in SPN.
+CLSV Clear the screen window (defined by FIG-, LEN, COL, ROW) of pixel data and set the attributes throughout to the current INK and PAPER colours.
+CLSM	Clear the pixel data of the sprite whose number is held in SPN. Attribut~ data is unaffected.
+62

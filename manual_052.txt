@@ -1,0 +1,65 @@
+# TODO: Remove this comment once this file has been proofread
+
+ISPRITE AND DSPRITE
+
+it sprites are located at the top of rtntnry, then ISPRITE and U6PRITE Can be used ,~ to create and destroy sprites without the need for any ounplex calculations.
+j
+1SPRITE will insert a sprite at the top of memory, maintain the buffer space and autamticelly relocate the rest of sprite space downward. CSPRITE will destroy an ' old sprite and relocate sprite space upward. The easiest ray to use this package ' is to leave the buffer space as it is, then just use ISPRIIE and DSPR17E to CREATE and DESTROY sprites. SPRITE, WIPE, COtDa and RELOCATE are for advanced applications `here sprites are created during progr-ao execution. If a 'ZAPPED" program were to execute TSPRITE the sprites would extend downwards and could overwrite the object code of the main program which lies just beneath SPSf. If a program runs before being 'ZAPPED", but the final run-time version crashes, this is where to look !
+
+
+Parameter	Use
+
+SPN Number of the sprite to be inserted fur Height of the sprite to be inserted LEN	Length of the sprite be be inserted
+
+
+command Action
+
+ISPRITE	Create new sprite and adjust memory
+I
+Parameter	Use
+
+SPN	Number of sprite to be inserted
+
+
+Canmnd	Action
+
+DSPRITE	Wipe old sprite and adjust memory
+IY
+Note:	I
+
+Be sure sufficient memory is available before executing LSPRIIE. S4St holds the ill start; after execution, SPSl' will became SPSf - 9*tGl'*IFN-5.
+i
+SCROLLING SCREENSCROLLS
+
+'14)e horizontal screen scrolls are by 1, 4 or 8 pixels, left or right and with or without wrap. The vertical scrolls are slightly more flexible. The variable NPX is loaded with the number of pixels to be scrolled, positive for upward movement and negative for downward movement. In each cage, a screen window has to be defined.
+
+
+Horizontal Scrolls
+
+Parameter	use
+
+COL	Column of the left hand edge of the window (0-31)
+ROW	Raw of the top edge of the window (0-23)
+LEN	Width of the window (1-32)
+WIT	Height of the window (1-24)
+
+CavM:d	Action
+
+WRL1V Scroll left 1 pixel with wrap WRRIV Scroll right 1 pixel with wrap SCLtv Scroll left 1 pixel, no wrap SCRIV Scroll right 1 pixel, ro wrap WRL4V Scroll left 4 pixels with wrap WRR4V Scroll right 4 pixels with wrap SCL4V Scroll left 4 pixels, no wrap SCR4V Scroll right 4 pixels, no wrap WRLSV Scroll left 8 pixels with wrap WRRBV Scroll right 8 pixels with wrap SCL8V Scroll left 8 pixels, no wrap SCRSV	Scroll right 8 pixels, no wrap
+
+Note:
+
+Before executing any of these oamends, the window needs to be set up using the four parameters above. If the oam:a:d does not execute, it is likely that part of the window does not lie on the screen. (AL +[FN should be in the range 1 to 32 and LEN + HIM should be in the range 1 to 24.
+
+Example:
+
+To see these commands work, it is a good Idea to do a VLIST first so that there is sore data on the screen. The four parameters will need to be set, unless of oourse they have previously been defined, but for this example let us assume that they haven't. To scroll a window at OIL 4, ROW 5 with height 4 characters and width 3 characters, with wrap, 4 pixels left, type the following:
+
+4 COL I 5 ROW ! 4 FGf ! 3 rEN ! bRL4v <(It>
+
+If there is no data on the screen, type:
+
+VI1ST 4 COH. ! 5 ROW ! 4 F};;I` ! 3 LEN ! WRL4V ccit>
+
+A window column 4 Row 5 has been scrolled left 4 pixels - if you did'nt see it happen type:
+52

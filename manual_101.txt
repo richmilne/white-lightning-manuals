@@ -1,0 +1,55 @@
+# TODO: Remove this comment once this file has been proofread
+
+C.
+;tnre 8 bits of b into the next available dictionary byte, advancing the dictionary pointer.
+Ca	addr - b
+;,._:,•;= Ltie 8 bit contents of memory address.
+CASE	--- n (compiling)
+Occurw in a colon definition in the form: CASE
+n Op 	FNDDF
+FNpCASE
+At	time, CASE marks the start of a sequence of OF ... F27UDF statamnts.
+At compile tine CASE leaves n for compiler error checking. CFA	pfa - cfa
+
+Convert the parameter field address of a definition to its code field address. CMOVE from to count -
+
+,yove the specified quantity of bytes beginning at address 'from' to address 'to'. The contents of address 'from' are moved first proceeding tnuards high memory.
+COLD
+The cold start procedure to adjust the dictionary pointer to the minimum standard and restart via ABORT. May he called from the terminal to remove application
+programs and restart.
+COMPILE	Cz
+
+when the word containing COMPILE ~ecutE!s, the execution address of the word following OGPLE is copied (compiled) into the dictionary. This allows specific crnpilation situations to be handled in addition to simply compiling an execution address (which the interpreter already does).
+CONSTANT	n -
+A defining word used in the form:
+n CONSTANT a.'cc
+to create word occc, with its parameter field containing n. thhe.n oer-'c is later executed, it will push the value of n onto the stack.
+CONTEXT	-- addr	U,I4
+A user variable containing a pointer to the vocabulary within which dictionary searches will first begin.
+;OUNi	addr 1 - addr 2	WI.	' ,	^o
+""ve the byte address addr2 and byte count n of a message text beginning ~of AIdress addrl. o It is presumed that the first byte ett addrl contains U. teMi Ly,,• >unt and that the actual text starts with the second byte.
+llowed by 1YpE.	Typically. c]>IRlr i.. "
+Cq
+w
+Transmit e®rrlege return and line feed to the selected output device.
+2REATE
+% defining word used in the form: CREME oooc
+efuutimwords The as Cow code fi~eld~mnt~a'Flnst e~ad~dressdictionary fltlwoheader ~'s~ for a Forth
+Forth
+1ey, word is created N~CURRENT ~~~	parameter field. A
+COP	--- addr	U
+', user variable temporarily storing the stack pointer position, for compilation
+,rror checking.
+Dt	dl d2 - dam
+1neve the double number sum of two double numbers.
+D+•	dl n - d2
+%pply the sign of n to the double number dl, leaving it as d2.
+d	LI
+runt a signed double number from a 32 bit two's ccmplement value. One high-order 16 bits are mat accessible m the steck. Conversion is performed according to 'he current base. A blank follows. Pronounced p-do[.
+D R	d n ---DO
+i:int a signed double number d right, aligned in a field n characters wide.
+DABS	d -_ ud
+I,uve the absolute value of a double nuwer.
+U E CIMAL
+the numeric conversion BASE for decimal input-output.
+102

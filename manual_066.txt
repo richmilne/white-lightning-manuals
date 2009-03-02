@@ -1,0 +1,68 @@
+# TODO: Remove this comment once this file has been proofread
+
+ATTOFF	After the execution of ATNFF, group GF:I's and PVl's will irove pixel data only.
+
+
+CALL	Control juvps to a machine code subroutine whose address is held at the top of the stack.
+
+Exartgle:
+
+HEX D000 CALL
+
+would execute a machine code subroutine at location D000 HEX. Don't type this ur.less you have a machine ocx3e routine at HEX U000!
+
+
+ZAP	:m.ce program dew_1<r,ment is oaiplcted and you Iv- e,rnpiled vour final program into the dictionary, typing ZAP will producee a rvn-tirtr version. The length of the final version is displayed to the screen aid a copy can be savr~d by typing:
+
+SAVE "filenaTe" CODE 24832, IENGIH the length being the length displayed. Typing: PRINT USR 24832
+
+will execute the last word defined before the LAP coarand. This is the only form in which White Lightning programs can he cvmlercially sold.
+
+
+ZAPINT	As aWve except that programs which utilise the Forcyround/8aczgrourd facility wasC be produced using the 7,APIV1' c,unmvzl as opposed to the ZAP coward. The only real difference is that the first five screens also need to be saved and that the top 16 bytes of RPM will be used by the final program.
+
+
+PRT-ON	All subsequent screen. output is to ZX-Printer only.
+
+
+PRT-OFF	All subsequent output is to screen only. Ecamle:
+
+FiT-0N VLIST Pf2TOFF
+
+will list the current FORTH dictionary to the ZX-Printer.
+FORTH/BASIC WORDS
+For those users who have mastered and grown used to the Spectrinn's cwn graphics oamrands, a set of 18 Forth inplcmentations of Spectrum Words is provided. Parameters are placed on the stack in the same order as they occur in their BASIC inplemntations. If an error occurs during the execution of a BASIC word, Forth should be re-entered via a ALARM start, i.e. PRL'Pf lSR 24836. For a full description of the action of each of these words refer to your Spectrum ~ual.
+
+
+PARAMETERS	WORD	A02ION
+
+COPY	The screen in 'dunped' to the ZX-Printer.
+
+ROW, COL	AT	The print position is moved the specified
+Colmin and Row.
+
+COLOM	BORDER The border colour is set to one of the 8
+Spectrum colours.
+CLS	The screer is cleared of pixel data and the attributes set to the current INK, PAPER, BRIGHT and FLASH values.
+
+X,Y,ANCZ.E DRAW-ARC See Spectrum manual page 122. X,Y,RADILS CIRCLE See Spectrum manual page 123. X,Y DRAW See Spectrum ~uall page 121. X,Y	PLOT	See Spectrum manual page 121.
+
+ROW, COL	SCREENS The character at the screen position defined by the two values at the top of the stack is tested to see if it is one of the Spectnm's pre-defined characters. The ASCII value is left on the stack.
+
+IOW, OJL	ATTR	The code for the attribute at the screen position defined by the top two values on the stack is left on the stack.
+
+POINT	The pixel at the (x,y) m-ord defined by the top two values on the stack is tested and a true or false flag stacked depending on whether the pixel is set or not.
+
+TAB	Set the horizontal print nosition to the
+value at the top of the stack.
+
+INK	Set the INK colour to the value at the top I	of the stack.
+
+~UfAOR	PAPER	Set the PAPER colour to the value at the top of the stack.
+
+OVER.	Note the full stop at the end of OVER. This sets the printing node aceording to the value of P.AG which is zero or one.
+
+INVERSE	As for o,-
+
+BRIGHT	As fni ~Ja . .
+66

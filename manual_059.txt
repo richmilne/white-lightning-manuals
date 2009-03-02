@@ -1,0 +1,79 @@
+# TODO: Remove this comment once this file has been proofread
+
+Command	Action
+
+COPYM Copy first sprite pixel data into second sprite COPORM OR first sprite pixel data into second sprite COPXRM XOR first sprite pixel data into second sprite COPNDM AND first sprite pixel data into second sprite COPATTM	Copy first sprite attribute data into second sprite
+Note:
+If the dinensirns of the two sprites are not identical, then the con~and will not execute.
+
+Exanple:
+
+To :nike a complete copy of sprite 10 into sprite 8, use the following: 8 SP1 ! 10 SP2 ! COPkY, ODPATiM
+
+
+SPRITE TRANSFORMATIONS
+
+To increase the utility of the package, four extra words have been added to invert, spin, reflect and enlarge sprites. The inversion and reflection routines work for ~reen and sprite data but the rotation and enlargement comnands work only on sprites and a dumny sprite is required to rotate or enlarqe into.
+Inversions
+
+The sprite is "l's complemented"; in other words, all the pixels which are set "m", became set "off" and vice-versa. The attributes, however, remain unchanged.
+
+
+Parameter	Use
+
+SPN	The number of the sprite to be inverted
+Cannare9	Action
+
+INVM	The sprite is inverted (1's caiQlarented)
+Parameter	Use
+
+OOL	Coliam of the lei . hand edge of the screen window (0 to 31)
+ROW	Row of the top edge of the window (0 to 23)
+LPN	Width of the screen window (1 to 32)
+(GT	Height of the screen window (1 to 24)
+
+
+Cannlnd	Action
+
+INVV	Invert screen window 59
+Reflections
+
+There are four oadn3nds in this group for reflecting screen and nEnory, pixel and attribute data. A sprite is often required to point in two directions and the oaanaxl can either 6e used at the development stage or, if space is short, at rvn-time. The mmand muses horizontal reflection but vertical reflection is possible, by mnbininq rotations and reflections.
+
+
+Parameter	Use
+
+SPN	Number of sprite to be reflected (1 to 255) Ca-mand	Action
+
+MIRM	Reflect sprite pixel data about its centre
+MARM	Reflect sprite attribute data about its centre
+
+
+Parameter	use
+
+COL	Column of left hand edge of screen window (0 to 31)
+ROW	Row of top edge of the window (0 to 23)
+LEN	width of screen window (1 to 32)
+HST	Height of screen window (1 to 24)
+
+
+Camwd	Action
+MIRV	Reflect screen pixel data about window centre
+MARV	Reflect screen attribute data about window oentre
+
+
+Spin
+
+This oommand involves an operation between two sprites with transposed dimensions. If, for example, a sprite with dimensions 8 by 3 is to he spun into a second sprite, this second sprite must have dimensions 3 by 8. Square sprites are, of course, no problem. Pixel and attribute data are both rotated. If the corrrrt3nd is to 6e used, it is irtportant to remember that a second sprite will be needed to be rotated into and that it is necessary to set this up in advance. Rotation is 90 degrees clockwise.
+
+
+Parameter	Use
+
+SP2	Number of sprite to be rotated
+SP1	Number of sprite to be rotated into
+
+
+Cartn3nd	Action	'
+SPINM	Rotate 90 degrees clockwise sprite SP2 into sprite SP1. Note:
+A sprite cannot be rotated into itself, i.e. if SP1 and SP2 are the same number, the rotation will not work. The result is, however, well worth seeing( Data is "CR"ed fcan SP2 into SP1 so it is usually necessary to execute a CLSM to clear sprite SP1 before execution.
+uc

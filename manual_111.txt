@@ -1,0 +1,62 @@
+# TODO: Remove this comment once this file has been proofread
+
+addr	U
+OUT	alter and p user variable that contains a value inczanented by EMIT. The user may examine CM to control display f0rmatt'ng' OVER	nl n2
+-- nl n2 nl
+Copy the second stack value, placing it as the new top•	10
+PAD	-- addr
+Leave the address of the text output buffer' which is a fixed offset above HERE.
+PFA	nfa -- Pfa
+Convert the name field address of a compiled definition to its parameter field
+address.
+POP
+The code sequence to i,,,we a stack value and return to t~CT• PUP is not directly
+executable, but is a Forth re-entry Point after machine code.
+PREV	--- a3dr
+A variable containing k tlte~address f~ ~edisc rf~it~,t~ disc.
+lY reference3.
+The UPDATE commend
+PUSH	pushes machine registers to the amputation stack and returns
+This ~e sequence ~
+to	-table, but is a Forth re-entry point after
+NEXT. It is not directly
+machine code.
+PUT
+This code sequence stores machine register contents o`~ the topmast computation value and returns to NEXT. It is not directly executable,
+but is a Forth re-entry
+point after machine code.
+QUERY
+Input 80 characters of text (or until a"return") from the operator's terminalTe(t is positioned at the address contained in TIE, with I<` set ro zero.
+QUIT
+Clear the return stack, stop compilation and return control to the operator's
+terminal. No	is given. 111
+- n	U
+. ~r variable which my contain the location of an editing cursor, or other file
+
+lated function.
+n~	- addr	U
+~~ user variable which may contain the location of an editing cursor, or other file -+lated function.
+«iW	addr blk
+
+---',C Fig-Forth standard read-write linkage. addr specifies the source or
+l stination block buffer. blk is the sequential number of the referenced block; ,rid f is a flag for f-0 write and f-1 read. R/H determines the location on mass
+
+,corage, performs the read-write and any error checking.
+tu	-- n	LO
+i<Fmove the top value from the return stack and leave it on the amputation stack. ~~ee >R and R.
+n0	-- addr	U
+
+A user variable containing the initial location of the return stack. Pronounced 1, zero. See IT!
+REPEAT	addr n -- (compiling)	P,C2
+ii.~xi within a colon-definition in the form:
+BEGIN ... MILE ... REPEAT
+;+t_ run-time , REPEAT forces an unconditional branch back to just after the ~.~rresponding EEGG1N.
+A'- compile time, REPEAT compiles HWCH and the offset from HERE to addr. n is -ed for error testing.
+ROT	nl n2 n3 -- n2 n3 n1	IA
+Rotate the top three values m the stack, bringing the third to the top. RPO	addr
+i-~ves the current value in the return stack pointer register. RP!
+
+n-omputer dependent procedure to initialise the return stack pointer from user variable R0.
+S >D	n -- d
+,.an extend a single number to form a double number.
+112

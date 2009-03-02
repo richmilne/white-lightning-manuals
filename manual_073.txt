@@ -1,0 +1,47 @@
+# TODO: Remove this comment once this file has been proofread
+
+COLLISION DETECTION AND SPRITE RECOGNITION
+Tw words are provid•a3 for collision detection, these are 9C'JtNV and 9CAN1•
+
+9CANV is used to scan a particular character position on the screen. if any data is present in the specified square (eo-ords are held in OM and ROW), then a true flag is placed on the stack and if the square is empty (contains no pixel data), a false flag is placed on the stack. Type:
+
+CLS VLISf 0 VARIABLE Q71' tCt>
+This will put some data on the screen and initiate the variable Q7!'. Now type:
+; Op 0 INl' ! 24 0 00 [ iID.'i ! 32 0 cQt> DO : COL ! gG1HV IF 1 air +! <Qt> P:NUiF ?ODP LOOP (YdI' 7 : <(R>
+This defines a word which simply counts the number of characters on the screen. Type:
+
+GO GQt>
+This should print a number somewhere around 250.
+
+Often it is insufficient to determine whether a particular character square contains data or not, and for this reason the slower, but more powerful mstund 9CNM, has been included. This will scan the sprite whose number is held in SPN and put a true flag on the stack if the sprite contains pixel data, or a false flag if it does rot. 9C'Ala1 is normally used to perform am of three functions:
+1. 1b see if data will collide.
+
+2. To detect an exact pattern.
+
+3. To detect the presence of a pattern.
+Collision detection is wst eaaronlY used to detect a collision between a sprite moving across the screen and any data which lies in its path. Often the sprite can pass through an occupied character position without a collision occurring, so the SIAM oamard is insufficient. The procedure is basically to load a dummy sprite with the section of screen into which the sprite is about to be ftlf, 'AND" it with the sprite about to be PVf mid then use SCAM. If a true flag is on the stack the dummy sprite contains data and therefore a collision has occurred. This is all very well, but a problem occurs if the new sprite position overlaps the old sprite position, because this means that the old sprite has to be removed from the screen before beginning the above detection procedure and subsequently Flirting the new sprite. This delay causes flicker. The easiest solution is to work with ')QlR^s so that the window can be GOT. ^)¢Ei•ed with the old sprite in memory to remove the old sprite data, and then to do the detection followed finally by the blotting and then immediate RITting.
+Once an Impending collision is detected it is frequently useful to determine what the sprite has collided with. To begin with, let's assume that the screen window we 're examining contains one of a knom set of objects and that no other data is present in the window. The method is to load the duauY sprite with the object to be tested and then oatpare it against the set of sprites with which a match is being sought. To wq)are the dummy sprite with a known sprite, all you need to do is NOR the sprite being tested into the dummy and do a SCAM. If the result is zero, an exact match was found, if not, do a second 721R into the dummy to restore
+it and test the next candidate.
+73
+-lly, consider the case where the object being tested contains extraneous data
+addition to one of the possible sprites. This time, the dummy sprite is
+dad with the contents of the screen window, but the candidates are first :,J•ed into the dumy to remove extraneous data before the 7¢)i and StAtM.
+~..My the dummi reeds to he reloaded from the screen before the next test. This ~•cer test is limited by the fact that its conclusion is only that the screen .rained all the parts of the sprite with which a comparison was made. In the
+reme case of the screen window containing all pixels set, then an agreement ~~~ld he found with all the sprites tested.
+
+
+~ : ROLLING LANDSCAPES
+Tolling landscapes are an integral part of so many video games that it is worth brief description of how they can best be produced using White Lightning.
+
+Ik first and most obvious point is never to scroll more than you have to. If,
+->r instance, you are moving a mountain range where the variation takes place over ne top three duracters, then only the top three characters need to be stored and oved.
+.'he simplest and most effective method of producing smooth scrolls is to sacrifice t column of the screen for transactions with the sprite being scrolled. Suppose r• are scrolling esprite of 4 or 5 screens, width which uses rows 8 to 10 f3
+msl. Suppose we require pixel scrolling and there is no horizontal variation in it.rribitesI	It doesn't really matter which column we sacrifice, far right (column il > or far left (column 0), but let's, for this example, use column 0. All that +• need to do is set up a window I character wide and 3 characters high on the far
+•ft of the landscape to have the same INK and PAPER colours. This means that
+tzel data cannot be seen in this region. Use the SUM camand to do this. To .yin with, 31 columns of the sprite are POP to the active part of the screen rung the EWB[S mmtand. If scrolling is to the left, then the dummy column :h,>uld be loaded with the next column to the right of the sprite now 'm screen'. ~I scrolling is to the right then the column to the left of the sprite window "'o Id 6e inserted. The full 32 column screen window is now wrapped in the ,hpropriate dir:rction until a total of + or - 8 pixels has been accrued. The wmty column is then loaded from the appropriate sprite column and so rn. The rihod can 6e -ply adapted to make the landscape wrap and is usually implemented ruler interrupt.
+1i UC RAMMABLE SPRITES
+
+w of the most cannon applications of the background mode is the setting of )rites into automatic motion. Perhaps the chief advantage that a language has 'er a games designer, is that the sprites thus created can have as much .ntelligence' as the programmer requires. A sprite can bounce off the edge of r screen and/or other sprites until a particular event, and then totally change s behaviour - possibly to follow a previously stored track.
+
+A- have incltrlerl a very simple listinq which sets a sprite in motion, that just minces off the edges of the screen, to give you saw idea of what is involved. his sample program assumes you have the demonstration sprites in memory.
+74

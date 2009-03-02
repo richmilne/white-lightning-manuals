@@ -1,0 +1,37 @@
+# TODO: Remove this comment once this file has been proofread
+
+IO
+WORD	c -
+Read the next text characters from the input stream being interpreted, until a delimiter c is found, storing the packed character string beginning at the
+dictionary buffer HERE. ~ ~1oL leaves blanksac~LZadin9tocatrhancesr° c~~e the characters, and ends	text ~~~ from the terminal input buffer, otherwise ignored. If BLK is zero,
+from the disc block stored in BLX• See ELK, IN'
+X
+This is pseudonym for the "null" or dictionary entry for a name of one character of ASCII null. It is the execution procedure to terminate interpretation of a line of text from the terminal or within a disc buffer, as both buffers always
+have a null at the end.
+XOR	nl n2 -- xor	LI
+
+Leave the bit-wise logical Exclusive-OR of two values
+P, LI
+used in a colon-definition in the form:
+xXX words moCe :	not compiled. This allows
+Suspend compilation. The words after are executed, compilation with . See calculation or compilation exceptions before resuming em4
+LITERAL,
+ECOMPIL ]	P,C Used in a colon-definition in the form:
+COMPILE will force the aavilation of an imn2.diate definition, that would otherwise execute during eavilation. The above example will select the FORTH vocabulary when xxx executes, rather than at crnpile time.
+IS
+Resume txnQilatlon, to the completion of a colon-definition. See ADDITIONAL GLOSSARY
+
+
+C/L	- n
+A constant containing the number of characters per line (64).
+WARM	-This will perform a warm-start.
+,,,)OP	-
+
+i,a will perform a no-operation, i.e. do nothing. 1^.RM->COLD
+
+s allows you to preserve any FORTH word defined to date, so that a COLD start :.~Ll not delete then. Fhen saving your code, save from 24832 to HERE.
+
+.~a. : NFY7riORD ." THIS WILL BE PRESERVED BY V7A[i!4->OOLD "%
+
+.-we now do a COLD start this will be lost, but if we first key in MUM-XDw and i,,n do a COLD start, it will still be there.
+117

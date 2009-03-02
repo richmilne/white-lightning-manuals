@@ -1,0 +1,53 @@
+# TODO: Remove this comment once this file has been proofread
+
+ATTRIBUTE DATA The colour of the INK and PAPER in each particular cell, together with the ERIGMINFSS and FLASHING attributes of the character are controlled l7y a seperate byte. The bytes which define the attributes of the block of characters are referred to as Attrihutz data. pixel data and Attribute data are frequently treated as sepe!rate entities.
+SCREEN OPERATIONS
+Often, it is required to carry out an operation such as a scroll or a reflection,	~i
+on one particular section of the screen. Four variables are used to define a
+j
+screen window, these are COL, Row, IcC and LEN. The oo-ordinates of the top left	i hand corner are held in COL and PAW, where COL is measured from the left and RUN from the top. Both values are in characters. Mr and LEN me the dimensions of the window. ODL + LEN mast 6e in the range 1 to 32, and ROW + Mr must be in the range 1 to 24. Commands in this group are postfiwsd with a'V", e.g. WiL1V, IINV, ~~ MII2V.
+SCREEN/SPRITE OPERATIONS
+These are operations between the screen and a sprite. The dimensions of the
+sprite are used as the dimensions of the screen window, and OJL and FiDW are used	i to give the co-ordinates of the top left of the window. IP the window overlaps the edge of the acreen, the command will rot execute. Typical commands in this group are the lairs and (9is, which now sorites between the screen and memory. C®rxls in this group are postfixaf with an 'S", e.g. PVfB[S, (£TaRS.
+SPRITE OPERATIONS
+Those cover more or less the mm- oamands as the screen operations, but this time a complete sprite is used instead of a screen wirxlow. The only parameter required is the sprite number stored in SPN. Commands in this group are postfixed with an
+"M", e.g. W7RNf, A'I'1T)FTf.
+SCREEN/SPRITE WINDOW OPERATIONS
+These are operations between a screen window and a sprite window. As before, RUW, COL, MT and LEN define the screen window, but this time, 9COL and SRUN are used to define the position of the window within the sprite. 90D1 and SROW are measured in characters, SROw from the top and 9COL from the left. If 3dOW + Fur is greater than 24 or the sprite height, or if 3001. + LEN is greater than 32 or the sprite width, the commands will not execute. These commands are posifized with an 'S', e.g. GYA1R5. p4tYrS.
+SPRITE/SPRITE WINDOW OPERATIONS
+These arc op :rations between a whole sprite and a sprite window. The two sprite manFrrs are held in Spl (the whole sprite) and SP2 (the sprite which contains the window). The dimensions of the window are the dimensions of the sprite wtaee number is held in Spl. The position of the window in the sprite whose number is held in SP2 is specified by FSCM and 3RGfi. Camkvds in this group are poetfl:ed with an 'M', e.g. (SATTH, R+'tSH.
+39
+ItrnITE. SPRITE OPERATIONS
+
+M~ are operations between sprites which usually have the same dimensions, or, u In the case of the SPIN command, transposed dimensions. SP1 and SP2 hold the sprite numbers. Commands in this group are poatfixed with an "M", e.g. OOPORM, m t Mt.
+
+
+,,UMMY SPRITE
+
+I1 dummy sprite is a sprite which does not contain data for display. It may be -NA, for instance, to store a>lechira code subroutine, an array, or maybe a -llialon detection sprite.
+
+
+IDEAL VARIABLES
+
+1-he MEAL suhlargtage uses 27 variables in all, tAese are: VARIABLE	USE
+ROW	used to hold the row (Y oo-ord) in characters, measured from the top of the screen (0-23).
+
+LEN	Used to hold the width of the current screen window (1-32) or the width of the sprite being defined (1-255). ututs are characters.
+
+Used to hold the column (x co-ora) in character v, measured
+COL	from the left of the screen (0-31).
+
+HOT	Used to hold the height of the current screen window (1-24), or the height of the sprite bring defined (1-255). Unit. am clmraclers.
+
+Snow Used to hold the row (Y oo-ord) within the sprite whose number is held in SP2, measured from the top (0-(FCP-1)). Units ar.• .Mractess.
+
+.COL	Used to hold the column (X co-ord) within the sprite whose number is held in sY2, measured from the left Uoits are characters.
+Nvx	Used to hold the size and direction of vertical scrolls. Positive scrolls are uVArd and negative downward. Units are pixels and not characters.
+
+sPN	Used to hold the sprite number for those words which operate an only one sprite (1-255).
+
+fPt where operations involve a sprite and a sprite window, SP1 holds the number of the sprite which does not contain the window (1-255). Where a sprite is to be spun into a second sprite, SP1 holds the number of the first sprite (1-255).
+
+SP2 Where operations involve a sprite and a sprite window, SP2 holds the number of the sprite which does contain the window (1-255). hhere a sprite is to be spun into a second sprite, SP2 holds the number of the second sprite
+(1-2551.
+40

@@ -1,0 +1,84 @@
+# TODO: Remove this comment once this file has been proofread
+
+STACK	OPERATION	OV14Vf (if any)
+empty	DE)CIMAL
+0	0
+•	BEGIN
+1	1+
+(let us now refer to the number on the Stack &S N)
+N N	OUP
+N N N	DlR
+N N N N	DUP
+N N N N N	WP
+NNNN2
+NNN3	'
+N N N'N' LUP N N N'N'3000 3000 N N N'flag (1 or 0)	<
+If TRUE:
+N N N?	!d1IIE
+
+
+.THE CUBE OF . THE CUBE OF N N'N	SYAP
+N N,	N
+
+
+.' IS	IS
+•	N'
+
+
+•	Qt carriage return
+•	REPEAT (branch back to BEGIN)
+If FALSE
+N N	CROP
+•	DROP
+aipty	RRDP
+" pi,L I'm
+"	ALL DONE
+(R
+In fact, it is a good idea to check the stack contents during the execution of any new ForUh word to make sure that it is working correctly. (Note that DROP merely clears the top ntshber from the stack).
+Finally, one extra construct has bow added to circumvent the problem of deeply nested IF...THEN ...ELSE structures. This is the CASE OF structure. It takes the general form :
+CASE nl OF (Forth Word) ENDOF n2 OF (Forth Word) ENDOF ... EN[X'ASE For example type:
+: TEST4 CASE 1 OF ." FIRST CASE ' ENDOF 2 OF ." SECOND CASE " ENDOF 3 OF ." THIRD CASE " ENDOF ENOQLSE ; <l3t>
+Now type :
+1 TESTI Qt 2 TE.SSl'6 Qi 3'1FST4 dt dQt>
+31
+~ i ,NST ANTS AND VARIABLES
+
+-•Ilitning also allows you to define your own oonstants and variables using 4-uth words:
+
+~t11STAHf VM211®E
+
+MM a constant is called up, this causes its VALUE to be pushed onto the Stack, hrvar, Msl a variable is Called up, this causes its address to be pushed onto the stack. The Forth words ! and e are used to modify the contents of the verlable.
+
+A oonatent is defined by using the form:
+
+value CONSTANT name
+
+-l any references to the name will cause the value n to be put on the stack. A variable la defined using the form:
+
+value VARIABLE name
+
+and any reference to the name vill result in the address of that variable to be put m the stack for further manipulation using I and p. It is essential that you realise the difference between the contents and the address of a variable.
+
+Now for some examples:
+
+64 OOIiST1Wf R 1000 CONSTANT Q 256 VARIAH[.E X
+0 VARIABLE Y
+
+It p+, will print the value of R+ Q i.e. 1064
+X. will print the address of X, not its value
+x e@	will print the value of X, i.e. 256
+R Y! will store the value of R in the variable Y
+Y x! will store the address of Y in the variable X 4 X! will store the value 4 in variable X
+
+BASIC petwnent	Forth Equivahwvt
+
+!ETx~Y Y Q X 1 [ECx~It RX ! [.hTX~ 4 4X ! l.r.~r%~x+5	Sx+;
+
+
+IT HER COMMONLY USED FORTH WORDS
+LIST	: This will list the contents of the screen number held on the top of the stack.
+.g. 6 LIST will list screen 6 to the scram. Note that if source has not been typed into my of the screens, they will probably contain garbage.
+
+
+FORGET : This is used to delete part of the Lightning dictionary. Please note that not only will the word following FORGET be erased, tut so will every word defined after itl
+32

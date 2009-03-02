@@ -1,0 +1,67 @@
+# TODO: Remove this comment once this file has been proofread
+
+4. The K key transfers a character fran the SPRITE SCREEIN to the C'FiTi$ SC42. 5. The J key transfers a character from the CHRS 5Qt to the SPRITE 9'REI•2<. 6. The S key defines and subsequently calls up a particular SPRITE. 7. The G key GETS your sprite into mgmry.
+
+8. The P key PUTS your sprite fran memory onto the SPRITE :SRfPN.
+
+9. The D key enables you to enter a character by DIRECT DATA to the SPRITE SCREEN.
+
+You've used quite a few functions! Have a go at calling up some Mre Arcade Characters, change then if you wish, then GET then into marory and PVl' them onto the SPRITE SRE.=N.
+The Information Aftungle
+MEMORY LEFT 12488 % POS 4 Y POS 4 SPRITE 85288 SPRITE HEIGHT -I SPST 65266 SPRITE LENGTH -1 SPND 85280	SPRITE NUMBER -1
+The text line
+
+This is a most useful facility which can be of great service to you. Most of the information is fairly obvious, but we'll run through it all:
+
+1. NMRY iEFC, as it says, is the amount of memory available for sprites; these are the sprites that you define and do not include the Arcade Characters - to use
+these, of course, you must define then as sprites by GEl'ting then into m3mry.
+
+2. X POS Y PUS, these are the current positions of your SPRITE SCREEN X and Y cursors with reference to the figures m top and to the left of the SPRITE SCREEN.	-
+
+3. SPRITE, this indicates the position, in memory, where your defined sprite is.
+
+4. SPST, indicates the SPrite space STart point, in memory. (Before any sprites are defined this has an initial value of 65280).
+
+5. SPND, indicates the SPrite space eND point, in memory.
+
+6. SPRITE HEIGHT, indicates the height of your defined sprite, in character squares, as indicated by the figures at the top and to the left of the SPRITE SCREEN. (This has an initial value of 1).
+
+7. SPRITE LENGTH, indicates the length of your defined sprite, in character squares, as indicated by the figures at the top and to the left of the SPRITE SCREEN. (This has an initial value of 1).
+
+8. SPRITE !QMBER, indicates the sprite currently defined. (This has an initial value of 1).
+
+9. The Text Line, to show the Flnction called up, and the available options. 9
+More Funnion Keys
+
+Let's trove on. BREAK the program - CAPS SH2fT/BRFAK keys, type OCJN 3 and press kPIIF22. Execute a COLD (C) START and answer N to BUFFER SIZE CHANGE. Nothing of what you have previously done is in iremnry, (We could have cleared all your sprites by defining then (S key) and pressing W(tVIPE SPRITE), but depending on how many you defined whilst experimenting, it could have been a lengthy process!)
+
+Now have a go at this:
+
+1. Clear the sprite screen (SYMBOL SHIFT Q)
+
+2. Press X to activate the III!( variable and then set it to 2. 3. Press C to activate the PAPER variable and then set it to 7.
+
+4. Press B to activate the BRIGHT switch and then press 1 to switch it ON. 5. Press V to activate the FLASH variable and then press 0 to witch it OFF. 6. Press A to activate the ATTRIBUTE witch and then press 1 to switch it ON.
+
+You will have noticed, that both PAPER and FLASH were already set to 7 and 0 respectively from the COLD start; we only run through than all for wrpleteness
+
+and to get used to using then.
+
+What you have done, is to set the attributes for the character vie are about to define, so lets do that:
+
+1. Press Z to call up the arcade characters, answer Y to the prrnq;t, and enter 150 followed by IIS1E1i - there you have it - a red Dalek.
+
+Now in order to define this character as a sprite, we reed to GET it into narory. 1. Press S to set up a sprite and type 10, followed by INTER. Nw we'll need to set up the screen window:
+
+1. Press L to activate the sprite length variable and then press 2 followed by ENTER. You will see the window flash red across the top half of the character.
+
+2. Press H to activate the SPRITE HEIGHT variable and then press 2 followed by ENTER. No..' you will see the new window flash. Now convert this character into a sprite by GETting it into mamry:
+
+1. Press G to activate the GET function and answer Y to the prompt. Again the screen window will flash, confirming that the character has been GOT into manory,
+
+Move `he sprite screen X cursor +2 (SYMBOL SHIFT 8 twice). Activate the PUT function (P), respond with a Y to the prompt and press 1 to PUT your new sprite to
+
+the screPr.
+
+Now we're going to mirror this second character and GET it into sensory s another sprite but with different attributes:
+10
