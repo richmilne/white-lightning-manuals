@@ -1,62 +1,56 @@
-# TODO: Remove this comment once this file has been proofread
-
 IDEAL
 
-The main part of the package is the White Lightning language itself. The
-language can be thought of as being divided into two parts: firstly, there
-is a super-fast integer Forth, which conforms to a standard Fig-Forth; but
-secondly, and of most importance to games designers, there is the IDEAL
-sub-language. IDEAL stands for "Interrupt Driven Extendible Animation
-Language". IDEAL has a dictionary of over 100 words, which can be freely
-mixed with Forth, or, as we shall see, can be accessed from BASIC.
+The main part of the package is the White Lightning language itself. The language 
+can be thought of as being divided into two parts: firstly, there is a super fast 
+integer Forth, which conforms to a standard Fig-Forth, but secondly, and of most 
+importance to games designers, there is the IDEAL sub-language. IDEAL stands for 
+"Interrupt Driven Extendable Animation Language ".  IDEAL has a dictionary of over 
+100 words, which can be freely mixed with Forth, or, as we shall see, can be 
+accessed from BASIC.
 
 
 Interrupt Driven
 
-Forth/IDEAL words can be executed under interrupt; this means that
-programs can be run in foreground and background at the same time.
-Suppose, for instance, the program you are writing involves a scrolling
-backdrop, which has been defined in a sprite 6 screens wide. A program can
-be run in background to handle the scrolling backdrop, and a separate
-program written in foreground to control all of the characters which move
-within the backdrop. This will free the user from complex timing
-calculations to get a smooth scroll and is one of the most powerful
-features of the entire package. Background words can be executed up to 50
-times a second.
+Forth/IDEAL words can be executed under interrupt; this means that programs can be 
+run in foreground and background at the same time. Suppose, for instance, the 
+program you are writing involves a scrolling backdrop, which has been defined in a 
+sprite 6 screens wide. A program can be run in background to handle the scrolling 
+backdrop, and a separate program written in foreground to control all of the 
+characters which move within the backdrop. This will free the user from complex 
+timing calculations to get a smooth scroll and is one of the most powerful 
+features of the entire package.  Background words can be executed up to 50 times a 
+second.
 
 
 Extendible
 
-Forth is extendible and was chosen as the most suitable host language for
-IDEAL because of this extremely useful feature. New words can be defined
-in terms of any of the Forth/IDEAL words, or your own previously defined
-words. This means that you can create diagonal scrolls, for instance, by
-combining individual scrolls.
+Forth is extendible and was chosen as the most suitable host language for IDEAL 
+because of this extremely useful feature. New words can be defined in terms of any 
+of the Forth/IDEAL words, or your own previously defined words. This means you can 
+create diagonal scrolls for instance, by combining individual scrolls.
 
 
 Animation Language
 
-Very careful planning went into the designing of the IDEAL animation
-language, to make it as portable as possible between micros. If you've
-written a very successful program for one micro, you can move the same
-code across without too much difficulty. The only major changes necessary
-are changes to accommodate the different screen formats; ie. the number of
-columns and rows. You don't need to worry about the complexities of
-various memory mappings; IDEAL does that for you. Some implementations will
-not allow attributes to be moved separately from pixel data, so to be
-certain of higher portability, move attributes and data together.
+Very careful planning went into the designing of the IDEAL animation language, to 
+make it as portable as possible between micros. If you've written a very 
+successful program for one micro, you can move the same code across without too 
+much difficilty. The only major changes necessary, are changes to accomodate the 
+different screen formats, ie the number of columns and rows.  You don't need to 
+worry about the complexities of various memory mappings, IDEAL does that for you. 
+Some implementations will not allow attributes to be moved separately from pixel 
+data, so to be certain of higher portability, move attributes and data together.
 
 
 ACCESS FROM BASIC
 
-If you are not familiar with Forth and want to get reasonable software
-quickly, you can access the IDEAL language from BASIC. Programs will no
-longer be portable and you won't get quite the same speed and polish, but
-perfectly good programs can be, and have been, written this way. More
-memory will be used for BASIC source, so bear all this in mind before
-deciding to put off learning Forth! Most of the useful BASIC commands that
-handle sound and graphics, such as DRAW, CIRCLE, BEEP and so on, have been
-implemented in Spectra Forth. Whenever possible, call them from Forth and
-not BASIC. The interpretation and initial floating point manipulation of
-BASIC commands are avoided, and commands will therefore execute more
-rapidly from Forth.
+If you are not familiar with Forth and want to get reasonable software quickly, 
+you can access the IDEAL language from BASIC. Programs will no longer be portable 
+and you won't get quite the same speed and polish, but perfectly good programs 
+can, and have, been written this way. More memory will be used for BASIC source, 
+so bear all this in mind before deciding to put off learning Forth!  Most of the 
+useful BASIC commands that handle sound and graphics, such as DRAW, CIRCLE, BEEP 
+and so on, have been implemented in Spectra Forth. Whenever possible, call them 
+from Forth and not BASIC. The interpretation and initial floating point 
+manipulation of BASIC commands are avoided, and commands will therefore execute 
+more rapidly from Forth.
