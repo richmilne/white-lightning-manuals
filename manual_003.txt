@@ -1,26 +1,35 @@
-# TODO: Remove this comment once this file has been proofread
-
 OPERATING INSTRUCTIONS
 
-1. Rewind the tape marked "White Lightning". Disconnect Interface 1
-   if fitted.
-2. Load using LOAD "" then stop the tape. White Lightning will auto-run.
-3. Once loaded, you will get the prompt "LOAD SPRITES Y/N".
-4. If it's the first time you've used the package, type Y to load the
-   demonstration sprites, which will follow directly after White Lightning
-   on the same tape. There is a section of data before the sprites which
-   doesn't load, but don't worry about this; this is information used by
-   the sprite development package. Once loaded, the "LOAD SOURCE Y/N"
-   prompt will appear. Press N to enter White Lightning or, if you wish to
-   load some source code, place the appropriate cassette in the recorder,
-   press PLAY and then type Y.
-5. To RUN the demonstrations, just LOAD using LOAD "" and the program will
-   auto-run.
-6. To RUN the Sprite Development Software just type LOAD "" and again the
-   program will auto-run.
+1)  Rewind the tape marked "White Lightning".  Disconnect interface
+    1 if fitted.
+
+2)  Load using LOAD"" then stop the tape.  White Lightning will auto-run.
+
+3)  Once loaded, you will get the prompt LOAD SPRITES Y/N.
+
+4)  If it's the first time you've used the package, type Y to load the
+    demonstration sprites, which will follow directly after White Lightning on
+    the same tape.  There is a section of data before the sprites which doesn't
+    load, but don't worry about this, this is information used by the sprite
+    development package.  Once loaded, the LOAD SOURCE Y/N prompt will appear.
+    Press N to enter White Lightning or, if you wish to Load some source code
+    place the appropriate cassette in the recorder, press PLAY and then type Y.
+
+5)  To RUN the demonstrations, just LOAD using LOAD"" and the program will
+    auto-run.
+
+6)  To RUN the Sprite Development Software just type LOAD"" and again the
+    program will auto-run.
 
 
 TO THE NEWCOMER
-When you have run the demonstration tape and have seen wtsat can be done, this may give you the incentive to learn all you can to produce full specification games for yourself. The author of this manual knew nothing of White Lightning before starting this project, but can promise you that after only a few hours of experimentation, became fairly adept and had the confidence to want to go further. It may all look a little complicated at first, but please be assured, that after a short time, and only a little effort, the fog really does clear!
 
-Nike Butler.
+When you have run the demonstration tape and have seen what can be done, this may 
+give you the incentive to learn all you can to produce full specification games 
+for yourself.  The author of this manual knew nothing of White Lightning before 
+starting this project, but can promise you that after only a few hours of 
+experimentation, became fairly adept and had the confidence to want to go further. 
+It may all look a little complicated at first, but please be assured, that after a 
+short time, and only a little effort, the fog really does clear!
+
+Mike Butler.
