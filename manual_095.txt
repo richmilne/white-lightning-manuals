@@ -1,56 +1,56 @@
 # TODO: Remove this comment once this file has been proofread
 
--FIND	- pfa b tf (found)
--- ff	(not found)
+-FIND    - pfa b tf (found)
+-- ff    (not found)
 Accepts the next text word (delimited by blanks) in the input stream to FRME, then searches the coNi'F7('P and then CURRENT vocabularies for a matching entry. If found, the dictionary entry's parameter field address its length byte, and a 6oolean true is left. Otherwise, only a boolean false is left.
--TRAILING	addr nl -- addr n2
+-TRAILING    addr nl -- addr n2
 
 Adjusts the character count nl of a text string beginning address to suppress the output of trailing blanks. i.e. the characters at addrtnl to eddr+n2 are blanks.
-,	n -
+,    n -
 
 Print a number from a signed 16 bit two's lament value, converted according to the numeric BASE. A trailing block follows. Pronounced "dot".
 P,ID
-®:	oocc
+®:    oocc
 .
 Compiles an in-line string occc (delimited by the trailing "), with an execution procedure to transm+t the text to the selected output device. If executed outside a definition, ." will immediately print the text until the final ". See
-l.	).
-.LINE	line acr -
+l.    ).
+.LINE    line acr -
 
 Print on the terminal device, a line of text by its line and screen number. Trailing blanks are suppressed.
-.R	al n2 -
+.R    al n2 -
 
 Print the number nl right aligned in a field whose width is n2. No following blanks printed.
-/	nl n2 -- 9u°t	ID Leave the signed quotient of nl,/n2.
-/MOD	nl n2 - r® quot	ID
+/    nl n2 -- 9u°t    ID Leave the signed quotient of nl,/n2.
+/MOD    nl n2 - r® quot    ID
 Leave the reminder and signed quotient of nl/n2. The remainder has the sign of the dividend.
-0 1 2 3	- n
+0 1 2 3    - n
 These small numbers are used so often, that it is attractive to define then by name In the dictionary as constants.
 95
-n - f	'~Tr . ''
+n - f    '~Tr . ''
 .-e the true flag if the nuebar is less than zero (negative), otherwise leave a ~e flag.
-'' - f	ID
+'' - f    ID
 
-:e a true flag if the number is equal to zero, otherwise leave a false flag. RANCH	f -	C2
+:e a true flag if the number is equal to zero, otherwise leave a false flag. RANCH    f -    C2
 - . run-time procedure to conditionally branch. If f is false (zero), the lloxdnq in-line parameter is added to the interpretive pointer to branch ahead back. Crnpiled by IF, U7TIL and MILE.
 
 
-nl - n2	yl
+nl - n2    yl
 
 7rerent nl by 1.
 
 
-•	nl - n2 yl Leave n1 incremented by 2.
+•    nl - n2 yl Leave n1 incremented by 2.
 
 
-21	nlow nhigh addr -
+21    nlow nhigh addr -
 
-L: bit store, nhigh is stored at addr; nlow is stored at eddr+2. 20	addr -- nlow nhigh
+L: bit store, nhigh is stored at addr; nlow is stored at eddr+2. 20    addr -- nlow nhigh
 
-, tit fetch, nhigh is fetched from addr: nlow is fetched from addr-2. 7DUP	n2 nl -- n2 nl n2 nl :'plicatea the top boo values m the stack. Equivalent to OVER OvER.
+, tit fetch, nhigh is fetched from addr: nlow is fetched from addr-2. 7DUP    n2 nl -- n2 nl n2 nl :'plicatea the top boo values m the stack. Equivalent to OVER OvER.
 P, E, ID
 r3 in the form celled a colon-definition:
 : axr . .
-.at. a dictionary entry defining ccoc as equivalent to the following sequerr.,e Forth word definitions '	' until the next '' or ';(DpE'. The crnpiling ~cesa is done by the text interpreter as long as STATE is non-zero. Other ails ere that the (CU= vocabulary is set to the CURRENT vocabulary and that ds with the precedence bit set (P) are executed rather than being compiled.
+.at. a dictionary entry defining ccoc as equivalent to the following sequerr.,e Forth word definitions '    ' until the next '' or ';(DpE'. The crnpiling ~cesa is done by the text interpreter as long as STATE is non-zero. Other ails ere that the (CU= vocabulary is set to the CURRENT vocabulary and that ds with the precedence bit set (P) are executed rather than being compiled.
 P,C,ID
 
 -ninate a colon-definition and stop further crnpilation. Compiles the run-time 95

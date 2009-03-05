@@ -8,7 +8,7 @@
 
 You've used quite a few functions! Have a go at calling up some Mre Arcade Characters, change then if you wish, then GET then into marory and PVl' them onto the SPRITE SRE.=N.
 The Information Aftungle
-MEMORY LEFT 12488 % POS 4 Y POS 4 SPRITE 85288 SPRITE HEIGHT -I SPST 65266 SPRITE LENGTH -1 SPND 85280	SPRITE NUMBER -1
+MEMORY LEFT 12488 % POS 4 Y POS 4 SPRITE 85288 SPRITE HEIGHT -I SPST 65266 SPRITE LENGTH -1 SPND 85280    SPRITE NUMBER -1
 The text line
 
 This is a most useful facility which can be of great service to you. Most of the information is fairly obvious, but we'll run through it all:
@@ -16,7 +16,7 @@ This is a most useful facility which can be of great service to you. Most of the
 1. NMRY iEFC, as it says, is the amount of memory available for sprites; these are the sprites that you define and do not include the Arcade Characters - to use
 these, of course, you must define then as sprites by GEl'ting then into m3mry.
 
-2. X POS Y PUS, these are the current positions of your SPRITE SCREEN X and Y cursors with reference to the figures m top and to the left of the SPRITE SCREEN.	-
+2. X POS Y PUS, these are the current positions of your SPRITE SCREEN X and Y cursors with reference to the figures m top and to the left of the SPRITE SCREEN.    -
 
 3. SPRITE, this indicates the position, in memory, where your defined sprite is.
 

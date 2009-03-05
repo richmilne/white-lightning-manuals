@@ -1,45 +1,14 @@
 # TODO: Remove this comment once this file has been proofread
 
-Y 21 - this means that you have tried to dclr_te something in the protectal part of the Forth dictionary, e.g.
+ #  21 -  this means that you have tried to delete something in the protected
+          part of the Forth dictionary, e.g.
 
-FORGET 00
-
-
-M 22 - this implies the illegal use of --> when not loading text screens.
+          FORGET 00
 
 
-# 23 - this happens when you try to edit a non-existent line of screen data. Try:	12 D
-37
-SECTION 3 IDEAL
-by John Groea
-
-iI1FAIL has been designed to facilitate the manipulation of sprites and screen data, uid with its 100 or so instructions, provides a powerful and comprehensive ,,i,imaticn -Irla.•uquage. Time should he taken to gain familiarity with the .vailable commands before undertaking the first big project. Remember, that by ,L,ung the colon definitions of Forth, new words can very easily be added to the language, built from the existing Forth and graphics words. Mastering this 1,?ehlllC]Ue effectively will save a great deal of space, and in many cases, .•xecution time.
+ #  22 -  this implies the illegal use of --> when not loading text screens.
 
 
-SPRITE
+ #  23 -  this happens when you try to edit a non-existent line of screen data.
 
-A sprite is a software controllable graphics character. White Lightning supports up to 255 sprites with user selectable dimensions.
-
-
-SCREEN WINDOWS
-
-A screen window is a section of the screen defined by the four variables COL, ROW, HGf and LEN. Columas are in the range 0 to 31, Rows are in the range 0 to 23, Heights are in the range 1 to 24 and Lengths are in the range 1 to 32. The unit for each is the character. OM and ROW specify the position of the top left hand corner of the window, with ROW 0 at the top of the screen and WL 0 on the left sand side of the screen. WIT and LEN define the size of the window. To see an -ample type:
-
-ROW ! 6 COL ! 4 F!GT ! 3 LEN ! iA~IV <Qi>
-':'he window has been inverted to mark it out.
-
-
-SPRITE WINDOWS
-
-A sprite window is a section of the sprite defined by the Forth variables 9UL, ~,RON, FG'L and UN. This time SCOL and SRCW specify the position of the top left hand corner of the sprite window. !GT and LEN are again used to specify the dimPSSions of the window.
-
-
-SPRITE SPACE
-
-Sprite space is the area of memory containing the previously defined sprites. The variable SPST holds the address of the start of sprite space, so SPST should never be loaded with a new value unless a COLDC command is being executed, or you're quite sure you know what you're doing!! SPND points to the first free byte after ;~prite space. SPtvU should never 6e higher than FPFO Hex if routines are being executed in Background.
-
-
-PIXEL DATA
-
-For those not xluainted with the workings of the Spectrum screen display, each character on the screen is produced as follows: each character cell is an array of 64 (8 by 8) pixels. A pixel is a'dot' which can be NK colour or PAPM colour. The bytes which define a particular character or block of characters are referred to as pixel data.
-is
+Try:    12 D

@@ -19,7 +19,7 @@ If we had rode the F1 to F4 variables, we could have controlled the background p
 Saretlmes, controlling the frequencies of events is not sufficient and phase infornntion needs to be introduced. In the previous exanQle, values of 0, 100, 200, 300 and so an cause all four events. Supposing '.+e wanted to mintain these frequencies, but change the order in %bich the words execute - We need to introduce the concept of phase.
 
 In this exaotple we need four more constants, so type:
-FORGET II2UN <CR>	. 31 CONSTANT F!!1 5 CCKSI'M1P PF72 0 CONSTANT PB3 3 C17l5TAN!' F!i4 <CR> 69
+FORGET II2UN <CR>    . 31 CONSTANT F!!1 5 CCKSI'M1P PF72 0 CONSTANT PB3 3 C17l5TAN!' F!i4 <CR> 69
 rj,w type:
 
 : IRON ICNT @ DUP DUP DUP <Q2>

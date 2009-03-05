@@ -1,32 +1,32 @@
 # TODO: Remove this comment once this file has been proofread
 
-U/	`d ul -- '>z "3
+U/    `d ul -- '>z "3
 
 Leave the unsigned reminder u2 and unsigned quotient u3 from the unsigned double dividend ud sod nsigned divisor ul.
-UNTIL	f - (run-time)
-addr n -- (compile)	P,C2,LO
+UNTIL    f - (run-time)
+addr n -- (compile)    P,C2,LO
 Occurs within a colon-definition in the form:
 BEGIN ... UNTIL
-At run-time, LNPIL controls the conditional branch back to the corresponding BEGIN. If f is false,	execution returns to just after HEGIN, if true, execution continues ahead.
+At run-time, LNPIL controls the conditional branch back to the corresponding BEGIN. If f is false,    execution returns to just after HEGIN, if true, execution continues ahead.
 
 At ornpile-tJme, UNTIL compiles (OHtANCN) and an offset from HERE to addr. n is used for error tests.
 UPDATE
 
 Marks the most recently referenced block (pointed to by PREV) as altered. The block will subsequently be transferred to disc should it's buffer be required for storage of a different block.
-USE	- addr
+USE    - addr
 
 A variable containing the address of the block buffer to use next, as the least recently written.
-USER	n -
+USER    n -
 A defining word used in the form:
 n lb'Ht occc
 which creates a user variable cccc. The parameter field of oroc contains n as a fixed offset relative to the user pointer register UP for this upper variable. Where occc is later exec.vted, it places the am of it's offset and the user bane address on the stack, as the storage address of that particular variable.
-VARIABLE	E, U)
+VARIABLE    E, U)
 A defining word used in the form:
 n VARIABLE occc
 When VARIABLE is executed, it creates the definition cccc with its parameter field initialised to n. When cooe is later executed, the address of its parameter field (containing n) is left on the stack, so that a fetch or store my access this location.
-VOC-LINK	addr	U
+VOC-LINK    addr    U
 A user variable containing the address of a field in the definition of the =at recently created vocabulary. All vocabulary names are linked by these fields, to allow control for xZSGE1'tirg through multiple vocabularies.
-VOCABULARY	E,L A defining word used in the form:
+VOCABULARY    E,L A defining word used in the form:
 IOCAHrtARy cocc
 to create a vocabulary definition anc. Subsequent use of ooec will make it the O()fJCPJCC vocabulary which is searched first by INTERPRET. The sequence ^occc
 rEFINI'PIIX1S" will also make cccc the CURR&NP vocabulary, into which,
@@ -35,15 +35,15 @@ definitions are placed.
 In Pig-FORTH, cccc will also 6a chained so as to include all definitions of the vocabulary in which ttvc is itself defined. All vorahilarles ultimately chain to Forth. By convention, vocabulary names are to 6e declared A}EpU7R. Ss '.CC-LINK.
 VLIST
 List the names of the definitions in the context vocabulary. Pressing •e(rk• will terminate the listing.
-WARNING	- addr	U A user variable, containing a value controlling messages.
+WARNING    - addr    U A user variable, containing a value controlling messages.
 If - 1 disc is present, and screen 4 of drive 0 is the base location foe noeeeq„e, If ~ 0, no disc is present and messages will he presented by number. If -.1. execute (ABORT) for a user specified procedure. See .,SAGE, ERROR, ApINr,
-WHERE	nl n2 -
+WHERE    nl n2 -
 If an error occurs during LOAD fran disc, ERROR leaves these values on the stark to show the user where the error occurred. WHERE uses these to print tho ecreen and line number of where this is.
-WHILE	f - (run_tim)
-addrl rd -- addrl nl addr2 n2	P,C2 ~~urs in a colon-definition in the form:
+WHILE    f - (run_tim)
+addrl rd -- addrl nl addr2 n2    P,C2 ~~urs in a colon-definition in the form:
 BEGIN ... WHILE (tp) ... REPEAT
 At run-tima, MILE. selects conditional execution based on 1»olean flag f. If f 1 true (ron-zero), MILE cvntinues execution of the true pert through to REPEAT, which then branches back to BEGIN. If f is false (zero), execution skips Oo just after REPEAT, exiting the strtuture.
-At ocapile time, MILE aQlaces (0>lRANk7i) and leaves addr2 of the reserved offset. The stack values will 6e resolved by REPEAT. WIDTH	U
+At ocapile time, MILE aQlaces (0>lRANk7i) and leaves addr2 of the reserved offset. The stack values will 6e resolved by REPEAT. WIDTH    U
 In Pig-OATH, a user variable containing the maximum number of letters saved in the m,vilatlon of a definitions ree:ne. Lt must 6e 1 through to 31, having a default value of 31. The natiw character count and its natural characters are saved, up to the value of 'WIDTH. 71i value my 6e changed at any time within the
 -above limits.
 1)6

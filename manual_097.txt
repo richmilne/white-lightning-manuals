@@ -1,6 +1,6 @@
 # TODO: Remove this comment once this file has been proofread
 
-;CODE	p't'Lo
+;CODE    p't'Lo
 .
 ikod in the form:
 : cccz .... ;00C'
@@ -12,15 +12,15 @@ occc ruvin
 the word mnn will he created with its execution proc,lure given by the machine
 t~
 code following cccc. '[hat is, when nnnn is executed, it does so 'vI jumping oode alter MM. M existing defining word must exist in occc prior to ;CODE.
-:5	P, LO
+:5    P, LO
 Stop interpretation of a screen. ;S is also the run-time word amq)Slod at the end of a mlon-definition, which returns execution to the calling procedure.
-<	nl nZ -- f	if)
+<    nl nZ -- f    if)
 
 Leave a true flag if rd is less than n2; otherwise leave a false flag. <1
 
 Setup for pictureA numeric output formatting using the words: <t 1 AS SIGN A>
 The conversion s done an a double number producing text at PAD.
-<BUILDS	C
+<BUILDS    C
 Used within a colon-definition:
 : ooc,•c cB'JT7176 ....
 [AE5>
@@ -28,29 +28,29 @@ Each time occc is executed, <HUTLDS defines a new word with a high level executi
 mcc nnM
 uses <BJCLO6 to create a dictionary entry for nnnn with a call to the DOES part for nnnn. When nnM is later executed, it has the address of its parameter area
 on the stack and executes the words after OOFS> in oeoc. <9JII176 and DUfS> allow run-time procedures to be written in high level, rather than in assembler ccde (as required by ;NO[:).
-a	nl n2 - f
+a    nl n2 - f
 ),,we a[iue flag if n1-n2 otherwise leave a false flag.
->	nl n2 -- f	LO
+>    nl n2 -- f    LO
 .
 Leave a true flag if rd is greater than n2 otherwise leave a false flag.
 5l
-n -	C,M rINNOW
+n -    C,M rINNOW
 ..nve a number fra° the o:aQutati°n stack and place as the most accessible m the -'IM stack. Use Should be balanced with R> in the same definition.
 addr -
 Int the value contained at the address in free format, according to the cvrrent :OMP
 sue errorr massage if not compiling. SP
-sue error message if stack position differs Iran value saved in (Sp. RROR	f n -
+sue error message if stack position differs Iran value saved in (Sp. RROR    f n -
 s')e an error massage number n, if the boolean flag is true. SEC
 aue an error irt+ssage if not oxewting. )ADINO
 ue an error wasage if not loading.
-'PAIRS	nl n2 -
+'PAIRS    nl n2 -
 .•ue an error message if nil do.~s not equal n2. The massage indicates that
 -Piled conditionals do not match.
 TACK
 ~ue an error message if the stack is out of bourx3s,
-'~iRMINAL•	-_ f
+'~iRMINAL•    -_ f
 -'-orm a test of the terminal keytn.:rd for actuation of the break
-~i indicates actuation.	key. A true
+~i indicates actuation.    key. A true
 - n
 in
 i-we the 16 bit contents of add-ss.

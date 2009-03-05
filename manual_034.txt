@@ -1,80 +1,57 @@
 # TODO: Remove this comment once this file has been proofread
 
-.y_ :L`RGLl' EXAMPLE witl 6=~le`..a the ward t7(?MPLE (if it exists) alony with any .~'.n..r .c;c1s defined aft.-r it.
+P    Put the following text on the line number held on the stack, by
+    overwriting its present contents.
+INS    INSert the text from PAD to the line number held on the stack. The
+    original and subsequent lines are moved down by 1, with the last
+    line being lost.
+EDIT    Works just like the normal Sinclair line editor. Also, it does an
+    automatic LIST and an automatic FLUSH. This is far and away the
+    best way to edit and the above are included only for compatibility
+    with existing Forths.
+CLEAR    Clear the screen number held on the stack and make it the current
+    screen.
+WHERE    If an error occurs during the loading of White Lightning's text
+    screens, then keying in WHERE will result in the screen number and
+    the offending line being displayed. You can now use the other
+    editing commands to edit the screen, or you may move to another
+    screen by either LISTing or CLEARing it.
+
+. 15 LIST will raw make screen 15 the current screen and will list the      cnts.
+
+In order to compile this screen into the dictionary, it is necessary to
+use the word LOAD.
 
 
-VLIST	: This is Just typed in :as a s_nyle word with no parameters. IC will cause a list of all the words defir-3 so far; pressing WEAK (CAPS SHIFT li SPACE as in BASIC) will stop the listing.
+LOAD
 
+This will start loading at the screen number held on the top of the stack
+and will stop at the end of the screen.
 
-LOAD	: This will compile the source code that you have created using the editor into the White Lightning dictionary, to bemra ~w Lightning words. Loading will terminate at the end of a screen r at the Forth ward ;S unless the "conti.nue loading" ward -> is used at the end of a screen. The idea of the screen will became obvious in the next section on editing.
+If you wish to continue and LOAD
+the next screen, the current screen must end with --> ; 
 
+this means
+"continue loading and interpreting". 
 
-USING THE EDITOR
+If you wish to stop the LOADing
+anywhere in a screen then use ;S 
 
-Generally speaking, most users will want to use the Spectrum editor to type and	, edit the source, but a full Forth line editor is included for compatibility with existing texts. The maximum length of any line is 64 characters. AM, characters • after this will be ignored.
+this means "stop loading and
+interpreting".
 
-Line Editor	'
+At the end of every editing session, and before saving your text, it is
+necessary to FLUSH the memory buffers into the text area. To do this, just
+key in:
 
-included in this version of White Lightning is a line editor to enable you to create source or text files. To facilitate text editing, the text is organised into blocks of 512 byfiss, divided into B lines of 64 characters. Once the text has been Edited, it may then lc oanpihsl into the White lightning dictionary and the text, if required, can be saved to tape. The text is stored in rtemory in the pages at C000 to F000, therefore, you can edit into screens 1 to 23. If the background facility is utilised, text is stored fran CC00 onwards in screens 6 to 23, and screens 0 to i cannot be used.
+FLUSH [CR]
 
-Here is a list of the editor commands and their descriptions:
+Note that the EDIT command does an automatic FLUSH.
 
+You can save your text to tape using the Spectrum 'SAVE' command. You must
+first enter BASIC by typing PROG [CR] .
 
-•	: This will Hold the text pointed to by the top number on the stack of the current screen in a temporary area known as PAD.
+Now for an example of how to edit a text file.
 
-e.g. 4 H will hold line 4 of the current screen in PAD.
-
-
-•	: Pill (Spread) the line number at the top of the stack with blanks, and shift down all subsequent lines by 1, with the last line being lost.
-
-e.g. 6 S will fill line 6 with blanks and move all other lines down by one, pushing the last line off the screen.	i
-
-
-•	. Delete the line number held on the stack. All other lines are moved up by 1. The line is held in PAD in case it is still needed. Line 7 cannot be deleted.
-
-
-•	. Erase the line number at the top of the stack by filling it with spaces.
-
-
-RE	. REplace the line number at the top of the stack with the line . currently held in PAD
-33
-,	. Put the following text on the line number held on the stack, by overwriting its present contents.
-
-
-. iNSert the text from the PAD to the line number held on the stack. The original and subsequent lines are moved down by 1 with the last line being lost.
-
-
-~1,11	Works just like the normal inclair line editor. Also, it does an automatic list and an autamtic flush. This is far and away the best ,,ay to edit and the above are included only for ccrrl;atibility with existing Forths.
-
-
-2a EAR : Clear the screen number held on the stack and make it the current screen.
-
-
-If an error occurs during the loading of White Lightnir.y's text screens, then keying in 4P1tE will result in the screen number and
-the offending line being displayed. You can now use the other editing ccmiar.ds to edit the s,^.rr_en, or you my mow to another screen by eaher t.ISTing or C[.EA[tiny it.
-
-. 15 LIST will raw make screen 15 the current screen and will list the  	cnts.
-
-In order to -Vile this screen into the dictionary, it is necessary tx, use the ward IIiAD.
-
-
-icJ11D
-
-')'his will start loading at the screen number held on top of the stack and will ~mp at the end of the screen.
-
-[f you wish to continue and [DAD the next screen, the current screen must end with "'his means "continue loading and interpreting". If you wish to stop the iDADirry anywhere in a screen then use: ;S
-
-'~his means "stop loading and intemreti.ng".
-
-At the end of every editing session, and before saving your tn.act, it is necessary to PLIES the n-ury Fbuffers into the text area. To do this, just key in
-
-FLUSH <CR>
-
-Note that the FAIT cortrend does an autanatic FLl6H.
-
-You can save your text to tape using the Spectrum 'S4Vli' camend. You must first enter BASIC by typing PRCX' <Ch> .
-
-N~w for an example of how to edit a text file:
-
-aw_ first step is to either LIST or CLEAR the screen about to be worked on:
-34
+The first step is to either LIST or CLEAR the screen about to be worked
+on:

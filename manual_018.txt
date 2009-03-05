@@ -1,56 +1,65 @@
 # TODO: Remove this comment once this file has been proofread
 
-Now one of the interesting properties of the logical XOR, is that if the operation 1 is repeated, the original character is restored - to mend the Robot:
-
-1. Press P(PUT) and enter 3 - a fully restored Robot!
-
-
-Well, there you have it. In fact, the only functions remaining that have not been covered by an example are:
-
-1. Relocate Sprites f<(SYMBOL SHIFT R) ).
-
-2. Save sprites to Tape ( NOT (SYMBOL SHIFI' S) ). 3. Load Sprites from Tape (-(SYMBOL SHIFT j)
-
-The "Relocate Sprites" does simply that, it relocates sprites in memory. Just enter a relocation length - positive to move srites to higher memory and negative to move sprites to lower memory. This function is not often used in fact and should be used with great care!
-
-The "Save Sprites" function is very straight forward - just follow the screen instructions. After the sprites have been saved you will be asked to rewind the tape to verify the saved data.
-
-The "Load Sprites" function is similar to the above - just follow the screen instructions.
-
-It should be noted that whenever sprites are saved or loaded, there are 3 distinct sets of data which the generator stores and retrieves.
-
-
-CONCLUSIONS
-
-Well, there's nothing to stop you now! Going through the examples will help you to familiarise yourself with all of the Function Keys. It won't be long before you'll be happy to press on by yourself - happy sprite generating.l
-
-The thing to do now, is to press m with Spectra Forth and IDEAL, these really we not as frightening as they may first appear - after seeing the demo program, what more incentive do you need
-17
 SECTION 2
 
-SPECTRA FORTH by Stuart Smith
+SPECTRA FORTH
+by Stuart Smith
 
 
-Forth is an extraordinary computer language developed originally for the control of Radio Telescopes, by an American named Charles Noore.
+Forth is an extraordinary computer language developed originally for the
+control of radio telescopes, by an American named Charles Moore.
 
-Forth is neither an interpreter nor acompiler, but combines the best features of both to produce a super-fast, high level language, incorporating the facilities offered by an interactive interpreter and the speed of execution close to that of machine-code. In order to achieve these fantastic speeds, Forth employs the use of a data, or computation stack, on which to hold the data or the operations to be performed, coupled with the use of Reverse Polish Notation (RPN). This my be quite a mouthful, but RPN is very easy to use and understand with only a little practice - in fact, Hewlett Packard use RPN on many of their calculators.
+Forth is neither an interpreter or a compiler, but combines the best
+features of both to produce a super-fast, high-level language,
+incorporating the facilities offered by an interactive interpreter and the
+speed of execution close to that of machine code. In order to achieve
+these fantastic speeds, Forth employs the use of a data, or computation,
+stack, on which to hold the data or the operations to be performed,
+coupled with the use of Reverse Polish Notation (RPN). This may be quite a
+mouthful, but RPN is very easy to use and understand with only a little
+practice - in fact, Hewlett Packard use RPN on many of their calculators.
 
-All standard Forths use integer arithmetic, for their operations and can handle up to 32 bit precision if required - floating point mathematics routines could be incorporated, but with a reduction in the execution speeds of a program.
+All standard Forths use integer arithmetic for their operations and can
+handle up to 32-bit precision if required - floating point mathematics
+routines could be incorporated, but with a reduction in the execution
+speeds of a program.
 
-White Lightning consists of a standard Fig-Forth model, but with over 100 extensions to the standard vocabulary of Forth words. There we to;o important extensions to White Lightning: the first is the ability to access almost ALL of the Spectrum's own BASIC commands, just as you would when writing a BASIC program, and with the addition of many of the high resolution graphics commands (CIRCT.E, DRAW, etc.). Coupled with the incredible execution speeds of White Lightning, the possibilities are limitless! The second, and possibly most important addition, is the IDEAL sub-language.
+White Lightning consists of a standard Fig-Forth model, but with over 100
+extensions to the standard vocabulary of Forth words. There are two
+important extensions to White Lightning; the first is the ability to
+access almost all of the Spectrum's own BASIC commands, just as you would
+when writing a BASIC program, and with the addition of many of the high
+resolution graphics commands (CIRCLE, DRAW, etc). Couple with the
+incredible execution speeds of White Lightning, the possibilities are
+limitless! The second, and possibly most important, addition is the IDEAL
+sub-language.
 
-In addition to the basic vocabulary of White Lightning words, the user can very easily A00 his own NEW FAROS using previously defined words, thus extending the vocabulary and building up as complex a word as is necessary to do the task in hand.
+In addition to the basic vocabulary of White Lightning words, the user can
+very easily add their own new words using previously defined words, thus
+extending the vocabulary and building up as complex a word as is necessary
+to do the task in hand.
 
-Fully structured programming methods are also employed as a fundamental feature of Forth through the use of the structured control sequences included, such as
+Full structured programming methods are also employed as a fundamental
+feature of Forth through the use of the structured control sequences
+included, such as:
+IF ... ELSE ... ENDIF
+DO ... UNTIL
 
-IF 	ELSE 	P1NDIr^
-DO 	UNTIL
+The standard Spectrum editor can be used to create lines of White
+Lightning source code for later compilation. Do not allow lines to exceed
+64 characters - any characters after this are ignored. The standard Forth
+line editor is included for compatibility with existing text. The source
+code is stored in memory from $CC00 onwards, and can be LOADed or SAVEd to
+tape as and when required. Once the source code is complete, it may then
+be compiled into the White Lightning dictionary for later execution.
 
-The standard Spectrum editor can be used to create lines of White Lightning source code for later compilation. Do not allow lines to exceed 64 characters - any characters after this are ignored. The standard Forth line editor is included for compatibility with existing text. The source code is stored in memory from SCCOO onwards, and can be iAADed or SAVEd to tape as and when required. Once the source code is -uq.,lete, it my then be compiled into the White Lightning dictionary for later execution.
+Included in this documentation is a glossary of Fig-Forth terms (courtesy
+of the Forth Interest Group, PO Box 1105, San Carlos, CA 94070).
 
-Included in this dxtimentation is a glossary of Fig-Forth terms (courtesy of the FORTH INTEREST CI20UP,P0 BOX 1105, SAN CARLOS, CA 94070).
+Spectra Forth was written by Stuart Smith, the author of the extremely
+successful DragonForth, and is an enhancement of a program written by the
+Forth Interest Group - to whom we offer our thanks.
 
-Spectra Forth was written by Stuart Smith, the author of the extremely suc~cssful t7iM3JNFURTH, and is an enhancement of a program written by the Forth Interest Group - to whom we offer our thanks.
-
-At the time of writing, floppy discs are not readily available for the Spectrum and instructions referring to discs should be interpreted as accessing RAM.
-18
+At the time of writing, floppy discs are not readily available for the
+Spectrum, and instructions referring to discs should be interpreted as
+accessing RAM.

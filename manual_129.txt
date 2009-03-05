@@ -1,63 +1,58 @@
 # TODO: Remove this comment once this file has been proofread
 
 SOME SIMPLE PROGRAMMING EXAMPLES
-Example l
-To scroll a window at row 8, Column 9, 5 characters high by 10 characters long, 1 pixel to the left with wrap - type:
-: D741 5 KIT ! 10 LEN ! 8 RON ! 9 WL I hRi,lV :<(R>
-To put sane data on the screen type: VLTSf <Q2> Ib scroll the wind- 100 times type:
-: DFM2 100 0 DD DE11 lAOP : C(S2> DFS12 <(7i>
-To execute pFMl in background type: ' "l INT-ON «5i>
-To halt the background execution of D041 type: INT-0FF <62>	. Example 2
-To scroll a window at culture 12, row 3, 10 characters high, and 5 characters wide,
-downward by 3 pixels with wrap - tyPs:
-: DtI43 10 MT ! 5 LEN !-3 NPX ! 2 ROW ! 12 OJL I 4LRV ;«72> to define the word, then OFM3 «7i> to execute it. To run DQ43 in background type:
-, OQ43 INT-ON <Qi>
-To halt the background execution type: INTOFF <Qi> Example 3
-To invert a window at culture 10, row 5, 4 characters high and 4 characters wide - type:
-: DFM4 4 7GT ! 4 LEN ! 5 ROW -' 10 OOI' I MW :«>
-and then EW4 <Q2> to execute.	.
+
+
+Example 1
+
+To scroll a window at row 8, column 9, 5 characters high by 10 characters
+long, 1 pixel to the left with wrap:
+: DEM1 5 HGT ! 10 LEN ! 8 ROW ! 9 COL ! WRL1V ;
+
+To put some data on the screen:
+VLIST
+
+To scroll the window 100 times:
+: DEM2 100 0 DO DEM1 LOOP ;
+DEM2
+
+To execute DEM1 in background:
+' DEM1 INT-ON
+
+To halt the background execution of DEM1:
+INT-OFF
+
+
+Example 2
+
+To scroll a window at column 12, row 3, 10 characters high and 5
+characters wide, downward by 3 pixels with wrap:
+: DEM3 10 HGT ! 5 LEN ! -3 NPX ! 2 ROW ! 12 COL ! WCRV ;
+to define the word, then:
+DEM3
+to execute it.
+
+To run DEM3 in background:
+' DEM3 INT-ON
+
+To halt the background execution:
+INT-OFF
+
+
+Example 3
+
+To invert a window at column 10, row 5, 4 characters high and 4 characters
+wide:
+: DEM4 4 HGT ! 4 LEN ! 5 ROW ! 10 COL ! INVV ;
+and then:
+DEM4
+to execute.
+
+
 Example 4
-it is not always necassary to use color, definitions to achieve a particular result. To PUT sprite 34 (If you',Je got the Demo sprites loaded or have already defined your own sprite 34) at row 5, eolum 6, and replace any data currently ar.
-I
-that position - type:
-34 SpN ! 5 ROW ! 6 COL I P(71B15 <(R>	'
-129
-E xempls 6
 
-:ften it is useful to define a word which carries out an operation that is used -rec7uaitly and which saves typing - for instance:
-
-: uFMS COL ! ROW ! SPN I pVPg1S i
-
-~.f we wanted to carry out the simple PUT cuimand in example 4 all we'd need to Lype would be:
-
-A 56CE515
-
-
-Example 8
-
-"ro scroll sprite 29 in memory by 1 pixel to the right with wrap and PUP it on the ,creen at row 10, co1u¢m ll- use:
-
-: DFM6 29 SPN 1 10 ROW ! 11 ODL I 4II2RlM PVl'BIS ; To run OE(6 in background use: 'DES!6 iNP-ON
-
-
-Example 7
-
-To fill a screen window, at column 17, row 5, 5 characters long and 10 characters high, with the attributes - 6 INK, 2 PAPER and 1 FLASH - use the following:
-
-: IXM7 1 FLASH 6 INK 2 PAPER 10 FI'.T 1 5 LEN ! 13 ROW ! 17 COL I SElAV 0 FLASH 7
-
-INK 1 PAPER Example 8
-
-change the green face of sprite 28 into a red one use: : DEMB 28 SPN ! 2 INK ! 1 H2IGHT 0 PAPER SLTAM PSII'BIS ;
-
-
-Example 9
-
-tb pick a random number between 0 and 100 use: : DFM9 100 PND . ;
-Example 10
-To pick a random INK colour and change sprite 34's INK colour to this eolour, and then put it at column 10, row 10 use:
-
-: Ok2410 7 RND Ita'K 34 SPN ! SEPPM 10 ROW ! 10 COL ! PUTBLS ;
-
-To cun [4M10 in background me: ' DFMlO INP-0N and to halt C£110 use LVPOFF.
-730
+It is not always necessary to use colon definitions to achieve a
+particular result. To PUT sprite 34 (if you've got the demo sprites loaded
+or have already defined your own sprite 34) at row 5, column 6, and
+replace any data currently at that position:
+34 SPN ! 5 ROW ! 6 COL ! PUTBLS

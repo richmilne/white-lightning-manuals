@@ -2,88 +2,56 @@
 
 THE WHITE LIGHTNING ARCADE
 GRAPHICS LIBRARY
-ARCADE CHARACTER NUMBER
 
-1- 8	Asteroids Space Ships
-9- 11	Asteroids
-)Z	Asteroids Flying Seucer 13- 20	P
-21- 22	Pac-Men Ghosts
-23- 25	Fruit
-26- 33	Pac-Mm Maze Parts
-34- 44	Assault Course type games
-{5_ 54	Defender type 9eme8
-55- 62	Dafeder type landscapes
-63- 67	Space Invaders
-68- 70	Space Invader Bases
-71- 74	space Invader Guns etc.
-75- 84	City Bun6er type geess
-85- 88	Inmar Tarx)r•r type gazes
-B9_ 98	Frogger type gazes
-99-107	Centipede type games
-108-L17	War type game
-118-130	Donkey R°^9 type 99006
-131-136	Space War type gaff"
-137-141	0wlosione
-142-148	&M-Eyed monsters 149-152
-153-158	A&~nture type games Treaware 159-167	Zaps
-WHITE LIGHTNING DEMONSTRATION
-SPRITE LIBRARY
-SPRITE	DESCRIPTION	INK PAPER LENGTH HEIOHI
-NUM/ER	COL COL
-1	'd[M'n;E CAR	4	0	4	2
-2	,, ;,II	5	0	4	2
-3	6	0	4	2
-4 ~	6 0	3	3
-5	DANCER	7	0	2	4
-ROCKET	5	0	4	2
-7	SPIDER 11	5	0	4	S
-E SPIDER 12	5 0 4 5
-9	TOP OF TRAIN	4	0	ll	2
-10	RAILWAY TRACK	6	0	8	1
-11	34AIL YATy	1,5	7	4	1
-12	OASIS LOGO	5,7	0	12	12
-13	T. V.	2
-14	TOP OP PAIllW' COACH	5	0	1	2
-15	SPACE SHIP	0	7	4 4	1 16	StiA00N or SPACE SHIP
-p
-17	LARGE f1U1,	2,7	7	8	2
-18	TRAIN WHEELS A1	4,7	0	11	1
-19	'piAZN WHIMS 12	4,7	0	11	1
-20	TRAIN WEIEEIS {3	4,7	0	11	1
-21	TRAIN WHEELS 44	4,7	0	ll	1
-22	RAILWAY COACH A1	7	0	10	1
-23	RAB1Ay COACH A2	7	0	10	1
-24	n1VADat 0D83REE6	6	0	2	2
-25	Il1Vl132R 90 f87tES	6	0	2	2
-26	INVADER 180 OElitJ685	6	0	2	2
-27	INVADER 270 >BC;~	6	0	2	2
-28	PACE WITH HAT 11	4	0	4	3
-29	FACE WITH HAT A2	4	0	4	3
-30	WHITE,	5,7	0	7	2
-31	ILIGR,NT,,'	5,7	0	10	2
-32 LIGHTNING BOLT	5 0	13	4
-33	CRAB	4,7	0	5	3
-34	uIM IANDE+	7	0	6	4
-35	RAW 41	7	0	2	1
-36	RAW 12	7	0	2	1
-37	RADAR A3	7	0	2	1
-38	RADAR 04	7	0	2	1
-39	RADAR 45	7	0	2	1
-40	RADAR 46	7	0	2	1
-41	RADAR $7	7	0	2	1
-42	RADAR t8	7	0	2	1
-43	0KPfa6I0N	7	0	2	2
-44	UMR SURFACE	6	0	1S	1
-45	ROTATING BRLL A1	6	0	4	4 46 ROTATING SELL A2 6 0 4 4
-47	ROTATIAG HALL 03	6	0	4	4
-48	ROTATING BALL 14	6	0	4	4
-49	c7.IX;KPIOtt1( TOYS 11	4	0	3	12
-SO	CLOCKWORK TOYS 12	4	0	3	12
-59	"TRY THIS,	4	0	8	1
-'~'D~"	4	0	8	1
-61	:WITHOUT.	5	0	5	1
-Z51	BDONCIIC BALL #1	0	6	3	3
-252	BOl1CING BALL A2	0	6	3	3
-253	®IM:ING BAIL A3	0	6	3	3
-254	IDIWCING BALL 04	0	6	3	3
-yo
+ARCADE CHAR-
+ACTER NUMBER
+
+  1-  8        Asteroids space ships
+  9- 11        Asteroids
+     12        Asteroids flying saucer
+ 13- 20        Pac-Man
+ 21- 22        Pac-Man ghosts
+ 23- 25        Pac-Man fruit
+ 26- 33        Pac-Man maze parts
+ 34- 44        Assault Course-type games
+ 45- 54        Defender-type games
+ 55- 62        Defender-type landscapes
+ 63- 67        Space Invaders
+ 68- 70        Space Invaders bases
+ 71- 74        Space Invaders guns, etc
+ 75- 84        City Bomber-type games
+ 85- 88        Lunar Lander-type games
+ 89- 98        Frogger-type games
+ 99-107        Centipede-type games
+108-117        War-type games
+118-130        Donkey Kong-type games
+131-136        Space War-type games
+137-141        explosions
+142-148        bug-eyed monsters
+149-152        robots
+153-158        Adventure-type games treasure
+159-167        zaps
+
+
+WHITE LIGHTNING
+DEMONSTRATION SPRITE LIBRARY
+
+
+SPRITE  DESCRIPTION            INK    PAPER  LENGTH   HEIGHT
+
+  1     vintage car             4       0       4       2
+  2     van                     5       0       4       2
+  3     dragster                6       0       4       2
+  4     duck                    6       0       3       3
+  5     dancer                  7       0       2       4
+  6     rocket                  5       0       4       2
+  7     spider #1               5       0       4       5
+  8     spider #2               5       0       4       5
+  9     top of train            4       0      11       2
+ 10     railway track           6       0       8       1
+ 11     small wall             1,5      7       4       1
+ 12     Oasis logo             5,7      0      12       4
+ 13     T.V.                    2       0      15      12
+ 14     top of railway coach    5       0      10       2
+ 15     space ship              0       5       4       2
+ 16     shadow of space ship    5       7       4       1

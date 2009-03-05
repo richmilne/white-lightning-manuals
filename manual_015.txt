@@ -4,7 +4,7 @@ A) SPRITE HEIGHT = 2 B) SPRITE (.e:w,,TH = 2
 C) SPRITE KASBER = 19
 D) DR40RY LEFT = The remaining memory for sprites.
 
-E) SPRITE	= Start address of sprite being tested.
+E) SPRITE    = Start address of sprite being tested.
 
 A function is provided to Wipe a sprite from savory and adjust pointers. Leave everything as it is and try:
 

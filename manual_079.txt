@@ -2,60 +2,59 @@
 
 PROGRAM DEVELOPMENT
 
-At any one time, there are up to five areas of development: Forth source code, BASIC source code, sprites, the Forth language itself and finally, the orn?Piled and completed program.
+At any one time, there are up to five areas of development: Forth source
+code, BASIC source code, sprites, the Forth language itself, and finally
+the compiled and completed program.
 
 
-Forth Souras
-As previously discussed under the section on editing, Forth Source is divided into screens, each of 512 bytes in length. Each screm can be individually loaded, saved and crnpiled in any order required. Screens can wen be saved and then loaded back into different screens. The real advantage of this comes when you're writing really large programs. As sprite space becomes large, it will work down over the higher screens and this can be clearly seen when an attempt is made to List thaa. Don't CLEAR these screens or the sprite data will be lost!
+Forth Source
 
-If really large programs are required and Writes have over-nut the top screens, then programs can be compiled a few screens at a time, loading each time into the available screens, eamlling and then loading the next section. Of course, you don't need to Wed the sprites until compilation is omplete, but it's useful to have the facility just in case.
+As previously discussed under the section on editing, Forth source is
+divided into screens, each of 512 bytes in length. Each screen can be
+individually loaded, saved and compiled in any order required. Screens can
+even be saved and then loaded back into different screens. The real
+advantage of this comes when you're writing really large programs. As
+sprite space becomes large, it will work down over the higher screens, and
+this can be clearly seen when an attempt is made to List them. Don't CLEAR
+these screens or the sprite data will be lost!
 
-To save Forth source you'll need to mnsult Table 1, the table oC Screen Addresses. If, for instance, you wanted to save screens 6 to 11, then the start
-address would be 52224 decimal and the length, just 6 times A2. Type 6 512 * <CR> to find this figure, which is 3072. 1b save the source, type PROG to enter BASIC end then type:
+If really large programs are required and sprites have over-run the top
+screens, then programs can be compiled a few screens at a time, loading
+each time into the available screens, compiling and then loading the next
+section. Of course, you don't need to load the sprites until compilation
+is complete, but it's useful to have the facility just in case.
 
-SAVE "filename" OODE 52224,3072
+To save Forth source you'll need to consult Table 1, the table of screen
+addresses. If, for instance, you wanted to save screens 6 to 11, then the
+start address would be 52224 decimal, and the length just 6 times 512.
+Type 6 512 * . [CR] to find this figure, which is 3072. To save the
+source, type PROG to enter BASIC and then type:
+SAVE "filename" CODE 52224,3072
 
-To re-enter White Lightning, type PRINT CSit 24836 to do a WAtal start.
+To re-enter White Lightning, type PRINT USR 24836 to do a WARM start.
 
-To Load the source, either type Y in response to the IDAD 90UtCE Y/N prompt at the beginning of the session, or exit to BASIC using PROG, then type:
+To load the source, either type Y in response to the LOAD SOURCE Y/N
+prompt at the beginning of the session, or exit to BASIC using PROG, then
+type:
+LOAD "filename" CODE
+where filename is optional.
 
-I1ND "filename" CODE	where filename is optional.
+If you want to load the code into a different screen area from that in
+which it was saved, type:
+LOAD "filename" CODE start,length
+where 'start' is the address of the screen to be loaded, and 'length' is
+the number of screens to be loaded multiplied by 512. Again, White
+Lightning should be re-entered with a PRINT USR 24836. Do not use
+RANDOMIZE USR 24836 or an OUT OF SCREEN error may occur.
 
-If you want to Load the opde into a different screen area from that in which it was Saved, type:
 
-LOAD "filename" CODE start, length
-where start is the address of the screen to be loaded, and length is the number of screens to be loaded multiplied by 512. Again, White Lightning should he re-entered with a PRINT lSR 24836. W not use R1bMISE CSR 24836 or an OUI OF 93E327 error may occur.
+BASIC Source
 
-
-BASIC $*.rw
-Before BASIC source can he used in White Lightning program, the user mot execute a RESERVE to make space for the BASIC program. To reserve, for example, 1K, cypes Df7CII4AL 1024 RESERVE. This will allocate 1024 bytes for BASIC source code within the dictionary. If at some later stage you execute a second reserve the previous 1024 bytes are not reclaimed, so if you find you have not allocated enough space. Save the BASIC source, FDRGEI all previous definitions, execute a WLD 3cART, and start the compilation from scratch. You can now do a second RESERVE.
-79
-++vn BASIC source, type PRIG <CR> to enter BASIC if you're not already there, r. iust type SAVE "filename" as normal and re-enter White Lightning with PRINT i~ 24836. Likewise, source can be reloaded by entering BASIC with a PROG, using
-.rt10 "filename" and then re-enterinq Forth with a PRINT L6R 24836.
-"+M
-r'ritra can he Saved from White Lightning and then re-Lpaded into White Liqhtninq, .t s,-,cites saved by White Liqhtnlnq, cannot be loaded into the sprite develoPnent -ware which requires the additional array information preceedinq sprites which
-,It SAVEd by White Lightning. Sprite develoGmer+t should always be done using .•~3welopnent software, but if you do wish to save the sprites for later merging ~i do the following:
-
-Find the start of sprites by typing SPST p 0.
-
-Find the length to saw h,• typing SpNp @ SpST @- 1+ U.	• Note the start and lenqth, then return to BASIC using PROG. SAVE us inq SAVE -filename- ODDE start, length. Re-enter White Lightning using PRINT [SR 24836.
-. ~ ping Sprkee
-blocks of sprites can be merged together in the min program using the _wing Procedure:
-4ake a note of the SPST and SPND values of the second block to be merged. Those are displayed by the sprite development software.
-
-Wad the min White Lightning Package and then load the first block of sprites in response to the •U)pp SPRITES YIN" prompt.
-
-. Load source as required and once in the min program relocate
-the first block of sprites downwards by the size of the second block. Suppose the decimal values for SPSP and REND of the second block were 60000 and 65280 resPrcaively, then [ype:
-
-utCIMAL 60000 65280 - SPSP @+ p, <Qt>
-
-(The DFY'IhW, is not required if you are already in f>CIIiAI, mode).
-This 'will calculate the new start after relocation. It is well worth
-checking that this will not run ever Your source code, so here is a quick calculation that will tell you if you have enough space.
-You need to know th? highest screen number that you intend to use, for sample screen 18. Type:
-
-IS 512 * 49664 + U. <CR>
-This will print the first free byte after screen 18. So long as this result is lower than the new sprite_ start after relocation you can Proceed. Again, using the Previous example where the block to he merged has SPST and SPND of 60000 and 65280 respectively, the line to type is:
-)ECLW1L 60000 65280 - MLHa ! RELOCATE <CR>
-90
+Before BASIC source can be used in White Lightning programs, the user must
+execute a RESERVE to make space for the BASIC program. To reserve, for
+example, 1k, type: DECIMAL 1024 RESERVE. This will allocate 1024 bytes for
+BASIC source code within the dictionary. If at some later stage you
+execute a second RESERVE the previous 1024 bytes are not reclaimed, so if
+you find you have not allocated enough space, save the BASIC source,
+FORGET all previous definitions, execute a COLD START, and start the
+compilation from scratch. You can now do a second RESERVE.

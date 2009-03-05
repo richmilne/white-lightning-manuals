@@ -1,9 +1,9 @@
 # TODO: Remove this comment once this file has been proofread
 
-Command	Action
+Command    Action
 
-PUTBLS Block move sprite window into screen i PUTORS OR sprite window into screen ' PUTXRS	)OR sprite window into screen
-PUTNDS	AND sprite window into screen
+PUTBLS Block move sprite window into screen i PUTORS OR sprite window into screen ' PUTXRS    )OR sprite window into screen
+PUTNDS    AND sprite window into screen
 
 
 Group 2
@@ -12,27 +12,27 @@ Group 2
 These commands allow operations between sprite windows and screen windows. Unlike Group 1 eomands, there are separate oamunds to move pixel data and attributes, and the ATipN, ATIOFF commands have on effect on tneir cperation. 1W new parameters are introduced to specify the OJLITW and ROW of the top left hand character of the sprite window. In addition, BUT and LEN are required to specify the dimensions of the window for the screen and sprite.
 
 
-Parameters	use
+Parameters    use
 
-COL	Left hand oclumn of target screen window (0 to 31)
-ROW	Top row of target screen window (0 to 23)
-SCpL	Left hand cobra of target sprite window 10 to sprite width -1)
-SROM	'lop row of target sprite window (0 to sprite height -1)
-HOT Height of window LEN Length of window SPH	Sprite number
+COL    Left hand oclumn of target screen window (0 to 31)
+ROW    Top row of target screen window (0 to 23)
+SCpL    Left hand cobra of target sprite window 10 to sprite width -1)
+SROM    'lop row of target sprite window (0 to sprite height -1)
+HOT Height of window LEN Length of window SPH    Sprite number
 
 
-Command	Action
+Command    Action
 
-OWSLB	Get block of pixel data from screen window into sprite window
-OWORS	OR pixel data from screen window into sprite window
-GWXRS	XOR pixel data from screen window into sprite window
-OWNDS	AND pixel data from screen window into sprite window
-GWA7T8	GET block of attribute data from screen window into sprite window
-PWBLS	Alf block of pixel data from screen window into sprite window
-PWORS	OR pixel data from sprite window into screen window
-PWXRB	)Q]R pixel data fran sprite vinda+ into screen window
-PWNOS	AND pixel data from sprite window into screen window
-PWATTS	PUT block of attribute data from sprite window into screen window
+OWSLB    Get block of pixel data from screen window into sprite window
+OWORS    OR pixel data from screen window into sprite window
+GWXRS    XOR pixel data from screen window into sprite window
+OWNDS    AND pixel data from screen window into sprite window
+GWA7T8    GET block of attribute data from screen window into sprite window
+PWBLS    Alf block of pixel data from screen window into sprite window
+PWORS    OR pixel data from sprite window into screen window
+PWXRB    )Q]R pixel data fran sprite vinda+ into screen window
+PWNOS    AND pixel data from sprite window into screen window
+PWATTS    PUT block of attribute data from sprite window into screen window
 Note:
 If the command does not execute, check that the window is not partially off the screen or sprite.
 
@@ -49,24 +49,24 @@ This group, possibly the most useful in the whole set, comprises oanronA• which 
 as those in Group 2 are available and the format for each word is the sarr an In Group 2, except that the oamands are poatfi+oed with an •N• instead of an •t+•. The chief difference to the user lies in the set of parameters. The six* of the data window is set to have the dimensions of the first sprite, and its position in the second sprite is set using the 900L and &;Cw parameters.
 
 
-P-,-~tcr	Lime
+P-,-~tcr    Lime
 
-'Pi	Number of the first sprite
-SP2	Number of the second sprite (containing the window)
-900L	Left hand robin of target sprite window
-SttOW	Top row of target sprite window
+'Pi    Number of the first sprite
+SP2    Number of the second sprite (containing the window)
+900L    Left hand robin of target sprite window
+SttOW    Top row of target sprite window
 
 
-Command	Action
-OWBLM	Block move pixel data from first sprite into window in second sprite
-OWORM	OR pixel data from first sprite into window in second sprite
-GWXRM	NOR pixel data from first sprite into window in second sprite
-GWNDM	AND pixel data from first sprite into window in second sprite OWAT7M Block move attribute data Eran first sprite into window in second
+Command    Action
+OWBLM    Block move pixel data from first sprite into window in second sprite
+OWORM    OR pixel data from first sprite into window in second sprite
+GWXRM    NOR pixel data from first sprite into window in second sprite
+GWNDM    AND pixel data from first sprite into window in second sprite OWAT7M Block move attribute data Eran first sprite into window in second
 sprite
-PWBLM	Block move pixel data from window in second sprite into first sprite
-PWORM	OR pixel data from window in second sprite into first sprite
-PWXRM	NOR pixel data from window in second sprite into first sprite
-PWNDM	AND pixel data from window in second sprite into first sprite PWATTM Block move attribute data from window in second sprite into first
+PWBLM    Block move pixel data from window in second sprite into first sprite
+PWORM    OR pixel data from window in second sprite into first sprite
+PWXRM    NOR pixel data from window in second sprite into first sprite
+PWNDM    AND pixel data from window in second sprite into first sprite PWATTM Block move attribute data from window in second sprite into first
 sprite
 
 Note:
@@ -77,7 +77,7 @@ COPY COMMANDS
 These live wmiards, are in fact a sub-group of the Group 3 c-i"s and allow operations between pairs of sprites with the same dimensions. It is necessary, therefore, to provide only two parameters instead of four.
 
 
-parameter	Use
+parameter    Use
 
-SYl	Nuniber of first sprite
-SV2	Number of second sprite
+SYl    Nuniber of first sprite
+SV2    Number of second sprite

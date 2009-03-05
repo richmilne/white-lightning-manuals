@@ -4,41 +4,41 @@
 
 Executes after an error when WARNING is -1. This word normally executes ABORT, l but ,,,ay be altered (with care) to a user's alternative procedure. See WARNING.
 i
-IDOI	C
+IDOI    C
 
 The run-time procedure compiled b( IO which moves; the loop control Parameters to the return stack. See DO.
-IFINDI	addrl addr2 -' pfe b tf (ak)
-addrl addr2 -- ff	(bad)
+IFINDI    addrl addr2 -' pfe b tf (ak)
+addrl addr2 -- ff    (bad)
 Searches the dictionary starting at the name field address addr2, matching to the
-lRa good sat~f•uIffnolaatd~ ~s, found, only length byte a of	false Lsd
+lRa good sat~f•uIffnolaatd~ ~s, found, only length byte a of    false Lsd
 booiean true for
 left.
-ILINEI	n1 n2 -- addr count
+ILINEI    n1 n2 -- addr count
 Convert the line number nl and the screen n2 to the disc buffer address containing the data. A count of 64 indicates the full line text length.
-(LOOP)	C2
+(LOOP)    C2
 The run-time procedure compiled by [OOP which increments the loop index and tests for loop completion. See LOOP.
 (NUMBER) dl addrl - d2 eddr2
 convert the ASCII text beginning at addrl + 1 with regard to BASE. The new value is accumulated into double number dl, being left as d2. Addr2 is the address of the first vwanvertible digit. Used by Ti21BEt•
-r	ni n2 - prod
-Leave the signed product of two signed nuanbers. +/	nl n2 n3 - n4	ID
+r    ni n2 - prod
+Leave the signed product of two signed nuanbers. +/    nl n2 n3 - n4    ID
 Leave the ratio of n4 - nl+n2/n3 were all are signed numbers. Retention of an intermediate 31 bit product permits greater accuracy than would be available with the sequence al n2 * n3 /.
 /MOD nl n2 n3 -- n4 n5 to
 Leave the quotient n5 and reminder n4 of the operation n1+n1,/n3. A 31 bit intermediate product is used as for */.
 + iii n2 Leave the sum of nl+n2. 93
-n addr --	ID	. .	._ ,
+n addr --    ID    . .    ._ ,
 
 ' n to the value at the address. Pronounced 'plus-store". nl n2 -- n3
 
 y the sign of n2 to nI, which is left as n3.
 
 
-ur	addrl -- addr2 f
+ur    addrl -- addr2 f
 v,nce the disc buffer address addrl to the address of the next buffer addr2. -Aean f is false when addr2 is the buffer presently pointed to by variable IN.
-)OP	nl -- (run)
-addr n2 - (compile)	P,C2,IA
+)OP    nl -- (run)
+addr n2 - (compile)    P,C2,IA
 
 in a colon-definition in the form:
-DO .	nl +[DOp
+DO .    nl +[DOp
 -n-time, +10pP selectively eontrols branching back to the corresponding W
 .1 on n1, the loo{) index and the loop limit. Tfie signed increment nl is added '' index and the total compared to the limit. The branch back to CO occurs
 1 I~ the new index is equal to or greater than the limit ( nl 50), or ,nti 1 the new ~z is equal to or less than the limit (nl<0). Upon exiting the loop, the rn?ters are discarded and the execution continues ahead.
@@ -47,18 +47,18 @@ DO .	nl +[DOp
 .lror checking.
 
 
-ORIGIN	n --- addr
+ORIGIN    n --- addr
 rve the memory address relative by n to the origin parameter erea, n is the iimlm address unit, either byte or word. This definition is used to access or lify the boot-up parameters at the origin area.
-n --	[O
+n --    [O
 
 -.e n into the next available dictionary mamry cell, advancing the dictionary Lter. fmmn31.
-nl n2 -- diff	Ip r the differerwe of n1-n2.
+nl n2 -- diff    Ip r the differerwe of n1-n2.
 P, LO
 iinue interpretation with the next screen. (Pronounced next--screcr.).
 
 
-UP	n1	al	(if zero)
-nl - nl nl (non-zero)	LO
+UP    n1    al    (if zero)
+nl - nl nl (non-zero)    LO
 
-produce nl only if it is non-zero. This is usually used to copy a value just .fore IF, to eliminate the need for an ELSE part to drop it.	•
+produce nl only if it is non-zero. This is usually used to copy a value just .fore IF, to eliminate the need for an ELSE part to drop it.    •
 94

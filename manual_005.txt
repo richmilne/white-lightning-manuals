@@ -2,68 +2,59 @@
 
 BUFFER SIZE
 
-When White Lightning runs programs in Background mode (see section 3) the top end of mArory is used as a scratch pad. The size of this area depends on the operation of the program and calculating the amount you need to reserve is covered in section 3. When the sprite generator program is entered the buffer has a default size of 256 bytes. This is probably much larger than required, but until you are familiar with the package or need to save a few extra bytes, just leave the buffer at 256 bytes.
-THE CHRS SOR
-(1iR$ SSyt is the abbreviation used throughout this text for character square, and refers to the 8 by 8 grid to the left of the sprite screen. This is the area used to create and edit sprites one character at a tine.
+When White Lightning runs programs in background mode (see Section 3) the
+top end of memory is used as a scratch pad. The size of this area depends
+on the operation of the program and calculating the amount you need to
+reserve is covered in Section 3. When the sprite generator program is
+entered the buffer has a default size of 256 bytes. This is probably much
+larger than required, but until you are familiar with the package or need
+to save a few extra bytes, just leave the buffer at 256 bytes.
+
+
+THE CHR$ SQR
+
+CHR$ SQR is the abbreviation used throughout this text for character
+square, and refers to the 8x8 grid to the left of the sprite screen. This
+is the area used to create and edit sprites one character at a time.
 
 
 THE SPRITE SCREEN
 
-This is the area of screen 15 characters by 15 characters m which sprites are created, developed, transformed and generally worked on.
+This is the area of screen 15x15 characters on which sprites are created,
+developed, transformed and generally worked on.
 
 
-THECHRSSQRCURSOR
+THE CHR$ SQR CURSOR
 
-This is the non-destructive flashing cursor which is used to design and edit the character currently held in the CHRS 9GFt.
+This is the non-destructive flashing cursor which is used to design and
+edit the character currently held in the CHR$ SQR.
 
 
 THE SPRITE SCREEN CURSORS
-These arc che two flashing cursors, displayed in the Row beneath the sprite screen and the column to the right of the sprite screen. They are used to indicate the position of the top left hand corner of the screen window currently being operated upon. The actual cursor positions are measured from the top left hand corner of the sprite screen and are displayed in real time m the screen as X POS (mlurtn) and y POS (ma). Top left is X POS 1 Y SOS 1. Bottom right is X SOS F Y POS F.
+
+These are the two flashing cursors displayed in the row beneath the sprite
+screen and the column to the right of the sprite screen. They are used to
+indicate the position of the top left-hand corner of the screen window
+currently being operated upon. The actual cursor positions are measured
+from the top left-hand corner of the sprite screen and are displayed in
+real time on the screen as X POS (column) and Y POS (row). Top left is
+X POS 1 Y POS 1. Bottom right is X POS F Y POS F.
+
+
 SCREEN WINDOWS
 
-The area of the screen currently being worked m is referred to as the screen window. Its position is defined by X POS and Y POS, which correspond to the positions of the sprite screen cursors, and its dimensions are defined by SPRITE HEIGHT and SPRITE IE2N33'i'H. To see the screen window you are currently Working on just press F. The window will flash.
+The area of the screen currently being worked on is referred to as the
+screen window. Its position is defined by X POS and Y POS, which
+correspond to the positions of the sprite screen cursors; and its
+dimensions are defined by SPRITE HEIGHT and SPRITE LENGTH. To see the
+screen window you are currently working on just press F; the window will
+flash.
 
 
 SPRITE LIBRARY
 
-This refers to the set of sprites you are currently Working with and can contain up to 255 sprites or use 12500 bytes. If your sprite library needs more than 12500 bytes you can use the merging procedure detailed in section 3 to Load and merge more than me sprite library into White Lightning.
-5
-OPERATING INSTRUCTIONS
-
-Insert the Sprite Generator Program Tape, type LOAD"" and load into the omputer as normal.
-
-Once loaded, the program will auto-run and the screen message, "COLD CR K%RN START" will appear. If this is the first execution of the program or if you wish to clear the sprite mainry, press C for a NLD SfART.
-
-A further screen message will now appear asking if you wish to change the buffer size - this has a default value of 256 bytes. For now, press N. Tnis function will become more apparent later.
-
-NOTES:
-
-1. A WARM START will not destroy any sprites already in mampry and if ever the program is accidently caused to HiFaK, type 0710 3 and in response to the screen prompt, execute a VARM START.
-
-2. A COLD START will destroy any and all sprites defined in Memory. 3. MM STARTs can only be executed after an initial COLD START.
-
-
-GETTING FAMILIAR WITH THE FUNCTION KEYS
-
-Now lets get familiar with some of the Function Keys - a full list will be found at the end of this section.
-
-THE CHR95QR
-
-This is the grid square on which you create and edit characters for your own sprite library. To move the cursor:
-
-1. Press the 5 key for each trovenent to the left.
-
-2. Press the 6 key for each movement downward. 3. Press the 7 key for each	movement upward.
-
-4. Press the 8 key for each movement to the right.
-
-Now that you know how to move the cursor, let's fill in a few squares: 1. Move the cursor to any square that you like and release the keys. 2. Press the 9 key to set the square. 3. Now move the direction keys and fill in a few sore squares.
-
-Now that we have set som squares, what about deleting a few of then? This is simple:
-
-1. Move the cursor to a square that you have set and release the keys.
-
-2. Press the 0 key to clear the square.
-
-Now have a go at setting and clearing some squares, just to get used to it.
-6
+This refers to the set of sprites you are currently working with and can
+contain up to 255 sprites or use 12,500 bytes. If your sprite library
+needs more than 12,500 bytes you can use the merging procedure detailed in
+Section 3 to load and merge more than one sprite library into White
+Lightning.

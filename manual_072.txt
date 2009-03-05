@@ -10,19 +10,19 @@ If two sprites are "PND"ed tn9ether, the resulting sprite will have pixels set w
 
 If two sprites are "A-Wed together, the resulting sprite will have pixels set where pixels were set in either but reset where pixels were set or reset in both.
 
-These results are summarised as follows and should make things a little clearer: SOURCE	DESTINATION	OPERATION	RESULT
+These results are summarised as follows and should make things a little clearer: SOURCE    DESTINATION    OPERATION    RESULT
 • on OR On
-• off OR on off on OR On off	off	OR	off
+• off OR on off on OR On off    off    OR    off
 
-on	AND	°n
-•	AND off
-on	off	off
-off	on	AND
-off	off	off AND NOR	off
-•	on off XOR °n
-off	on
+on    AND    °n
+•    AND off
+on    off    off
+off    on    AND
+off    off    off AND NOR    off
+•    on off XOR °n
+off    on
 )(DR
-off	off	M1R	off
+off    off    M1R    off
 
 
 We can now use the sample sprites to illustrate the effects <f~these Se~oretii. First FORGET any previously defined words and type:

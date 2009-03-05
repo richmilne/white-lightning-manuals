@@ -1,66 +1,57 @@
 # TODO: Remove this comment once this file has been proofread
 
-SCR M 6
-0 1 2
-3 0 VARIABLE DELAY : WAIT DELAY @ 0 DO NOOP LOOP •
-4: BASE 0 OX ! 18 ROW ! 32 LEN ! 6!GT . 0 PAPER 0 INK
-5 SETAV 7 INK
-;
-6 : 0016 6 PAPER 0 INK 0 BORDER CLS BASE 7 0 AT
-7 10 0 OD ." WHITE LIGMINI!S, " LOOP 0 0 AT ;->	-
-SCR p 7
-0 8 VARIABLE PX 8 VARIABLE PY 1 VARIA&1LE 6X 1 VARIABLE DY
-1 0 VARIABLE SR 0 VARIABLE CL 0 VARIABLE !3Y1 :PCAL PX @ ASS
-2 2/MJD CL I PY @ ASS 2/MDD f6V ! DUP + + 251 + SP !•
-3 : RIVE PX @ 56 > IF OX @ MINUS rX ! ENDIF P% @ 0 > IF POOP
-4 ELSE DX @ MINUS OX I IIdDIF
-5 pY @ 28 > IF DY @ MINUS Di ! FNDIF PY Q 0 > IF NJDP ELSE OY @
-6 MINUS DY ! ENDIF DY @ FY @+ BY ! DX @ PX P+ PX !;
-7: 1D liYi @ 1k7W ! CL @ COL I SP @ SPN !.-->
-SCR NB
-0: 90T M'l+t. ED E7SX LD EXX PU'PXRS :
-1: 00 PCAL DDVE PUTfitS ID PVD(RS %
-2 0 VARIABLE ICNC 2 VARIABLE LCNf
-3: IRON I ICNT +! ICNT @ DUP 2000 ~ IF -2 DX I ENDIC CUP 002
-4 IF 2 DY ! FNDIP DUP 6000 = IF 3 DY I ENDIF DUP 8000 = IF 1 DY
-5! 1 DX ! II1DIF 9000 = IF INPOFF ENDIF ;
-6:'1RY 90'I' ' Go I+`7f-0J 9000 0 DO IRUN LOOP INfOFF
-%
-7; 9CN16 (i016 9999 DELAY ! WAIT 1 DX ! 1 DY ! 8 PX ! 8 PY !->
-SCR M 9
-0 0 IC!11' !'IRY WAIT 0 PAPER 7 INK C[S ;
-1 2 3 4 S 6 7
-To compile this type:
-6 LOAD <CR>
-and to execute type:
-SCN16 <CR>
-~I 0 BASIC INTERFACE
+THE BASIC INTERFACE
 
-~r BASIC interface Was provided to increase the flexibility of the language and 11a,: the newcomer to Forth, a gradual transition. Sane applications are actually :, re suited to BASIC but for games writing in general, Forth is much more !,propriate and we hope that this facility will not discourage people from xperimenting with Forth.
+The BASIC interface was provided to increase the flexibility of the
+language and allow the newcomer to Forth a gradual transition. Some
+applications are actually more suited to BASIC, but for games writing in
+general Forth is much more appropriate, and we hope that this facility
+will not discourage people from experimenting with Forth.
 
-e are four words to master at the Forth end and 3 USR calls to master at the ..~;:C end. Do not Use CLEAR or NE14 whilst in BASIC.
+There are four words to master at the Forth end and three USR calls to
+master at the BASIC end. Do not use CLEAR or NEW whilst in BASIC.
 
 
-Commend Level
+The Command Level
 
-~i- White Lightning is first entered from a OOLD start, BASIC is located beneath
-and there is approximately lk of program space if microdrives are rot in
-This is ample space if BASIC is only to be used at cdmlard level, to WAD ~:xl SAVE for instance, but if programs are to be written you will need to execute he RESERVE Camkvnd. For the time being, however, let's just consider operation .J the cvmiand level. To enter BASIC from Forth type:
+When White Lightning is first entered from a COLD start, BASIC is located
+beneath Forth and there is approximately 1k of program space if
+microdrives are not in use. This is ample space if BASIC is only to be
+used as command level, to LOAD and SAVE for instance, but if programs are
+to be written you will need to execute the RESERVE command. For the time
+being, however, let's just consider operation at the command level. To
+enter BASIC from Forth type:
+PROG [CR]
 
-1; <CR>
+To re-enter Forth from BASIC just use:
+PRINT USR 24836 [CR]
+This is the normal WARM start entry. Note that PRINT USR must be used and
+not RANDOMIZE USR, or an OUT OF SCREEN error may occur.
 
-re-enter Forth from BASIC just use: ',~:'7P USR 24836 <CR>
 
-rhis is the normal WARM start entry. Note that PRIM` USR must be used and rot ihNDCMISE ISR, or an CUT OF 93tEEN error my occur.
-~.rsICASASUBROUTINE
-the next level, lines of BASIC can be executed as if they were subroutines and ~n return made to your Forth program. The Word at the Forth end is GY10. To -i~~ to Forth and -n' in., x-~ior ase PRINT USR 30006.
+BASIC AS A SUBROUTINE
 
-'o begin with, space needs to be made in the dictionary for the BASIC program.
-'Iw word used to do this is RESERVE. What RESERVE actually does, is to make space n the dictionary and reset BASIC's system variables to point to this new area. his does mean, however , that if a second RESERVE is done, without EORGEtting the td space, then the old space is lost and can never be re-accessed. Do not -,cute a Forth COLD start while BASIC is reserved or a RFKi'OP error may occur if ,sufficient memory is reserved. Always execute PROG as the next oamland after :rS6RVE.
+At the next level, lines of BASIC can be executed as if they were
+subroutines and then return made to your Forth program. The word at the
+Forth end is GOTO. To return to Forth and continue execution use PRINT USR
+30006.
 
-an example, try the following: i:-iMAL 200,7 fis5:y,'d_ _°b:'_c <CR>
+To begin with, space needs to be made in the dictionary for the basic
+program. The word used to do this is RESERVE. What RESERVE actually does
+is to make space in the dictionary and reset BASIC's system variables to
+point to this new area. This does mean, however, that if a second reserve
+is done, without FORGETting the old space, then the old space is lost and
+can never be re-accessed. Do not execute a Forth COLD start while BASIC is
+reserved or a RAMTOP error may occur if insufficient memory is reserved.
+Always execute PROG as the next command after RESERVE.
 
-I'his will set up the BASIC space and then enter it at comnkind mode. The following lines of BASIC can now be entered:
+As an example, try the following:
+DECIMAL 2000 RESERVE PROG [CR]
 
-ii100 PRINT "LINE 1000 OF BASIC" : PRINT USR 30006 .ni)0 PRINT "LINE 2000 OF BASIC" .'h10 FOR I= 1 10 8: PRINT I:K=I ~n70 PRINT USR 30006
-76
+This will set up the BASIC space and then enter it at command mode. The
+following lines of BASIC can now be entered:
+
+1000 PRINT "LINE 1000 OF BASIC": PRINT USR 30006
+2000 PRINT "LINE 2000 OF BASIC"
+2010 FOR I = 1 TO 8 : PRINT I : NEXT I
+2020 PRINT USR 30006

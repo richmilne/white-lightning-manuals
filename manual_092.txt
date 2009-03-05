@@ -1,65 +1,36 @@
 # TODO: Remove this comment once this file has been proofread
 
-, Flq-FORTH GLOSSARY
-This glossary contains all of the word definitions in Release 1 of Fig-FORTH. The definitions are presented in the order of their ASCII sort and are reproduced courtesy of the POR171 II71fR15 I' GROUP, P.O. BOX 1105, SAN CARIAS. CA 94070.
+#                    d1 --- d2                            LO
+Generate from a double number d1, the next ASCII character which is placed
+in an output string. Result d2 is the quotient after division by BASE, and
+is maintained for further processing. Used between <# and #>. See #S.
 
-The first line of each entry shows a symbolic description of each action of the procedure on the parameter stack. The symbols indicate the order in which input parameters have been placed on the stack. Three dashes +-+ indicate the execution point; any parameters left on the stack are listed. In this rotation, the top of the stack is to the right.
+#>                    d --- addr count                    LO
+Terminates numeric output conversion by dropping d, leaving the text
+address and character count suitable for TYPE.
 
-The symbols include:
+#BUF                    --- n
+A constant returning the number of disk buffers allocated.
 
-addr memory address
-•	8 bit byte ll.e. hi 8 bits zero)
-c	7 bit ASCII character (hi 9 bits zero)
-•	32 bit signed double integer, most significant portion with sign on top of stack
-f	boolean flag. 0 = false, non-zero - tnie•
-ff	boolean false flag - 0
-•	16 bit signed integer number
-•	16 bit unsigned integer
-tf	boolean true flag = non-zero
+#S                   d1 --- d2                            LO
+Generates ASCII text in the output buffer, by the use of #, until a zero
+double number results. Used between <# and #>.
 
-Die capital letters on the right show definition characteristics:
+'                       --- addr                        P,LO
+Used in the form ' nnnn
+Leaves the parameter field address of dictionary word nnnn. As a compiler
+directive, executes in colon definition to compile the address as a
+literal. If the word is not found after a search of CONTEXT and CURRENT,
+an appropriate error message is given. Pronounced "tick".
 
-C	May Only he used within a colon definition. A digit indicates number of memory addresses used, if other than one.
-•	Intended for execution only.
-LO	Level zero definition of FTKYPH-78.
-LI	Level 1 definition of HHYIH-78•
-•	Has precedence bit set. will execute even when compiling.
-•	A user variable.
-Unless otherwise rioted, all references to numbers are for 16 bit signed integers. The high byte of a number is m top of the stack, with the sign on the leEhmst bit. For 32 bit signed double numbers, the most significant bit (with the sign)
-is m top.
-All arithmetic is implicitly 16 bit signed integer math, with error and underflom indication specified.
-Np1E: All references to disc in this documentation can be read as references G the disc simulation area in memory fran C200H to FOOON, which are treated as a very limited disc capacity by White Lightning, and do rot in any way change the operation or description of any of the FORM words defined in this documentation p0 NOT use DTaD, Qil or 00.
-
-
-I	n addr -
-
-Store 16 bits of n at address. Pronounced "store". ICBF
-Save the stack position in CSP. Used as part of the compiler security. 91
-dl - d2
-
-
-nerate from a double number dl, the next ASCII c3:arater which is placed in en *put string. Result d2 is the quctient after division by BASE, and is :ntained for further processing. Used between <M arid A>. see tS.
-d - addr count	Ip
-
-
-:minates numeric output conversion by dropping d, leaving the text address and ,raCter count suitable for TYPE,
-3UF
-- n
-
-
-,onstent returning the number of disc buffers allocated• dl - d2
-'eratee ascii text in the text output buffer, by the use of 1, until a zero 'ble number results. Used between <A and t>.
-- addr	P, IA -d in the form; I m,u,
-"RS the parameter field address of dictionary Word nnnn• As a ca,piler rectiva, executes in colon definition to compile the address as a literal. if
-', word is not found after a search of Q7Nlpxp and CUREtW, an appropriate error sage is given. Pronounced "tick".
 P,M
 ~ ~. d in the form: (occc)
 ~:ore acomment that will be delimited by a right parenthesis on the same line. ~L'' occur during execution or in a colon-definition. A blank after the leading 1-:.•=nthesis is required.
 C+
 run-time procedure, compiled by •" which transmits the following in-line text the selected output device. See ,^
-ODE)	C
+ODE)    C
 N^-time procedure, compiled by ;CODE, that re-writes the code field of the
 '[ recently defined word to point to the following machine code sequence. See iDE.
-LOOP)	n --	C2
+LOOP)    n --    C2
 r<+n-time procedure compiled by +Ippp, which increments the loop index by n and ts for loop completion. See +IppP•
 92

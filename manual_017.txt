@@ -43,8 +43,8 @@ In addition to the basic vocabulary of White Lightning words, the user can very 
 
 Fully structured programming methods are also employed as a fundamental feature of Forth through the use of the structured control sequences included, such as
 
-IF 	ELSE 	P1NDIr^
-DO 	UNTIL
+IF     ELSE     P1NDIr^
+DO     UNTIL
 
 The standard Spectrum editor can be used to create lines of White Lightning source code for later compilation. Do not allow lines to exceed 64 characters - any characters after this are ignored. The standard Forth line editor is included for compatibility with existing text. The source code is stored in memory from SCCOO onwards, and can be iAADed or SAVEd to tape as and when required. Once the source code is -uq.,lete, it my then be compiled into the White Lightning dictionary for later execution.
 

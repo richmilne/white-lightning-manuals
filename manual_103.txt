@@ -1,29 +1,29 @@
 # TODO: Remove this comment once this file has been proofread
 
-DEFINITIONS	LI
+DEFINITIONS    LI
 
 Used in the form:
 cccc DEFINITIONS
 get the CURRFaIp vocabulary to the (ANFFx'1' vocabulary. In the exemPle, executing vocabulary name cccc made it in the context vocabulary, and executing DEFINITIONS made both specify vocabulary occc.
 
 
-DIGIT	c nl -- n2 tf (ok)
-c nl -- ff	(bad)
+DIGIT    c nl -- n2 tf (ok)
+c nl -- ff    (bad)
 -
 Converts the ASCII characters c (using base nl) to its binary equivalent n2, accompanied by a true flag. If the conversion is invalid, leaves only a false flag.
-DLITERAL	d -- d (executing)
-d -	(compiling)	P
+DLITERAL    d -- d (executing)
+d -    (compiling)    P
 
 If compiling, compile a stack double number into a literal. Later execution of the definition containing the literal will push it to the stack. If executing, the number will remain on the stack.
 
 
-DMINUS	dl - d2
+DMINUS    dl - d2
 
 Convert dl to its double number two's complement.
 
 
-DO	nl n2 - (execute)
-addr n ^ (compile)	P,C2,IA
+DO    nl n2 - (execute)
+addr n ^ (compile)    P,C2,IA
 occurs in a colon-definition In the form:
 00 ... IODP
 DO ... +f00P
@@ -33,19 +33,19 @@ DOES )
 A word which defines the run-time action within a high level defining word. nOES> alters the code field and first parameter of the new word, to execute the sequence of compiled word addresses following DOFS>. Used in combination with E[3IItS>. When the word DOES> part executes, it begins with the address of the first parameter of the new word on the stack. This allows interpretation using this area or its contents. Typical uses include the Forth assembler, nvalti-dimensional arrays and ompiler generation.
 103
 I'P
-eddr	U,L
+eddr    U,L
 'user variable, the dictionary pointer, which contains the adArou of tM nat
 
 ~'ee memory above the dictionary. The value may be read by HERE end alterM by (
-DPL	- eddr	U,ID
+DPL    - eddr    U,ID
 A user variable containing the number of digits to the right of the decimal m Iouble integer input. It may also be used to hold output oolum location of a
 lPciaial point, in user generated formatting. The default value m single number !,,put is -1.
-urtOP	n -
+urtOP    n -
 i-rnp the number from the stack.
-DUMP	addr n -	Ip
-Print the contents of n sensory locations beginning at eddr. Both addresses and :x:tents are shown in the current numeric base. DUP	n - n n	1,0 i>uplicate the value on the stack.
-ELSE	addrl nl - addr2 n2
-(compiling)	P,C2,I0
+DUMP    addr n -    Ip
+Print the contents of n sensory locations beginning at eddr. Both addresses and :x:tents are shown in the current numeric base. DUP    n - n n    1,0 i>uplicate the value on the stack.
+ELSE    addrl nl - addr2 n2
+(compiling)    P,C2,I0
 curs within a colon-definition within the form:
 
 IF ... ELSE ... QmIF

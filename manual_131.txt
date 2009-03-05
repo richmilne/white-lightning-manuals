@@ -1,63 +1,57 @@
 # TODO: Remove this comment once this file has been proofread
 
-Eaample 11
+Example 11
 
 To place sprite 24 into the screen of sprite 13 use:
-
-: OFI411 24 SPl 1 13 SP2 I 7 90DL ! 6 3" :(Y!0!M 10 ROW : 10 OJL : AT10N PVPB[5 Example 12
-To mR sprite 43, the explosion, with sprite 27, the 270 degree rotated Invader, in ®Dry use:
-
-: tf7i12 43 SP1 ! 27 SP2 !COY#R?4 10 NOW : 10 OOL I 27 SPN ! A17UN R119[S t
-EiempN 13
-
-To invert sprite 7, the spider, in uamry use:
-
-: DE413 7 SPN ! INVM 10 Id7W ! 10 OOL ! PVfBIS ;
+: DEM11 24 SP1 ! 13 SP2 ! 7 SCOL ! 6 SROW ! GWBLM 10 ROW ! 10 COL ! ATTON PUTBLS ;
 
 
-EnmpM 14
+Example 12
 
-To enlarge sprite 24 into sprite 45 using the U6A4 o3mocd use:
+To XOR sprite 43, the explosion, with sprite 27, the 270 degree rotated
+Invader, in memory, use:
+: DEM12 43 SP1 ! 27 SP2 ! COPXRM 10 ROW ! 10 COL ! 27 SPN ! ATTON PUTBLS ;
 
-: 00114 45 SYl ! 24 S?2 I C6Pl1 45 SPN ! 10 COL I 10 ROW ! Pl11EfS :
 
+Example 13
+
+To invert sprite 7, the spider, in memory, use:
+: DEM13 7 SPN ! INVM 10 ROW ! 10 COL ! PUTBLS ;
+
+
+Example 14
+
+To enlarge sprite 24 into sprite 45 using the DSPM command, use:
+: DEM14 45 SP1 ! 24 SP2 ! DSPM 45 SPN ! 10 COL ! 10 ROW ! PUTBLS ;
 
 Example 15
 
-To search through sprite space, locate any existing sprites, print out the start of data, length and height use:
-: GF7415 255 1 00 I SPN I'[SSR' 1= IF I. SPACE CP'iR @ U. SPACE LEN 7SPACE HIT 7 SPACE l7t THEN LCOP
+To search through sprite space, locate any existing sprites, print out the
+start of data, length and height, use:
+: DEM15 255 1 DO I SPN ! TEST 1 = IF I. SPACE DPTR @ U. SPACE LEN ? SPACE HGT ? SPACE CR THEN LOOP ;
 
-Etrnpl*16
 
-To scroll a landscape sprite numbered 128, 2 characters high and 64 characters wide, left by 1 pixel under interrupt, use the following:
+Example 16
 
-9ca 1 6
-0 0 VARIABLE Q. 8 VARIABLE PH :OPF2! 00C 0 COL ! 12 !dOW ! 2 NGP ! 1 0 320W ! 0 900L 1 128 SPN ! 0 PAPER 6 INK 32 LEN I QSV 0 INK 2 1 UN I QSV 32 LEN I PWBIS F7UC :
-3 s NKB (T. @ 1+ UP 64 - IF QmP 0 ENDIF OUP CL ! 31 + 64 MOD 9'Y1;. 4! 1 LEN ! W!B[S 32 LEN !;
-5: 3. !iU.1V EH @ 1- O!8 0- IF NIB CROP 8 ENDIF PH !;
-6: GO 6 IlLC 0 PAPER 0 BCi20F3t 1 H2IGlC QS 14 NOW ! 1 COI. ! 7 6 PAPER 31 LEN ! 4 ICf !:£PAV OPEN 6 INK ' 3. IM--0N :
+To scroll a landscape sprite numbered 128, 2 characters high and 64 characters
+wide, left by 1 pixel under interrupt, use the following:
 
-To speed this :p to faster 4 or 8 pixel scrolls change lines 0 and 5 to read:
+SCR # 6
+  0 0 VARIABLE CL 8 VARIABLE PH : OPEN EXX 0 COL ! 12 ROW ! 2 HGT !
+  1 0 SROW ! 0 SCOL ! 128 SPN ! 0 PAPER 6 INK 32 LEN ! CLSV 0 INK
+  2 1 LEN ! CLSV 32 LEN ! PWBLS EXX ;
+  3 : NXB CL @ 1+ DUP 64 = IF DROP 0 ENDIF DUP CL ! 31 + 64 MOD SCOL
+  4 ! 1 LEN ! PWBLS 32 LEN ! ;
+  5 : SL WRL1V PH @ 1- DUP 0= IF NXB DROP 8 ENDIF PH ! ;
+  6 : GO 6 INK 0 PAPER 0 BORDER 1 BRIGHT CLS 14 ROW ! 1 COL !
+  7 6 PAPER 31 LEN ! 4 HGT ! SETAV OPEN 6 INK ' SL INT-ON ;
 
-0 0 VARIABLE (T. 2 VARIABLE PH : OPEN EM 0 WI. I 12 P(7W 1 2 IGf 1 5: 3. WRL4V PH @ 1- WP 0= IF WE CROP 2 ENDIF PH 1;
+To speed this up to faster 4 or 8 pixel scrolls change lines 0 and 5 to read:
 
-0: VARIABLE CL 1 VARIABLE PH : OPEN W( 0 ODL 1 12 ROW ! 2 HGf ! 5: s. M1U.BV P!! @ 1- UUP 0- IF NXt3 DROP 1 ENDIF PH !,
+  0 0 VARIABLE CL 2 VARIABLE PH : OPEN EXX 0 COL ! 12 ROW ! 2 HGT !
+  5 : SL WRL4V PH @ 1- DUP 0= IF NXB DROP 2 ENDIF PH ! ;
 
-Type: 6 LOAD <(7U to compile and OD <Qt> to run. 131
-t!;KKarA - MUTE LIGHTNING MppL
+  0 0 VARIABLE CL 1 VARIABLE PH : OPEN EXX 0 COL ! 12 ROW ! 2 HGT !
+  5 : SL WRL8V PH @ 1- DUP 0= IF NXB DROP 1 ENDIF PH ! ;
 
-Page 7, line 24:
-"enter the number 75" should read "enter the number 63".
-Page 20, line 19:
-"	: Convert the number ... trailing
-space" should read
-".	: Convert the number ..
-." etc.
-Page 72, line 25:
-"PWrX2M" should read "PWXRM".
-
-Page 75, SCR#6, lines 6 & 7: Rove BASE from line 6 and place at end of line 7. (... IOOP 0 0 AT BASE ;)
-Page 104, DW:
-"addr n ---" should read "addr ---"
-Throughout the manual, the Forth ward "-->" is constructed as "- - >", i.e. two minus signs and a greater than.
-. .,i,-._X~~ ., .. d ,yuq~ '
+Type: 6 LOAD <CR> to compile and GO <CR> to run.

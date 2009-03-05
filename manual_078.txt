@@ -1,50 +1,39 @@
 # TODO: Remove this comment once this file has been proofread
 
-. ',r,arnarE ODNIItOL CONII20L U. <Q2>
+0 VARIABLE CONTROL CONTROL U. [CR]
 
-.'his will set up a yariable called mntrol, set it to zero and then print the .,adress of the leasl significant byte xhich xr.'ll use to psss the infonmtion. i•or the sake of this ex<v:ple suppose Uie address ess 50000. we'll mw uvo the lASE wnstruct to select the xurd to execute. Use the follauing definitlons:
+This will set up a variable called CONTROL, set it to zero and then print
+the address of the least significant byte, which we'll use to pass the
+information. For the sake of this example suppose the address was 50000.
+We'll now use the CASE construct to select the word to execute. Use the
+following definition:
+: SELECT CASE 1 OF ." WORD1 " ENDOF 2 OF ." WORD2 " [CR]
+ENDOF 2 OF ." WORD3 " ENDOF 4 OF ." WORD4 " ENDOF [CR]
+ENDCASE CR ; [CR]
 
-: SELEC'P 115E 1 OF ." YTJRDl " ENOOF 2 OF ." VARD2 "<CR> i_'VDOF 3 OF ." WOd2D3 " FNCUF 4 OF ." FARDd "&VDOF <CR> r:NDCASE CR ; <CR>
+If the value in CONTROL is 1 to 4, the appropriate word will be executed.
 
-~` the value in 07NII20L is 1 to 4, the appropriate word will be executsrl.
+: RUN 4000 GOTO BEGIN CONTROL @ [CR]
+DUP SELECT DUP IF RETUSR ENDIF 0= UNTIL ; [CR]
 
-. RUN 4000 C17I0 BEGIN CONIROL @ <CR>
-(,Y SELFCP DUP IF REPUSR FNDiL' 0= UJfLL ;<CR>
+The BASIC program is initially entered at 4000 and could take the
+following form:
 
-.:m BiSIC program is initially entered at 4000 and wuld take the following form:
+4000 REM REPLACE ADDRESS 50000 WITH THE ADDRESS OF CONTROL
+4010 PRINT " EXECUTE WORD1 ": GOSUB 5000
+4020 PRINT " EXECUTE WORD2 ": GOSUB 5010
+4030 PRINT " EXECUTE WORD3 ": GOSUB 5020
+4040 PRINT " EXECUTE WORD4 ": GOSUB 5030
+4050 PRINT " FINISH ": POKE 50000,0: PRINT USR 30006
+5000 POKE 50000,1: RANDOMIZE USR 30000: RETURN
+5010 POKE 50000,2: RANDOMIZE USR 30000: RETURN
+5020 POKE 50000,3: RANDOMIZE USR 30000: RETURN
+5030 POKE 50000,4: RANDOMIZE USR 30000: RETURN
 
-4000 RFSf REPLACE ADDRESS 5000 HITH THE ADDRESS OF (SdR1120L 4010 PRNP " tFXECV1E MARDl ": OJSUB 5000
-7020 PRINf " k7CFSa71E WDtiD2 ": OJSUB 5010 4030 PRINI " EXECUCE FTJRD3 ": OJSUB 5020 n040 PRINP " EXFSa71E NURU4 ": OJSUB 5030 d050 PRINC " FINISR ": FOKE 50000,0 : PRINP 135R 30006 ',000 PORE 5000,1 : RANi70MISE (SR 30000 : RL1ZAiN ,010 POxE 5000,2 : RnNIZriISE t5R 30000 : Rf:TJRN ,020 POKE 5000, 3: RAtaDCMISE [SR 30000 :IEn7Rn ,030 POKE 5000,4 : RANIX7MISE LSR 30000 : RETiRN
+Note that when the final return is made to Forth a PRINT USR 30006 is
+used. If a RANDOMIZE USR 30006 call is made to Forth a RETUSR must be
+executed of the BASIC stack will be left corrupted. To reset the stack if
+it has been corrupted, use PROG to enter BASIC and then re-enter Forth
+with the WARM start, PRINT USR 24836.
 
-r;ote that xiten final return is rtade to Forth a PRIN(' 135R 30006 is used. If a itM7DOMISE [SR 30006 CALL is m3de tn Forth a REPUSR must be executed or the H45IC stack wi11 6e left mrruptod. To nset the stack if it has tren wrrvpted, use i:ROG to enter 94SIC and then re-enter Forth with the WARM start, PRINT USR 24836.
-
-°h-:, :va,ri- tte section an the 6ASiC tnterface.
-78
-After entering these lines tyPe: PRINT USR 24836
-to re-enter Forth at camtand level.
-Let's now define a word which executes so- Forth, sane BASIC, sate nor, Forth, some :rore BASIC, and finally sane sore Forth. To begin executing BASIC at a
-particular line, all that we need to do is put the line number n the stack and
-then execute DOM. Try the following:
-FB" ,. IN FORTH ^ CR 1000 IXYIlO ." BALK IN FORTH "<CR>
-(Ii 2000 OUN •" FORTH AGAIN " ; <CR> Now type FBDQd <CR>
-A sore useful application would be to define words to handle ~~e reserved
-and
-saving. BASIC source is saved and loaded in the normal way f
-BASIC area.
-Forth As A Subroutine
-if yas're an "out and out BASIC person" You,re probably flare likely to want to execute Forth as a subroutine. To return l6Rt300 BASIC Note Forth that from	h°n Use this occasion word To catt Forth frcm BASIC use FANtx1MISE	previously reserved space we
-is a FANIXDIISE lSR and not a PRINT IISR• Using the previously iry another exatrple. First type: pROG <Qt>
-~ enCer BASIC, then add the follauing lines:
-3000 PRIN1' " CAI.LING FOR1'N '' RANOC1ISE USR 30000 3010 PFtINf " BPCR IN E°-'SIC "' PRiNT USR 30006
-yo, type pRLVP L6R 24836 to re-enter Forth
-Nw tYPe:
-: Bppp.t ." pD1C) 645IC " CR 3000 0710 ." FORTH CAI'LED °<CR>
-~,.TUSR „ II•>pIN(', ID7 pOR11i ^ CR ; <CR>
-Now type:
-gFpk?1 <CR>
-to see the result. Nw type: FpP1',E'f FBDIIA <CR>
-Pasdn9 Peremeters
-porth variables can easily he PEEK'e3 and PDM 'd fron H'LSIC and used n°t only t° pass data, btt also tv oontrol the execution of Forth. As an aaRle, s~pose we wished to select one of 4 Forth words at~RYD2one t~D3 "a ~1,~D~"8 pirst Let
-the Focth words simly be •" ~~1 "r
-xe,ll reed a variable tfl pass the paraneter so type:
-77
+This concludes the section on the BASIC Interface.

@@ -1,60 +1,42 @@
 # TODO: Remove this comment once this file has been proofread
 
-'fFie relocate command uses the value held in MIEN as the relocation length, a negative value, as above, relocates downward and a positive value upward.
-4. Before loading the second block of sprites, the values of the new SPST and SPND should be calculated and noted. Type;
+    The RELOCATE command uses the value held in MLEN as the relocation
+    length, a negative value, as above, relocates downward and a
+    positive value upward.
+4.    Before loading the second block of sprites, the values of the new
+    SPST and SPND should be calculated and noted. Type:
+    SPST @ U. SPND @ 65280 60000 - + DUP SPND ! U. [CR]
+    Take a note of these two values. If the previous steps have been
+    carried out correctly the second number (the new SPND) should be
+    the same value as the old SPND before relocation.
+5.    Type PROG [CR] to exit back to BASIC then type LOAD "" CODE. The 
+    array of pointers will be ignored but the sprites will be loaded.
+    This assumes that this second block of sprites was also saved
+    using the sprite development software.
+6.    Type PRINT USR 24836 to re-enter Forth and your sprites should be
+    merged. Note that if a sprite number used in the second block has
+    also been used in the first block, that only the first occurrence
+    will be found. If the first occurrence is destroyed using WIPE or
+    DSPRITE, then the second occurrence will be found.
 
-;PST @ U. SPND P 65280 60000 -+ OUP Se.1D : U. cCR>
 
-Take a rote of these two values. If the previous steps have been carried out correctly the second umber (the new SPND) should be the same value as the old SPND before relocation.
+Extending the Forth Itself
 
-5. Type: FROG <CR> to exit back to BASIC then type MAD "" CODE. The array of pointers will be ignored but the sprites will be loaded. This ess.aprs that this second block of sprites was also saved using the sprite development software.
+One of the beauties of the Forth language is that it is extendible, so if
+you've added a few of your own commands which you would like to become a
+permanent feature of your customised version, you will need to make a
+copy. 
 
-6. Type PRINT t&R 24836 to re-enter Forth and your sprites should be merged. Note that if a sprite number used in the second block has also been used in the first block, that only the first occurrence will be found. If the first occurrence is destroyed using WIPE or ASPRITE, then the second occurrence will be found.
-Eoending The Forth Itself
-One of the beauties of the Forth language is that it is extendible, so if you've added a few of your own oumands which you would like to become a permanent feature of your wstanised version, you will reed to rake a copy. For this reason, no attempt has been made to protect the soft~re: but we do appeal to users not to take advantage of this facility to pirate the program. Piracy pushes up the price of software to genuine users, so if you've bought a genuine copy, do yourself a favour and keep the price of your future software affordable. Copying the manual, ho.+ever, will result in imrediate court action and a reward will be paid to anyone offering information leading to the successful prosecution of offenders.
-1b save the Forth use the following procedure:
+To save the Forth use the following procedure:
 
-1. Type: WNet->(]DID <Q2> to embed the commands.
+1.    Type: WARM->COLD [CR] to embed the commands.
+2.    Type: HERE 24832 - 1+ U. [CR] to print the length to be saved.
+3.    Type: PROG [CR] to enter BASIC.
+4.    Save using SAVE "FORTH" CODE 24832,length.
+5.    Re-enter using PRINT USR 24836.
 
-2. Type: HERE 24832 - 1+ U. <CR> to print the length to be Saved. 3. Type: FROG <Qt> to enter BASIC. 4. Save using SAVE "FORTH" CODE 24832, length. 5. Re-enter using PRIM LSIi 24836.
-
-To use the amended version, LOAD White Lightning as normal, exit using PROG, MAD the new Forth over the old Forth and execute a Cold start using 24832.
+To use the amended version, load White Lightning as normal, exit using
+PROG, load the new Forth over the old Forth and execute a COLD start using
+24832.
 
 Oasis make no undertakings to support awtoeised versions, and make no guarantee as to the success of the operation.
-81
-nPiled and Completed Program
-.• the program is fully debugged and running, a final run-time version can be
-.ltn macuced.keTthe3dis, is the only form in which program generated from White Lightning ~
-~ program makes use of the foreground/background facility, 7ApIN1' should be
-d, if not, then ZAP should be typed. The length of the compiled program is n displayed until a key is pressed and control returned to BASIC to tmke a
-Y•
-
-. final program should be saved wing:
-
-n: "filename" 24832, length
-"x"R1ted using RUNT tSR 24832. Do not use RAtMONISE fSR 24832.
-
--,n2c that a lot of run-time software is saved with your final code, so even if program is only two lines long, the resulting program will be pretty large.
-
-
-TABLE 1.
-Table of Screen Numbers and Addressee
-Start Address
-49664	Each screen used for editing
-50176	into consists of
-50688	8 lines x 64 characters
-51200	~ 512 bytes. 51712
-52224
-52736	Therefore, if you have only
-53248	edited into screens 6-9,
-'	53760	then there is no need o save
-54272	ALL of the screens 1-22
-54784	since you only need to save
-55296	from 52224 to 54271 fend of
-55808	screen 91, i.e. 2R bytes.
-14	56320
-15	56832
-16	57344
-17	57856
-18	58368
-I9 58880 59392 59904 60416

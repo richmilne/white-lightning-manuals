@@ -23,7 +23,7 @@ The baincing man is animated using sprites 28 and 29. The sprites are placed on 
 
 appears to move behind the 'MITE LIGH7NING' text without destroying it. Simple DD IDOPS omtrol his path.
 
-Disabling interrupts, using DI, during the animation appeared to reduce the sli,{ht , flicker of the character, the interrupts ,#,ere enabled again using El.	i
+Disabling interrupts, using DI, during the animation appeared to reduce the sli,{ht , flicker of the character, the interrupts ,#,ere enabled again using El.    i
 
 I
 THE CIRCLE OF ROTATING INVADERS

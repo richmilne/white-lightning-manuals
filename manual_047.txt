@@ -39,9 +39,9 @@ COLD #
 
 This command sets the end of sprite space pointer SPND, to the value in SPSl', the start of sprite space pointer. It then clears memory above SPST. The size of the memory cleared is specified in S[M. Each time a sprite is allocated space using the SPRITE mmand, SPND is updated. Vertical scroll data (pixel and attribute) uses the space immediately above SPtiD so a COLAA is necessary at some stage before executing the ooitrrands. The amount of data required is given by the product of the scroll width and the number of pixels scrolled. sprites are stored in the following fo~.t:
 
-First byte is the sprite number	(1 to 255)
-Second and third bytes hold the address of the next sprite in memory. Fourth byte is the sprite width	(1 to 255)
-Fifth byte is the sprite height	(1 to 255) The next 8-height-length bytes hold pixel data. The final height"length bytes hold the attributes. Therefore, each sprite requires 9-height-length.5 bytes.
+First byte is the sprite number    (1 to 255)
+Second and third bytes hold the address of the next sprite in memory. Fourth byte is the sprite width    (1 to 255)
+Fifth byte is the sprite height    (1 to 255) The next 8-height-length bytes hold pixel data. The final height"length bytes hold the attributes. Therefore, each sprite requires 9-height-length.5 bytes.
 
 It should be noted that sprite numbers need not be allocated in any particular order. The best position for sprite space is at the top - - sensory and it is net difficult to calculate space required, although the de-7opnent package does this auta~atically.
 
@@ -52,9 +52,9 @@ Ex,'lrtlple:
 
 Suppose you wished to allocate space for 10 4 by 4 spritss, 3 8 by 6;?rite-s and a 5 by 4 sprite. Suppose also that a 4 pixel. scroll will be required for a 4 character wide sprite, and a screen window 9 characters wide will need to I~ scrolled 3 pixels. The 8 by 6 sprite is also to be rotated. The following procedure to calculate sprite space is required.
 
-10 4 by 4 sprites require	10*(4*4*9+5) = 1490 bytes
-3 8 by 6 sprites require	3*(8*6*9+5) = 1311 bytes
-1 5 by 4 sprite requires	1*(i*4*9+5) = 185 bytes
+10 4 by 4 sprites require    10*(4*4*9+5) = 1490 bytes
+3 8 by 6 sprites require    3*(8*6*9+5) = 1311 bytes
+1 5 by 4 sprite requires    1*(i*4*9+5) = 185 bytes
 TOTAL = 2986 bytes
 
 The 4 character wide sprite scrolling 4 pixels would require 16 bytes.

@@ -1,82 +1,27 @@
 # TODO: Remove this comment once this file has been proofread
 
-GWXRB	SPN• COL, `-M•	Logically XDR screen data from screen window
-gVOL, gROW, tGT,	into Sprite win3aw.
-IFt•1
-GWORS	SPN, COL, ROW,	Logically OR scrren data from screen window 9cOL, Row, M3P, into Sprite window. LEN
-OWNDS	SPN, COL, ROW,	Logically AND scrcv..rn data from screen window 9COL, SROW. !GP, into Sprite window. LEN
-OWATTS SPN, OOL, ROW,	Block nave attributes fran screen window into 9COL, 320W, tGP, sprite window. LEN
-PWBLS	SPN, 00L, ROW,	Block save Sprite data from Sprite window
-BCOL, SRW7, 1>'GT,	into screen window.
-LEN
-PWXRS F,-N, OOL, ROW, Logically XOR Sprite window data into screen
-SCOL, 3EOP7. WT,	wirv.3w. LEN
-PWORS	SPN, COL, ROW,	Logically OR Sprite wind- data into screen
-SCOL, :dtOW, MT, window.
-LEN
-PWNDS	SP:1, COL, %F7,	Logically AND Sprite window data into screen
-SCOL, SRdA, FGT, window.
-LEN
-pWATTS	SpN, COL, ROW,	Block move Sprite window attributes into SOpL, SROW, WT, screen window.
-LEN
-GWBLM	Spl, Sp2, SCOL,	Block move Sprite SP1 into Sprite SP2 at
-.l	SCOL,SRUA.
-GWXRM	SP1, SP2, 9COL,	Logically )q:1R Sprite SP1 into Sprite SP2
-gOW	at SLOL,SRWI.
-GWORM	SP1, SP2, 9COL,	Logically Qi Sprite SP1 into Sprite SP2
-SROW	at SOOL,SROW.
-GWNDM	SPl, SP2, 9tbL,	Logically AND Sprite SP1 into Sprite SP2
-g20,q	at 9COL,SROW.
-GWA7TM SP1, SP2, SOOL,	Block move attributes of Sprite SP1 into
-SROW	Sprite SP2 at 3JOL,SRRJ.
-PWBLM	SPl, SP2, SCOL,	Block move window at qCOL,3iGN of Sprite
-g20W	SP2 into Sprite SPl.
-PWXRM	Spl, SP2, 9COL,	Logically K7R window at SCOL,SROW Of Sprite
-SROW	Sp2 into Sprite SP1.
-PWORM	Spl, Sp2, SCOL,	Logically OR window at 9COL,SR(A7 of Sprite
-SRa7	SP2 into Sprite SP1.
-121
-PWNDM SP1, SP2, SCOL, Logically AND window 9t 90OL,SROA of Sprite SRpV	SR2 into Sprite SP1.
-
-pyyATTM SP1, SP2,~9roL,	Block trove attributes of window at
-9tOW	9.bL,SRLT•7 of Sprite SP2 into Sprite SPl.
-
-COPYM SPl, SP2 As QABIM Wt NOL,SRDW asszrled zero. COPXRM SP1, SP2 As GAKRM Wt 9COL,SROF7 assumed zero. COPORM SP1, SP2 As 67DRM but S^.OL,SRUA assumed zero. COPNDM SPl, SP2 As c3NEM but 9COL,SR(7W assulned zero. COPATTM SPl, SP2	As 3+'1sP?A W-- 4:OL,SRIH7 aSSIened zero.
-
-INW WT, LEN, COL, Invert_ --- i -A-. ROW
-
-MIRV	kIGT, LEN, OJL,	Mirror screen window about its centre. ROW
-
-MARV	FGT, LEN, COL,	Mirror screen window attributes about
-ROW	centre.
-
-INVM	SPN	Invert Sprite data.
-
-MIRM	SPN	Mirror Sprite about its centre.
-
-MARM	SPN	Mirror Sprite attributes about centre.
-
-SPINM	SP1, SP2	Rotate Sprite SP2 90 degrees clockwise into Sprite SP1.
-
-DSPM	SP1, SP2	Enlarge Sprite SP2 into Sprite SP1.
-
-HALT	Suspend CPU operation until next interrupt.
-
-El	Enable interrupt.
-
-DI	Disable interrupt.
-
-EXX	Exchange Ideal variables with the alternate Ideal variables.
-
-INT-ON	FORTH hDRll	Execute specified Forth Word under interrupt.
-
-INT-OFF	Terminate execution of interrupt driven word.
-
-PROG	Enter BASIC.
-
-RESERVE N1	Reserve N1 bytes in the dictionary for BASIC source.
-
-GOTO	N1	Begin execution of BASIC at line N1.
-
-RETUSR	Return to BASIC fran RANDOMIZE L6R 30000 call.
-122
+PWNDM    SP1, SP2, SCOL, SROW    Logically AND window at SCOL,SROW of sprite SP2 into sprite SP1
+PWATTM    SP1, SP2, SCOL, SROW    Block move attributes of window at SCOL,SROW of sprite SP2 into sprite SP1
+COPYM    SP1, SP2    As GWBLM but SCOL,SROW assumed zero
+COPXRM    SP1, SP2    As GWXRM but SCOL,SROW assumed zero
+COPORM    SP1, SP2    As GWORM but SCOL,SROW assumed zero
+COPNDM    SP1, SP2    As GWNDM but SCOL,SROW assumed zero
+COPATTM    SP1, SP2    As GWATTM but SCOL,SROW assumed zero
+INVV    HGT, LEN, COL, ROW    Invert screen window
+MIRV    HGT, LEN, COL, ROW    Mirror screen window about its centre
+MARV    HGT, LEN, COL, ROW    Mirror screen window attributes about centre
+INVM    SPN    Invert sprite data
+MIRM    SPN    Mirror sprite about its centre
+MARM    SPN    Mirror sprite attributes about centre
+SPINM    SP1, SP2    Rotate sprite SP2 90 degrees clockwise into sprite SP1
+DSPM    SP1, SP2    Enlarge sprite SP2 into sprite SP1
+HALT        Suspend CPU operation until next interrupt
+EI        Enable interrupt
+DI        Disable interrupt
+EXX        Exchange IDEAL variables with the alternate IDEAL variables
+INT-ON    FORTH WORD    Execute specified Forth word under interrupt
+INT-OFF        Terminate execution of interrupt driven word
+PROG        Enter BASIC
+RESERVE    N1    Reserve N1 bytes in the dictionary for BASIC source
+GOTO    N1    Begin execution of BASIC at line N1
+RETUSR        Return to BASIC from RANDOMIZE USR 30000 call

@@ -1,44 +1,62 @@
 # TODO: Remove this comment once this file has been proofread
 
-WHITE LIGHTNING by Oasis Software
-
-
-INTRODUCTION
-
-White Lightning is a high level graphics development system for the Spectrum 48k. it is aLn 1 primarily at the user who has crnm:rcial games writing in mind and has the patience to learn a sizeable new language. it is not a games designer and stunning results probably won't be produced overnight, but it does have the power and flexibility to produce software of a commercial standard (with a little perseverance!). Software produced using White Lightning can be marketed without restriction, although, we would be very grateful if you felt you could pop a small credit on the sleeve. If you're looking for a publisher - don't forget us !.
-
-Assanbly language has three advantages over most high level languages: speed, flexibility and compactness. During the running of an arcade game, the processor spends most of its time menipulating screen data, and if the appropriate oamv3nds are implemented in the language, the execution "overhead" is very small. Add to this the fact that considerable time has been spent on the routines themselves to optimise execution speed, and we feel most machine code progratrmers would be hard pressed to better White Lightning for spend. As far as flexibility is mncenzd, White Lightning has almost 300 commands as well as access to BASIC and mchine language if required. A lot of the tricky routines like rotations and enlargements are already implemented for you. As far as compactness goes, Forth itself produces very mrrpact code, but there is, of course, the overhead of the language itself. Assembly language ha, four major drawbacks. Firstly, you' ve got to learn it. Raving mastered machine code, program development is very slow compared with a typical high level language, there is no "crash protection" whatsoever, and to produce effective results, you need a fairly intimate knowledge of the machine you're working with.
-
-BASIC has several points in its favour, these are: excellent crash protection, extremely readable source code and a relatively short learning curve. These features make BASIC a very good introduction to programing for the hobbyist, but for the serious games writer, the language is insufficient in terms of both its speed and flexibility.
-
-Because White Lightning is Perth based it has virtually the speed of mchine code, no knowledge of the machine is required, the source code is relatively readable, and it is fairly well protected from crashing.
-
-If you do have any queries concerning White Lightning, then we can be contacted by phone on (0934) 419921. If possible, please restrict calls to the periods 9 am to 11 an or 6 pn to 6.30 pn. If this is not convenient we are here all day. If your query is a detailed one then it's probably better to write in. We are also interested to hear of any extensions or routines you may develop, and if sufficient interest is shown we will start a News Letter, and possibly, even a User Group.
-
-
-SPRITE DEVELOPMENT
-
-Included with White Lightning is a sprite generator. This canes complete with a predefined character set which, when suitably combined, makes up 167 full characters. The predefined characters cover Asteroids, Pac-Man, Scramble, Defender, Space Invaders, City Bomber, Lunar Lander, Frogger, Centipede, Donkey Kong and many more. You can use them as they are, custanise than, or design up to 255 of your own sprites. The developanent software allows you to reflect, spin or invert. When you have finished work, orr between sessions the whole lot can be simply saved to tape.
-7
 IDEAL
 
-The min part of the package is the White Lightning language itself. The language can be thought of as being divided into two parts: firstly, there is a super fast integer Forth, which conforms to a standard Fig-Forth, but secondly, and of most importance to gams designers, there is the IDPAIL sub-language. IDEAL stands for "Interrupt Driven Extendable Animation Language ". IDEAL has a dictionary of over 100 words , which can be freely mixed with Forth, or, as we shall see, can be accessed fran BASIC,
+The main part of the package is the White Lightning language itself. The
+language can be thought of as being divided into two parts: firstly, there
+is a super-fast integer Forth, which conforms to a standard Fig-Forth; but
+secondly, and of most importance to games designers, there is the IDEAL
+sub-language. IDEAL stands for "Interrupt Driven Extendible Animation
+Language". IDEAL has a dictionary of over 100 words, which can be freely
+mixed with Forth, or, as we shall see, can be accessed from BASIC.
 
 
-InterruptDriven
-Forth/IDEAL words can be executed under interrupt; this :mans that program can be run in foreground and background at the same time. Suppose, for instance, the program you are writing involves a scrolling backdrop, which has been defined in a sprite 6 screens wide. A program can be run in background to handle the scrolling backdrop, and a separate program written in foreground to control all of the characters which move within the backdrop. This will free the user from meplex timing calculations to get a smooth scroll and is one of the most powerful features of the entire package. Background words can be executed ip to 50 times a second.
+Interrupt Driven
+
+Forth/IDEAL words can be executed under interrupt; this means that
+programs can be run in foreground and background at the same time.
+Suppose, for instance, the program you are writing involves a scrolling
+backdrop, which has been defined in a sprite 6 screens wide. A program can
+be run in background to handle the scrolling backdrop, and a separate
+program written in foreground to control all of the characters which move
+within the backdrop. This will free the user from complex timing
+calculations to get a smooth scroll and is one of the most powerful
+features of the entire package. Background words can be executed up to 50
+times a second.
 
 
-Extsndibk
+Extendible
 
-Forth is extendible and was chosen as the most suitable host language for IDEAL because of this extremely useful feature. New words can be defined in terms of any of the Forth/IDEAL words, or your cave previously defined words. This means you can create diagonal scrolls for instance, by mnbining individual scrolls.
+Forth is extendible and was chosen as the most suitable host language for
+IDEAL because of this extremely useful feature. New words can be defined
+in terms of any of the Forth/IDEAL words, or your own previously defined
+words. This means that you can create diagonal scrolls, for instance, by
+combining individual scrolls.
 
 
-Animation Lanpuags
-Very careful planning went in to the designing of the IDEAL animation language, to make it as portable as possible between micros. If you've written a very successful program for one micro, you can love the same code across without too much difficilty. The only major changes necessary, are changes to acmriodate the different screen formats, ie the number of columns and rows. You don't need to worry about the complexities of various memory m3ppings, IDEAL does that for yau. Sane implementations will not allow attributes to be moved separately from pixel data, so to be certain of higher portability, move attributes and data together.
+Animation Language
+
+Very careful planning went into the designing of the IDEAL animation
+language, to make it as portable as possible between micros. If you've
+written a very successful program for one micro, you can move the same
+code across without too much difficulty. The only major changes necessary
+are changes to accommodate the different screen formats; ie. the number of
+columns and rows. You don't need to worry about the complexities of
+various memory mappings; IDEAL does that for you. Some implementations will
+not allow attributes to be moved separately from pixel data, so to be
+certain of higher portability, move attributes and data together.
 
 
 ACCESS FROM BASIC
 
-If you are rot familiar with Forth and want to get reasonable software quickly, you can access the IDEAL language fran BASIC. Programs will no longer be portable and you won't get quite the same speed and polish, but perfectly good programs can, and have, been written this way. More rtemry will be used for BASIC source, so bear all this in mind before deciding to put off Learning Forth! Most of the useful BASIC ornrranas that handle sound and graphics, such as DRAW, CIftCLE, BEEP and so on, have been implemented in Spectra Forth. Whenever possible, call then from Forth and not BASIC. The interpretation and initial floating point manipulation of BASIC mman3s are avoided, and mmands will therefore execute more rapidly from Forth.
-2
+If you are not familiar with Forth and want to get reasonable software
+quickly, you can access the IDEAL language from BASIC. Programs will no
+longer be portable and you won't get quite the same speed and polish, but
+perfectly good programs can be, and have been, written this way. More
+memory will be used for BASIC source, so bear all this in mind before
+deciding to put off learning Forth! Most of the useful BASIC commands that
+handle sound and graphics, such as DRAW, CIRCLE, BEEP and so on, have been
+implemented in Spectra Forth. Whenever possible, call them from Forth and
+not BASIC. The interpretation and initial floating point manipulation of
+BASIC commands are avoided, and commands will therefore execute more
+rapidly from Forth.

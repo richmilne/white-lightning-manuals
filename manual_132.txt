@@ -49,9 +49,9 @@ t!;KKarA - MUTE LIGHTNING MppL
 Page 7, line 24:
 "enter the number 75" should read "enter the number 63".
 Page 20, line 19:
-"	: Convert the number ... trailing
+"    : Convert the number ... trailing
 space" should read
-".	: Convert the number ..
+".    : Convert the number ..
 ." etc.
 Page 72, line 25:
 "PWrX2M" should read "PWXRM".

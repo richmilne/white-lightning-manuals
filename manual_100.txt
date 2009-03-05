@@ -6,30 +6,30 @@ Clear the stacks and enter
 the execution state. Return control to the operator's
 terminal, printing a message appropriate to the installation.
 ID
-ABS	n -- u
+ABS    n -- u
 Leave the absolute value of n as u.
 AGAIN n - (ornpillng) P,C2,IA addr Used in colon-definition in the form:
 At run-tine, AGAIN forces execution to return tn eorresPondin9 BEGIN- There is I effect m the stack, Execution cannot leave this loop (unless '.t> is executed one
 level below).
 At oampile time. AGAIN eaMPiles HtANCH with an offset fran HERE to addr• n is used for oapile-time error checking.
 IA
-ALLOT	n
+ALLOT    n
 Add the signed number to the dictionary pointer DP. may be used to reserve dictionary space or re-origin rtemorY• n is with regard to oa+Futer address type (byte or Mord).
-AND	nl n2
+AND    nl n2
 -- n2
 Leave the bitwise logical "AND" of nl and n2 as n3.
 -
-B/BUF	n
+B/BUF    n
 This constant leaves the number of bytes per disc buffer, the byte count read fran disc by BLOCK.
-B/SCR	n
+B/SCR    n
 This oaponent leaves the number of blocks per editing screen. By convention, an editing screen is 512 bytes, organised as 8 lines of 64 characters each.
-BACK	addr
+BACK    addr
 Calculate the backward branch offset from HERE to ad<lr and o°npile into the next
 available dictionary memory address.
 BASE
 A rwAr variable containing the current number base used for input and output conversion.
 99
-BEGIN	-- addr n (ampilation)	P, LO
+BEGIN    -- addr n (ampilation)    P, LO
 
 in a colon-definition in the form: BEGIN ... UNTIL BEGIN ... PGAIN
 BEGIN ... WHILE ... REPEAT
@@ -41,32 +41,32 @@ i~;:E'FAT. When executing UNTIL, a return to BEGIN will cdcur if the top of the
 ~. !vpile time BEGIN leaves its return address and n for compiler error checking.
 
 
-eL	- C
+eL    - C
 
 :+ mnstant that leaves the ASCII value for blank.
 
 
-ni_ANKS	addr count -
+ni_ANKS    addr count -
 
 ii: 1 in an area of memory beginning at addr with blanks.
 
 
-BLK	- edit	TO
+BLK    - edit    TO
 
 nuser variable containing the block number being interpreted. If zero, input is i.d.nq taken fran the terminal input buffer.
 
 
-BLOCK	n -- addr	LO
+BLOCK    n -- addr    LO
 
 Leave the memory address of the block buffer containing block n. If the block is not already in memory, it is transferred from disc to whichever buffer was least recently written. If the block occupying that buffer has been marked as updated, it is re-written to disc before block n is read into the buffer. See also BUFFER, I</W UPDATE FLUSH.
 
 
-BRANCH	C2, LL)
+BRANCH    C2, LL)
 
 The run-time procedure for unconditionally branch. An in-line offset is added to ihe interpretive pointer IP to branch ahead or back. BRANCH is compiled by ELSE, K',AIN, REPEAT.
 
 
-BUFFER	n -_ a<1dr
+BUFFER    n -_ a<1dr
 
 ,htain the next memory buffer, assigning it to block n. If the contents of the -iffer are marked up as updated, it is written to the disc. The block is not read r- the disc. The address left is the first cell within the buffer for data forage.
 

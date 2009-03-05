@@ -1,46 +1,64 @@
 # TODO: Remove this comment once this file has been proofread
 
-'OPERATING INSTRUCTIONS
-
-1) Rewind the tape marked "White Lightning". Disconnect interface 1 if fitted.
-
-2) Load using LOAD-' then stop the twpe. White Lightinig will auto-run. 3) Once loaded, you will get the prompt LOAD SPRITES Y/N.
-
-4) If it's the first time you've used the package, type Y to load the demonstration sprites, which follow directly after White Lightning on the same tarn. There is a section of data before the sprites which doesn't load, but don't wrry about this, this is information used by the sprite developmst package. Once loaded, the I4AD SOURCE Y/N prompt will appear. Press N to enter White Lightning or, if you wish to Load sane source code place the appropriate cassette in the recorder, press PLAY and then type Y.
-
-5) To RUN the demonstrations, just LOAD using IAAD"" and the program will auto-run.
-
-6) To RUN the Sprite Development Software just type LOAD"" and again the program will auto-run.
-
-
-TO THE NEWCOMER
-When you have run the demonstration tape and have seen wtsat can be done, this may give you the incentive to learn all you can to produce full specification games for yourself. The author of this manual knew nothing of White Lightning before starting this project, but can promise you that after only a few hours of experimentation, became fairly adept and had the confidence to want to go further. It may all look a little complicated at first, but please be assured, that after a short time, and only a little effort, the fog really does clear!
-
-Nike Butler. 3
 SECTION 1
 
 THE SPRITE GENERATOR PROGRAM
 by Paul Newnham
 INTRODUCTION
-The Sprite. Generator Program was developed to oMVilrtnnt the White Lightning language. The language is comprised of commands for manipulating sprites and screen data but does not have the facility to directly design graphics characters. This means there are two phases to games creation. The first involves designing and editing your graphics characters with the sprite generator program, and the second involves the writing of the gaffe itself using the White Lightning language. In practice the two areas of work will probably be carried out simultaneously. For those of you who are not artistically inclined, there are two sets of previously defined graphics characters ready to use.
+
+The Sprite Generator Program was developed to compliment the White
+Lightning language. The language is comprised of commands for manipulating
+sprites and screen data but does not have the facility to directly design
+graphics characters. This means there are two phases to games creation.
+The first involves designing and editing your graphics characters with the
+sprite generator program, and the second involves the writing of the game
+itself using the White Lightning language. In practice the two areas of
+work will probably be carried out simultaneously. For those of you who are
+not artistically inclined, there are two sets of previously defined
+graphics characters ready to use.
 
 The Arcade Character Set
 
-The arcade character set is an integral part of the sprite generator program - 167 characters are provided in all. To see these, LOAD mid run DEMO B using LOAD "". The 17040 will auto-run. This will tell you which characters can be called up by which number, using Function Key Z. These characters are sumnarise9 as the penultimate part of this section.
+The arcade character set is an integral part of the sprite generator
+program - 167 characters are provided in all. To see these, LOAD and run
+DEMO B using LOAD "". The demo will auto-run. This will tell you which
+characters can be called up by which number, using Function Key Z. These
+characters are summarised as the penultimate part of this section.
 
-The Demnstratim Sprites
-Directly after White Lightning on side A you will find the demonstration sprites. By running the tape past white Lightning and using the LOAD SPRITES FROM TAPE faciltity, these can be Loaded and edited for your own use. The various sprites are tabulated at the end off this section.
+The Demonstration Sprites
+
+Directly after White Lightning on side A you will find the demonstration
+sprites. By running the tape past White Lightning and using the LOAD
+SPRITES FROM TAPE facility, these can be loaded and edited for your own
+use. The various sprites are tabulated at the end of this section.
 
 
 USING SPRITES WITH WHITE LIGHTNING
 
-Once you have mnpleted an editing session, the sprites generated should be Saved to tape for further editing sessions, or for use with the White Lightning language itself. To Load your sprites into White Lightning:
+Once you have completed an editing session, the sprites generated should
+be saved to tape for further editing sessions, or for use with the White
+Lightning language itself. To load your sprites into White Lightning:
 
-1. road White Lightning using LOAD ""
+1. Load White Lightning using LOAD ""
+2. Insert the tap containing your sprites into the tape recorder and 
+   press Y in response to the "LOAD SPRITES Y/N" prompt. The sprites will
+   be loaded at the address from which they were saved using the sprite
+   generator program.
 
-2. Insert the tape containing your sprites into the tape recorder and press Y in response to the "LOAD SPRITES YIN" prompt. The sprites will be Loaded at the address at which they were saved using the sprite generator program.
+
 COLDSTART
-If you enter the sprite generator program via a COLD start, then all sprites previously stored will be cleared and all system variables reset. If, for instance, you wish to use the demonstration sprites, you would enter via a COLD start. The program must always be initially entered via a COLD start.
+
+If you enter the sprite generator program via a COLD start, then all
+sprites previously stored will be cleared and all system variables reset.
+If, for instance, you wish to use the demonstration sprites, you would
+enter via a COLD start. The program must always be initially entered via a
+COLD start.
+
+
 WARM START
-If you enter the program via a NH.aM start then all sprites will be conserved and all system variables left unchanged. It is provided principally for re-entering the program after an accidental H2PAK or ERROR. If you do accidentally HtFAK: type: GD'ilG 3 and then enter via the viNtM start.
-4
+
+If you enter the program via a WARM start then all the sprites will be
+conserved and all system variables are left unchanged. It is provided
+principally for re-entering the program after an accidental BREAK or
+ERROR. If you do accidentally BREAK; type GOTO 3 and then enter via the
+WARM start.

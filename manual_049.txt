@@ -1,6 +1,6 @@
 # TODO: Remove this comment once this file has been proofread
 
-A dumnry sprite 6 by 8 is also required for the rotation so: 1 6 by 8 sprite requir_•s 1*(6*8*9+5) = 437 bytes So the overall tDtall is	2986+27+437 = 3450 bytes
+A dumnry sprite 6 by 8 is also required for the rotation so: 1 6 by 8 sprite requir_•s 1*(6*8*9+5) = 437 bytes So the overall tDtall is    2986+27+437 = 3450 bytes
 
 If this is to be located at the top of nrsrory, than SPOT ill need to be set to 65520 - 3450 = 62070. Note that :remory 65520 to 65536 is used for background applications.
 
@@ -11,26 +11,26 @@ If all this seems a bit complicated, don't worry. A far simpler way of setting q
 
 SPRITE
 
-Once the sprite space has been cleared, the sprites themselves can be set up. Parameters	Use
+Once the sprite space has been cleared, the sprites themselves can be set up. Parameters    Use
 
-SPN Number of the sprite to be set up HGf Height of the sprite in characters LEN	Width of the sprite in characters
+SPN Number of the sprite to be set up HGf Height of the sprite in characters LEN    Width of the sprite in characters
 
 
-Cann,qnl	Action
+Cann,qnl    Action
 
-SPRITE	The five byte leader is set up and SPNU adjusted Note:
+SPRITE    The five byte leader is set up and SPNU adjusted Note:
 
 If space is dynamically allocated to a sprite, the sprite will not necessarily be initialised and my contain garbage. If a sprite is being set up at run-time, be sure that sufficient memory is available. If a sprite number is given that has been previously used, the old sprite is destroyed and recreateA with the new dimensions. If sufficient memory is not available, then either an old sprite can be destroyed or the wbole of sprite space can be relocated downwards if space is available. Most users will probably not use the SPRITE wnnard, but instead, will use the far simpler ISPRITE command.
 WIPE
 This cvunand will destroy the sprite whose number is held in SPN, relocate the sprites above it downward, update the variable SPND (marking the end of sprite space) and leave the particular sprite number free for reallocation.
 
 
-Parameter	Use
+Parameter    Use
 
-SPND	The number of the sprite to be wiped 49
-Command	Action
+SPND    The number of the sprite to be wiped 49
+Command    Action
 
-WIPE	Destroy a sprite and adjust memory
+WIPE    Destroy a sprite and adjust memory
 
 
 RELOCATE
@@ -38,11 +38,11 @@ RELOCATE
 An alternative irethai for creating more space to define new sprites, is to
 relocate sprite space downward. Only one parameter is required, KEN. A positive value in ~II.EN will relocate sprites to high mrarory and a negative value will
 
-relocate than downward. All pointers are reset. Parametcr	Use
+relocate than downward. All pointers are reset. Parametcr    Use
 
-MIEN	Size and direction of relocation Command Action
+MIEN    Size and direction of relocation Command Action
 
-RELOCATE	Relocate all sprite data and reset pointers Example:
+RELOCATE    Relocate all sprite data and reset pointers Example:
 
 If space for a 4 by 4 sprite is to be made and the existing buffer sWce maintained, the sprites would need to be relocated downward by 4*4*9+i = 149. 'lb do this use the following:
 
