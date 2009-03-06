@@ -1,47 +1,59 @@
-# TODO: Remove this comment once this file has been proofread
-
 OPERATING INSTRUCTIONS
 
-Insert the Sprite Generator Program tape, type LOAD "" and load into the
-computer as normal.
+Insert the Sprite Generator Program Tape, type LOAD"" and load into the computer
+as normal.
 
-Once loaded the program will auto-run and the screen message "COLD OR WARM
-START" will appear. If this is the first execution of the program or if
-you wish to clear the sprite memory, press C for COLD START.
+Once loaded, the program will auto-run and the screen message "COLD OR WARM
+START" will appear.  If this is the first execution of the program or if you wish
+to clear the sprite memory, press C for a COLD START.
 
-A further screen message will now appear asking if you wish to change the
-buffer size - this has a default value of 256 bytes. For now, press N.
-This function will become more apparent later.
+A further screen message will now appear asking if you wish to change the buffer
+size - this has a default value of 256 bytes.  For now, press N.  This function
+will become more apparent later.
 
 NOTES:
 
-1. A WARM START will not destroy any sprites already in mampry and if ever the program is accidently caused to HiFaK, type 0710 3 and in response to the screen prompt, execute a VARM START.
+1. A WARM START will not destroy any sprites already in memory and if ever the
+program is accidently caused to BREAK, type GOTO 3 and in response to the screen
+prompt, execute a WARM START.
 
-2. A COLD START will destroy any and all sprites defined in Memory. 3. MM STARTs can only be executed after an initial COLD START.
+2. A COLD START will destroy any and all sprites defined in memory.
+
+3. WARM STARTs can only be executed after an initial COLD START.
 
 
 GETTING FAMILIAR WITH THE FUNCTION KEYS
 
-Now lets get familiar with some of the Function Keys - a full list will be found at the end of this section.
+Now lets get familiar with some of the Function Keys - a full list will be found
+at the end of this section.
 
-THE CHR95QR
 
-This is the grid square on which you create and edit characters for your own sprite library. To move the cursor:
+THE CHR$ SQR
 
-1. Press the 5 key for each trovenent to the left.
+This is the grid square on which you create and edit characters for your own
+sprite library.  To move the cursor:
 
-2. Press the 6 key for each movement downward. 3. Press the 7 key for each    movement upward.
+1.  Press the 5 key for each movement to the left.
 
-4. Press the 8 key for each movement to the right.
+2.  Press the 6 key for each movement downward.
 
-Now that you know how to move the cursor, let's fill in a few squares: 
+3.  Press the 7 key for each movement upward.
 
-1. Move the cursor to any square that you like and release the keys. 2. Press the 9 key to set the square. 3. Now move the direction keys and fill in a few sore squares.
+4.  Press the 8 key for each movement to the right.
 
-Now that we have set som squares, what about deleting a few of then? This is simple:
+Now that you know how to move the cursor, let's fill in a few squares:
 
-1. Move the cursor to a square that you have set and release the keys.
+1.  Move the cursor to any square that you like and release the keys.
 
-2. Press the 0 key to clear the square.
+2.  Press the 9 key to set the square.
+
+3.  Now move the direction keys and fill in a few sore squares.
+
+Now that we have set som squares, what about deleting a few of then?  This is
+simple:
+
+1.  Move the cursor to a square that you have set and release the keys.
+
+2.  Press the 0 key to clear the square.
 
 Now have a go at setting and clearing some squares, just to get used to it.

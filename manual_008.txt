@@ -1,62 +1,59 @@
-# TODO: Remove this comment once this file has been proofread
+4.  Now press the S key to give your character a sprite number.  For now, just
+enter the number 1 and press ENTER.
 
-The Sprite Screen Cursors
+5.  Press the G key to GET the character into memory as a sprite and answer Y to
+the prompt - your character will flash to confirm.
 
-Now that you're used to moving the CHR$ SQl cursor around, moving the sprite screen cursors is a piece of cake:
-1. Move the X cursor by pressing SYMBOL SHiFC and the 5 or 8 key to move left or right respectively.
+Now, let's prove that your character is in memory:
 
-NOTE: If you've never been able to remember which is the X or which is the Y mwenent, remember this little saying:
-X is a cross - if you say it quickly it sounds like, X is across - which it is!
-2. Move the Y cursor by pressing SYMBOL SHIFT and the 7 or 6 key to move up or down respectively.
-Character Building
+1.  Press the SYMBOL SHIFT Q to clear the sprite screen.
 
-No, not yours - building up characters to mike up sprites! You've probably got quite a mess in the CHRS S{Xt, so let's clear it:
-1. Press the Q key and respond to the prompt in the text line by pressing Y and the QiR$ 9{bi will clear.
+2.  Press S to tell the computer which sprite you are calling up (there is only
+one at the moment of course).  Enter 1 followed by ENTER.
 
-Just to get you used to a similar function, let's clear the Sprite Screen as well, even though it's clear:
-1. As you can see, to clear the CTR2$ Sgt press Q, to clear the sprite screen press SYMBOL SHIFT Q - cunning eh?
-Now that we have clear screens we can start to go places. Have a go at this: 1. Move the X and Y cursors to 1 and 1 respectively.
-2. Press the Z key (to call up a character from the Arcade Library) and enter the -. timber 75 followed by ENTER. A space invader type character will appear an the sprite screen. ,
-3. Press the K key and answer Y to the praTt and hey presto - the character has been placed in the (71H$ S(iFi.
-This will illustrate quite nicely how a character is built up.
-Have a go at changing this character using the 5, 6, 7 or 8 keys to move the CHR$ SQR cursor and the 9 and 0 keys to set or clearr a square. You won't be able to see the QiR$ 9a2 cursor at the moment - just press one of the cursor keys and it
+3.  Now press P to PUT the sprite to the sprite screen and answer Y to the
+question.
 
-will flash for you.
-Let's GEC your 'new character' into memory:
-1. Move the sprite screen cursors to X POS 4 and Y FVS 4(SYMBOL SNIFF 5, 6, 7, and 8)
-2. Press the J key and answer Y to the question.
-3. Your new character was placed on the sprite screen from the GINS S{]Ft by using the J key. Your original character is still there at X P(75 1 Y POS 1.
-4. Now press the S key to give your character a sprite number. For now, just enter the number 1 and press IIT1'fR.
+4.  Now you will be given four more options.  Don't worry about 2, 3 and 4 for now
+- we just want to place our sprite on the sprite screen.  Press 1, and there it
+is!
 
-5. Press the G key to GET the character into memory as a sprite and answer Y to the prompt - your character will flash to confirm. Now, let's prove that your character is in m3nory: 1. Press the SYMk3DL SHIFl' Q to clear the sprite screen.
+You will notice that although you correctly got your own sprite PUT back to the
+sprite screen, the original character from the Arcade Library wasn't.  This
+example was to show you that any actions that you call for, will only happen to
+the character that the sprite screen cursors are pointing to, as we pointed out in
+the Introduction.
 
-2. Press S to tell the computer which sprite you are calling up (there is only one at the nrmr_nt of course). Ehter 1 followed by ENTER.
+You will also notice that the CHR$ SQR still contains your new character - have a
+look to compare.
 
-3. Now press P to PUT the sprite to the sprite screen and answer Y to the question.
 
-4. Now you will be given four more options. Don It worry about 2, 3 and 4 for now - we just want to place our sprite on Vie sprite screen. Press 1, and there it is!
+We have seen how to call up a character from the Arcade Library and how, in
+essence, to build up a character in the CHR$ SQR.  There is another way to build
+up a character:
 
-You will notice that although you correctly got your own sprite PUT back to the sprite screen, the original character from the Arcade Library wasn't. This example was to show you that any actions that you call for, will only happen to the character that the sprite screen cursors are pointing to, as we pointed out in the Introduction.
+1.  Press SYMBOL SHIFT Q to clear the sprite screen.
 
-You will also notice that the CURS 9Q2 still contains your new character - have a look to compare.
+2.  Press the D key, answer Y to the question, and enter the following, very
+carefully, pressing ENTER after each entry:
 
-We have seen how to call up a character from the Arcade Library and how, in essence, to build up a character in the CHR$ SQR. There is another way to build up a character:
+    a) H24 126 H9D 255 HFF 153 129 102
 
-1. Press SYMDJL SifItT Q to clear Uie sprite si:reen.
+3.  Guess who's back! (You should have a space invader type character).
 
-2. Press the U key, answer Y to the question, and enter the following, very carefully, pressing ENTER after each entry:
+This is the DIRECT DATA INPUT.  Direct Data characters are built up from 8 bytes
+of data, one byte at a time.
 
-a) H24 126 H9D 255 HFF 153 129 102
+NOTE:  Data can only be entered using values in the range 0 to 255 Decimal or
+       H00 to HFF HEX.  The character H must precede a HEX entry.
 
-3. Guess who's backt (You should have a space invader type character).
 
-This is the DIRLCT DATA INPUT, Direct Data characters are built up from 8 bytes of data, one byte at a ti're.
+Let's do a quick review of the functions that we have used:
 
-NOTE: D4ta can only be entered using values in the range 0 to 255 Decimal or t100 Lo !iF'i•` HEX. The character H mist precede a HEX entry. let's do a quick review of the functions that w- have used:
+1.  CHR$ SQR - cursors, 5, 6, 7 and 8 keys to move and the 9 and 0 keys to set and
+clear squares.  The Q key clears the CHR$ SQR.
 
-1. CURS S(}4 - cursors, 5, 6, 7 and 8 keys to mve and the 9 and 0 keys to set and clear squares. The Q key clears the C7tit$ S(Al.
+2.  SPRITE SCREEN - 5 and 8 to move the X cursor (X is across remember) and 6 and
+7 to move the Y cursor.  The SYMBOL SHIFT and Q keys clear the sprite screen.
 
-2. SPRITE S~REP1J - 5 and 8 to move the X cursor (X is across r9nemher) and 6 and 7 to move tlre Y cursor. The SYMBJL SHIFT and Q keys clear the sprite s::reer..
-
-3. The Z key calls up the AttCADli C'FiARPLPLR LIBRARY - 1 to 167.
-8
+3.  The Z key calls up the ARCADE CHARACTER LIBRARY - 1 to 167.
