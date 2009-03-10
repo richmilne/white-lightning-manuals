@@ -1,54 +1,59 @@
-# TODO: Remove this comment once this file has been proofread
+This next example illustrates one of the more complicated functions of the 
+generator - GETting a sprite into a larger sprite:
 
-7. Press Z (Arcade Character) and enter 151 (a Robot). 8. Set HEIGHT (H) to 2 and LENGTH (L) to 2.
-9. Set the Sprite Number (S) to 13, then press G to GET the character as a sprite.
-10. Move the X cursor by +2.
-11. Press R(ROTAT^c), and enter the new sprite number, 14.
-12. Press P(PV1') and press 1- a Robot rotated by 90 degrees!
-Now that we have sprite 14 as a 90 degree rotation of sprite 13, why not go a
+1.  Clear the sprite screen and position the cursors to X POS 1 Y POS 1.
 
-little further ? Try this:
+2.  Press L (Length) and enter 4, then press H (Height) and enter 4.
 
-1. Move the X cursor by +2.
-2. Press R(ROTATE) and enter the new sprite number, 15.
-3. Press P(PUP) and press 1 - this new robot has been rotated by 180 degrees from it's original orientation.
-To produce the final (270 degree) orientation:
-1. Move the X cursor by +2.
-2. Press R(ROTATE) and enter the new sprite number, 16.
-3. Press P(PVP) and press 1 - this has produced the final orientation.
+3.  Press E (Screen Functions) and press 1 (INVERT).
 
-Now let's look at attribute handling in more detail - clear the sprite screen and
-position the X and Y cursors to X POS 1 Y POS 1. The following two examples will show how to download and pick-up attributes between the attribute variables and the sprite screen:
-1. Press X(IHI() and set to 3 (magenta).
-2. Press C(PAPER) and set to 2 (red).
-3. Press V(PLASH) and set to 1(ON).
+4.  Press S (Sprite Number) and enter 17, then press G (GET).
 
-4. Press B(&2I(H1') and set to 0(OER).
-5. Press A(ATTR) and set to 0.
-6. Press I(AT'iRIBt7PE IXAfp) - the attributes will appear on the sprite screen. 7. Now set all the attributes, X, C, V, B, and A to 0.
-8. Press U f?"cK Cv ATTRIBUTES) and the attributes on the screen will be loaded into th, a--r _tur_U -iahles.
-13
-This next example illustrates one of the more complicated functions of the generator - GETting a sprite into a larger sprite:
+5.  Move the X cursor by +4.
 
-1. Clear the sprite screen and position the cursors to X POS 1 Y POS 1. 2. Press L(Length) and enter 4, then press H (Height) and enter 4. 3. Press E(SCreen Functions) and press 1(IIIVFRT). 4. Press S (Sprite Number) and enter 17, then press G(GEf). 5. Move the X cursor by +4.
+6.  Press X (INK) and set to 0.
 
-6. Press X(Ild() and set to 0.
+7.  Press C (PAPFR) and set to 6 (yellow).
 
-7. Press C(PAPFR) and set to 6 (yellow). 8. Press V (FLASH) and set to 0(OPF). 9. Press B(BRZGHT) and set to 1(ON). 10. Press A(ATM ) and set to 1.
+8.  Press V (FLASH) and set to 0 (OFF).
+
+9.  Press B (BRIGHT) and set to 1 (ON).
+
+10. Press A (ATTR) and set to 1.
 
 11. Press Z (Arcade Character) and then enter 149.
 
-12. Press L(IUgth) and enter 2, then press H (Height) and enter 2. 13. Press S (Sprite Number) and enter 18. 14. Press G (GET).
+12. Press L (Length) and enter 2, then press H (Height) and enter 2.
 
-15. Press SPACE key (Place small sprite into large sprite) -enter small sprite an 18, larger sprite as 17, Row as 1, Column as 1 and HIS (1), as you get each prompt.
+13. Press S (Sprite Number) and enter 18.
+
+14. Press G (GET).
+
+15. Press SPACE key (Place small sprite into large sprite) - enter small sprite as
+18, larger sprite as 17, Row as 1, Column as 1 and BLS (1), as you get each 
+prompt.
 
 16. Move the X cursor by +2.
 
-17. Press P(Pllf), answer the prompt with Y and then press 1- there you have it, your Robot inside the square.
+17. Press P (PUT), answer the prompt with Y and then press 1 - there you have it, 
+your Robot inside the square.
 
-Let's move on to look at some of the utility functions - Test and Wipe. 1. Clear the sprite screen and position the cursors to X P06 1 Y POS 1. 2. Press Z(Arcade Character) and enter 135. 3. Press L (Length) and enter 2, then press H(Height) and enter 2. 4. Press S(Sprite Nunber) and enter 19. 5. Press G (GET).
 
-6. Press L(Length) and enter 10, then press H (Height) and enter 10. 7. Clear the sprite screen.
+Let's move on to look at some of the utility functions - Test and Wipe.
 
-8. Press T(Test Sprite) and note that the information rectangle oontai.ns the following:
-14
+1.  Clear the sprite screen and position the cursors to X P0S 1 Y POS 1.
+
+2.  Press Z (Arcade Character) and enter 135.
+
+3.  Press L (Length) and enter 2, then press H (Height) and enter 2.
+
+4.  Press S (Sprite Nunber) and enter 19.
+
+5.  Press G (GET).
+
+6.  Press L (Length) and enter 10, then press H (Height) and enter 10.
+
+7.  Clear the sprite screen.
+
+8.  Press T (Test Sprite) and note that the information rectangle oontains the 
+following:
