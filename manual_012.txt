@@ -1,79 +1,58 @@
-# TODO: Remove this comment once this file has been proofread
+9.  Move the sprite screen X cursor by +2.
 
-I
-1. Press E(SCreen Functions), answer Y and press 2 (Mirror) - the character is reflected!
+10. Change the INK (X) to 4 (green).
 
-2. Now press S (Sprite Number) and enter 11.
+ll. Press Z (Arcade Character) and enter 151 (another Robot).
 
-3. Press G(GET) and then Y - again it flashes to wnfirm.
 
-We now have two sprites, one facing left and one facing right. Let's set some new attributes.
+OK, you should have two robots on the sprite screen - lets define them as a 
+combined sprite:
 
-1. Press X(INK) and enter 4 (green).
+1.  Move the cursors to X POS 1 Y POS 1.
 
-2. Press I to activate the Attribute Dump facility.
+2.  Press L (Length Variable) and set to 4.
 
-3. Move the sprite screen X cursor 1 place to the right and press I again - the top half is done!
+3.  Press H (Height Variable) and set to 2.
 
-4. Move the sprite screen Y cursor 1 place down and press I.
+4.  Press S (Sprite Number) and enter 12.
 
-5. Finally, move the sprite screen cursor one place to the left and press I again - there you have it, a red character to the left and a green one to the right.
+5.  Press G (GET Function) and respond to the prompt with Y.
 
-If you ~t to swap the colours the other way around - yes you're right this can be done:
 
-L. Position the sprite screen cursors to X POS 1 Y POS 1.
+We have now set up a 4 by 2 sprite oontaining both characters. Now lets change 
+them over in memory:
 
-2. We will have to set up the screen window for the exchange: Press L (Length Variable) and enter 4 - the window will flash.
-
-3. Press E(Screen Functions), answer Y to the prompt and press 3 to MIRROR ATIRIBUCPS - watch the screen as you press 3, it happens very quickly: The red
-
-Dalek becomes green and the green Oalek becomes red.
-
-Right then - we'll move on a little. We'll oonsider some sprite operations. These are operations %bich take place in memory on the stored sprites. We'll begin by setting up a new sprite comprising two arcade characters and then go on to change their positions in the sprite in memory. Have a go at this:
-
-1. Clear the sprite screen (SYMIIJL StiItT Q). Don't worry about your previous characters - you'll probably remember that they are still in memory as sprites 10 and ll.
-
-2. Make sure that the sprite screen cursors are set to X POS 1 Y POS 1.
-
-3. Set INK (X) to 6(yellw).
-
-4. Set PAPER (C) to 0. 5. Set FLASH (V) to 0. 6. Set BRIGHT (B) to 1. 7. Set AIR (A) to 1.
-
-8. Press Z (Arcade Character) and enter 149 (a Robot).
-11
-9. Move the sprite screen X cursor by +2.
-
-10. Charge the INK ()(J to 4 (green).
-
-ll. Press Z(Arcade Character) and enter 151 (another Robot).
-
-OR, you should have two robots on the sprite screen - lets define then as a oombined sprite:
-
-1. Move the cursors to X FY76 1 Y POS 1.
-
-2. Press L(LSgU Variable) and set to 4. 3. Press H(Reight Variable) and set to 2. 4. Press S (Sprite Number) and enter 12.
-
-5. Press G(GEf Function) and respond to the prompt with Y.
-
-We have now set up a 4 by 2 sprite oontaining both characters. Now lets change them over in memory:
-
-1. Press M(Sprite Memory Functions), respond to the prompt with Y, and press 2 (MIRROR) - nothing happens on the sprite screen - this is a m3mry function.
+1.  Press M (Sprite Memory Functions), respond to the prompt with Y, and press 2 
+(MIRROR) - nothing happens on the sprite screen - this is a memory function.
 
 Let's prove that the sprite has been altered:
 
-1. Move the sprite screen Y cursor by +3.
+1.  Move the sprite screen Y cursor by +3.
 
-2. Press P(PUI') respond to the prompt with Y and press 1 - the sprite has been reflected -
+2.  Press P (PUT) respond to the prompt with Y and press 1 - the sprite has been 
+reflected.
+
 
 We can return the attributes to their former Robots quite easily:
 
-1. Press M (Sprite Memory Functions), respond to the prompt with Y, and press 3 (Mirror Attributes).
+1.  Press M (Sprite Memory Functions), respond to the prompt with Y, and press 3 
+(Mirror Attributes).
 
-2. Move the Y cursor by +3 and press P(PUP), respond to the prompt with Y and press 1 - new the attributes have mirrored.
+2.  Move the Y cursor by +3 and press P (PUT), respond to the prompt with Y and 
+press 1 - now the attributes have mirrored.
 
-Let's move on a little further now. We now look at a second sprite transformation - rotation. Try the following:
 
-1. Clear the sprite screen and set the X and Y cursors to X P06 1 Y POS 1. 2. Set INK (X) to 1 (blue).
+Let's move on a little further now.  We now look at a second sprite transformation
+- rotation.  Try the following:
 
-3. Set PAPER (C) to 7(white). 4. Set FLASH (V) to 0. 5. Set BRIGHT (B) to 1. 6. Set ATIR (A) to 1.
-12
+1.  Clear the sprite screen and set the X and Y cursors to X P0S 1 Y POS 1.
+
+2.  Set INK (X) to 1 (blue).
+
+3.  Set PAPER (C) to 7 (white).
+
+4.  Set FLASH (V) to 0.
+
+5.  Set BRIGHT (B) to 1.
+
+6.  Set ATTR (A) to 1.
