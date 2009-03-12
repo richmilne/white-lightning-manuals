@@ -1,89 +1,58 @@
-# TODO: Remove this comment once this file has been proofread
-
-'IOS    OPERATION    RESULT empty
-9    9 54lIaRE
-9    CR    carriage return
-9    THE SQUARE OF
-9 9    DUP
-9    9
-9    IS
-9 9    DUP
-81    •
-empty 81
+     TOS               OPERATION              RESULT 
+  empty
+      9                 9 SQUARE
+      9                 CR                  carriage return
+      9                 ."                  THE SQUARE OF
+  9   9                 DUP
+      9                 .                   9
+      9                 ."                  IS
+  9   9                 DUP
+     81                 * 
+  empty 81              .                   81
 
 and execution of SQUARE ends at the semi-colon.
 
 If we now wished, we could define a new word using our word SQUARE.
 
-We are now going to discuss control structures. It must be remembered, that the control structures can only be incorporated in colon definitions, or an error will
-
+We are now going to discuss control structures.  It must be remembered, that the 
+control structures can only be incorporated in colon definitions, or an error will
 result.
-B.CONTROLSTRUCTURES LOOPS
 
-There are essentially tam forms of loop operation:
 
-(i) DO ... LOOP
+6. CONTROL STRUCTURES
 
-(ii) DO... +LOOP
+LOOPS
+
+There are essentially two forms of loop operation:
+
+ (i)  DO...  LOOP
+
+(ii)  DO... +LOOP
 
 The first loop structure is used as follows:
 
-limit start OD ... 'Forth words' ... LOOP
+limit start DO ... 'Forth words' ... LOOP
 
-The Forth words within the loop are executed until start = limit, increnenting the start (or index) by one each time. Type:
+The Forth words within the loop are executed until start = limit, increnenting the
+start (or index) by one each time. Type:
 
-: TF9P1 5 0 DO ." Forth " CR LOOP ;<CR>
+: TEST1 5 0 DO ." Forth " CR LOOP ; <CR>
 Typing in TEST1 <CR>
-will print Forth Forth Forth Forth Forth
+will print Forth
+           Forth
+           Forth
+           Forth
+           Forth
 
-The second loop structure is used as follows: limit start DD ...'Forth words' increment -IjDOP
+The second loop structure is used as follows:
 
-The Forth words within the loop are executed fran start to limit, with the index being incremented or decrerented by the value increment. Try:
+limit start DO ...'Forth words' increment +LOOP
 
-: ':rsi'2 5 0 CO ." HELLO " 2 +IfJOP ; <CR> Executing 7tst2 will print HELLO HELLO HELL
+The Forth words within the loop are executed fran start to limit, with the index 
+being incremented or decremented by the value increment. Try:
 
-Since the limit and the index are held on the return stack, it Would be useful if re could examine the index. Well, there are words to do this:
-27
-: This will copy the loop index from the return stack onto the data stack.
+: TEST2 5 0 CO ." HELLO " 2 +LOOP ; <CR>
+Executing TEST2 will print HELLO HELLO HELLO
 
-'    : This will push the value of the nested MOP index to the stack.
-
-"    This will push the value of the double nested LOOP index to the stack. iyln:
-
-i TEST3 4 0 DO 4 0 DO 4 0 DO K J I . . . CR LOOP LOOP UJOP ;<(R>
-
-Itwscuting TEST3    1 1 1
-will print:    1 1 2 1 1 3
-and so m.
-
-
-7. CONDITIONAL BRANCHING
-
-Conditional branching must again he used only within a colon definition and uses the tom:
-
-IF ([rue part) ... (Forth WORDS) ... ENDIF
-
-IF (true part) ... (Forth WORDS) ... ELSE (false part) ... (Forth WORDS) ... ENDIF
-
-These Conditional statements rely m testing the top number on the stack to decide whether to execute the TRUE part, or the FALSE part of the condition.
-
-If the top item on the stack is true (non-zero) then the true part will be executed. If the top item is false (zero) then the true part will be skipped and execution of the false part will take place. If the ELSE part is missing, then execution skips to just after the FNDIF statement.
-
-There are several mathematical operators which will leave either a true (non-zero) flag, or a false (zero) flag m the stack to be tested for by IF.
-
-These are:
-
-0(    : This will leave a true flag on the stack if the castor on the top of the stack is less than zero, otherwise it leaves a false flag.
-
-e.g.    -9 0< <CR>
-will leave a true flag ( non-zero).
-
-1b see this, type:
-. <G2>
-to print the top number on the stack, which is the flag. This will print
-1
-to show a true flag.
-
-914 0< . <CR>
-will print a 0 (false flag).
-26
+Since the limit and the index are held on the return stack, it would be useful if 
+we could examine the index.  Well, there are words to do this:
