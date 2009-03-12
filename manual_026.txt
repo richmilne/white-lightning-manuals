@@ -1,79 +1,57 @@
-# TODO: Remove this comment once this file has been proofread
+C@      :  This will fetch the single byte held at the address at the top of the
+           stack - this single byte will be pushed on the stack as a 16
+           bit number, but with the high byte set to zero.
 
-i
-e.g.    1 2 3 ROT .Ct . CR .<CR>
-will print 1 3 2
+with reference to the memory contents shown previously,
+if we key in C000 C@ . <CR>
 
-since the stack before ROT was: 3    'iOS 2
-1
-
-and after ROT is-.
-1    1U5 3
-2
+this will print FF (and not FF00 as with @)
 
 
-4. OTHER OPERATIONS
++!      :  This will add the number held in the second number of the stack, to
+           the value held at the address on the top of the stack (Pronounced
+           "Plus-store").
 
-
-I    . This will store the second number on the stack at the address held on the top of the stack. (pronounced "store").
-
-e.g.    Suppose the stack is as follows:
-
-HEX C000    7V5
-tr PIT.;
-
-This will store PPtE at address C000/C001 i.e.    EE at C000
-FF at C001
-
-If we key in HEX FF00 C000 !<CR> this will store FF00 at C000/C001 i.e    C000 contains low byte 00
-C001 contains high byte PP
-
-Remember that each 16 bit number takes up 2 bytes.
-
-
-O    . This will replace the adrlress held on the top of the stack, with the 16 bit contents of that address. (Pronounced "at")
-Suppose the memory contents are as follows:
-
-Address: 6100 6101 6102 6103 6104 6105 Contents: 00 C3 8F 70 00 C3
-
-then 6100 @ . <CR> will print C300
-
-If you wish to deal with single bytes, then a variation of the above will be used.
-CI    : Will store a single byte held in the second number on the stack at the address held m the top of the stack.
-
-e.g.    FF C000 C! <CR>
-will store a single byte FF;at address C000.
-25
-CO    : This will fetch the single byte held at the address at the top of the stack - this single byte will be pushed on the stack as a 16 bit qwki+or, but with the high byte set to zero.
-
-with reference to the memory contents shown previously, if we key in C000 C@ . <CR>
-
-this will print FF land not PF00 as with @)
-
-1    : This will add the number held in the second number of the stack, to the value held at the address on the top of the stack (Pronounced "Plus-store").
-
-e.g.    4 t117C C000 +! <CR>
+e.g.    4 HEX C000 +! <CR>
 will add 4 to the value at C000/C001
-
 As will be shown later, this is of use when using variables in White Lightning.
 
-6. COLON DEFINITIONS
-These are the most powerful and most used forms of data structures in White Lightning, and are so called because they begin with a colon ".
 
-Colon definitions allow the creation of new Forth words based on previously defined words. They can be of any length, although carriage return mist be pressed before a particular section exceeds 80 characters.
+5. COLON DEFINITIONS
+
+These are the most powerful and most used forms of data structures in White 
+Lightning, and are so called because they begin with a colon ":"
+
+Colon definitions allow the creation of new Forth words based on previously 
+defined words.  They can be of any length, although carriage return must be 
+pressed before a particular section exceeds 80 characters.
 
 The general format is:
 
-: new-word wrdl wrd2    wordn ; All colon definitions end with a semi-colon
+:  new-word  word1  word2.....  wordn  ;
 
-If a word used in a colon definition has not been previously defined, then an :-r will result.
-The rew-word is executed simply by typing its name and pressing ENTER.
+All colon definitions end with a semi-colon  ";"
 
-e.g.    Suppose we wish to define a new word to calculate the square of a given number.
+If a word used in a colon definition has not been previously defined, then an 
+error will result.
+
+The new-word is executed simply by typing its name and pressing ENTER.
+
+e.g.    Suppose we wish to define a new word to calculate the square of a given 
+number.
 
 We could do this by:
-: SQUARE DECIMAL CR ° THE SQUARE OF " pUf,    " IS " Clip >. <CR> i!ere we have defined a new word called SQUARE which will be called by number SQUARE <CR>
 
-e.g.    9 SQUARE <CR> will result in: THE SQUARE OF 9 IS 81
-rf Me follow the operation of the word, we will see the changes in the stack:
-26
+: SQUARE DECIMAL CR ." THE SQUARE OF " DUP . ." IS " DUP * . ; <CR>
+
+Here we have defined a new word called SQUARE which will be called by 
+
+number SQUARE <CR>
+
+e.g.    9 SQUARE <CR>
+
+will result in:
+
+THE SQUARE OF 9 IS 81
+
+If we follow the operation of the word, we will see the changes in the stack:
