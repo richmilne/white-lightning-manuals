@@ -1,82 +1,58 @@
-# TODO: Remove this comment once this file has been proofread
+For the purposes of the following examples, let us refer to the numbers on the 
+stack as follows:
 
-If we use just . re will get a negative result. HEX C000 . <CR>
+ Nl  =  top    number on stack (i.e. first to be removed) 
+ N2  =  second number on stack (i.e. second to be removed) 
+ N3  =  third  number on stack (i.e. third to be removed)
 
-will print -4000
+To demonstrate this, let us push three numbers onto the stack by typing:
 
-
-7    . Print the value contained at the aadress on top of the stack using the current base.
-
-Suppose the top of the stack contains FF40H, location FF40/41H contains 0014H, and current BASE is 10 (DECIMAL), then 7 will print 20 which is the decimal equivalent of 14 Hex.
-TYPE    : This uses the top 7VA numbers held on the stack and will print a selected number of characters starting at a specific address onto the screen. The top number on the stack is the character count and the second number is the address to start at.
-
-e.g.    HEX 6100 20 TYPE <CR>
-(Note that 6100H is pushed onto the stack and 20H is pushed on top of it 20H = 70P; 6100H = second). This will print 20H (32) ASCII characters corresponding to the data starting at address 6100H . (Note that much of the output will be unrecognisable unless the data contains correct ASCII codes, such as for numbers and letters).
-
-
-DUMP ; This takes the top number on the stack and prints cut 80H bytes starting at this address.
-
-
-"    : This is used in the form ." character string " and will display the string contained within "" on the screen.
-
-e.g. ." THIS IS A CHARACTER SIItING '<Qt>
-will put THIS IS A CHARACTER SIRING on the screen. Note the spaces between the string and the quotes.
-
-
-SPACE : This will display a single blank/space on the screen.
-
-
-SPACES : This will display n spaces on the screen, where n is the number on the top of the stack.
-
-e.g.    fECIMAt. 10 SPACES <CR>
-will print 10 spaces on the screen.
-2. MATHEMATICAL OPERATORS
-.    : This will add the top two numbers on the stack and leave the result as a single number.
-
-e.g.    1 2 + . <CR>
-will print the value of 1+ 2 = 3 m the screen. Note that the boo top numbers are removed from the stack, being replaced by a single number - this is true of most Forth commands, in that they remove the values which they require to use from the stack and push the result onto the stack.
-21
-For the purposes of the following examples, let us refer to the numbers on the stack as follows:
-
-Nl = top number an stack (i.e. first to be removed) N2 - second number on stack (i.e. second to be removed) N3 = third number on stack (i.e. third to be removed)
-
-To demonstrate this, let us push three numbers onto the stack by typing: HEX O1PA 0019 1F47 <CR>
+        HEX 01FA 0019 1F47 <CR>
 
 The stack will look like this:
 
-1F47    Top of stack 0019
-O1PA
+        1F47    Top of stack
+        0019
+        01FA
 
-Note that this illustrates the property of the stack, that it is, Last In First Out or LIFO; therefore v.e have:
+Note that this illustrates the property of the stack, that it is, Last In First 
+Out or LIFO; therefore v.e have:
 
-N1 = 1F47 N2 - 0019 N3 = O1FA
+        N1  =  1F47
+        N2  =  0019
+        N3  =  01FA
 
 So if we type:
 
-CR . CR . CR . CR <CR>
+        CR . CR . CR . CR <CR>
 
-We get 1F47 19 1FA
+We get  1F47 
+          19
+         1FA
 
 ne will now resume our explanation of the mathematical operators.
 
--    . This will subtract the top number on the stack from the second number
 
-on the stack and leave the result as the top number. i.e.    N1 = N2 - N1
+-       :  This will subtract the top number on the stack from the second number
+           on the stack and leave the result as the top number.
+i.e.    N1 = N2 - N1
 
-e.g.    ' 1 7 11 - . <CR>
+e.g.    Decimal 7 11 - . <CR>
 will print -4, since the stack would contain
 
-N1    ll    10S (Top of stack) N2    7
+        N1     ll    TOS (Top of stack)
+        N2      7
 
 before the subtraction, and
 
-Nl -4 'NS
+        Nl     -4    TOS
 
 after the subtraction.
 
-t    . This will multiply the top two numbers on the stack and leave the
 
-result on the top of the stack. i.e.    N1 = N1 x V2
+*       : This will multiply the top two numbers on the stack and leave the
+          result on the top of the stack. 
+i.e.    N1 = N1 x N2
 
-e.g.    DECIMAL 140 20    <CR> would print 2800
-22
+e.g.    DECIMAL 140 20 * . <CR>
+would print 2800

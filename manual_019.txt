@@ -1,52 +1,60 @@
-# TODO: Remove this comment once this file has been proofread
-
 AN INTRODUCTION TO SPECTRA FORTH
 
-This introduction does not set out to teach Forth programming, but rather
-to serve as a supplement to available texts on the subject; references
-include:
-"Starting Forth" by Brodie, published by Prentice Hall
-"Introduction to Forth" by Knecht, published by Prentice Hall
-"Discover Forth" by Hogan, published by McGraw Hill
+This introduction does not set out to teach Forth programning, but rather to serve 
+as a supplement to available texts on the subject; references include:
 
-White Lightning syntax consists of Forth words or literals, separated by
-spaces and terminated by a carriage return. A valid name must not contain
-any embedded spaces since this will be interpreted as two distinct words,
-and must be less than 31 characters in length. If a word is entered which
-does not exist or has been spelled wrongly, or the number entered is not
-valid in the current base, then an error message will be displayed. To
-compile and execute programs created using the Editor type LOAD [CR].
-Throughout these examples [CR] means "press ENTER".
-
-e.g. -FINE    will generate an error message 0 since the word does not exist.
-
-HEX 17FZ will generate an error message 0 since 7Z is not valid in hexadecimal base.
-
-Other error messages include-.
-
-STACK 04M STACK FULL DICTICVMY FULL
-
-In order to program in White Lightning, it is necessary to define new
-words based on the words already in the vocabulary. Values to be passed to
-these words are pushed onto the stack, and if required the word will pull
-these values from the stack, operate on them, and push the result onto the
-stack for use by another White Lightning word. As mentioned previously,
-Spectra Forth (as with all Forths) uses Reverse Polish Notation and
-integer numbers, therefore no precedence of operators is available; thus
-all operations are performed in the sequence in which they are found on
-the stack;
-eg. 1 2 + 3 * is equivalent to 3*(1+2)
-
-As can be seen, in RPN the operators are input after the numbers on which
-they have to operate have been input.
-
-We will now discuss same of the words in greater depth. 
-
-1. INPUT/OUTPUT Opxators.
+'Starting Forth' by Brodie, published by Prentice Hall.
+'Introduction to Forth' by Knecht, published by Prentice Hall
+'Discover Forth' by Hogan, published by McGraw Hill.
 
 
-EMIT    . This will take the number held on the top of the stack and display it on the terminal, as its original ASCII character.
+White Lightning syntax consists of Forth words or literals, separated by spaces 
+and terminated by a carriage return.  A valid name must not contain any embedded 
+spaces since this will be interpreted as two distinct words, and most be less than 
+31 characters in length.  If a word is entered which does not exist or has been 
+spelt wrongly, or the number entered is not valid in the current base, then an 
+error message will be displayed.  To compile and execute programs created using 
+the Editor type LOAD <CR>.  Throughout these examples <CR> means 'PRESS ENTER'.
 
-e.g.    FE( 41 EMIT CR <Cti>
+e.g.  -FINE     will generate an error message 0 since the word does
+      not exist.
 
-will instruct the Forth to move into hexadecimal mode, push 41H onto the stack, and then take that number and display it on the terminal - in this example the character displayed will be an "A". The actual character displayed my be any of the reoognisable ASCII characers, a graphic character, or a control code depending m the value of the number on the stack.
+      HEX 17FZ  will generate an error message 0 since Z is not valid 
+      in hexadecimal base.
+
+Other error messages include:
+
+      STACK EMPTY
+      STACK FULL
+      DICTIONARY FULL
+
+In order to program in white Lightning, it is necessary to define new words based 
+on the words already in the vocabulary.  Values to be passed to these words are 
+pushed onto the stack and if required, the word will pull these values from the 
+stack, operate on them, and push the result onto the stack for use by another 
+Lightning word.  As mentionod previously, Spectra Forth (as with all Forths) uses 
+Reverse Polish Notation and integer numbers, therefore no precedence of operators 
+is available, thus all operations are performed in the sequence in which they are 
+found on the stack.
+
+e.g.    1 2 + 3 * is equivalent to 3*(1+2)
+
+As can be seen, in RPN, the operators are input after the numbers on which they 
+have to operate have been input.
+
+We will now discuss some of the words in greater depth.
+
+
+1. INPUT/OUTPUT Operators.
+
+
+EMIT    :  This will take the number held on the top of the stack and display it
+           on the terminal, as its original ASCII character.
+
+e.g.    HEX  41  EMIT  CR  <CR>
+
+will instruct the Forth to move into hexadecimal mode, push 41H onto the stack, 
+and then take that number and display it on the terminal - in this example the 
+character displayed will be an "A".  The actual character displayed my be any of 
+the reoognisable ASCII characers, a graphic character, or a control code depending 
+on the value of the number on the stack.

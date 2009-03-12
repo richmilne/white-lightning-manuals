@@ -2,56 +2,58 @@
 
 THE BASIC INTERFACE
 
-The BASIC interface was provided to increase the flexibility of the
-language and allow the newcomer to Forth a gradual transition. Some
-applications are actually more suited to BASIC, but for games writing in
-general Forth is much more appropriate, and we hope that this facility
-will not discourage people from experimenting with Forth.
+The BASIC interface was provided to increase the flexibility of the language and 
+allow the newcomer to Forth, a gradual transition.  Some applications are actually
+more suited to BASIC but for games writing in general, Forth is much more 
+appropriate and we hope that this facility will not discourage people from 
+experimenting with Forth.
 
-There are four words to master at the Forth end and three USR calls to
-master at the BASIC end. Do not use CLEAR or NEW whilst in BASIC.
+There are four words to master at the Forth end and 3 USR calls to master at the
+BASIC end.  Do not use CLEAR or NEW whilst in BASIC.
 
 
 The Command Level
 
-When White Lightning is first entered from a COLD start, BASIC is located
-beneath Forth and there is approximately 1k of program space if
-microdrives are not in use. This is ample space if BASIC is only to be
-used as command level, to LOAD and SAVE for instance, but if programs are
-to be written you will need to execute the RESERVE command. For the time
-being, however, let's just consider operation at the command level. To
-enter BASIC from Forth type:
-PROG [CR]
+When White Lightning is first entered from a COLD start, BASIC is located beneath 
+Forth and there is approximately 1k of program space if microdrives are not in 
+use.  This is ample space if BASIC is only to be used at command level, to LOAD 
+and SAVE for instance, but if programs are to be written you will need to execute 
+the RESERVE command.  For the time being, however, let's just consider operation 
+at the command level.  To enter BASIC from Forth type:
+
+PROG <CR>
 
 To re-enter Forth from BASIC just use:
-PRINT USR 24836 [CR]
-This is the normal WARM start entry. Note that PRINT USR must be used and
-not RANDOMIZE USR, or an OUT OF SCREEN error may occur.
+
+PRINT USR 24836 <CR>
+
+This is the normal WARM start entry.  Note that PRINT USR must be used and not 
+RANDOMIZE USR, or an OUT OF SCREEN error may occur.
 
 
 BASIC AS A SUBROUTINE
 
-At the next level, lines of BASIC can be executed as if they were
-subroutines and then return made to your Forth program. The word at the
-Forth end is GOTO. To return to Forth and continue execution use PRINT USR
-30006.
+At the next level, lines of BASIC can be executed as if they were subroutines and 
+then return made to your Forth program.  The word at the Forth end is GOTO.  To 
+return to Forth and continue execution use PRINT USR 30006.
 
-To begin with, space needs to be made in the dictionary for the basic
-program. The word used to do this is RESERVE. What RESERVE actually does
-is to make space in the dictionary and reset BASIC's system variables to
-point to this new area. This does mean, however, that if a second reserve
-is done, without FORGETting the old space, then the old space is lost and
-can never be re-accessed. Do not execute a Forth COLD start while BASIC is
-reserved or a RAMTOP error may occur if insufficient memory is reserved.
-Always execute PROG as the next command after RESERVE.
+To begin with, space needs to be made in the dictionary for the basic program. 
+The word used to do this is RESERVE.  What RESERVE actually does, is to make space
+ in the dictionary and reset BASIC's system variables to point to this new area. 
+This does mean, however, that if a second reserve is done, without FORGETting the 
+old space, then the old space is lost and can never be re-accessed.  Do not 
+execute a Forth COLD start while BASIC is reserved or a RAMTOP error may occur if 
+insufficient memory is reserved.  Always execute PROG as the next command after 
+RESERVE.
 
 As an example, try the following:
-DECIMAL 2000 RESERVE PROG [CR]
 
-This will set up the BASIC space and then enter it at command mode. The
-following lines of BASIC can now be entered:
+DECIMAL 2000 RESERVE PROG <CR>
 
-1000 PRINT "LINE 1000 OF BASIC": PRINT USR 30006
+This will set up the BASIC space and then enter it at command mode.  The following
+lines of BASIC can now be entered:
+
+1000 PRINT "LINE 1000 OF BASIC" : PRINT USR 30006
 2000 PRINT "LINE 2000 OF BASIC"
 2010 FOR I = 1 TO 8 : PRINT I : NEXT I
 2020 PRINT USR 30006
