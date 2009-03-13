@@ -6,6 +6,7 @@
         1                1+
 
 (let us now refer to the number on the stack as N)
+
       N N                DUP
     N N N                DUP
   N N N N                DUP
