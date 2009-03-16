@@ -1,20 +1,20 @@
 # TODO: Remove this comment once this file has been proofread
 
-0 VARIABLE CONTROL CONTROL U. [CR]
+0 VARIABLE CONTROL CONTROL U. <CR>
 
 This will set up a variable called CONTROL, set it to zero and then print
 the address of the least significant byte, which we'll use to pass the
 information. For the sake of this example suppose the address was 50000.
 We'll now use the CASE construct to select the word to execute. Use the
 following definition:
-: SELECT CASE 1 OF ." WORD1 " ENDOF 2 OF ." WORD2 " [CR]
-ENDOF 2 OF ." WORD3 " ENDOF 4 OF ." WORD4 " ENDOF [CR]
-ENDCASE CR ; [CR]
+: SELECT CASE 1 OF ." WORD1 " ENDOF 2 OF ." WORD2 " <CR>
+ENDOF 2 OF ." WORD3 " ENDOF 4 OF ." WORD4 " ENDOF <CR>
+ENDCASE CR ; <CR>
 
 If the value in CONTROL is 1 to 4, the appropriate word will be executed.
 
-: RUN 4000 GOTO BEGIN CONTROL @ [CR]
-DUP SELECT DUP IF RETUSR ENDIF 0= UNTIL ; [CR]
+: RUN 4000 GOTO BEGIN CONTROL @ <CR>
+DUP SELECT DUP IF RETUSR ENDIF 0= UNTIL ; <CR>
 
 The BASIC program is initially entered at 4000 and could take the
 following form:

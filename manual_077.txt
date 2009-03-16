@@ -8,10 +8,10 @@ Let's now define a word which executes some Forth, some BASIC, some more
 Forth, some more BASIC, and finally some more Forth. To begin executing
 BASIC at a particular line, all that we need to do is put the line number
 on the stack and then execute GOTO. Try the following:
-: FBDEM ." IN FORTH " CR 1000 GOTO ." BACK IN FORTH " [CR]
-CR 2000 GOTO ." FORTH AGAIN " ; [CR]
+: FBDEM ." IN FORTH " CR 1000 GOTO ." BACK IN FORTH " <CR>
+CR 2000 GOTO ." FORTH AGAIN " ; <CR>
 
-Now type FBDEM [CR]
+Now type FBDEM <CR>
 
 A more useful application would be to define words to handle cassette
 loading and saving. BASIC source is saved and loaded in the normal way
@@ -25,7 +25,7 @@ want to execute Forth as a subroutine. To return to BASIC from Forth use
 the word RETUSR. To call Forth from BASIC use RANDOMIZE USR 30000. Note
 that on this occasion it is a RANDOMIZE USR and not a PRINT USR. Using the
 previously reserved space we can try another example. First type:
-PROG [CR]
+PROG <CR>
 to enter BASIC, then add the following lines:
 3000 PRINT " CALLING FORTH ": RANDOMIZE USR 30000
 3010 PRINT " BACK IN BASIC ": PRINT USR 30006
@@ -33,12 +33,12 @@ to enter BASIC, then add the following lines:
 Now type PRINT USR 24836 to re-enter Forth.
 
 Now type:
-: BFDEM ." GOTO BASIC " CR 30000 GOTO ." FORTH CALLED " [CR]
-RETUSR ." ENDING IN FORTH " CR ; [CR]
+: BFDEM ." GOTO BASIC " CR 30000 GOTO ." FORTH CALLED " <CR>
+RETUSR ." ENDING IN FORTH " CR ; <CR>
 
-Now type BFDEM [CR] to see the result.
+Now type BFDEM <CR> to see the result.
 
-Now type FORGET FBDEM [CR]
+Now type FORGET FBDEM <CR>
 
 
 Passing Parameters

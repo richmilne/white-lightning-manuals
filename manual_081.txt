@@ -5,11 +5,11 @@
     positive value upward.
 4.    Before loading the second block of sprites, the values of the new
     SPST and SPND should be calculated and noted. Type:
-    SPST @ U. SPND @ 65280 60000 - + DUP SPND ! U. [CR]
+    SPST @ U. SPND @ 65280 60000 - + DUP SPND ! U. <CR>
     Take a note of these two values. If the previous steps have been
     carried out correctly the second number (the new SPND) should be
     the same value as the old SPND before relocation.
-5.    Type PROG [CR] to exit back to BASIC then type LOAD "" CODE. The 
+5.    Type PROG <CR> to exit back to BASIC then type LOAD "" CODE. The 
     array of pointers will be ignored but the sprites will be loaded.
     This assumes that this second block of sprites was also saved
     using the sprite development software.
@@ -29,9 +29,9 @@ copy.
 
 To save the Forth use the following procedure:
 
-1.    Type: WARM->COLD [CR] to embed the commands.
-2.    Type: HERE 24832 - 1+ U. [CR] to print the length to be saved.
-3.    Type: PROG [CR] to enter BASIC.
+1.    Type: WARM->COLD <CR> to embed the commands.
+2.    Type: HERE 24832 - 1+ U. <CR> to print the length to be saved.
+3.    Type: PROG <CR> to enter BASIC.
 4.    Save using SAVE "FORTH" CODE 24832,length.
 5.    Re-enter using PRINT USR 24836.
 

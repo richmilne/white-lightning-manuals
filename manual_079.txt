@@ -27,7 +27,7 @@ is complete, but it's useful to have the facility just in case.
 To save Forth source you'll need to consult Table 1, the table of screen
 addresses. If, for instance, you wanted to save screens 6 to 11, then the
 start address would be 52224 decimal, and the length just 6 times 512.
-Type 6 512 * . [CR] to find this figure, which is 3072. To save the
+Type 6 512 * . <CR> to find this figure, which is 3072. To save the
 source, type PROG to enter BASIC and then type:
 SAVE "filename" CODE 52224,3072
 
