@@ -1,5 +1,3 @@
-# TODO: Remove this comment once this file has been proofread
-
 SPST         Used to hold the start address of sprite space.
 
 SPND         Used to hold the end of sprite space, i.e. the first free byte
@@ -23,34 +21,40 @@ DPTR         On return from the TEST crnnand, DPTR points to the start
 Alternate Variables
 
 Eleven of the previously listed variables are replecated for use by the background
-program (see Foreground/Background).  These are ROW', COL', LEN', HGT', NPX', SPN', SP1', SP2', SROW', SCOL' and SPND'.
+program (see Foreground/Background).  These are ROW', COL', LEN', HGT', NPX', 
+SPN', SP1', SP2', SROW', SCOL' and SPND'.
 
-When a word
-is executed in background, the eleven alternate variables are
-automatically switched with the eleven background variables; when
-execution is complete, the variables are switched again to restore them to
-their former state.
+When a word is executed in background, the eleven alternate variables are 
+automatically switched with the eleven background variables; when execution is 
+complete, the variables are switched again to restore them to their former state.
 
-Suppose, for example, that the background program is to scroll left 1
-pixel with wrap (WRL1V), with an area of screen 6 characters wide and 4
-characters high, with top left co-ordinates row = 5, column = 7. Now type
-the following:
-CLS 6 LEN' ! 4 HGT' ! 5 ROW' ! 7 COL' ! ' WRL1V INT-ON [CR]
-The window is now scrolling but you can't see it, because there is no data
-in the window.
+Suppose, for example, that the background program is to scroll left 1 pixel with 
+wrap (WRL1V), with an area of screen 6 characters wide and 4 characters high, with
+top left co-ordinates row = 5, column = 7.
 
-Type VLIST [CR] and watch the data as it scrolls through the window. The
-data in the window will be slanting to the left, because the foreground
-program was scrolling up at the same time as the background program
-scrolled left.
+Now type the following:
+
+CLS 6 LEN' ! 4 HGT' ! 5 ROW' ! 7 COL' ! ' WRL1V INT-ON <CR>
+
+The window is now scrolling but you can't see it, because there is no data in the 
+window.
+
+Type VLIST <CR> and watch the data as it scrolls through the window.  The data in 
+the window will be slanting to the left, because the foreground program was 
+scrolling up at the same time as the background program scrolled left.
 
 Leaving the background program running, type:
-10 LEN' ! [CR]
+
+10 LEN' ! <CR>
+
 and the window will widen.
 
 Type:
-INT-OFF ' WRR8V INT-ON [CR]
-and the screen will scroll to the right, this time much more rapidly. Now
-type:
-INT-OFF [CR]
+
+INT-OFF ' WRR8V INT-ON <CR>
+
+and the screen will scroll to the right, this time much more rapidly.  Now type:
+
+INT-OFF <CR>
+
 to halt the background program.
