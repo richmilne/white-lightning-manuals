@@ -1,9 +1,7 @@
-# TODO: Remove this comment once this file has been proofread
-
  #  21 -  this means that you have tried to delete something in the protected
           part of the Forth dictionary, e.g.
 
-          FORGET 00
+          FORGET D0
 
 
  #  22 -  this implies the illegal use of --> when not loading text screens.

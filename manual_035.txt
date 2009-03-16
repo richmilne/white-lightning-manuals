@@ -1,99 +1,51 @@
-# TODO: Remove this comment once this file has been proofread
+9 CLEAR <CR>
 
-9 CLEAR [CR]
+This sets the current screen to 9.  To insert text use the EDIT command. Type 0 EDIT <CR> followed by the text below:
 
-This sets the current screen to 9. To insert text use the EDIT command.
-Type 0 EDIT [CR] followed by the text below:
-THIS IS HOW TO PUT [CR]
+THIS IS HOW TO PUT <CR>
 
-Then type:
-1 EDIT [CR]
-TEXT ON LINE 1 [CR]
+Then type 1 EDIT <CR>
+
+TEXT ON LINE 1 <CR>
+
 and so on, until you have entered:
-0 THIS IS HOW TO PUT [CR]
-1 TEXT ON LINE 1 [CR]
-2 LINE 2 [CR]
-3 AND LINE 3 OF THIS SCREEN [CR]
+
+0 THIS IS HOW TO PUT <CR> 1 TEXT ON LINE 1 <CR> 2 LINE 2 <CR>
+3 AND LINE 3 OF THIS SCREEN <CR>
 
 9 LIST will produce:
 
 SCR # 9
-0 THIS IS HOW TO PUT
-1 TEXT ON LINE 1
-2 LINE 2
-3 AND LINE 3 OF THIS SCREEN
-4
+0  THIS IS HOW TO PUT 1  TEXT ON LINE 1 2  LINE 2
+3  AND LINE 3 OF THIS SCREEN 4
 5
 6
 7
 
-To change line 2, type EDIT 2 [CR] and then change it in the normal way to
-insert 'TEXT ON' before 'LINE 2'. Now type 9 LIST [CR] to see the result.
-The editor ignores characters after the 64th character of the line being
-edited.
+To change LINE 2, type 2 EDIT <CR> and then change it in the normal way to insert 'TEXT ON' before 'LINE 2'.  Now type 9 LIST <CR> to see the result.  The editor ignores characters after the 64th character of the line being edited.
 
-If you have a Sinclair printer connected, then it is probably worth
-defining a word to list screens to the printer:
+If you have a Sinclair printer connected, then it is probably worth defining a word to list screens to the printer:
+
 : SLIST PRT-ON 1+ SWAP DO I LIST CR LOOP PRT-OFF ;
 
-To use the above word, type the first screen number, last screen number,
-SLIST; eg.:
-6 9 SLIST [CR] will list screens 6-9 to the printer.
+To use the above word, type the first screen number, last screen number, SLIST.
+
+e.g.  6 9 SLIST <CR> will list screens 6-9 to the printer.
 
 
 FORTH ERROR MESSAGES
 
-lee following error messages may occur, and will be printed out in the form I•REU 1 MSG 40 standing for FRED ? ERROR MESSAGE K1A1BER 0•
+The following error messages may occur, and will be printed out in the form FRED ? MSG #0   standing for FRED ? ERROR MESSAGE NUMBER 0 .
 
 
-# 0 - this means that a word could not be found, or that a numeric conversion could not take place.
+ # 0  -  this means that a word could not be found, or that a numeric conversion
+         could not take place.
 
-e.g. 109Z <CR>
-# 1 - this indicates an empty stack and will be encountered when trying to take more values from the stack than exist. Try:
-
-:'17:5T1 1000 0 DO ?STACK CROP LOOP ;<CR>
-'rts•rl <CR>
-35
-tsfxx is a word which tests the stack for out or mounds.
+e.g.  109Z <CR>
 
 
-A 2 - this indicates that either the dictionary has grown up to meet the stack (dictionary full) or that the stack has grown down to meet the dictionary.
+ # 1  -  this indicates an empty stack and will be encountered when trying to
+         take more values from the stack than exist. Try:
 
-Try:    :'It>r2 1000 0 00 ?STACK 0 0 0 0 0 IDOP ;<CR> TEST2 <CR>
-
-
-Y 4 - this means that you have redefined an existing word using a new colon definition
-
-Try:    : ROT ." NEW OEF'II7ITION " ; <Q2>
-
-This is not really an error since the new word is still valid, but the old definition cannot be accessed unless you FORGET the new one.
-
-
-1 6 - this error my occur when editing, loading or listing screens of data.
-
-Try:    25 LIST <Q2>
-This will produce MSGA6 and means you have tried to access a non-existent screenful of memory.
-
-
-Y 9 - this indicates that an attempt was made to clear sprite space of less than 2 bytes.
-
-
-A 10 - this indicates that one of the IDEAL words made reference to a sprite which did not exist, or that an attempt uss mode to insert a sprite using ISPRITE with a number previously allocated to an existing sprite.
-
-
-W 17 - this will occur if you try to use a word in the 'immediate' mode which should only be used during compilation, i.e. during colon definitions. For a list of such words, refer to the glossary (words with "C" in the top right hand corner of the description).
-
-Try:    DO <CR> IF «R>
-
-
-A 18 - this occurs if a word meant for execution only, is put within a colon definition (~rds with "H" in the top right hand corner of the -description).
-
-
-# 19 - this :mans that a colon definition contains conditionals that have not been paired.
-
-e.g.    a LOOP without a 00
-an FNDIF without an IF
-
-Try:    : TEST3 ELSE ." td20IS', " ; <CR>
-# 20 - this occurs if a colon definition has not been properly finished. Try:    : TEST4 IF ." OK ^ ; <CR>
-36
+        : TEST1  1000  0  DO  ?STACK  DROP LOOP  ; <CR>
+          TESTl <CR>

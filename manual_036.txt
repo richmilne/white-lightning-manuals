@@ -1,45 +1,61 @@
-# TODO: Remove this comment once this file has been proofread
-
-tsfxx is a word which tests the stack for out or mounds.
+?STACK is a word which tests the stack for out of bounds.
 
 
-A 2 - this indicates that either the dictionary has grown up to meet the stack (dictionary full) or that the stack has grown down to meet the dictionary.
+ # 2  -  this indicates that either the dictionary has grown up to meet the 
+         stack (dictionary full) or that the stack has grown down to meet 
+         the dictionary.
 
-Try:    :'It>r2 1000 0 00 ?STACK 0 0 0 0 0 IDOP ;<CR> TEST2 <CR>
-
-
-Y 4 - this means that you have redefined an existing word using a new colon definition
-
-Try:    : ROT ." NEW OEF'II7ITION " ; <Q2>
-
-This is not really an error since the new word is still valid, but the old definition cannot be accessed unless you FORGET the new one.
+Try:    : TEST2  1000  0  DO  ?STACK  0 0 0 0 0 LOOP  ; <CR>
+          TEST2 <CR>
 
 
-1 6 - this error my occur when editing, loading or listing screens of data.
+ # 4  -  this means that you have redefined an existing word using a new colon
+         definition
 
-Try:    25 LIST <Q2>
-This will produce MSGA6 and means you have tried to access a non-existent screenful of memory.
+Try:    : ROT ." NEW DEFINITION " ; <CR>
 
-
-Y 9 - this indicates that an attempt was made to clear sprite space of less than 2 bytes.
-
-
-A 10 - this indicates that one of the IDEAL words made reference to a sprite which did not exist, or that an attempt uss mode to insert a sprite using ISPRITE with a number previously allocated to an existing sprite.
+This is not really an error since the new word is still valid, but the old 
+definition cannot be accessed unless you FORGET the new one.
 
 
-W 17 - this will occur if you try to use a word in the 'immediate' mode which should only be used during compilation, i.e. during colon definitions. For a list of such words, refer to the glossary (words with "C" in the top right hand corner of the description).
+ # 6  -  this error my occur when editing, loading or listing screens of data.
 
-Try:    DO <CR> IF «R>
+Try:    25 LIST <CR>
+This will produce MSG#6 and means you have tried to access a non-existent 
+screenful of memory.
 
 
-A 18 - this occurs if a word meant for execution only, is put within a colon definition (~rds with "H" in the top right hand corner of the -description).
+ # 9  -  this indicates that an attempt was made to clear sprite space of 
+         less than 2 bytes.
 
 
-# 19 - this :mans that a colon definition contains conditionals that have not been paired.
+ # 10 -  this indicates that one of the IDEAL words made reference to a sprite
+         which did not exist, or that an attempt was mode to insert a sprite
+         using ISPRITE with a number previously allocated to an existing sprite.
 
-e.g.    a LOOP without a 00
-an FNDIF without an IF
 
-Try:    : TEST3 ELSE ." td20IS', " ; <CR>
-# 20 - this occurs if a colon definition has not been properly finished. Try:    : TEST4 IF ." OK ^ ; <CR>
-36
+ # 17 -  this will occur if you try to use a word in the 'immediate' mode which
+         should only be used during compilation, i.e. during colon definitions.
+         For a list of such words, refer to the glossary (words with "C" in the
+         top right hand corner of the description).
+
+Try:    DO <CR>
+        IF <CR>
+
+
+ # 18 -  this occurs if a word meant for execution only, is put within a colon
+         definition (words with "E" in the top right hand corner of the 
+         description).
+
+
+ # 19 -  this means that a colon definition contains conditionals that have 
+         not been paired.
+
+e.g.    a LOOP without a D0
+        an ENDIF without an IF
+
+Try:    : TEST3  ELSE  ." WRONG " ; <CR>
+
+ # 20 -  this occurs if a colon definition has not been properly finished.
+
+Try:    : TEST4 IF ." OK " ; <CR>
