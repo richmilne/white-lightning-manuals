@@ -1,30 +1,57 @@
-# TODO: Remove this comment once this file has been proofread
+ 9. WR implies that the data will be scrolled with wrap.
 
-9.    WR indicates that data will be scrolled with wrap.
-10.    SC indicates that data will be scrolled without wrap.
-11.    GW "Get Window" indicates that data is being moved from a window
-    into a sprite.
-12.    PW "Put Window" indicates that data is being put into a window
-    from a sprite.
-13.    COP indicates an operation between two sprites with the same
-    dimensions.
+10. SC implies that data will be scrolled without wrap.
 
-'P)7[e best MBy to beCQl12 familiar with the language is to use itl
+11. GW "Get Window" implies that data is being moved from a window into a
+    sprite.
 
-There are also sane general points worth noting.
+12. PW "Put Window" implies that data is being put into a window from a sprite.
+
+13. COP implies an operation between two sprites with the same dimensions.
+
+The best way to become familiar with the language is to use it!
+
+There are also some general points worth noting.
+
 
 GENERAL POINTS
 
-1. Vertical scrolls will require sane buffer space at the end of sprite space, so nuke sure that either you have set up sprite space with the developnent package (the default of 256 is usually adequate), or that at least one NIDk has been executed to make pace. The space required for a scroll is obtained by multiplying the width of the sprite, by the number of pixels to be scrolled. Horizontal scrolls do rot require buffer space. When White Lightning is first loaded without sprites, a COLD# is automatically executed and sets the buffer to 256 bytes.
+ 1.  Vertical scrolls will require some buffer space at the end of sprite space,
+     so make sure that either you have set up sprite space with the development
+     package (the default of 256 is usually adequate), or that at least one COLD#
+     has been executed to make space.  The space required for a scroll is
+     obtained by multiplying the width of the sprite, by the number of pixels 
+     to be scrolled.  Horizontal scrolls do not require buffer space.  When 
+     White Lightning is first Loaded without sprites, a COLD# is automatically
+     executed and sets the buffer to 256 bytes.
 
-2. All attribute scrolls are "with wrap'.
+ 2.  All attribute scrolls are "with wrap".
 
-3. Canlands prefixed with cET or PUT are operations between a whole sprite and a screen window. These are very fast and can be made even faster by suppressing the movement of attribute data, if its transference is not required. To suppress attribute data use the word ATTOFF. If you wish to switch data flow back on at a later stage, use AT1C)N. The switch remains in its state until changed by the execution of me of these two words r the execution of a aord beginning with 6'7 or FW and ending with S(group 2(iE.'TS and PUTS). NEVER assume the state of the switch at the start of the program: one of your first words at the beginning of your program should be ATfON or ATIOFP.
+ 3.  Commands prefixed with GET or PUT are operations between a whole sprite 
+     and a screen window.  These are very fast and can be made even faster 
+     by suppressing the movement of attribute data, if its transference is 
+     not required.  To suppress attribute data use the word ATTOFF.  If you 
+     wish to switch data flow back on at a later stage, use ATTON.  The switch
+     remains in its state until changed by the execution of one of these 
+     two words or the execution of a word beginning with GW or PW and ending 
+     with S (group 2 GETS and PUTS).  NEVER assume the state of the switch 
+     at the start of the program:  one of your first words at the beginning 
+     of your program should be ATTON or ATTOFF.
 
-4. If a sprite is dynamically allocated space at runtime it will probably contain garbage in its pixel and attribute data, so both will need to be set up. It is all too easy to forget the attributes.
+ 4.  If a sprite is dynamically allocated space at runtime it will probably
+     contain garbage in its pixel and attribute data, so both will need to be
+     set up.  It is all too easy to forget the attributes.
 
-5. Sometimes the dynamically created sprites will contain zeroes; if you set up the pixel data and forget the attribute data then execute a PUT to the screen with the attributes on - a black rectangle will appear. See SETPM.
+ 5.  Sometimes the dynamically created sprites will contain zeroes; if you set 
+     up the pixel data and forget the attribute data then execute a PUT to 
+     the screen with the attributes on - a black rectangle will appear. See
+     SETAM.
 
-6. If you want to wipe a sprite off the screen but not affect any other pixel data within its screen window, use PIRacIiS. Reaanber, though, that if you have carried out any operations on the original sprite since doing the original PUTBIS or PUD(RS it my hot work.
+ 6.  If you want to wipe a sprite off the screen but not affect any other 
+     pixel data within its screen window, use PUTXRS.  Remember, though, that
+     if you have carried out any operations on the original sprite since
+     doing the original PUTBLS or PUTXRS it may not work.
 
-7. If you want to leave a sprite on the screen but clear all other pixel data in its screen window use PLUMS. Again, be sure that no intermediary operations have taken place.
+ 7.  If you want to leave a sprite on the screen but clear all other pixel data
+     in its screen window use PUTNDS.  Again, be sure that no intermediary
+     operations have taken place.
