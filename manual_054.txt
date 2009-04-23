@@ -1,75 +1,56 @@
-# TODO: Remove this comment once this file has been proofread
+Command                  Action
 
-WRL4 W7tL4 WU.4 U•    I and you should wee it!
-
-Parameters do rot rew•t after Uw- execution of the commands, so to repeat the above, this tinrp at mluan 10 and without wrap, you could use the following:
-
-10 COL I 9CL4V CCIt>    ' voldcal scrolls
-
-These work in a similar way to the horizontal scrolls, but in addition to setting up the wirdow with the four window parameters QJL, ROW, FGP and LEN, a further variable DPX is used to give the size and direction of the scroll in pixels. A positive value for NPX causes upward scrolling and a negative value causes downward scrolling.
-
-
-Parameter    Use
-
-(AL    Colum at left hand edge of window (0-31)
-POYI    Row of top left edge of the window (0-23)
-LEN    Width of the window (1-32)
-tY.T    Height of the window (1-24)
-!RX    Number of pixels to scroll (+127 m-128)
-
-
-Canrorcl    Action
-
-WCRV    Vertical scroll with wrap
-SCRV    Vertical scroll, no wrap
-
-Note:
-
-All vertical scrolling of pixel data and/or attributes for screen or sprites, requires buffer space. The space required is calculated by multiplying NPX by LEN. The start of the buffer is taken as the next free byte after sprite space, so be sure that either a OO[.W has been executed, or that SPND has been set. It is safe practice to develop sprites using the software provided, and to allow 256 bytes buffer at the top before linking with the main program. Be sure also that the scroll length is not greater than the window's size. On entry to White Lightning a OOLD# is autonatiacally executed and a scrolling buffer of 256 bytes is set up. This is maintained so long as ISPRITE and 06PRI'!E are used in preference to SPRITE and WIPE.
-
-
-ARrlhms Scrolb
-
-Attribute scrolls are similar to the pixel data scrolls but all scrolls are always by one character, with wrap.
-
-
-Parameter    Use
-
-COL    Column of the left hand edge of the window (D-31)    .
-F1CW    Raw of the top edge of the window (0-23)
-LEN    Width of the window (1-32)
-F4T    Height of the window (1-24)
-,a
-artmnd    Action
-
-ATTLV Scroll attributes left 1 character with wrap ATTRV Scroll attributes right 1 character with wrap ATTUPV Scroll attributes up 1 character with wrap ATTDNV    Scroll attributes down 1 character with wrap
+ATTLV      Scroll attributes left  1 character with wrap 
+ATTRV      Scroll attributes right 1 character with wrap 
+ATTUPV     Scroll attributes up    1 character with wrap 
+ATTDNV     Scroll attributes down  1 character with wrap
 
 
 SPRITE SCROLLS
 
-The format for these commands is similar to that for the screen scrolls, except that these commands are postflred with an M as opposed to a V.
+The format for these commands is similar to that for the screen scrolls, except 
+that these commands are postflred with an M as opposed to a V.
 
 
-Norlzw:419croll.
+Horizontal Scrolls
 
-Parameters    Use
+Parameters            Use
 
-SPN    The number of the sprite to be scrolled (1 to 255) Command    Actions
+SPN        The number of the sprite to be scrolled (1 to 255)
 
-WRLIM Scroll left 1 pixel with wrap WRRIM Scroll right 1 pixel with wrap SCL1M Scroll left 1 pixel, no wrap SCRIM Scroll right 1 pixel, no wrap WRL4M Scroll left 4 pixels with wrap WRR4M SQOll right 4 pixels with wrap SCUM Scroll left 4 pixels, no wrap SCR4M Scroll right 4 pixels, no wrap WRLeM Scroll left 8 pixels with wrap WRR8M Scroll right 8 pixels with wrap SCLBM Scroll left 8 pixels, no wrap SCReM    Scroll right 8 pixels, no wrap
+Command             Actions
+
+WRL1M      Scroll left  1 pixel  with wrap 
+WRR1M      Scroll right 1 pixel  with wrap 
+SCL1M      Scroll left  1 pixel,   no wrap 
+SCR1M      Scroll right 1 pixel,   no wrap 
+WRL4M      Scroll left  4 pixels with wrap 
+WRR4M      Scroll right 4 pixels with wrap 
+SCL4M      Scroll left  4 pixels,  no wrap 
+SCR4M      Scroll right 4 pixels,  no wrap 
+WRL8M      Scroll left  8 pixels with wrap 
+WRR8M      Scroll right 8 pixels with wrap 
+SCL8M      Scroll left  8 pixels,  no wrap 
+SCR8M      Scroll right 8 pixels,  no wrap
 
 Note:
-The chief purpose of these commands is to give pixel resolution to the PUT mnmnda, and for this reason, a 1 character border along 2 edges of a sprite character should always be alla+ad.
 
-P.>maple:
+The chief purpose of these commands is to give pixel resolution to the PUT 
+command, and for this reason, a 1 character border along 2 edges of a sprite 
+character should always be allowed.
 
-To scroll sprite number 7, 1 pixel right with wrap, use: 7 SPN : MPA1M
+Example:
 
-v.rtkd 9era1.
-These work in the same way as the vertical screen scrolls where the signed variable NPX is used to determine the size and direction of the scroll.
+To scroll sprite number 7, 1 pixel right with wrap, use:
 
-Parameters    Use
+7 SPN ! WRR1M
 
-SPN    Number of the sprite to be scrolled
-nPX    Number of pixels to be scrolled
-54
+Vertical Scrolls
+
+These work in the same way as the vertical screen scrolls where the signed 
+variable NPX is used to determine the size and direction of the scroll.
+
+Parameters            Use
+
+SPN           Number of the sprite to be scrolled
+NPX           Number of pixels to be scrolled
