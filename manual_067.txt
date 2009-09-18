@@ -1,51 +1,58 @@
-# TODO: Remove this comment once this file has been proofread
-
 FOREGROUND BACKGROUND
-Mastering machine rode does give most pro3rumiers access to the speed Of
-conmcrcial games, but often the sroothness and continuity are lacking. One of the greatest difficulties facing any games designer is timing. The t.sic problem is that same parts of the program need to execute at regular intervals, and trying to achieve this can involve a lot of calculation and wasted processor time. 1he solution to this is to use interrupts to execute particular sections Of codewhite Lightning does this for you, using the words INT-0N and INPOFF'
 
-The spectrum interrupt occurs 50 times a second, so background words can be executed at this frequency, or by counting interrupts, at lower frequencies.
 
-If you list any of the screens 1 to 5, you will see that they are apparently filled with garbage. This is because the area in mnorY occupied by these screens contains the machine code that enables the background facility. If you are net intending to use this facility, then you can clear screens 1 to 5 and use than
-normally for source code. If you do this, however, don't forget that you able to use any of the graphics words in background mode, or the system in no uncertain manner.
-When an interrupt occurs , the foreground program stops exactly where it is, saves off its parameters and then executes the background word. The background word will then execute fully before continuing execution of thforeground should be from the exact point at which it was halted. Three important points P°in bourne in mind. Firstly, if the execution time of the background word exceeds a fiftieth of a sceond, it is not possible to execute it more than twenty five times a second, if it exceeds a twenty-fifth of a second, it can only 6e executed at half that frequency, and se on. There is, however, no limit to the length of the background execution time itself. Secondly, as the execution time approaches a fiftieth of a second, or some multiple of a fiftieth of a second, then less and less processor time will 6e available for the foreground program and sanetimes it is necessary to extend the length of the background program to make the foreground program run more quickly, by reducing the frequency of the background program. Experimentation will familiarise the user with the techniques required for the best effects. More foreground time can also be taken by disabling and Cnen re-enabling the interrupt using DI and El respectively. This brings us to the third, and most important point. Remember that when an interrupt occurs, the foreground program will stop whatever it is doing, execute the background program and then continue with the foreground execution. Suppose the background program is a sideways scroll of a user defined screen window and the foreground program PUfs a character into the window. A problem arises if an interrupt occurs halfway through the PUT, because the top half of the character will be scrolled before the second half of the character is FIJI to the screen. To circumvent this problem,
-where an operation is carried out m~e background same    program should sprite    he temporarily
-foreground and background programs, programs.    k9roun
-disabled using DI, the foreground word executed, and then the background program re-enabled using El ready for the next interrupt to occur' Itie safest way to proceed until you have really mastered the language, is to avoid the situation altogether and make sure the foreground and background programs don't operate m
+Mastering machine code does give most programmers access to the speed of 
+commercial games, but often the smoothness and continuity are lacking.  One of the 
+greatest difficulties facing any games designer is timing.  The basic problem is 
+that some parts of the program need to execute at regular intervals, and trying to 
+achieve this can involve a lot of calculation and wasted processor time.  The 
+solution to this is to use interrupts to execute particular sections of code. 
+White Lightning does this for you, using the words INT-ON and INT-OFF.
+
+The Spectrum interrupt occurs 50 times a second, so background words can be 
+executed at this frequency, or by counting interrupts, at lower frequencies.
+
+If you list any of the screens 1 to 5, you will see that they are apparently 
+filled with garbage.  This is because the area in memory occupied by these screens 
+contains the machine code that enables the background facility.  If you are not 
+intending to use this facility, then you can clear screens 1 to 5 and use them 
+normally for source code.  If you do this, however, don't forget that you won't be 
+able to use any of the graphics words in background mode, or the system will crash 
+in no uncertain manner!
+
+When an interrupt occurs, the foreground program stops exactly where it is, saves 
+off its parameters and then executes the background word.  The background word 
+will then execute fully before continuing execution of the foreground program, 
+from the exact point at which it was halted.  Three important points should be 
+bourne in mind.  Firstly, if the execution time of the background word exceeds a 
+fiftieth of a sceond, it is not possible to execute it more than twenty five times 
+a second, if it exceeds a twenty-fifth of a second, it can only be executed at 
+half that frequency, and so on.  There is, however, no limit to the length of the 
+background execution time itself.  Secondly, as the execution time approaches a 
+fiftieth of a second, or some multiple of a fiftieth of a second, then less and 
+less processor time will be available for the foreground program and sometimes it 
+is necessary to extend the length of the background program to make the foreground 
+program run more quickly, by reducing the frequency of the background program. 
+Experimentation will familiarise the user with the techniques required for the 
+best effects.  More foreground time can also be taken by disabling and then re-
+enabling the interrupt using DI and EI respectively.  This brings us to the third, 
+and most important point.  Remember that when an interrupt occurs, the foreground 
+program will stop whatever it is doing, execute the background program and then 
+continue with the foreground execution.  Suppose the background program is a 
+sideways scroll of a user defined screen window and the foreground program PUTs a 
+character into the window.  A problem arises if an interrupt occurs halfway 
+through the PUT, because the top half of the character will be scrolled before the 
+second half of the character is PUT to the screen.  To circumvent this problem, 
+where an operation is carried out on the same screen or sprite data by both the 
+foreground and background programs, the background program should be temporarily 
+disabled using DI, the foreground word executed, and then the background program 
+re-enabled using EI ready for the next interrupt to occur.  The safest way to 
+proceed until you have really mastered the language, is to avoid the situation 
+altogether and make sure the foreground and background programs don't operate on 
 the same sprite or screen area.
-To set the background program running, simply type an apostrophe (shifted 7), a space, the    to be executed, a space and then INT-0N. Don't forget that if the background word does not set its own parameters, then these will need to be set before execution and if these are the IDEAL variables, then the alternate set will
-be used. 67
-For exanple, suppose you wanted to scroll a window, four characters square, in the middle of the screen and invert it after each sideways scroll. First we need to define a word to dokthe scrolling and the inverting. For same reason, most test programs are called FRED and there is no reason for breaking with convention. To define the word type:
 
-: FRED 4EtR1V INVV ; <CR>
-
-To set up the parameters type:
-
-4 H3I" ! 4 LEN ' ! 14 COL' ! 9 ROW ' 1<CR>
-
-To make sure there is some data in the window, type: vLIST <CR>
-
-You are now ready to execute the background program by typing: ' FRED INf-0N <C[i>
-
-To halt this program type: 24T-OFF <CR>
-
-This program is running a bit too fast to see, so let's write another program which slows this down to every fifth interrupt, i.e. ten times a second. We will need to define a variable and a new word. To set up the variable type:
-
-0 VP.F2IAHLE ICNT <CR>
-
-This sets up a variable called ICNT and assigns to it the value 0. We'll call this new background word FRECY+. Type:
-
-: FREDA ICNT @ 1+ 5 > IF FRED 0 ICNf I ELSE 1 ICNT +! ENDIF ;<CR> low type:
-
-' FRE0.9 INf-ON <CR>
-
-All "FREDA" does, is to increment ICNT and compare it with 5 and if it is greater than 5 then "PREL14" is executed and ICNT set back to zero.
-i
-It would be useful to be able to control the speed that "FREG4" ran at, so, let's modify "FREDA" to do this. First, type INT-0OFF FORGET FRE!j <CR> to get rid of the old definition and then t%; a new variable and construct a slightly different program. A variable wbich sets the limit on the number of interrupts needs to he set up, so type: 4 VARIABLE ICt7i' <CR>. The new definition is set up by typigg:
-
-: tt2EDA ICNT @ 1+ ICNf @> IF FRED 0 ICNT I ELSE 1 I(.'Nf +! FNpiF ;<(R> ib execute the new word type:
-
-0 ICNT ! ' FREDA NT-0N <CR>
-
-This program increments ICNT, crnpar=_s it with IL'NP and executes when R'MT is equal to iGNS. Increasing IGNT then, will slow the background ex etion and decrarenting ICVP will speed it up. If ICNT is put equal to 1, execution will occur every cycle.
-68
+To set the background program running, simply type an apostrophe (shifted 7), a 
+space, the word to be executed, a space and then INT-ON.  Don't forget that if the 
+background word does not set its own parameters, then these will need to be set 
+before execution and if these are the IDEAL variables, then the alternate set will 
+be used.
