@@ -1,36 +1,26 @@
-# TODO: Remove this comment once this file has been proofread
+Now type:
 
-To speed up "FRED!," type: 0 Ic!ur : 2 LENT :<cR> and to slow "Fireu+" type 10 IcrT
-!<(1t> and so m. Type: INTOFF <C7t> to halt C1tEDA. New type: FORGET E1tEDA <Qt>
-Frequency and Phaae
-One of the problems with executing a wrd on each interrupt, is that the dot scanning the screen my overtake the screen operation in the same position on each execution. This can produce some strange effects, and often, sections of the screen window will appear to be "sliced". It is wre usual to execute on selected interrupts. We can do this very sinQly using nodular aritk~etic.
+: IRUN ICNT @ DUP DUP DUP <CR>
+F1 MOD ABS PHl = IF INVV ENDIF <CR>
+F2 MOD ABS PH2 = IF MIRV ENDIF <CR>
+F3 MOD ABS PH3 = IF WRR1V ENDIF <CR>
+F4 MOD ABS PH4 = IF WCRV ENDIF <CR>
+1 ICNT +! ; <CR>
 
-Suppose we have four different words that we wish to execute with four different frequencies. Suppose they are as follows.
-
-MW every 50 cycles MIfyV every 20 cycles NRR1V every 4 cycles WCRV every 5 cycles
-
-We now define a variable to count interrupts and four constants to store the frequencies.
-0 VARIABIE IC!'1t 50 OONSTANl' Fl 20 CONSTANT P2 4 CONSTANT P3 5CONSTAN'I' F4 <CR> : MAO NDD AAS o= ; «x>
-: IRON Icrrr @ a!e DuP uJe <ac>
-Fl IMO IF INVV ENDIF <Qt> F2 M40 IF M1RV ENDIF <CR> F3 MAD IF Vd2R1V ENDIF <CR> F4 MAD IF 'drRV ENDIF <CR> 1 ICNP @ +1 ; <CR>
-All we need to do now is set up the psrartnters by typing: 10 NL' ! 10 ROW' ! 6 HG'P' ! 8 LEN' ! 2 NPX' I<CR> then put sane data on to the screen and execute: VLiSf 0 0 AT ' IRUN INP-0N <CR> To terminate, type IITPOFF <CR>
-If we had rode the F1 to F4 variables, we could have controlled the background program fran the foreground by resetting them.
-
-Saretlmes, controlling the frequencies of events is not sufficient and phase infornntion needs to be introduced. In the previous exanQle, values of 0, 100, 200, 300 and so an cause all four events. Supposing '.+e wanted to mintain these frequencies, but change the order in %bich the words execute - We need to introduce the concept of phase.
-
-In this exaotple we need four more constants, so type:
-FORGET II2UN <CR>    . 31 CONSTANT F!!1 5 CCKSI'M1P PF72 0 CONSTANT PB3 3 C17l5TAN!' F!i4 <CR> 69
-rj,w type:
-
-: IRON ICNT @ DUP DUP DUP <Q2>
-F1 MOD ABS ftil = IF INW ENDIF <CR> F2 MOD A9S PH2 - IF MIRV ENDIF <CR> F3 POD A95 PH3 = IF VRR1V ENDIF <Q2> F4 POD A8S PH4 = IF 4TRV ENDIF <CR> 1 ICNT +1 ; <Qt>
-
-This can be executed using VLIST ' IRUN IMP-0N <CR> Halted using: INf-0FP <CR> and cleared using: FUfiGLT 1k2UN <CR>
+This can be executed using VLIST ' IRUN INT-0N <CR>
+Halted using: INT-0FF <CR>
+and cleared using: FORGET IRUN <CR>
 
 
-Forth/BASIC Wwda
+Forth/BASIC Words
 
-Sinclair's graphics and sound mnmands have been replicated as Forth words for c,ontinuity - they also execute slightly sore rapidly thar their BASIC rnimterparts. For a full list, see the section on rorth/BASIC WORDS.
+Sinclair's graphics and sound commands have been replicated as Forth words for 
+continuity - they also execute slightly more rapidly than their BASIC 
+counterparts.  For a full list, see the section on Forth/BASIC WORDS.
 
-They all execute code in Sinclair's wn [UM Which, unlike Forth and IDFAI„ is not re-entrant. This means that these words cannot be executed in foreground and tzickgrowd simultaneously. The FORTH Fords .' , . and U. should also not be .-:xecuted simultanteously with themselves or my of the BASIC words. None of the Forth/BASIC words, . ,. or U. should be executed in background while Fbrth is in c~mand mde.
-70
+They all execute code in Sinclair's own ROM which, unlike Forth and IDEAL, is not 
+re-entrant.  This means that these words cannot be executed in foreground and 
+background simultaneously.  The FORTH words ." , . and U. should also not be 
+executed simultanteously with themselves or any of the BASIC words.  None of the 
+Forth/BASIC words, ." , . or U. should be executed in background while Forth is in 
+command mde.
