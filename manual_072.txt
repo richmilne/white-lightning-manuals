@@ -1,65 +1,62 @@
-# TODO: Remove this comment once this file has been proofread
-
-LOGICAL OPERATIONS
-There are three types of logical operation included in the IDEAL sub-language; these are OR. XOR &1d AND. To get the best out Of this package it is important to make full use o£ these oomar*as•
-If a GET or PUT postfixed with "BLS' or "S114" is executed, then data is block moved from the source which my be part of the screen, a sprite, or a sprite window, in such a way that whatever was previously held at the destination which My also be part of the screen, a sprite, or a sprite window, is obliterated and replaced by whatever was at the source. This may not always h: the desired effect and quite often the user will want to merge characters or remove parts of the
-characters and so on.
-If two sprites are "Ctt"ed together, the resulting sprite will have pixels set where pixels were set in either or both of the sprites being "OR°al•
-
-If two sprites are "PND"ed tn9ether, the resulting sprite will have pixels set where pixels were set in both of the sprites being "NND"ed•
-
-If two sprites are "A-Wed together, the resulting sprite will have pixels set where pixels were set in either but reset where pixels were set or reset in both.
-
-These results are summarised as follows and should make things a little clearer: SOURCE    DESTINATION    OPERATION    RESULT
-• on OR On
-• off OR on off on OR On off    off    OR    off
-
-on    AND    °n
-•    AND off
-on    off    off
-off    on    AND
-off    off    off AND NOR    off
-•    on off XOR °n
-off    on
-)(DR
-off    off    M1R    off
-
-
-We can now use the sample sprites to illustrate the effects <f~these Se~oretii. First FORGET any previously defined words and type:
-tha
-you are in decimal mode. Now type:
-7 INK 0 PAPER CLS ." LOGICAL CR " Qi ° LOGICAL OR "«R>
-
-This will clear the screen and put sane data in the top left hand corner. Now type:
-3 SPN ! 0 COL ! 0 ROW 1 A'1'LOFf' PViORS <(12>
-You will see that the data has been merged together, both the dragster and the letters remain.
-71
 Now type:
 
-c7.4 n IbGICAi. AND " Qi " LOGICAL AND " WINDS <Q2>
+CLS ." LOGICAL AND " CR ." LOGICAL AND " PUTNDS <CR>
 
-This time, the Only data remaining is at those points where the data coincided. Logical "AND"s are normally used to mark off sections of the screen or sprites. They are also used extensively for collision detection. If a window of the screen is "AND"ed into a sprite, and then a SCAM performed, it is possible to determine whether a collision would occur if the sprite ware PUT; before actually Flirting the sprite.
+This time, the only data remaining is at those points where the data coincided. 
+Logical "AND"s are normally used to mark off sections of the screen or sprites. 
+They are also used extensively for collision detection.  If a window of the screen 
+is "AND"ed into a sprite, and then a SCANM performed, it is possible to determine 
+whether a collision would occur if the sprite were PUT; before actually PUTting 
+the sprite.
 
-4e now come to the logical MR. This is probably the most useful operation of the lot. "mR"s have the peculiar property of restoring the destination data to its former state if the operation is performed twice. This is how Sinclair's
-" operation works. To see this happen type:
+We now come to the logical XOR.  This is probably the most useful operation of the 
+lot. "XOR"s have the peculiar property of restoring the destination data to its 
+former state if the operation is performed twice.  This is how Sinclair's own 
+"OVER" operation works.  To see this happen type:
 
-QS .• ICON " (72 ." M82 " PVDOi.S «R2> To restore the text type: PUTXRS <Q2>
+CLS ." XOR " CR ." XOR " PUTXRS <CR>
 
-We can even use this property to swap two sprites without using a third. This example will swap the data but not the attributes. We will "PUT" two sprites at each stage so you can see what is happening. Type:
+To restore the text type:
 
-CSS AT10N 0 9cOL 1 0 SROW 1 1 SPl ! 2 SP2 ! 23 COL ! 6 0 AT <Q2> Now type:
+PUTXRS <CR>
 
-. SYN I PUTBIS 2 SPN 1 27 COL ! PU1'BLS <(R>
+We can even use this property to swap two sprites without using a third.  This 
+example will swap the data but not the attributes.  We will "PUT" two sprites at 
+each stage so you can see what is happening.  Type:
 
-These are the tao sprites before the operations begin. Now type: 3'DQ2M 2 ROW ! 23 cDi. ! 1 SPN ! PUIBLS 27 COL ! 2 SPN I PU1B!S <Q2> sprite 1 has now been ">aR"sl into sprite 2. Now type:
+CLS ATTON 0 SCOL ! 0 SROW ! 1 SP1 ! 2 SP2 ! 23 COL ! 6 0 AT <CR>
 
-.'n'I'xRM 4[bOW ! 23 COL ! 1 SPN I PUTd1S 27 COL 1 2 SPN ! PUI'BIS <(R> sprite 2 is now in sprite 1. Finally, type: .a•042M 6 ROW ! 23 ODL ! 1 SPN ! PUPBIS 27 COL ! 2 SPN ! PViBLS <(52> The cperation is now aimplets.
+Now type:
 
-If we wanted to add a new word to the language which swaps two equally sized sprites whose numbers were in SPI and SP2, we would now do so.
+1 SPN ! PUTBLS 2 SPN ! 27 COL ! PUTBLS <CR>
 
-: SWOP 0 SCAL ! 0 SF2UA 1(7i7XEtM fi•7xRM (l•7XtN1 ;<C1i> In fact c.e could also use: : S!00 0SOOL ! 0 SCION ! Fn70tM G4770tPi Pn7ffLM ;<CR>
+These are the tao sprites before the operations begin.
 
-for exactly the same effect. You will get PEG p 4 if you type the second word tzfore typing FORGOT SYAP <(Ti>
+Now type:
 
-[ronically, even though we can swap pixel data, there is no siaple rtethod for swapping attribute data unless a third sprite is involved.
-72
+GWXRM 2 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL ! 2 SPN ! PUTBLS <CR>
+
+sprite 1 has now been "XOR"ed into sprite 2.  Now type:
+
+PWTXRM 4 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL 1 2 SPN ! PUTBLS <CR>
+
+sprite 2 is now in sprite 1.  Finally, type:
+
+GWXRM 6 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL ! 2 SPN ! PUTBLS <CR>
+
+The operation is now commplete.
+
+If we wanted to add a new word to the language which swaps two equally sized 
+sprites whose numbers were in SP1 and SP2, we would now do so.
+
+: SWOP 0 SCOL ! 0 SROW 1 GWXRM PWXRM GWXRM ; <CR>
+
+In fact we could also use:
+
+: SWOP 0 SCOL ! 0 SROW ! PWXRM GXXRM PWXRM ; <CR>
+
+for exactly the same effect.  You will get MSG # 4 if you type the second word 
+before typing FORGOT SWOP <CR>
+
+Ironically, even though we can swap pixel data, there is no simple method for 
+swapping attribute data unless a third sprite is involved.
