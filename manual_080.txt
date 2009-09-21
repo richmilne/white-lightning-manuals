@@ -1,53 +1,60 @@
-# TODO: Remove this comment once this file has been proofread
-
-To save BASIC source, type PROG <CR> to enter BASIC if you're not already
-there, then just type SAVE "filename" as normal and re-enter White
-Lightning with PRINT USR 24836. Likewise, source can be reloaded by
-entering BASIC with a PROG, using LOAD "filename" and then re-entering
-Forth with a PRINT USR 24836.
+To save BASIC source, type PROG <CR> to enter BASIC if you're not already there, 
+then just type SAVE "filename" as normal and re-enter White Lightning with PRINT 
+USR 24836.  Likewise, source can be reloaded by entering BASIC with a PROG, using 
+LOAD "filename" and then re-entering Forth with a PRINT USR 24836.
 
 
 Sprites
 
-Sprites can be saved from White Lightning and then re-loaded into White
-Lightning, but sprites saved by White Lightning cannot be loaded into the
-sprite development software, which requires the additional array
-information preceding sprites which is not saved by White Lightning.
-Sprite development should always be done using the development software,
-but if you do wish to save the sprites for later merging then do the
-following:
+Sprites can be saved from White Lightning and then re-Loaded into White Lightning, 
+but sprites saved by White Lightning, cannot be loaded into the sprite development 
+software which requires the additional array information preceeding sprites  which 
+is not SAVEd by White Lightning.  Sprite development should always be done using 
+the development software, but if you do wish to save the sprites for later merging 
+then do the following:
 
-1.    Find the start of sprites by typing SPST @ U.
-2.    Find the length to save by typing SPND @ SPST @ - 1+ U.
-3.    Note the start and length, then return to BASIC using PROG.
-4.    Save using SAVE "filename" CODE start,length.
-5.    Re-enter White Lightning using PRINT USR 24836.
+1.  Find the start of sprites by typing SPST @ U.
+
+2.  Find the length to save by typing SPND @ SPST @ - 1+ U.
+
+3.  Note the start and length, then return to BASIC using PROG. 
+
+4.  Save using SAVE "filename" CODE start, length. 
+
+5.  Re-enter White Lightning using PRINT USR 24836.
 
 
 Merging Sprites
 
-Two blocks of sprites can be merged together in the main program using the
+Two blocks of sprites can be merged together in the main program using the 
 following procedure:
 
-1.    Make a note of the SPST and SPND values of the second block to be
+1.  Make a note of the SPST and SPND values of the second block to be
     merged. These are displayed by the sprite development software.
-2.    Load the main White Lightning package and then load the first
-    block of sprites in response to the "LOAD SPRITES Y/N" prompt.
-3.    Load source as required, and once in the main program relocate
+
+2.  Load the main White Lightning package and then load the first block 
+    of sprites in response to the "LOAD SPRITES Y/N" prompt. 
+
+3.  Load source as required and once in the main program relocate
     the first block of sprites downwards by the size of the second
-    block. Suppose the decimal values for SPST and SPND of the second
+    block.  Suppose the decimal values for SPST and SPND of the second
     block were 60000 and 65280 respectively, then type:
+
     DECIMAL 60000 65280 - SPST @ + U. <CR>
-    (The DECIMAL is not required if you are already in DECIMAL mode.)
-    This will calculate the new start after relocation. It is well
-    worth checking that this will not run over your source code, so
-    here is a quick calculation that will tell you if you have enough
-    space. You need to know the highest screen number that you intend
-    to use, for example screen 18. Type:
+
+    (The DECIMAL is not required if you are already in DECIMAL mode).
+    This will calculate the new start after relocation.  It is well worth
+    checking that this will not run over your source code, so here is a 
+    quick calculation that will tell you if you have enough space. 
+    You need to know the highest screen number that you intend to use, for
+    example screen 18.  Type:
+
     18 512 * 49664 + U. <CR>
-    This will print the first free byte after screen 18. So long as
-    this result is lower than the new sprite start after relocation
-    you can proceed. Again, using the previous example where the block
-    to be merged has SPST and SPND of 60000 and 65280 respectively,
-    the line to type is:
+
+    This will print the first free byte after screen 18.  So long as
+    this result is lower than the new sprite start after relocation you 
+    can proceed.  Again, using the previous example where the block to be 
+    merged has SPST and SPND of 60000 and 65280 respectively, the line 
+    to type is:
+
     DECIMAL 60000 65280 - MLEN ! RELOCATE <CR>
