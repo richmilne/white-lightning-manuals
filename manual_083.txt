@@ -19,29 +19,42 @@ C        Activates the PAPER variable.
 D        Activates DIRECT DATA INPUT
          Accepts 8 bytes of data, one byte at a time, followed by ENTER, via
          the keyboard, to the position on the sprite Screen indicated by
-         the cursors. Inputted data must be in the range 0 to 255 Decimal
+         the cursors.  Inputted data must be in the range 0 to 255 Decimal
          or, H00 to HFF HEX (the character H must precede Hex entry).
 
          NOTE:  If Attribute switch = 1, then the four current attributes will
          be used at the same position as well.
 
-E    Screen Function
-    There are three options: 1 = Invert; 2 = Mirror; 3 = Mirror Attributes
+E        Activates the SCREEN FUNCTIONS.
+         You will be given three options: press 1, 2 or 3.
 
-E Activates the SCREEN FUNCPIONS. You will 6e given three options: press 1, 2 or 3.
-1 INVERT
-Option 1, IIiVERT, sets all O bits to 1 and all 1 bits to 0, in a window whose length is held in the "Sprite length" variable and whose height is held in the "Sprite height" variable. 1'he inversion will take place from the positioning of the sprite screen cursors, i.e. at the intersection of an imaginary line drawn from each cursor.
-2 MIRROR:
-Option 2 MIRROR, 'Flips' a window whose height is held in the "Sprite height" variable and whose length is held in the "sprite length" variable. The Mirroring will take place about the vertical centre of the screen window.
-3 lfLVROR A1IRIBUIFS
-Option 3 alfiR(lFt P4'IRI9JI'E5, 'Flips' the attributes in a window whose height is held in the 'Sprite height" variable and whose length is held in the "Sprite length" variable. The Mirroring of Attributes will take place about the vertical centre of the screen
-window
+         1 INVERT
+         Option 1, INVERT, sets all 0 bits to 1 and all 1 bits to 0,
+         in a window whose length is held in the "Sprite length" 
+         variable and whose height is held in the "Sprite height" 
+         variable.  The inversion will take place from the positioning
+         of the sprite screen cursors, i.e. at the intersection of an 
+         imaginary line drawn from each cursor.
 
-F    Flash Window
-    Flashes the current Sprite Screen window position.
+         2 MIRROR
+         Option 2 MIRROR, 'Flips' a window whose height is held in the 
+         "Sprite height" variable and whose length is held in the "Sprite
+         length" variable.  The Mirroring will take place about the
+         vertical centre of the screen window.
 
-F Activates FLASH WINDOW.
-Flashes the current screen windav whose height is held in the
-SPRITE FFICtIT variable and whose length is held in the SPRITE LENGTH variable. The Flash will take place at the position of the sprite screen cursors.
-Flash is used to check the position of the sprite screen curs
-.to check that the height and length parameters are as requira ' to check that the window is correctly positioned.
+         3 MIRROR ATTRIBUTES
+         Option 3 MIRROR ATTRIBUTES, 'Flips' the attributes in a window
+         whose height is held in the "Sprite height" variable and whose 
+         length is held in the "Sprite length" variable.  The Mirroring of
+         Attributes will take place about the vertical centre of the screen
+         window
+
+F        Activates FLASH WINDOW.
+         Flashes the current screen window whose height is held in the
+         SPRITE HEIGHT variable and whose length is held in the SPRITE LENGTH
+         variable.  The Flash will take place at the position of the sprite
+         screen cursors.
+
+         Flash is used to check the position of the sprite screen cursors,
+         to check that the height and length parameters are as required or
+         to check that the window is correctly positioned.

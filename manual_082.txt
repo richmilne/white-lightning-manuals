@@ -1,53 +1,50 @@
-# TODO: Remove this comment once this file has been proofread
-
 Compiled and Completed Programs
 
-Once the program is fully debugged and running, a final run-time version
-can be produced. This is the only form in which programs generated from
-White Lightning can be marketed.
+Once the program is fully debugged and running, a final run-time version can be 
+produced.  This is the only form in which programs generated from White Lightning 
+can be marketed.
 
-If the program makes use of the foreground/background facility, ZAPINT
-should be typed; if not, then ZAP should be typed. The length of the
-compiled program is then displayed until a key is pressed and control
-returned to BASIC to make a copy.
+If the program makes use of the foreground/background facility, ZAPINT should be 
+typed, if not, then ZAP should be typed.  The length of the compiled program is 
+then displayed until a key is pressed and control returned to BASIC to make a 
+copy.
 
-The final program should be saved using:
-SAVE "filename" CODE 24832,length
-and executed using PRINT USR 24832. Do not use RANDOMIZE USR 24832.
+The final program should be saved using: 
 
-Remember that a lot of run-time software is saved with your final code, so
-even if your program is only two lines long, the resulting program will be
-pretty large.
+SAVE "filename" CODE 24832, length 
+
+and executed using PRINT USR 24832.  Do not use RANDOMISE USR 24832.
+
+Remember that a lot of run-time software is saved with your final code, so even if 
+your program is only two lines long, the resulting program will be pretty large.
 
 
-TABLE 1
-Table of Screen Numbers and Addresses
+                             TABLE 1
+                  Table of Screen Numbers and Addresses
 
-Each screen used for editing into consists of 8 lines x 64 characters =
-512 bytes. Therefore, if you have only edited into screens 6-9, then there
-is no need to save all of the screens 1-22, since you only need save from
-52224 to 54271 (end of screen 9); ie. 2k bytes.
 
-Screen Number    Start Address
-1    49664
-2    50176
-3    50688
-4    51200
-5    51712
-6    52224
-7    52736
-8    53248
-9    53760
-10    54272
-11    54784
-12    55296
-13    55808
-14    56320
-15    56832
-16    57344
-17    57856
-18    58368
-19    58880
-20    59392
-21    59904
-22    60416
+Screen           Start 
+Number          Address 
+
+   1             49664          Each screen used for editing   
+   2             50176          into consists of 
+   3             50688          8 lines x 64 characters 
+   4             51200                  = 512 bytes. 
+   5             51712
+   6             52224          
+   7             52736          Therefore, if you have only
+   8             53248          edited into screens 6-9, 
+   9             53760          then there is no need to save
+  10             54272          ALL of the screens 1-22
+  11             54784          since you only need save
+  12             55296          from 52224 to 54271 (end of 
+  13             55808          screen 9), i.e. 2k bytes.
+  14             56320
+  15             56832
+  16             57344
+  17             57856
+  18             58368
+  19             58880
+  20             59392
+  21             59904
+  22             60416
