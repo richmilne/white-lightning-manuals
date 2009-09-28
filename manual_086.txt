@@ -1,64 +1,60 @@
-# TODO: Remove this comment once this file has been proofread
+T        Activates the TEST SPRITE function.
+         Performs a test on the sprite whose number is held in the "Sprite 
+         Number" variable, and does the following:
+         
+         1.  Places the sprite height into the "Sprite height" variable. 
+         2.  Places the sprite length into the "Sprite length" variable. 
+         3.  Places the address in memory of where the sprite data starts,
+             into the "Sprite" variable.
+         4.  Places the address of the start of sprite space into the variable
+             "SPST"
+         5.  Places the address of the end of sprite space into the
+             variable "SPND".
+         6.  Calculates the remaining memory available for sprite
+             storage and places it into the "Memory Left" variable.
+         
+         NOTE:  The screen display of these variables will be updated
+         if necessary.
 
-T    Test Sprite function
-    Sets variables for the current sprite: 
-    Sprite Height, Sprite Length, Sprite, SPST, SPND, Memory Left
+U        Activates the PICK UP ATTRIBUTES function.
+         Picks up the attributes of the character from the sprite screen,
+         indicated by the position of the sprite screen cursors and
+         Loads them into the four Attribute variables.
 
-Activates the TEST SPRITE function.
-Performs a test on the sprite whose number is held in the "Sprite Number" variable, and does the following:
+V        Activates the FLASH variable. This is one of the four attributes. 
+         Press 1 to put switch ON.
+         Press 0 to put switch OFF.
 
-1. Places the sprite height into the "Sprite height" variable. 2. Places the sprite length into the "Sprite length" variable. 3. Places the address in mmory of where the sprite data starts,
-into the "Sprite" variable.
-4. Places the address of the start of sprite space into the variable
-"SPS'p"
-5. Places the address of the end of sprite space into the
-variable "SPND".
-6. Calculates the remaining memory available for sprite
-storage and places it into the "Mawry Left" variable.
+W        Activates the WIPE SPRITE function.
+         Wipes the sprite indicated by the "Sprite number" variable 
+         totally from memory.  All other sprites stored in memory below 
+         that sprite are moved up to fill the space previously 
+         occupied by the Wiped sprite.
 
-^77PE: The screen display of these variables will be updated if necessary.
+X        Activate the INK variable which is one of the four attributes. 
+         Press any key between 0 and 7 to set the colour indicated
+         above the key.
 
-U    Pick Up Attributes function
-    Picks up the attributes from the current Sprite Screen position
-    and applies them to the current attribute variables.
+Y        Activates the YES, positive response to (Y/N) questions.
 
-Activates the PICK CP ATI12ZBl7fk5 function.
-Picks up the attributes of the character from the sprite screen, indicated by the position of the sprite screen cursors and Loads then into the four Attribute variables.
+Z        Activates the pre-defined ARCADE CHARACTER function.
+         Place a pre-defined Arcade Character to the sprite screen. 
+         The top left hand corner of the character is indicated by
+         the sprite screen cursors.  Input a number between 1 and 167 
+         followed by ENTER.
 
-V    Flash variable
-    1 = on, 0 = off
+         NOTE:  Each character, with its number, can be seen on the Demo B
+         tape.  A list is given at the back of this section.
 
-.    Activates the FLASH variable. This is one of the four attributes. Press 1 to put witch ON.
-Press 0 to put witch OFT,.
+NOT      Activates the SAVE SPRITES TO TAPE facility.
+(SYMBOL  Place a suitable cassette in your cassette recorder and
+SHIFT    position as desired.  Press NOT, enter your filename (1 to 8
+S)       characters).  The program will save three groups of data; 
+         an array and two sections of code.
+         After SAVEing, you will be asked to rewind the tape and VERIFY -
+         be sure to only press PLAY on your cassette recorder.
+         If the programs VERIFY, the Sprite Development Program will
+         return to command level with the Text Line cleared.
 
-W    Wipe Sprite function
-    Erases the current sprite and moves up lower sprites in memory.
-
-.    Activates the WIPE SPRITE function.
-Wipes the sprite indicated by the "Sprite number" variable totally fran memory. All other sprites stored in memory below that sprite are moved up to fill the space previously occupied by the Wiped sprite.
-
-X    Ink variable
-    0 - 7
-
-Activate the IN)( variable which is one of the four attributes. Press any key between 0 and 7 to set the colour indicated above the key.
-
-Y    Yes - positive response to questions
-
-Activates the YES, positive response to (Y/N) questions.
-
-Z    Pre-defined Arcade Character function
-    Place a pre-defined Arcade Character to the current Sprite Screen
-    position: 1-167
-
-Activates the pre-defined ARCADE CHARACTER function.
-Place a pre-defined Arcade Character to the sprite screen. The top left hand corner of the character is indicated by the sprite screen cursors. Input a number between 1 and 167 followed by ENTER .
-
-*APE: Each character, with its number, can be seen on the Dem g tape. A list is given at the back of this section.
-
-NOT    Activates the SAVE SPRITES TO TAPE facility.
-ISYMBOL Place a Suitable cassette in your cassette recorder and
-SHIFT    position as desired. Press NOT, enter your filename (1 to 8 characters). The program will save three groups of data; an array and two sections of code.
-After S4VE:ing, you will be asked to rewind the tape and VERIFY - be sure to only press PLAY on your cassette recorder. If the programs VERIFY, the Sprite Development Program will returnto oamand level with the Text Line cleared.
-
-KYCE:: If the program breaks because of failure to VERIFY,
-type IX)'N 3 and execute a WARM ST0.RT; your data will not be lost.
+         NOTE:  If the program breaks because of failure to VERIFY,
+         type GOTO 3 and execute a WARM START; your data will not be lost.
