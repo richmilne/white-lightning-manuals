@@ -1,77 +1,58 @@
-# TODO: Remove this comment once this file has been proofread
+_        Activates the IOAD SPRITES FROM TAPE facility.
+(SYMBOL  Place tape in your cassette recorder.  Press SYMBOL SHIFT J
+SHIFT    and press PLAY on the cassette recorder.  Three groups of data
+J)       will load.  When loaded, the Text Line will clear and the 
+         program will resume.
 
-_    Activates the IOAO SPRITES FROM WE facility.
-ISVMBOL Place tape m your cassette recorder. Press SYMBOL SHIFT fJdata and press PLAY on the cassette recorder. Three groups SHIFT gHIFT    will load . When loaded, the Text Line will clear and the program will resume.
-N7fE: Any sprites in cnyrory will be destroyed when this command is executed.
+         NOTE:  Any sprites in memory will be destroyed when this command
+         is executed.
 
-5    Move CHR$ SQR 1 place left
+5        Activates the MOVE CHR$ SQR CURSOR 1 place to the left - non-
+         destructive.
 
-Activates the MOVE CHRS (;OR.qOR 1 place to the left - nom
+6        Activates the MOVE CHR$ SQR CURSOR 1 place down - non-destructive.
 
-6    Move CHR$ SQR 1 place down
+7        Activates the MOVE CHR$ SQR CURSOR 1 place up - non-destructive.
 
-6
-destructive.
-Activates the MOVE CFRS `W CUP_ I place down - non-destructive.
+8        Activates the MOVE CHR$ SQR CURSOR 1 place to the right -
+         non-destructive.
 
-7    Move CHR$ SQR 1 place up
+9        Activates the SET CHR$ at current position.
 
-Activates the M~E CIjR$ SQR cLASOR 1 place up - non
-destructive
+0        Activates the CLEAR CHR$ SQR at current position.
 
-8    Move CHR$ SQR 1 place right
+%        Activates the MOVE SPRITE SCREEN CURSOR 1 place to the left.
+(SYMBOL
+SHIFT
+5)
 
-Activates the MOVE cHRS S~ a1R90R 1 place to the right -
+&        Activates the MOVE SPRITE SCREEN CURSOR 1 place down.
+(SYMBOL
+SHIFT
+6)
 
-9    Set CHR$ SQR at current position
+'        Activates the  MOVE SPRITE SCREEN CURSOR 1 place up.
+(SYMBOL
+SHIFT
+7)
 
-non-destructive.
-g    Activates the SEP CHRS at wrrent position.
+(        Activates the MOVE SPRITE SCREEN CURSOR 1 place to the right.
+SYMBOL
+SHIFT
+8)
 
-0    Clear CHR$ SQR at current position
+<        Activates the RELOCATE SPRITES function.
+SYMBOL   Allows the user to move the sprite data about in memory,
+SHIFT    between the top of the Sprite Generator Program and address
+R)       65520.
 
-Activates the CIkAR QTRS `.+QR at ceiTent Pceition.
-q{,    Activates the MUVE SPRITE 9::R~ CLF-qOR 1 place to the left.
-ISVMBOL SHIFT
-61
-9    Activates the MOVE SPRI'iE S~REFN CUWR 1 place down•
+         e.g.  a positive number i.e. 50, moves the data 50 bytes up
+         in memory.  A negative number i.e. -50, moves the data 50
+         bytes down in memory.
+         CAUTION - use this function with care.
 
-
-ISYMBOL SHIFT
-81
-
-
-pctivate-s the PDVE SPRM't: 9CREE2J L'OR~ 1 Place up.
-(SYMBOL SHIFT 7)
-(    Activates the NDV2 SPRl'TS 9CRp'FN clmMR 1 place to t}ie right.
-
-
-(BYMBOL SHIFT BI
-(    Activates the REtOCATE SRRl'Lfs fl'ncdatatren about jn ~n,ory.
-IBYMBOL puws the user to move the sprite
-SHIFT    hetween the top of the Sprite Ornerator Program and addcess
-RI    65520.
-
-
-e.g. a positive numUer i.e. 50, moves the data 50 bytes uD in me+norY• A negativemamber i.e. -50, rtoves the data 50
-
-bytes doan >,r, mmnry.
-CALTtOpl _ use this function with care.
-
-BREAK + SPACE    Place Sprite into Sprite Window function
-    Places a smaller sprite into a larger one at position ROW,COL in
-    memory. There are four options:
-    1 = GETBLS; GETs the smaller sprite data into the larger sprite window
-    2 = GETORS;  ORs the smaller sprite data into the larger sprite window
-    3 = GETXRS; XORs the smaller sprite data into the larger sprite window
-    4 = GETNDS; ANDs the smaller sprite data into the larger sprite window
-
-BREAK Activates the pi.PCE SPR11£ INN SPRPIE WINDOW function.
-
-and    ~is allows you to Place a sprite °f smaller dimensions into
-
-SPACE    a~ sprite of greater dimensrons, at a Position of ROW'
-
-in the yreater sprite >.n mmnn, _ the s"aller sprite is
-OpL
-left unaltered.
+BREAK    Activates the PLACE SPRITE INTO SPRITE WINDOW function.
+and      This allows you to place a sprite of smaller dimensions into
+SPACE    a sprite of greater dimensions, at a position of ROW,
+         COL in the greater sprite in memory - the smaller sprite is
+         left unaltered.

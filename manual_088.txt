@@ -1,79 +1,20 @@
-# TODO: Remove this comment once this file has been proofread
-
-_    Activates the IOAO SPRITES FROM WE facility.
-ISVMBOL Place tape m your cassette recorder. Press SYMBOL SHIFT fJdata and press PLAY on the cassette recorder. Three groups SHIFT gHIFT    will load . When loaded, the Text Line will clear and the program will resume.
-N7fE: Any sprites in cnyrory will be destroyed when this command is executed.
-
-
-Activates the MOVE CHRS (;OR.qOR 1 place to the left - nom
-
-6
-destructive.
-Activates the MOVE CFRS `W CUP_ I place down - non-destructive.
-8
-
-Activates the M~E CIjR$ SQR cLASOR 1 place up - non
-destructive-7
-
-Activates the MOVE cHRS S~ a1R90R 1 place to the right -
-
-B
-
-non-destructive.
-g    Activates the SEP CHRS at wrrent position.
-
-0
-
-Activates the CIkAR QTRS `.+QR at ceiTent Pceition.
-q{,    Activates the MUVE SPRITE 9::R~ CLF-qOR 1 place to the left.
-ISVMBOL SHIFT
-61
-9    Activates the MOVE SPRI'iE S~REFN CUWR 1 place down•
-
-
-ISYMBOL SHIFT
-81
-
-
-pctivate-s the PDVE SPRM't: 9CREE2J L'OR~ 1 Place up.
-(SYMBOL SHIFT 7)
-(    Activates the NDV2 SPRl'TS 9CRp'FN clmMR 1 place to t}ie right.
-
-
-(BYMBOL SHIFT BI
-(    Activates the REtOCATE SRRl'Lfs fl'ncdatatren about jn ~n,ory.
-IBYMBOL puws the user to move the sprite
-SHIFT    hetween the top of the Sprite Ornerator Program and addcess
-RI    65520.
-
-
-e.g. a positive numUer i.e. 50, moves the data 50 bytes uD in me+norY• A negativemamber i.e. -50, rtoves the data 50
-
-bytes doan >,r, mmnry.
-CALTtOpl _ use this function with care.
-BREAK Activates the pi.PCE SPR11£ INN SPRPIE WINDOW function.
-
-and    ~is allows you to Place a sprite °f smaller dimensions into
-
-SPACE    a~ sprite of greater dimensrons, at a Position of ROW'
-
-in the yreater sprite >.n mmnn, _ the s"aller sprite is
-OpL
-left unaltered.
-87
--nrE: AT1R = 0, Attributes of Waller sprite ignored.
-ri'tR = 1, Attributes of smaller sprite taken and placs3 with i,rite.
-ihree cptlons are given:
-
-~ ;;EPBIS
-:.TS the Waller sprite directly into the windwr of the larger ~,rite.
-
-GEVORS
-i',a the smaller sprite and Qis it into the window of the -irger sprite.
-
-GE1'XR.S
-'tTS the snxller sprite and l¢Olts it into the window of the ~_irger sprite.
-
-1 GEifII.S
-'r:PS the smaller sprite and PNDs it into the windor of the I-ger sprite.
-B8
+         NOTE:  ATTR = 0, Attributes of smaller sprite ignored.
+         ATTR = 1, Attributes of smaller sprite taken and placed with
+         sprite.
+         Three options given:
+        
+         1 GETBLS
+         GETs the smaller sprite directly into the window of the larger 
+         sprite.
+        
+         2 GETORS
+         GETs the smaller sprite and ORs it into the window of the 
+         larger sprite.
+        
+         3 GETXRS
+         GETs the smaller sprite and XORs it into the window of the 
+         larger sprite.
+        
+         4 GETNDS
+         GETs the smaller sprite and ANDs it into the window of the 
+         larger sprite.
