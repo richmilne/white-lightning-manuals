@@ -1,43 +1,41 @@
-# TODO: Remove this comment once this file has been proofread
-
- 17     large wall             2,7      7       8       2
- 18     train wheels #1        4,7      0      11       1
- 19     train wheels #2        4,7      0      11       1
- 20     train wheels #3        4,7      0      11       1
- 21     train wheels #4        4,7      0      11       1
- 22     railway coach #1        7       0      10       1
- 23     railway coach #2        7       0      10       1
- 24     Invader   0 degrees     6       0       2       2
- 25     Invader  90 degrees     6       0       2       2
- 26     Invader 180 degrees     6       0       2       2
- 27     Invader 270 degrees     6       0       2       2
- 28     face with hat #1        4       0       4       3
- 29     face with hat #2        4       0       4       3
- 30     'WHITE'                5,7      0       7       2
- 31     'LIGHTNING'            5,7      0      10       2
- 32     lightning bolt          5       0      13       4
- 33     crab                   4,7      0       5       3
- 34     lunar lander            7       0       6       4
- 35     radar #1                7       0       2       1
- 36     radar #2                7       0       2       1
- 37     radar #3                7       0       2       1
- 38     radar #4                7       0       2       1
- 39     radar #5                7       0       2       1
- 40     radar #6                7       0       2       1
- 41     radar #7                7       0       2       1
- 42     radar #8                7       0       2       1
- 43     explosion               7       0       2       2
- 44     lunar surface           6       0      15       1
- 45     rotating ball #1        6       0       4       4
- 46     rotating ball #2        6       0       4       4
- 47     rotating ball #3        6       0       4       4
- 48     rotating ball #4        6       0       4       4
- 49     clockwork toys #1       4       0       3      12
- 50     clockwork toys #2       4       0       3      12
- 59     'TRY THIS'              4       0       8       1
- 60     'WITHOUT'               4       0       8       1
- 61     'FROM'                  5       0       5       1
-251     bouncing ball #1        0       6       3       3
-252     bouncing ball #2        0       6       3       3
-253     bouncing ball #3        0       6       3       3
-254     bouncing ball #4        0       6       3       3
+ 17     LARGE WALL               2,7    7        8       2
+ 18     TRAIN WHEELS #1          4,7    0       11       1
+ 19     TRAIN WHEELS #2          4,7    0       11       1
+ 20     TRAIN WHEELS #3          4,7    0       11       1
+ 21     TRAIN WHEELS #4          4,7    0       11       1
+ 22     RAILWAY COACH #1          7     0       10       1
+ 23     RAILWAY COACH #2          7     0       10       1
+ 24     INVADER 0 DEGREES         6     0        2       2
+ 25     INVADER 90 DEGREES        6     0        2       2
+ 26     INVADER 180 DEGREES       6     0        2       2
+ 27     INVADER 270 DEGREES       6     0        2       2
+ 28     FACE WITH HAT #1          4     0        4       3
+ 29     FACE WITH HAT #2          4     0        4       3
+ 30     'WHITE'                  5,7    0        7       2
+ 31     'LIGHTNING'              5,7    0       10       2
+ 32     LIGHTNING BOLT            5     0       13       4
+ 33     CRAB                     4,7    0        5       3
+ 34     LUNAR LANDER              7     0        6       4
+ 35     RADAR #1                  7     0        2       1
+ 36     RADAR #2                  7     0        2       1
+ 37     RADAR #3                  7     0        2       1
+ 38     RADAR #4                  7     0        2       1
+ 39     RADAR #5                  7     0        2       1
+ 40     RADAR #6                  7     0        2       1
+ 41     RADAR #7                  7     0        2       1
+ 42     RADAR #8                  7     0        2       1
+ 43     EXPLOSION                 7     0        2       2
+ 44     LUNAR SURFACE             6     0       15       1
+ 45     ROTATING BALL #1          6     0        4       4
+ 46     ROTATING BALL #2          6     0        4       4
+ 47     ROTATING BALL #3          6     0        4       4
+ 48     ROTATING BALL #4          6     0        4       4
+ 49     CLOCKWORK TOYS #1         4     0        3      12
+ 50     CLOCKWORK TOYS #2         4     0        3      12
+ 59     'TRY THIS'                4     0        8       1
+ 60     'WITHOUT'                 4     0        8       1
+ 61     'FROM'                    5     0        5       1
+251     BOUNCING BALL #1          0     6        3       3
+252     BOUNCING BALL #2          0     6        3       3
+253     BOUNCING BALL #3          0     6        3       3
+254     BOUNCING BALL #4          0     6        3       3
