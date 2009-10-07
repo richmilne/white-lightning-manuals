@@ -22,7 +22,7 @@ Move the specified quantity of bytes beginning at address from to address to.  T
 
 COLD                                                                               
 
-The cold start proceedure to adjust the dictionary pointer to the minimum standard and restart via ABORT.  May be called from the terminal to remove application programs and restart. 
+The cold start procedure to adjust the dictionary pointer to the minimum standard and restart via ABORT.  May be called from the terminal to remove application programs and restart. 
 
 
 COMPILE                                                                          C2

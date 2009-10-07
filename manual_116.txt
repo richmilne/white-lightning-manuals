@@ -16,7 +16,7 @@ List the names of the definitions in the context vocabulary.  "Break" will termi
 
 WARNING                --- addr                                                   U
 
-A user variable containing a value controlling messages.  If = 1 disc is present, and screen 4 of drive 0 is the base location for messages.  If = 0, no disc is present and messages will be presented by number.  If = -1, execute (ABORT) for a user specified proceedure.  See MESSAGE, ERROR. 
+A user variable containing a value controlling messages.  If = 1 disc is present, and screen 4 of drive 0 is the base location for messages.  If = 0, no disc is present and messages will be presented by number.  If = -1, execute (ABORT) for a user specified procedure.  See MESSAGE, ERROR. 
 
 
 WHILE                f --- (run-time)                                              

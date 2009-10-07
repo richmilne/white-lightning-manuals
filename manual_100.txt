@@ -41,7 +41,7 @@ These are the preferred names for the installation dependent code to read and wr
 
 BRANCH                                                                        C2,L0
 
-The run-time proceedure to unconditionally branch.  An in-line offset is added to the interpretive pointer IP to branch ahead or back.  BRANCH is compiled by ELSE, AGAIN, REPEAT. 
+The run-time procedure to unconditionally branch.  An in-line offset is added to the interpretive pointer IP to branch ahead or back.  BRANCH is compiled by ELSE, AGAIN, REPEAT. 
 
 
 BUFFER               n --- addr                                                    

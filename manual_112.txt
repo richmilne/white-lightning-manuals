@@ -41,7 +41,7 @@ Rotate the top three values on the stack, bringing the third to the top.
 
 RP!                                                                                
 
-A computer dependent proceedure to initialize the return stack pointer from user variable R0. 
+A computer dependent procedure to initialize the return stack pointer from user variable R0. 
 
 
 S->D                 n --- d                                                       

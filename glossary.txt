@@ -5,7 +5,7 @@ Copyright: See DISTRIBUTION in figdoc.txt
 OCER-ed by Albert van der Horst DFW The Netherlands 2000-MAR
 
 The first line of each entry shows a symbolic description of the action of
-the proceedure on the parameter stack. The symbols indicate the order in
+the procedure on the parameter stack. The symbols indicate the order in
 which input parameters have been placed on the stack. Three dashes "---"
 indicate the execution point; any parameters left on the stack are listed.
 In this notation, the top of the stack is to the right.
@@ -90,29 +90,29 @@ under-flow indication unspecified.
 
 
 (.")                                                                             C+
-        The run-time proceedure, compiled by ." which transmits the
+        The run-time procedure, compiled by ." which transmits the
         following in-line text to the selected output device. See .'"
 
 
 (;CODE)                                                                           C
-        The run-time proceedure, compiled by ;CODE, that rewrites the code
+        The run-time procedure, compiled by ;CODE, that rewrites the code
         field of the most recently defined word to point to the following
         machine code sequence. See ;CODE.
 
 
 (+LOOP)              n ---                                                       C2
-        The run-time proceedure compiled by +LOOP, which increments the loop
+        The run-time procedure compiled by +LOOP, which increments the loop
         index by n and tests for loop completion. See +LOOP.
 
 
 (ABORT)                                                                            
         Executes after an error when WARNING is -1. This word normally
         executes ABORT, but may be altered (with care) to a user's
-        alternative proceedure.
+        alternative procedure.
 
 
 (DO)                                                                              C
-        The run-time proceedure compiled by DO which moves the loop control
+        The run-time procedure compiled by DO which moves the loop control
         parameters to the return stack. See DO.
 
 
@@ -131,7 +131,7 @@ under-flow indication unspecified.
 
 
 (LOOP)                                                                           C2
-        The run-time proceedure compiled by LOOP which increments the loop
+        The run-time procedure compiled by LOOP which increments the loop
         index and tests for loop completion.
         See LOOP.
 
@@ -251,7 +251,7 @@ under-flow indication unspecified.
         Used in the form:
             .', cccc"
         Compiles an in-line string cccc (delimited by the trailing ") with
-        an execution proceedure to transmit the text to the selected output
+        an execution procedure to transmit the text to the selected output
         device.
         If executed outside a definition, ." will immediately print the text
         until the final ',. The maximum number of characters may be an
@@ -293,7 +293,7 @@ under-flow indication unspecified.
 
 
 0BRANCH              f ---                                                       C2
-        The run-time proceedure to conditionally branch. If f is false
+        The run-time procedure to conditionally branch. If f is false
         (zero), the following in-line parameter is added to the interpretive
         pointer to branch ahead or back. Compiled by IF, UNTIL, and WHILE.
 
@@ -332,7 +332,7 @@ under-flow indication unspecified.
 
         When cccc later executes in the form:
                               cccc nnnn
-        the word nnnn will be created with its execution proceedure given by
+        the word nnnn will be created with its execution procedure given by
         the machine code following cccc.
         That is, when nnnn is executed, it does so by jumping to the code
         after nnnn. An existing defining word must exist in cc prior to
@@ -342,7 +342,7 @@ under-flow indication unspecified.
 ;S                                                                             P,L0
         Stop interpretation of a screen.
         ;S is also the run-time word compiled at the end of a
-        colon-definition which returns execution to the calling proceedure.
+        colon-definition which returns execution to the calling procedure.
 
 
 <                n1 n2 --- f                                                     L0
@@ -362,12 +362,12 @@ under-flow indication unspecified.
                         : cccc  <BUILDS  ...
                                  DOES>     ...    ;
         Each time cccc is executed, <BUILDS defines a new word with a
-        high-level execution proceedure. Executing cccc in the form:
+        high-level execution procedure. Executing cccc in the form:
                      cccc nnnn
         uses <BUILDS to create a dictionary entry for nnnn with a call to
         the DOES> part for nnnn. When nnnn is later executed, it has the
         address of its parameter area on the stack and executes the words
-        after DOES> in cccc. <BUILDS and DOES> allow runtime proceedures to
+        after DOES> in cccc. <BUILDS and DOES> allow runtime procedures to
         written in high-level rather than in assembler code (as required by
         ;CODE).
 
@@ -529,7 +529,7 @@ BLOCK-WRITE
 
 
 BRANCH                                                                        C2,L0
-        The run-time proceedure to unconditionally branch. An in-line offset
+        The run-time procedure to unconditionally branch. An in-line offset
         is added to the interpretive pointer IP to branch ahead or back.
         BRANCH is compiled by ELSE, AGAIN, REPEAT.
 
@@ -573,7 +573,7 @@ CMOVE    from to count ---
 
 
 COLD                                                                               
-        The cold start proceedure to adjust the dictionary pointer to
+        The cold start procedure to adjust the dictionary pointer to
         the minimum standard and restart via ABORT.
         May be called from the terminal to remove application programs and
         restart.
@@ -773,7 +773,7 @@ EMPTY-BUFFERS                                                                   
         Mark all block-buffers as empty, not necessarily affecting the
         contents.
         Updated blocks are not written to the disc. This is also an
-        initialization proceedure before first use of the disc.
+        initialization procedure before first use of the disc.
 
 
 ENCLOSE        addr1 c --- addr1 n1 n2 n3                                          
@@ -782,7 +782,7 @@ ENCLOSE        addr1 c --- addr1 n1 n2 n3
         offset to the first non-delimiter character n1, the offset to the
         first delimiter after the text n2, and the offset to the first
         character not included.
-        This proceedure will not process past an ascii 'null', treating it
+        This procedure will not process past an ascii 'null', treating it
         as an unconditional delimiter.
 
 
@@ -1072,7 +1072,7 @@ MOVE     addr1 addr2 n ---
 NEXT                                                                               
         This is the inner interpreter that uses the interpretive pointer IP
         to execute compiled Forth definitions. It is not directly executed
-        but is ff the return point for all code proceedures. It acts by
+        but is ff the return point for all code procedures. It acts by
         fetching the address pointed by IP, storing this value in register
         W. It then jumps to the address pointed to by the address pointed to
         by W. W points to the code field of a definition which contains
@@ -1203,7 +1203,7 @@ ROT           nl n2 n3 --- n2 n3 nl                                             
 
 
 RP!                                                                                
-        A computer dependent proceedure to initialize the return stack
+        A computer dependent procedure to initialize the return stack
         pointer from user variable R0.
 
 
@@ -1236,12 +1236,12 @@ SMUDGE
 
 
 SP!                                                                                
-        A computer dependent proceedure to initialize the stack pointer from
+        A computer dependent procedure to initialize the stack pointer from
         SO.
 
 
 SP@                    --- addr                                                    
-        A computer dependent proceedure to return the address of the stack
+        A computer dependent procedure to return the address of the stack
         position to the top of the stack, as it was before SP@ was executed.
             (e.g.  1  2  SP@  @  .   .   .     would
             type 2  2   1)
@@ -1387,7 +1387,7 @@ WARNING                --- addr                                                 
         A user variable containing a value controlling messages. If = 1 disc
         is present, and screen 4 of drive 0 is the base location for
         messages. If = 0, no disc is present and messages will be presented
-        by number. If = -1, execute (ABORT) for a user specified proceedure.
+        by number. If = -1, execute (ABORT) for a user specified procedure.
         See MESSAGE, ERROR.
 
 
@@ -1426,7 +1426,7 @@ WORD                 c ---                                                      
 
 X                                                                                  
         This is pseudonym for the "null" or dictionary entry for a name of
-        one character of ascii null. It is the execution proceedure to
+        one character of ascii null. It is the execution procedure to
         terminate interpretation of a line of text from the terminal or
         within a disc buffer, as both buffers always have a null at the
         end.

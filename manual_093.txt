@@ -2,12 +2,12 @@
 
 (ABORT)                                                                            
 
-Executes after an error when WARNING is -1.  This word normally executes ABORT, but may be altered (with care) to a user's alternative proceedure. 
+Executes after an error when WARNING is -1.  This word normally executes ABORT, but may be altered (with care) to a user's alternative procedure. 
 
 
 (DO)                                                                              C
 
-The run-time proceedure compiled by DO which moves the loop control parameters to the return stack.  See DO. 
+The run-time procedure compiled by DO which moves the loop control parameters to the return stack.  See DO. 
 
 
 (FIND)     addr1 addr2 --- pfa b tf (ok)                                           
@@ -23,7 +23,7 @@ Convert the line number n1 and the screen n2 to the disc buffer address containi
 
 (LOOP)                                                                           C2
 
-The run-time proceedure compiled by LOOP which increments the loop index and tests for loop completion.  See LOOP. 
+The run-time procedure compiled by LOOP which increments the loop index and tests for loop completion.  See LOOP. 
 
 
 (NUMBER)      d1 addr1 --- d2 addr2                                                

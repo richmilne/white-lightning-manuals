@@ -12,7 +12,7 @@ Leave a true flag is the number is equal to zero, otherwise leave a false flag.
 
 0BRANCH              f ---                                                       C2
 
-The run-time proceedure to conditionally branch.  If f is false (zero), the following in-line parameter is added to the interpretive pointer to branch ahead or back.  Compiled by IF, UNTIL, and WHILE. 
+The run-time procedure to conditionally branch.  If f is false (zero), the following in-line parameter is added to the interpretive pointer to branch ahead or back.  Compiled by IF, UNTIL, and WHILE. 
 
 
 1+                  n1 --- n2                                                    L1

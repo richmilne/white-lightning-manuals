@@ -47,6 +47,6 @@ Transmit ascii character c to the selected output device.  OUT is incremented fo
 
 EMPTY-BUFFERS                                                                    L0
 
-Mark all block-buffers as empty, not necessarily affecting the contents.  Updated blocks are not written to the disc.  This is also an initialization proceedure before first use of the disc. 
+Mark all block-buffers as empty, not necessarily affecting the contents.  Updated blocks are not written to the disc.  This is also an initialization procedure before first use of the disc. 
 
 

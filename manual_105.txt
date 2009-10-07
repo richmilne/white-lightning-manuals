@@ -2,7 +2,7 @@
 
 ENCLOSE        addr1 c --- addr1 n1 n2 n3                                          
 
-The text scanning primitive used by WORD.  From the text address addr1 and an ascii delimiting character c, is determined the byte offset to the first non-delimiter character n1, the offset to the first delimiter after the text n2, and the offset to the first character not included.  This proceedure will not process past an ascii 'null', treating it as an unconditional delimiter. 
+The text scanning primitive used by WORD.  From the text address addr1 and an ascii delimiting character c, is determined the byte offset to the first non-delimiter character n1, the offset to the first delimiter after the text n2, and the offset to the first character not included.  This procedure will not process past an ascii 'null', treating it as an unconditional delimiter. 
 
 
 END                                                                         P,C2,L0

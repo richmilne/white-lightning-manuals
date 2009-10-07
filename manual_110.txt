@@ -32,7 +32,7 @@ Move the contents of n memory cells (l6 bit contents) beginning at addr1 into n 
 
 NEXT                                                                               
 
-This is the inner interpreter that uses the interpretive pointer IP to execute compiled Forth definitions.  It is not directly executed but is ff the return point for all code proceedures.  It acts by fetching the address pointed by IP, storing this value in register W.  It then jumps to the address pointed to by the address pointed to by W.  W points to the code field of a definition which contains the address of the code which executes for that definition.  This usage of indirect threaded code is a major contributor to the power, portability, and extensibility of Forth.  Locations of IP and W are computer specific. 
+This is the inner interpreter that uses the interpretive pointer IP to execute compiled Forth definitions.  It is not directly executed but is ff the return point for all code procedures.  It acts by fetching the address pointed by IP, storing this value in register W.  It then jumps to the address pointed to by the address pointed to by W.  W points to the code field of a definition which contains the address of the code which executes for that definition.  This usage of indirect threaded code is a major contributor to the power, portability, and extensibility of Forth.  Locations of IP and W are computer specific. 
 
 
 NFA                pfa --- nfa                                                     

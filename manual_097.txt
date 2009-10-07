@@ -8,12 +8,12 @@ assembly mnemonics Stop compilation and terminate a new defining word cccc by co
  
 When cccc later executes in the form:
                       cccc nnnn
-the word nnnn will be created with its execution proceedure given by the machine code following cccc.  That is, when nnnn is executed, it does so by jumping to the code after nnnn.  An existing defining word must exist in cc prior to ;CODE
+the word nnnn will be created with its execution procedure given by the machine code following cccc.  That is, when nnnn is executed, it does so by jumping to the code after nnnn.  An existing defining word must exist in cc prior to ;CODE
 
 
 ;S                                                                             P,L0
 
-Stop interpretation of a screen.  ;S is also the run-time word compiled at the end of a colon-definition which returns execution to the calling proceedure. 
+Stop interpretation of a screen.  ;S is also the run-time word compiled at the end of a colon-definition which returns execution to the calling procedure. 
 
 
 <                n1 n2 --- f                                                     L0
@@ -34,9 +34,9 @@ Used within a colon-definition:
                 : cccc  <BUILDS  ... 
 
                          DOES>     ...     ;
-Each time cccc is executed, <BUILDS defines a new word with a high-level execution proceedure.  Executing cccc in the form:
+Each time cccc is executed, <BUILDS defines a new word with a high-level execution procedure.  Executing cccc in the form:
              cccc nnnn
-uses <BUILDS to create a dictionary entry for nnnn with a call to the DOES> part for nnnn.  When nnnn is later executed, it has the address of its parameter area on the stack and executes the words after DOES> in cccc.  <BUILDS and DOES> allow runtime proceedures to written in high-level rather than in assembler code (as required by ;CODE). 
+uses <BUILDS to create a dictionary entry for nnnn with a call to the DOES> part for nnnn.  When nnnn is later executed, it has the address of its parameter area on the stack and executes the words after DOES> in cccc.  <BUILDS and DOES> allow runtime procedures to written in high-level rather than in assembler code (as required by ;CODE). 
 
 
 =                n1 n2 --- f                                                     L0

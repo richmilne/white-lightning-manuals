@@ -20,7 +20,7 @@ Print a number from a signed l6 bit two's complement value, converted according 
 
 Used in the form:
     .', cccc"
-Compiles an in-line string cccc (delimited by the trailing ") with an execution proceedure to transmit the text to the selected output device.  If executed outside a definition, ." will immediately print the text until the final ',.  The maximum number of characters may be an installation dependent value.  See (."). 
+Compiles an in-line string cccc (delimited by the trailing ") with an execution procedure to transmit the text to the selected output device.  If executed outside a definition, ." will immediately print the text until the final ',.  The maximum number of characters may be an installation dependent value.  See (."). 
 
 
 -LINE         line scr ---                                                         
