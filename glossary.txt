@@ -17,7 +17,7 @@ addr   memory address
 b      8 bit byte (i.e. hi 8 bits zero)
 c      7 bit ascii character (hi 9 bits zero)
 d      32 bit signed double integer} most significant portion with sign
-on top of stack.
+       on top of stack.
 f      boolean flag. 0=false, non-zero=true
 ff     boolean false flag=0
 n      16 bit signed integer number
@@ -27,7 +27,7 @@ tf     boolean true flag=non-zero
 The capital letters on the right show definition characteristics:
 
 C      May only be used within a colon definition. A digit indicates number
-of memory addresses used, if other than one.
+       of memory addresses used, if other than one.
 E      Intended for execution only.
 L0     Level Zero definition of FORTH-78
 L1     Level One definition of FORTH-78
@@ -500,7 +500,7 @@ BEGIN                  --- addr n (compiling)                                  P
         error checking.
 
 
-BL            ---  c
+BL                     --- c                                                       
         A constant that leaves the ascii value for "blank".
 
 

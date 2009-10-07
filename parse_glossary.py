@@ -13,7 +13,7 @@ valid_defs = ['C','C+','C2','CO','E','L','L0','L1','LO','LU','P','U']
 
 def extract_def(line):
 
-    temp = line.replace(' ','').upper()
+    temp = line.replace(' ','')
     count = 0
     for i in xrange(len(temp)-1, -1, -1):
         c = temp[i]
