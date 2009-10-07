@@ -1,42 +1,62 @@
-# TODO: Remove this comment once this file has been proofread
-
 #                   d1 --- d2                                                    L0
 
-Generate from a double number d1, the next ascii character which is placed in an output string.  Result d2 is the quotient after division by BASE, and is maintained for further processing.  Used between <# and #>.  See #S. 
+Generate from a double number d1, the next ASCII character which is placed in an 
+output string.  Result d2 is the quotient after division by BASE, and is 
+maintained for further processing.  Used between <# and #>.  See #S. 
 
 
 #>                   d --- addr count                                            L0
 
-Terminates numeric output conversion by dropping d, leaving the text address and character count suitable for TYPE. 
+Terminates numeric output conversion by dropping d, leaving the text address and 
+character count suitable for TYPE. 
+
+
+#BUF                   --- n
+
+A constant returning the number of disc buffers allocated.
 
 
 #S                  d1 --- d2                                                    L0
 
-Generates ascii text in the text output buffer, by the use of #, until a zero double number n2 results.  Used between <# and #>. 
+Generates ascii text in the text output buffer, by the use of #, until a zero 
+double number results.  Used between <# and #>. 
 
 
 '                      --- addr                                                P,L0
 
-Used in the form: .  ' nnnn Leaves the parameter field address of dictionary word nnnn.  As a compiler directive, executes in a colon-definition to compile the address as a literal.  If the word is not found after a search of CONTEXT and CURRENT, an appropriate error message is given.  Pronounced "tick". 
+Used in the form:  ' nnnn 
+
+Leaves the parameter field address of dictionary word nnnn.  As a compiler 
+directive, executes in colon definition to compile the address as a literal.  If 
+the word is not found after a search of CONTEXT and CURRENT, an appropriate error 
+message is given.  Pronounced "tick". 
 
 
 (                                                                              P,L0
 
-Used in the form: ( cccc) Ignore a comment that will be delimited by a right parenthesis on the same line.  May occur during execution or in a colon-definition.  A blank after the leading parenthesis is required. 
+Used in the form: (cccc) 
+
+Ignore a comment that will be delimited by a right parenthesis on the same line.  
+May occur during execution or in a colon-definition.  A blank after the leading 
+parenthesis is required. 
 
 
 (.")                                                                             C+
 
-The run-time proceedure, compiled by ." which transmits the following in-line text to the selected output device.  See .'"
+The run-time procedure, compiled by ." which transmits the following in-line text 
+to the selected output device.  See ."
 
 
 (;CODE)                                                                           C
 
-The run-time proceedure, compiled by ;CODE, that rewrites the code field of the most recently defined word to point to the following machine code sequence.  See ;CODE. 
+The run-time procedure, compiled by ;CODE, that re-writes the code field of the 
+most recently defined word to point to the following machine code sequence.  See 
+;CODE. 
 
 
 (+LOOP)              n ---                                                       C2
 
-The run-time proceedure compiled by +LOOP, which increments the loop index by n and tests for loop completion.  See +LOOP. 
+The run-time procedure compiled by +LOOP, which increments the loop index by n and 
+tests for loop completion.  See +LOOP. 
 
 
