@@ -1,77 +1,51 @@
 # TODO: Remove this comment once this file has been proofread
 
-IA
-ABORT
-Clear the stacks and enter
-the execution state. Return control to the operator's
-terminal, printing a message appropriate to the installation.
-ID
-ABS    n -- u
-Leave the absolute value of n as u.
-AGAIN n - (ornpillng) P,C2,IA addr Used in colon-definition in the form:
-At run-tine, AGAIN forces execution to return tn eorresPondin9 BEGIN- There is I effect m the stack, Execution cannot leave this loop (unless '.t> is executed one
-level below).
-At oampile time. AGAIN eaMPiles HtANCH with an offset fran HERE to addr• n is used for oapile-time error checking.
-IA
-ALLOT    n
-Add the signed number to the dictionary pointer DP. may be used to reserve dictionary space or re-origin rtemorY• n is with regard to oa+Futer address type (byte or Mord).
-AND    nl n2
--- n2
-Leave the bitwise logical "AND" of nl and n2 as n3.
--
-B/BUF    n
-This constant leaves the number of bytes per disc buffer, the byte count read fran disc by BLOCK.
-B/SCR    n
-This oaponent leaves the number of blocks per editing screen. By convention, an editing screen is 512 bytes, organised as 8 lines of 64 characters each.
-BACK    addr
-Calculate the backward branch offset from HERE to ad<lr and o°npile into the next
-available dictionary memory address.
-BASE
-A rwAr variable containing the current number base used for input and output conversion.
-99
-BEGIN    -- addr n (ampilation)    P, LO
+ABORT                                                                            L0
 
-in a colon-definition in the form: BEGIN ... UNTIL BEGIN ... PGAIN
-BEGIN ... WHILE ... REPEAT
-run-time, BEGIN marks the start of a sequence that my be repetetively
-x+xvtsl. It serves as a return point from the corresponding UNTIL, PCkTN or
-i~;:E'FAT. When executing UNTIL, a return to BEGIN will cdcur if the top of the
-.r:+ck is false; for AGAIN and REPEAT, a return to BEGIN always occurs.
-
-~. !vpile time BEGIN leaves its return address and n for compiler error checking.
+Clear the stacks and enter the execution state.  Return control to the operators terminal, printing a message appropriate to the installation. 
 
 
-eL    - C
+ABS                  n --- u                                                     L0
 
-:+ mnstant that leaves the ASCII value for blank.
-
-
-ni_ANKS    addr count -
-
-ii: 1 in an area of memory beginning at addr with blanks.
+Leave the absolute value of n as u. 
 
 
-BLK    - edit    TO
+AGAIN           addr n --- (compiling)                                      P,C2,L0
 
-nuser variable containing the block number being interpreted. If zero, input is i.d.nq taken fran the terminal input buffer.
-
-
-BLOCK    n -- addr    LO
-
-Leave the memory address of the block buffer containing block n. If the block is not already in memory, it is transferred from disc to whichever buffer was least recently written. If the block occupying that buffer has been marked as updated, it is re-written to disc before block n is read into the buffer. See also BUFFER, I</W UPDATE FLUSH.
-
-
-BRANCH    C2, LL)
-
-The run-time procedure for unconditionally branch. An in-line offset is added to ihe interpretive pointer IP to branch ahead or back. BRANCH is compiled by ELSE, K',AIN, REPEAT.
+Used in a colon-definition in the form:
+                 BEGIN ...  AGAIN
+At run-time, AGAIN forces execution to return to corresponding BEGIN.  There is no effect on the stack.  Execution cannot leave this loop (unless R> DROP is executed one level below). 
+ 
+At compile time, AGAIN compiles BRANCH with an offset from HERE to addr.  n is used for compile-time error checking. 
 
 
-BUFFER    n -_ a<1dr
+ALLOT                n ---                                                       L0
 
-,htain the next memory buffer, assigning it to block n. If the contents of the -iffer are marked up as updated, it is written to the disc. The block is not read r- the disc. The address left is the first cell within the buffer for data forage.
+Add the signed number to the dictionary pointer DP.  May be used to reserve dictionary space or re-origin memory.  n is with regard to computer address type (byte or word). 
 
 
-b addr -
+AND              n1 n2 --- n2                                                    L0
 
-A bits a'_ a33-,.
-100
+Leave the bitwise logical and of n1 and n2 as n3. 
+
+
+B/BUF                  --- n                                                       
+
+This constant leaves the number of bytes per disc buffer, the byte count read from disc by BLOCK. 
+
+
+B/SCR                  --- n                                                       
+
+This constant leaves the number of blocks per editing screen.  By convention, an editing screen is 1O24 bytes organized as 16 lines of 64 characters each. 
+
+
+BACK              addr ---                                                         
+
+Calculate the backward branch offset from HERE to addr and compile into the next available dictionary memory address. 
+
+
+BASE                   --- addr                                                U,L0
+
+A user variable containing the current number base used for input and output conversion. 
+
+

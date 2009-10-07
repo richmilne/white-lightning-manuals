@@ -1,62 +1,51 @@
 # TODO: Remove this comment once this file has been proofread
 
-DEFINITIONS    LI
+DEFINITIONS                                                                      L1
 
 Used in the form:
-cccc DEFINITIONS
-get the CURRFaIp vocabulary to the (ANFFx'1' vocabulary. In the exemPle, executing vocabulary name cccc made it in the context vocabulary, and executing DEFINITIONS made both specify vocabulary occc.
+                cccc DEFINITIONS
+Set the CURRENT vocabulary to the CONTEXT vocabulary.  In the example, executing vocabulary name cccc made it the CONTEXT vocabulary and executing DEFINITIONS made both specify vocabulary cccc. 
 
 
-DIGIT    c nl -- n2 tf (ok)
-c nl -- ff    (bad)
--
-Converts the ASCII characters c (using base nl) to its binary equivalent n2, accompanied by a true flag. If the conversion is invalid, leaves only a false flag.
-DLITERAL    d -- d (executing)
-d -    (compiling)    P
+DIGIT             c n1 --- n2 tf (ok)                                              
+                  c n1 --- ff (bad)                                                
 
-If compiling, compile a stack double number into a literal. Later execution of the definition containing the literal will push it to the stack. If executing, the number will remain on the stack.
+Converts the ascii character c (using base n1) to its binary equivalent n2, accompanied by a true flag.  If the conversion is invalid, leaves only a false flag. 
 
 
-DMINUS    dl - d2
+DLIST                                                                              
 
-Convert dl to its double number two's complement.
+List the names of the dictionary entries in the CONTEXT vocabulary. 
 
 
-DO    nl n2 - (execute)
-addr n ^ (compile)    P,C2,IA
-occurs in a colon-definition In the form:
-00 ... IODP
-DO ... +f00P
-At run time, DO begins a sequence with repetetive execution controlled by a loop limit nl and an index with initial value n2. DO removes these Eran the stuk. Upon reaching LOOP the index is incremental by one. Until the new index equals or exceeds the limit, execution loops back to just after DO otherwise the loop parameters are discarded and execution continues ahead. Both nl and n2 are determined at run-time and my be the result of other operations. Within a loop, 'I' will copy the current value of the index to the stack. See I, LOOP, *IDOP, LEAVE.
-When compiling within the oolan-definition, 00 compiles (DO), leaving the following address addr and n for later error checking.
-DOES )
-A word which defines the run-time action within a high level defining word. nOES> alters the code field and first parameter of the new word, to execute the sequence of compiled word addresses following DOFS>. Used in combination with E[3IItS>. When the word DOES> part executes, it begins with the address of the first parameter of the new word on the stack. This allows interpretation using this area or its contents. Typical uses include the Forth assembler, nvalti-dimensional arrays and ompiler generation.
-103
-I'P
-eddr    U,L
-'user variable, the dictionary pointer, which contains the adArou of tM nat
+DLITERAL             d --- d (executing)                                           
+                     d --- (compiling)                                            P
 
-~'ee memory above the dictionary. The value may be read by HERE end alterM by (
-DPL    - eddr    U,ID
-A user variable containing the number of digits to the right of the decimal m Iouble integer input. It may also be used to hold output oolum location of a
-lPciaial point, in user generated formatting. The default value m single number !,,put is -1.
-urtOP    n -
-i-rnp the number from the stack.
-DUMP    addr n -    Ip
-Print the contents of n sensory locations beginning at eddr. Both addresses and :x:tents are shown in the current numeric base. DUP    n - n n    1,0 i>uplicate the value on the stack.
-ELSE    addrl nl - addr2 n2
-(compiling)    P,C2,I0
-curs within a colon-definition within the form:
+If compiling, compile a stack double number into a literal.  Later execution of the definition containing the literal will push it to the stack.  If executing, the number will remain on the stack. 
 
-IF ... ELSE ... QmIF
-"= run-time, E[-4E executes after the true part following IF. ELSE forces the
-"xewtion to skip over the following false part, and resumes execution after the hNDIP. It has no stack effect.
-A compile time ELSE a:places branch reserving a branch offset, leaves the address nddr2 and n2 for error treating. ELSE also resolves the pending forward branch .con IF by calculating the offset from addrl to HERE and storing at addrl.
-EMIT
-r-ansait ASCII character c to the selected output device. OUT is incremented for
-uch character output.
-EMPTY-BUFFERS
--s<e all block-buffers as empty, not necessarily affecting the contents. Updated
 
-t~;ocJcs are not written to the disc. This is also an initialization procedure ~.,`ore first use of the disc.
-104
+DMINUS              d1 --- d2                                                      
+
+Convert d1 to its double number two's complement. 
+
+
+DO               n1 n2 --- (execute)                                               
+                addr n --- (compile)                                        P,C2,L0
+
+Occurs in a colon-definition in form:
+  DO ...  LOOP
+
+
+
+DO ... +LOOP                                                                                  
+
+At run time, DO begins a sequence with repetitive execution controlled by a loop limit n1 and an index with initial value n2.  DO removes these from the stack.  Upon reaching LOOP the index is incremented by one.  Until the new index equals or exceeds the limit, execution loops back to just after DO; otherwise the loop parameters are discarded and execution continues ahead.  Both n1 and n2 are determined at run-time and may be the result of other operations.  Within a loop 'I' will copy the current value of the index to the stack.  See I, LOOP, +LOOP, LEAVE. 
+ 
+When compiling within the colon definition, DO compiles (DO), leaves the following address addr and n for later error checking. 
+
+
+DOES>                                                                            L0
+
+A word which defines the run-time action within a high-level defining word.  DOES> alters the code field and first parameter of the new word to execute the sequence of compiled word addresses following DOES>.  Used in combination with <BUILDS.  When the DOES> part executes it begins with the address of the first parameter of the new word on the stack.  This allows interpretation using this area or its contents.  Typical uses include the Forth assembler, multidimensional arrays, and compiler generation. 
+
+

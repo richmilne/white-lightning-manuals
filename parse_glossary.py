@@ -2,8 +2,9 @@ import os
 import sys
 
 lines = file('glossary.txt').readlines()
+output = ['# TODO: Remove this comment once this file has been proofread\n']
 for line in lines[:45]:
-    print line.strip()
+    output.append(line.rstrip())
 lines = lines[45:]
 
 commands = []
@@ -106,6 +107,43 @@ def parse_header(line):
 
     stack = format_stack(stack)
     return cmd, defs, stack
+    
+def extract_sentences(block):
+    sentences = []
+    sent = []
+    for line in block:
+        if len(line) > 8:
+            temp = line[8:]
+            if temp[0] == ' ':
+                sentences.append(' '.join(sent))
+                sentences.append(temp)
+                sent = []
+            else:
+                sent.append(temp)
+        else:
+            sentences.append(' '.join(sent))
+            sentences.append(' ')
+            sent = []
+
+    sentences.append(' '.join(sent))
+    
+    new_sentences = []
+    for sent in sentences:
+        new_sent = []
+        bits = sent.split(' ')
+        try:
+            for bit in bits:
+                new_sent.append(bit)
+                if len(bit) > 0 and bit[-1] == '.':
+                    new_sent.append('')
+        except:
+            print 'Bits:', bits
+            print 'Sent:', sent
+            print 'Bit:', bit
+            raise
+        new_sentences.append(' '.join(new_sent))
+
+    return new_sentences
 
 blanks = 0
 for line in lines:
@@ -127,7 +165,10 @@ for line in lines:
 
 line_length = 83
 stack_centre = 23
-all_defs = []
+
+page = 91
+page_divisors = ['#', '(ABORT)', '+!', '-FIND', '0<', ';CODE', '>R', 'ABORT', 'BEGIN', 'C,', 'COUNT', 'DEFINITIONS', 'DP', 'ENCLOSE', 'EXECUTE', 'HLD', 'INDEX', 'LIT', 'MESSAGE', 'OUT', 'R', 'S0', 'TASK', 'U/', 'VOCABULARY', 'WORD', 'NOOP']
+
 for block in commands:
     cmds = []
     stacks = []
@@ -140,6 +181,16 @@ for block in commands:
             assert defs == ''
             defs = d
         stacks.extend(st)
+        
+    if len(cmds) > 0 and cmds[0] in page_divisors:
+        name = 'manual_%s.txt' % str(page).zfill(3)
+        handle = open(name, 'w')
+        for line in output:
+            handle.write(line)
+            handle.write('\n')
+        handle.close()
+        output = ['# TODO: Remove this comment once this file has been proofread\n']
+        page += 1
 
     num_lines = max([len(cmds), len(stacks)])
     lines = []
@@ -161,8 +212,11 @@ for block in commands:
         lines[-1][-len(defs):] = defs
 
     for line in lines:
-        print ''.join(line)
-    for line in block:
-        print line
-    print
-    print      
+        output.append(''.join(line))
+    output.append('')
+        
+    sents = extract_sentences(block)
+    for sent in sents:
+        output.append(sent)
+    output.append('')
+    output.append('')

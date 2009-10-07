@@ -1,56 +1,33 @@
 # TODO: Remove this comment once this file has been proofread
 
-. ENCLOSE    addrl c -
-addrl nl n2 n3    -
-The text scanning primitive used by WORD. From the text address addrl and an    . ASCII delimiting character c, is determined the byte offset to the first non-delimiter character nl, the offset to the first delimiter after the text n2, and the offset fp the first character not included. This procedure will not process past an ASCII 'mll', treating it as an unconditional delimiter.
+ENCLOSE        addr1 c --- addr1 n1 n2 n3                                          
+
+The text scanning primitive used by WORD.  From the text address addr1 and an ascii delimiting character c, is determined the byte offset to the first non-delimiter character n1, the offset to the first delimiter after the text n2, and the offset to the first character not included.  This proceedure will not process past an ascii 'null', treating it as an unconditional delimiter. 
 
 
-END    F•C2•LL)
-This is an 'alias' or duplicate definition for UNTIL. ENDCASE    addr n - (m%ile)
+END                                                                         P,C2,L0
 
-occurs in a oolon definition in the form: CASE
-n OF  WOOF
-
-IIIIX`ASE
-At run-time ESNNUCASE marks the conclusion of a CASE statement.
-
-At compile time NNDC'ASR computes forward branch offsets. ENDIF    addr n - (compile)    F
-
-At run-time, HNDIF serves only as the destination of a forward branch from IF or ELSE. It marks the conclusion of the conditional structure. THEN is another nave for OaDIP. Both reams are supported in Fig-IOFCEH. See also 8 and ELSE.
-
-At ornpiletime, HMIF ornputrs the forward branch offset from addr to HERE and stores it at addr. n is used for error tests.
+This is an 'alias' or duplicate definition for UNTIL. 
 
 
-ENDOF    addr n -- (compile)
+ENDIF           addr n --- (compile)                                        P,CO,L0
 
-Used es E7DIP but in CASE statements. ERASE    eddr n -
+Occurs in a colon-definition in form:
+  IF ...  ENDIF
 
-Clear a region of mgrory from zero to addr over n addresses. ERROR    llne - in blk
+  IF ...  ELSE ...  ENDIF
+At run-time, ENDIF serves only as the destination of a forward branch from IF or ELSE.  It marks the conclusion of the conditional structure.  THEN is another name for ENDIF.  Both names are supported in fig-FORTH.  See also IF and ELSE. 
+ 
+At compile-time, ENDIF computes the forward branch offset from addr to HERE and stores it at addr.  n is used for error tests. 
 
-Execute error notification and restart of system. VARNING is first examined. If 1, the test of line n, relative to screen 4 and    drive 0 is printed. This line number may he positive or negative, and beyond just screen 4. If WARNING-0, n is just printed as a m?s.9age number (non disc installation). If warning is -1, the definition ABORT is executed, which executes the system ABORT. The user my cautiously modify this by altering (ABORT). Fig-FORTH saves the contents; of in, and ELK to assist in determining the location of the error. Final action is execution of QUIT.
-105
-CUTE    addr -
-'..w-rute the definition whose code field address is m the stack. The code field .-lress is also called the ornQilatlm address. i %VECT    eddr count --    M
-Lcanafer characters from the terminal to address, until a return or the count of -Mractera has been received. One or more nulls are added at the end of the
 
-!~xt.
-FENCE    - addr    U
-' yser variable containing an address, below which EORGETtirg is trapped To
+ERASE           addr n ---                                                         
 
-':get below this point, the user must alter the contents of the FENCE. FILL    addr quan b -
-I 'iil mgnory at the address with the specified quantity of bytes b. FIRST    -- n
-1, constant that leaves the address of the first (laest) block buffer. FLp    --- addr    U
-v user variable for control of number output field width. Presently unused in Fig-IO[aH.
-FORGET    E'W
+Clear a region of memory to zero from addr over n addresses. 
 
-`a,letes definition ~mad ccc;c from the dictionary with all entries physically following it. In Fig-RXx1N, an error message will occur 1f the CURRENT and .-Ct+1EcT vocabularies are not currently the same.
 
-FORTH    P'LI
+ERROR             line --- in blk                                                  
 
-rhe name of the primary wcabitwry. Execution makes FLX2'141 the CONTEXT vocabulary. until additional user vocabularies are defined, new user definitions become a part of FORTH. ppRTH is immediate, so it will execute during the creation of a
+Execute error notification and restart of system.  WARNING is first examined.  If 1, the text of line n, relative to screen 4 of drive O is printed.  This line number may be positive or negative, and beyond just screen 4.  If WARNING=O, n is just printed as a message number (non disc installation).  If WARNING is -l, the definition (ABORT) is executed, which executes the system ABORT.  The user may cautiously modify this execution by altering (ABORT).  fig-FORTH saves the contents of IN and BLK to assist in determining the location of the error.  Final action is execution of QUIT. 
 
-mlon-definition, to select this vocabulary at ormpile tire.
-HERE    -- addr
-.ave the address of the next available dictionary location. HEX
-'.+ttte nut'erlc conversion base to sixteen (hexadecimal).
-106
+

@@ -1,50 +1,56 @@
 # TODO: Remove this comment once this file has been proofread
 
---- addr    U
+S0                     --- addr                                                   U
 
-A user variable that contains the initial value for the stack pointer pronounced S-zero. See SP!
-SCR    -- addr    U
+A user variable that contains the initial value for the stack pointer.  Pronounced S-zero.  See SP!
 
-A user variable containing the screen number most recently referenced by LIST. SIGN    n d -- d
 
-stores an ASCII "-' sign just before a converted numeric output string in the text output buffer when n is negative. n is diswrded. but double number d is maintained. Must be used between <# and #>•
-SMUDGE
+SCR                    --- addr                                                   U
 
-Used during word definition to toggle the -smudge bit" in a definition's name field. This prevents an uncarQleted definition from being found during dictionary searches, until compiling is completed without error.
-SPI
-A computer dependent procedure to initialise the stack pointer from SO. SP®    -- addr
+A user variable containing the screen number most recently reference by LIST. 
 
-A ooiputor dependent procedure to return the address of the stack position to the top of the stack, as it was before SP@ was executed. (e.g. 1 2 SP€ g.•• would print 2 2 1).
-SPACE
 
-Transmit an ASCII blank to the output device.
-SPACES    n -
-Transmit n ASCII blanks to the output device.
-STATE    -- addr    LOIU
+SIGN               n d --- d                                                     L0
 
-A user variable containing the compilation state. A non-zero indicates compilation. The value itself my be implementation dependent.
-SWAP    nl n2 -- n2 nl Exchange the top two values on the stack. 113
-TASK
-no-operation wqrd which can mark the boundary between applications. By ~~getting TIM and re-Omq>iling, an applicaton can be discarded in its entirety.
-irxr    c -
-n.<-ept the following test to PAD. c is the text delimiter.
-1 HEN    P, CC), LO
-An alias for FNDIP.
-fIB    -- addr    U
-A user variable containing the addresses of the terminal input buffer. TOGGLE    addr b -
-Caiplenent the contents of addr by the bit pattern b. TRAVERSE    addrl n -- addr2
+Stores an ascii "-" sign just before a converted numeric output string in the text output buffer when n is negative.  n is discarded but double number d is maintained.  Must be used between <# and #>. 
 
-move across the rame field off a Fig-FORTH variable length name field. addrl is the address of either the length byte or the last letter. If n-1, the motion is toward low memory. The addr2 resulting is the address of the other end of the
 
-narre.
-TYPE    addr count ---    LO
-:ansmit count characters from addr to the selected output device. U<    ul u2 -- f
-Leave the boolean value of an unsigned less-than comparison. Leaves f=1 for ul > u2; otherwise leaves 0. Thi§ function should be used when comparing mmnry
+SMUDGE                                                                             
 
-.vidresses.
-U„    ul u2 -_ ud
+Used during word definition to toggle the "smudge bit" in a definitions' name field.  This prevents an uncompleted definition from being found during dictionary searches, until compiling.  is completed without error. 
 
-i-ve the unsigned double number product of two unsigned numbers. U.    u -_
 
-Prints an unsigned 16 bit number converted according to BASE. A trailing blank fc.ilaws.
-114
+SP!                                                                                
+
+A computer dependent proceedure to initialize the stack pointer from SO. 
+
+
+SP@                    --- addr                                                    
+
+A computer dependent proceedure to return the address of the stack position to the top of the stack, as it was before SP@ was executed. 
+    (e.g.   1  2  SP@  @  .    .    .      would
+
+    type 2  2   1)
+
+
+
+SPACE                                                                            L0
+
+Transmit an ascii blank to the output device. 
+
+
+SPACES               n ---                                                       L0
+
+Transmit n ascii blanks to the output device. 
+
+
+STATE                  --- addr                                                L0,U
+
+A user variable containing the compilation state.  A non-zero value indicates compilation.  The value itself may be implementation dependent. 
+
+
+SWAP             nl n2 --- n2 n1                                                 L0
+
+Exchange the top two values On the stack. 
+
+

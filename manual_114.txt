@@ -1,50 +1,42 @@
 # TODO: Remove this comment once this file has been proofread
 
---- addr    U
+TASK                                                                               
 
-A user variable that contains the initial value for the stack pointer pronounced S-zero. See SP!
-SCR    -- addr    U
+A no-operation word which can mark the boundary between applications.  By forgetting TASK and re-compiling, an application can be discarded in its entirety. 
 
-A user variable containing the screen number most recently referenced by LIST. SIGN    n d -- d
 
-stores an ASCII "-' sign just before a converted numeric output string in the text output buffer when n is negative. n is diswrded. but double number d is maintained. Must be used between <# and #>•
-SMUDGE
+THEN                                                                        P,CO,LO
 
-Used during word definition to toggle the -smudge bit" in a definition's name field. This prevents an uncarQleted definition from being found during dictionary searches, until compiling is completed without error.
-SPI
-A computer dependent procedure to initialise the stack pointer from SO. SP®    -- addr
+An alias for ENDIF. 
 
-A ooiputor dependent procedure to return the address of the stack position to the top of the stack, as it was before SP@ was executed. (e.g. 1 2 SP€ g.•• would print 2 2 1).
-SPACE
 
-Transmit an ASCII blank to the output device.
-SPACES    n -
-Transmit n ASCII blanks to the output device.
-STATE    -- addr    LOIU
+TIB                    --- addr                                                   U
 
-A user variable containing the compilation state. A non-zero indicates compilation. The value itself my be implementation dependent.
-SWAP    nl n2 -- n2 nl Exchange the top two values on the stack. 113
-TASK
-no-operation wqrd which can mark the boundary between applications. By ~~getting TIM and re-Omq>iling, an applicaton can be discarded in its entirety.
-irxr    c -
-n.<-ept the following test to PAD. c is the text delimiter.
-1 HEN    P, CC), LO
-An alias for FNDIP.
-fIB    -- addr    U
-A user variable containing the addresses of the terminal input buffer. TOGGLE    addr b -
-Caiplenent the contents of addr by the bit pattern b. TRAVERSE    addrl n -- addr2
+A user variable containing the address of the terminal input buffer. 
 
-move across the rame field off a Fig-FORTH variable length name field. addrl is the address of either the length byte or the last letter. If n-1, the motion is toward low memory. The addr2 resulting is the address of the other end of the
 
-narre.
-TYPE    addr count ---    LO
-:ansmit count characters from addr to the selected output device. U<    ul u2 -- f
-Leave the boolean value of an unsigned less-than comparison. Leaves f=1 for ul > u2; otherwise leaves 0. Thi§ function should be used when comparing mmnry
+TOGGLE          addr b ---                                                         
 
-.vidresses.
-U„    ul u2 -_ ud
+Complement the contents of addr by the bit pattern b. 
 
-i-ve the unsigned double number product of two unsigned numbers. U.    u -_
 
-Prints an unsigned 16 bit number converted according to BASE. A trailing blank fc.ilaws.
-114
+TRAVERSE       addr1 n --- addr2                                                   
+
+Move across the name field of a fig-FORTH variable length name field.  addr1 is the address of either the length byte or the last letter.  If n=1, the motion is toward hi memory; if n=-l, the motion is toward low memory.  The addr2 resulting is address of the other end of the name. 
+
+
+TRIAD              scr ---                                                         
+
+Display on the selected output device the three screens which include that numbered scr, beginning with a screen evenly divisible by three.  Output is suitable for source text records, and includes a reference line at the bottom taken from line 15 of screen4. 
+
+
+TYPE        addr count ---                                                       L0
+
+Transmit count characters from addr to the selected output device. 
+
+
+U*               u1 u2 --- ud                                                      
+
+Leave the unsigned double number product of two unsigned numbers. 
+
+
