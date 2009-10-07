@@ -1237,7 +1237,7 @@ SMUDGE
 
 SP!                                                                                
         A computer dependent procedure to initialize the stack pointer from
-        SO.
+        S0.
 
 
 SP@                    --- addr                                                    
