@@ -258,7 +258,7 @@ under-flow indication unspecified.
         installation dependent value. See (.").
 
 
--LINE         line scr ---                                                         
+.LINE         line scr ---                                                         
         Print on the terminal device, a line of text from the disc by its
         line and screen number. Trailing blanks are suppressed.
 
@@ -277,7 +277,7 @@ under-flow indication unspecified.
         the sign of the dividend.
 
 
-0                1 2 3 --- n                                                       
+0 1 2 3                --- n                            
         These small numbers are used so often that is is attractive to
         define them by name in the dictionary as constants.
 
