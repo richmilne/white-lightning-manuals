@@ -1211,7 +1211,7 @@ S->D                 n --- d
         Sign extend a single number to form a double number.
 
 
-SO                     --- addr                                                   U
+S0                     --- addr                                                   U
         A user variable that contains the initial value for the stack
         pointer.
         Pronounced S-zero. See SP!
