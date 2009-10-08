@@ -1,16 +1,13 @@
-# TODO: Remove this comment once this file has been proofread
-
-IDEAL GLOSSARY
+                                 IDEAL GLOSSARY
 
 
 WORD     PARAMETERS         ACTION.                                                
 
-
 WCRV     HGT, LEN, COL,     Scroll the window vertically with wrap by              
          ROW, NPX           NPX pixels.                                            
 
-SCRV     HGT, LEN, COL,     Scroll the window vertically without wrap              
-         ROW, NPX           by NPX pixels.                                         
+SCRV     HGT, LEN, COL,     Scroll the window vertically without       
+         ROW, NPX           wrap by NPX pixels.                             
 
 WRR1V    HGT, LEN, COL,     Scroll the window 1 pixel right with wrap.             
          ROW                                                                       
@@ -18,14 +15,14 @@ WRR1V    HGT, LEN, COL,     Scroll the window 1 pixel right with wrap.
 WRL1V    HGT, LEN, COL,     Scroll the window 1 pixel left with wrap.              
          ROW                                                                       
 
-WRR4V    HGT, LEN, COL,     Scroll the window 4 pixels right with                  
-         ROW                wrap.                                                  
+WRR4V    HGT, LEN, COL,     Scroll the window 4 pixels right with wrap.
+         ROW                           
 
 WRL4V    HGT, LEN, COL,     Scroll the window 4 pixels left with wrap.             
          ROW                                                                       
 
-WRR8V    HGT, LEN, COL,     Scroll the window 8 pixels right with                  
-         ROW                wrap.                                                  
+WRR8V    HGT, LEN, COL,     Scroll the window 8 pixels right with wrap.
+         ROW                
 
 WRL8V    HGT, LEN, COL,     Scroll the window 8 pixels left with wrap.             
          ROW                                                                       
@@ -60,5 +57,5 @@ ATTUPV   HGT, LEN, COL,     Scroll the window attributes 1 character
 ATTDNV   HGT, LEN, COL,     Scroll the window attributes 1 character               
          ROW                down with wrap.                                        
 
-WCRM     SPN                Scroll the sprite vertically with wrap by              
-                            NPX pixels.                                            
+WCRM     SPN                Scroll the Sprite vertically with wrap by              
+                            NPX pixels.
