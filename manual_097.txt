@@ -1,19 +1,24 @@
-# TODO: Remove this comment once this file has been proofread
-
 ;CODE                                                                        P,C,L0
 
 Used in the form:
-   : cccc ....  ;CODE
-assembly mnemonics Stop compilation and terminate a new defining word cccc by compiling (;CODE).  Set the CONTEXT vocabulary to ASSEMBLER, assembling to machine code the following mnemonics. 
+               : cccc  ....  ;CODE
+               assembly mnemonics 
+Stop compilation and terminate a new defining word cccc by compiling (;CODE).  Set 
+the CONTEXT vocabulary to ASSEMBLER, assembling to machine code the following 
+mnemonics.  This facility is included for those users who may wish to write a Z80 
+Assembler in FORTH.
  
 When cccc later executes in the form:
-                      cccc nnnn
-the word nnnn will be created with its execution procedure given by the machine code following cccc.  That is, when nnnn is executed, it does so by jumping to the code after nnnn.  An existing defining word must exist in cc prior to ;CODE
+                  cccc   nnnn
+the word nnnn will be created with its execution procedure given by the machine 
+code following cccc.  That is, when nnnn is executed, it does so by jumping to the 
+code after nnnn.  An existing defining word must exist in cccc prior to ;CODE.
 
 
 ;S                                                                             P,L0
 
-Stop interpretation of a screen.  ;S is also the run-time word compiled at the end of a colon-definition which returns execution to the calling procedure. 
+Stop interpretation of a screen.  ;S is also the run-time word compiled at the end 
+of a colon-definition, which returns execution to the calling procedure. 
 
 
 <                n1 n2 --- f                                                     L0
@@ -24,28 +29,32 @@ Leave a true flag if n1 is less than n2; otherwise leave a false flag.
 <#                                                                               L0
 
 Setup for pictured numeric output formatting using the words:
-    <# # #S SIGN #>
+               <#  #  #S  SIGN  #>
 The conversion is done on a double number producing text at PAD. 
 
 
 <BUILDS                                                                        C,L0
 
 Used within a colon-definition:
-                : cccc  <BUILDS  ... 
-
-                         DOES>     ...     ;
-Each time cccc is executed, <BUILDS defines a new word with a high-level execution procedure.  Executing cccc in the form:
-             cccc nnnn
-uses <BUILDS to create a dictionary entry for nnnn with a call to the DOES> part for nnnn.  When nnnn is later executed, it has the address of its parameter area on the stack and executes the words after DOES> in cccc.  <BUILDS and DOES> allow runtime procedures to written in high-level rather than in assembler code (as required by ;CODE). 
+             :  cccc  <BUILDS  ... 
+                      DOES>    ...  ;
+Each time cccc is executed, <BUILDS defines a new word with a high-level execution 
+procedure.  Executing cccc in the form:
+                cccc  nnnn
+uses <BUILDS to create a dictionary entry for nnnn with a call to the DOES> part 
+for nnnn.  When nnnn is later executed, it has the address of its parameter area 
+on the stack and executes the words after DOES> in cccc.  <BUILDS and DOES> allow 
+run-time procedures to written in high-level, rather than in assembler code (as 
+required by ;CODE). 
 
 
 =                n1 n2 --- f                                                     L0
 
-Leave a true flag if n1=n2; otherwise leave a false flag. 
+Leave a true flag if n1=n2 otherwise leave a false flag. 
 
 
 >                n1 n2 --- f                                                     L0
 
-Leave a true flag if n1 is greater than n2; otherwise a false flag. 
+Leave a true flag if n1 is greater than n2 otherwise a false flag. 
 
 
