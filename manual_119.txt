@@ -2,24 +2,63 @@
 
 IDEAL GLOSSARY
 
-WORD    PARAMETERS    ACTION
 
-WCRV    HGT, LEN, COL, ROW, NPX    Scroll the window vertically with wrap by NPX pixels
-SCRV    HGT, LEN, COL, ROW, NPX    Scroll the window vertically without wrap by NPX pixels
-WRR1V    HGT, LEN, COL, ROW    Scroll the window 1 pixel right with wrap
-WRL1V    HGT, LEN, COL, ROW    Scroll the window 1 pixel left with wrap
-WRR4V    HGT, LEN, COL, ROW    Scroll the window 4 pixels right with wrap
-WRL4V    HGT, LEN, COL, ROW    Scroll the window 4 pixels left with wrap
-WRR8V    HGT, LEN, COL, ROW    Scroll the window 8 pixels right with wrap
-WRL8V    HGT, LEN, COL, ROW    Scroll the window 8 pixels left with wrap
-SCR1V    HGT, LEN, COL, ROW    Scroll the window 1 pixel right without wrap
-SCL1V    HGT, LEN, COL, ROW    Scroll the window 1 pixel left without wrap
-SCR4V    HGT, LEN, COL, ROW    Scroll the window 4 pixels right without wrap
-SCL4V    HGT, LEN, COL, ROW    Scroll the window 4 pixels left without wrap
-SCR8V    HGT, LEN, COL, ROW    Scroll the window 8 pixels right without wrap
-SCL8V    HGT, LEN, COL, ROW    Scroll the window 8 pixels left without wrap
-ATTRV    HGT, LEN, COL, ROW    Scroll the window attributes 1 character right with wrap
-ATTLV    HGT, LEN, COL, ROW    Scroll the window attributes 1 character left with wrap
-ATTUPV    HGT, LEN, COL, ROW    Scroll the window attributes 1 character up with wrap
-ATTDNV    HGT, LEN, COL, ROW    Scroll the window attributes 1 character down with wrap
-WCRM    SPN    Scroll the sprite vertically with wrap by NPX pixels
+WORD     PARAMETERS         ACTION.                                                
+
+
+WCRV     HGT, LEN, COL,     Scroll the window vertically with wrap by              
+         ROW, NPX           NPX pixels.                                            
+
+SCRV     HGT, LEN, COL,     Scroll the window vertically without wrap              
+         ROW, NPX           by NPX pixels.                                         
+
+WRR1V    HGT, LEN, COL,     Scroll the window 1 pixel right with wrap.             
+         ROW                                                                       
+
+WRL1V    HGT, LEN, COL,     Scroll the window 1 pixel left with wrap.              
+         ROW                                                                       
+
+WRR4V    HGT, LEN, COL,     Scroll the window 4 pixels right with                  
+         ROW                wrap.                                                  
+
+WRL4V    HGT, LEN, COL,     Scroll the window 4 pixels left with wrap.             
+         ROW                                                                       
+
+WRR8V    HGT, LEN, COL,     Scroll the window 8 pixels right with                  
+         ROW                wrap.                                                  
+
+WRL8V    HGT, LEN, COL,     Scroll the window 8 pixels left with wrap.             
+         ROW                                                                       
+
+SCR1V    HGT, LEN, COL,     Scroll the window 1 pixel right without                
+         ROW                wrap.                                                  
+
+SCL1V    HGT, LEN, COL,     Scroll the window 1 pixel left without                 
+         ROW                wrap.                                                  
+
+SCR4V    HGT, LEN, COL,     Scroll the window 4 pixels right without               
+         ROW                wrap.                                                  
+
+SCL4V    HGT, LEN, COL,     Scroll the window 4 pixels left without                
+         ROW                wrap.                                                  
+
+SCR8V    HGT, LEN, COL,     Scroll the window 8 pixels right without               
+         ROW                wrap.                                                  
+
+SCL8V    HGT, LEN, COL,     Scroll the window 8 pixels left without                
+         ROW                wrap.                                                  
+
+ATTRV    HGT, LEN, COL,     Scroll the window attributes 1 character               
+         ROW                right with wrap.                                       
+
+ATTLV    HGT, LEN, COL,     Scroll the window attributes 1 character               
+         ROW                left with wrap.                                        
+
+ATTUPV   HGT, LEN, COL,     Scroll the window attributes 1 character               
+         ROW                up with wrap.                                          
+
+ATTDNV   HGT, LEN, COL,     Scroll the window attributes 1 character               
+         ROW                down with wrap.                                        
+
+WCRM     SPN                Scroll the sprite vertically with wrap by              
+                            NPX pixels.                                            

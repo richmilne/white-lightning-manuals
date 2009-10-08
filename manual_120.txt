@@ -1,28 +1,75 @@
 # TODO: Remove this comment once this file has been proofread
 
-SCRM    SPN    Scroll the sprite vertically without wrap by NPX pixels
-WRR1M    SPN    Scroll the sprite 1 pixel right with wrap
-WRL1M    SPN    Scroll the sprite 1 pixel left with wrap
-WRR4M    SPN    Scroll the sprite 4 pixels right with wrap
-WRL4M    SPN    Scroll the sprite 4 pixels left with wrap
-WRR8M    SPN    Scroll the sprite 8 pixels right with wrap
-WRL8M    SPN    Scroll the sprite 8 pixels left with wrap
-SCR1M    SPN    Scroll the sprite 1 pixel right without wrap
-SCL1M    SPN    Scroll the sprite 1 pixel left without wrap
-SCR4M    SPN    Scroll the sprite 4 pixels right without wrap
-SCL4M    SPN    Scroll the sprite 4 pixels left without wrap
-SCR8M    SPN    Scroll the sprite 8 pixels right without wrap
-SCL8M    SPN    Scroll the sprite 8 pixels left without wrap
-ATTRM    SPN    Scroll the sprite attributes 1 character right with wrap
-ATTLM    SPN    Scroll the sprite attributes 1 character left with wrap
-ATTUPM    SPN    Scroll the sprite attributes 1 character up with wrap
-ATTDNM    SPN    Scroll the sprite attributes 1 character down with wrap
-GETBLS    SPN, COL, ROW    Block move screen data from screen to sprite
-GETXRS    SPN, COL, ROW    Logically XOR screen data into sprite data
-GETORS    SPN, COL, ROW    Logically OR screen data into sprite data
-GETNDS    SPN, COL, ROW    Logically AND screen data into sprite data
-PUTBLS    SPN, COL, ROW    Block move sprite data from sprite to screen
-PUTXRS    SPN, COL, ROW    Logically XOR sprite data into screen data
-PUTORS    SPN, COL, ROW    Logically OR sprite data into screen data
-PUTNDS    SPN, COL, ROW    Logically AND sprite data into screen data
-GWBLS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Block move screen data from screen window into sprite window
+
+SCRM     SPN                Scroll the sprite vertically without wrap              
+                            by NPX pixels.                                         
+
+WRR1M    SPN                Scroll the sprite 1 pixel right with wrap.             
+
+WRL1M    SPN                Scroll the sprite 1 pixel left with wrap.              
+
+WRR4M    SPN                Scroll the sprite 4 pixels right with                  
+                            wrap.                                                  
+
+WRL4M    SPN                Scroll the sprite 4 pixels left with wrap.             
+
+WRR8M    SPN                Scroll the sprite 8 pixels right with                  
+                            wrap.                                                  
+
+WRL8M    SPN                Scroll the sprite 8 pixels left with wrap.             
+
+SCR1M    SPN                Scroll the sprite 1 pixel right without                
+                            wrap.                                                  
+
+SCL1M    SPN                Scroll the sprite 1 pixel left without                 
+                            wrap.                                                  
+
+SCR4M    SPN                Scroll the sprite 4 pixels right without               
+                            wrap.                                                  
+
+SCL4M    SPN                Scroll the sprite 4 pixels left without                
+                            wrap.                                                  
+
+SCR8M    SPN                Scroll the sprite 8 pixels right without               
+                            wrap.                                                  
+
+SCL8M    SPN                Scroll the sprite 8 pixels left without                
+                            wrap.                                                  
+
+ATTRM    SPN                Scroll the sprite attributes 1 character               
+                            right with wrap.                                       
+
+ATTLM    SPN                Scroll the sprite attributes 1 character               
+                            left with wrap.                                        
+
+ATTUPM   SPN                Scroll the sprite attributes 1 character               
+                            up with wrap.                                          
+
+ATTDNM   SPN                Scroll the sprite attributes 1 character               
+                            down with wrap.                                        
+
+GETBLS   SPN, COL, ROW      Block move screen data from screen to                  
+                            sprite.                                                
+
+GETXRS   SPN, COL, ROW      Logically XOR screen data into sprite                  
+                            data.                                                  
+
+GETORS   SPN, COL, ROW      Logically OR screen data into sprite data.             
+
+GETNDS   SPN, COL, ROW      Logically AND screen data into sprite                  
+                            data.                                                  
+
+PUTBLS   SPN, COL, ROW      Block move sprite data from sprite to                  
+                            screen.                                                
+
+PUTXRS   SPN, COL, ROW      Logically XOR sprite data into screen                  
+                            data.                                                  
+
+PUTORS   SPN, COL, ROW      Logically OR sprite data into screen data.             
+
+PUTNDS   SPN, COL, ROW      Logically AND sprite data into screen                  
+                            data.                                                  
+
+GWBLS    SPN, COL, ROW,     Block move screen data from screen window              
+         SCOL, SROW, HGT,   into sprite window.                                    
+         LEN                                                                       

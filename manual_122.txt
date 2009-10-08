@@ -1,27 +1,64 @@
 # TODO: Remove this comment once this file has been proofread
 
-PWNDM    SP1, SP2, SCOL, SROW    Logically AND window at SCOL,SROW of sprite SP2 into sprite SP1
-PWATTM    SP1, SP2, SCOL, SROW    Block move attributes of window at SCOL,SROW of sprite SP2 into sprite SP1
-COPYM    SP1, SP2    As GWBLM but SCOL,SROW assumed zero
-COPXRM    SP1, SP2    As GWXRM but SCOL,SROW assumed zero
-COPORM    SP1, SP2    As GWORM but SCOL,SROW assumed zero
-COPNDM    SP1, SP2    As GWNDM but SCOL,SROW assumed zero
-COPATTM    SP1, SP2    As GWATTM but SCOL,SROW assumed zero
-INVV    HGT, LEN, COL, ROW    Invert screen window
-MIRV    HGT, LEN, COL, ROW    Mirror screen window about its centre
-MARV    HGT, LEN, COL, ROW    Mirror screen window attributes about centre
-INVM    SPN    Invert sprite data
-MIRM    SPN    Mirror sprite about its centre
-MARM    SPN    Mirror sprite attributes about centre
-SPINM    SP1, SP2    Rotate sprite SP2 90 degrees clockwise into sprite SP1
-DSPM    SP1, SP2    Enlarge sprite SP2 into sprite SP1
-HALT        Suspend CPU operation until next interrupt
-EI        Enable interrupt
-DI        Disable interrupt
-EXX        Exchange IDEAL variables with the alternate IDEAL variables
-INT-ON    FORTH WORD    Execute specified Forth word under interrupt
-INT-OFF        Terminate execution of interrupt driven word
-PROG        Enter BASIC
-RESERVE    N1    Reserve N1 bytes in the dictionary for BASIC source
-GOTO    N1    Begin execution of BASIC at line N1
-RETUSR        Return to BASIC from RANDOMIZE USR 30000 call
+
+PWNDM    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of                   
+         SROW               sprite SP2 into sprite SP1.                            
+
+PWATTM   SP1, SP2, SCOL,    Block move attributes of window at                     
+         SROW               SCOL,SROW of sprite SP2 into sprite SP1.               
+
+COPYM    SP1, SP2           As GWBLM but SCOL,SROW assumed zero.                   
+
+COPXRM   SP1, SP2           As GWXRM but SCOL,SROW assumed zero.                   
+
+COPORM   SP1, SP2           As GWORM but SCOL,SROW assumed zero.                   
+
+COPNDM   SP1, SP2           As GWNDM but SCOL,SROW assumed zero.                   
+
+COPATTM  SP1, SP2           As GWATTM but SCOL,SROW assumed zero.                  
+
+INVV     HGT, LEN, COL,     Invert screen window.                                  
+         ROW                                                                       
+
+MIRV     HGT, LEN, COL,     Mirror screen window about its centre.                 
+         ROW                                                                       
+
+MARV     HGT, LEN, COL,     Mirror screen window attributes about                  
+         ROW                centre.                                                
+
+INVM     SPN                Invert sprite data.                                    
+
+MIRM     SPN                Mirror sprite about its centre.                        
+
+MARM     SPN                Mirror sprite attributes about centre.                 
+
+SPINM    SP1, SP2           Rotate sprite SP2 90 degrees clockwise                 
+                            into sprite SP1.                                       
+
+DSPM     SP1, SP2           Enlarge sprite SP2 into sprite SP1.                    
+
+HALT                        Suspend CPU operation until next                       
+                            interrupt.                                             
+
+EI                          Enable interrupt.                                      
+
+DI                          Disable interrupt.                                     
+
+EXX                         Exchange IDEAL variables with the                      
+                            alternate IDEAL variables.                             
+
+INT-ON   FORTH WORD         Execute specified Forth word under                     
+                            interrupt.                                             
+
+INT-OFF                     Terminate execution of interrupt driven                
+                            word.                                                  
+
+PROG                        Enter BASIC.                                           
+
+RESERVE  N1                 Reserve N1 bytes in the dictionary for                 
+                            BASIC source.                                          
+
+GOTO     N1                 Begin execution of BASIC at line N1.                   
+
+RETUSR                      Return to BASIC from RANDOMIZE USR 30000               
+                            call.                                                  

@@ -1,24 +1,68 @@
 # TODO: Remove this comment once this file has been proofread
 
-DSPRITE    SPN    Delete sprite and recover bytes from below
-ISPRITE    SPN, HGT, LEN    Create sprite and move current sprites down to accommodate
-WIPE    SPN    Delete sprite and recover bytes from above
-SPRITE    SPN, HGT, LEN    Create sprite at free space after last sprite
-RELOCATE    MLEN    Relocate sprite space by signed 16-bit length MLEN
-COLD#    SPST, SLEN    Reset sprite space to begin at SPST with SLEN bytes cleared to zeros
-SETAV    HGT, LEN, COL, ROW    Fill the screen window with the current attributes
-SETAM    SPN    Fill the sprite with the current attributes
-CLSV    HGT, LEN, COL, ROW    Clear the screen window and fill with the current attributes
-CLSM    SPN    Clear the sprite
-ADJV    HGT, LEN, COL, ROW    Adjust the screen window to lie on the screen
-ADJM    SPN, COL, ROW    Adjust COL, ROW, HGT, LEN, SCOL, SROW such that GETs and PUTs lie on the screen
-RND    N1    Leave a random number between 0 and N1 on the stack
-OUT#    N1, N2    Output LSB of N1 to 16-bit port address N2
-IN#    N1    Leave on the stack the byte from 16-bit port address N1
-ZAPINT        Create run-time program with interrupt facility
-ZAP        Create run-time program without interrupt facility
-CALL    N1    Execute machine code subroutine at address N1
-KB    N1, N2    Test for key press at row N1, column N2 and stack true or false flag
-SCANV    COL, ROW    The character position is scanned for screen data and a true or false flag stacked
-SCANM    SPN    The sprite is scanned for data and a true or false flag stacked
-BLEEP    N1, N2    Sinclair BEEP; N1 is duration, N2 is pitch
+
+DSPRITE  SPN                Delete sprite and recover bytes from                   
+                            below.                                                 
+
+ISPRITE  SPN, HGT, LEN      Create sprite and move current sprites                 
+                            down to accommodate.                                   
+
+WIPE     SPN                Delete sprite and recover bytes from                   
+                            above.                                                 
+
+SPRITE   SPN, HGT, LEN      Create sprite at free space after last                 
+                            sprite.                                                
+
+RELOCATE MLEN               Relocate sprite space by signed 16-bit                 
+                            length MLEN.                                           
+
+COLD#    SPST, SLEN         Reset sprite space to begin at SPST with               
+                            SLEN bytes cleared to zeros.                           
+
+SETAV    HGT, LEN, COL,     Fill the screen window with the current                
+         ROW                attributes.                                            
+
+SETAM    SPN                Fill the sprite with the current                       
+                            attributes.                                            
+
+CLSV     HGT, LEN, COL,     Clear the screen window and fill with the              
+         ROW                current attributes.                                    
+
+CLSM     SPN                Clear the sprite.                                      
+
+ADJV     HGT, LEN, COL,     Adjust the screen window to lie on the                 
+         ROW                screen.                                                
+
+ADJM     SPN, COL, ROW      Adjust COL, ROW, HGT, LEN, SCOL, SROW such             
+                            that GETs and PUTs lie on the screen.                  
+
+RND      N1                 Leave a random number between 0 and N1 on              
+                            the stack.                                             
+
+OUT#     N1, N2             Output LSB of N1 to 16-bit port address                
+                            N2.                                                    
+
+IN#      N1                 Leave on the stack the byte from 16-bit                
+                            port address N1.                                       
+
+ZAPINT                      Create run-time program with interrupt                 
+                            facility.                                              
+
+ZAP                         Create run-time program without interrupt              
+                            facility.                                              
+
+CALL     N1                 Execute machine code subroutine at address             
+                            N1.                                                    
+
+KB       N1, N2             Test for key press at row N1, column N2                
+                            and stack true or false flag.                          
+
+SCANV    COL, ROW           The character position is scanned for                  
+                            screen data and a true or false flag                   
+                            stacked.                                               
+
+SCANM    SPN                The sprite is scanned for data and a true              
+                            or false flag stacked.                                 
+
+BLEEP    N1, N2             Sinclair BEEP; N1 is duration, N2 is                   
+                            pitch.                                                 

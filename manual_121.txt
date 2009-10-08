@@ -1,19 +1,62 @@
 # TODO: Remove this comment once this file has been proofread
 
-GWXRS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Logically XOR screen data from screen window into sprite window
-GWORS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Logically OR screen data from screen window into sprite window
-GWNDS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Logically AND screen data from screen window into sprite window
-GWATTS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Block move attributes from screen window into sprite window
-PWBLS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Block move sprite data from sprite window into screen window
-PWXRS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Logically XOR sprite window data into screen window
-PWORS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Logically OR sprite window data into screen window
-PWNDS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Logically AND sprite window data into screen window
-PWATTS    SPN, COL, ROW, SCOL, SROW, HGT, LEN    Block move sprite window attributes into screen window
-GWBLM    SP1, SP2, SCOL, SROW    Block move sprite SP1 into sprite SP2 at SCOL,SROW
-GWXRM    SP1, SP2, SCOL, SROW    Logically XOR sprite SP1 into sprite SP2 at SCOL,SROW
-GWORM    SP1, SP2, SCOL, SROW    Logically OR sprite SP1 into sprite SP2 at SCOL,SROW
-GWNDM    SP1, SP2, SCOL, SROW    Logically AND sprite SP1 into sprite SP2 at SCOL,SROW
-GWATTM    SP1, SP2, SCOL, SROW    Block move attributes of sprite SP1 into sprite SP2 at SCOL,SROW
-PWBLM    SP1, SP2, SCOL, SROW    Block move window at SCOL,SROW of sprite SP2 into sprite SP1
-PWXRM    SP1, SP2, SCOL, SROW    Logically XOR window at SCOL,SROW of sprite SP2 into sprite SP1
-PWORM    SP1, SP2, SCOL, SROW    Logically OR window at SCOL,SROW of sprite SP2 into sprite SP1
+
+GWXRS    SPN, COL, ROW,     Logically XOR screen data from screen                  
+         SCOL, SROW, HGT,   window into sprite window.                             
+         LEN                                                                       
+
+GWORS    SPN, COL, ROW,     Logically OR screen data from screen                   
+         SCOL, SROW, HGT,   window into sprite window.                             
+         LEN                                                                       
+
+GWNDS    SPN, COL, ROW,     Logically AND screen data from screen                  
+         SCOL, SROW, HGT,   window into sprite window.                             
+         LEN                                                                       
+
+GWATTS   SPN, COL, ROW,     Block move attributes from screen window               
+         SCOL, SROW, HGT,   into sprite window.                                    
+         LEN                                                                       
+
+PWBLS    SPN, COL, ROW,     Block move sprite data from sprite window              
+         SCOL, SROW, HGT,   into screen window.                                    
+         LEN                                                                       
+
+PWXRS    SPN, COL, ROW,     Logically XOR sprite window data into                  
+         SCOL, SROW, HGT,   screen window.                                         
+         LEN                                                                       
+
+PWORS    SPN, COL, ROW,     Logically OR sprite window data into                   
+         SCOL, SROW, HGT,   screen window.                                         
+         LEN                                                                       
+
+PWNDS    SPN, COL, ROW,     Logically AND sprite window data into                  
+         SCOL, SROW, HGT,   screen window.                                         
+         LEN                                                                       
+
+PWATTS   SPN, COL, ROW,     Block move sprite window attributes into               
+         SCOL, SROW, HGT,   screen window.                                         
+         LEN                                                                       
+
+GWBLM    SP1, SP2, SCOL,    Block move sprite SP1 into sprite SP2 at               
+         SROW               SCOL,SROW.                                             
+
+GWXRM    SP1, SP2, SCOL,    Logically XOR sprite SP1 into sprite SP2               
+         SROW               at SCOL,SROW.                                          
+
+GWORM    SP1, SP2, SCOL,    Logically OR sprite SP1 into sprite SP2 at             
+         SROW               SCOL,SROW.                                             
+
+GWNDM    SP1, SP2, SCOL,    Logically AND sprite SP1 into sprite SP2               
+         SROW               at SCOL,SROW.                                          
+
+GWATTM   SP1, SP2, SCOL,    Block move attributes of sprite SP1 into               
+         SROW               sprite SP2 at SCOL,SROW.                               
+
+PWBLM    SP1, SP2, SCOL,    Block move window at SCOL,SROW of sprite               
+         SROW               SP2 into sprite SP1.                                   
+
+PWXRM    SP1, SP2, SCOL,    Logically XOR window at SCOL,SROW of                   
+         SROW               sprite SP2 into sprite SP1.                            
+
+PWORM    SP1, SP2, SCOL,    Logically OR window at SCOL,SROW of sprite             
+         SROW               SP2 into sprite SP1.                                   
