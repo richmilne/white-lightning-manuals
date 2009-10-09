@@ -1,59 +1,50 @@
-# TODO: Remove this comment once this file has been proofread
+ATTON                       Enable attribute switch.
 
-
-ATTON                       Enable attribute switch.                               
-
-ATTOFF                      Disable attribute switch.                              
-
-FORTH/BASIC GLOSSARY
+ATTOFF                      Disable attribute switch.
 
 
 
-WORD     PARAMETERS         ACTION.                                                
+                              FORTH/BASIC GLOSSARY
 
 
-COPY                        Copy screen to ZX-Printer.                             
+WORD     PARAMETERS         ACTION.
 
-AT       N1, N2             Move print position to N1,N2.                          
+COPY                        Copy screen to ZX-Printer.
 
-BORDER   N1                 Set border colour to N1.                               
+AT       N1, N2             Move print position to N1,N2.
 
+BORDER   N1                 Set border colour to N1.
 
-CLS                         Clear whole screen, home cursor and fill               
-                            with current attributes.                               
+CLS                         Clear whole screen, home cursor and fill
+                            with current attributes.
 
+DRAW-ARC N1, N2, N3         ±X,±Y,ANGLE.  As Sinclair's own.
 
-DRAW-ARC N1, N2, N3         ±X,±Y,ANGLE. As Sinclair's own.                        
+CIRCLE   N1, N2, N3         X,Y,RADIUS.  As Sinclair's own.
 
+DRAW     N1, N2             ±X,±Y.  As Sinclair's own.
 
-CIRCLE   N1, N2, N3         X,Y,RADIUS. As Sinclair's own.                         
+PLOT     N1, N2             X,Y.  As Sinclair's own.
 
+SCREEN$  N1, N2             Leave on the stack the ASCII code of the
+                            character at ROW N1, COL N2.
 
-DRAW     N1, N2             ±X,±Y. As Sinclair's own.                              
+ATTR     N1, N2             Leave on the stack the attribute code of
+                            the character at ROW N1, COL N2.
 
+POINT    N1, N2             Test pixel at N1,N2 and leave a true or
+                            false flag on the stack.
 
-PLOT     N1, N2             X,Y. As Sinclair's own.                                
+TAB      N1                 Set print position to COL N1.
 
-SCREEN$  N1, N2             Leave on the stack the ASCII code of the               
-                            character at ROW N1, COL N2.                           
+OVER     N1                 Zero or one, as Sinclair's own.
 
+INVERSE  N1                 Zero or one, as Sinclair's own.
 
-ATTR     N1, N2             Leave on the stack the attribute code of               
-                            the character at ROW N1, COL N2.                       
+BRIGHT   N1                 Zero or one, as Sinclalr's own.
 
-POINT    N1, N2             Test pixel at N1,N2 and leave a true or                
-                            false flag on the stack.                               
+FLASH    N1                 Zero or one, as Sinclalr's own.
 
-TAB      N1                 Set print position to COL N1.                          
+PAPER    N1                 Set paper colour, as Sinclair's own.
 
-OVER     N1                 Zero or one, as Sinclair's own.                        
-
-INVERSE  N1                 Zero or one, as Sinclair's own.                        
-
-BRIGHT   N1                 Zero or one, as Sinclalr's own.                        
-
-FLASH    N1                 Zero or one, as Sinclalr's own.                        
-
-PAPER    N1                 Set paper colour, as Sinclair's own.                   
-
-INK      N1                 Set ink colour, as Sinclair's own.                     
+INK      N1                 Set ink colour, as Sinclair's own.

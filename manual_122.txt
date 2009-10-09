@@ -1,64 +1,59 @@
-# TODO: Remove this comment once this file has been proofread
+PWNDM    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of Sprite
+         SROW               SP2 into Sprite SP1.
 
+PWATTM   SP1, SP2, SCOL,    Block move attributes of window at
+         SROW               SCOL,SROW of Sprite SP2 into Sprite SP1.
 
-PWNDM    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of                   
-         SROW               sprite SP2 into sprite SP1.                            
+COPYM    SP1, SP2           As GWBLM but SCOL,SROW assumed zero.
 
-PWATTM   SP1, SP2, SCOL,    Block move attributes of window at                     
-         SROW               SCOL,SROW of sprite SP2 into sprite SP1.               
+COPXRM   SP1, SP2           As GWXRM but SCOL,SROW assumed zero.
 
-COPYM    SP1, SP2           As GWBLM but SCOL,SROW assumed zero.                   
+COPORM   SP1, SP2           As GWORM but SCOL,SROW assumed zero.
 
-COPXRM   SP1, SP2           As GWXRM but SCOL,SROW assumed zero.                   
+COPNDM   SP1, SP2           As GWNDM but SCOL,SROW assumed zero.
 
-COPORM   SP1, SP2           As GWORM but SCOL,SROW assumed zero.                   
+COPATTM  SP1, SP2           As GWATTM but SCOL,SROW assumed zero.
 
-COPNDM   SP1, SP2           As GWNDM but SCOL,SROW assumed zero.                   
+INVV     HGT, LEN, COL,     Invert screen window.
+         ROW
 
-COPATTM  SP1, SP2           As GWATTM but SCOL,SROW assumed zero.                  
+MIRV     HGT, LEN, COL,     Mirror screen window about its centre.
+         ROW
 
-INVV     HGT, LEN, COL,     Invert screen window.                                  
-         ROW                                                                       
+MARV     HGT, LEN, COL,     Mirror screen window attributes about
+         ROW                centre.
 
-MIRV     HGT, LEN, COL,     Mirror screen window about its centre.                 
-         ROW                                                                       
+INVM     SPN                Invert Sprite data.
 
-MARV     HGT, LEN, COL,     Mirror screen window attributes about                  
-         ROW                centre.                                                
+MIRM     SPN                Mirror Sprite about its centre.
 
-INVM     SPN                Invert sprite data.                                    
+MARM     SPN                Mirror Sprite attributes about centre.
 
-MIRM     SPN                Mirror sprite about its centre.                        
+SPINM    SP1, SP2           Rotate Sprite SP2 90 degrees clockwise
+                            into Sprite SP1.
 
-MARM     SPN                Mirror sprite attributes about centre.                 
+DSPM     SP1, SP2           Enlarge Sprite SP2 into Sprite SP1.
 
-SPINM    SP1, SP2           Rotate sprite SP2 90 degrees clockwise                 
-                            into sprite SP1.                                       
+HALT                        Suspend CPU operation until next interrupt.
 
-DSPM     SP1, SP2           Enlarge sprite SP2 into sprite SP1.                    
+EI                          Enable interrupt.
 
-HALT                        Suspend CPU operation until next                       
-                            interrupt.                                             
+DI                          Disable interrupt.
 
-EI                          Enable interrupt.                                      
+EXX                         Exchange Ideal variables with the alternate 
+                            Ideal variables.
 
-DI                          Disable interrupt.                                     
+INT-ON   FORTH WORD         Execute specified Forth Word under interrupt.
 
-EXX                         Exchange IDEAL variables with the                      
-                            alternate IDEAL variables.                             
+INT-OFF                     Terminate execution of interrupt driven
+                            word.
 
-INT-ON   FORTH WORD         Execute specified Forth word under                     
-                            interrupt.                                             
+PROG                        Enter BASIC.
 
-INT-OFF                     Terminate execution of interrupt driven                
-                            word.                                                  
+RESERVE  N1                 Reserve N1 bytes in the dictionary for
+                            BASIC source.
 
-PROG                        Enter BASIC.                                           
+GOTO     N1                 Begin execution of BASIC at line N1.
 
-RESERVE  N1                 Reserve N1 bytes in the dictionary for                 
-                            BASIC source.                                          
-
-GOTO     N1                 Begin execution of BASIC at line N1.                   
-
-RETUSR                      Return to BASIC from RANDOMIZE USR 30000               
-                            call.                                                  
+RETUSR                      Return to BASIC from RANDOMIZE USR 30000
+                            call.

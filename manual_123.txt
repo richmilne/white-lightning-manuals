@@ -1,68 +1,59 @@
-# TODO: Remove this comment once this file has been proofread
+DSPRITE  SPN                Delete Sprite and recover bytes from below.
 
+ISPRITE  SPN, HGT, LEN      Create Sprite and move current Sprites
+                            down to accommodate.
 
-DSPRITE  SPN                Delete sprite and recover bytes from                   
-                            below.                                                 
+WIPE     SPN                Delete Sprite and recover bytes from above.
 
-ISPRITE  SPN, HGT, LEN      Create sprite and move current sprites                 
-                            down to accommodate.                                   
+SPRITE   SPN, HGT, LEN      Create Sprite at free space after last
+                            Sprite.
 
-WIPE     SPN                Delete sprite and recover bytes from                   
-                            above.                                                 
+RELOCATE MLEN               Relocate Sprite space by signed 16 bit
+                            length MLEN.
 
-SPRITE   SPN, HGT, LEN      Create sprite at free space after last                 
-                            sprite.                                                
+COLD#    SPST, SLEN         Reset Sprite space to begin at SPST with
+                            SLEN bytes cleared to zeros.
 
-RELOCATE MLEN               Relocate sprite space by signed 16-bit                 
-                            length MLEN.                                           
+SETAV    HGT, LEN, COL,     Fill the screen window with the current
+         ROW                attributes.
 
-COLD#    SPST, SLEN         Reset sprite space to begin at SPST with               
-                            SLEN bytes cleared to zeros.                           
+SETAM    SPN                Fill the Sprite with the current attributes.
 
-SETAV    HGT, LEN, COL,     Fill the screen window with the current                
-         ROW                attributes.                                            
+CLSV     HGT, LEN, COL,     Clear the screen window and fill with the
+         ROW                current attributes.
 
-SETAM    SPN                Fill the sprite with the current                       
-                            attributes.                                            
+CLSM     SPN                Clear the Sprite.
 
-CLSV     HGT, LEN, COL,     Clear the screen window and fill with the              
-         ROW                current attributes.                                    
+ADJV     HGT, LEN, COL,     Adjust the screen window to lie on the
+         ROW                screen.
 
-CLSM     SPN                Clear the sprite.                                      
+ADJM     SPN, COL, ROW      Adjust COL, ROW, HGT, LEN, SCOL, SROW such
+                            that GETS and PUTS lie on the screen.
 
-ADJV     HGT, LEN, COL,     Adjust the screen window to lie on the                 
-         ROW                screen.                                                
+RND      N1                 Leave a random number between 0 and N1 on
+                            the stack.
 
-ADJM     SPN, COL, ROW      Adjust COL, ROW, HGT, LEN, SCOL, SROW such             
-                            that GETs and PUTs lie on the screen.                  
+OUT#     N1, N2             Output LSB of N1 to 16 bit port address N2.
 
-RND      N1                 Leave a random number between 0 and N1 on              
-                            the stack.                                             
+IN#      N1                 Leave on the stack, byte from 16 bit port 
+                            address N1.
 
-OUT#     N1, N2             Output LSB of N1 to 16-bit port address                
-                            N2.                                                    
+ZAPINT                      Create run time program with interrupt
+                            facility.
 
-IN#      N1                 Leave on the stack the byte from 16-bit                
-                            port address N1.                                       
+ZAP                         Create run time program without interrupt
+                            facility.
 
-ZAPINT                      Create run-time program with interrupt                 
-                            facility.                                              
+CALL     N1                 Execute machine code subroutine at address
+                            N1.
 
-ZAP                         Create run-time program without interrupt              
-                            facility.                                              
+KB       N1, N2             Test for key press at row N1, col N2 and
+                            stack true or false flag.
 
-CALL     N1                 Execute machine code subroutine at address             
-                            N1.                                                    
+SCANV    COL, ROW           The character position is scanned for screen
+                            data and a true or false flag stacked.
 
-KB       N1, N2             Test for key press at row N1, column N2                
-                            and stack true or false flag.                          
+SCANM    SPN                The Sprite is scanned for data and a true
+                            or false flag stacked.
 
-SCANV    COL, ROW           The character position is scanned for                  
-                            screen data and a true or false flag                   
-                            stacked.                                               
-
-SCANM    SPN                The sprite is scanned for data and a true              
-                            or false flag stacked.                                 
-
-BLEEP    N1, N2             Sinclair BEEP; N1 is duration, N2 is                   
-                            pitch.                                                 
+BLEEP    N1, N2             Sinclair BEEP.  N1 is duration, N2 is pitch.
