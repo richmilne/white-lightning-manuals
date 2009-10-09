@@ -7,7 +7,7 @@ ATTOFF                      Disable attribute switch.
                               FORTH/BASIC GLOSSARY
 
 
-WORD     PARAMETERS         ACTION.
+WORD     PARAMETERS         ACTION
 
 COPY                        Copy screen to ZX-Printer.
 

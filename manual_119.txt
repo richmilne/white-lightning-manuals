@@ -1,7 +1,7 @@
                                  IDEAL GLOSSARY
 
 
-WORD     PARAMETERS         ACTION.                                                
+WORD     PARAMETERS         ACTION                                              
 
 WCRV     HGT, LEN, COL,     Scroll the window vertically with wrap by              
          ROW, NPX           NPX pixels.                                            
