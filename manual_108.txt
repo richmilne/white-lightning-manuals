@@ -1,18 +1,24 @@
-# TODO: Remove this comment once this file has been proofread
-
 INDEX          from to ---                                                         
 
-Print the first line of each screen over the range from, to.  This is used to view the comment lines of an area of text on disc screens. 
+Print the first line of each screen over the range from, to.  This is used to view 
+the comment lines of an area of text on disc screens. 
 
 
 INTERPRET                                                                          
 
-The outer text interpreter which sequentially executes or compiles text from the input stream (terminal or disc) depending on STATE.  If the word name cannot be found after a search of CONTEXT and then CURRENT it is converted to a number according to the current base.  That also failing, an error message echoing the name with a " ?" will be given.  Text input will be taken according to the convention for WORD.  If a decimal point is found as part of a number, a double number value will be left.  The decimal point has no other purpose than to force this action.  See NUMBER. 
+The outer text interpreter which sequentially executes or compiles text from the 
+input stream (terminal or disc) depending on STATE.  If the word name cannot be 
+found after a search of CONTEXT and then CURRENT, it is converted to a number 
+according to the current base.  That also failing, an error message echoing the 
+name with a "?" will be given.  Text input will be taken according to the 
+convention for WORD.  If a decimal point is found as part of a number, a double 
+number value will be left.  The decimal point has no other purpose than to force 
+this action.  See NUMBER. 
 
 
 KEY                    --- c                                                     L0
 
-Leave the ascii value of the next terminal key struck. 
+Leave the ASCII value of the next terminal key struck. 
 
 
 LATEST                 --- addr                                                    
@@ -22,21 +28,30 @@ Leave the name field address of the topmost word in the CURRENT vocabulary.
 
 LEAVE                                                                          C,L0
 
-Force termination of a DO-LOOP at the next opportunity by setting the loop limit equal to the current value of the index.  The index itself remains unchanged, and execution proceeds normally until LOOP or +LOOP is encountered. 
+Force termination of a DO-LOOP at the next opportunity by setting the loop limit 
+equal to the current value of the index.  The index itself remains unchanged, and 
+execution proceeds normally until LOOP or +LOOP is encountered. 
 
 
 LFA                pfa --- lfa                                                     
 
-Convert the parameter field address of a dictionary definition to its link field address. 
+Convert the parameter field address of a dictionary definition to its link field 
+address. 
 
 
 LIMIT                  --- n                                                       
 
-A constant leaving the address just above the highest memory available for a disc buffer.  Usually this is the highest system memory. 
+A constant leaving the address just above the highest memory available for a disc 
+buffer.  Usually this is the highest system memory. 
+
+
+LINE                 n --- addr
+
+Leave address of line n of current screen.  This address will be in the disc
+buffer area
 
 
 LIST                 n ---                                                       L0
 
-Display the ascii text of screen n on the selected output device.  SCR contains the screen number during and after this process. 
-
-
+Display the ASCII text of screen n on the selected output device.  SCR contains 
+the screen number during and after this process. 

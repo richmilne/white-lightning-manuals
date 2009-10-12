@@ -1,8 +1,10 @@
-# TODO: Remove this comment once this file has been proofread
-
 ENCLOSE        addr1 c --- addr1 n1 n2 n3                                          
 
-The text scanning primitive used by WORD.  From the text address addr1 and an ascii delimiting character c, is determined the byte offset to the first non-delimiter character n1, the offset to the first delimiter after the text n2, and the offset to the first character not included.  This procedure will not process past an ascii 'null', treating it as an unconditional delimiter. 
+The text scanning primitive used by WORD.  From the text address addr1 and an 
+ASCII delimiting character c, is determined the byte offset to the first 
+non-delimiter character n1, the offset to the first delimiter after the text n2, 
+and the offset to the first character not included.  This procedure will not 
+process past an ASCII 'null', treating it as an unconditional delimiter. 
 
 
 END                                                                         P,C2,L0
@@ -10,15 +12,31 @@ END                                                                         P,C2
 This is an 'alias' or duplicate definition for UNTIL. 
 
 
+ENDCASE         addr n --- (compile)
+
+Occurs in a colon definition in the form:
+          CASE
+          n OF ..... ENDOF
+          .....
+          ENDCASE
+At run-time ENDCASE marks the conclusion of a CASE statement.
+
+At compile time ENDCASE computes forward branch offsets.
+
+
 ENDIF           addr n --- (compile)                                        P,CO,L0
 
-Occurs in a colon-definition in form:
-  IF ...  ENDIF
-
-  IF ...  ELSE ...  ENDIF
-At run-time, ENDIF serves only as the destination of a forward branch from IF or ELSE.  It marks the conclusion of the conditional structure.  THEN is another name for ENDIF.  Both names are supported in fig-FORTH.  See also IF and ELSE. 
+At run-time, ENDIF serves only as the destination of a forward branch from IF or 
+ELSE.  It marks the conclusion of the conditional structure.  THEN is another name 
+for ENDIF.  Both names are supported in Fig-FORTH.  See also IF and ELSE. 
  
-At compile-time, ENDIF computes the forward branch offset from addr to HERE and stores it at addr.  n is used for error tests. 
+At compiletime, ENDIF computes the forward branch offset from addr to HERE and 
+stores it at addr.  n is used for error tests. 
+
+
+ENDOF           addr n --- (compile)
+
+Used as ENDIF but in CASE statements.
 
 
 ERASE           addr n ---                                                         
@@ -28,6 +46,11 @@ Clear a region of memory to zero from addr over n addresses.
 
 ERROR             line --- in blk                                                  
 
-Execute error notification and restart of system.  WARNING is first examined.  If 1, the text of line n, relative to screen 4 of drive O is printed.  This line number may be positive or negative, and beyond just screen 4.  If WARNING=O, n is just printed as a message number (non disc installation).  If WARNING is -l, the definition (ABORT) is executed, which executes the system ABORT.  The user may cautiously modify this execution by altering (ABORT).  fig-FORTH saves the contents of IN and BLK to assist in determining the location of the error.  Final action is execution of QUIT. 
-
-
+Execute error notification and restart of system.  WARNING is first examined.  If 
+1, the text of line n, relative to screen 4 of drive 0 is printed.  This line 
+number may be positive or negative, and beyond just screen 4.  If WARNING=0, n is 
+just printed as a message number (non disc installation).  If warning is -l, the 
+definition ABORT is executed, which executes the system ABORT.  The user may 
+cautiously modify this by altering (ABORT).  Fig-FORTH saves the contents of IN 
+and BLK to assist in determining the location of the error.  Final action is 
+execution of QUIT.

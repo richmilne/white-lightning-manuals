@@ -1,51 +1,60 @@
-# TODO: Remove this comment once this file has been proofread
-
 DEFINITIONS                                                                      L1
 
 Used in the form:
-                cccc DEFINITIONS
-Set the CURRENT vocabulary to the CONTEXT vocabulary.  In the example, executing vocabulary name cccc made it the CONTEXT vocabulary and executing DEFINITIONS made both specify vocabulary cccc. 
+              cccc DEFINITIONS
+Set the CURRENT vocabulary to the CONTEXT vocabulary.  In the example, executing 
+vocabulary name cccc made it in the CONTEXT vocabulary, and executing DEFINITIONS 
+made both specify vocabulary cccc.
 
 
-DIGIT             c n1 --- n2 tf (ok)                                              
-                  c n1 --- ff (bad)                                                
+DIGIT             c n1 --- n2 tf  (ok)
+                  c n1 --- ff     (bad)
 
-Converts the ascii character c (using base n1) to its binary equivalent n2, accompanied by a true flag.  If the conversion is invalid, leaves only a false flag. 
-
-
-DLIST                                                                              
-
-List the names of the dictionary entries in the CONTEXT vocabulary. 
+Converts the ASCII characters c (using base n1) to its binary equivalent n2, 
+accompanied by a true flag.  If the conversion is invalid, leaves only a false 
+flag.
 
 
-DLITERAL             d --- d (executing)                                           
-                     d --- (compiling)                                            P
+DLITERAL             d --- d  (executing)
+                     d ---    (compiling)                                         P
 
-If compiling, compile a stack double number into a literal.  Later execution of the definition containing the literal will push it to the stack.  If executing, the number will remain on the stack. 
-
-
-DMINUS              d1 --- d2                                                      
-
-Convert d1 to its double number two's complement. 
+If compiling, compile a stack double number into a literal.  Later execution of 
+the definition containing the literal will push it to the stack.  If executing, 
+the number will remain on the stack.
 
 
-DO               n1 n2 --- (execute)                                               
+DMINUS              d1 --- d2
+
+Convert d1 to its double number two's complement.
+
+
+DO               n1 n2 --- (execute)
                 addr n --- (compile)                                        P,C2,L0
 
 Occurs in a colon-definition in form:
-  DO ...  LOOP
+              DO  ...  LOOP
+              DO  ... +LOOP
+At run time, DO begins a sequence with repetitive execution controlled by a loop 
+limit n1 and an index with initial value n2.  DO removes these from the stack.  
+Upon reaching LOOP the index is incremented by one.  Until the new index equals or 
+exceeds the limit, execution loops back to just after DO otherwise the loop 
+parameters are discarded and execution continues ahead.  Both n1 and n2 are 
+determined at run-time and may be the result of other operations.  Within a loop, 
+'I' will copy the current value of the index to the stack.  See I, LOOP, +LOOP, 
+LEAVE.
 
-
-
-DO ... +LOOP                                                                                  
-
-At run time, DO begins a sequence with repetitive execution controlled by a loop limit n1 and an index with initial value n2.  DO removes these from the stack.  Upon reaching LOOP the index is incremented by one.  Until the new index equals or exceeds the limit, execution loops back to just after DO; otherwise the loop parameters are discarded and execution continues ahead.  Both n1 and n2 are determined at run-time and may be the result of other operations.  Within a loop 'I' will copy the current value of the index to the stack.  See I, LOOP, +LOOP, LEAVE. 
- 
-When compiling within the colon definition, DO compiles (DO), leaves the following address addr and n for later error checking. 
+When compiling within the colon definition, DO compiles (DO), leaving the 
+following address addr and n for later error checking.
 
 
 DOES>                                                                            L0
 
-A word which defines the run-time action within a high-level defining word.  DOES> alters the code field and first parameter of the new word to execute the sequence of compiled word addresses following DOES>.  Used in combination with <BUILDS.  When the DOES> part executes it begins with the address of the first parameter of the new word on the stack.  This allows interpretation using this area or its contents.  Typical uses include the Forth assembler, multidimensional arrays, and compiler generation. 
+A word which defines the run-time action within a high-level defining word.  DOES> 
+alters the code field and first parameter of the new word, to execute the sequence 
+of compiled word addresses following DOES>.  Used in combination with <BUILDS.  
+When the word DOES> part executes, it begins with the address of the first 
+parameter of the new word on the stack.  This allows interpretation using this 
+area or its contents.  Typical uses include the Forth assembler, multi-dimensional 
+arrays and compiler generation.
 
 
