@@ -1,8 +1,7 @@
-# TODO: Remove this comment once this file has been proofread
-
 S0                     --- addr                                                   U
 
-A user variable that contains the initial value for the stack pointer.  Pronounced S-zero.  See SP!
+A user variable that contains the initial value for the stack pointer.  Pronounced 
+S-zero.  See SP!
 
 
 SCR                    --- addr                                                   U
@@ -12,41 +11,44 @@ A user variable containing the screen number most recently reference by LIST.
 
 SIGN               n d --- d                                                     L0
 
-Stores an ascii "-" sign just before a converted numeric output string in the text output buffer when n is negative.  n is discarded but double number d is maintained.  Must be used between <# and #>. 
+Stores an ASCII "-"  sign just before a converted numeric output string in the 
+text output buffer when n is negative.  n is discarded, but double number d is 
+maintained.  Must be used between <# and #>. 
 
 
 SMUDGE                                                                             
 
-Used during word definition to toggle the "smudge bit" in a definitions' name field.  This prevents an uncompleted definition from being found during dictionary searches, until compiling.  is completed without error. 
+Used during word definition to toggle the "smudge bit" in a definition's name 
+field.  This prevents an uncompleted definition from being found during dictionary 
+searches, until compiling is completed without error. 
 
 
 SP!                                                                                
 
-A computer dependent procedure to initialize the stack pointer from SO. 
+A computer dependent procedure to initialize the stack pointer from S0. 
 
 
 SP@                    --- addr                                                    
 
-A computer dependent procedure to return the address of the stack position to the top of the stack, as it was before SP@ was executed. 
-    (e.g.   1  2  SP@  @  .    .    .      would
-
-    type 2  2   1)
-
+A computer dependent procedure to return the address of the stack position to the 
+top of the stack, as it was before SP@ was executed. (e.g. 1 2 SP@ @ . . . would 
+print 2 2 1).
 
 
-SPACE                                                                            L0
+SPACE            
 
-Transmit an ascii blank to the output device. 
+Transmit an ASCII blank to the output device. 
 
 
 SPACES               n ---                                                       L0
 
-Transmit n ascii blanks to the output device. 
+Transmit n ASCII blanks to the output device. 
 
 
 STATE                  --- addr                                                L0,U
 
-A user variable containing the compilation state.  A non-zero value indicates compilation.  The value itself may be implementation dependent. 
+A user variable containing the compilation state.  A non-zero indicates 
+compilation.  The value itself may be implementation dependent. 
 
 
 SWAP             nl n2 --- n2 n1                                                 L0

@@ -1,11 +1,14 @@
-# TODO: Remove this comment once this file has been proofread
-
 TASK                                                                               
 
-A no-operation word which can mark the boundary between applications.  By forgetting TASK and re-compiling, an application can be discarded in its entirety. 
+A no-operation word which can mark the boundary between applications.  By 
+forgetting TASK and re-compiling, an application can be discarded in its entirety. 
 
 
-THEN                                                                        P,CO,LO
+TEXT                 c ---
+
+Accept the following test to PAD.  c is the text delimiter.
+
+THEN                                                                        P,C0,L0
 
 An alias for ENDIF. 
 
@@ -22,12 +25,10 @@ Complement the contents of addr by the bit pattern b.
 
 TRAVERSE       addr1 n --- addr2                                                   
 
-Move across the name field of a fig-FORTH variable length name field.  addr1 is the address of either the length byte or the last letter.  If n=1, the motion is toward hi memory; if n=-l, the motion is toward low memory.  The addr2 resulting is address of the other end of the name. 
-
-
-TRIAD              scr ---                                                         
-
-Display on the selected output device the three screens which include that numbered scr, beginning with a screen evenly divisible by three.  Output is suitable for source text records, and includes a reference line at the bottom taken from line 15 of screen4. 
+Move across the name field of a Fig-FORTH variable length name field.  addr1 is 
+the address of either the length byte or the last letter.  If n=-1, the motion is 
+toward low memory.  The addr2 resulting is the address of the other end of the 
+name. 
 
 
 TYPE        addr count ---                                                       L0
@@ -35,8 +36,19 @@ TYPE        addr count ---                                                      
 Transmit count characters from addr to the selected output device. 
 
 
+U<               u1 u2 --- f
+
+Leave the boolean value of any unsigned less-than comparison.  Leaves f=1 or u1 > 
+u2; otherwise leaves 0.  This function should be used when comparing memory 
+addresses.
+
+
 U*               u1 u2 --- ud                                                      
 
 Leave the unsigned double number product of two unsigned numbers. 
 
 
+U.                   u ---
+
+Prints an unsigned 16 bit number converted according to BASE. A trailing blank 
+follows.

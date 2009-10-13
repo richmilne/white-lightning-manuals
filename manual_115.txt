@@ -1,46 +1,59 @@
-# TODO: Remove this comment once this file has been proofread
-
 U/               ud u1 --- u2 u3                                                   
 
-Leave the unsigned remainder u2 and unsigned quotient u3 from the unsigned double dividend ud and unsigned divisor u1. 
+Leave the unsigned remainder u2 and unsigned quotient u3 from the unsigned double 
+dividend ud and unsigned divisor u1. 
 
 
 UNTIL                f --- (run-time)                                              
                 addr n --- (compile)                                        P,C2,L0
 
 Occurs within a colon-definition in the form:
-                BEGIN ...  UNTIL
-At run-time, UNTIL controls the conditional branch back to the corresponding BEGIN.  If f is false, execution returns to just after.  BEGIN; if true, execution continues ahead. 
+                         BEGIN ... UNTIL
+At run-time, UNTIL controls the conditional branch back to the corresponding 
+BEGIN.  If f is false, execution returns to just after BEGIN, if true, execution 
+continues ahead. 
  
-At compile-time, UNTIL compiles (0BRANCH) and an offset from HERE to addr.  n is used for error tests. 
+At compile-time, UNTIL compiles (0BRANCH) and an offset from HERE to addr.  n is 
+used for error tests. 
 
 
 UPDATE                                                                           L0
 
-Marks the most recently referenced block (pointed to by PREV) as altered.  The block will subsequently be transferred automatically to disc should its buffer be required for storage of a different block. 
+Marks the most recently referenced block (pointed to by PREV) as altered.  The 
+block will subsequently be transferred to disc should it's buffer be required for 
+storage of a different block. 
 
 
 USE                    --- addr                                                    
 
-A variable containing the address of the block buffer to use next, as the least recently written. 
+A variable containing the address of the block buffer to use next, as the least 
+recently written. 
 
 
 USER                 n ---                                                       L0
 
 A defining word used in the form:
-                n USER cccc
-which creates a user variable cccc.  The parameter field of cccc contains n as a fixed offset relative to the user pointer register UP for this user variable.  When cccc is later executed, it places the sum of its offset and the user area base address on the stack as the storage address of that particular variable. 
+                   n USER cccc
+which creates a user variable cccc.  The parameter field of cccc contains n as a 
+fixed offset relative to the user pointer register UP for this upper variable.  
+When cccc is later executed, it places the sum of it's offset and the user base 
+address on the stack, as the storage address of that particular variable. 
 
 
-VARIABLE                                                                       E,LU
+VARIABLE                                                                       E,LO
 
 A defining word used in the form:
-                  n VARIABLE cccc
-When VARIABLE is executed, it creates the definition cccc with its parameter field initialized to n.  When cccc is later executed, the address of its parameter field (containing n) is left on the stack, so that a fetch or store may access this location. 
+                   n VARIABLE cccc
+When VARIABLE is executed, it creates the definition cccc with its parameter field 
+initialised to n.  When cccc is later executed, the address of its parameter field 
+(containing n) is left on the stack, so that a fetch or store may access this 
+location. 
 
 
 VOC-LINK               --- addr                                                   U
 
-A user variable containing the address of a field in the definition of the most recently created vocabulary.  All vocabulary names are linked by these fields to allow control for FORGETting thru multiple vocabularies. 
+A user variable containing the address of a field in the definition of the most 
+recently created vocabulary.  All vocabulary names are linked by these fields, to 
+allow control for FORGETting through multiple vocabularies. 
 
 
