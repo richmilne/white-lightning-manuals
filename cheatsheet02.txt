@@ -1,0 +1,62 @@
+# TODO: Remove this comment once this file has been proofread
+
+Moving Sprites
+
+The chief problem facing the programmer who wants to move sprites around the
+screen is choosing from the numerous schemes available.  We now consider some of
+these methods, each with its own merits for speed, simplicity, smoothness and
+storage. We'll begin with the easiest to implement and then work up to some of the
+more elaborate techniques.
+
+Screen Scrolling
+
+Where an object is to be moved within a screen window that does not contain any
+other objects the screen itself can be scrolled.  This is particularly applicable
+where movement is either horizontal or vertical.  Diagonal movement is also
+possible however.  In some cases the object is constrained to move on the screen
+because parts of the object scrolled off the screen without wrap are lost.
+
+To begin with let's consider a very simple example - moving an invader (demo
+sprite 24) 2 characters high and 2 characters wide left and right under keyboard
+control.
+
+The routine is in three sections:  the first sets up the base and initial
+parameters, the second moves left or right and the third polls the keyboard and
+controls the movement.
+
+: SETUP 0 COL ! 6 ROW ! 24 SPN ! CLS SETAM PUTBLS 2 HGT ! 32 LEN ! ;
+: LEFT WRL1V ; : RIGHT VRR1V ;
+: KEYS 1 1 KB IF LEFT ENDIF 8 1 KB IF RIGHT ENDIF ;
+
+This will move the base by 1 pixel left or right but by changing the words LEFT
+and RIGHT to be WRR4V and WRL4V or WRR8V and WRL8V movement of 4 or 8 pixels can
+be achieved.
+
+To try these routines we'll need a small test routine.
+
+: TESTA ATTOFF SETUP BEGIN KEYS 8 2 KB UNTIL ;
+
+TESTA will loop around until SYMBoL SHIFT is pressed.  Pressing CAPS SHIFT will
+move the base left, pressing space will move the base right and pressing SYMBOL
+SHIFT will exit the loop.
+
+This routine can also be executed in background using:
+
+: TESTB EXX SETUP EXX ' KEYS INT-ON ;
+
+To halt, just type INT-OFF.
+
+If you've typed in the source at the end of this section type 6 LOAD to compile
+and then TESTA or TESTB to execute.
+
+Simple Putting
+
+Another fairly simple means of moving sprites around the screen is to simply PUT
+sprites with a blank border around them.  Suppose the sprite you want to move is 2
+characters high and 2 characters wide.  You will need to construct a 4 by 4 sprite
+so that the 2 by 2 sprite can be contained with a border around the outside. Make
+sure background is off by typing INT-OFF.
+
+Suppose for example, sprite 24 is a 2 by 2 sprite (you can use demo sprite 24 for
+the purposes of this example). We'll use sprite 62 for the sprite to be moved.
+To set up sprite 62 use:

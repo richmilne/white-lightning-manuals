@@ -1,0 +1,61 @@
+# TODO: Remove this comment once this file has been proofread
+
+More Advanced Techniques
+
+Often it is not practical to repeatedly PUT the screen data which accompanies the
+moving sprite and more frequently movement is required with a higher resolution
+than one character.
+
+To begin with, let's consider the problem of improving the resolution of the
+movement.  Let's work again with a 2x2 sprite (sprite 24 of the demo sprites will
+do). Type COLD to clear previous examples.
+
+Suppose we wish to move the sprite around the screen with 2 pixel resolution.
+This means that between 2 successive columns there are 4 intermediate
+orientations, each successive orientation being 2 pixels right shifted. This
+means we need 4 sprites in all before the cycle is repeated at the next column
+position.
+
+To begin with let's set up the 4 sprites and number them 100, 101, 102 and 103.
+To create these 4 sprites, type:
+
+: MAKE 2 HGT ! 3 LEN ! 104 100 DO I SPN ! ISPRITE CLSM LOOP ;
+
+This will define and clear the 4 sprites and we can now put the character in its
+various orientations, into these sprites.  There are two stages to this operation.
+Firstly sprite 24 needs to be put into sprite 100, then sprites 100 to 103 need to
+be scrolled and PUT successively to build up the four orientations.
+
+: SET1 0 SROW ! 0 SCOL ! 24 SP1 ! 100 SP2 ! GWBLM ;
+
+This sets up sprite 100 and the remaining 3 orientations are set up from this
+sprite using:
+
+: SET2 103 100 DO I SP1 ! I 1+ DUP SP2 ! SPN ! COPYM WRR1M WRR1M LOOP ;
+
+It's worth putting these sprites on the screen to see what they look like.
+Assuming you've executed the words MAKE, SET1 and SET2 use:
+
+: TESTE CLS 0 COL ! 4 0 D0 I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;
+
+This will place the 4 orientations, one above the other, so that the resolution of
+the movement can be seen.
+
+To use the source version type 9 LOAD MAKE SET1 SET2 TESTE
+
+This now gives us 2 pixel horizontal resolution so that we now have 128 horizontal
+plotting positions in the range 0 to 127. We need a simple formula which will
+calculate the sprite number and the column from the horizontal plotting position.
+This turns out to be very simple:
+
+: HPLOT 4 /MOD COL ! 100 + SpN ! PUTBLS ;
+
+So to PUT at X-position 27 (54 pixels from the left hand column) just use:
+
+27 HPLOT
+
+The previous example is useful in that it indicates a way of producing high
+resolution PUTtinq but as it stands cannot be used for animation because it does
+not enable the removal of prewusly placed orientations. Before looking at a
+scheme for animating these orientations let's generalise this example to cover
+high resolution vertical movement as well as horizontal movement.

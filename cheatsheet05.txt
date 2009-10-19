@@ -1,0 +1,61 @@
+# TODO: Remove this comment once this file has been proofread
+
+If we're going to give the same resolution of movement (2 pixels) in the vertical
+plane, we're going to need 4 vertically shifted orientations for each of the
+horizontally offset orientations - 16 sprites in all. This time they will need to
+be 3x3 as opposed to the previously defined 2x3.  If you'vc typed in the last
+example you'll need to delete the old sprites numbered 100 to 103. If so, type:
+
+100 SPN ! DSPRITE <CR>
+101 SPN ! DSPRITE <CR>
+102 SPN ! DSPRITE <CR>
+103 SPN ! DSPRITE <CR>
+
+Now type COLD to clear the dictionary.
+
+To create the 16 new sprites use:
+
+: MAKE 3 HGT ! 3 LEN ! 116 100 DO I SPN ! ISPRITE CLSM SETAM LOOP ;
+
+SET1 and SET2 are now used in exactly the sane form as in the previous example to
+set up the first 4 sprites 100 to 103.  Each of the horizontally offset
+orientations Needs to be vertically offset by 2 pixels into 4 further
+orientations.  100 will Be offset into 104, 108 and 112; 101 will be offset into
+105, 109 and 113 and so on.  We'll need a third word SET3 to do this.
+
+: SET3 -2 NPX ! 104 100 DO I DUP 12 + SWAP DO I DUP 4 + DUP SP2 ! SPN ! SP1 !
+GWBLM SCRM 4 +LOOP LOOP ;
+
+Once SET1, SET2 and SET3 have been entered, compiled and executed, the definitions
+can be forgotten.  Since we now have 2 pixel resolution in the vertical and
+horizontal directions we have 128 horizontal positions and 96 vertical positions.
+We need a word which can calculate sprite number, column and row from the 2 pixel
+resolution co-ords X and Y.  The following word assumes the vertical then
+horizontal co-ords have been placed on the stack.
+
+: XYPUT 4 /MOD COL ! SWAP 4 /MOD ROW ! DUP + DUP + + 100 + SPN ! ;
+
+So to PUT at X-position 30 (pixel 60)
+Y-position 17 (pixel 34)
+
+use	     17 30 XYPUT PUTBLS
+
+Note that the 100 + SPN ! at the end of the definition of XYPUT should be amended
+so that the number is the sprite number of the first of your 16 sprites.
+
+To use the source type 9 LOAD 10 LOAD MAKE SET1 SET2 SET3 (Ignore MSG# 4's)
+
+Let's now deal with the animation of the sprite itself.
+
+Perhaps the most powerful method of sprite animation is via the XOR operation.
+The usefulness of this operation stems from the fact that when an object is XOR'ed
+with the screen, the screen can he restored simply by repeating the operation.
+The area of screen is restored to the same state as it was before the first
+operation (see page 22 of the White Lightning manual).
+
+We can now write a routine which moves a sprite around the screen under keyboard
+control using a slightly amended form of the word XYPUT.  The routine below
+assumes the 10 sprites in the range 100 to 115, which each have dimensions 3x3,
+have been set up in the last example.
+
+The following variables will be used:

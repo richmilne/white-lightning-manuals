@@ -1,0 +1,37 @@
+# TODO: Remove this comment once this file has been proofread
+
+Position the X and Y Pos cursors to the appropriate eo-ordinates. Input the relevant sprite number and put the sprite to the acrern by pressing the D key and then 1. In the mse of 0 press J to DfI4P the a:pty COi$ aquare to the sprite screen.
+
+The landing ped, sprite 3, is also Placed in tl:ese sprites.
+
+Once the 8 by 3 apritea have hePn ¢eatsl an the screen, position the x and Y pos aueors to the top left corner of the sprite. Set the sprite rnmher to {he appropciate value, sat the length to 8 and the hei9ht to 3 then preee G to get the sprite.
+
+Note that tha left band oolum of sprite 10 must have a 0 INS value as xell as the right hand colum of sprite 11.
+
+Once all the sprites Mve hern created save then off to tape using the symhol 3HIPT S key.
+
+Losd in White Lightning, loed in the ha:ar sprites. Carefully type in the L:y:sr iet:der program as listed and check your program against Ilse original. It is row hast to save your source off to tape.
+
+Exit to BASIC using:	PIiDG <at>
+
+then eave to tape usirg;	S4VE^LfINAR" ODDE 52224,6656 Go heck into White Lightning using: FRIST (ER 24836
+Hm type	6 IDAD <Qi>
+HAKE ClU to ¢eatE the laniecape SEI <Qt> to create the landete
+To mn the progrm type TST <Qt>
+
+Please rote that if-tt:ere is an error in your aource the last few acreens osn ro longer he listed or ornQiled, since the creation of ~tra eprites has werwritten the end screrne, thus the aourctt would ha're to be reloaded for editing purposes.
+. PfAYING TU G1ME
+
+The game itaelf is more of a simulation than a gane. The idea is to land rn all four heses withrnit runnirg but of fuel or crashing. The gauges are self expl~tory.
+
+TM controls are: CAPS SüIFT Thrust to the left StFAR SPPGE Thrust to the right II714t	Vectical thrust
+Once Ilse gase is over, hit the FNiER key to escape and then TOT <at> for a . reiu 9ama•
+
+FU[.
+
+If fuel runs out the controls will ro longer function. YVII.
+A safe landing is cnly :rode if the VIIL qauge registers a velocity in the "safe" region of the orntre of tt:e gaiye.
+XVEL
+The horizontal ~locity is represented by - of 3 scroll speeds tot safe landings can mly he mde if the pointer is in the "safe" region in the centre of the gau3e.
+= SMALL 9CREEN
+This gives a:mcrosc,ropic view of the 8 screens. The bases are marked. The qauqe srnietimes ®nnot keep up with the lander ~arent but at scroll spce:is of a pixel it will soon "catch up" with the real positions. This is not a"feature" v.e must admit, keeping up with the gauge slcws the foreground program down a lot.

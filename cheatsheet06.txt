@@ -1,0 +1,57 @@
+# TODO: Remove this comment once this file has been proofread
+
+TSPN     Temporary Value for SPN
+TCOL     Temporary Value for COL
+TROW     Temporary Value for ROW
+XC       X co-ordinate
+YC       Y co-ordinate
+FLAG     Collision Flag
+
+We'll also use a constant FSPN which holds the number of the first sprite in the
+series of 16.  To adapt these routines for your own use just change FSPN.
+
+: PLOAD COL ! ROW ! SPN ! PUTXRS ;
+: PSET TSPN @ TROW @ TCOL @ ;
+: PCAL 4 /MOD TCOL ! SWAP 4 /MOD TROW ! DUP + DUP + FSPN + + TSPN ! ;
+: MOVE YC @ XC @ PCAL PSET PUTXRS PLOAD ;
+: PLACE YC @ XC @ PCAL PSET PLOAD ;
+
+We now need to poll the keyboard:
+
+We use the KCHK word again an that the character is not re-PUT unless a key has
+been pressed.
+
+: KCHK KB DUP ROT OR SWAP ;
+: UP 7 1 KCHK IF YC @ 4 > MINUS YC +! ENDIF ;
+: DOWN 8 1 KCHK IF YC @ 83 < YC +! ENDIF ;
+: LEFT 1 1 KCHK IF XC @ 4 > MINUS XC +! ENDIF ;
+: RIGHT 1 2 KCHK IF XC @ 115 < XC +! ENDIF ;
+: KREAD 0 UP DOWN LEFT RIGHT ;
+
+KREAD will leave 0 on the stack if no key was pressed or 1 if a key was pressed.
+
+The complete word becomes:
+
+: TESTF 10 XC ! 10 YC ! PLACE BEGIN KREAD IF MOVE FNDIF 6 1 KB UNTIL ;
+
+Note that this loop assumes no interference with the values of COL, ROW or SPN
+between cycles, if you are executinq another Forth word, for example a word called
+TRY, then make sure you temporarily stack COL, ROW and SPN, e.g.
+
+... BEGIN KREAD IF MOVE ENDIF COL @ ROW @ SPN @ TRY SPN ! ROW ! COL ! 0 1 KB UNTIL
+...
+
+This word can be easily executed under interrupt using
+
+: TESTG KREAD IF MOVE ENDIF ;
+: TESTH 10 XC ! 10 YC ! EXX PLACE EXX ' TESTG INT-ON BEGIN 6 1 KB UNTIL INT-OFF
+;
+
+You will notice, however, that if you do execute this routine under interrupt then
+the sprite may flicker in passage through certain areas of the screen.  This is
+due to the finite time taken for the dot to scan the screen and can be very annoying.
+
+To execute from source type 11 LOAD 12 LOAD then TESTF or TESTH
+
+Let's look now at some more powerful techniques which not only help with the
+flickering but also include collision detection facilities.

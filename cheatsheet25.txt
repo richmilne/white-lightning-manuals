@@ -1,0 +1,19 @@
+# TODO: Remove this comment once this file has been proofread
+
+DIAGRAM 1 CONTINUED
+4 5 6 7 8	9 A B
+6	ü'	SPRITE,3,111x 9
+7 5 6 6	8 8 8 6 6	SPRITE 22
+8 6	g 6	6	6	6	6	6
+4 5 6 7 8 9 A 8
+6 8 9 5 8	7 7	8 4
+7 6	6 6 6 6 8	6 6	SPRITE 23
+8 6	6	6 6 6	6	g 8
+4	5	6 7	8	9.A B
+6 9 5 4 8 9 9 5 7
+7^ 6 6 6 6 6 6	6 6	SPRITE 24
+8 g 6	6	6 6	6 6	6
+4 5	6 7 8	9 A B
+6 4 p 8 9 g 8 6 7
+6 7 6 4 5 6 6	6	SPRITE 25
+g g	6 6	6 6	6 6 6
