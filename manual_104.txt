@@ -18,7 +18,7 @@ DROP                 n ---                                                      
 Drop the number from the stack. 
 
 
-DUMP            addr n ---                                                       L0
+DUMP              addr ---                                                       L0
 
 Print the contents of n memory locations beginning at addr.  Both addresses and 
 contents are shown in the current numeric base. 

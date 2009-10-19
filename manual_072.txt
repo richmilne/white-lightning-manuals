@@ -38,7 +38,7 @@ GWXRM 2 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL ! 2 SPN ! PUTBLS <CR>
 
 sprite 1 has now been "XOR"ed into sprite 2.  Now type:
 
-PWTXRM 4 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL 1 2 SPN ! PUTBLS <CR>
+PWXRM 4 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL 1 2 SPN ! PUTBLS <CR>
 
 sprite 2 is now in sprite 1.  Finally, type:
 

@@ -33,7 +33,7 @@ Now that we have clear screens we can start to go places.  Have a go at this:
 1.  Move the X and Y cursors to 1 and 1 respectively.
 
 2.  Press the Z key (to call up a character from the Arcade Library) and enter the
-number 75 followed by ENTER.  A space invader type character will appear on the
+number 63 followed by ENTER.  A space invader type character will appear on the
 sprite screen.
 
 3.  Press the K key and answer Y to the prompt and hey presto - the character has
