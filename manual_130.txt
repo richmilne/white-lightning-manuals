@@ -1,53 +1,54 @@
-# TODO: Remove this comment once this file has been proofread
-
 Example 5
 
-Often it is useful to define a word which carries out an operation that is
-used frequently and which saves typing; for instance:
+Often it is useful to define a word which carries out an operation that is used 
+frequently and which saves typing - for instance: 
+
 : DEM5 COL ! ROW ! SPN ! PUTBLS ;
 
-If we wanted to carry out the simple PUT command in example 4, all we'd
-need to type would be:
+If we wanted to carry out the simple PUT command in example 4 all we'd need to 
+type would be: 
+
 34 5 6 DEM5
 
 
 Example 6
 
-To scroll sprite 29 in memory by 1 pixel to the right with wrap and PUT it
-on the screen at row 10, column 11, use:
+To scroll sprite 29 in memory by 1 pixel to the right with wrap and PUT it on the 
+screen at row 10, column 11 - use: 
+
 : DEM6 29 SPN ! 10 ROW ! 11 COL ! WRR1M PUTBLS ;
 
-To run DEM6 in background use:
-' DEM6 INT-ON
+To run DEM6 in background use: ' DEM6 INT-ON
 
 
 Example 7
 
-To fill a screen window, at column 17, row 5, 5 characters long and 10
-characters high, with the attributes - 6 INK, 2 PAPER, 1 FLASH - use the
-following:
-: DEM7 1 FLASH 6 INK 2 PAPER 10 HGT ! 5 LEN ! 13 ROW ! 17 COL ! SETAV 0 FLASH 7 INK 1 PAPER ;
+To fill a screen window, at column 17, row 5, 5 characters long and 10 characters 
+high, with the attributes - 6 INK, 2 PAPER and 1 FLASH - use the following:
+
+: DEM7 1 FLASH 6 INK 2 PAPER 10 HGT ! 5 LEN ! 13 ROW ! 17 COL ! SETAV 0 FLASH 7 
+INK 1 PAPER ;
 
 
 Example 8
 
-To change the green face of sprite 28 into a red one use:
+To change the green face of sprite 28 into a red one use: 
+
 : DEM8 28 SPN ! 2 INK ! 1 BRIGHT 0 PAPER SETAM PUTBLS ;
 
 
 Example 9
 
-To pick a random number between 0 and 100 use:
+To pick a random number between 0 and 100 use: 
+
 : DEM9 100 RND . ;
 
 
 Example 10
 
-To pick a random INK colour and change sprite 34's INK colour to this 
-colour, and then put it at column 10, row 10, use:
+To pick a random INK colour and change sprite 34's INK colour to this colour, and 
+then put it at column 10, row 10, use: 
+
 : DEM10 7 RND INK 34 SPN ! SETAM 10 ROW ! 10 COL ! PUTBLS ;
 
-To run DEM10 in background use:
-' DEM10 INT-ON
-and to halt DEM10 use:
-INT-OFF
+To run DEM10 in background use: ' DEM10 INT-ON and to halt DEM10 use INT-OFF.
