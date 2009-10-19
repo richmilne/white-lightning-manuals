@@ -1,14 +1,16 @@
 # TODO: Remove this comment once this file has been proofread
 
-CONTENTS
-P.p.
-INTRODUCTION 1 OPERATING INSTRUCTIONS    3
 
-SPRITE GENERATOR PROGRAM
-Introduction 4 Operating Instructions 6 Gettino Familiar with the Punct.on Keys    e
-SPECTRAFORTH 18 Introduction 19 Input/Output Operators 19 Mathematical Operators 21 Stack Operations 24 Other Operations 25 Colon Definitions 26 Control Structures 77 Conditional Branching 28 Constants and Variables 32 Other Comnnly Used Forth Words 32 Using the Editor 33 Forth Error Messages    35
+FIG-FORTH GLOSSARY 91 
 
-IDEAL 38 Introduction 38 IDEAL Variables 40 Errors 42 Sprite Buffer Organisation 42 Loading Sprites from Tape 43 The Buffer 43 Background Scrolling 43 IDEAL Nnernonics
-General Points 46 Sprite Utilities 48 Scrolling 52 GETs and Furs 55 Sprite Transformations 59 Interrupt Related Words 61 BASIC Interface Words 82 Miscellaneous Words 62 .Forth/BASIC words 66 Foreground/Backgrourd 87 Logical Operations 71 Collision Detection and Sprite Recognition 73 The BASIC Interface 76 Program Developmst 79 Table of Screen Addresses 82 Function Key Svmary 83 Arcade Graphics Library SS Dew Sprite Library    89
-Page
-FIG-FORTH GLOSSARY 91 IDEALGLOSSARY 11p FORTH/BASIC GLOSSARY 124 USR CALLS 126 EXTENDED SPECTRA FORTH GLOSSARY 125 THE DEMO -A BRIEF DESCRIPTION 128 SOME SIMPLE PROGRAMMING EXAMPLES    129
+IDEAL GLOSSARY 119 
+
+FORTH/BASIC GLOSSARY 124 
+
+USR CALLS 126 
+
+EXTENDED SPECTRA FORTH GLOSSARY 125 
+
+THE DEMO - A BRIEF DESCRIPTION 128 
+
+SOME SIMPLE PROGRAMMING EXAMPLES    129
