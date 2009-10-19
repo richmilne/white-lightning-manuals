@@ -1,48 +1,40 @@
 # TODO: Remove this comment once this file has been proofread
 
-FUQ.
-Decrements the arount of fuel left.
-Checks to see if a diaracter boucdry is crossed (see SH8) and if so executes N9t. SL
-As SR hat hecks when novemrt is left.
-SH 4
-Checks to see if phase is crossing a half character houndary, scrolling cen only increase fron one pixel to four pixel ~ents rn such a tnundary or scrolling will go out o= phase.
+FUEL
+Decrements the amount of fuel left.
+
+SR
+Checks to see if a character boundary is crossed (see SH8), and if so executes NBR.
+
+SL
+As SR but checks when movement is left.
+
+SH4
+Checks to see if phase is crossing a half character boundary; scrolling can only increase from one pixel to four pixel movements on such a boundary or scrolling will go out of phase.
 
 SF
-Accelerates horizontal speed (deccelerates if negative) by the amount m the stack.
+Accelerates horizontal speed (decelerates if negative) by the amount on the stack.
+
 SS
-Puts the current horizontal speed on the stack. POLL
-Checks to see if there's any Fuel left (a non zero value of FU will act as a true flag) then first checks eWACE to accelerate right if not travelling ton ast then check CAPS SHIFf to accelerate left if not travelling ton ast. If a key is pressed fuel is decremented.
--p
+Puts the current horizontal speed on the stack.
 
-Updates phase arid does a IOLL whrs moving right.
+POLL
+Checks to see if there's any fuel left (a non-zero value of FU will act as a true flag), then first checks SPACE to accelerate right if not travelling too fast, then checks CAPS SHIFT to accelerate left if not travelling too fasr. If a key is pressed fuel is decremented.
 
-+p
-Updates phase and does a[OLL when movirg left.
+-P
+Updates phase and does a POLL when moving right.
 
-321
++P
+Updates phase and does a POLL when moving left.
+
+SR1
 Moves landscape 1 pixel right and adjusts pointers.
 
-3t4
-Mwes landscape 4 pixels right and adjusts pointera prwided a half character 6oundary has 6een reached. If not, a further 1 pixel nwement must be nade.
+SR4
+Moves landscape 4 pixels right and adjusts pointers, provided a half character boundary has been reached. If not, a further 1 pixel movement must be made.
 
 SL4
-As e4 when nrn.ing left. 9D
-When speed is less than 7, keyboard is polled hut ro acrolling of the screen is «ecuted. The lander is treated as horizontally stationary.
-SR8
-Moves landscapes 8 pixels (1 character) right and adjusts pointers prwided a full character 6oundary has heen reached. If not a further 4 pixel scroll is executed.
-SL8
-As SR8 when wverent is to the left. UR
-If speed is greater than 200, try and scroll right 8 pixels right, if not, try and scroll by 4 pixels right.
-IR
-If speed is greater than 7 then scroll 1 pixel right else m scroll. A2'
-If speed is greater than 100 then do a!R if not do an IA. UL
-As UL when speed is negative. IL
-As IR whes apes3 is negative. IF
-As RF when speed is negative. 0®C
-The execution wrd strich does all the scrolling logic. 1fie wrds UR to IF are effectively the nahes of a tree strich produre ans of 7 possible scrolls from -8 pixels to +8 pixels. A detailed underatanding of the workings are rot necessary as long as you oan adapt the routine to serve your needs.
-Set
-reates 7 rew orientations of the landet fran the original in spzite 100, making 8 in all, each lander 6eing 1 pixel shifted -rtically fran the one tefore. 'lfiis enables single pixel resolution in the landec irovenent.
-PREP
--
-Used to set ip initial valves. TICK
-Ircrements vertical velocity (xts like gravity) unless terminal velocity has been reached. If you went to make the gase more difficult change 1 VEL +! to 2 VH. +! and thua double the planets gravity.
+As SR4 when moving left.
+
+SO
+When speed is less than 7, keyboard is polled but no scrolling of the screen is executed. The landers is treated as horizontally stationary.

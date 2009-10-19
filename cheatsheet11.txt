@@ -1,125 +1,79 @@
 # TODO: Remove this comment once this file has been proofread
 
-Sprites 1 to 100 are produced using the Brite generator program. Sprites 101 to 107 are created in the min program using the wrd SET. Sprite 128 is mnstructed fron Sprites 10 to 25 in the min program using the ward hAi(E.
-The Lunar Lander
-This listing is provided as an exartgle of White Lightning progranming. In order to cun the game you will need to erster the Sprites as descriUed in the rnxt section. This is a fairly lahorious task so we can offer the fainthearted, Sprites and demo rn tape for me pound seventy five pence. We recamrrd, hwever, that you Lake the time to Lvild up the Sprites yourself as an excercise in self discipline if nothinq else!
-The program executes esse wrd in foreground and me wrd in hackground. The pcogram can bz roughly subdivided the following way:
+  2 0 -7 DRAW ;
+  3 : PANEL 0 PAPER COLOUR SCLE BARS BARST HRSC LETR MARK ;
+  4 : MAKE 128 SPN ! 3 HGT ! 128 LEN ! 0 SROW ! 128 SP2 ! ISPRITE
+  5 16 0 DO I 10 + DUP SPN ! SP1 ! I 8 * SCOL ! GWBLM GWATIM DSPRITE
+  6 LOOP ;
+    0 VARIABLE PH
+  7 256 VARIABLE SPD 0 VARIABLE DOWN 1008 VARIABLE FU -->
 
-Screens 6,7,8
-These Set Lp the screen display, dials etc. Screens 9,10,11
-These fhree screens form the routine which scrolls the landscape at tafle of three Speeds. This routine is executed in Lackground to give sfnother movsrent.
-Screens 12,13,14,15,16,17
-These control the flight of the lander, manipulate the dials, execute the crashes and so on.
-Screen 18
-This executes all the previous definitions in the right order to produce the final
-s-•
-
-Let's now lock at the -ram in Imre detail.
-CR # 6
-0 : KLOUR 0 Rf7W ! 16 COL ! 16 LEN ! 23 IST ! 7 IN!( 1 pRIGILT 1 SEIAV AT'1C)N ; 2 VrSC. NL ! 10 2 CO I Eä7W PuTBIS [DOP ;
-3 SCLE 26 SPN ! 18 VPSC 26 V
-TSC MIRM 21 VfSC 29 VTSC MIM ; 4 V1-CL lmW ! COL ! LEN ! HGT ! PAPER serrv ; 5: BARS 4 6 1 20 2 V1CL 2 2 1 20 8 V1CL 5 4 1 28 2 ViCL 5 2 3 1 28 7 V1CL 5 1 16 16 14 VICL ;
-7 ->
-CR # 7
-0 IND 6 NL ! 17 RGW ! 44 SP
-N ! PUTB[S BEGIN 7 1 KB LNIIL
-1 20 MW ! 43 SPN ! 7 COL ! 20 0 W PUTXRS 100 100 BLEEP IDOP
-2 94 SPN ! 17 I2IXs' ! 6 COL ! PU IXRS ;
-3 PTST SPN ! COL 1 ROW ! PVr B!S
-4 BARST 14 23 31 PTST MTRM 1 4 24 31 PTST MIM 6 2E 28 P15T
-5 19 16 32 PTST 19 24 33 PTST
-6 LETR 7 INK 0 PAPER 1 18 AT ." FUEL" 0 26 AT ." VFRT" 1 26 AT
-7 ." VEL" 11 20 AT ." [DRZ VEL ' ->
-3.R# 8
-0 HRSC 32 16 DD 12 1 29 PTSf 17 1 29 PTST IDOP 16 16 1 PI'S'f
-1 MARK 152 159 PIpT 7 0 LEtAW 216 127 PLOT 7 0 [YtAW 128 71 PL OT
-2 0 -7 DRAW ;
-3 PAMEL 0 PAPER NIDUR q'LR
-BARS BARST kII25C IET'Ft KARR ;
-4 MAKE 128 SPN ! 3 FG1' ! 128 LEE ! 0 SROW ! 128 SP2 ! ISPRIT
-E
-5 16 0 ZU 1 10 + DUP SPN ! SP1 ! 1 8 * SCOL ! (,T9BIM 6VA'ITM I5P
-RITE
-6 ILIOP ;
-0 VARIABLE PH
-7 256 VARIABLE SPD 0 VARIABLE
-DOWN 1008 VARIABLE FU
-->
 SCR # 9
-•	S1 1023 AND 8 / 9COL ! 1 L
-EN ! PUTBLS 16 LEE 1
-,
-1 NM Pf! @ S1 ;
-NBL PH @ 128 + S1 ;.
-2 OFEN 0 POPEN 5 INK CLS 0 P
-B ! EX% 128 SPN ! 16 IEN ! 0 COL
-13 3HGT! 21R'7W ! 09WL ! 0
-320W ! RVB!S PWATTS 2 IST ! EXX 4 0 PAPER 1008 FU ! 0 BDRDER ;
-SHB P!! @ DUP 7 AND 0= ; 5 FUEL -1 FU +! ;
-SR SBB IF NBR ENDIF ; 6 SL 318 IF NBI. ENDIF
-;
-SH4 PR @ DOP 3 AND 0= ;
-7	SF SPD +! ;.
-SS SPD @ ; ->
-sca # 10
-•	PDLL FU @ IF 8 1 KB IF SS
--252 > MINUS SF FUEL ENDIF
-1 1 1 KB IF SS 256 < SF FDEI. E
-PAIF ENDIF ;
-2 -P - PH ! DOLL ;
-+P + PH ! FOLL ;
-3 321 SR [d2R1V 1 -P ;
-SLl SL vrtiL1V 1 +p ;
-4 324 324 IF SR WRR4V 4 -P E
-ISE 321 ENDIF [ROP ;
-5 SL4 SH4 IF SL WRL4V 4 +P E
-LSE SLl ENDIF [ROP ;
-6 SO DOWN @ IF FT SF. SS ABS 2
-56 < IF FOLL ENDIF ENDIF ;
-7 328 328 IF NBR NRRBV 8 -P Ff-^+R 324 ENDIF IXZOP ->
-NUR # 11
-•	SL8 SH8 IF NBI. 4d2L8V 8 +P Fr SF 3.4 ENDIF ;
-1 !R SS 200 > IF 328 ELSE 32 4 ENDIF ;
-2:,IRSS7 > IFSRI ELSESO E !CIF ;
-3 RT SS 100 > IF !R ELSE IR ENDIF ;
-4 UL SS -200 < IF SLB ELSE S
-L4 ENDIF ;
-5 LL SS -7 < IF SL1 ELSE N
-ENDIF ;
-6 LF SS -100 < IF UL ELSE LL ENDIF ;
-7 DEC SS 0< IY LF ELSE RT EN
-DIF ->
-WR#12
-0 SET -1 NPX ! 3 LEN ! 6 HGT ! 107 100 00 I SP1 ! I 1+ DUP S
-P2 !
-1 SPN ! ISPRITE NPYM hCRM f0
-OP ;
-2 40 VARIABLE XP 8 VARIABLE VE
-L
-3 PREP 7 WL ! 0 DOWN ! 40 X
-P ! ;
-4 TICK VEL @ 255 > IF rZSE 1 VEL +! ENDIF ;
-9 THRUST W@ IF 7 1 KB IF V
-EL @ -252 > IF -4 VEL +! FUEL 6 ENDIF ENDIF ENDIF ; 7 -->
-S;R# 13
-0 ! MV VEL @ XP @ + DUP 5631 >
-IF IX20P 5631 1 LLWN ! ENDIF DUP
-1XP ! 32/ 8/M7D 5-ROW ! 7 -AND 100 + SPN ! ROW @ 0< IF AD7 M
-2 PWBIS E!SE VEL @ 0< IF 1 SRO
-w ! !mcv @ EL SE IF 4 BGT ! ELSE
-3 5 iG1' ! ENDIF E[SE 0 SROW !
-5 HGT ! ENDIF ROW @ DUP SROW @ + 4 ROW ! PW3S R7w ! ENDIF ; 5
-6
-7 ->
-3R# 14
-0 BaP!G DOWN @ DUP IF 19 ROW ! 43 SPN ! -5 NPX ! 7 HGr ! 3 IE N !
-1 40 10 DD POTXRS I 20 + I W J I BLEEP WOP PU17CR5 17 RCW !
-2 SCRV 19 RCW ! 5 +IDOP SS ABS
-8 < IF 21 RCW ! 45 SPN ! PVIBIS
-3 ENDIF ENDIF XP @ 5631 = IF D OWN @ 0= IF 7 COL ! LND 7 COL !
-4 MV 0 VEL ! ENDIF INT-0FF BEG IN 7 1 KB UTl'IL
-5 ' D6X; II4T-0N ENDIF
-;
-6 OK 0 DDWN ! , 7 ->
+  0 : S1 1023 AND 8 / SCOL ! 1 LEN ! PUTBLS 16 LEN ! ;
+  1 : NBR PH @ S1 ;
+    : NBL PH @ 128 + S1 ;
+  2 : OPEN 0 PAPER 5 INK CLS 0 PH ! EXX 128 SPN ! 16 LEN ! 0 COL !
+  3 3 HGT ! 21 ROW ! 0 SCOL ! 0 SROW ! PWBLS PWATTS 2 HGT ! EXX
+  4 0 PAPER 1008 FU ! 0 BORDER ;
+    : SH8 PH @ DUP 7 AND 0= ;
+  5 : FUEL -1 FU +! ;
+    : SR SH8 IF NBR ENDIF ;
+  6 : SL SH8 IF NBL ENDIF ;
+    : SH4 PH @ DUP 3 AND 0= ;
+  7 : SP SPD +! ;
+    : SS SPD @  ; -->
+
+SCR # 10
+  0 : POLL FU @ IF 8 1 KB IF SS -252 > MINUS SF FUEL ENDIF
+  1 1 1 KB IF SS 256 < SF FUEL ENDIF ENDIF ;
+  2 : -P - PH ! POLL ;
+    : +P + PH ! POLL ;
+  3 : SR1 SR WRR1V 1 -P ;
+    : SL1 SL WRL1V 1 +P ;
+  4 : SR4 SH4 IF SR WRR4V 4 -P ELSE SR1 ENDIF DROP ;
+  5 : SL4 SH4 IF SL WRL4V 4 +P ELSE SL1 ENDIF DROP ;
+  6 : SO DOWN @ IF ELSE SS ABS 256 < IF POLL ENDIF ENDIF ;
+  7 : SR8 SH8 IF NBR WRR8V 8 -P ELSE SR4 ENDIF DROP ; -->
+
+SCR # 11
+  0 : SL8 SH8 IF NBL WRL8V 8 +P ELSE SL4 ENDIF ;
+  1 : UR SS 200 > IF SR8 ELSE SR4 ENDIF ;
+  2 : LR SS 7 > IF SR1 ELSE SO ENDIF ;
+  3 : RT SS 100 > IF UR ELSE LR ENDIF ;
+  4 : UL SS -200 < IF SL8 ELSE SL4 ENDIF ;
+  5 : LL SS -7 < IF SL1 ELSE SO ENDIF ;
+  6 : LF SS -100 < IF UL ELSE LL ENDIF ;
+  7 : DEC SS 0< IF LF ELSE RT ENDIF ;
+
+SCR # 12
+  0 : SET -1 NPX ! 3 LEN ! 6 HGT ! 107 100 DO I SP1 ! I 1+ DUP SP2 !
+  1  SPN ! ISPRITE COPYM WCRM LOOP ;
+  2 40 VARIABLE XP 8 VARIABLE VEL
+  3 : PREP 7 COL ! 0 DOWN ! 40 XP ! ;
+  4 : TICK VEL @ 255 > IF ELSE 1 VEL +! ENDIF ;
+  5 : THRUST FU @ IF 7 1 KB IF VEL @ -252 > IF -4 VEL +! FUEL
+  6 ENDIF ENDIF ENDIF ;
+  7 -->
+
+SCR # 13
+  0 : MV VEL @ XP @ + DUP 5631 > IF DROP 5631 1 DOWN ! ENDIF DUP
+  1 XP ! 32 / 8 /MOD 5 - ROW ! 7 AND 100 + SPN ! ROW @ 0< IF ADJM
+  2 PWBLS ELSE VEL @ 0< IF 1 SROW ! ROW @ 15 > IF 4 HGT ! ELSE
+  3 5 HGT ! ENDIF ELSE 0 SROW ! 5 HGT ! ENDIF ROW @ DUP SROW @ +
+  4 ROW ! PWBLS ROW ! ENDIF ;
+  5
+  6
+  7 -->
+
+SCR # 14
+  0 : BANG DOWN @ DUP IF 19 ROW ! 43 SPN ! -5 NPX ! 7 HGT ! 3 LEN !
+  1 40 10 DO PUTXRS I 20 + I DO J I BLEEP LOOP PUTXRS 17 ROW !
+  2 SCRV 19 ROW ! 5 +LOOP SS ABS 8 < IF 21 ROW ! 45 SPN ! PUTBLS
+  3 ENDIF ENDIF XP @ 5631 = IF DOWN @ 0= IF 7 COL ! LND 7 COL !
+  4 MV 0 VEL ! ENDIF INT-OFF BEGIN 7 1 KB UNTIL
+  5  ' DEC INT-ON ENDIF ;
+  6 : OK 0 DOWN ! ;
+  7 -->
+
 SCR # 15
-0 LAND SS ABS 8 < IF VEL @ 3 2 < IF PH @ 1023 AND 8 / CASE 12 OF
+  0 : LAND SS ABS 8 < IF VEL @ 32 < IF PH @ 1023 AND 8 / CASE 12 OF

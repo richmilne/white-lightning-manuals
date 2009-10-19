@@ -1,54 +1,43 @@
 # TODO: Remove this comment once this file has been proofread
 
 THRUST
-
-If the lander still has fuel and hasn't reached terminal upward wlocity then increase upxard uelocity.
+If the lander still has fuel and hasn't reached terminal velocity then increase upward velocity.
 
 MV
+A fairly complicated word which moves the lander vertically. The velocity is added to the position (physicists note that unit time has elapsed, etc). If the lander goes under the base its position is put equal to the base and DOWN is SET to 1. The row and orientation are then calculated.
 
-A fairly -plicated v.ord wüich moves the lander vertically. The uelocity is added to the position (physicists rote that mit time has elapsed etc). If the lander goes under the t- its position is put equal to the base and Dd+7N is SET to 1. The rw and orientation are then calculated.
-
-BANG.
-
-Amther fairly involved wrd deich executes a¢ash if D0+7N=1. It checks to see if a safe landing was rtade and if not decides what sort of crash is required.
+BANG
+Another fairly involved word which executes a crash if DOWN=1. It checks to see if a safe landing was made and if not decides what sort of crash is required.
 
 OK
-A short xord deich sets DOWN to 0, indicating a safe landing. LAND
+A short word which sets DOWN to 0, indicating a safe landing.
 
-If the lander hat zero sideways uelocity then uertical uelacity and horizontal position are checked for a safe landirg or a crash. DOwN is set acmrdingly.
+LAND
+If the lander has zero sideways velocity then vertical velocity and horizontal position are checked for a safe landing or a crash. DOWN is set accordingly.
+
 XG
-
 Updates X-VEL PHASE and sets window for scroll.
-RSEfl
-Sets COL and IEN back after XG.
-XVII.
 
-Cmtrolling routine for xVEL gauge.
+RSET1
+Sets back COL and LEN after XG.
+
+XVEL
+Controlling routine for XVEL gauge.
+
 YG
-Used to adjust Y-VEfL gau3e.
-WIR
-Mwe up Y-VIIL qauge. WOOY7N
-Move down Y-VEL gauge. YVEL
+Used to adjust Y-VEL gauge.
 
-wntrolling routine for Y-VEL gauge.
+WUP
+Move up Y-VEL gauge.
+
+WDOWN
+Move down Y-VEL gauge.
+
+YVEL
+Controlling routine for Y-VEL gauge.
+
 FVEL
-Controlling routine for Fuel gauge.
-NMG
-Used to set up window for snall screen movmient.
-MLEFC
-Move pointer left m s-ll screen. hII2IGHT
-Move pointer right on snall screen. MJN
-Cmtrol routine for scroll screen. OFF
-Main program loop. TST
-Final executions xord. Initialises parameters and then executes min program loop.
-THE G4ME PfSELF CREATION OF SPRITES
-Load ip the sprite developrent package and crPate all the sprites listed in table 1.
-Once the sprite developmnt package has loaded execute a mld start 6y pressing the C key and hit Y for yes and then N for the chalge buffer size pranpt.
-Set the attribute avitch to 1 Iry pressing the A key and then 1.
-With reference to table 1 set the sprite numb?r to the required value by pressing the S key and then inputirg the required value. Input the dimensions, (Height and Length) of the sprite by pressing the H or C keys and then inputing the appropriate values. Set the respective ink, paper, flash and bright values using the X, C, V and B keys.
-Position the sprite screen X and Y pos cursors to their settings using the symhol shift 5,6,7 or 8 keys.
-Using the direct data input function, key D, input the 8 bytes of data. Move the X and Y pos cursors to the next position and input the data until the sprite is c.rnplete m the screen. Set both the X and Y position cursors to 1 and then CLT the sprite into mrory by pressing the G key. Clear the sprite screen by pressing symbol shift Q and then create the ~t sprite.
-CRFATION OF 1HE 64x3 CHARICIER LANDSCAPE SPRITE
-This sprite will he nade up of 8 8x3 character sprites, whic.vill be joined together into one large sprite in the White Lightning proaram izself.
-Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1 clear the
-cMR$ square by pressing the Q key. Using the sprites 4,5,6,7,8,9 and the CHRS scnuare (referred to as 0) Wild up sprites 10 to 25 as layed out in diagram 1.	•
+Controlling routine for fuel gauge.
+
+MXG
+Used to set up window for small screen movement.

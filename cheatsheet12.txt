@@ -1,77 +1,61 @@
 # TODO: Remove this comment once this file has been proofread
 
-1 OK ENDOF 13 OF OK ENDOF 30 0 F OK FNOOF31 OF OK ENDOF 58 OF
-OK
-2 ENDOF 59 OF IX( FNDDF 91 OF 0
-A ENDOF 92 OF OK ENDOF ENDASE 3 ENDIF FNDIF BANG ;
-4 128 VARIABLE SK 32 VARIABLE
-SY 63 VARIABLE SFU
-5 : XGSX+! 16NL! 13fi0W! 1FGT! 16 LEN ! 6: RSET1 7 COL ! 3 LEN
-!
-: WLEFf -1 XG MRR1V RSEfl ; 7: VdtI(ilT 1 XG FE2L1V RSETl ;
-`.SA#16
-0: XVEL SPD @ 256 + 4/ SX @ - IX7P 0< IF Id.ENT DROp ELSE 0> IF
-1 cdiIGHT ENDIF FNDIF ;
-2 : YG DUP MINUS NPX ! SY +! 2
-7ODL ! 2 FG7W ! 8 HGT ! 1 LEN ! 3 VZRV RSEPl ; 4 : W!P -1 YG ;
-: WDOWN 1 YG ;
-5: YVEL VEL @ 256 + 8/ SY @
-- DUP 0< IF WUP DRbP ELSE 0 > IF 6 WDDWN ENDIF YNDIF ; 7 ->
-WORD DESLRIPTIONS
-ODUJUR
-Sets the attributes in the right hand half of the screpn. VfSC
-Produces a rcw of sprites with the wrrent sprite number at the ml;am rn the stack. Uss3 to build up the gauges.
+  1 OK ENDOF 13 OF OK ENDOF 30 OF OK ENDOF 31 OF OK ENDOF 58 OF OK
+  2 ENDOF 59 OF OK ENDOF 91 OF OK ENDOF 92 OF OK ENDOF ENDCASE
+  3 ENDIF ENDIF BANG ;
+  4 128 VARIABLE SX 32 VARIABLE SY 63 VARIABEL SFU
+  5 : XG SX +! 16 COL ! 13 ROW ! 1 HGT ! 16 LEN ! ;
+  6 : RSET1 7 COL ! 3 LEN ! ;
+    : WLEFT -1 XG WRR1V RSET1 ;
+  7 : WRIGHT 1 XG WRL1V RSET1 ; -->
 
-SZLE
-Ums ViSC to build up the gauges.
-VICL
-Sets tp a specified windcw with specified attsibutPS.
-BARS
-Ums VICL to set the attributes for the gauges.
-LND
-This word controls the landing seqvence. The landed sprite is placed on the pad and sits until FNfF.R is pressed. The explosion is then produced beneath the lander to simulate take off and the landed lander is then exclusively OR'ed off of the pad.
+SCR # 16
+  0 : XVEL SPD @ 256 + 4 / SX @ - DUP 0< IF WLEFT DROP ELSE 0 > IF
+  1 WRIGHT ENDIF ENDIF ;
+  2 : YG DUP MINUS NPX ! SY +! 27 COL ! 2 ROW ! 8 HGT ! 1 LEN !
+  3 WCRV RSET1 ;
+  4 : WUP -1 YG ;
+    : WDOWN 1 YG ;
+  5 : YVEL VEL @ 256 + 8 / SY @ - DUP 0< IF WUP DROP ELSE 0 > IF
+  6 WDOWN ENDIF ENDIF ;
+  7 -->
 
-P75T
-General purpose c.ord which sets !mtV, CDL and SPN fran the stack and then perfonns a PUTBiS.
-BARST
-Adds the finishing touches to the gauges by putting sprites 28,31,32 and 33 in the appropriate positions. Ums P'iST.
-LETR
-Places the gauge titles ahwe the gauges. HRSC
-Puls he horizontal scale on the screen. MARK
+SCR # 17
+  0 : FVEL FU @ 16 / SFU @ - 0< IF 19 COL ! 2 ROW ! 8 HGT ! 1 LEN !
+  1 -1 NPX ! -1 SFU   +! WCRV RSET1 ENDIF ;
+  2 0  VARIABLE LX
+  3 : MXG 18 ROW ! 16 COL ! 16 LEN ! 1 HGT ! ;
+  4 : MLEFT MXG WRL1V -1 LX +! ;
+    : MRIGHT MXG WRR1V 1 LX +! ;
+  5 : MON PH @ 8 / LX @ - DUP 0 > IF DROP MRIGHT ELSE
+  6 0< IF MLEFT ENDIF ENDIF RSET1 ;
+  7 -->
 
-Draws the indicators used in the gauges. PANEL
-Execution wrd to set up the wfiole right hand side of the screen ie. all previous wrds.
-RTKE
-See 'Creating Large Sprites'. S1
-Used to wlculate the rext colvmi in the large landswpe sprite, to be put to the screen. LEN is set back to 16 for the next operation.
-NH2
-Gets the appropriate culumn (wlculated by 51) when the landscape is moving right.
-NBL
-Gets the appropriate col~ wfien the landscape is mwing left. OPEN
-Builds up the initial picture for the left of the screen. Notice the use of EXX to set up background variables for execution under interrupt.
-SN8
-
-PH describes the phase of the landscape with pixel resolution. SH8 checks to See
-if this Aase s a multiple of 8 and if so sets a flag to indicate that a fresh colunm should be G7f fran the landscape sprite. P!H is also left on the stack.
-SR# 17
-0 : EVE!. FU @ 16 / SFU @- 0<
-IF 19 OJL ! 2 PqW ! 8 t3GT ! 1 IE
-N !
-1-1 NPX !-1 SFU +! MX;EV RSE
-T1 ENDIF ;
-2 0 VARIABLE LX
-3: httG 18 FK7W ! 16 CUL ! 16 L
-EN ! 1 33T r,
-4: WIESO fN(G vRL1V -1 IX +! ;
-: MiIGHT WG WRE1V 1 IX +! ; 5: PDNPH@8/LX@-DUPO
-> IF DROP n4tIGHT ELSE
-6 0< IF FII.EFf ENDIF ENDIF RSEf
-1 ;
-7 ->
 SCR # 18
-0: OFF PANEL PREP 'MC INT-0
-N EBGIN TICK 1}IRUST MV MDN XVEL 1 YVEL FVEL MIN LAND MON =L INf-0FF ;
-2: TST 256 SPD ! 0 PH ! 1008
-FU ! 40 XP ! 8 VII. ! 128 5X !
-3 32 SY ! 63 SFU ! 0 IX ! OPER OFF ;
-4 5 6 7
+  0 : OFF PANEL PREP ' DEC INT-ON BEGIN TICK THRUST MV MON XVEL
+  1 YVEL FVEL MON LAND MON UNTIL INT-OFF ;
+  2 : TST 256 SPD ! 0 PH ! 1008 FU ! 40 XP ! 8 VEL ! 128 SX !
+  3 32 SY ! 63 SFU ! 0 LX ! OPEN OFF ;
+  4
+  5
+  6
+  7
+
+
+WORD DESCRIPTIONS
+
+COLOUR
+Sets the attributes in the right-hand half of the screen.
+
+VTSC
+Produces a row of sprites with the current sprite number at the column on
+the stack. Used to build up the gauges.
+
+SCLE
+Uses VTSC to build up the gauges.
+
+VTCL
+Sets up a specified window with specified attributes.
+
+BARS
+Uses VTCL to set the attributes for the gauges.
