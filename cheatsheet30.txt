@@ -1,0 +1,52 @@
+Before a cartridge can be used to stor sprites, it has to be specially
+formatted. This is done using the Sprite Generator Program by typing
+SYMBOL SHIFT F (TO). This will format the cartridge and set up five dummy
+files, numbered 1 to 5. From now on, whenever you save a file of sprites,
+the old file of that number will be erased to conserve cartridge storage
+space.
+
+For example, if you wished to save a file of sprites currently in memory,
+to file 1, use:
+
+1. Type SYMBOL SHIFT S (save sprites).
+2. Type N              (we don't want tape).
+3. Type Y              (save to drive).
+4. Insert the formatted cartridge.
+5. Press any key.
+6. Type 1              (save to file 1).
+
+To load sprites just press SYMBOL SHIFT J and then follow the same
+sequence as that used to save.
+
+
+AVAILABLE MEMORY
+
+You have 13595 bytes available for sprites. Please note that the bottom
+2816 bytes, locations 51685 to 54501 are used to store the arcade
+character library accesses by the 'Z' key. If, by creating lots of
+sprites, you overwrite this area of memory, you should nor try to access
+any of these characters.
+
+
+CREATION OF LARGE SPRITES
+
+The microdrive version of the Sprite Development Package allowd the
+creation of large sprites (larger than the 15x15 screen) in memory. These
+sprites can be said to be empty when created and have to be filled by
+placing smaller sprites into them using the 'place sprite into sprite
+window' function (BREAK SPACE key).
+
+To create a large sprite hit CAPS SHIFT C and enter the dimensions as
+instructed.
+
+
+MERGING SPRITES FROM MICRODRIVE
+
+The actual microdrive file that contains the sprite data has the capital
+letter B after it (CHR$ 66) such that, for example, the sprite data for
+sprite file '5' is file '5B'.
+
+So with reference to line 5 on page 81 of the White Lightning manual; to
+merge from microdrive the sprites of sprite file 5 in White Lightning,
+exit to BASIC and then type:
+	LOAD *"M";1;"5B" CODE

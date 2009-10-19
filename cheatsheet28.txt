@@ -1,0 +1,47 @@
+4. Finally, type NEW <CR> to restore the editing buffers to their
+   microdrive addresses.
+
+
+BAD SECTORS
+
+Regrettably, at the time of writing, whilst the microdrive cartridge costs
+about twice as much as a standard 5 1/4 inch floppy, the number of bad
+sectors is still extremely high. Forth screens map directly to microdrive
+sectors, so screen 25 uses sector 25 and so on. So as we shall see, some
+screens may be unusable.
+
+A bad sector will be identified by White Lightning the first time a read
+or write operation is carried out, and error 8 is generated. Note that
+executing CLEAR will mean that you can find bad sectors before editing
+into them. If you do find a bad sector, keep a note of it and don't use
+that screen. There is a simple way around this problem as we shall see in
+the following example. Assume we want to edit into screens 25 to 28 and
+that we did the following:
+
+1. Type 25 CLEAR 0 EDIT .
+2. Key in text for lines 0 to 6.
+3. Type 7 EDIT then key in --> to indicate continue with next screen when
+   LOADing.
+4. Type 26 CLEAR 0 EDIT .
+5. Key in text for lines 0 to 6.
+6. Type 7 EDIT and key in --> .
+
+Now suppose when we typed in 27 CLEAR that we got error 8, indicating
+drive error. This would mean that sector 27 was a bad sector and therefore
+that screen 27 was unusable.
+
+Remember that in screen 26 the last line was:
+	-->
+which tells Forth to continue LOADing on the next screen. The next screen
+is screen 27 which is unusable, so we have to change the last line of
+screen 26 to become:
+	7 28 LOAD
+which tells Forth to continue LOADing at screen 28. This will then skip
+over the bad sector.
+
+
+ADDITIONAL ERROR MESSAGES
+
+# 3 - incorrect addressing mode
+# 7 - stack overflow
+# 8 - microdrive read/write error (bad sector)
