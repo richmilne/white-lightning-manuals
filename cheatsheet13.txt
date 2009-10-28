@@ -1,40 +1,62 @@
-# TODO: Remove this comment once this file has been proofread
-
 LAND
-This word controls the landing sequence. The landed sprite is placed on the pad and sits until ENTER is pressed. The explosion is then produced beneath the lander to simulate take-off and the landed lander is then exclusively OR'ed from the pad.
+
+This word controls the landing sequence.  The landed sprite is placed on the pad 
+and sits until ENTER is pressed.  The explosion is then produced beneath the 
+lander to simulate take off and the landed lander is then exclusively OR'ed off of 
+the pad.
 
 PTST
-General purpose word which sets ROW, COL and SPN from the stack and then performs a PUTBLS.
+
+General purpose word which sets ROW, COL and SPN from the stack and then performs 
+a PUTBLS.
 
 BARST
-Adds the finishing touches to the gauges by putting sprites 28, 31, 32 and 33 in the appopriate positions. Uses PTST.
+
+Adds the finishing touches to the gauges by putting sprites 28,31,32 and 33 in the 
+appropriate positions.  Uses PTST.
 
 LETR
+
 Places the gauge titles above the gauges.
 
 HRSC
+
 Puts the horizontal scale on the screen.
 
 MARK
+
 Draws the indicators used in the gauges.
 
 PANEL
-Execution word to set up the whole right-hand side of the screen; ie. all previous words.
+
+Execution word to set up the whole right hand side of the screen ie. all previous 
+words.
 
 MAKE
+
 See 'Creating Large Sprites'.
 
 S1
-Used to calculate the next column in the large landscape sprite, to be put to the screen. LEN is set back to 16 for the next operation.
+
+Used to calculate the next column in the large landscape sprite, to be put to the 
+screen.  LEN is set back to 16 for the next operation.
 
 NBR
-Gets the appropriate column (calculated by S1) when the landscape is moving right.
+
+Gets the appropriate column (calculated by S1) when the landscape is moving 
+right.
 
 NBL
+
 Gets the appropriate column when the landscape is moving left.
 
 OPEN
-Builds up the initial picture for the left of the screen. Notice the use of EXX to set up background variables for execution under interrupt.
+
+Builds up the initial picture for the left of the screen.  Notice the use of EXX 
+to set up background variables for execution under interrupt.
 
 SH8
-PH describes the phase of the landscape with pixel resolution. SH8 checks to see if this phase is a multiple of 8, and if so sets a flag to indicate that a fresh column should be GOT from the landscape sprite. PH is also left on the stack.
+
+PH describes the phase of the landscape with pixel resolution.  SH8 checks to see 
+if this phase is a multiple of 8 and if so sets a flag to indicate that a fresh 
+column should be GOT from the landscape sprite.  PH is also left on the stack.
