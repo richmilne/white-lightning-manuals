@@ -1,49 +1,83 @@
 # TODO: Remove this comment once this file has been proofread
 
-Sprites 1 to 100 are produced using the sprite generator program. Sprites 101 to 107 are created in the main program using the word SET. Sprite 128 is constructed from sprites 10 to 25 in the main program using the word MAKE.
+Sprites 1 to 100 are produced using the sprite generator program.  Sprites 101 to 
+107 are created in the main program using the word SET.  Sprite 128 is constructed 
+from sprites 10 to 25 in the main program using the word MAKE.
 
 
 The Lunar Lander
 
-This listing is provided as an example of White Lightning programming. In order to run the game you will need to enter the sprites as described in the next section. This is a fairly laborious task so we can offer the fainthearted the sprites and demo on tape for one pount seventy five pence. We recommend, however, that you take the time to build up the sprites yourself as an exercise in self-discipline if nothing else!
+This listing is provided as an example of White Lightning programming.  In order 
+to run the game you will need to enter the sprites as described in the next 
+section.  This is a fairly laborious task so we can offer the fainthearted, 
+sprites and demo on tape for one pound seventy five pence.  We recommend, however, 
+that you take the time to build up the sprites yourself as an excercise in self 
+discipline if nothing else!
 
-The program executes one word in foreground and one word in background. The program can be roughly sub-divided the following way:
+The program executes one word in foreground and one word in background.  The 
+program can be roughly sub-divided the following way:
 
 Screens 6,7,8
-These set up the screen display, dials, etc.
+
+These set up the screen display, dials etc.
 
 Screens 9,10,11
-These three screens form the routine which scrolls the landscape at one of three speeds. This routine is executed in background to give smoother movement.
 
-Screens 11,12,13,14,15,16,17 These control the flight of the lander, manipulate the dials, execute the crashes and so on.
+These three screens form the routine which scrolls the landscape at one of three 
+speeds.  This routine is executed in background to give smoother movement.
+
+Screens 11,12,13,14,15,16,17
+
+These control the flight of the lander, manipulate the dials, execute the crashes 
+and so on.
 
 Screen 18
-This executes all the previous definitions in the right order to produce the final game.
 
+This executes all the previous definitions in the right order to produce the final 
+game.
 
 Let's now look at the program in more detail.
 
 
 SCR # 6
-  0 : COLOUR 0 ROW ! 16 COL ! 16 LEN ! 23 HGT ! 7 INK 1 BRIGHT
+  0 : COLOUR 0 ROW ! 16 COL ! 16
+ LEN ! 23 HGT ! 7 INK 1 BRIGHT
   1 SETAV ATTON ;
-  2 : VTSC COL ! 10 2 DO I ROW ! PUTBLS LOOP ;
-  3 : SCLE 26 SPN ! 18 VTSC 26 VTSC MIRM 21 VTSC 29 VTSC MIRM ;
-  4 : VTCL ROW ! COL ! LEN ! HGT ! PAPER SETAV ;
-  5 : BARS 4 6 1 20 2 VTCL 2 2 1 20 8 VTCL 5 4 1 28 2 VTCL
-  6 2 3 1 28 7 VTCL 5 1 16 16 14 VTCL ;
+  2 : VTSC COL ! 10 2 DO I ROW !
+ PUTBLS LOOP ;
+  3 : SCLE 26 SPN ! 18 VTSC 26 V
+TSC MIRM 21 VTSC 29 VTSC MIRM ;
+  4 : VTCL ROW ! COL ! LEN ! HGT
+ ! PAPER SETAV ;
+  5 : BARS 4 6 1 20 2 VTCL 2 2 1
+ 20 8 VTCL 5 4  1 28 2 VTCL
+  6 2 3 1 28 7 VTCL 5 1 16 16 14
+ VTCL ;
   7 -->
 
 SCR # 7
-  0 : LND 6 COL ! 17 ROW ! 44 SPN ! PUTBLS BEGIN 7 1 KB UNTIL
-  1 20 ROW ! 43 SPN ! 7 COL ! 20 0 DO PUTXRS 100 100 BLEEP LOOP
-  2 44 SPN ! 17 ROW ! 6 COL ! PUTXRS ;
-  3 : PTST SPN ! COL ! ROW ! PUT BLS ;
-  4 : BARST 14 23 31 PTST MIRM 14 24 31 PTST MIRM 6 28 28 PTST
-  5 19 16 32 PTST 19 24 33 PTST ;
-  6 : LETR 7 INK 0 PAPER 1 18 AT ." FUEL" 0 26 AT ." VERT" 1 26 AT
-  7 ." VEL" 11 20 AT ." HORZ VEL" ; -->
+  0 : LND 6 COL ! 17 ROW ! 44 SP
+N ! PUTBLS BEGIN 7 1 KB UNTIL
+  1 20 ROW ! 43 SPN ! 7 COL ! 20
+ 0 DO PUTXRS 100 100 BLEEP LOOP
+  2 44 SPN ! 17 ROW ! 6 COL ! PU
+TXRS ;
+  3 : PTST SPN ! COL ! ROW ! PUT 
+BLS ;
+  4 : BARST 14 23 31 PTST MIRM 1
+4 24 31 PTST MIRM 6 28 28 PTST
+  5 19 16 32 PTST 19 24 33 PTST 
+;
+  6 : LETR 7 INK 0 PAPER 1 18 AT
+ ." FUEL" 0 26 AT ." VERT" 1 26
+AT
+  7 ." VEL" 11 20 AT ." HORZ VEL
+" ; -->
 
 SCR # 8
-  0 : HRSC 32 16 DO 12 I 29 PTST 17 I 29 PTST LOOP 16 16 1 PTST ;
-  1 : MARK 152 159 PLOT 7 0 DRAW 216 127 PLOT 7 0 DRAW 128 71 PLOT
+  0 : HRSC 32 16 DO 12 I 29 PTST
+ 17 I 29 PTST LOOP 16 16 1 PTST 
+;
+  1 : MARK 152 159 PLOT 7 0 DRAW
+ 216 127 PLOT 7 0 DRAW 128 71 PL
+OT
