@@ -1,61 +1,89 @@
 # TODO: Remove this comment once this file has been proofread
 
-  1 OK ENDOF 13 OF OK ENDOF 30 OF OK ENDOF 31 OF OK ENDOF 58 OF OK
-  2 ENDOF 59 OF OK ENDOF 91 OF OK ENDOF 92 OF OK ENDOF ENDCASE
+  1 OK ENDOF 13 OF OK ENDOF 30 O
+F OK ENDOF 31 OF OK ENDOF 58 OF 
+OK
+  2 ENDOF 59 OF OK ENDOF 91 OF O
+K ENDOF 92 OF OK ENDOF ENDCASE
   3 ENDIF ENDIF BANG ;
-  4 128 VARIABLE SX 32 VARIABLE SY 63 VARIABEL SFU
-  5 : XG SX +! 16 COL ! 13 ROW ! 1 HGT ! 16 LEN ! ;
+  4 128 VARIABLE SX 32 VARIABLE 
+SY 63 VARIABEL SFU
+  5 : XG SX +! 16 COL ! 13 ROW !
+ 1 HGT ! 16 LEN ! ;
   6 : RSET1 7 COL ! 3 LEN ! ;
     : WLEFT -1 XG WRR1V RSET1 ;
-  7 : WRIGHT 1 XG WRL1V RSET1 ; -->
+  7 : WRIGHT 1 XG WRL1V RSET1 ;
+     -->
 
 SCR # 16
-  0 : XVEL SPD @ 256 + 4 / SX @ - DUP 0< IF WLEFT DROP ELSE 0 > IF
+  0 : XVEL SPD @ 256 + 4 / SX @
+ - DUP 0< IF WLEFT DROP ELSE 0 > 
+IF
   1 WRIGHT ENDIF ENDIF ;
-  2 : YG DUP MINUS NPX ! SY +! 27 COL ! 2 ROW ! 8 HGT ! 1 LEN !
+  2 : YG DUP MINUS NPX ! SY +! 2
+7 COL ! 2 ROW ! 8 HGT ! 1 LEN !
   3 WCRV RSET1 ;
   4 : WUP -1 YG ;
     : WDOWN 1 YG ;
-  5 : YVEL VEL @ 256 + 8 / SY @ - DUP 0< IF WUP DROP ELSE 0 > IF
+  5 : YVEL VEL @ 256 + 8 / SY @ 
+- DUP 0< IF WUP DROP ELSE 0 > IF
   6 WDOWN ENDIF ENDIF ;
   7 -->
 
 SCR # 17
-  0 : FVEL FU @ 16 / SFU @ - 0< IF 19 COL ! 2 ROW ! 8 HGT ! 1 LEN !
-  1 -1 NPX ! -1 SFU   +! WCRV RSET1 ENDIF ;
+  0 : FVEL FU @ 16 / SFU @ - 0< 
+IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE
+N !
+  1 -1 NPX ! -1 SFU   +! WCRV RSE
+T1 ENDIF ;
   2 0  VARIABLE LX
-  3 : MXG 18 ROW ! 16 COL ! 16 LEN ! 1 HGT ! ;
+  3 : MXG 18 ROW ! 16 COL ! 16 L
+EN ! 1 HGT ! ;
   4 : MLEFT MXG WRL1V -1 LX +! ;
     : MRIGHT MXG WRR1V 1 LX +! ;
-  5 : MON PH @ 8 / LX @ - DUP 0 > IF DROP MRIGHT ELSE
-  6 0< IF MLEFT ENDIF ENDIF RSET1 ;
+  5 : MON PH @ 8 / LX @ - DUP 0 
+> IF DROP MRIGHT ELSE
+  6 0< IF MLEFT ENDIF ENDIF RSET
+1 ;
   7 -->
 
 SCR # 18
-  0 : OFF PANEL PREP ' DEC INT-ON BEGIN TICK THRUST MV MON XVEL
-  1 YVEL FVEL MON LAND MON UNTIL INT-OFF ;
-  2 : TST 256 SPD ! 0 PH ! 1008 FU ! 40 XP ! 8 VEL ! 128 SX !
-  3 32 SY ! 63 SFU ! 0 LX ! OPEN OFF ;
+  0 : OFF PANEL PREP ' DEC INT-O
+N BEGIN TICK THRUST MV MON XVEL
+  1 YVEL FVEL MON LAND MON UNTIL
+ INT-OFF ;
+  2 : TST 256 SPD ! 0 PH ! 1008
+FU ! 40 XP ! 8 VEL ! 128 SX !
+  3 32 SY ! 63 SFU ! 0 LX ! OPEN
+ OFF ;
   4
   5
   6
   7
 
 
-WORD DESCRIPTIONS
+
+
+                                 WORD DESCRIPTIONS
+
 
 COLOUR
-Sets the attributes in the right-hand half of the screen.
+
+Sets the attributes in the right hand half of the screen.
 
 VTSC
-Produces a row of sprites with the current sprite number at the column on
-the stack. Used to build up the gauges.
+
+Produces a row of sprites with the current sprite number at the column on the 
+stack.  Used to build up the gauges.
 
 SCLE
+
 Uses VTSC to build up the gauges.
 
 VTCL
+
 Sets up a specified window with specified attributes.
 
 BARS
+
 Uses VTCL to set the attributes for the gauges.
