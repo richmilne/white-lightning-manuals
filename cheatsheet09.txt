@@ -1,21 +1,20 @@
-# TODO: Remove this comment once this file has been proofread
-
 SCR #13                                   1 : STEP2 1 SCOL ! 1 SROW ! 11
-0 : TESTG KREAD IF MOVE ENDIF         7 SP2 ! SP1 ! GWXRM ;
+  0 : TESTG KREAD IF MOVE ENDIF         7 SP2 ! SP1 ! GWXRM ;
 ;                                         2 : STEP3 116 SP2 ! TSPN SP1
-1 : TESTH 10 XC ! 10 YC ! EXX         ! COPYM ;
+  1 : TESTH 10 XC ! 10 YC ! EXX         ! COPYM ;
 PLACE EXX ' TESTG INT-ON BEGIN 6          3 : STEP4 COL @ - SCOL ! ROW @
-1                                       - SROW ! 117 SP2 ! 116
-2 KB UNTIL INT-OFF ;                    4 SP1 ! PWNDM 116 SPN ! SCANM
-3                                     FLAG +! ;
-4                                       5 : STEP5 SP1 ! GWXRM 117 SPN
-5                                     ! PUTBLS PSET COL ! ROW ! SPN !
-6                                       6 FLAG @ IF 100 100 BLEEP 0 FL
-7                                     AG ! ENDIF ;
-7 : MOVE YC @ XC @ PCAL PSET S
+ 1                                       - SROW ! 117 SP2 ! 116
+  2 KB UNTIL INT-OFF ;                    4 SP1 ! PWNDM 116 SPN ! SCANM
+  3                                     FLAG +! ;
+  4                                       5 : STEP5 SP1 ! GWXRM 117 SPN
+  5                                     ! PUTBLS PSET COL ! ROW ! SPN !
+  6                                       6 FLAG @ IF 100 100 BLEEP 0 FL
+  7                                     AG ! ENDIF ;
+                                          7 : MOVE YC @ XC @ PCAL PSET S
 SCR # 14                                TEPl STEP2 STEP3 STEP4 STEP5 ;
 0 : STEP1 -1 COL +! -1 ROW +!
 SPN @ 117 SPN ! GETBLS ;
+
 
 
 NOTE
@@ -25,6 +24,7 @@ loading source code from tape or the source code will over-run the sprites.
 
 
 LUNAR LANDER
+
 
 Variables
 
@@ -44,18 +44,18 @@ Sprites
 
 NUMBERS        HEIGHT         LENGTH         DESCRIPTION
 
-1              1              2           POINTER
-3              1              5           LANDING PAD
-4-9             1              1           BLOCKS FOR LANDSCAPE SPRITES
-10-25            3              8           LANDSCAPE SECTIONS
+   1              1              2           POINTER
+   3              1              5           LANDING PAD
+  4-9             1              1           BLOCKS FOR LANDSCAPE SPRITES
+ 10-25            3              8           LANDSCAPE SECTIONS
 26,28,29,31       1              1           PANEL SPRITES
-32,33            1              8           MINI LANDSCAPE
-43              3              3           EXPLOSION
-44              4              5           LANDED LUNAR LANDER
-65              3              3           CRASHED LUNAR LANDER
-100              6              3           LUNAR LANDER
+ 32,33            1              8           MINI LANDSCAPE
+  43              3              3           EXPLOSION
+  44              4              5           LANDED LUNAR LANDER
+  65              3              3           CRASHED LUNAR LANDER
+ 100              6              3           LUNAR LANDER
 
 101-107           6              3           LUNAR LANDER ORIENTATIONS
-(CONSTRUCTED)
-128              3            128           COMPLETE LANDSCAPE
-(CONSTRUCTED)
+                                             (CONSTRUCTED)
+ 128              3            128           COMPLETE LANDSCAPE
+                                             (CONSTRUCTED)
