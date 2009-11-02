@@ -1,37 +1,57 @@
-# TODO: Remove this comment once this file has been proofread
-
 SR8
-Moves landscape 8 pixels (1 character) right and adjusts pointers, provided a full character boundary has been reached. If no, a further 4 pixel scroll is executed.
+
+Moves landscapes 8 pixels (1 character) right and adjusts pointers provided a full 
+character boundary has been reached.  If not a further 4 pixel scroll is 
+executed.
 
 SL8
+
 As SR8 when movement is to the left.
 
 UR
-If speed is greater than 200, try and scroll by 8 pixels right; if not, try and scroll by 4 pixels right.
+
+If speed is greater than 200, try and scroll right 8 pixels right, f not, try and 
+scroll by 4 pixels right.
 
 LR
-If speed is greater than 7, then scroll 1 pixel right, else no scroll.
+
+If speed is greater than 7 then scroll 1 pixel right else no scroll.
 
 RT
-If speed is greater than 100 then do a UR, if not do a LR.
+
+If speed is greater than 100 then do a UR if not do an LR.
 
 UL
+
 As UR when speed is negative.
 
 LL
+
 As LR when speed is negative.
 
 LF
-As RT when speed is negative.
+
+As RF when speed is negative.
 
 DEC
-The execution word which does all the scrolling logic. The words UR to LF are effectively the nodes of a tree which produce one of 7 possible scrolls from -8 pixels to +8 pixels. A detailed understanding of the workings is not necessary as long as you can adapt the routine to serve your needs.
+
+The execution word which does all the scrolling logic.  The words UR to LF are 
+effectively the nodes of a tree which produce one of 7 possible scrolls from -8 
+pixels to +8 pixels.  A detailed understanding of the workings are not necessary 
+as long as you can adapt the routine to serve your needs.
 
 SET
-Creates 7 new orientations of the lander from the original in sprite 100, making 8 in all, each lander being 1 pixel shifted vertically from the one before. This enables single pixel resolution in the lander movement.
+
+Creates 7 new orientations of the lander from the original in sprite 100, making 8 
+in all, each lander being 1 pixel shifted vertically from the one before.  This 
+enables single pixel resolution in the lander movement.
 
 PREP
+
 Used to set up initial values.
 
 TICK
-Increments vertical velocity (acts like gravity) unless terminal velocity has been reached. If you want to make the game more difficult change 1 VEL +! to 2 VEL +! and thus double the planet's gravity.
+
+Increments vertical velocity (acts like gravity) unless terminal velocity has been 
+reached.  If you want to make the game more difficult change 1 VEL +! to 2 VEL +! 
+and thus double the planets gravity.

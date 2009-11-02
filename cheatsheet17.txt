@@ -1,40 +1,58 @@
-# TODO: Remove this comment once this file has been proofread
-
 MLEFT
+
 Move pointer left on small screen.
 
 MRIGHT
+
 Move pointer right on small screen.
 
 MON
+
 Control routine for scroll screen.
 
 OFF
+
 Main program loop.
 
 TST
-Final execution word. Initialises paramters and then executes main program loop.
+
+Final execution word.  Initialises paramters and then executes main program 
+loop.
 
 
 THE GAME ITSELF
 
 CREATION OF SPRITES
 
-Load up the sprite development package and create all the sprites listed in table 1.
+Load up the sprite development package and create all the sprites listed in table 
+1.
 
-Once the sprite development package has loaded execute a cold start by pressing the C key and hit Y for yes and then N for the change buffer size prompt.
+Once the sprite development package has loaded execute a cold start by pressing 
+the C key and hit Y for yes and then N for the change buffer size prompt.
 
 Set the attribute switch to 1 by pressing the A key and then 1.
 
-With reference to table 1 set the sprite number to the required value by pressing the S key and then inputting the required value. Input the dimensions (Height and Length) of the sprite by pressing the H or C keys and then inputting the appropriate values. Set the respective Ink, Paper, Flash and Bright values using the X, C, V and B keys.
+With reference to table 1 set the sprite number to the required value by pressing 
+the S key and then inputing the required value.  Input the dimensions (Height and 
+Length) of the sprite by pressing the H or C keys and then inputing the 
+appropriate values.  Set the respective ink, paper, flash and bright values using 
+the X, C, V and B keys.
 
-Position the sprite screen X and Y pos cursors to their settings using the SYMBOL SHIFT 5, 6, 7 or 8 keys.
+Position the sprite screen X and Y pos cursors to their settings using the symbol 
+shift 5, 6, 7 or 8 keys.
 
-Using the direct data input function, key D, input the 8 bytes of data. Move the X and Y pos cursors to the next position and input the data until the sprite is complete on the screen. Set both the X and Y pos cursors to 1 and then GET the sprite into memory by pressing the G key. Clear the sprite screen by pressing SYMBOL SHIFT Q and then create the next sprite.
+Using the direct data input function, key D, input the 8 bytes of data.  Move the 
+X and Y pos cursors to the next position and input the data until the sprite is 
+complete on the screen. Set both the X and Y position cursors to 1 and then GET 
+the sprite into memory by pressing the G key.  Clear the sprite screen by pressing 
+symbol shift Q and then create the next sprite.
 
 
 CREATION OF THE 64x3 CHARACTER LANDSCAPE SPRITE
 
-This sprite will be made up of 8 8x3 character sprites, which will be joined together into one large sprite in the White Lightning program itself.
+This sprite will be made up of 8 8x3 character sprites, which will be joined 
+together into one large sprite in the White Lightning program itself.
 
-Set the Ink to 7, the Paper to 0, the Flash to 0 and the Bright to 1, clear the CHR$ square by pressing the Q key. Using the sprites 4,5,6,7,8,9 and the CHR$ square (referred to as 0) build up sprites 10 to 25 as laid out in diagram 1.
+Set the ink to 7, the iaper to 0, the flash to 0 and the bright to 1 clear the 
+CHR$ square by pressing the Q key.  Using the sprites 4,5,6,7,8,9 and the CHR$ 
+square (referred to as 0) build up sprites 10 to 25 as layed out in diagram 1.
