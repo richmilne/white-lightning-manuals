@@ -1,12 +1,10 @@
-# TODO: Remove this comment once this file has been proofread
-
 : MAKE 62 SPN ! 4 HGT ! 4 LEN ! TEST 0= IF ISPRITE CLSM ENDIF ;
 
 This will create and clear sprite 62.  Now use:
 
-1 SCOL ! 1 SROW ! 62 SP2 ! 24 SPl GWBLM
+1 SCOL ! 1 SROW ! 62 SP2 ! 24 SP1 ! GWBLM
 
-Sprite 62 is now set up ready for use.  We now Need four words to move the sprite
+Sprite 62 is now set up ready for use.  We now need four words to move the sprite
 UP, DOWN, LEFT and RIGHT.
 
 : UP    7 1 KB IF ROW @  0 > MINUS ROW +! ENDIF ;
@@ -36,7 +34,7 @@ the invader in the last example through these objects.
 
 First of all let's set up a screen with these objects scattered throughout.
 
-: SETUP 4 SPN ! 3 2 4 S 6 3 5 12 10 9 12 14 6 0 DO ROW ! COL ! PUTRS LOOP ;
+: SETUP 4 SPN ! 3 2 4 5 6 3 5 12 10 9 12 14 6 0 DO ROW ! COL ! PUTRS LOOP ;
 
 Notice that we use the PUTORS word to OR data to the screen; the reason for this
 will become clear.
@@ -57,6 +55,6 @@ ADJM PWBLS ENDIF 6 1 KB UNTIL ;
 
 What is happening is that as soon as the moving sprite is PUT to the screen all
 screen data is immediately "OR"ed so that if any was blotted out, it is
-immediately replaced. Type "P" to exit.
+immediately replaced.  Type "P" to exit.
 
 To use the source code listings type 8 LOAD TESTD

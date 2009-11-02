@@ -1,5 +1,3 @@
-# TODO: Remove this comment once this file has been proofread
-
 Moving Sprites
 
 The chief problem facing the programmer who wants to move sprites around the
@@ -7,6 +5,7 @@ screen is choosing from the numerous schemes available.  We now consider some of
 these methods, each with its own merits for speed, simplicity, smoothness and
 storage. We'll begin with the easiest to implement and then work up to some of the
 more elaborate techniques.
+
 
 Screen Scrolling
 
@@ -25,7 +24,7 @@ parameters, the second moves left or right and the third polls the keyboard and
 controls the movement.
 
 : SETUP 0 COL ! 6 ROW ! 24 SPN ! CLS SETAM PUTBLS 2 HGT ! 32 LEN ! ;
-: LEFT WRL1V ; : RIGHT VRR1V ;
+: LEFT WRL1V ; : RIGHT WRR1V ;
 : KEYS 1 1 KB IF LEFT ENDIF 8 1 KB IF RIGHT ENDIF ;
 
 This will move the base by 1 pixel left or right but by changing the words LEFT
@@ -36,7 +35,7 @@ To try these routines we'll need a small test routine.
 
 : TESTA ATTOFF SETUP BEGIN KEYS 8 2 KB UNTIL ;
 
-TESTA will loop around until SYMBoL SHIFT is pressed.  Pressing CAPS SHIFT will
+TESTA will loop around until SYMBOL SHIFT is pressed.  Pressing CAPS SHIFT will
 move the base left, pressing space will move the base right and pressing SYMBOL
 SHIFT will exit the loop.
 
@@ -49,6 +48,7 @@ To halt, just type INT-OFF.
 If you've typed in the source at the end of this section type 6 LOAD to compile
 and then TESTA or TESTB to execute.
 
+
 Simple Putting
 
 Another fairly simple means of moving sprites around the screen is to simply PUT
@@ -58,5 +58,5 @@ so that the 2 by 2 sprite can be contained with a border around the outside. Mak
 sure background is off by typing INT-OFF.
 
 Suppose for example, sprite 24 is a 2 by 2 sprite (you can use demo sprite 24 for
-the purposes of this example). We'll use sprite 62 for the sprite to be moved.
+the purposes of this example).  We'll use sprite 62 for the sprite to be moved.
 To set up sprite 62 use:
