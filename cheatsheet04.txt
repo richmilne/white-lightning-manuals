@@ -1,5 +1,3 @@
-# TODO: Remove this comment once this file has been proofread
-
 More Advanced Techniques
 
 Often it is not practical to repeatedly PUT the screen data which accompanies the
@@ -8,11 +6,11 @@ than one character.
 
 To begin with, let's consider the problem of improving the resolution of the
 movement.  Let's work again with a 2x2 sprite (sprite 24 of the demo sprites will
-do). Type COLD to clear previous examples.
+do).  Type COLD to clear previous examples.
 
 Suppose we wish to move the sprite around the screen with 2 pixel resolution.
 This means that between 2 successive columns there are 4 intermediate
-orientations, each successive orientation being 2 pixels right shifted. This
+orientations, each successive orientation being 2 pixels right shifted.  This
 means we need 4 sprites in all before the cycle is repeated at the next column
 position.
 
@@ -48,7 +46,7 @@ plotting positions in the range 0 to 127. We need a simple formula which will
 calculate the sprite number and the column from the horizontal plotting position.
 This turns out to be very simple:
 
-: HPLOT 4 /MOD COL ! 100 + SpN ! PUTBLS ;
+: HPLOT 4 /MOD COL ! 100 + SPN ! PUTBLS ;
 
 So to PUT at X-position 27 (54 pixels from the left hand column) just use:
 
@@ -56,6 +54,6 @@ So to PUT at X-position 27 (54 pixels from the left hand column) just use:
 
 The previous example is useful in that it indicates a way of producing high
 resolution PUTtinq but as it stands cannot be used for animation because it does
-not enable the removal of prewusly placed orientations. Before looking at a
+not enable the removal of prevously placed orientations.  Before looking at a
 scheme for animating these orientations let's generalise this example to cover
 high resolution vertical movement as well as horizontal movement.

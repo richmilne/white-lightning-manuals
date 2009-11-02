@@ -1,10 +1,8 @@
-# TODO: Remove this comment once this file has been proofread
-
 If we're going to give the same resolution of movement (2 pixels) in the vertical
 plane, we're going to need 4 vertically shifted orientations for each of the
-horizontally offset orientations - 16 sprites in all. This time they will need to
-be 3x3 as opposed to the previously defined 2x3.  If you'vc typed in the last
-example you'll need to delete the old sprites numbered 100 to 103. If so, type:
+horizontally offset orientations - 16 sprites in all.  This time they will need to
+be 3x3 as opposed to the previously defined 2x3.  If you've typed in the last
+example you'll need to delete the old sprites numbered 100 to 103.  If so, type:
 
 100 SPN ! DSPRITE <CR>
 101 SPN ! DSPRITE <CR>
@@ -15,12 +13,12 @@ Now type COLD to clear the dictionary.
 
 To create the 16 new sprites use:
 
-: MAKE 3 HGT ! 3 LEN ! 116 100 DO I SPN ! ISPRITE CLSM SETAM LOOP ;
+: MAKE 3 HGT ! 3 LEN ! 116 100 DO I SPN ! ISPRITE CLSM SETAM  LOOP ;
 
-SET1 and SET2 are now used in exactly the sane form as in the previous example to
+SET1 and SET2 are now used in exactly the same form as in the previous example to
 set up the first 4 sprites 100 to 103.  Each of the horizontally offset
-orientations Needs to be vertically offset by 2 pixels into 4 further
-orientations.  100 will Be offset into 104, 108 and 112; 101 will be offset into
+orientations needs to be vertically offset by 2 pixels into 4 further
+orientations.  100 will be offset into 104, 108 and 112; 101 will be offset into
 105, 109 and 113 and so on.  We'll need a third word SET3 to do this.
 
 : SET3 -2 NPX ! 104 100 DO I DUP 12 + SWAP DO I DUP 4 + DUP SP2 ! SPN ! SP1 !
@@ -36,9 +34,9 @@ horizontal co-ords have been placed on the stack.
 : XYPUT 4 /MOD COL ! SWAP 4 /MOD ROW ! DUP + DUP + + 100 + SPN ! ;
 
 So to PUT at X-position 30 (pixel 60)
-Y-position 17 (pixel 34)
+             Y-position 17 (pixel 34)
 
-use	     17 30 XYPUT PUTBLS
+use	         17 30 XYPUT PUTBLS
 
 Note that the 100 + SPN ! at the end of the definition of XYPUT should be amended
 so that the number is the sprite number of the first of your 16 sprites.
