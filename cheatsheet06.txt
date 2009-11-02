@@ -1,5 +1,3 @@
-# TODO: Remove this comment once this file has been proofread
-
 TSPN     Temporary Value for SPN
 TCOL     Temporary Value for COL
 TROW     Temporary Value for ROW
@@ -32,7 +30,7 @@ KREAD will leave 0 on the stack if no key was pressed or 1 if a key was pressed.
 
 The complete word becomes:
 
-: TESTF 10 XC ! 10 YC ! PLACE BEGIN KREAD IF MOVE FNDIF 6 1 KB UNTIL ;
+: TESTF 10 XC ! 10 YC ! PLACE BEGIN KREAD IF MOVE ENDIF 6 1 KB UNTIL ;
 
 Note that this loop assumes no interference with the values of COL, ROW or SPN
 between cycles, if you are executinq another Forth word, for example a word called
