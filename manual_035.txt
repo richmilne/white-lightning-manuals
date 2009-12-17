@@ -1,6 +1,7 @@
 9 CLEAR <CR>
 
-This sets the current screen to 9.  To insert text use the EDIT command. Type 0 EDIT <CR> followed by the text below:
+This sets the current screen to 9.  To insert text use the EDIT command. Type 0
+EDIT <CR> followed by the text below:
 
 THIS IS HOW TO PUT <CR>
 
@@ -10,21 +11,28 @@ TEXT ON LINE 1 <CR>
 
 and so on, until you have entered:
 
-0 THIS IS HOW TO PUT <CR> 1 TEXT ON LINE 1 <CR> 2 LINE 2 <CR>
+0 THIS IS HOW TO PUT <CR> 
+1 TEXT ON LINE 1 <CR> 
+2 LINE 2 <CR>
 3 AND LINE 3 OF THIS SCREEN <CR>
 
 9 LIST will produce:
 
 SCR # 9
-0  THIS IS HOW TO PUT 1  TEXT ON LINE 1 2  LINE 2
+0  THIS IS HOW TO PUT 
+1  TEXT ON LINE 1 
+2  LINE 2
 3  AND LINE 3 OF THIS SCREEN 4
 5
 6
 7
 
-To change LINE 2, type 2 EDIT <CR> and then change it in the normal way to insert 'TEXT ON' before 'LINE 2'.  Now type 9 LIST <CR> to see the result.  The editor ignores characters after the 64th character of the line being edited.
+To change LINE 2, type 2 EDIT <CR> and then change it in the normal way to insert
+'TEXT ON' before 'LINE 2'.  Now type 9 LIST <CR> to see the result.  The editor
+ignores characters after the 64th character of the line being edited.
 
-If you have a Sinclair printer connected, then it is probably worth defining a word to list screens to the printer:
+If you have a Sinclair printer connected, then it is probably worth defining a
+word to list screens to the printer:
 
 : SLIST PRT-ON 1+ SWAP DO I LIST CR LOOP PRT-OFF ;
 
@@ -35,7 +43,8 @@ e.g.  6 9 SLIST <CR> will list screens 6-9 to the printer.
 
 FORTH ERROR MESSAGES
 
-The following error messages may occur, and will be printed out in the form FRED ? MSG #0   standing for FRED ? ERROR MESSAGE NUMBER 0 .
+The following error messages may occur, and will be printed out in the form FRED ?
+MSG #0   standing for FRED ? ERROR MESSAGE NUMBER 0 .
 
 
  # 0  -  this means that a word could not be found, or that a numeric conversion
