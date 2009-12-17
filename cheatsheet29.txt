@@ -1,6 +1,6 @@
 SUMMARY OF MICRODRIVE WHITE LIGHTNING
 
-1. Only use specially prepared cartridges for EDITing and use them 
+1. Only use specially prepared cartridges for EDITing and use them
    exclusively for storing screens.
 2. CLEAR a screen before using it for the first time and change the
    previous screen to skip over it if it is a bad sector. Do not use

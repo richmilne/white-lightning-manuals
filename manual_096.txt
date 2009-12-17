@@ -1,29 +1,29 @@
 0<                   n --- f                              L0
 
-Leave a true flag if the number is less than zero (negative), otherwise leave a 
-false flag. 
+Leave a true flag if the number is less than zero (negative), otherwise leave a
+false flag.
 
 
 0=                   n --- f                              L0
 
-Leave a true flag is the number is equal to zero, otherwise leave a false flag. 
+Leave a true flag is the number is equal to zero, otherwise leave a false flag.
 
 
 0BRANCH              f ---                                C2
 
-The run-time procedure to conditionally branch.  If f is false (zero), the 
-following in-line parameter is added to the interpretive pointer to branch ahead 
-or back.  Compiled by IF, UNTIL, and WHILE. 
+The run-time procedure to conditionally branch.  If f is false (zero), the
+following in-line parameter is added to the interpretive pointer to branch ahead
+or back.  Compiled by IF, UNTIL, and WHILE.
 
 
 1+                  n1 --- n2                             L1
 
-Increment n1 by l. 
+Increment n1 by l.
 
 
 2+                  n1 --- n2                             L1
 
-Leave n1 incremented by 2. 
+Leave n1 incremented by 2.
 
 
 2@                addr --- nlow nhigh
@@ -40,14 +40,14 @@ Duplicates the top two values on the stack.  Equivalent to OVER OVER.
 
 Used in the form called a colon-definition:
                : cccc  ...  ;
-Creates a dictionary entry defining cccc as equivalent to the following sequence 
-of Forth word definitions '...' until the next ';' or ';CODE'.  The compiling 
-process is done by the text interpreter as long as STATE is non-zero.  Other 
-details are that the CONTEXT vocabulary is set to the CURRENT vocabulary and that 
-words with the precedence bit set (P) are executed rather than being compiled. 
+Creates a dictionary entry defining cccc as equivalent to the following sequence
+of Forth word definitions '...' until the next ';' or ';CODE'.  The compiling
+process is done by the text interpreter as long as STATE is non-zero.  Other
+details are that the CONTEXT vocabulary is set to the CURRENT vocabulary and that
+words with the precedence bit set (P) are executed rather than being compiled.
 
 
 ;                                                     P,C,L0
 
-Terminate a colon-definition and stop further compilation.  Compiles the run-time 
+Terminate a colon-definition and stop further compilation.  Compiles the run-time
 ;S.

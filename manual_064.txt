@@ -24,7 +24,7 @@ KB           This command is provided for the detection of multiple key
              and stack a true flag if the key is pressed and a false flag if
              it is not.  The key to he tested is specified by the top two
              numbers on the stack.  The second value specifies the half ROW
-             and the top value the COLUMN.  For a full description 
+             and the top value the COLUMN.  For a full description
              of the COLUMNS and ROWS of the Spectrum keyboard see page 160
              of the Spectrum manual.  Below is a summary.
 
@@ -40,7 +40,7 @@ KB           This command is provided for the detection of multiple key
                    8               SPACE to B
 
 
-Columns are organised from 1 to 5 and counted from the outside in.  This is the 
+Columns are organised from 1 to 5 and counted from the outside in.  This is the
 order above.
 
 

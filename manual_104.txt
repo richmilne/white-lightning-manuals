@@ -1,55 +1,55 @@
 DP                     --- addr                          U,L
 
-A user variable, the dictionary pointer, which contains the address of the next 
-free memory above the dictionary.  The value may be read by HERE and altered by 
-ALLOT. 
+A user variable, the dictionary pointer, which contains the address of the next
+free memory above the dictionary.  The value may be read by HERE and altered by
+ALLOT.
 
 
 DPL                    --- addr                         U,L0
 
-A user variable containing the number of digits to the right of the decimal on 
-double integer input.  It may also be used hold output column location of a 
-decimal point, in user generated formating.  The default value on single number 
-input is -1. 
+A user variable containing the number of digits to the right of the decimal on
+double integer input.  It may also be used hold output column location of a
+decimal point, in user generated formating.  The default value on single number
+input is -1.
 
 
 DROP                 n ---                                L0
 
-Drop the number from the stack. 
+Drop the number from the stack.
 
 
 DUMP              addr ---                                L0
 
-Print the contents of n memory locations beginning at addr.  Both addresses and 
-contents are shown in the current numeric base. 
+Print the contents of n memory locations beginning at addr.  Both addresses and
+contents are shown in the current numeric base.
 
 
 DUP                  n --- n n                            L0
 
-Duplicate the value on the stack. 
+Duplicate the value on the stack.
 
 
 ELSE          addr1 n1 --- addr2 n2 (compiling)      P,C2,L0
 
 Occurs within a colon-definition within the form:
               IF  ...  ELSE  ...  ENDIF
-At run-time, ELSE executes after the true part following IF.  ELSE forces the 
-execution to skip over the following false part, and resumes execution after the 
-ENDIF.  It has no stack effect. 
- 
-A compile time ELSE emplaces branch reserving a branch offset, leaves the address 
-addr2 and n2 for error treating.  ELSE also resolves the pending forward branch 
-from IF by calculating the offset from addr1 to HERE and storing at addr1. 
+At run-time, ELSE executes after the true part following IF.  ELSE forces the
+execution to skip over the following false part, and resumes execution after the
+ENDIF.  It has no stack effect.
+
+A compile time ELSE emplaces branch reserving a branch offset, leaves the address
+addr2 and n2 for error treating.  ELSE also resolves the pending forward branch
+from IF by calculating the offset from addr1 to HERE and storing at addr1.
 
 
 EMIT                 c ---                                L0
 
-Transmit ASCII character c to the selected output device.  OUT is incremented for 
-each character output. 
+Transmit ASCII character c to the selected output device.  OUT is incremented for
+each character output.
 
 
 EMPTY-BUFFERS                                             L0
 
-Mark all block-buffers as empty, not necessarily affecting the contents.  Updated 
-blocks are not written to the disc.  This is also an initialization procedure 
-before first use of the disc. 
+Mark all block-buffers as empty, not necessarily affecting the contents.  Updated
+blocks are not written to the disc.  This is also an initialization procedure
+before first use of the disc.

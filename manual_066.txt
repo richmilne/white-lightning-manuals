@@ -1,10 +1,10 @@
 FORTH/BASIC WORDS
 
-For those users who have mastered and grown used to the Spectrum's own graphics 
-commands, a set of 18 Forth implementations of Spectrum words is provided. 
-Parameters are placed on the stack in the same order as they occur in their BASIC 
-implementations.  If an error occurs during the execution of a BASIC word, Forth 
-should be re-entered via a WARM start, i.e. PRINT USR 24836.  For a full 
+For those users who have mastered and grown used to the Spectrum's own graphics
+commands, a set of 18 Forth implementations of Spectrum words is provided.
+Parameters are placed on the stack in the same order as they occur in their BASIC
+implementations.  If an error occurs during the execution of a BASIC word, Forth
+should be re-entered via a WARM start, i.e. PRINT USR 24836.  For a full
 description of the action of each of these words refer to your Spectrum manual.
 
 

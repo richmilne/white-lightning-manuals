@@ -2,47 +2,47 @@ THE PLAGUE OF CRABS
 
 The crabs, sprite 33, are placed m the screen using PUTBLS.
 
-The ROW and COL varables for the PUTBLS are loaded up each time by a random number 
+The ROW and COL varables for the PUTBLS are loaded up each time by a random number
 produced by using the Forth word RND.
 
 
 THE BOUNCING BALL
 
-This is a sprite or to be more precise, 4 sprites, moving in background.  The ball 
-is defined in four orientations to give half character resolution.  The movement 
-is obtained by doing a PUTXRS, calculating the next co-ordinates, blotting out the 
-old sprite with a second PUTXRS and then repeating the cycle. The listing for this 
+This is a sprite or to be more precise, 4 sprites, moving in background.  The ball
+is defined in four orientations to give half character resolution.  The movement
+is obtained by doing a PUTXRS, calculating the next co-ordinates, blotting out the
+old sprite with a second PUTXRS and then repeating the cycle. The listing for this
 screen is given in section 3 under the heading - Programmable Sprites.
 
 
 THE LUNAR SPACE SHIP
 
-The radar dish on top of the space ship, sprite 34, is animated by sequentially 
+The radar dish on top of the space ship, sprite 34, is animated by sequentially
 placing sprites 35 to 42, giving the effect of constant rotation.
 
-Just before the spaceship takes off, an explosion, sprite 43, is XORed over the 
+Just before the spaceship takes off, an explosion, sprite 43, is XORed over the
 spaceahlp using PUTXRS.  It is removed again by a second PUTXRS.
 
-The spaceship is then scrolled up in a vertical window by 1 pixel.  The Lunar 
+The spaceship is then scrolled up in a vertical window by 1 pixel.  The Lunar
 surface, sprite 44, is also scolled by 1 pixel, to the right using WRR1V.
 
 
 THE ROTATING BALLS
 
-Four sprites were used to give the impression of rotation, these being sprites 45, 
+Four sprites were used to give the impression of rotation, these being sprites 45,
 46, 47, and 48.
 
-Once the sprites were created, animation was a simple process of sequentially 
-placing the sprites to the screen with an increasing and decreasing time delay 
+Once the sprites were created, animation was a simple process of sequentially
+placing the sprites to the screen with an increasing and decreasing time delay
 between each PVTBLS.
 
 
 THE CREDITS
 
-To achieve the text scrolling up from the bottom of the screen, the bottom line 
-was set with 0 INK and 0 PAPER colours, while the rest of the screen had 7 INK and 
+To achieve the text scrolling up from the bottom of the screen, the bottom line
+was set with 0 INK and 0 PAPER colours, while the rest of the screen had 7 INK and
 0 PAPER colours.
 
-Each line of text was printed into that line and then the whole screen scrolled up 
-8 * 1 pixel, such that the text data scrolls into the screen that has 7 INK 
+Each line of text was printed into that line and then the whole screen scrolled up
+8 * 1 pixel, such that the text data scrolls into the screen that has 7 INK
 attributes and thus appears to smoothly scroll onto the screen.

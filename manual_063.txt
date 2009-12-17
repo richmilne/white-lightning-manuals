@@ -4,7 +4,7 @@ ADJM         This command is used to ensure the execution of group2 GET
              whose number is held in SPN.  If COL or ROW are "off
              screen" or if COL + LEN, HGT + ROW are off screen, then
              the parameters COL, ROW, HGT, LEN, SCOL, SROW are set such
-             that the sprite will be partially PUT to the screen or 
+             that the sprite will be partially PUT to the screen or
              GOT from the screen.  This is an extremely useful command
              and can be used in conjunction with any of the group 2 GETs
              and PUTS.
@@ -13,7 +13,7 @@ Example:
 
 -1 COL ! -1 ROW ! 1 SPN ! ADJM PWBLS
 
-This will PUT part of sprite 1 in the top left hand corner.  After execution, COL 
+This will PUT part of sprite 1 in the top left hand corner.  After execution, COL
 and ROW will have been made 0 and SCOL and SROW will have the value 1.
 
 ADJV         Essentially the same idea as ADJM but this time the screen
@@ -26,7 +26,7 @@ SCANM        The sprite whose number is held in SPN is scanned for
              placed on the stack.  This command is used extensively for
              collision detection.
 
-SCANV        The charater cell at screen positions defined by COL and 
+SCANV        The charater cell at screen positions defined by COL and
              ROW is scanned for screen data and a true or false flag
              stacked accordingly.  This command executes more rapidly
              than SCAM.
@@ -43,11 +43,11 @@ will leave a number between 0 and 10 on the stack.
 OUT#         Output the second value on the stack to the port address
              at the top of the stack.
 
-IN#          Replace the port address an the top of the stack by the 
+IN#          Replace the port address an the top of the stack by the
              16 bit representation of the 8 bit number read from the
              port.
 
 Example:
 
-The following will poll the Kempston Joystick and execute one of 8 words depending 
+The following will poll the Kempston Joystick and execute one of 8 words depending
 on the joystick position.  Finally, the fire button will be tested. Type:

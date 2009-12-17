@@ -1,7 +1,7 @@
 ERRATA - WHITE LIGHTNING MANUAL
 
 Page 7, line 24:
-"enter the number 75" should read 
+"enter the number 75" should read
 "enter the number 63".
 
 Page 20, line 19:
@@ -14,12 +14,12 @@ Page 72, line 25:
 
 Page 75, SCR#6, lines 6 & 7:
 Remove BASE from line 6 and place
-at end of line 7. 
+at end of line 7.
 (... LOOP 0 0 AT BASE ;)
 
 Page 104, DUMP:
 "addr n ---" should read "addr ---"
 
-Throughout the manual, the Forth word 
+Throughout the manual, the Forth word
 "-->" is constructed as "- - >", i.e.
 two minus signs and a greater than.

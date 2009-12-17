@@ -1,9 +1,9 @@
 T        Activates the TEST SPRITE function.
-         Performs a test on the sprite whose number is held in the "Sprite 
+         Performs a test on the sprite whose number is held in the "Sprite
          Number" variable, and does the following:
-         
-         1.  Places the sprite height into the "Sprite height" variable. 
-         2.  Places the sprite length into the "Sprite length" variable. 
+
+         1.  Places the sprite height into the "Sprite height" variable.
+         2.  Places the sprite length into the "Sprite length" variable.
          3.  Places the address in memory of where the sprite data starts,
              into the "Sprite" variable.
          4.  Places the address of the start of sprite space into the variable
@@ -12,7 +12,7 @@ T        Activates the TEST SPRITE function.
              variable "SPND".
          6.  Calculates the remaining memory available for sprite
              storage and places it into the "Memory Left" variable.
-         
+
          NOTE:  The screen display of these variables will be updated
          if necessary.
 
@@ -21,26 +21,26 @@ U        Activates the PICK UP ATTRIBUTES function.
          indicated by the position of the sprite screen cursors and
          Loads them into the four Attribute variables.
 
-V        Activates the FLASH variable. This is one of the four attributes. 
+V        Activates the FLASH variable. This is one of the four attributes.
          Press 1 to put switch ON.
          Press 0 to put switch OFF.
 
 W        Activates the WIPE SPRITE function.
-         Wipes the sprite indicated by the "Sprite number" variable 
-         totally from memory.  All other sprites stored in memory below 
-         that sprite are moved up to fill the space previously 
+         Wipes the sprite indicated by the "Sprite number" variable
+         totally from memory.  All other sprites stored in memory below
+         that sprite are moved up to fill the space previously
          occupied by the Wiped sprite.
 
-X        Activate the INK variable which is one of the four attributes. 
+X        Activate the INK variable which is one of the four attributes.
          Press any key between 0 and 7 to set the colour indicated
          above the key.
 
 Y        Activates the YES, positive response to (Y/N) questions.
 
 Z        Activates the pre-defined ARCADE CHARACTER function.
-         Place a pre-defined Arcade Character to the sprite screen. 
+         Place a pre-defined Arcade Character to the sprite screen.
          The top left hand corner of the character is indicated by
-         the sprite screen cursors.  Input a number between 1 and 167 
+         the sprite screen cursors.  Input a number between 1 and 167
          followed by ENTER.
 
          NOTE:  Each character, with its number, can be seen on the Demo B
@@ -49,7 +49,7 @@ Z        Activates the pre-defined ARCADE CHARACTER function.
 NOT      Activates the SAVE SPRITES TO TAPE facility.
 (SYMBOL  Place a suitable cassette in your cassette recorder and
 SHIFT    position as desired.  Press NOT, enter your filename (1 to 8
-S)       characters).  The program will save three groups of data; 
+S)       characters).  The program will save three groups of data;
          an array and two sections of code.
          After SAVEing, you will be asked to rewind the tape and VERIFY -
          be sure to only press PLAY on your cassette recorder.

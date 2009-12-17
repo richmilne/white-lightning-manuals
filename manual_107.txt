@@ -1,26 +1,26 @@
 HLD                    --- addr                           L0
 
-A user variable that holds the address of the latest character of text during 
-numeric output conversion. 
+A user variable that holds the address of the latest character of text during
+numeric output conversion.
 
 
 HOLD                 c ---                                L0
 
-Used between <# and #> to insert an ASCII character into a pictured numeric output 
-string.  
+Used between <# and #> to insert an ASCII character into a pictured numeric output
+string.
 
-e.g.  2E HOLD will place a decimal point. 
+e.g.  2E HOLD will place a decimal point.
 
 
 I                      --- n                            C,L0
 
-Used within a DO-LOOP to copy the loop index to the stack.  Other use is 
-implementation dependent.  See R. 
+Used within a DO-LOOP to copy the loop index to the stack.  Other use is
+implementation dependent.  See R.
 
 
-ID.               addr ---                                                         
+ID.               addr ---
 
-Print a definition's name from its name field address. 
+Print a definition's name from its name field address.
 
 
 IF                   f ---          (run-time)
@@ -29,27 +29,27 @@ IF                   f ---          (run-time)
 Occurs is a colon-definition in the form:
               IF  (tp)  ...  ENDIF
               IF  (tp)  ...  ELSE  (fp)  ...  ENDIF
-At run-time, IF selects execution based on a boolean flag.  If f is a true 
-(non-zero), execution continues ahead through the true part.  If f is false 
-(zero), execution skips till just after ELSE to execute the false part.  After 
-either part, execution resumes after ENDIF.  ELSE and its false part are optional; 
+At run-time, IF selects execution based on a boolean flag.  If f is a true
+(non-zero), execution continues ahead through the true part.  If f is false
+(zero), execution skips till just after ELSE to execute the false part.  After
+either part, execution resumes after ENDIF.  ELSE and its false part are optional;
 if missing, false execution skips to just after ENDIF.
- 
-At compile time, IF compiles 0BRANCH and reserves space for an offset at addr.  
-addr and n are used later for resolution of the offset and error testing. 
+
+At compile time, IF compiles 0BRANCH and reserves space for an offset at addr.
+addr and n are used later for resolution of the offset and error testing.
 
 
-IMMEDIATE                                                                          
+IMMEDIATE
 
-Mark the most recently made definition so that when encountered at compile time it 
-will be executed rather than compiled, i.e.  the precedence bit in its header is 
-set.  This method allows definitions to handle unusual compiling situations, 
-rather than build them into the fundamental compiler.  The user may force 
+Mark the most recently made definition so that when encountered at compile time it
+will be executed rather than compiled, i.e.  the precedence bit in its header is
+set.  This method allows definitions to handle unusual compiling situations,
+rather than build them into the fundamental compiler.  The user may force
 compilation of an immediate definition by preceeding it with [COMPILE].
 
 
 IN                     --- addr                           L0
 
-A user variable containing the byte offset within the current input text buffer 
-(terminal or disc) from which the next text will be accepted.  WORD uses and moves 
+A user variable containing the byte offset within the current input text buffer
+(terminal or disc) from which the next text will be accepted.  WORD uses and moves
 the value of IN.

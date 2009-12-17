@@ -1,10 +1,10 @@
 Group 3
 
-This group, possibly the most useful in the whole set, comprises commands which 
+This group, possibly the most useful in the whole set, comprises commands which
 support operations between sprites and sprite windows.  The same set of commands
-as those in Group 2 are available and the format for each word is the same as in 
-Group 2, except that the commands are postfixed with an "M" instead of an "S". 
-The chief difference to the user lies in the set of parameters.  The size of the 
+as those in Group 2 are available and the format for each word is the same as in
+Group 2, except that the commands are postfixed with an "M" instead of an "S".
+The chief difference to the user lies in the set of parameters.  The size of the
 data window is set to have the dimensions of the first sprite, and its position in
 the second sprite is set using the SCOL and SROW parameters.
 
@@ -22,27 +22,27 @@ Command                 Action
 GWBLM      Block move pixel data from first sprite into window in second sprite
 GWORM      OR pixel data from first sprite into window in second sprite
 GWXRM      XOR pixel data from first sprite into window in second sprite
-GWNDM      AND pixel data from first sprite into window in second sprite 
+GWNDM      AND pixel data from first sprite into window in second sprite
 GWATTM     Block move attribute data from first sprite into window in second
            sprite
 PWBLM      Block move pixel data from window in second sprite into first sprite
 PWORM      OR pixel data from window in second sprite into first sprite
 PWXRM      XOR pixel data from window in second sprite into first sprite
-PWNDM      AND pixel data from window in second sprite into first sprite 
+PWNDM      AND pixel data from window in second sprite into first sprite
 PWATTM     Block move attribute data from window in second sprite into first
            sprite
 
 Note:
 
-If the width of the first sprite added to SCOL, or the height of the first sprite 
-added to SROW exceeds either the width or height of the second sprite 
+If the width of the first sprite added to SCOL, or the height of the first sprite
+added to SROW exceeds either the width or height of the second sprite
 respectively, then the command will not execute.
 
 
 COPY COMMANDS
 
-These five commands, are in fact a sub-group of the Group 3 commands and allow 
-operations between pairs of sprites with the same dimensions.  It is necessary, 
+These five commands, are in fact a sub-group of the Group 3 commands and allow
+operations between pairs of sprites with the same dimensions.  It is necessary,
 therefore, to provide only two parameters instead of four.
 
 

@@ -1,8 +1,8 @@
-WRL4V WRL4V WRL4V 
+WRL4V WRL4V WRL4V
 
 and you should see it!
 
-Parameters do not reset after the execution of the commands,  so to repeat the 
+Parameters do not reset after the execution of the commands,  so to repeat the
 above, this time at column 10 and without wrap, you could use the following:
 
 10 COL ! SCL4V <CR>
@@ -10,10 +10,10 @@ above, this time at column 10 and without wrap, you could use the following:
 
 Vertical scrolls
 
-These work in a similar way to the horizontal scrolls, but in addition to setting 
-up the window with the four window parameters COL, ROW, HGT and LEN, a further 
-variable NPX is used to give the size and direction of the scroll in pixels. A 
-positive value for NPX causes upward scrolling and a negative value causes 
+These work in a similar way to the horizontal scrolls, but in addition to setting
+up the window with the four window parameters COL, ROW, HGT and LEN, a further
+variable NPX is used to give the size and direction of the scroll in pixels. A
+positive value for NPX causes upward scrolling and a negative value causes
 downward scrolling.
 
 
@@ -31,15 +31,15 @@ SCRV         Vertical scroll, no wrap
 
 Note:
 
-All vertical scrolling of pixel data and/or attributes for screen or sprites, 
-requires buffer space.  The space required is calculated by multiplying NPX by 
-LEN.  The start of the buffer is taken as the next free byte after sprite space, 
-so be sure that either a COLD# has been executed, or that SPND has been set.  It 
-is safe practice to develop sprites using the software provided, and to allow 256 
-bytes buffer at the top before linking with the main program.  Be sure also that 
-the scroll length is not greater than the window's size.  On entry to White 
-Lightning a COLD# is automataically executed and a scrolling buffer of 256 bytes 
-is set up.  This is maintained so long as ISPRITE and DSPRITE are used in 
+All vertical scrolling of pixel data and/or attributes for screen or sprites,
+requires buffer space.  The space required is calculated by multiplying NPX by
+LEN.  The start of the buffer is taken as the next free byte after sprite space,
+so be sure that either a COLD# has been executed, or that SPND has been set.  It
+is safe practice to develop sprites using the software provided, and to allow 256
+bytes buffer at the top before linking with the main program.  Be sure also that
+the scroll length is not greater than the window's size.  On entry to White
+Lightning a COLD# is automataically executed and a scrolling buffer of 256 bytes
+is set up.  This is maintained so long as ISPRITE and DSPRITE are used in
 preference to SPRITE and WIPE.
 
 

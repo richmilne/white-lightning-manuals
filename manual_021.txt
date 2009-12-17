@@ -14,16 +14,16 @@ of 14 Hex.
 
 
 TYPE    :  This uses the top TWO numbers held on the stack and will print a
-           selected number of characters starting at a specific 
-           address onto the screen.  The top number on the stack is the 
+           selected number of characters starting at a specific
+           address onto the screen.  The top number on the stack is the
            character count and the second number is the address to
            start at.
 
 e.g.    HEX 6100 20 TYPE <CR>
-(Note that 6100H is pushed onto the stack and 20H is pushed on top of it 20H = 
-T0P; 6100H = second).  This will print 20H (32) ASCII characters corresponding to 
-the data starting at address 6100H . (Note that much of the output will be 
-unrecognisable unless the data contains correct ASCII codes, such as for numbers 
+(Note that 6100H is pushed onto the stack and 20H is pushed on top of it 20H =
+T0P; 6100H = second).  This will print 20H (32) ASCII characters corresponding to
+the data starting at address 6100H . (Note that much of the output will be
+unrecognisable unless the data contains correct ASCII codes, such as for numbers
 and letters).
 
 
@@ -35,7 +35,7 @@ DUMP    :  This takes the top number on the stack and prints out 80H bytes
            the string contained within " " on the screen.
 
 e.g.   ." THIS IS A CHARACTER STRING " <CR>
-will put THIS IS A CHARACTER STRING on the screen.  Note the spaces between the 
+will put THIS IS A CHARACTER STRING on the screen.  Note the spaces between the
 string and the quotes.
 
 
@@ -51,11 +51,11 @@ will print 10 spaces on the screen.
 
 2. MATHEMATICAL OPERATORS
 
-+       :  This will add the top two numbers on the stack and leave the result 
++       :  This will add the top two numbers on the stack and leave the result
            as a single number.
 
 e.g.    1 2 + . <CR>
-will print the value of 1 + 2 = 3 on the screen.  Note that the two top numbers 
-are removed from the stack, being replaced by a single number - this is true of 
+will print the value of 1 + 2 = 3 on the screen.  Note that the two top numbers
+are removed from the stack, being replaced by a single number - this is true of
 most Forth commands, in that they remove the values which they require to use from
 the stack and push the result onto the stack.

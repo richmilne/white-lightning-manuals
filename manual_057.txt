@@ -1,7 +1,7 @@
 Command                Action
 
 PUTBLS      Block move sprite window into screen
-PUTORS      OR sprite window into screen 
+PUTORS      OR sprite window into screen
 PUTXRS      XOR sprite window into screen
 PUTNDS      AND sprite window into screen
 
@@ -10,10 +10,10 @@ Group 2
 
 
 These commands allow operations between sprite windows and screen windows.  Unlike
-Group 1 commands, there are separate commands to move pixel data and attributes, 
-and the ATTON, ATTOFF commands have no effect on their operation.  Two new 
-parameters are introduced to specify the COLUMN and ROW of the top left hand 
-character of the sprite window.  In addition, HGT and LEN are required to specify 
+Group 1 commands, there are separate commands to move pixel data and attributes,
+and the ATTON, ATTOFF commands have no effect on their operation.  Two new
+parameters are introduced to specify the COLUMN and ROW of the top left hand
+character of the sprite window.  In addition, HGT and LEN are required to specify
 the dimensions of the window for the screen and sprite.
 
 
@@ -23,8 +23,8 @@ COL          Left hand column of target screen window (0 to 31)
 ROW          Top row of target screen window (0 to 23)
 SCOL         Left hand column of target sprite window (0 to sprite width -1)
 SROR         Top row of target sprite window (0 to sprite height -1)
-HGT          Height of window 
-LEN          Length of window 
+HGT          Height of window
+LEN          Length of window
 SPN          Sprite number
 
 
@@ -43,15 +43,15 @@ PWATTS       PUT block of attribute data from sprite window into screen window
 
 Note:
 
-If the command does not execute, check that the window is not partially off the 
+If the command does not execute, check that the window is not partially off the
 screen or sprite.
 
 Example:
 
-To block move a window 3 characters high and 4 characters wide from row 2, column 
+To block move a window 3 characters high and 4 characters wide from row 2, column
 3 of the screen to row 4, column 6 of sprite nuMber 7, use the following:
 
 7 SPN ! 3 HGT ! 4 LEN ! 2 ROW ! 3 COL ! 4 SROW ! 6 SCOL ! GWBLS
 
-Note that sprite 7 must be at least 8 characters wide and 7 characters high for 
+Note that sprite 7 must be at least 8 characters wide and 7 characters high for
 the command to execute.

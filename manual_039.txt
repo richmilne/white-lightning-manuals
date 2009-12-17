@@ -1,31 +1,31 @@
 ATTRIBUTE DATA
 
-The colour of the INK and PAPER in each particular cell, together with the 
-BRIGHTNESS and FLASHING attributes of the character, are controlled by a separate 
-byte.  The bytes which define the attributes of the block of characters are 
-referred to as Attribute data.  Pixel data and Attribute data are frequently 
+The colour of the INK and PAPER in each particular cell, together with the
+BRIGHTNESS and FLASHING attributes of the character, are controlled by a separate
+byte.  The bytes which define the attributes of the block of characters are
+referred to as Attribute data.  Pixel data and Attribute data are frequently
 treated as separate entities.
 
 
 SCREEN OPERATIONS
 
 Often, it is required to carry out an operation, such as a scroll or a reflection,
-on one particular section of the screen.  Four variables are used to define a 
-screen window, these are COL, ROW, HGT and LEN.  The co-ordinates of the top left 
-hand corner are held in COL and ROW, where COL is measured from the left and ROW 
-from the top.  Both values are in characters.  HGT and LEN are the dimensions of 
-the window.  COL + LEN must be in the range 1 to 32, and ROW + HGT must be in the 
+on one particular section of the screen.  Four variables are used to define a
+screen window, these are COL, ROW, HGT and LEN.  The co-ordinates of the top left
+hand corner are held in COL and ROW, where COL is measured from the left and ROW
+from the top.  Both values are in characters.  HGT and LEN are the dimensions of
+the window.  COL + LEN must be in the range 1 to 32, and ROW + HGT must be in the
 range 1 to 24.  Commands in this group are postfixed with a "V", e.g. WRL1V, INVV,
 MIRV.
 
 
 SCREEN/SPRITE OPERATIONS
 
-These are operations between the screen and a sprite.  The dimensions of the 
-sprite are used as the dimensions of the screen window, and COL and ROW are used 
-to give the co-ordinates of the top left of the window.  If the window overlaps 
-the edge of the screen, the command will not execute. Typical commands in this 
-group are the PUTs and GETs, which move sprites between the screen and memory. 
+These are operations between the screen and a sprite.  The dimensions of the
+sprite are used as the dimensions of the screen window, and COL and ROW are used
+to give the co-ordinates of the top left of the window.  If the window overlaps
+the edge of the screen, the command will not execute. Typical commands in this
+group are the PUTs and GETs, which move sprites between the screen and memory.
 Commands in this group are postfixed with an "S"; e.g. PUTBLS, GETXRS.
 
 
@@ -33,26 +33,26 @@ SPRITE OPERATIONS
 
 These cover more or less the same commands as the screen operations, but this time
 a complete sprite is used instead of a screen window.  The only parameter required
-is the sprite number stored in SPN.  Commands in this group are postfixed with an 
+is the sprite number stored in SPN.  Commands in this group are postfixed with an
 "M", e.g. WRR4M, ATTUPM.
 
 
 SCREEN/SPRITE WINDOW OPERATIONS
 
 These are operations between a screen window and a sprite window.  As before, ROW,
-COL, HGT and LEN define the screen window, but this time, SCOL and SROW are used 
-to define the position of the window within the sprite.  SCOL and SROW are 
-measured in characters, SROW from the top and SCOL from the left.  If SROW + HGT 
-is greater than 24 or the sprite height, or if SCOL + LEN is greater than 32 or 
-the sprite width, the commands will not execute.  These commands are postfixed 
+COL, HGT and LEN define the screen window, but this time, SCOL and SROW are used
+to define the position of the window within the sprite.  SCOL and SROW are
+measured in characters, SROW from the top and SCOL from the left.  If SROW + HGT
+is greater than 24 or the sprite height, or if SCOL + LEN is greater than 32 or
+the sprite width, the commands will not execute.  These commands are postfixed
 with an "S", e.g. GWATTS, PWORS.
 
 
 SPRITE/SPRITE WINDOW OPERATIONS
 
-These are operations between a whole sprite and a sprite window.  The two sprite 
-numbers are held in SP1 (the whole sprite) and SP2 (the sprite which contains the 
-window).  The dimensions of the window are the dimensions of the sprite whose 
-number is held in SP1.  The position of the window in the sprite whose number is 
-held in SP2 is specified by SCOL and SROW.  Commands in this group are postfixed 
+These are operations between a whole sprite and a sprite window.  The two sprite
+numbers are held in SP1 (the whole sprite) and SP2 (the sprite which contains the
+window).  The dimensions of the window are the dimensions of the sprite whose
+number is held in SP1.  The position of the window in the sprite whose number is
+held in SP2 is specified by SCOL and SROW.  Commands in this group are postfixed
 with an "M", e.g. GWATTM, PWNDM.

@@ -2,8 +2,8 @@ BEGIN  ....  (Forth WORDS)  ....  UNTIL
 
 BEGIN  ....  (Forth WORDS)  ....  WHILE  ....  (Forth WORDS)  ....  REPEAT
 
-Using the BEGIN .... UNTIL the value at the top of the stack is tested upon 
-reaching UNTIL.  If the flag is false (0) then the loop starting from BEGIN is 
+Using the BEGIN .... UNTIL the value at the top of the stack is tested upon
+reaching UNTIL.  If the flag is false (0) then the loop starting from BEGIN is
 repeated.  If the value is true (non-zero) then an exit from the loop cccurs.
 
 Try typing the following example:
@@ -11,7 +11,7 @@ Try typing the following example:
 : COUNT-DOWN DECIMAL 100 BEGIN 1- DUP DUP . CR 0= UNTIL ." DONE " ; <CR>
 
 Now key in: COUNTDOWN <CR>
-This will print: 
+This will print:
   99
   98
    .
@@ -23,14 +23,14 @@ This will print:
    0
 DONE
 
-The BEGIN ... WHILE ... REPEAT structure uses the WHILE condition to abort a loop 
+The BEGIN ... WHILE ... REPEAT structure uses the WHILE condition to abort a loop
 in the middle of that loop.  WHILE will test the flag left on top of the stack and
-if that flag is true, will continue with the execution of words up to REPEAT, 
+if that flag is true, will continue with the execution of words up to REPEAT,
 which then branches always (unconditionally) back to BEGIN.  If the flag is false,
-then WHILE will cause execution to skip the words up to REPEAT and thus exit from 
+then WHILE will cause execution to skip the words up to REPEAT and thus exit from
 the loop.
 
-We will now construct a program to print out the cubes of numbers from 1 upwards, 
+We will now construct a program to print out the cubes of numbers from 1 upwards,
 until the cube is greater than 3000.
 
 The colon definition could be as follows:
@@ -41,9 +41,9 @@ DUP DUP DUP DUP * * DUP <CR>
 SWAP . ." IS " . CR REPEAT <CR>
 DROP DROP DROP ." ALL DONE " CR ; <CR>
 
-You may get an error message "MSG#4" appearing on the screen; this means that the 
-word you have just created already exists.  This is not a problem since the new 
-word will be created, and all actions referencing the word CUBE will be directed 
+You may get an error message "MSG#4" appearing on the screen; this means that the
+word you have just created already exists.  This is not a problem since the new
+word will be created, and all actions referencing the word CUBE will be directed
 to the latest definition using that name.
 
 Now run this by keying in:
@@ -52,6 +52,6 @@ CUBE <CR>
 
 and watch the results.
 
-Try to follow what is happening by writing down the values on the stack at each 
-operation.  If you are having any difficulty in doing this, the stack values are 
+Try to follow what is happening by writing down the values on the stack at each
+operation.  If you are having any difficulty in doing this, the stack values are
 shown below.

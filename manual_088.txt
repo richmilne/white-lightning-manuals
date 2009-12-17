@@ -2,19 +2,19 @@
          ATTR = 1, Attributes of smaller sprite taken and placed with
          sprite.
          Three options given:
-        
+
          1 GETBLS
-         GETs the smaller sprite directly into the window of the larger 
+         GETs the smaller sprite directly into the window of the larger
          sprite.
-        
+
          2 GETORS
-         GETs the smaller sprite and ORs it into the window of the 
+         GETs the smaller sprite and ORs it into the window of the
          larger sprite.
-        
+
          3 GETXRS
-         GETs the smaller sprite and XORs it into the window of the 
+         GETs the smaller sprite and XORs it into the window of the
          larger sprite.
-        
+
          4 GETNDS
-         GETs the smaller sprite and ANDs it into the window of the 
+         GETs the smaller sprite and ANDs it into the window of the
          larger sprite.

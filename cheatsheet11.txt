@@ -1,6 +1,6 @@
   2 0 -7 DRAW ;                           4 : UL SS -200 < IF SL8 ELSE S
   3 : PANEL 0 PAPER COLOUR SCLE         L4 ENDIF ;
-BARS BARST HRSC LETR MARK ;               5 : LL SS -7 < IF SL1 ELSE SO 
+BARS BARST HRSC LETR MARK ;               5 : LL SS -7 < IF SL1 ELSE SO
   4 : MAKE 128 SPN ! 3 HGT ! 128        ENDIF ;
  LEN ! 0 SROW ! 128 SP2 ! ISPRIT          6 : LF SS -100 < IF UL ELSE LL
 E                                        ENDIF ;
@@ -17,7 +17,7 @@ SCR # 9                                 OP ;
 EN ! PUTBLS 16 LEN ! ;                  EL
   1 : NBR PH @ S1 ;                       3 : PREP 7 COL ! 0 DOWN ! 40 X
     : NBL PH @ 128 + S1 ;               P ! ;
-  2 : OPEN 0 PAPER 5 INK CLS 0 P          4 : TICK VEL @ 255 > IF ELSE 1 
+  2 : OPEN 0 PAPER 5 INK CLS 0 P          4 : TICK VEL @ 255 > IF ELSE 1
 H ! EXX 128 SPN ! 16 LEN ! 0 COL        VEL +! ENDIF ;
  !                                        5 : THRUST FU @ IF 7 1 KB IF V
   3 3 HGT ! 21 ROW ! 0 SCOL ! 0         EL @ -252 > IF -4 VEL +! FUEL
@@ -43,7 +43,7 @@ NDIF ENDIF ;                              5
   4 : SR4 SH4 IF SR WRR4V 4 -P E          0 : BANG DOWN @ DUP IF 19 ROW
 LSE SR1 ENDIF DROP ;                    ! 43 SPN ! -5 NPX ! 7 HGT ! 3 LE
   5 : SL4 SH4 IF SL WRL4V 4 +P E        N !
-LSE SL1 ENDIF DROP ;                      1 40 10 DO PUTXRS I 20 + I DO 
+LSE SL1 ENDIF DROP ;                      1 40 10 DO PUTXRS I 20 + I DO
   6 : SO DOWN @ IF ELSE SS ABS 2        J I BLEEP LOOP PUTXRS 17 ROW !
 56 < IF POLL ENDIF ENDIF ;                2 SCRV 19 ROW ! 5 +LOOP SS ABS
   7 : SR8 SH8 IF NBR WRR8V 8 -P          8 < IF 21 ROW ! 45 SPN ! PUTBLS

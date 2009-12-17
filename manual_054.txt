@@ -1,14 +1,14 @@
 Command                  Action
 
-ATTLV      Scroll attributes left  1 character with wrap 
-ATTRV      Scroll attributes right 1 character with wrap 
-ATTUPV     Scroll attributes up    1 character with wrap 
+ATTLV      Scroll attributes left  1 character with wrap
+ATTRV      Scroll attributes right 1 character with wrap
+ATTUPV     Scroll attributes up    1 character with wrap
 ATTDNV     Scroll attributes down  1 character with wrap
 
 
 SPRITE SCROLLS
 
-The format for these commands is similar to that for the screen scrolls, except 
+The format for these commands is similar to that for the screen scrolls, except
 that these commands are postflred with an M as opposed to a V.
 
 
@@ -20,23 +20,23 @@ SPN        The number of the sprite to be scrolled (1 to 255)
 
 Command             Actions
 
-WRL1M      Scroll left  1 pixel  with wrap 
-WRR1M      Scroll right 1 pixel  with wrap 
-SCL1M      Scroll left  1 pixel,   no wrap 
-SCR1M      Scroll right 1 pixel,   no wrap 
-WRL4M      Scroll left  4 pixels with wrap 
-WRR4M      Scroll right 4 pixels with wrap 
-SCL4M      Scroll left  4 pixels,  no wrap 
-SCR4M      Scroll right 4 pixels,  no wrap 
-WRL8M      Scroll left  8 pixels with wrap 
-WRR8M      Scroll right 8 pixels with wrap 
-SCL8M      Scroll left  8 pixels,  no wrap 
+WRL1M      Scroll left  1 pixel  with wrap
+WRR1M      Scroll right 1 pixel  with wrap
+SCL1M      Scroll left  1 pixel,   no wrap
+SCR1M      Scroll right 1 pixel,   no wrap
+WRL4M      Scroll left  4 pixels with wrap
+WRR4M      Scroll right 4 pixels with wrap
+SCL4M      Scroll left  4 pixels,  no wrap
+SCR4M      Scroll right 4 pixels,  no wrap
+WRL8M      Scroll left  8 pixels with wrap
+WRR8M      Scroll right 8 pixels with wrap
+SCL8M      Scroll left  8 pixels,  no wrap
 SCR8M      Scroll right 8 pixels,  no wrap
 
 Note:
 
-The chief purpose of these commands is to give pixel resolution to the PUT 
-command, and for this reason, a 1 character border along 2 edges of a sprite 
+The chief purpose of these commands is to give pixel resolution to the PUT
+command, and for this reason, a 1 character border along 2 edges of a sprite
 character should always be allowed.
 
 Example:
@@ -47,7 +47,7 @@ To scroll sprite number 7, 1 pixel right with wrap, use:
 
 Vertical Scrolls
 
-These work in the same way as the vertical screen scrolls where the signed 
+These work in the same way as the vertical screen scrolls where the signed
 variable NPX is used to determine the size and direction of the scroll.
 
 Parameters            Use

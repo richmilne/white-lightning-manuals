@@ -1,60 +1,58 @@
 OUT                    --- addr                            U
 
-A user variable that contains a value incremented by EMIT.  The user may alter and 
-examine OUT to control display formating. 
+A user variable that contains a value incremented by EMIT.  The user may alter and
+examine OUT to control display formating.
 
 
 OVER             nl n2 --- nl n2 n1                       L0
 
-Copy the second stack value, placing it as the new top. 
+Copy the second stack value, placing it as the new top.
 
 
 PAD                    --- addr                           L0
 
-Leave the address of the text output buffer, which is a fixed offset above HERE. 
+Leave the address of the text output buffer, which is a fixed offset above HERE.
 
 
-PFA                nfa --- pfa                                                     
+PFA                nfa --- pfa
 
-Convert the name field address of a compiled definition to its parameter field 
-address. 
-
-
-POP                                                                                
-
-The code sequence to remove a stack value and return to NEXT.  POP is not directly 
-executable, but is s Forth re-entry point after machine code. 
+Convert the name field address of a compiled definition to its parameter field
+address.
 
 
-PREV                   --- addr                                                    
+POP
 
-A variable containing the address of the disc buffer most recently referenced.  
-The UPDATE command marks this buffer to be later written to disc. 
-
-
-PUSH                                                                               
-
-This code sequence pushes machine registers to the computation stack and returns 
-to NEXT.  It is not directly executable, but is a Forth re-entry point after 
-machine code. 
+The code sequence to remove a stack value and return to NEXT.  POP is not directly
+executable, but is s Forth re-entry point after machine code.
 
 
-PUT                                                                                
+PREV                   --- addr
 
-This code sequence stores machine register contents over the topmost computation 
-value and returns to NEXT.  It is not directly executable, but is a Forth re-entry 
-point after machine code. 
+A variable containing the address of the disc buffer most recently referenced.
+The UPDATE command marks this buffer to be later written to disc.
 
 
-QUERY                                                                              
+PUSH
 
-Input 80 characters of text (or until a "return") from the operator's terminal.  
-Text is positioned at the address contained in TIB with IN set to zero. 
+This code sequence pushes machine registers to the computation stack and returns
+to NEXT.  It is not directly executable, but is a Forth re-entry point after
+machine code.
+
+
+PUT
+
+This code sequence stores machine register contents over the topmost computation
+value and returns to NEXT.  It is not directly executable, but is a Forth re-entry
+point after machine code.
+
+
+QUERY
+
+Input 80 characters of text (or until a "return") from the operator's terminal.
+Text is positioned at the address contained in TIB with IN set to zero.
 
 
 QUIT                                                      L1
 
-Clear the return stack, stop compilation, and return control to the operator's 
-terminal.  No message is given. 
-
-
+Clear the return stack, stop compilation, and return control to the operator's
+terminal.  No message is given.

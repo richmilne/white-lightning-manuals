@@ -19,11 +19,11 @@ As will be shown later, this is of use when using variables in White Lightning.
 
 5. COLON DEFINITIONS
 
-These are the most powerful and most used forms of data structures in White 
+These are the most powerful and most used forms of data structures in White
 Lightning, and are so called because they begin with a colon ":"
 
-Colon definitions allow the creation of new Forth words based on previously 
-defined words.  They can be of any length, although carriage return must be 
+Colon definitions allow the creation of new Forth words based on previously
+defined words.  They can be of any length, although carriage return must be
 pressed before a particular section exceeds 80 characters.
 
 The general format is:
@@ -32,19 +32,19 @@ The general format is:
 
 All colon definitions end with a semi-colon  ";"
 
-If a word used in a colon definition has not been previously defined, then an 
+If a word used in a colon definition has not been previously defined, then an
 error will result.
 
 The new-word is executed simply by typing its name and pressing ENTER.
 
-e.g.    Suppose we wish to define a new word to calculate the square of a given 
+e.g.    Suppose we wish to define a new word to calculate the square of a given
 number.
 
 We could do this by:
 
 : SQUARE DECIMAL CR ." THE SQUARE OF " DUP . ." IS " DUP * . ; <CR>
 
-Here we have defined a new word called SQUARE which will be called by 
+Here we have defined a new word called SQUARE which will be called by
 
 number SQUARE <CR>
 

@@ -1,8 +1,8 @@
 ?STACK is a word which tests the stack for out of bounds.
 
 
- # 2  -  this indicates that either the dictionary has grown up to meet the 
-         stack (dictionary full) or that the stack has grown down to meet 
+ # 2  -  this indicates that either the dictionary has grown up to meet the
+         stack (dictionary full) or that the stack has grown down to meet
          the dictionary.
 
 Try:    : TEST2  1000  0  DO  ?STACK  0 0 0 0 0 LOOP  ; <CR>
@@ -14,18 +14,18 @@ Try:    : TEST2  1000  0  DO  ?STACK  0 0 0 0 0 LOOP  ; <CR>
 
 Try:    : ROT ." NEW DEFINITION " ; <CR>
 
-This is not really an error since the new word is still valid, but the old 
+This is not really an error since the new word is still valid, but the old
 definition cannot be accessed unless you FORGET the new one.
 
 
  # 6  -  this error my occur when editing, loading or listing screens of data.
 
 Try:    25 LIST <CR>
-This will produce MSG#6 and means you have tried to access a non-existent 
+This will produce MSG#6 and means you have tried to access a non-existent
 screenful of memory.
 
 
- # 9  -  this indicates that an attempt was made to clear sprite space of 
+ # 9  -  this indicates that an attempt was made to clear sprite space of
          less than 2 bytes.
 
 
@@ -44,11 +44,11 @@ Try:    DO <CR>
 
 
  # 18 -  this occurs if a word meant for execution only, is put within a colon
-         definition (words with "E" in the top right hand corner of the 
+         definition (words with "E" in the top right hand corner of the
          description).
 
 
- # 19 -  this means that a colon definition contains conditionals that have 
+ # 19 -  this means that a colon definition contains conditionals that have
          not been paired.
 
 e.g.    a LOOP without a D0

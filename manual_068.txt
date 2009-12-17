@@ -1,7 +1,7 @@
-For example, suppose you wanted to scroll a window, four characters square, in the 
-middle of the screen and invert it after each sideways scroll.  First we need to 
-define a word to do the scrolling and the inverting.  For some reason, most test 
-programs are called FRED and there is no reason for breaking with convention.  To 
+For example, suppose you wanted to scroll a window, four characters square, in the
+middle of the screen and invert it after each sideways scroll.  First we need to
+define a word to do the scrolling and the inverting.  For some reason, most test
+programs are called FRED and there is no reason for breaking with convention.  To
 define the word type:
 
 : FRED WRR1V INVV ; <CR>
@@ -22,13 +22,13 @@ To halt this program type:
 
 INT-OFF <CR>
 
-This program is running a bit too fast to see, so let's write another program 
-which slows this down to every fifth interrupt, i.e. ten times a second.  We will 
+This program is running a bit too fast to see, so let's write another program
+which slows this down to every fifth interrupt, i.e. ten times a second.  We will
 need to define a variable and a new word.  To set up the variable type:
 
 0 VARIABLE ICNT <CR>
 
-This sets up a variable called ICNT and assigns to it the value 0.  We'll call 
+This sets up a variable called ICNT and assigns to it the value 0.  We'll call
 this new background word FREDA.  Type:
 
 : FREDA ICNT @ 1+ 5 > IF FRED 0 ICNT ! ELSE 1 ICNT + ! ENDIF ; <CR>
@@ -37,14 +37,14 @@ Now type:
 
 ' FREDA INT-ON <CR>
 
-All "FREDA" does, is to increment ICNT and compare it with 5 and if it is greater 
+All "FREDA" does, is to increment ICNT and compare it with 5 and if it is greater
 than 5 then "FREDA" is executed and ICNT set back to zero.
 
-It would be useful to be able to control the speed that "FREDA" ran at, so, let's 
-modify "FREDA" to do this.  First, type INT-OFF FORGET FREDA <CR> to get rid of 
-the old definition and then set up a new variable and construct a slightly 
-different program.  A variable wbich sets the limit on the number of interrupts 
-needs to he set up, so type: 4 VARIABLE LCNT <CR>.  The new definition is set up 
+It would be useful to be able to control the speed that "FREDA" ran at, so, let's
+modify "FREDA" to do this.  First, type INT-OFF FORGET FREDA <CR> to get rid of
+the old definition and then set up a new variable and construct a slightly
+different program.  A variable wbich sets the limit on the number of interrupts
+needs to he set up, so type: 4 VARIABLE LCNT <CR>.  The new definition is set up
 by typing:
 
 : FREDA ICNT @ 1+ LCNT @ > IF FRED 0 ICNT ! ELSE 1 ICNT +! FNDIF ; <CR>
@@ -53,7 +53,7 @@ To execute the new word type:
 
 0 ICNT ! ' FREDA INT-0N <CR>
 
-This program increments ICNT, compares it with LCNT and executes when ICNT is 
-equal to LCNT.  Increasing LCNT then, will slow the background execution and 
-decrementing LCNT will speed it up.  If LCNT is put equal to 1, execution will 
+This program increments ICNT, compares it with LCNT and executes when ICNT is
+equal to LCNT.  Increasing LCNT then, will slow the background execution and
+decrementing LCNT will speed it up.  If LCNT is put equal to 1, execution will
 occur every cycle.

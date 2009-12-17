@@ -1,62 +1,62 @@
 +!              n addr ---                                L0
 
-Add n to the value at the address.  Pronounced "plus-store". 
+Add n to the value at the address.  Pronounced "plus-store".
 
 
-+-               n1 n2 --- n3                                                      
++-               n1 n2 --- n3
 
-Apply the sign of n2 to n1, which is left as n3. 
+Apply the sign of n2 to n1, which is left as n3.
 
 
-+BUF              add1 --- addr2 f                                                 
++BUF              add1 --- addr2 f
 
-Advance the disc buffer address addr1 to the address of the next buffer addr2.  
+Advance the disc buffer address addr1 to the address of the next buffer addr2.
 Boolean f is false when addr2 is the buffer presently pointed to by variable
-PREV. 
+PREV.
 
 
-+LOOP               n1 --- (run)                                                   
++LOOP               n1 --- (run)
                addr n2 --- (compile)                 P,C2,L0
 
-Used in a colon-definition in the form: 
-                DO  ...  n1  +LOOP 
-At run-time, +LOOP selectively controls branching back to the corresponding DO 
-based on n1, the loop index and the loop limit.  The signed increment n1 is added 
-to the index and the total compared to the limit.  The branch back to DO occurs 
-until the new index is equal to or greater than the limit (n1>0), or until the new 
-index is equal to or less than the limit (n1<0).  Upon exiting the loop, the 
-parameters are discarded and the execution continues ahead. 
+Used in a colon-definition in the form:
+                DO  ...  n1  +LOOP
+At run-time, +LOOP selectively controls branching back to the corresponding DO
+based on n1, the loop index and the loop limit.  The signed increment n1 is added
+to the index and the total compared to the limit.  The branch back to DO occurs
+until the new index is equal to or greater than the limit (n1>0), or until the new
+index is equal to or less than the limit (n1<0).  Upon exiting the loop, the
+parameters are discarded and the execution continues ahead.
 
-At compile time, +LOOP compiles the run-time word (+LOOP) and the branch offset 
-computed from HERE to the address left on the stack by DO.  n2 is used for compile 
-time error checking. 
+At compile time, +LOOP compiles the run-time word (+LOOP) and the branch offset
+computed from HERE to the address left on the stack by DO.  n2 is used for compile
+time error checking.
 
 
-+ORIGIN              n --- addr                                                    
++ORIGIN              n --- addr
 
-Leave the memory address relative by n to the origin parameter area.  n is the 
-minimum address unit, either byte or word.  This definition is used to access or 
-modify the boot-up parameters at the origin area. 
+Leave the memory address relative by n to the origin parameter area.  n is the
+minimum address unit, either byte or word.  This definition is used to access or
+modify the boot-up parameters at the origin area.
 
 
 ,                    n --- ,                              L0
 
-Store n into the next available dictionary memory cell, advancing the dictionary 
+Store n into the next available dictionary memory cell, advancing the dictionary
 pointer.  (comma)
 
 
 -                n1 n2 --- diff                           L0
 
-Leave the difference of n1-n2. 
+Leave the difference of n1-n2.
 
 
 -->                                                     P,L0
 
-Continue interpretation with the next screen.  (Pronounced next-screen). 
+Continue interpretation with the next screen.  (Pronounced next-screen).
 
 
--DUP                n1 --- n1     (if zero)                           
+-DUP                n1 --- n1     (if zero)
                     n1 --- n1 n1  (non-zero)              L0
 
-Reproduce n1 only if it is non-zero.  This is usually used to copy a value just 
+Reproduce n1 only if it is non-zero.  This is usually used to copy a value just
 before IF, to eliminate the need for an ELSE part to drop it.

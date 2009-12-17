@@ -17,7 +17,7 @@ Let's take this a little further and OR with the screen:
 
 6.  Press A (ATTR) and set to 1.
 
-7.  Press Z (Arcade Character) and enter 141 (Explosion) - you probably think 
+7.  Press Z (Arcade Character) and enter 141 (Explosion) - you probably think
 we're going to blow up the Robot!
 
 8.  Press L (Length) and enter 2, then press H (Height) and enter 2.
@@ -52,5 +52,5 @@ Now, lastly, let's look at the XOR function:
 
 2.  Press Z (Arcade Character) and enter 151 (Robot).
 
-3.  Press P (PUT) and enter 3 - the Robot has blown up! (At last I here you say 
+3.  Press P (PUT) and enter 3 - the Robot has blown up! (At last I here you say
 !).

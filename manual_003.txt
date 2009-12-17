@@ -24,12 +24,12 @@ OPERATING INSTRUCTIONS
 
 TO THE NEWCOMER
 
-When you have run the demonstration tape and have seen what can be done, this may 
-give you the incentive to learn all you can to produce full specification games 
-for yourself.  The author of this manual knew nothing of White Lightning before 
-starting this project, but can promise you that after only a few hours of 
-experimentation, became fairly adept and had the confidence to want to go further. 
-It may all look a little complicated at first, but please be assured, that after a 
+When you have run the demonstration tape and have seen what can be done, this may
+give you the incentive to learn all you can to produce full specification games
+for yourself.  The author of this manual knew nothing of White Lightning before
+starting this project, but can promise you that after only a few hours of
+experimentation, became fairly adept and had the confidence to want to go further.
+It may all look a little complicated at first, but please be assured, that after a
 short time, and only a little effort, the fog really does clear!
 
 Mike Butler.

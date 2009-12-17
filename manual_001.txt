@@ -6,56 +6,56 @@ INTRODUCTION
 
 White Lightning is a high level graphics development system for the Spectrum 48k.
 It is aimed primarily at the user who has commercial games writing in mind and has
-the patience to learn a sizeable new language.  It is not a games designer and 
-stunning results probably won't be produced overnight, but it does have the power 
-and flexibility to produce software of a commercial standard (with a little 
-perseverance!).  Software produced using White Lightning can be marketed without 
-restriction, although, we would be very grateful if you felt you could pop a small 
+the patience to learn a sizeable new language.  It is not a games designer and
+stunning results probably won't be produced overnight, but it does have the power
+and flexibility to produce software of a commercial standard (with a little
+perseverance!).  Software produced using White Lightning can be marketed without
+restriction, although, we would be very grateful if you felt you could pop a small
 credit on the sleeve. If you're looking for a publisher - don't forget us !!
 
-Assembly language has three advantages over high level languages:  speed, 
-flexibility and compactness.  During the running of an arcade game, the processor 
-spends most of its time manipulating screen data, and if the appropriate commands 
-are implemented in the language, the execution "overhead" is very small.  Add to 
-this the fact that considerable time has been spent on the routines themselves to 
-optimise execution speed, and we feel most machine code programmers would be hard 
-pressed to better White Lightning for speed.  As far as flexibility is concerned, 
-White Lightning has almost 300 commands as well as access to BASIC and machine 
-language if required.  A lot of the tricky routines like rotations and 
-enlargements are already implemented for you.  As far as compactness goes, Forth 
-itself produces very compact code, but there is, of course, the overhead of the 
-language itself.  Assembly language has four major drawbacks.  Firstly, you've got 
-to learn it.  Having mastered machine code, program development is very slow 
-compared with a typical high level language, there is no "crash protection" 
-whatsoever, and to produce effective results, you need a fairly intimate knowledge 
+Assembly language has three advantages over high level languages:  speed,
+flexibility and compactness.  During the running of an arcade game, the processor
+spends most of its time manipulating screen data, and if the appropriate commands
+are implemented in the language, the execution "overhead" is very small.  Add to
+this the fact that considerable time has been spent on the routines themselves to
+optimise execution speed, and we feel most machine code programmers would be hard
+pressed to better White Lightning for speed.  As far as flexibility is concerned,
+White Lightning has almost 300 commands as well as access to BASIC and machine
+language if required.  A lot of the tricky routines like rotations and
+enlargements are already implemented for you.  As far as compactness goes, Forth
+itself produces very compact code, but there is, of course, the overhead of the
+language itself.  Assembly language has four major drawbacks.  Firstly, you've got
+to learn it.  Having mastered machine code, program development is very slow
+compared with a typical high level language, there is no "crash protection"
+whatsoever, and to produce effective results, you need a fairly intimate knowledge
 of the machine you're working with.
 
-BASIC has several points in its favour, these are: excellent crash protection, 
-extremely readable source code and a relatively short learning curve.  These 
-features make BASIC a very good introduction to programming for the hobbyist, but 
-for the serious games writer, the language is insufficient in terms of both its 
+BASIC has several points in its favour, these are: excellent crash protection,
+extremely readable source code and a relatively short learning curve.  These
+features make BASIC a very good introduction to programming for the hobbyist, but
+for the serious games writer, the language is insufficient in terms of both its
 speed and flexibility.
 
-Because White Lightning is Forth based it has virtually the speed of machine code, 
-no knowledge of the machine is required, the source code is relatively readable, 
+Because White Lightning is Forth based it has virtually the speed of machine code,
+no knowledge of the machine is required, the source code is relatively readable,
 and it is fairly well protected from crashing.
 
-If you do have any queries concerning White Lightning, then we can be contacted by 
-phone on (0934) 419921.  If possible, please restrict calls to the periods 9 am to 
-11 am or 6 pm to 6.30 pm.  If this is not convenient we are here all day.  If your 
-query is a detailed one then it's probably better to write in.  We are also 
-interested to hear of any extensions or routines you may develop, and if 
-sufficient interest is shown we will start a News Letter, and possibly, even a 
+If you do have any queries concerning White Lightning, then we can be contacted by
+phone on (0934) 419921.  If possible, please restrict calls to the periods 9 am to
+11 am or 6 pm to 6.30 pm.  If this is not convenient we are here all day.  If your
+query is a detailed one then it's probably better to write in.  We are also
+interested to hear of any extensions or routines you may develop, and if
+sufficient interest is shown we will start a News Letter, and possibly, even a
 User Group.
 
 
 SPRITE DEVELOPMENT
 
-Included with White Lightning is a sprite generator. This comes complete with a 
-pre-defined character set which, when suitably combined, makes up to 167 full 
-characters. The predefined characters cover Asteroids, Pac-Man, Scramble, 
-Defender, Space Invaders, City Bomber, Lunar Lander, Frogger, Centipede, Donkey 
-Kong and many more. You can use them as they are, customise them, or design up to 
-255 of your own sprites. The development software allows you to reflect, spin or 
-invert. When you have finished work, or between sessions the whole lot can be 
+Included with White Lightning is a sprite generator. This comes complete with a
+pre-defined character set which, when suitably combined, makes up to 167 full
+characters. The predefined characters cover Asteroids, Pac-Man, Scramble,
+Defender, Space Invaders, City Bomber, Lunar Lander, Frogger, Centipede, Donkey
+Kong and many more. You can use them as they are, customise them, or design up to
+255 of your own sprites. The development software allows you to reflect, spin or
+invert. When you have finished work, or between sessions the whole lot can be
 simply saved to tape.

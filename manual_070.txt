@@ -14,13 +14,13 @@ and cleared using: FORGET IRUN <CR>
 
 Forth/BASIC Words
 
-Sinclair's graphics and sound commands have been replicated as Forth words for 
-continuity - they also execute slightly more rapidly than their BASIC 
+Sinclair's graphics and sound commands have been replicated as Forth words for
+continuity - they also execute slightly more rapidly than their BASIC
 counterparts.  For a full list, see the section on Forth/BASIC WORDS.
 
-They all execute code in Sinclair's own ROM which, unlike Forth and IDEAL, is not 
-re-entrant.  This means that these words cannot be executed in foreground and 
-background simultaneously.  The FORTH words ." , . and U. should also not be 
-executed simultanteously with themselves or any of the BASIC words.  None of the 
-Forth/BASIC words, ." , . or U. should be executed in background while Forth is in 
+They all execute code in Sinclair's own ROM which, unlike Forth and IDEAL, is not
+re-entrant.  This means that these words cannot be executed in foreground and
+background simultaneously.  The FORTH words ." , . and U. should also not be
+executed simultanteously with themselves or any of the BASIC words.  None of the
+Forth/BASIC words, ." , . or U. should be executed in background while Forth is in
 command mde.

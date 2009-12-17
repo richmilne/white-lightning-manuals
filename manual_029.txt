@@ -1,4 +1,4 @@
-0=      :  This will leave a true flag on the top of the stack if the number on 
+0=      :  This will leave a true flag on the top of the stack if the number on
            the top of the stack is equal to zero, otherwise it will leave a
            false flag.
 
@@ -49,7 +49,7 @@ this will print EQUAL
                 FINISHED
 
 Try:    249 248 TEST1= <CR>
-this will print UNEQUAL 
+this will print UNEQUAL
                 FINISHED
 
 Notice how the part after ENDIF was executed in both cases.

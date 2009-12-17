@@ -1,21 +1,21 @@
 SPRITE UTILITIES
 
-All the sprite utilities described in this section are available at run-time, but 
-we strongly recommend that all sprite allocation is undertaken at the sprite 
+All the sprite utilities described in this section are available at run-time, but
+we strongly recommend that all sprite allocation is undertaken at the sprite
 development stage to save laboriously reloading sprite data if an error is made at
-run-time.  They are provided for advanced programing applications only and should 
+run-time.  They are provided for advanced programing applications only and should
 never be executed in background.
 
 
 COLD #
 
-This command sets the end of sprite space pointer SPND, to the value in SPST, the 
+This command sets the end of sprite space pointer SPND, to the value in SPST, the
 start of sprite space pointer.  It then clears memory above SPST.  The size of the
-memory cleared is specified in SLEN.  Each time a sprite is allocated space using 
-the SPRITE command, SPND is updated.  Vertical scroll data (pixel and attribute) 
+memory cleared is specified in SLEN.  Each time a sprite is allocated space using
+the SPRITE command, SPND is updated.  Vertical scroll data (pixel and attribute)
 uses the space immediately above SPND so a COLD# is necessary at some stage before
-executing the commands.  The amount of data required is given by the product of 
-the scroll width and the number of pixels scrolled.  sprites are stored in the 
+executing the commands.  The amount of data required is given by the product of
+the scroll width and the number of pixels scrolled.  sprites are stored in the
 following format:
 
 First byte is the sprite number              (1 to 255)
@@ -26,23 +26,23 @@ The next 8*height*length bytes hold pixel data.
 The final height*length bytes hold the attributes.
 Therefore, each sprite requires 9*height*length+5 bytes.
 
-It should be noted that sprite numbers need not be allocated in any particular 
-order.  The best position for sprite space is at the top of memory and it is not 
+It should be noted that sprite numbers need not be allocated in any particular
+order.  The best position for sprite space is at the top of memory and it is not
 difficult to calculate space required, although the development package does this
 automatically.
 
-To calculate the total sprite space that will he used, use 9*length*height+5 for 
-each sprite and then add buffer space for vertical scrolls, 256 should be 
-sufficient for most applications.  This total should be assigned to SLEN.  SPST 
+To calculate the total sprite space that will he used, use 9*length*height+5 for
+each sprite and then add buffer space for vertical scrolls, 256 should be
+sufficient for most applications.  This total should be assigned to SLEN.  SPST
 should then be assigned with 65520-SLEN.
 
 
 Example:
 
 Suppose you wished to allocate space for 10 4 by 4 spritss, 3 8 by 6 sprites and a
-5 by 4 sprite.  Suppose also that a 4 pixel scroll will be required for a 4 
-character wide sprite, and a screen window 9 characters wide will need to be 
-scrolled 3 pixels.  The 8 by 6 sprite is also to be rotated.  The following 
+5 by 4 sprite.  Suppose also that a 4 pixel scroll will be required for a 4
+character wide sprite, and a screen window 9 characters wide will need to be
+scrolled 3 pixels.  The 8 by 6 sprite is also to be rotated.  The following
 procedure to calculate sprite space is required.
 
 10  4 by 4 sprites require      10*(4*4*9+5) = 1490 bytes
@@ -52,7 +52,7 @@ procedure to calculate sprite space is required.
 
 The 4 character wide sprite scrolling 4 pixels would require 16 bytes.
 The 9 character wide screen window scrolling 3 pixels would require 27 bytes.
-If we allow 27, then this will cover both eventualities and we can forget the 16 
+If we allow 27, then this will cover both eventualities and we can forget the 16
 bytes for the first case.
 
                                       TOTAL  = 27 bytes

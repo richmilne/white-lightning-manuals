@@ -1,7 +1,7 @@
-In the above example we set background variables from foreground.  If we were to 
-set the background variables actually in the background program, then foreground 
-and background variables would already have been switched before execution.  To 
-set up the same windows, we would now have to use ROW, COL, HGT and LEN, and not 
+In the above example we set background variables from foreground.  If we were to
+set the background variables actually in the background program, then foreground
+and background variables would already have been switched before execution.  To
+set up the same windows, we would now have to use ROW, COL, HGT and LEN, and not
 ROW', COL', HGT' and LEN'.
 
 To define a word to do this, type:
@@ -20,40 +20,40 @@ INT-OFF FORGET FRED <CR>
 
 to halt the background program and clear the definition.
 
-Operating in this way, a word will work in foreground or background without any 
-need to change variable names.  The alternate variables are only used directly by 
-a foreground program that is required to change background variables, or a 
-background program that is required to change foreground variables.  If the 
-previous example is a little confusing at first, carry out your own 
+Operating in this way, a word will work in foreground or background without any
+need to change variable names.  The alternate variables are only used directly by
+a foreground program that is required to change background variables, or a
+background program that is required to change foreground variables.  If the
+previous example is a little confusing at first, carry out your own
 experimentation until it becomes clear.
 
 
 ERRORS
 
-The graphics commands do not in many cases provide the user with error messages, 
+The graphics commands do not in many cases provide the user with error messages,
 but instead, if an attempt is made to execute a command which is not possible, for
-instance scrolling a screen window which lies partly off the screen, the command 
-will simply not execute.  This does have the advantage that the user is freed 
-from testing edge conditions, but does mean that a little extra care needs to be 
-exercised. See the words ADJM and ADJV.  Errors are generated if an attempt is 
-made to access a non-existent sprite, or to insert an already existing sprite 
+instance scrolling a screen window which lies partly off the screen, the command
+will simply not execute.  This does have the advantage that the user is freed
+from testing edge conditions, but does mean that a little extra care needs to be
+exercised. See the words ADJM and ADJV.  Errors are generated if an attempt is
+made to access a non-existent sprite, or to insert an already existing sprite
 using ISPRITE.
 
 
 SPRITE AND BUFFER ORGANISATION
 
-Before discussing the sprite manipulation commands in detail, it is worth 
-describing the organisation of sprites in some detail.  The user does not need 
-this information, but it is made available for interest and an overall 
+Before discussing the sprite manipulation commands in detail, it is worth
+describing the organisation of sprites in some detail.  The user does not need
+this information, but it is made available for interest and an overall
 appreciation of the language structure.
 
-Sprites are stored as one contiguous block of data whose start address is held in 
+Sprites are stored as one contiguous block of data whose start address is held in
 the variable SPST.  The first free byte after the final sprite contains a zero and
-this address is held in the variable SPND.  The format of each sprite is as 
+this address is held in the variable SPND.  The format of each sprite is as
 follows:
 
-First byte              Holds the sprite number which must be in the range 
+First byte              Holds the sprite number which must be in the range
                         1 to 255.
 
-Second and              Hold the address of the start of the next 
+Second and              Hold the address of the start of the next
 third bytes             sprite.

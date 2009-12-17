@@ -35,7 +35,7 @@ RND      N1                 Leave a random number between 0 and N1 on
 
 OUT#     N1, N2             Output LSB of N1 to 16 bit port address N2.
 
-IN#      N1                 Leave on the stack, byte from 16 bit port 
+IN#      N1                 Leave on the stack, byte from 16 bit port
                             address N1.
 
 ZAPINT                      Create run time program with interrupt

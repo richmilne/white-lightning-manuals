@@ -2,58 +2,56 @@ VOCABULARY                                               E,L
 
 A defining word used in the form:
                VOCABULARY cccc
-to create a vocabulary definition cccc.  Subsequent use of cccc will make it the 
-CONTEXT vocabulary which is searched first by INTERPRET.  The sequence "cccc 
-DEFINITIONS" will also make cccc the CURRENT vocabulary, into which, new 
-definitions are placed. 
- 
-In Fig-FORTH, cccc will also be chained so as to include all definitions of the 
-vocabulary in which cccc is itself defined. All vocabularies ultimately chain to 
-Forth.  By convention, vocabulary names are to be declared IMMEDIATE.  See 
-VOC-LINK. 
+to create a vocabulary definition cccc.  Subsequent use of cccc will make it the
+CONTEXT vocabulary which is searched first by INTERPRET.  The sequence "cccc
+DEFINITIONS" will also make cccc the CURRENT vocabulary, into which, new
+definitions are placed.
+
+In Fig-FORTH, cccc will also be chained so as to include all definitions of the
+vocabulary in which cccc is itself defined. All vocabularies ultimately chain to
+Forth.  By convention, vocabulary names are to be declared IMMEDIATE.  See
+VOC-LINK.
 
 
-VLIST                                                                              
+VLIST
 
-List the names of the definitions in the context vocabulary.  Pressing "Break" 
-will terminate the listing. 
+List the names of the definitions in the context vocabulary.  Pressing "Break"
+will terminate the listing.
 
 
 WARNING                --- addr                            U
 
-A user variable containing a value controlling messages.  
+A user variable containing a value controlling messages.
 If = 1 disc is present, and screen 4 of drive 0 is the base location for messages.
-If = 0, no disc is present and messages will be presented by number.  If = -1, 
+If = 0, no disc is present and messages will be presented by number.  If = -1,
 execute (ABORT)  for a user specified procedure.  See MESSAGE, ERROR, ABORT.
 
 
 WHERE            n1 n2 ---
 
-If an error occurs during LOAD from disc, ERROR leaves these values on the stack 
-to show the user where the error occurred. WHERE uses these to print the screen 
+If an error occurs during LOAD from disc, ERROR leaves these values on the stack
+to show the user where the error occurred. WHERE uses these to print the screen
 and line number of where this is.
 
 
-WHILE                f --- (run-time)                                              
+WHILE                f --- (run-time)
               addr1 nl --- addr1 n1 addr2 n2            P,C2
 
 Occurs in a colon-definition in the form:
                   BEGIN ... WHILE (tp) ... REPEAT
-At run-time, WHILE selects conditional execution based on boolean flag f.  If f is 
-true (non-zero), WHILE continues execution of the true part through to REPEAT, 
-which then branches back to BEGIN.  If f is false (zero), execution skips to just 
-after REPEAT, exiting the structure. 
- 
+At run-time, WHILE selects conditional execution based on boolean flag f.  If f is
+true (non-zero), WHILE continues execution of the true part through to REPEAT,
+which then branches back to BEGIN.  If f is false (zero), execution skips to just
+after REPEAT, exiting the structure.
+
 At compile time, WHILE emplaces (0BRANCH) and leaves addr2 of the reserved offset.
-The stack values will be resolved by REPEAT. 
+The stack values will be resolved by REPEAT.
 
 
 WIDTH                  --- addr                            U
 
-In Fig-FORTH, a user variable containing the maximum number of letters saved in 
-the compilation of a definitions name.  It must be 1 through to 31, having a 
-default value of 31.  The name character count and its natural characters are 
-saved, up to the value of WIDTH.  The value may be changed at any time within the 
-above limits. 
-
-
+In Fig-FORTH, a user variable containing the maximum number of letters saved in
+the compilation of a definitions name.  It must be 1 through to 31, having a
+default value of 31.  The name character count and its natural characters are
+saved, up to the value of WIDTH.  The value may be changed at any time within the
+above limits.

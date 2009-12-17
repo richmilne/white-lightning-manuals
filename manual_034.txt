@@ -2,7 +2,7 @@ P      :  Put the following text on the line number held on the stack, by
           overwriting its present contents.
 
 
-INS    :  INSert the text from PAD to the line number held on the stack. 
+INS    :  INSert the text from PAD to the line number held on the stack.
           The original and subsequent lines are moved down by 1 with the last
           line being lost.
 
@@ -22,10 +22,10 @@ WHERE  :  If an error occurs during the loading of White Lightning's text
           commands to edit the screen, or you may move to another screen by
           either LISTing or CLEARing it.
 
-e.g.  15 LIST will now make screen 15 the current screen and will list the      
+e.g.  15 LIST will now make screen 15 the current screen and will list the
 contents.
 
-In order to compile this screen into the dictionary, it is necessary to use the 
+In order to compile this screen into the dictionary, it is necessary to use the
 word LOAD.
 
 
@@ -37,20 +37,20 @@ stop at the end of the screen.
 If you wish to continue and LOAD the next screen, the current screen must end with
 -->
 
-This means "continue loading and interpreting". 
+This means "continue loading and interpreting".
 
-If you wish to stop the LOADing anywhere in a screen then use: ;S 
+If you wish to stop the LOADing anywhere in a screen then use: ;S
 
 This means "stop loading and interpreting".
 
-At the end of every editing session, and before saving your text, it is necessary 
+At the end of every editing session, and before saving your text, it is necessary
 to FLUSH the memory buffers into the text area.  To do this, just key in:
 
 FLUSH <CR>
 
 Note that the EDIT command does an automatic FLUSH.
 
-You can save your text to tape using the Spectrum 'SAVE' command.  You must first 
+You can save your text to tape using the Spectrum 'SAVE' command.  You must first
 enter BASIC by typing PROG  <CR> .
 
 Now for an example of how to edit a text file:

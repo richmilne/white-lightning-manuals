@@ -1,9 +1,9 @@
-I       : This will copy the loop index from the return stack onto the data 
+I       : This will copy the loop index from the return stack onto the data
           stack.
 
 J       : This will push the value of the nested LOOP index to the stack.
 
-K       : This will push the value of the double nested LOOP index to the stack. 
+K       : This will push the value of the double nested LOOP index to the stack.
 
 
 
@@ -23,20 +23,20 @@ and so on.
 
 7. CONDITIONAL BRANCHING
 
-Conditional branching must again he used only within a colon definition and uses 
+Conditional branching must again he used only within a colon definition and uses
 the form:
 
 IF (true part) ... (Forth WORDS) ... ENDIF
 
-IF (true part) ... (Forth WORDS) ... ELSE (false part) ... (Forth WORDS) ... 
+IF (true part) ... (Forth WORDS) ... ELSE (false part) ... (Forth WORDS) ...
 ENDIF
 
 These conditional statements rely on testing the top number on the stack to decide
 whether to execute the TRUE part, or the FALSE part of the condition.
 
-If the top item on the stack is true (non-zero) then the true part will be 
-executed.  If the top item is false (zero) then the true part will be skipped and 
-execution of the false part will take place.  If the ELSE part is missing, then 
+If the top item on the stack is true (non-zero) then the true part will be
+executed.  If the top item is false (zero) then the true part will be skipped and
+execution of the false part will take place.  If the ELSE part is missing, then
 execution skips to just after the ENDIF statement.
 
 There are several mathematical operators which will leave either a true (non-zero)

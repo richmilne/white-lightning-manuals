@@ -1,7 +1,7 @@
 BASIC INTERFACE WORDS
 
-These words are provided to enable you to mix BASIC and Forth in your program. 
-The section covering the access of BASIC should be read carefully before an 
+These words are provided to enable you to mix BASIC and Forth in your program.
+The section covering the access of BASIC should be read carefully before an
 attempt is made to use these commands.
 
 
@@ -9,7 +9,7 @@ Command                Action
 
 PROG         Enter BASIC at command level.
 
-RESERVE      Reserve space in the dictionary for the insertion of BASIC 
+RESERVE      Reserve space in the dictionary for the insertion of BASIC
              source.  The size of the space to be reserved is taken from
              the stack.
 
@@ -20,8 +20,8 @@ Example:
 will reserve 1k from the current value of HERE.
 
 GOTO         The BASIC program is executed from the line number held
-             on the stack.  Forth can be called from BASIC using 
-             RANDOMISE USR 30000 and Forth can be re-entered using 
+             on the stack.  Forth can be called from BASIC using
+             RANDOMISE USR 30000 and Forth can be re-entered using
              PRINT USR 30006.
 
 Example:
@@ -30,8 +30,8 @@ Example:
 
 will commence execution of the BASIC source from line 100.
 
-RETUSR       Control is returned to the BASIC program from Forth. 
-             Execution of the BASIC program proceeds with the first 
+RETUSR       Control is returned to the BASIC program from Forth.
+             Execution of the BASIC program proceeds with the first
              instruction after the RANDOMISE USR 30000 with which Forth
              was called.  Do not execute a RETUSR in Forth if Forth has
              not been called using a RANDOMISE USR 30000 call.

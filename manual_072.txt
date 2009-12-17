@@ -2,16 +2,16 @@ Now type:
 
 CLS ." LOGICAL AND " CR ." LOGICAL AND " PUTNDS <CR>
 
-This time, the only data remaining is at those points where the data coincided. 
-Logical "AND"s are normally used to mark off sections of the screen or sprites. 
-They are also used extensively for collision detection.  If a window of the screen 
-is "AND"ed into a sprite, and then a SCANM performed, it is possible to determine 
-whether a collision would occur if the sprite were PUT; before actually PUTting 
+This time, the only data remaining is at those points where the data coincided.
+Logical "AND"s are normally used to mark off sections of the screen or sprites.
+They are also used extensively for collision detection.  If a window of the screen
+is "AND"ed into a sprite, and then a SCANM performed, it is possible to determine
+whether a collision would occur if the sprite were PUT; before actually PUTting
 the sprite.
 
-We now come to the logical XOR.  This is probably the most useful operation of the 
-lot. "XOR"s have the peculiar property of restoring the destination data to its 
-former state if the operation is performed twice.  This is how Sinclair's own 
+We now come to the logical XOR.  This is probably the most useful operation of the
+lot. "XOR"s have the peculiar property of restoring the destination data to its
+former state if the operation is performed twice.  This is how Sinclair's own
 "OVER" operation works.  To see this happen type:
 
 CLS ." XOR " CR ." XOR " PUTXRS <CR>
@@ -20,8 +20,8 @@ To restore the text type:
 
 PUTXRS <CR>
 
-We can even use this property to swap two sprites without using a third.  This 
-example will swap the data but not the attributes.  We will "PUT" two sprites at 
+We can even use this property to swap two sprites without using a third.  This
+example will swap the data but not the attributes.  We will "PUT" two sprites at
 each stage so you can see what is happening.  Type:
 
 CLS ATTON 0 SCOL ! 0 SROW ! 1 SP1 ! 2 SP2 ! 23 COL ! 6 0 AT <CR>
@@ -46,7 +46,7 @@ GWXRM 6 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL ! 2 SPN ! PUTBLS <CR>
 
 The operation is now commplete.
 
-If we wanted to add a new word to the language which swaps two equally sized 
+If we wanted to add a new word to the language which swaps two equally sized
 sprites whose numbers were in SP1 and SP2, we would now do so.
 
 : SWOP 0 SCOL ! 0 SROW 1 GWXRM PWXRM GWXRM ; <CR>
@@ -55,8 +55,8 @@ In fact we could also use:
 
 : SWOP 0 SCOL ! 0 SROW ! PWXRM GXXRM PWXRM ; <CR>
 
-for exactly the same effect.  You will get MSG # 4 if you type the second word 
+for exactly the same effect.  You will get MSG # 4 if you type the second word
 before typing FORGOT SWOP <CR>
 
-Ironically, even though we can swap pixel data, there is no simple method for 
+Ironically, even though we can swap pixel data, there is no simple method for
 swapping attribute data unless a third sprite is involved.

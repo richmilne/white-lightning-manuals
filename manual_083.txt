@@ -11,7 +11,7 @@ B        Activates the BRIGHT variable.
          Press 0 to set BRIGHT to OFF.
 
 C        Activates the PAPER variable.
-         Press any key between 0 and 7 to activate the colour indicated 
+         Press any key between 0 and 7 to activate the colour indicated
          above the key.
 
 D        Activates DIRECT DATA INPUT
@@ -28,21 +28,21 @@ E        Activates the SCREEN FUNCTIONS.
 
          1 INVERT
          Option 1, INVERT, sets all 0 bits to 1 and all 1 bits to 0,
-         in a window whose length is held in the "Sprite length" 
-         variable and whose height is held in the "Sprite height" 
+         in a window whose length is held in the "Sprite length"
+         variable and whose height is held in the "Sprite height"
          variable.  The inversion will take place from the positioning
-         of the sprite screen cursors, i.e. at the intersection of an 
+         of the sprite screen cursors, i.e. at the intersection of an
          imaginary line drawn from each cursor.
 
          2 MIRROR
-         Option 2 MIRROR, 'Flips' a window whose height is held in the 
+         Option 2 MIRROR, 'Flips' a window whose height is held in the
          "Sprite height" variable and whose length is held in the "Sprite
          length" variable.  The Mirroring will take place about the
          vertical centre of the screen window.
 
          3 MIRROR ATTRIBUTES
          Option 3 MIRROR ATTRIBUTES, 'Flips' the attributes in a window
-         whose height is held in the "Sprite height" variable and whose 
+         whose height is held in the "Sprite height" variable and whose
          length is held in the "Sprite length" variable.  The Mirroring of
          Attributes will take place about the vertical centre of the screen
          window

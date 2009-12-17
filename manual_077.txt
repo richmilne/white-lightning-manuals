@@ -4,9 +4,9 @@ PRINT USR 24836
 
 to re-enter Forth at command level.
 
-Let's now define a word which executes some Forth, some BASIC, some more Forth, 
-some more BASIC, and finally some more Forth.  To begin executing BASIC at a 
-particular line, all that we need to do is put the line number on the stack and 
+Let's now define a word which executes some Forth, some BASIC, some more Forth,
+some more BASIC, and finally some more Forth.  To begin executing BASIC at a
+particular line, all that we need to do is put the line number on the stack and
 then execute GOTO. Try the following:
 
 : FBDEM ." IN FORTH " CR 1000 GOTO ." BACK IN FORTH " <CR>
@@ -14,17 +14,17 @@ CR 2000 GOTO ." FORTH AGAIN " ; <CR>
 
 Now type FBDEM <CR>
 
-A more useful application would be to define words to handle cassette loading and 
-saving.  BASIC source is saved and loaded in the normal way from the reserved 
+A more useful application would be to define words to handle cassette loading and
+saving.  BASIC source is saved and loaded in the normal way from the reserved
 BASIC area.
 
 
 Forth As A Subroutine
 
-If you're an "out and out BASIC person" you're probably more likely to want to 
-execute Forth as a subroutine.  To return to BASIC from Forth use the word RETUSR. 
-To call Forth from BASIC use RANDOMIZE USR 30000.  Note that on this occasion it 
-is a RANDOMIZE USR and not a PRINT USR.  Using the previously reserved space we 
+If you're an "out and out BASIC person" you're probably more likely to want to
+execute Forth as a subroutine.  To return to BASIC from Forth use the word RETUSR.
+To call Forth from BASIC use RANDOMIZE USR 30000.  Note that on this occasion it
+is a RANDOMIZE USR and not a PRINT USR.  Using the previously reserved space we
 can try another example.  First type:
 
 PROG <CR>
@@ -54,8 +54,8 @@ FORGET FBDEM <CR>
 
 Passing Parameters
 
-Forth variables can easily be PEEK'ed and POKE'd from BASIC and used not only to 
-pass data, but also to control the execution of Forth.  As an example, suppose we 
-wished to select one of 4 Forth words at any one time with a call from BASIC.  Let 
-the Forth words simply be ." WORD1 ", ." WORD2 ", ." WORD3 ", ." WORD4 ". First 
+Forth variables can easily be PEEK'ed and POKE'd from BASIC and used not only to
+pass data, but also to control the execution of Forth.  As an example, suppose we
+wished to select one of 4 Forth words at any one time with a call from BASIC.  Let
+the Forth words simply be ." WORD1 ", ." WORD2 ", ." WORD3 ", ." WORD4 ". First
 we'll need a variable to pass the parameter, so type:

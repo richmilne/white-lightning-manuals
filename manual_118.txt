@@ -1,16 +1,14 @@
-NOOP                   ---                                                         
+NOOP                   ---
 
-This will perform a no-operation, i.e. do nothing. 
-
-
-WARM->COLD                                                                         
-
-This allows you to preserve any FORTH word defined to date, so that a COLD start 
-will not delete them.  When saving your code, save from 24832 to HERE.  
-
-e.g.  : NEWWORD ." THIS WILL BE PRESERVED BY WARM->COLD " ; 
-
-If we now do a COLD start this will be lost, but if we first key in WARM->COLD and 
-then do a COLD start, it will still be there. 
+This will perform a no-operation, i.e. do nothing.
 
 
+WARM->COLD
+
+This allows you to preserve any FORTH word defined to date, so that a COLD start
+will not delete them.  When saving your code, save from 24832 to HERE.
+
+e.g.  : NEWWORD ." THIS WILL BE PRESERVED BY WARM->COLD " ;
+
+If we now do a COLD start this will be lost, but if we first key in WARM->COLD and
+then do a COLD start, it will still be there.

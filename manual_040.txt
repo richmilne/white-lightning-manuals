@@ -1,15 +1,15 @@
 SPRITE/SPRITE OPERATIONS
 
-These are operations between sprites which usually have the same dimensions, or, 
-as in the case of the SPIN command, transposed dimensions.  SP1 and SP2 hold the 
-sprite numbers.  Commands in this group are postfixed with a "M", e.g. COPORM, 
+These are operations between sprites which usually have the same dimensions, or,
+as in the case of the SPIN command, transposed dimensions.  SP1 and SP2 hold the
+sprite numbers.  Commands in this group are postfixed with a "M", e.g. COPORM,
 SPINM.
 
 
 DUMMY SPRITE
 
-A dummy sprite is a sprite which does not contain data for display.  It may be 
-used, for instance, to store a machine code subroutine, an array, or maybe a 
+A dummy sprite is a sprite which does not contain data for display.  It may be
+used, for instance, to store a machine code subroutine, an array, or maybe a
 collision detection sprite.
 
 
@@ -57,5 +57,5 @@ SP1          Where operations involve a sprite and a sprite window,
 SP2          Where operations involve a sprite and a sprite window,
              SP2 holds the number of the sprite which does contain
              the window (1-255).  Where a sprite is to be spun into a second
-             sprite, SP2 holds the number of the second sprite 
+             sprite, SP2 holds the number of the second sprite
              (1-255).

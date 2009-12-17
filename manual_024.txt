@@ -10,7 +10,7 @@ will print 2  (17/3 = 5 remainder 2)
            remainder becomes the second.
 
 e.g.    17 3 /MOD . CR . <CR>
-will print 5 (quotient) 
+will print 5 (quotient)
            2 (remainder)
 
 
@@ -55,5 +55,5 @@ and after OVER is:
             111
 
 
-ROT     :  This will rotate the top three numbers on the stack, bringing the 
+ROT     :  This will rotate the top three numbers on the stack, bringing the
            third number to the top of the stack.

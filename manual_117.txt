@@ -1,32 +1,32 @@
 WORD                 c ---                                L0
 
-Read the next text characters from the input stream being interpreted, until a 
-delimiter c is found, storing the packed character string beginning at the 
-dictionary buffer HERE. WORD leaves the character count in the first byte, the 
-characters, and ends with two or more blanks.  Leading occurrences of c are 
-ignored.  If BLK is zero, text is taken from the terminal input buffer, otherwise 
-from the disc block stored in BLK.  See BLK, IN. 
+Read the next text characters from the input stream being interpreted, until a
+delimiter c is found, storing the packed character string beginning at the
+dictionary buffer HERE. WORD leaves the character count in the first byte, the
+characters, and ends with two or more blanks.  Leading occurrences of c are
+ignored.  If BLK is zero, text is taken from the terminal input buffer, otherwise
+from the disc block stored in BLK.  See BLK, IN.
 
 
-X                                                                                  
+X
 
-This is pseudonym for the "null" or dictionary entry for a name of one character 
-of ASCII null.  It is the execution procedure to terminate interpretation of a 
-line of text from the terminal or within a disc buffer, as both buffers always 
-have a null at the end. 
+This is pseudonym for the "null" or dictionary entry for a name of one character
+of ASCII null.  It is the execution procedure to terminate interpretation of a
+line of text from the terminal or within a disc buffer, as both buffers always
+have a null at the end.
 
 
 XOR              nl n2 --- xor                            L1
 
-Leave the bit-wise logical Exclusive-OR of two values. 
+Leave the bit-wise logical Exclusive-OR of two values.
 
 
 [                                                       P,L1
 
 Used in a colon-definition in the form:
                   : xxx   words   more   ;
-Suspend  compilation.  The words after [ are executed, not compiled.  This allows 
-calculation or compilation exceptions before resuming compilation with ].  See 
+Suspend  compilation.  The words after [ are executed, not compiled.  This allows
+calculation or compilation exceptions before resuming compilation with ].  See
 LITERAL, ].
 
 
@@ -34,27 +34,25 @@ LITERAL, ].
 
 Used in a colon-definition in the form:
                   : xxx [COMPILE] FORTH  ;
-[COMPILE] will force the compilation of an immediate definitions, that would 
-otherwise execute during compilation. The above example will select the FORTH 
-vocabulary when xxx executes, rather than at compile time. 
+[COMPILE] will force the compilation of an immediate definitions, that would
+otherwise execute during compilation. The above example will select the FORTH
+vocabulary when xxx executes, rather than at compile time.
 
 
 ]                                                         L1
 
-Resume compilation, to the completion of a colon-definition.  See [. 
+Resume compilation, to the completion of a colon-definition.  See [.
 
 
 
 ADDITIONAL GLOSSARY
 
 
-C/L                    --- n                                                       
+C/L                    --- n
 
-A constant containing the number of characters per line (64). 
-
-
-WARM                   ---                                                         
-
-This will perform a warm-start. 
+A constant containing the number of characters per line (64).
 
 
+WARM                   ---
+
+This will perform a warm-start.

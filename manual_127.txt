@@ -6,13 +6,13 @@ Sprite 1, the vintage car, demonstrates the fine 1 pixel scroll using SCL1V.
 
 Sprite 2, the van, demnstrates the faster 4 pixel scroll using SCL4V.
 
-Sprite 3, the dragster, danonstrates, the very fast 8 pixel, or 1 character 
+Sprite 3, the dragster, danonstrates, the very fast 8 pixel, or 1 character
 scroll, using SCL8V.
 
 
 THE TELEVISION
 
-The television, sprite 13, is placed on the screen, a window is defined inside the 
+The television, sprite 13, is placed on the screen, a window is defined inside the
 screen.
 
 Sprite 5, the dancer is used to demonstrate the 1 pixel scroll with wrap, WRR1V.
@@ -24,35 +24,35 @@ Sprite 6, the rocket, is used to demonstrate the 8 pixel scroll with wrap, WRR8V
 
 THE THREE SPACESHIPS
 
-In this demonstration the 3 epeceshipa, sprite 15, are placed on the screen along 
+In this demonstration the 3 epeceshipa, sprite 15, are placed on the screen along
 with their shadows, sprite 16.
 
-They are scrolled to the right by 1 pixel, with alternate I pixel up and down 
+They are scrolled to the right by 1 pixel, with alternate I pixel up and down
 scrolls, to give a sense of motion.
 
-The attributes of the forground, sprite 17, and the background, sprite 11, are 
-scrolled to the left.  The background being scrolled at one character per 
-execution with the foreground being scrolled two characters per execution to give 
+The attributes of the forground, sprite 17, and the background, sprite 11, are
+scrolled to the left.  The background being scrolled at one character per
+execution with the foreground being scrolled two characters per execution to give
 a sense of perspective.
 
 
 THE BOUNCING MAN WITH HAT
 
-The bouncing man is animated using sprites 28 and 29.  The sprites are placed on 
-the screw using PUTXRS, and removed again using PUTXRS, such that the character 
-appears to move behind the 'WHITE LIGHTNING' text without destroying it. 
+The bouncing man is animated using sprites 28 and 29.  The sprites are placed on
+the screw using PUTXRS, and removed again using PUTXRS, such that the character
+appears to move behind the 'WHITE LIGHTNING' text without destroying it.
 
 Simple DO LOOPS control his path.
 
-Disabling interrupts, using DI, during the animation appeared to reduce the slight 
+Disabling interrupts, using DI, during the animation appeared to reduce the slight
 flicker of the character, the interrupts where enabled again using El.
 
 
 THE CIRCLE OF ROTATING INVADERS
 
-From the original invader, sprite 24, sprites 25, 26 and 27 were created using the 
+From the original invader, sprite 24, sprites 25, 26 and 27 were created using the
 'ROTATE' facility of the sprite development package.
 
-This dero shows how the centre invader, scrolling left by 1 pixel in background, 
-moves at a constant smooth rate, independent from that of the increasing and then 
+This dero shows how the centre invader, scrolling left by 1 pixel in background,
+moves at a constant smooth rate, independent from that of the increasing and then
 decreasing rate of the rotating invaders in the outer circle.

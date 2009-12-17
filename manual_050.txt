@@ -22,8 +22,8 @@ RELOCATE      Relocate all sprite data and reset pointers
 
 Example:
 
-If space for a 4 by 4 sprite is to be made and the existing buffer space 
-maintained, the sprites would need to be relocated downward by 4*4*9+5 = 149. To 
+If space for a 4 by 4 sprite is to be made and the existing buffer space
+maintained, the sprites would need to be relocated downward by 4*4*9+5 = 149. To
 do this use the following:
 
 -149 MLEN ! RELOCATE
@@ -31,20 +31,20 @@ do this use the following:
 
 TEST
 
-For advanced applications there is a arnnatul to interrogate sprite details.  SPN 
-is loaded with the number of the sprite to be interrogated, and after execution, 
+For advanced applications there is a arnnatul to interrogate sprite details.  SPN
+is loaded with the number of the sprite to be interrogated, and after execution,
 the following parameters will be set:
 
 HGT   will hold the height of the sprite
 LEN   will hold the width of the sprite
 SPTR  will hold the address of the first byte of the sprite header
-DPTR  will hold the address of the first byte of the pixel data 
+DPTR  will hold the address of the first byte of the pixel data
 SIZE  will hold the amount of memory occupied by the sprite
 
-In order to calculate the start of attribute data, use DPTR+8*HGT*LEN.  Note that 
+In order to calculate the start of attribute data, use DPTR+8*HGT*LEN.  Note that
 HGT, LEN, SPTR and DPTR will all be zero if the sprite wasn't found.
 
-A true or false flag is also placed on the stack.  True means the sprite exists 
+A true or false flag is also placed on the stack.  True means the sprite exists
 and false means it doesn't.
 
 

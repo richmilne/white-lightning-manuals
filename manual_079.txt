@@ -1,58 +1,58 @@
 PROGRAM DEVELOPMENT
 
-At any one time, there are up to five areas of development:  Forth source code, 
-BASIC source code, sprites, the Forth language itself, and finally the compiled 
+At any one time, there are up to five areas of development:  Forth source code,
+BASIC source code, sprites, the Forth language itself, and finally the compiled
 and completed program.
 
 
 Forth Source
 
-As previously discussed under the section on editing, Forth source is divided into 
-screens, each of 512 bytes in length.   Each screen can be individually loaded, 
-saved and compiled in any order required.  Screens can even be saved and then 
-loaded back into different screens.  The real advantage of this comes when you're 
-writing really large programs.  As sprite space becomes large, it will work down 
-over the higher screens and this can be clearly seen when an attempt is made to 
+As previously discussed under the section on editing, Forth source is divided into
+screens, each of 512 bytes in length.   Each screen can be individually loaded,
+saved and compiled in any order required.  Screens can even be saved and then
+loaded back into different screens.  The real advantage of this comes when you're
+writing really large programs.  As sprite space becomes large, it will work down
+over the higher screens and this can be clearly seen when an attempt is made to
 List them. Don't CLEAR these screens or the sprite data will be lost!
 
-If really large programs are required and sprites have over-run the top screens, 
-then programs can be compiled a few screens at a time, loading each time into the 
-available screens, compiling and then loading the next section.  Of course, you 
-don't need to load the sprites until compilation is complete, but it's useful to 
+If really large programs are required and sprites have over-run the top screens,
+then programs can be compiled a few screens at a time, loading each time into the
+available screens, compiling and then loading the next section.  Of course, you
+don't need to load the sprites until compilation is complete, but it's useful to
 have the facility just in case.
 
-To save Forth source you'll need to consult Table 1, the table of Screen 
-Addresses.  If, for instance, you wanted to save screens 6 to 11, then the start 
-address would be 52224 decimal and the length, just 6 times 512.  Type 6 512 * . 
-<CR> to find this figure, which is 3072.  To save the source, type PROG to enter 
+To save Forth source you'll need to consult Table 1, the table of Screen
+Addresses.  If, for instance, you wanted to save screens 6 to 11, then the start
+address would be 52224 decimal and the length, just 6 times 512.  Type 6 512 * .
+<CR> to find this figure, which is 3072.  To save the source, type PROG to enter
 BASIC and then type:
 
 SAVE "filename" CODE 52224,3072
 
 To re-enter White Lightning, type PRINT USR 24836 to do a WARM start.
 
-To Load the source, either type Y in response to the LOAD SOURCE Y/N prompt at the 
+To Load the source, either type Y in response to the LOAD SOURCE Y/N prompt at the
 beginning of the session, or exit to BASIC using PROG, then type:
 
 LOAD "filename" CODE     where filename is optional.
 
-If you want to load the code into a different screen area from that in which it 
+If you want to load the code into a different screen area from that in which it
 was Saved, type:
 
 LOAD "filename" CODE start, length
 
-where start is the address of the screen to be loaded, and length is the number of 
-screens to be loaded multiplied by 512.  Again, White Lightning should be 
-re-entered with a PRINT USR 24836.  Do not use RANDOMISE USR 24836 or an OUT OF 
+where start is the address of the screen to be loaded, and length is the number of
+screens to be loaded multiplied by 512.  Again, White Lightning should be
+re-entered with a PRINT USR 24836.  Do not use RANDOMISE USR 24836 or an OUT OF
 SCREEN error may occur.
 
 
 BASIC Source
 
-Before BASIC source can be used in White Lightning programs, the user must execute 
-a RESERVE to make space for the BASIC program.  To reserve, for example, 1K, type: 
-DECIMAL 1024 RESERVE.  This will allocate 1024 bytes for BASIC source code within 
-the dictionary.  If at some later stage you execute a second RESERVE the previous 
-1024 bytes are not reclaimed, so if you find you have not allocated enough space, 
-Save the BASIC source, FORGET all previous definitions, execute a COLD START, and 
+Before BASIC source can be used in White Lightning programs, the user must execute
+a RESERVE to make space for the BASIC program.  To reserve, for example, 1K, type:
+DECIMAL 1024 RESERVE.  This will allocate 1024 bytes for BASIC source code within
+the dictionary.  If at some later stage you execute a second RESERVE the previous
+1024 bytes are not reclaimed, so if you find you have not allocated enough space,
+Save the BASIC source, FORGET all previous definitions, execute a COLD START, and
 start the compilation from scratch. You can now do a second RESERVE.

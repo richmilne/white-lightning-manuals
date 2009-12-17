@@ -1,10 +1,10 @@
-C,                   b ---                                                         
+C,                   b ---
 
-Store 8 bits of b into the next available dictionary byte, advancing the 
+Store 8 bits of b into the next available dictionary byte, advancing the
 dictionary pointer.
 
 
-C@                addr --- b                                                       
+C@                addr --- b
 
 Leave the 8 bit contents of memory address.
 
@@ -21,41 +21,41 @@ At run-time, CASE marks the start of a sequence of OF ... ENDOF statements.
 At compile time CASE leaves n for compiler error checking.
 
 
-CFA                pfa --- cfa                                                     
+CFA                pfa --- cfa
 
-Convert the parameter field address of a definition to its code field address. 
+Convert the parameter field address of a definition to its code field address.
 
 
-CMOVE    from to count ---                                                         
+CMOVE    from to count ---
 
-Move the specified quantity of bytes beginning at address 'from' to address 'to'.  
+Move the specified quantity of bytes beginning at address 'from' to address 'to'.
 The contents of address 'from' are moved first proceeding toward high memory.
 
 
-COLD                                                                               
+COLD
 
-The cold start procedure to adjust the dictionary pointer to the minimum standard 
-and restart via ABORT.  May be called from the terminal to remove application 
-programs and restart. 
+The cold start procedure to adjust the dictionary pointer to the minimum standard
+and restart via ABORT.  May be called from the terminal to remove application
+programs and restart.
 
 
 COMPILE                                                   C2
 
-When the word containing COMPILE executes, the execution address of the word 
-following COMPILE is copied (compiled) into the dictionary.  This allows specific 
-compilation situations to be handled in addition to simply compiling an execution 
-address (which the interpreter already does). 
+When the word containing COMPILE executes, the execution address of the word
+following COMPILE is copied (compiled) into the dictionary.  This allows specific
+compilation situations to be handled in addition to simply compiling an execution
+address (which the interpreter already does).
 
 
 CONSTANT             n ---                                L0
 
 A defining word used in the form:
               n  CONSTANT  cccc
-to create word cccc, with its parameter field containing n.  When cccc is later 
-executed, it will push the value of n to the stack. 
+to create word cccc, with its parameter field containing n.  When cccc is later
+executed, it will push the value of n to the stack.
 
 
 CONTEXT                --- addr                         U,L0
 
-A user variable containing a pointer to the vocabulary within which dictionary 
-searches will first begin. 
+A user variable containing a pointer to the vocabulary within which dictionary
+searches will first begin.

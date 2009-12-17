@@ -1,5 +1,5 @@
 /       :  This will divide the second number on the stack by the first number,
-           and leave the result on the top of the stack. 
+           and leave the result on the top of the stack.
 i.e.    N1 = N2 / N1
 
 e.g.    DECIMAL 1000 500 / . <CR>

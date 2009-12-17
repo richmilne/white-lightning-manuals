@@ -2,14 +2,14 @@ SOME SIMPLE PROGRAMMING EXAMPLES
 
 Example 1
 
-To scroll a window at row 8, column 9, 5 characters high by 10 characters long, 1 
-pixel to the left with wrap - type: 
+To scroll a window at row 8, column 9, 5 characters high by 10 characters long, 1
+pixel to the left with wrap - type:
 
 : DEM1 5 HGT ! 10 LEN ! 8 ROW ! 9 COL ! WRL1V ; <CR>
 
 To put some data on the screen: VLIST <CR>
 
-To scroll the window 100 times type: 
+To scroll the window 100 times type:
 
 : DEM2 100 0 DO DEM1 LOOP ; <CR>
 DEM2 <CR>
@@ -21,14 +21,14 @@ To halt the background execution of DEM1 type: INT-OFF <CR>
 
 Example 2
 
-To scroll a window at column 12, row 3, 10 characters high and 5 characters wide, 
-downward by 3 pixels with wrap - type: 
+To scroll a window at column 12, row 3, 10 characters high and 5 characters wide,
+downward by 3 pixels with wrap - type:
 
 : DEM3 10 HGT ! 5 LEN ! -3 NPX ! 2 ROW ! 12 COL ! WCRV ; <CR>
 
 to define the word, then: DEM3 <CR> to execute it.
 
-To run DEM3 in background type: 
+To run DEM3 in background type:
 
 ' DEM3 INT-ON <CR>
 
@@ -37,7 +37,7 @@ To halt the background execution type: INT-OFF <CR>
 
 Example 3
 
-To invert a window at column 10, row 5, 4 characters high and 4 characters wide - 
+To invert a window at column 10, row 5, 4 characters high and 4 characters wide -
 type:
 
 : DEM4 4 HGT ! 4 LEN ! 5 ROW ! 10 COL ! INVV ; <CR>
@@ -47,9 +47,9 @@ and then DEM4 <CR> to execute.
 
 Example 4
 
-It is not always necessary to use colon definitions to achieve a particular 
-result.  To PUT sprite 34 (If you've got the Demo sprites loaded or have already 
-defined your own sprite 34) at row 5, column 6, and replace any data currently at 
-that position - type: 
+It is not always necessary to use colon definitions to achieve a particular
+result.  To PUT sprite 34 (If you've got the Demo sprites loaded or have already
+defined your own sprite 34) at row 5, column 6, and replace any data currently at
+that position - type:
 
 34 SPN ! 5 ROW ! 6 COL ! PUTBLS <CR>

@@ -7,8 +7,8 @@ KEY     :  This will poll the keyboard, wait for a key to be pressed and push
 
 e.g. KEY      Press "A" on the keyboard
 
-will instruct the computer to wait for a key to be pressed (press the "A") and 
-then push the ASCII value of this key, in this case 41H (where the 'H' implies 
+will instruct the computer to wait for a key to be pressed (press the "A") and
+then push the ASCII value of this key, in this case 41H (where the 'H' implies
 Hexadecimal 41 ie 65 decimal) onto the top of the stack.  In order to display this
 character, try the following example:
 
@@ -18,27 +18,27 @@ KEY EMIT <CR>
 
 but be sure to hit the <CR> very quickly.
 
-Now hit any key and its ASCII value will be printed followed by OK.  So if you 
-type "A" it would print "AOK".  If you were too slow you've now got two cursors! 
+Now hit any key and its ASCII value will be printed followed by OK.  So if you
+type "A" it would print "AOK".  If you were too slow you've now got two cursors!
 Ignore the top one and try again.  This problem only occurs because when you press
-<CR> to enter the example, it immediately executes and you've possibly still got 
+<CR> to enter the example, it immediately executes and you've possibly still got
 <CR> held down.  In a normal Forth definition you won't have this problem.
 
 
 CR      :  This will transmit a carriage return and line feed to the display.
 
 
-.       :  Convert the number held on the stack using the current BASE and 
+.       :  Convert the number held on the stack using the current BASE and
            print it on the screen with a trailing space.
 
-e.g   Suppose the stack contains 16H and BASE is decimal (10), then . will print 
+e.g   Suppose the stack contains 16H and BASE is decimal (10), then . will print
 22 (this is 16 + 6); if BASE were hexadecimal (16), then . would print 16.
 
-In order to see this Working we will alter the BASE and push numbers onto the 
-stack - remember, that just by typing in a valid number will result in it being 
+In order to see this Working we will alter the BASE and push numbers onto the
+stack - remember, that just by typing in a valid number will result in it being
 pushed onto the stack.  There are two words to alter the BASE:
 
-HEX     :  Use hexadecimal base 
+HEX     :  Use hexadecimal base
 DECIMAL :  Use decimal base
 
 Try:
@@ -54,7 +54,7 @@ Try:
       Remember that . will remove the number from the stack that it is printing.
 
 
-U.      :  Prints the number held on the top of the stack as an unsigned number. 
+U.      :  Prints the number held on the top of the stack as an unsigned number.
 
 e.g.  HEX C000 U. <CR>
 

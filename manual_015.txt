@@ -5,10 +5,10 @@
     E)  SPRITE        = Start address of sprite being tested.
 
 
-A function is provided to Wipe a sprite from memory and adjust pointers.  Leave 
+A function is provided to Wipe a sprite from memory and adjust pointers.  Leave
 everything as it is and try:
 
-1.  Press W (Wipe sprite) - remember sprite 19 has already been defined.  Respond 
+1.  Press W (Wipe sprite) - remember sprite 19 has already been defined.  Respond
 to the prompt with Y.
 
 2.  Press T (Test sprite) and an error message will appear on the text line -
@@ -19,17 +19,17 @@ While we are considering error messages, have a go at this:
 
 1.  Press Z (Arcade Character) and then press 63.
 
-2.  Press S (Sprite Number) and press 12 - an error message will appear, SPRITE 
+2.  Press S (Sprite Number) and press 12 - an error message will appear, SPRITE
 ALREADY DEFINED.  Sprite number 12 is not corrupted in any way, nor is the one you
-have put to the screen.  All that you need to do is choose a different sprite 
+have put to the screen.  All that you need to do is choose a different sprite
 number which has not already been allocated.
 
 
-There's one area we've been avoiding all the way through - the Logic Functions. 
-We don't Want to wade into the depths of Boolean algebra here, but instead, 
-provide a few examples which hopefully show the application of the XOR, OR and 
-AND operations to tHis part of the package.  They are provided for advanced 
-applications only and their results are summarised on the sprite generator panel. 
+There's one area we've been avoiding all the way through - the Logic Functions.
+We don't Want to wade into the depths of Boolean algebra here, but instead,
+provide a few examples which hopefully show the application of the XOR, OR and
+AND operations to tHis part of the package.  They are provided for advanced
+applications only and their results are summarised on the sprite generator panel.
 Let's see what they do:
 
 1.  Clear the sprite screen and position the cursors to X POS 1 Y POS 1.

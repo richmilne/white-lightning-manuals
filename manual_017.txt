@@ -13,16 +13,16 @@ covered by an example are:
 
 3.  Load Sprites from Tape ( - (SYMBOL SHIFT J) ).
 
-The "Relocate Sprites" does simply that, it relocates sprites in memory.  Just 
-enter a relocation length - positive to move srites to higher memory and negative 
-to move sprites to lower memory.  This function is not often used in fact and 
+The "Relocate Sprites" does simply that, it relocates sprites in memory.  Just
+enter a relocation length - positive to move srites to higher memory and negative
+to move sprites to lower memory.  This function is not often used in fact and
 should be used with great care!
 
-The "Save Sprites" function is very straight forward - just follow the screen 
-instructions.  After the sprites have been saved you will be asked to rewind the 
+The "Save Sprites" function is very straight forward - just follow the screen
+instructions.  After the sprites have been saved you will be asked to rewind the
 tape to verify the saved data.
 
-The "Load Sprites" function is similar to the above - just follow the screen 
+The "Load Sprites" function is similar to the above - just follow the screen
 instructions.
 
 It should be noted that whenever sprites are saved or loaded, there are 3 distinct
@@ -31,10 +31,10 @@ sets of data which the generator stores and retrieves.
 
 CONCLUSIONS
 
-Well, there's nothing to stop you now!  Going through the examples will help you 
-to familiarise yourself with all of the Function Keys.  It won't be long before 
+Well, there's nothing to stop you now!  Going through the examples will help you
+to familiarise yourself with all of the Function Keys.  It won't be long before
 you'll be happy to press on by yourself - happy sprite generating.
 
 The thing to do now, is to press on with Spectra Forth and IDEAL, these really are
-not as frightening as they may first appear - after seeing the demo program, what 
+not as frightening as they may first appear - after seeing the demo program, what
 more incentive do you need !

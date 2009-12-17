@@ -1,4 +1,4 @@
-Fourth byte             Holds the width of the sprite in characters (1 to 255). 
+Fourth byte             Holds the width of the sprite in characters (1 to 255).
 
 Fifth byte              Holds the height of the sprite in characters (1 to 255).
 
@@ -6,56 +6,56 @@ Fifth byte              Holds the height of the sprite in characters (1 to 255).
 
 Height*length bytes     Attribute data.
 
-This means that the total space allocated to each sprite is 9*height*length+5 
+This means that the total space allocated to each sprite is 9*height*length+5
 bytes.
 
-Sprite numbers do not need to run sequentially, but the earlier a sprite is 
+Sprite numbers do not need to run sequentially, but the earlier a sprite is
 defined, the more rapid its access.
 
 
 LOADING SPRITES FROM TAPE
 
-Sprites saved to tape using the development software can be loaded into the main 
-program at the start of the session when the "LOAD SPRITES Y/N" prompt appears. 
+Sprites saved to tape using the development software can be loaded into the main
+program at the start of the session when the "LOAD SPRITES Y/N" prompt appears.
 If sprites are loaded in this manner, the sprite data, together with the necessary
-pointers, will be loaded.  SPST and SPND are automatically set and the sprites 
+pointers, will be loaded.  SPST and SPND are automatically set and the sprites
 will be ready for use.
 
-If sprites are saved and later loaded from White Lightning, SPST and SPND will 
+If sprites are saved and later loaded from White Lightning, SPST and SPND will
 need to be set by hand.
 
 
 THE BUFFER
 
-When vertical scrolling takes place, be it for pixel data or attributes, with or 
-without wrap, data has to be temporarily stored for later retrieval.  If a 
-vertical scroll is executed by the foreground program then the buffer is pointed 
-to by SPND, so the space immediately above sprites is used.  When the sprite 
-development software is used, a prompt is issued at the start of the session, 
-which asks the user whether or not buffer size should be changed.  If the buffer 
-size is not changed then it remains 256 bytes long.  The user can enter a larger 
-or smaller value if preferred, though the default value of 256 will cover most 
+When vertical scrolling takes place, be it for pixel data or attributes, with or
+without wrap, data has to be temporarily stored for later retrieval.  If a
+vertical scroll is executed by the foreground program then the buffer is pointed
+to by SPND, so the space immediately above sprites is used.  When the sprite
+development software is used, a prompt is issued at the start of the session,
+which asks the user whether or not buffer size should be changed.  If the buffer
+size is not changed then it remains 256 bytes long.  The user can enter a larger
+or smaller value if preferred, though the default value of 256 will cover most
 eventualities.
 
-Scrolling attributes uses one byte for each column of the width, scrolling pixel 
-data uses one byte for each column of the width, multiplied by the number of 
-pixels being scrolled (the value held in NPX, see vertical scrolls).  The buffer 
-space need only be large enough to accommodate the largest scroll, as foreground 
-scrolls will not take place simultaneously.  Suppose a sprite or screen window 8 
-characters high by 4 characters wide is to be scrolled by 10 pixels.  (The 
-direction, i.e. the sign of NPX does not matter).  The space required is 4 * 10 = 
+Scrolling attributes uses one byte for each column of the width, scrolling pixel
+data uses one byte for each column of the width, multiplied by the number of
+pixels being scrolled (the value held in NPX, see vertical scrolls).  The buffer
+space need only be large enough to accommodate the largest scroll, as foreground
+scrolls will not take place simultaneously.  Suppose a sprite or screen window 8
+characters high by 4 characters wide is to be scrolled by 10 pixels.  (The
+direction, i.e. the sign of NPX does not matter).  The space required is 4 * 10 =
 40 bytes.  If you find at some later stage that you have not allowed enough buffer
-space, you can always relocate sprite space downward and likewise, if you have 
+space, you can always relocate sprite space downward and likewise, if you have
 more than you need, you can relocate upwards.
 
 
 BACKGROUND SCROLLING
 
-When programs are executed in background (see Foreground/Background) it is risky 
-to share a common scrolling buffer, since the background program could execute 
-while the foreground program is using the buffer.  For this reason, a second 
+When programs are executed in background (see Foreground/Background) it is risky
+to share a common scrolling buffer, since the background program could execute
+while the foreground program is using the buffer.  For this reason, a second
 buffer pointer is used for background scrolling.  The variable holding the address
-of the background buffer is SPND'.  When White Lightning is first entered, SPND' 
+of the background buffer is SPND'.  When White Lightning is first entered, SPND'
 points to the 256 free bytes in the printer buffer at decimal 23296.  The user can
-move this buffer by changing the value held in SPND'.  It is not a bad idea to 
+move this buffer by changing the value held in SPND'.  It is not a bad idea to
 allocate enough buffer space, for both foreground and background scrolling above

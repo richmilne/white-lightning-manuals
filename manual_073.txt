@@ -2,9 +2,9 @@ COLLISION DETECTION AND SPRITE RECOGNITION
 
 Two words are provided for collision detection, these are SCANV and SCANM.
 
-SCANV is used to scan a particular character position on the screen.  If any data 
-is present in the specified square (co-ords are held in COL and ROW), then a true 
-flag is placed on the stack and if the square is empty (contains no pixel data), a 
+SCANV is used to scan a particular character position on the screen.  If any data
+is present in the specified square (co-ords are held in COL and ROW), then a true
+flag is placed on the stack and if the square is empty (contains no pixel data), a
 false flag is placed on the stack. Type:
 
 CLS VLIST 0 VARIABLE CNT <CR>
@@ -15,18 +15,18 @@ This will put some data on the screen and initiate the variable CNT.  Now type:
 DO I COL ! SCANV IF 1 CNT +! <CR>
 ENDIF LOOP LOOP CNT ? ; <CR>
 
-This defines a word which simply counts the number of characters on the screen. 
+This defines a word which simply counts the number of characters on the screen.
 Type:
 
 GO <CR>
 
 This should print a number somewhere around 250.
 
-Often it is insufficient to determine whether a particular character square 
-contains data or not, and for this reason the slower, but more powerful command 
-SCANM, has been included. This will scan the sprite whose number is held in SPN 
-and put a true flag on the stack if the sprite contains pixel data, or a false 
-flag if it does not.  SCANM is normally used to perform one of three functions: 
+Often it is insufficient to determine whether a particular character square
+contains data or not, and for this reason the slower, but more powerful command
+SCANM, has been included. This will scan the sprite whose number is held in SPN
+and put a true flag on the stack if the sprite contains pixel data, or a false
+flag if it does not.  SCANM is normally used to perform one of three functions:
 
 1.  To see if data will collide.
 
@@ -34,27 +34,27 @@ flag if it does not.  SCANM is normally used to perform one of three functions:
 
 3.  To detect the presence of a pattern.
 
-Collision detection is most commonly used to detect a collision between a sprite 
-moving across the screen and any data which lies in its path.  Often the sprite 
-can pass through an occupied character position without a collision occurring, so 
-the SCANM command is insufficient.  The procedure is basically to load a dummy 
-sprite with the section of screen into which the sprite is about to be put, "AND" 
-it with the sprite about to be PUT and then use SCANM.  If a true flag is on the 
-stack the dummy sprite contains data and therefore a collision has occurred.  This 
-is all very well, but a problem occurs if the new sprite position overlaps the old 
-sprite position, because this means that the old sprite has to be removed from the 
-screen before beginning the above detection procedure and subsequently PUTting the 
-new sprite.  This delay causes flicker.  The easiest solution is to work with 
-"XOR"s so that the window can be GOT, "XOR"ed with the old sprite in memory to 
-remove the old sprite data, and then to do the detection followed finally by the 
+Collision detection is most commonly used to detect a collision between a sprite
+moving across the screen and any data which lies in its path.  Often the sprite
+can pass through an occupied character position without a collision occurring, so
+the SCANM command is insufficient.  The procedure is basically to load a dummy
+sprite with the section of screen into which the sprite is about to be put, "AND"
+it with the sprite about to be PUT and then use SCANM.  If a true flag is on the
+stack the dummy sprite contains data and therefore a collision has occurred.  This
+is all very well, but a problem occurs if the new sprite position overlaps the old
+sprite position, because this means that the old sprite has to be removed from the
+screen before beginning the above detection procedure and subsequently PUTting the
+new sprite.  This delay causes flicker.  The easiest solution is to work with
+"XOR"s so that the window can be GOT, "XOR"ed with the old sprite in memory to
+remove the old sprite data, and then to do the detection followed finally by the
 blotting and then immediate PUTting.
 
-Once an impending collision is detected it is frequently useful to determine what 
-the sprite has collided with.  To begin with, let's assume that the screen window 
-we're examining contains one of a known set of objects and that no other data is 
-present in the window.  The method is to load the dummy sprite with the object to 
-be tested and then compare it against the set of sprites with which a match is 
-being sought.  To compare the dummy sprite with a known sprite, all you need to do 
-is XOR the sprite being tested into the dummy and do a SCANM.  If the result is 
-zero, an exact match was found, if not, do a second XOR into the dummy to restore 
+Once an impending collision is detected it is frequently useful to determine what
+the sprite has collided with.  To begin with, let's assume that the screen window
+we're examining contains one of a known set of objects and that no other data is
+present in the window.  The method is to load the dummy sprite with the object to
+be tested and then compare it against the set of sprites with which a match is
+being sought.  To compare the dummy sprite with a known sprite, all you need to do
+is XOR the sprite being tested into the dummy and do a SCANM.  If the result is
+zero, an exact match was found, if not, do a second XOR into the dummy to restore
 it and test the next candidate.

@@ -2,10 +2,10 @@ SCROLLING
 
 SCREEN SCROLLS
 
-The horizontal screen scrolls are by 1, 4 or 8 pixels, left or right and with or 
-without wrap.  The vertical scrolls are slightly more flexible.  The variable NPX 
-is loaded with the number of pixels to be scrolled, positive for upward movement 
-and negative for downward movement.  In each case, a screen window has to be 
+The horizontal screen scrolls are by 1, 4 or 8 pixels, left or right and with or
+without wrap.  The vertical scrolls are slightly more flexible.  The variable NPX
+is loaded with the number of pixels to be scrolled, positive for upward movement
+and negative for downward movement.  In each case, a screen window has to be
 defined.
 
 
@@ -20,32 +20,32 @@ HGT         Height of the window (1-24)
 
 Command                 Action
 
-WRL1V       Scroll left  1 pixel  with wrap 
-WRR1V       Scroll right 1 pixel  with wrap 
-SCL1V       Scroll left  1 pixel,   no wrap 
-SCR1V       Scroll right 1 pixel,   no wrap 
-WRL4V       Scroll left  4 pixels with wrap 
-WRR4V       Scroll right 4 pixels with wrap 
-SCL4V       Scroll left  4 pixels,  no wrap 
-SCR4V       Scroll right 4 pixels,  no wrap 
-WRL8V       Scroll left  8 pixels with wrap 
-WRR8V       Scroll right 8 pixels with wrap 
-SCL8V       Scroll left  8 pixels,  no wrap 
+WRL1V       Scroll left  1 pixel  with wrap
+WRR1V       Scroll right 1 pixel  with wrap
+SCL1V       Scroll left  1 pixel,   no wrap
+SCR1V       Scroll right 1 pixel,   no wrap
+WRL4V       Scroll left  4 pixels with wrap
+WRR4V       Scroll right 4 pixels with wrap
+SCL4V       Scroll left  4 pixels,  no wrap
+SCR4V       Scroll right 4 pixels,  no wrap
+WRL8V       Scroll left  8 pixels with wrap
+WRR8V       Scroll right 8 pixels with wrap
+SCL8V       Scroll left  8 pixels,  no wrap
 SCR8V       Scroll right 8 pixels,  no wrap
 
 Note:
 
-Before executing any of these commands, the window needs to be set up using the 
+Before executing any of these commands, the window needs to be set up using the
 four parameters above.  If the command does not execute, it is likely that part of
-the window does not lie on the screen.  COL + LEN should be in the range 1 to 32 
+the window does not lie on the screen.  COL + LEN should be in the range 1 to 32
 and LEN + HGT should be in the range 1 to 24.
 
 Example:
 
 To see these commands work, it is a good idea to do a VLIST first so that there is
-some data on the screen.  The four parameters will need to be set, unless of 
-course they have previously been defined, but for this example let us assume that 
-they haven't.  To scroll a window at COL 4, ROW 5 with height 4 characters and 
+some data on the screen.  The four parameters will need to be set, unless of
+course they have previously been defined, but for this example let us assume that
+they haven't.  To scroll a window at COL 4, ROW 5 with height 4 characters and
 width 3 characters, with wrap, 4 pixels left, type the following:
 
 4 COL ! 5 ROW ! 4 HGT ! 3 LEN ! WRL4V <CR>
@@ -54,5 +54,5 @@ If there is no data on the screen, type:
 
 VLIST 4 COL ! 5 ROW ! 4 HGT ! 3 LEN ! WRL4V <CR>
 
-A window column 4 Row 5 has been scrolled left 4 pixels - if you did'nt see it 
+A window column 4 Row 5 has been scrolled left 4 pixels - if you did'nt see it
 happen type:

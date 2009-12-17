@@ -1,23 +1,23 @@
 # TODO: Remove this comment once this file has been proofread
 
-sprite space and assign SPND' to point to the space after the foreground buffer. 
+sprite space and assign SPND' to point to the space after the foreground buffer.
 Suppose, for example, the foreground program requires 200 bytes and the background
-300 bytes, with the buffer currently set to 256 bytes.  500 bytes are needed in 
+300 bytes, with the buffer currently set to 256 bytes.  500 bytes are needed in
 all, so sprites need to be relocated down by 500 - 256 = 244 bytes.  Type:
 
 -244 MLEN ! RELOCATE <CR>
 
-Note that MLEN is now negative since relocation is downward.  SPND' should be set 
-200 bytes into the buffer to leave space for the foreground data.  To do this 
+Note that MLEN is now negative since relocation is downward.  SPND' should be set
+200 bytes into the buffer to leave space for the foreground data.  To do this
 type:
 
 SPND @ 200 + SPND' ! <CR>
 
-If memory is really tight and the buffer has to be shared, then the background 
+If memory is really tight and the buffer has to be shared, then the background
 program can be temporarily disabled using DI but as soon as the vertical scroll is
-executed, an EI must be executed to re-enable the background program.  If, for 
-example, a screen window 12 characters wide and 4 characters high is to be 
-scrolled vertically by 8 pixels with wrap, and the background program is to be 
+executed, an EI must be executed to re-enable the background program.  If, for
+example, a screen window 12 characters wide and 4 characters high is to be
+scrolled vertically by 8 pixels with wrap, and the background program is to be
 inhibited, type:
 
 0 0 AT 8 NPX ! 12 LEN ! 4 HGT ! 4 COL ! 4 ROW ! DI WCRV EI <CR>
@@ -25,15 +25,15 @@ inhibited, type:
 It is best to re-enable the background program as soon as possible, preferably, as
 above, the next word.
 
-Until you get used to the package leave the buffers as they are on entry to White 
-Lightning.  Use ISPRITE and DSPRITE, and not SPRITE and WIPE, to define new 
-sprites.  The only time you really need to worry about changing buffer sizes or 
+Until you get used to the package leave the buffers as they are on entry to White
+Lightning.  Use ISPRITE and DSPRITE, and not SPRITE and WIPE, to define new
+sprites.  The only time you really need to worry about changing buffer sizes or
 positions is when you have a dire need to save a few extra bytes.
 
 
 IDEAL MNEMONICS
 
-To get the best out of the White Lightning package, please read these next 
+To get the best out of the White Lightning package, please read these next
 sections carefully and note the parameters.  The words have been selected so as to
 be as mnemonic as possible.  To help yourself become acquainted with the language,
 it is worth noting the following:
@@ -54,7 +54,7 @@ it is worth noting the following:
      will be OR'ed with the source data.
 
  6.  NDS indicates that data is to be "Shifted and AND'ed".
- 
+
  7.  XRS indicates that data is to be "Shifted and XOR'ed".
 
  8.  ATT indicates that the operation is on attribute data.

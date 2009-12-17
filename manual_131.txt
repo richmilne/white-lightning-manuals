@@ -2,13 +2,13 @@ Example 11
 
 To place sprite 24 into the screen of sprite 13 use:
 
-: DEM11 24 SP1 ! 13 SP2 ! 7 SCOL ! 6 SROW ! GWBLM 10 ROW ! 10 COL ! ATTON PUTBLS 
+: DEM11 24 SP1 ! 13 SP2 ! 7 SCOL ! 6 SROW ! GWBLM 10 ROW ! 10 COL ! ATTON PUTBLS
 ;
 
 
 Example 12
 
-To XOR sprite 43, the explosion, with sprite 27, the 270 degree rotated Invader, 
+To XOR sprite 43, the explosion, with sprite 27, the 270 degree rotated Invader,
 in memory, use:
 
 : DEM12 43 SP1 ! 27 SP2 ! COPXRM 10 ROW ! 10 COL ! 27 SPN ! ATTON PUTBLS ;
@@ -30,10 +30,10 @@ To enlarge sprite 24 into sprite 45 using the DSPM command use:
 
 Example 15
 
-To search through sprite space, locate any existing sprites, print out the start 
+To search through sprite space, locate any existing sprites, print out the start
 of data, length and height, use:
 
-: DEM15 255 1 DO I SPN ! TEST 1 = IF I. SPACE DPTR @ U. SPACE LEN ? SPACE HGT ? 
+: DEM15 255 1 DO I SPN ! TEST 1 = IF I. SPACE DPTR @ U. SPACE LEN ? SPACE HGT ?
 SPACE CR THEN LOOP ;
 
 

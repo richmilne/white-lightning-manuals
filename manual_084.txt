@@ -4,8 +4,8 @@ G        Activates GET SPRITE function.
          Number" variable and at the window indicated by the sprite screen
          cursor - and stores it in memory.
 
-         NOTE:  If the Attribute switch = 1, the sprite and attributes 
-         are stored; if the Attribute switch = 0, then any Attributes will 
+         NOTE:  If the Attribute switch = 1, the sprite and attributes
+         are stored; if the Attribute switch = 0, then any Attributes will
          be ignored. When a sprite is first defined with Attribute
          switch = 0 the attribute data will probably be garbage.
 
@@ -13,47 +13,47 @@ H        Activates the SPRITE HEIGHT Variable.
          Permits the input of the height of a sprite window from 1-15.
 
 I        Activates the ATTRIBUTE DUMP function.
-         Places the four Attributes set in the four Attribute Variables, 
-         to the sprite screen, at the position indicated by the sprite 
+         Places the four Attributes set in the four Attribute Variables,
+         to the sprite screen, at the position indicated by the sprite
          screen cursors - with a resolution of one character.
 
          NOTE:  This function is independent of the Attribute Switch, e.g.
-         to place Attributes at position x=4, y=4:  position sprite screen 
-         cursors at x=4 and y=4, then set the four attributes as required 
-         (you can then set the Attribute switch to 0 (OFF) if you like) 
+         to place Attributes at position x=4, y=4:  position sprite screen
+         cursors at x=4 and y=4, then set the four attributes as required
+         (you can then set the Attribute switch to 0 (OFF) if you like)
          and press I.
 
-J        Activates the move CHR$ SQR TO SPRITE SCREEN function. 
-         Dumps the bit pattern set in the CHR$ SQR to a character square 
+J        Activates the move CHR$ SQR TO SPRITE SCREEN function.
+         Dumps the bit pattern set in the CHR$ SQR to a character square
          in the sprite screen, indicated by the sprite screen cursors.
 
-         NOTE:  If the Attribute Switch = 0, no Attributes will move with 
-         the pattern.  If the Attribute switch = 1, then the Attributes 
+         NOTE:  If the Attribute Switch = 0, no Attributes will move with
+         the pattern.  If the Attribute switch = 1, then the Attributes
          held in the Attribute Variables will move with the pattern.
 
-K        Activates the MOVE SPRITE SCREEN CHARACTER TO CHR$ SQR 
-         function. 
-         Picks up the Character Square indicated by the Sprite Screen 
+K        Activates the MOVE SPRITE SCREEN CHARACTER TO CHR$ SQR
+         function.
+         Picks up the Character Square indicated by the Sprite Screen
          Cursors, into the CHR$ SQR.
 
          NOTE:  ATTR = 0 ignores Character Attributes.  ATTR = 1 takes the
-         Attributes of the character and loads them into the Attribute 
+         Attributes of the character and loads them into the Attribute
          Variables.
 
-L        Activates the SPRITE LENGTH variable. 
+L        Activates the SPRITE LENGTH variable.
          Permits the input of the length of a Sprite Window from 1-15.
 
 M        Activates the Sprite Functions.
-         You will be given three options which act in the same way as the 
-         'SCREEN FUNCTIONS E', except that these functions operate on 
+         You will be given three options which act in the same way as the
+         'SCREEN FUNCTIONS E', except that these functions operate on
          the sprite in memory only and have no effect directly on the
          screen.
 
 N        Activates the No, negative response to (Y/N) questions.
 
-O        Activates the Sprite Logic functions. 
+O        Activates the Sprite Logic functions.
          You will he given three options.  Each option GETS an area of the
-         sprite screen, the dimensions of which are specified as those of 
+         sprite screen, the dimensions of which are specified as those of
          the defined sprite, having a top left-hand corner at the sprite screen
          cursor positions and logically GETs the data into the defined sprite -
          - whose number is in the Sprite Number Variable.

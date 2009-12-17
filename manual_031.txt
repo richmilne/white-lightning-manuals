@@ -1,4 +1,4 @@
-       STACK            OPERATION           OUTPUT (if any) 
+       STACK            OPERATION           OUTPUT (if any)
 
         empty            DECIMAL
         0                0
@@ -38,18 +38,18 @@ If FALSE:
                          ;
 
 In fact, it is a good idea to check the stack contents during the execution of any
-new Forth word to make sure that it is working correctly.  (Note that DROP merely 
+new Forth word to make sure that it is working correctly.  (Note that DROP merely
 clears the top number from the stack).
 
-Finally, one extra construct has been added to circumvent the problem of deeply 
-nested IF...THEN...ELSE structures.  This is the CASE OF structure. It takes the 
+Finally, one extra construct has been added to circumvent the problem of deeply
+nested IF...THEN...ELSE structures.  This is the CASE OF structure. It takes the
 general form :
 
 CASE n1 OF (Forth Word) ENDOF n2 OF (Forth Word) ENDOF ... END CASE
 
 For example type:
 
-: TEST4 CASE 1 OF ." FIRST CASE " ENDOF 2 OF ." SECOND CASE " ENDOF 3 OF ." THIRD 
+: TEST4 CASE 1 OF ." FIRST CASE " ENDOF 2 OF ." SECOND CASE " ENDOF 3 OF ." THIRD
 CASE " ENDOF END CASE ; <CR>
 
 Now type :

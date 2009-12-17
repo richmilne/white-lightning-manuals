@@ -1,30 +1,30 @@
-Position the X and Y Pos cursors to the appropriate co-ordinates.  Input 
-the relevant sprite number and put the sprite to the screen by pressing the 
-D key and then 1.  In the case of 0 press J to DUMP the empty CHR$ square 
+Position the X and Y Pos cursors to the appropriate co-ordinates.  Input
+the relevant sprite number and put the sprite to the screen by pressing the
+D key and then 1.  In the case of 0 press J to DUMP the empty CHR$ square
 to the sprite screen.
 
 The landing pad, sprite 3, is also placed in these sprites.
 
-Once the 8 by 3 sprites have been created on the screen, position the X and 
-Y pos cursors to the top left corner of the sprite.  Set the sprite number 
-to the appropriate value, set the length to 8 and the height to 3 then 
+Once the 8 by 3 sprites have been created on the screen, position the X and
+Y pos cursors to the top left corner of the sprite.  Set the sprite number
+to the appropriate value, set the length to 8 and the height to 3 then
 press G to get the sprite.
 
-Note that the left hand column of sprite 10 must have a 0 ink value as well 
+Note that the left hand column of sprite 10 must have a 0 ink value as well
 as the right hand column of sprite 11.
 
-Once all the sprites have been created save them off to tape using the 
+Once all the sprites have been created save them off to tape using the
 symbol SHIFT S key.
 
-Load in White Lightning, load in the lunar sprites.  Carefully type in the 
-Lunar Lander program as listed and check your program against the original. 
+Load in White Lightning, load in the lunar sprites.  Carefully type in the
+Lunar Lander program as listed and check your program against the original.
 It is now best to save your source off to tape.
 
 Exit to BASIC using:                PROG <CR>
 
-then save to tape using:            SAVE"LUNAR" CODE 52224,6656 
+then save to tape using:            SAVE"LUNAR" CODE 52224,6656
 
-Go back into White Lightning using: PRINT USR 24836 
+Go back into White Lightning using: PRINT USR 24836
 
 Now type     6 LOAD <CR>
              MAKE <CR>  to create the landscape
@@ -32,23 +32,23 @@ Now type     6 LOAD <CR>
 
 To run the program type  TST <CR>
 
-Please note that if there is an error in your source the last few screens 
-can no longer be listed or compiled, since the creation of extra sprites 
-has overwritten the end screens, thus the source would have to be reloaded 
+Please note that if there is an error in your source the last few screens
+can no longer be listed or compiled, since the creation of extra sprites
+has overwritten the end screens, thus the source would have to be reloaded
 for editing purposes.
 
 
 PLAYING THE GAME
 
-The game itself is more of a simulation than a game.  The idea is to land 
-on all four bases without running out of fuel or crashing.  The gauges are 
+The game itself is more of a simulation than a game.  The idea is to land
+on all four bases without running out of fuel or crashing.  The gauges are
 self explanatory.
 
 The controls are:      CAPS SHIFT     Thrust to the left
                        BREAK SPACE    Thrust to the right
                        ENTER          Vertical thrust
 
-Once the game is over, hit the ENTER key to escape and then TST <CR> for a 
+Once the game is over, hit the ENTER key to escape and then TST <CR> for a
 new game.
 
 FUEL
@@ -57,5 +57,5 @@ If fuel runs out the controls will no longer function.
 
 YVEL
 
-A safe landing is only made if the VEL gauge registers a velocity in the 
+A safe landing is only made if the VEL gauge registers a velocity in the
 "safe" region of the centre of the gauge.

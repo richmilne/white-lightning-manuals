@@ -1,5 +1,5 @@
   1 OK ENDOF 13 OF OK ENDOF 30 O        SCR # 17
-F OK ENDOF 31 OF OK ENDOF 58 OF           0 : FVEL FU @ 16 / SFU @ - 0< 
+F OK ENDOF 31 OF OK ENDOF 58 OF           0 : FVEL FU @ 16 / SFU @ - 0<
 OK                                      IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE
   2 ENDOF 59 OF OK ENDOF 91 OF O        N !
 K ENDOF 92 OF OK ENDOF ENDCASE            1 -1 NPX ! -1 SFU   +! WCRV RSE
@@ -9,7 +9,7 @@ SY 63 VARIABEL SFU                        3 : MXG 18 ROW ! 16 COL ! 16 L
   5 : XG SX +! 16 COL ! 13 ROW !        EN ! 1 HGT ! ;
  1 HGT ! 16 LEN ! ;                       4 : MLEFT MXG WRL1V -1 LX +! ;
   6 : RSET1 7 COL ! 3 LEN ! ;               : MRIGHT MXG WRR1V 1 LX +! ;
-    : WLEFT -1 XG WRR1V RSET1 ;           5 : MON PH @ 8 / LX @ - DUP 0 
+    : WLEFT -1 XG WRR1V RSET1 ;           5 : MON PH @ 8 / LX @ - DUP 0
   7 : WRIGHT 1 XG WRL1V RSET1 ;         > IF DROP MRIGHT ELSE
      -->                                  6 0< IF MLEFT ENDIF ENDIF RSET
                                         1 ;
@@ -41,7 +41,7 @@ Sets the attributes in the right hand half of the screen.
 
 VTSC
 
-Produces a row of sprites with the current sprite number at the column on the 
+Produces a row of sprites with the current sprite number at the column on the
 stack.  Used to build up the gauges.
 
 SCLE

@@ -1,11 +1,11 @@
-This glossary contains all of the word definitions in Release 1 of fig-FORTH.  The 
-definitions are presented in the order of their ASCII sort and are reproduced 
+This glossary contains all of the word definitions in Release 1 of fig-FORTH.  The
+definitions are presented in the order of their ASCII sort and are reproduced
 courtesy of the FORTH INTEREST GROUP, P.O. BOX 1105, SAN CARLOS, CA 94070.
 
-The first line of each entry shows a symbolic description of each action of the 
-procedure on the parameter stack.  The symbols indicate the order in which input 
-parameters have been placed on the stack.  Three dashes "---" indicate the 
-execution point; any parameters left on the stack are listed. In this notation, 
+The first line of each entry shows a symbolic description of each action of the
+procedure on the parameter stack.  The symbols indicate the order in which input
+parameters have been placed on the stack.  Three dashes "---" indicate the
+execution point; any parameters left on the stack are listed. In this notation,
 the top of the stack is to the right.
 
 The symbols include:
@@ -23,7 +23,7 @@ tf      boolean true flag = non-zero
 
 The capital letters on the right show definition characteristics:
 
-C       May only be used within a colon definition.  A digit indicates 
+C       May only be used within a colon definition.  A digit indicates
         number of memory addresses used, if other than one.
 E       Intended for execution only.
 L0      Level zero definition of FORTH-78
@@ -31,28 +31,26 @@ L1      Level 1 definition of FORTH-78
 P       Has precedence bit set.  Will execute even when compiling.
 U       A user variable.
 
-Unless otherwise noted, all references to numbers are for 16 bit signed integers. 
-The high byte of a number is on top of the stack, with the sign on the leftmost 
-bit.  For 32 bit signed double numbers, the most significant bit (with the sign) 
+Unless otherwise noted, all references to numbers are for 16 bit signed integers.
+The high byte of a number is on top of the stack, with the sign on the leftmost
+bit.  For 32 bit signed double numbers, the most significant bit (with the sign)
 is on top.
 
-All arithmetic is implicitly 16 bit signed integer math, with error and underflow 
+All arithmetic is implicitly 16 bit signed integer math, with error and underflow
 indication specified.
 
-NOTE:   All references to disc in this documentation can be read as references to 
-the disc simulation area in memory from C200H to F000H, which are treated as a 
-very limited disk capacity by White Lightning, and do not in any way change the 
-operation or description of any of the FORTH words defined in this documentation. 
+NOTE:   All references to disc in this documentation can be read as references to
+the disc simulation area in memory from C200H to F000H, which are treated as a
+very limited disk capacity by White Lightning, and do not in any way change the
+operation or description of any of the FORTH words defined in this documentation.
 DO NOT use DR0, DR1 or GO.
 
 
 !               n addr ---                                L0
 
-Store 16 bits of n at address.  Pronounced "store". 
+Store 16 bits of n at address.  Pronounced "store".
 
 
-!CSP                                                                               
+!CSP
 
-Save the stack position in CSP.  Used as part of the compiler security. 
-
-
+Save the stack position in CSP.  Used as part of the compiler security.

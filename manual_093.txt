@@ -1,63 +1,61 @@
-(ABORT)                                                                            
+(ABORT)
 
-Executes after an error when WARNING is -1.  This word normally executes ABORT, 
+Executes after an error when WARNING is -1.  This word normally executes ABORT,
 but may be altered (with care) to a user's alternative procedure.  See WARNING.
 
 
 (DO)                                                       C
 
-The run-time procedure compiled by DO which moves the loop control parameters to 
-the return stack.  See DO. 
+The run-time procedure compiled by DO which moves the loop control parameters to
+the return stack.  See DO.
 
 
-(FIND)     addr1 addr2 --- pfa b tf (ok)                                           
-           addr1 addr2 --- ff      (bad)                     
+(FIND)     addr1 addr2 --- pfa b tf (ok)
+           addr1 addr2 --- ff      (bad)
 
-Searches the dictionary starting at the name field address addr2, matching to the 
-text at addr1.  Returns parameter field address, length byte of name field and 
-boolean true for a good match.  If no match is found, only a boolean false is 
-left. 
+Searches the dictionary starting at the name field address addr2, matching to the
+text at addr1.  Returns parameter field address, length byte of name field and
+boolean true for a good match.  If no match is found, only a boolean false is
+left.
 
 
-(LINE)           n1 n2 --- addr count                                              
+(LINE)           n1 n2 --- addr count
 
-Convert the line number n1 and the screen n2 to the disc buffer address containing 
-the data.  A count of 64 indicates the full line text length. 
+Convert the line number n1 and the screen n2 to the disc buffer address containing
+the data.  A count of 64 indicates the full line text length.
 
 
 (LOOP)                                                    C2
 
-The run-time procedure compiled by LOOP which increments the loop index and tests 
-for loop completion.  See LOOP. 
+The run-time procedure compiled by LOOP which increments the loop index and tests
+for loop completion.  See LOOP.
 
 
-(NUMBER)      d1 addr1 --- d2 addr2                                                
+(NUMBER)      d1 addr1 --- d2 addr2
 
-Convert the ASCII text beginning at addr1 + l with regard to BASE.  The new value 
-is accumulated into double number d1, being left as d2.  Addr2 is the address of 
-the first unconvertable digit.  Used by NUMBER. 
+Convert the ASCII text beginning at addr1 + l with regard to BASE.  The new value
+is accumulated into double number d1, being left as d2.  Addr2 is the address of
+the first unconvertable digit.  Used by NUMBER.
 
 
 *                n1 n2 --- prod                           L0
 
-Leave the signed product of two signed numbers. 
+Leave the signed product of two signed numbers.
 
 
 */            n1 n2 n3 --- n4                             L0
 
-Leave the ratio n4 = n1*n2/n3 where all are signed numbers.  Retention of an 
-intermediate 31 bit product permits greater accuracy than would be available with 
+Leave the ratio n4 = n1*n2/n3 where all are signed numbers.  Retention of an
+intermediate 31 bit product permits greater accuracy than would be available with
 the sequence n1 n2 * n3 /.
 
 
 */MOD         n1 n2 n3 --- n4 n5                          L0
 
-Leave the quotient n5 and remainder n4 of the operation n1*n2/n3.  A 31 bit 
-intermediate product is used as for */. 
+Leave the quotient n5 and remainder n4 of the operation n1*n2/n3.  A 31 bit
+intermediate product is used as for */.
 
 
 +                n1 n2 --- sum                            L0
 
-Leave the sum of n1+n2. 
-
-
+Leave the sum of n1+n2.

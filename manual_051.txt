@@ -1,23 +1,23 @@
 ISPRITE AND DSPRITE
 
 it sprites are located at the top of rtntnry, then ISPRITE and DSPRITE can be used
-to create and destroy sprites without the need for any complex calculations. 
-ISPRITE will insert a sprite at the top of memory, maintain the buffer space and 
+to create and destroy sprites without the need for any complex calculations.
+ISPRITE will insert a sprite at the top of memory, maintain the buffer space and
 automatically relocate the rest of sprite space downward.  DSPRITE will destroy an
-old sprite and relocate sprite space upward.  The easiest way to use this package 
+old sprite and relocate sprite space upward.  The easiest way to use this package
 is to leave the buffer space as it is, then just use ISPRITE and DSPRITE to CREATE
-and DESTROY sprites.  SPRITE, WIPE, COLD# and RELOCATE are for advanced 
-applications where sprites are created during program execution.  If a "ZAPPED" 
-program were to execute ISPRITE the sprites would extend downwards and could 
-overwrite the object code of the main program which lies just beneath SPST.  If a 
-program runs before being "ZAPPED", but the final run-time version crashes, this 
+and DESTROY sprites.  SPRITE, WIPE, COLD# and RELOCATE are for advanced
+applications where sprites are created during program execution.  If a "ZAPPED"
+program were to execute ISPRITE the sprites would extend downwards and could
+overwrite the object code of the main program which lies just beneath SPST.  If a
+program runs before being "ZAPPED", but the final run-time version crashes, this
 is where to look !
 
 
 Parameter              Use
 
-SPN          Number of the sprite to be inserted 
-HGT          Height of the sprite to be inserted 
+SPN          Number of the sprite to be inserted
+HGT          Height of the sprite to be inserted
 LEN          Length of the sprite be be inserted
 
 

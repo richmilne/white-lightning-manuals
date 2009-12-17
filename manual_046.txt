@@ -1,7 +1,7 @@
  8.  If you wish to PUT a sprite onto the screen over the top of the existing
      data in the window, then you should use PUTORS.
 
- 9.  Points 6-8 apply to operations in memory, although the words used are 
+ 9.  Points 6-8 apply to operations in memory, although the words used are
      of course different.
 
 10.  The best way to get to knew the PUTs and GETs is to experiment with them;
@@ -18,13 +18,13 @@
          sprite will be set in the result, but this time, all pixels where
          both were set will now be reset.
 
-     d)  All "Block Shift" commands will destroy whatever was previously 
+     d)  All "Block Shift" commands will destroy whatever was previously
          in the window.
 
 11.  It is possible to set up "masks" in dummy sprites and use the boolean
      operations OR, XOR and AND to move windows around etc.
 
-12.  If you wish to make something appear at lightning speed, leave the data 
+12.  If you wish to make something appear at lightning speed, leave the data
      on the screen and fill the window with zero attributes or attributes with
      the same INK and PAPER colour.  To make the sprite appear you need only
      download the attributes usinq PWATTS; to make it disappear use
@@ -42,9 +42,9 @@
      COL   Screen column of top left character
      ROW   Screen row of top left character
      SCOL  Sprite column of top left character
-     SROW  Sprite row of top left character 
+     SROW  Sprite row of top left character
      SPN   Sprite number
-     SP1   Number of first sprite in a double sprite operation 
+     SP1   Number of first sprite in a double sprite operation
      SP2   Number of second sprite in a double sprite operation
 
      Columns are measured in characters (8 pixels by 8 pixels) and are counted
@@ -52,7 +52,7 @@
 
      Rows are measured in characters and are counted from the top 0 to 23.
 
-     Remember, never change a variable unless you need to, they are not 
-     reset between instructions (with the exception of ADJM and ADJV, and 
+     Remember, never change a variable unless you need to, they are not
+     reset between instructions (with the exception of ADJM and ADJV, and
      you can always write your code to order the operations in such a way as
      to minimise the resetting of variables.

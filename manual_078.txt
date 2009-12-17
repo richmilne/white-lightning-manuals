@@ -1,8 +1,8 @@
 0 VARIABLE CONTROL CONTROL U. <CR>
 
-This will set up a variable called CONTROL, set it to zero and then print the 
-address of the least significant byte which we'll use to pass the information. 
-For the sake of this example suppose the address was 50000.  We'll now use the 
+This will set up a variable called CONTROL, set it to zero and then print the
+address of the least significant byte which we'll use to pass the information.
+For the sake of this example suppose the address was 50000.  We'll now use the
 CASE construct to select the word to execute.  Use the following definitions:
 
 : SELECT CASE 1 OF ." WORD1 " ENDOF 2 OF ." WORD2 " <CR>
@@ -20,16 +20,16 @@ The BASIC program is initially entered at 4000 and could take the following form
 4010 PRINT " EXECUTE WORD1 " : GOSUB 5000
 4020 PRINT " EXECUTE WORD2 " : GOSUB 5010
 4030 PRINT " EXECUTE WORD3 " : GOSUB 5020
-4040 PRINT " EXECUTE WORD4 " : GOSUB 5030 
+4040 PRINT " EXECUTE WORD4 " : GOSUB 5030
 4050 PRINT " FINISH " : POKE 50000,0 : PRINT USR 30006
 5000 POKE 5000,1 : RANDOMISE USR 30000 : RETURN
 5010 POKE 5000,2 : RANDOMISE USR 30000 : RETURN
-5020 POKE 5000,3 : RANDOMISE USR 30000 : RETURN 
+5020 POKE 5000,3 : RANDOMISE USR 30000 : RETURN
 5030 POKE 5000,4 : RANDOMISE USR 30000 : RETURN
 
-Note that when final return is made to Forth a PRINT USR 30006 is used.  If a 
-RANDOMISE USR 30006 CALL is made to Forth a RETUSR must be executed or the BASIC 
-stack will be left corrupted.  To reset the stack if it has been corrupted, use 
+Note that when final return is made to Forth a PRINT USR 30006 is used.  If a
+RANDOMISE USR 30006 CALL is made to Forth a RETUSR must be executed or the BASIC
+stack will be left corrupted.  To reset the stack if it has been corrupted, use
 PROG to enter BASIC and then re-enter Forth with the WARM start, PRINT USR 24836.
 
 This concludes the section on the BASIC Interface.

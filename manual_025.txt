@@ -1,6 +1,6 @@
 e.g.    1 2 3 ROT . CR . CR . <CR>
 will print  1
-            3 
+            3
             2
 
 since the stack before ROT was:

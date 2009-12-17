@@ -1,9 +1,9 @@
-e.g.  FORGET EXAMPLE will delete the word EXAMPLE (if it exists) along with any 
+e.g.  FORGET EXAMPLE will delete the word EXAMPLE (if it exists) along with any
 other words defined after it.
 
 
-VLIST   : This is just typed in as a single word with no parameters.  It will 
-          cause a list of all the words defined so far; pressing BREAK 
+VLIST   : This is just typed in as a single word with no parameters.  It will
+          cause a list of all the words defined so far; pressing BREAK
           (CAPS SHIFT & SPACE as in BASIC) will stop the listing.
 
 
@@ -17,20 +17,20 @@ LOAD    : This will compile the source code that you have created using the
 
 USING THE EDITOR
 
-Generally speaking, most users will want to use the Spectrum editor to type and 
-edit the source, but a full Forth line editor is included for compatibility with 
-existing texts.  The maximum length of any line is 64 characters.  Any characters 
+Generally speaking, most users will want to use the Spectrum editor to type and
+edit the source, but a full Forth line editor is included for compatibility with
+existing texts.  The maximum length of any line is 64 characters.  Any characters
 after this will be ignored.
 
 Line Editor
 
-Included in this version of White Lightning is a line editor to enable you to 
-create source or text files.  To facilitate text editing, the text is organised 
-into blocks of 512 bytes, divided into 8 lines of 64 characters.  Once the text 
-has been edited, it may then be compiled into the White Lightning dictionary and 
-the text, if required, can be saved to tape.  The text is stored in memory in the 
-pages at C000 to F000, therefore, you can edit into screens 1 to 23.  If the 
-background facility is utilised, text is stored from CC00 onwards in screens 6 to 
+Included in this version of White Lightning is a line editor to enable you to
+create source or text files.  To facilitate text editing, the text is organised
+into blocks of 512 bytes, divided into 8 lines of 64 characters.  Once the text
+has been edited, it may then be compiled into the White Lightning dictionary and
+the text, if required, can be saved to tape.  The text is stored in memory in the
+pages at C000 to F000, therefore, you can edit into screens 1 to 23.  If the
+background facility is utilised, text is stored from CC00 onwards in screens 6 to
 23, and screens 0 to 5 cannot be used.
 
 Here is a list of the editor commands and their descriptions:
@@ -45,7 +45,7 @@ e.g.  4 H will hold line 4 of the current screen in PAD.
 S      :  Fill (Spread) the line number at the top of the stack with blanks, and
           shift down all subsequent lines by 1, with the last line being lost.
 
-e.g.  6 S will fill line 6 with blanks and move all other lines down by one, 
+e.g.  6 S will fill line 6 with blanks and move all other lines down by one,
 pushing the last line off the screen.
 
 

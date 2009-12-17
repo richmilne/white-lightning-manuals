@@ -16,9 +16,9 @@ EYS 8 2 KB UNTIL ;                      PN ! PUTBLS ;
 SCR # 7                                   2 : SET3 -2 NPX ! 104 100 DO I
   0 : MAKE 62 SPN ! 4 HGT ! 4 LE         DUP 12 + SWAP DO I DUP 4 + DUP
 N ! TEST 0= IF ISPRITE CLSM ENDI        SP2
-F                                         3 ! SPN ! SP1 ! GWBLM SCRM 4 
+F                                         3 ! SPN ! SP1 ! GWBLM SCRM 4
   1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2       +LOOP LOOP ;
-4 SP1 ! GWBLM ;                           4 : XYPUT 4 /MOD COL ! SWAP 4 
+4 SP1 ! GWBLM ;                           4 : XYPUT 4 /MOD COL ! SWAP 4
   2 : UP 7 1 KB IF ROW @ 0 > MIN        /MOD ROW ! DUP + DUP + + 100 + S
 US ROW +! ENDIF ;                       PN
   3 : DOWN 8 1 KB IF ROW @ 20 <           5 ! ;
@@ -27,7 +27,7 @@ ROW +! ENDIF ;                            6
 INUS COL +! ENDIF ;
   5 : RIGHT 1 2 KB IF COL @ 28 <        SCR # 11
  COL +! ENDIF ;                           0 0 VARIABLE TSPN 0 VARIABLE T
-  6 : TESTC 62 SPN ! 10 COL ! 10        COL 0 VARIABLE TROW 0 VARIABLE 
+  6 : TESTC 62 SPN ! 10 COL ! 10        COL 0 VARIABLE TROW 0 VARIABLE
  ROW ! CLS BEGIN UP DOWN LEFT RI        XC
 GHT                                       1 0 VARIABLE YC 100 CONSTANT F
   7 : ADJM PWBLS 6 1 KB UNTIL ;         SPN 0 VARIABLE FLAG
@@ -38,7 +38,7 @@ SCR # 8                                 TXRS ;
 !                                         4 : PCAL 4 /MOD TCOL ! SWAP 4
   1 : PUTORS LOOP ; : KCHK KB DUP       /MOD TROW ! DUP + DUP + FSPN + +
 ROT OR SWAP ;                             5 TSPN ! ;
-  2 : UP 7 1 KCHK IF ROW @ 0 > M          6 : PLACE YC @ XC @ PCAL PSET 
+  2 : UP 7 1 KCHK IF ROW @ 0 > M          6 : PLACE YC @ XC @ PCAL PSET
 INUS ROW +! ENDIF ;                     PLOAD ;
   3 : DOWN 8 1 KCHK IF ROW @ 20           7 : MOVE YC @ XC @ PCAL PSET P
 < ROW +! ENDIF ;                        UTXRS PLOAD ;
@@ -49,7 +49,7 @@ INUS ROW +! ENDIF ;                     PLOAD ;
   6 : TESTD CLS BEGIN COL @ ROW         NUS YC +! ENDIF ;
 @ SETUP ROW ! COL ! 62 SPN !              2 : DOWN 8 1 KCHK IF YC @ 83 <
   7 0 UP DOWN LEFT RIGHT IF ADJM         YC +! ENDIF ;
- PWBLS ENDIF 6 1 KB UNTIL ;               3 : LEFT 1 1 KCHK IF XC @ 4 > 
+ PWBLS ENDIF 6 1 KB UNTIL ;               3 : LEFT 1 1 KCHK IF XC @ 4 >
                                         MINUS XC +! ENDIF ;
 SCR # 9                                   4 : RIGHT 1 2 KCHK IF XC @ 115
   0 : MAKE 2 HGT ! 3 LEN ! 104 1         < XC +! ENDIF ;

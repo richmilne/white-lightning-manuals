@@ -1,52 +1,52 @@
-Finally, consider the case where the object being tested contains extraneous data 
-in addition to one of the possible sprites.  This time, the dummy  sprite is 
-loaded with the contents of the screen window, but the candidates are first 
+Finally, consider the case where the object being tested contains extraneous data
+in addition to one of the possible sprites.  This time, the dummy  sprite is
+loaded with the contents of the screen window, but the candidates are first
 "AND"ed into the dumy to remove extraneous data before the XOR and SCANM.
-Finally the dummy needs to he reloaded from the screen before the next test.  This 
-latter test is limited by the fact that its conclusion is only that the screen 
-contained all the parts of the sprite with which a comparison was made. In the 
-extreme case of the screen window containing all pixels set, then an agreement 
+Finally the dummy needs to he reloaded from the screen before the next test.  This
+latter test is limited by the fact that its conclusion is only that the screen
+contained all the parts of the sprite with which a comparison was made. In the
+extreme case of the screen window containing all pixels set, then an agreement
 would be found with all the sprites tested.
 
 
 SCROLLING LANDSCAPES
 
-Scrolling landscapes are an integral part of so many video games that it is worth 
+Scrolling landscapes are an integral part of so many video games that it is worth
 a brief description of how they can best be produced using White Lightning.
 
 The first and most obvious point is never to scroll more than you have to.  If,
-for instance, you are moving a mountain range where the variation takes place over 
-the top three characters, then only the top three characters need to be stored and 
+for instance, you are moving a mountain range where the variation takes place over
+the top three characters, then only the top three characters need to be stored and
 moved.
 
-The simplest and most effective method of producing smooth scrolls is to sacrifice 
-a column of the screen for transactions with the sprite being scrolled.  Suppose 
-we are scrolling a sprite of 4 or 5 screens width which uses rows 8 to 10 (3 
-rows).  Suppose we require pixel scrolling and there is no horizontal variation in 
-attributes.  It doesn't really matter which column we sacrifice, far right (column 
-31) or far left (column 0), but let's, for this example, use column 0.  All that 
+The simplest and most effective method of producing smooth scrolls is to sacrifice
+a column of the screen for transactions with the sprite being scrolled.  Suppose
+we are scrolling a sprite of 4 or 5 screens width which uses rows 8 to 10 (3
+rows).  Suppose we require pixel scrolling and there is no horizontal variation in
+attributes.  It doesn't really matter which column we sacrifice, far right (column
+31) or far left (column 0), but let's, for this example, use column 0.  All that
 we need to do is set up a window 1 character wide and 3 characters high on the far
-left of the landscape to have the same INK and PAPER colours.  This means that 
-pixel data cannot be seen in this region.  Use the SETAV command to do this.  To 
-begin with, 31 columns of the sprite are PUT to the active part of the screen 
-using the PWBLS command.  If scrolling is to the left, then the dummy column 
-should be loaded with the next column to the right of the sprite now 'on screen'. 
-If scrolling is to the right then the column to the left of the sprite window 
-should be inserted.  The full 32 column screen window is now wrapped in the 
-appropriate direction until a total of + or - 8 pixels has been accrued.  The 
-dummy column is then loaded from the appropriate sprite column and so on.  The 
-method can be simply adapted to make the landscape wrap and is usually implemented 
+left of the landscape to have the same INK and PAPER colours.  This means that
+pixel data cannot be seen in this region.  Use the SETAV command to do this.  To
+begin with, 31 columns of the sprite are PUT to the active part of the screen
+using the PWBLS command.  If scrolling is to the left, then the dummy column
+should be loaded with the next column to the right of the sprite now 'on screen'.
+If scrolling is to the right then the column to the left of the sprite window
+should be inserted.  The full 32 column screen window is now wrapped in the
+appropriate direction until a total of + or - 8 pixels has been accrued.  The
+dummy column is then loaded from the appropriate sprite column and so on.  The
+method can be simply adapted to make the landscape wrap and is usually implemented
 under interrupt.
 
 PROGRAMMABLE SPRITES
 
-One of the most common applications of the background mode is the setting of 
-sprites into automatic motion.  Perhaps the chief advantage that a language has 
-over a games designer, is that the sprites thus created can have as much 
-'intelligence' as the programmer requires.  A sprite can bounce off the edge of 
-the screen and/or other sprites until a particular event, and then totally change 
+One of the most common applications of the background mode is the setting of
+sprites into automatic motion.  Perhaps the chief advantage that a language has
+over a games designer, is that the sprites thus created can have as much
+'intelligence' as the programmer requires.  A sprite can bounce off the edge of
+the screen and/or other sprites until a particular event, and then totally change
 its behaviour - possibly to follow a previously stored track.
 
-We have included a very simple listing which sets a sprite in motion, that just 
-bounces off the edges of the screen, to give you some idea of what is involved. 
+We have included a very simple listing which sets a sprite in motion, that just
+bounces off the edges of the screen, to give you some idea of what is involved.
 This sample program assumes you have the demonstration sprites in memory.

@@ -1,16 +1,16 @@
-To speed up "FREDA" type: 0 ICNT ! 2 LCNT ! <CR> and to slow "FREDA" type 10 LCNT 
+To speed up "FREDA" type: 0 ICNT ! 2 LCNT ! <CR> and to slow "FREDA" type 10 LCNT
 ! <CR> and so on.  Type: INT-OFF <CR> to halt FREDA.  Now type: FORGET FREDA <CR>
 
 
 Frequency and Phase
 
-One of the problems with executing a word on each interrupt,  is that the dot 
-scanning the screen may overtake the screen operation in the same position on each 
-execution.  This can produce some strange effects, and often, sections of the 
-screen window will appear to be "sliced".  It is more usual to execute on selected 
+One of the problems with executing a word on each interrupt,  is that the dot
+scanning the screen may overtake the screen operation in the same position on each
+execution.  This can produce some strange effects, and often, sections of the
+screen window will appear to be "sliced".  It is more usual to execute on selected
 interrupts.  We can do this very simply using modular arithmetic.
 
-Suppose we have four different words that we wish to execute with four different 
+Suppose we have four different words that we wish to execute with four different
 frequencies.  Suppose they are as follows.
 
                     INVV   every 50 cycles
@@ -18,7 +18,7 @@ frequencies.  Suppose they are as follows.
                     WRR1V  every  4 cycles
                     WCRV   every  5 cycles
 
-We now define a variable to count interrupts and four constants to store the 
+We now define a variable to count interrupts and four constants to store the
 frequencies.
 
 0 VARIABIE ICNT 50 CONSTANT Fl 20 CONSTANT F2 4 CONSTANT F3 5 CONSTANT F4 <CR>
@@ -40,13 +40,13 @@ VLIST 0 0 AT ' IRUN INT-0N <CR>
 
 To terminate, type INT-OFF <CR>
 
-If we had made the F1 to F4 variables, we could have controlled the background 
+If we had made the F1 to F4 variables, we could have controlled the background
 program from the foreground by resetting them.
 
-Sometimes, controlling the frequencies of events is not sufficient and phase 
-information needs to be introduced.  In the previous example, values of 0, 100, 
-200, 300 and so on cause all four events.  Supposing we wanted to maintain these 
-frequencies, but change the order in which the words execute - we need to 
+Sometimes, controlling the frequencies of events is not sufficient and phase
+information needs to be introduced.  In the previous example, values of 0, 100,
+200, 300 and so on cause all four events.  Supposing we wanted to maintain these
+frequencies, but change the order in which the words execute - we need to
 introduce the concept of phase.
 
 In this example we need four more constants, so type:

@@ -21,14 +21,14 @@ DPTR         On return from the TEST crnnand, DPTR points to the start
 Alternate Variables
 
 Eleven of the previously listed variables are replecated for use by the background
-program (see Foreground/Background).  These are ROW', COL', LEN', HGT', NPX', 
+program (see Foreground/Background).  These are ROW', COL', LEN', HGT', NPX',
 SPN', SP1', SP2', SROW', SCOL' and SPND'.
 
-When a word is executed in background, the eleven alternate variables are 
-automatically switched with the eleven background variables; when execution is 
+When a word is executed in background, the eleven alternate variables are
+automatically switched with the eleven background variables; when execution is
 complete, the variables are switched again to restore them to their former state.
 
-Suppose, for example, that the background program is to scroll left 1 pixel with 
+Suppose, for example, that the background program is to scroll left 1 pixel with
 wrap (WRL1V), with an area of screen 6 characters wide and 4 characters high, with
 top left co-ordinates row = 5, column = 7.
 
@@ -36,11 +36,11 @@ Now type the following:
 
 CLS 6 LEN' ! 4 HGT' ! 5 ROW' ! 7 COL' ! ' WRL1V INT-ON <CR>
 
-The window is now scrolling but you can't see it, because there is no data in the 
+The window is now scrolling but you can't see it, because there is no data in the
 window.
 
-Type VLIST <CR> and watch the data as it scrolls through the window.  The data in 
-the window will be slanting to the left, because the foreground program was 
+Type VLIST <CR> and watch the data as it scrolls through the window.  The data in
+the window will be slanting to the left, because the foreground program was
 scrolling up at the same time as the background program scrolled left.
 
 Leaving the background program running, type:

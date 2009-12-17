@@ -1,4 +1,4 @@
-ATTOFF       After the execution of ATOFF, group GETs and PUTs will move 
+ATTOFF       After the execution of ATOFF, group GETs and PUTs will move
              pixel data only.
 
 
@@ -9,7 +9,7 @@ Example:
 
 HEX D000 CALL
 
-would execute a machine code subroutine at location D000 HEX. Don't type this 
+would execute a machine code subroutine at location D000 HEX. Don't type this
 unless you have a machine code routine at HEX D000!
 
 

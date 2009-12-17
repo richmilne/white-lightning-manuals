@@ -1,8 +1,8 @@
-For the purposes of the following examples, let us refer to the numbers on the 
+For the purposes of the following examples, let us refer to the numbers on the
 stack as follows:
 
- Nl  =  top    number on stack (i.e. first to be removed) 
- N2  =  second number on stack (i.e. second to be removed) 
+ Nl  =  top    number on stack (i.e. first to be removed)
+ N2  =  second number on stack (i.e. second to be removed)
  N3  =  third  number on stack (i.e. third to be removed)
 
 To demonstrate this, let us push three numbers onto the stack by typing:
@@ -15,7 +15,7 @@ The stack will look like this:
         0019
         01FA
 
-Note that this illustrates the property of the stack, that it is, Last In First 
+Note that this illustrates the property of the stack, that it is, Last In First
 Out or LIFO; therefore v.e have:
 
         N1  =  1F47
@@ -26,7 +26,7 @@ So if we type:
 
         CR . CR . CR . CR <CR>
 
-We get  1F47 
+We get  1F47
           19
          1FA
 
@@ -51,7 +51,7 @@ after the subtraction.
 
 
 *       : This will multiply the top two numbers on the stack and leave the
-          result on the top of the stack. 
+          result on the top of the stack.
 i.e.    N1 = N1 x N2
 
 e.g.    DECIMAL 140 20 * . <CR>

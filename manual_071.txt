@@ -1,24 +1,24 @@
 LOGICAL OPERATIONS
 
-There are three types of logical operation included in the IDEAL sub-language; 
-these are OR, XOR and AND.  To get the best out of this package it is important to 
+There are three types of logical operation included in the IDEAL sub-language;
+these are OR, XOR and AND.  To get the best out of this package it is important to
 make full use of these commands.
 
-If a GET or PUT postfixed with "BLS" or "BLM" is executed,  then data is block 
-moved from the source which may be part of the screen, a sprite, or a sprite 
-window, in such a way that whatever was previously held at the destination which 
-may also be part of the screen, a sprite, or a sprite window, is obliterated and 
-replaced by whatever was at the source.  This may not always be the desired effect 
-and quite often the user will want to merge characters or remove parts of the 
+If a GET or PUT postfixed with "BLS" or "BLM" is executed,  then data is block
+moved from the source which may be part of the screen, a sprite, or a sprite
+window, in such a way that whatever was previously held at the destination which
+may also be part of the screen, a sprite, or a sprite window, is obliterated and
+replaced by whatever was at the source.  This may not always be the desired effect
+and quite often the user will want to merge characters or remove parts of the
 characters and so on.
 
-If two sprites are "OR"ed together, the resulting sprite will have pixels set 
+If two sprites are "OR"ed together, the resulting sprite will have pixels set
 where pixels were set in either or both of the sprites being "OR"ed.
 
-If two sprites are "AND"ed together, the resulting sprite will have pixels set 
+If two sprites are "AND"ed together, the resulting sprite will have pixels set
 where pixels were set in both of the sprites being "AND"ed.
 
-If two sprites are "XOR"ed together, the resulting sprite will have pixels set 
+If two sprites are "XOR"ed together, the resulting sprite will have pixels set
 where pixels were set in either but reset where pixels were set or reset in both.
 
 These results are summarised as follows and should make things a little clearer:
@@ -26,7 +26,7 @@ These results are summarised as follows and should make things a little clearer:
 
 SOURCE         DESTINATION         OPERATION        RESULT
 
-  on               on                 OR              on   
+  on               on                 OR              on
   on               off                OR              on
   off              on                 OR              on
   off              off                OR              off
@@ -42,8 +42,8 @@ SOURCE         DESTINATION         OPERATION        RESULT
   off              off                XOR             off
 
 
-We can now use the sample sprites to illustrate the effects of these operations. 
-First FORGET any previously defined words and type: DECIMAL <CR> to ensure that 
+We can now use the sample sprites to illustrate the effects of these operations.
+First FORGET any previously defined words and type: DECIMAL <CR> to ensure that
 you are in decimal mode. Now type:
 
 7 INK 0 PAPER CLS ." LOGICAL OR " CR ." LOGICAL OR " <CR>
@@ -54,5 +54,5 @@ Now type:
 
 3 SPN ! 0 COL ! 0 ROW 1 ATTOFF PUTORS <CR>
 
-You will see that the data has been merged together, both the dragster and the 
+You will see that the data has been merged together, both the dragster and the
 letters remain.

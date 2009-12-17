@@ -20,34 +20,34 @@ GENERAL POINTS
      so make sure that either you have set up sprite space with the development
      package (the default of 256 is usually adequate), or that at least one COLD#
      has been executed to make space.  The space required for a scroll is
-     obtained by multiplying the width of the sprite, by the number of pixels 
-     to be scrolled.  Horizontal scrolls do not require buffer space.  When 
+     obtained by multiplying the width of the sprite, by the number of pixels
+     to be scrolled.  Horizontal scrolls do not require buffer space.  When
      White Lightning is first Loaded without sprites, a COLD# is automatically
      executed and sets the buffer to 256 bytes.
 
  2.  All attribute scrolls are "with wrap".
 
- 3.  Commands prefixed with GET or PUT are operations between a whole sprite 
-     and a screen window.  These are very fast and can be made even faster 
-     by suppressing the movement of attribute data, if its transference is 
-     not required.  To suppress attribute data use the word ATTOFF.  If you 
+ 3.  Commands prefixed with GET or PUT are operations between a whole sprite
+     and a screen window.  These are very fast and can be made even faster
+     by suppressing the movement of attribute data, if its transference is
+     not required.  To suppress attribute data use the word ATTOFF.  If you
      wish to switch data flow back on at a later stage, use ATTON.  The switch
-     remains in its state until changed by the execution of one of these 
-     two words or the execution of a word beginning with GW or PW and ending 
-     with S (group 2 GETS and PUTS).  NEVER assume the state of the switch 
-     at the start of the program:  one of your first words at the beginning 
+     remains in its state until changed by the execution of one of these
+     two words or the execution of a word beginning with GW or PW and ending
+     with S (group 2 GETS and PUTS).  NEVER assume the state of the switch
+     at the start of the program:  one of your first words at the beginning
      of your program should be ATTON or ATTOFF.
 
  4.  If a sprite is dynamically allocated space at runtime it will probably
      contain garbage in its pixel and attribute data, so both will need to be
      set up.  It is all too easy to forget the attributes.
 
- 5.  Sometimes the dynamically created sprites will contain zeroes; if you set 
-     up the pixel data and forget the attribute data then execute a PUT to 
+ 5.  Sometimes the dynamically created sprites will contain zeroes; if you set
+     up the pixel data and forget the attribute data then execute a PUT to
      the screen with the attributes on - a black rectangle will appear. See
      SETAM.
 
- 6.  If you want to wipe a sprite off the screen but not affect any other 
+ 6.  If you want to wipe a sprite off the screen but not affect any other
      pixel data within its screen window, use PUTXRS.  Remember, though, that
      if you have carried out any operations on the original sprite since
      doing the original PUTBLS or PUTXRS it may not work.

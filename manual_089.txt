@@ -4,32 +4,32 @@
 
      ARCADE CHAR-
      ACTER NUMBER
-       
-         1-  8            Asteroids Space Ships                
-         9- 11            Asteroids                            
-            12            Asteroids Flying Saucer              
-        13- 20            Pac-Men                              
-        21- 22            Pac-Men Ghosts                       
-        23- 25            Fruit                        
-        26- 33            Pac-Men Maze Parts                   
-        34- 44            Assault Course type games            
-        45- 54            Defender type games                  
-        55- 62            Defender type landscapes             
-        63- 67            Space Invaders                       
-        68- 70            Space Invaders Bases                 
-        71- 74            Space Invaders Guns etc.             
-        75- 84            City Bomber type games               
-        85- 88            Lunar Lander type games              
-        89- 98            Frogger type games                   
-        99-107            Centipede type games                 
-       108-117            War type games                       
-       118-130            Donkey Kong type games               
-       131-136            Space War type games                 
-       137-141            Explosions                           
-       142-148            Bug-Eyed Monsters                    
-       149-152            Robots                               
-       153-158            Adventure type games Treasure        
-       159-167            Zaps                                 
+
+         1-  8            Asteroids Space Ships
+         9- 11            Asteroids
+            12            Asteroids Flying Saucer
+        13- 20            Pac-Men
+        21- 22            Pac-Men Ghosts
+        23- 25            Fruit
+        26- 33            Pac-Men Maze Parts
+        34- 44            Assault Course type games
+        45- 54            Defender type games
+        55- 62            Defender type landscapes
+        63- 67            Space Invaders
+        68- 70            Space Invaders Bases
+        71- 74            Space Invaders Guns etc.
+        75- 84            City Bomber type games
+        85- 88            Lunar Lander type games
+        89- 98            Frogger type games
+        99-107            Centipede type games
+       108-117            War type games
+       118-130            Donkey Kong type games
+       131-136            Space War type games
+       137-141            Explosions
+       142-148            Bug-Eyed Monsters
+       149-152            Robots
+       153-158            Adventure type games Treasure
+       159-167            Zaps
 
 
 

@@ -1,4 +1,4 @@
-This next example illustrates one of the more complicated functions of the 
+This next example illustrates one of the more complicated functions of the
 generator - GETting a sprite into a larger sprite:
 
 1.  Clear the sprite screen and position the cursors to X POS 1 Y POS 1.
@@ -30,12 +30,12 @@ generator - GETting a sprite into a larger sprite:
 14. Press G (GET).
 
 15. Press SPACE key (Place small sprite into large sprite) - enter small sprite as
-18, larger sprite as 17, Row as 1, Column as 1 and BLS (1), as you get each 
+18, larger sprite as 17, Row as 1, Column as 1 and BLS (1), as you get each
 prompt.
 
 16. Move the X cursor by +2.
 
-17. Press P (PUT), answer the prompt with Y and then press 1 - there you have it, 
+17. Press P (PUT), answer the prompt with Y and then press 1 - there you have it,
 your Robot inside the square.
 
 
@@ -55,5 +55,5 @@ Let's move on to look at some of the utility functions - Test and Wipe.
 
 7.  Clear the sprite screen.
 
-8.  Press T (Test Sprite) and note that the information rectangle oontains the 
+8.  Press T (Test Sprite) and note that the information rectangle oontains the
 following:

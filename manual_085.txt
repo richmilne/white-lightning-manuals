@@ -9,30 +9,30 @@
          sprite, and leaves the result in the sprite, (screen
          display unaffected).
 
-         3 GETNDS, ANDs the screen data with the data of a pre-defined 
+         3 GETNDS, ANDs the screen data with the data of a pre-defined
          sprite, and leaves the result in the sprite (screen display
          unaffected).
 
 
-p        Activates the PUT functions. 
+p        Activates the PUT functions.
          You will be given four options.  Each option PUTS a sprite
          whose number is Specified in the variable "Sprite Number" onto
-         the sprite screen, having a top left-hand corner at the sprite 
+         the sprite screen, having a top left-hand corner at the sprite
          screen cursor positions.
 
          NOTE:  ATTR = 0 leaves the Screen Attributes unaffected.
          ATTR = 1 PUTs sprite Attributes to the sprite Screen.
-       
+
          1 PUTBLS is a straightforward PUT, placing data directly to
          the sprite screen, destroying anything that is on that part of
          the screen (Sprite unaffected).
-       
+
          2 PUTORS, ORs the sprite data with the data on the sprite screen,
          leaving the result on the screen (Sprite unaffected).
-       
+
          3 PUTXRS, XORs the sprite data with the data on the sprite screen,
          leaving the result on the screen (Sprite unaffected).
-       
+
          4 PUTNDS, ANDs the sprite data with the data on the sprite screen,
          leaving the result on the screen (Sprite unaffected).
 
@@ -46,7 +46,7 @@ Q
 
 R        Activates the ROTATE SPRITE function.
          Rotates a sprite, in memory, by 90 degrees, leaving the original
-         sprite unaffected.  The new Rotated sprite must be given a new 
+         sprite unaffected.  The new Rotated sprite must be given a new
          sprite numoer, as asked for.  Attributes are autanatically
          Rotated with the pixel data.
 
@@ -54,6 +54,6 @@ S        Activates the SPRITE NUMBER variable.
          Permits the defining of sprites and asks for a sprite number in
          the range 1 to 255
 
-         NOTE:  If a sprite to be defined is given an existing sprite 
-         number, a warning is displayed, advising you of this fact.  The 
+         NOTE:  If a sprite to be defined is given an existing sprite
+         number, a warning is displayed, advising you of this fact.  The
          existing sprite, or the new sprite, are in no way corrupted.

@@ -1,14 +1,14 @@
 8. CONSTANTS AND VARIABLES
 
-White Lightning also allows you to define your own constants and variables using 
+White Lightning also allows you to define your own constants and variables using
 the Fourth words:
 
 CONSTANT
 VARIABLE
 
-When a constant is called up, this causes its VALUE to be pushed onto the stack, 
-however, when a variable is called up, this causes its address to be pushed onto 
-the stack.  The Forth words ! and @ are used to modify the contents of the 
+When a constant is called up, this causes its VALUE to be pushed onto the stack,
+however, when a variable is called up, this causes its address to be pushed onto
+the stack.  The Forth words ! and @ are used to modify the contents of the
 variable.
 
 A constant is defined by using the form:
@@ -21,7 +21,7 @@ A variable is defined using the form:
 
 value VARIABLE name
 
-and any reference to the name will result in the address of that variable to be 
+and any reference to the name will result in the address of that variable to be
 put on the stack for further manipulation using ! and @.  It is essential that you
 realise the difference between the contents and the address of a variable.
 
@@ -49,13 +49,13 @@ LET X = X + 5         5 X +!
 OTHER COMMONLY USED FORTH WORDS
 
 
-LIST    : This will list the contents of the screen number held on the top of 
+LIST    : This will list the contents of the screen number held on the top of
           the stack.
 
-e.g.  6 LIST will list screen 6 to the screen.  Note that if source has not been 
+e.g.  6 LIST will list screen 6 to the screen.  Note that if source has not been
 typed into any of the screens, they will probably contain garbage.
 
 
 FORGET  : This is used to delete part of the Lightning dictionary.  Please note
-          that not only will the word following FORGET be erased, but so will 
+          that not only will the word following FORGET be erased, but so will
           every word defined after it!

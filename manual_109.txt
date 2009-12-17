@@ -1,61 +1,59 @@
 LIT                    --- n                            C,L0
 
-Within a colon-definition, LIT is automatically compiled before each 16 bit 
-literal number encountered in input text.  Later execution of LIT causes the 
-contents of the next dictionary address to be pushed to the stack. 
+Within a colon-definition, LIT is automatically compiled before each 16 bit
+literal number encountered in input text.  Later execution of LIT causes the
+contents of the next dictionary address to be pushed to the stack.
 
 
 LITERAL              n --- (compiling)               P,C2,L0
 
-If compiling, then compile the stack value n as a 16 bit literal.  This definition 
-is immediate so that it will execute during a colon definition.  The intended use 
+If compiling, then compile the stack value n as a 16 bit literal.  This definition
+is immediate so that it will execute during a colon definition.  The intended use
 is:
               :  xxx   (calculate) LITERAL  ;
-Compilation is suspended for the compile time calculation of a value.  Compilation 
-is resumed and LITERAL compiles this value. 
+Compilation is suspended for the compile time calculation of a value.  Compilation
+is resumed and LITERAL compiles this value.
 
 
 LOAD                 n ---                                L0
 
-Begin interpretation of screen n.  Loading will terminate at the end of the screen 
-or at ;S.  See ;S and -->. 
+Begin interpretation of screen n.  Loading will terminate at the end of the screen
+or at ;S.  See ;S and -->.
 
 
 LOOP            addr n --- (compiling)               P,C2,L0
 
 Occurs in a colon-definition in form:
               DO  ...  LOOP
-At run-time, LOOP selectively controls branching back to the corresponding DO 
-based on the loop index and limit.  The loop index is incremented by one and 
-compared to the limit.  The branch back to DO occurs until the index equals or 
-exceeds the limit; at that time, the parameters are discarded and execution 
-continues ahead. 
- 
+At run-time, LOOP selectively controls branching back to the corresponding DO
+based on the loop index and limit.  The loop index is incremented by one and
+compared to the limit.  The branch back to DO occurs until the index equals or
+exceeds the limit; at that time, the parameters are discarded and execution
+continues ahead.
+
 At compile-time.  LOOP compiles (LOOP) and uses addr to calculate an offset to DO.
-n is used for error testing. 
+n is used for error testing.
 
 
-M*               n1 n2 --- d                                                       
+M*               n1 n2 --- d
 
-A mixed magnitude math operation which leaves the double number signed product of 
-two signed numbers. 
-
-
-M/                d n1 --- n2 n3                                                   
-
-A mixed magnitude math operator which leaves the signed remainder n2 and signed 
-quotient n3, from a double number dividend and divisor n1.  The  remainder takes 
-its sign from the dividend. 
+A mixed magnitude math operation which leaves the double number signed product of
+two signed numbers.
 
 
-M/MOD           ud1 u2 --- u3 ud4                                                  
+M/                d n1 --- n2 n3
 
-An unsigned mixed magnitude math operation which leaves a double quotient ud4 and 
-remainder u3, from a double dividend ud1 and single divisor u2. 
+A mixed magnitude math operator which leaves the signed remainder n2 and signed
+quotient n3, from a double number dividend and divisor n1.  The  remainder takes
+its sign from the dividend.
+
+
+M/MOD           ud1 u2 --- u3 ud4
+
+An unsigned mixed magnitude math operation which leaves a double quotient ud4 and
+remainder u3, from a double dividend ud1 and single divisor u2.
 
 
 MAX              n1 n2 --- max                            L0
 
-Leaves the greater of two numbers. 
-
-
+Leaves the greater of two numbers.

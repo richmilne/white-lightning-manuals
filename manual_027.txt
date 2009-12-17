@@ -1,4 +1,4 @@
-     TOS               OPERATION              RESULT 
+     TOS               OPERATION              RESULT
   empty
       9                 9 SQUARE
       9                 CR                  carriage return
@@ -7,14 +7,14 @@
       9                 .                   9
       9                 ."                  IS
   9   9                 DUP
-     81                 * 
+     81                 *
   empty 81              .                   81
 
 and execution of SQUARE ends at the semi-colon.
 
 If we now wished, we could define a new word using our word SQUARE.
 
-We are now going to discuss control structures.  It must be remembered, that the 
+We are now going to discuss control structures.  It must be remembered, that the
 control structures can only be incorporated in colon definitions, or an error will
 result.
 
@@ -48,11 +48,11 @@ The second loop structure is used as follows:
 
 limit start DO ...'Forth words' increment +LOOP
 
-The Forth words within the loop are executed fran start to limit, with the index 
+The Forth words within the loop are executed fran start to limit, with the index
 being incremented or decremented by the value increment. Try:
 
 : TEST2 5 0 CO ." HELLO " 2 +LOOP ; <CR>
 Executing TEST2 will print HELLO HELLO HELLO
 
-Since the limit and the index are held on the return stack, it would be useful if 
+Since the limit and the index are held on the return stack, it would be useful if
 we could examine the index.  Well, there are words to do this:

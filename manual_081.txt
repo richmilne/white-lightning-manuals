@@ -1,5 +1,5 @@
     The relocate command uses the value held in MLEN as the relocation
-    length, a negative value, as above, relocates downward and a positive 
+    length, a negative value, as above, relocates downward and a positive
     value upward.
 
 4.  Before loading the second block of sprites, the values of the new
@@ -9,12 +9,12 @@
 
     Take a note of these two values.  If the previous steps have been
     carried out correctly the second number (the new SPND) should be the
-    same value as the old SPND before relocation. 
+    same value as the old SPND before relocation.
 
-5.  Type: PROG <CR> to exit back to BASIC then type LOAD "" CODE.  The 
+5.  Type: PROG <CR> to exit back to BASIC then type LOAD "" CODE.  The
     array of pointers will be ignored but the sprites will be loaded.
     This assumes that this second block of sprites was also saved using
-    the sprite development software. 
+    the sprite development software.
 
 6.  Type PRINT USR 24836 to re-enter Forth and your sprites should be
     merged.  Note that if a sprite number used in the second block has
@@ -25,15 +25,15 @@
 
 Extending the Forth Itself
 
-One of the beauties of the Forth language is that it is extendible, so if you've 
-added a few of your own commands which you would like to become a permanent 
-feature of your customised version, you will need to make a copy.  For this 
-reason, no attempt has been made to protect the software; but we do appeal to 
-users not to take advantage of this facility to pirate the program.  Piracy pushes 
-up the price of software to genuine users, so if you've bought a genuine copy, do 
-yourself a favour and keep the price of your future software affordable.  Copying 
-the manual, however, will result in immediate court action and a reward will be 
-paid to anyone offering information leading to the successful prosecution of 
+One of the beauties of the Forth language is that it is extendible, so if you've
+added a few of your own commands which you would like to become a permanent
+feature of your customised version, you will need to make a copy.  For this
+reason, no attempt has been made to protect the software; but we do appeal to
+users not to take advantage of this facility to pirate the program.  Piracy pushes
+up the price of software to genuine users, so if you've bought a genuine copy, do
+yourself a favour and keep the price of your future software affordable.  Copying
+the manual, however, will result in immediate court action and a reward will be
+paid to anyone offering information leading to the successful prosecution of
 offenders.
 
 To save the Forth use the following procedure:
@@ -42,14 +42,14 @@ To save the Forth use the following procedure:
 
 2.  Type: HERE 24832 - 1+ U. <CR> to print the length to be Saved.
 
-3.  Type: PROG <CR> to enter BASIC. 
+3.  Type: PROG <CR> to enter BASIC.
 
-4.  Save using SAVE "FORTH" CODE 24832, length. 
+4.  Save using SAVE "FORTH" CODE 24832, length.
 
 5.  Re-enter using PRINT USR 24836.
 
-To use the amended version, LOAD White Lightning as normal, exit using PROG, LOAD 
+To use the amended version, LOAD White Lightning as normal, exit using PROG, LOAD
 the new Forth over the old Forth and execute a Cold start using 24832.
 
-Oasis make no undertakings to support customised versions, and make no guarantee 
+Oasis make no undertakings to support customised versions, and make no guarantee
 as to the success of the operation.

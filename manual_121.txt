@@ -1,12 +1,12 @@
-GWXRS    SPN, COL, ROW,     Logically XOR screen data from screen window 
+GWXRS    SPN, COL, ROW,     Logically XOR screen data from screen window
          SCOL, SROW, HGT,   into Sprite window.
          LEN
 
-GWORS    SPN, COL, ROW,     Logically OR screen data from screen window 
+GWORS    SPN, COL, ROW,     Logically OR screen data from screen window
          SCOL, SROW, HGT,   into Sprite window.
          LEN
 
-GWNDS    SPN, COL, ROW,     Logically AND screen data from screen window 
+GWNDS    SPN, COL, ROW,     Logically AND screen data from screen window
          SCOL, SROW, HGT,   into Sprite window.
          LEN
 

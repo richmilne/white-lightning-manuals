@@ -40,7 +40,7 @@ EI                          Enable interrupt.
 
 DI                          Disable interrupt.
 
-EXX                         Exchange Ideal variables with the alternate 
+EXX                         Exchange Ideal variables with the alternate
                             Ideal variables.
 
 INT-ON   FORTH WORD         Execute specified Forth Word under interrupt.

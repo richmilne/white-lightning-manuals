@@ -4,34 +4,34 @@
                                  by Stuart Smith
 
 
-Forth is an extraordinary computer language developed originally for the control 
+Forth is an extraordinary computer language developed originally for the control
 of radio telescopes, by an American named Charles Moore.
 
-Forth is neither an interpreter nor a compiler, but combines the best features of 
-both to produce a super-fast, high level language, incorporating the facilities 
-offered by an interactive interpreter and the speed of execution close to that of 
-machine-code.  In order to achieve these fantastic speeds, Forth employs the use 
+Forth is neither an interpreter nor a compiler, but combines the best features of
+both to produce a super-fast, high level language, incorporating the facilities
+offered by an interactive interpreter and the speed of execution close to that of
+machine-code.  In order to achieve these fantastic speeds, Forth employs the use
 of a data, or computation stack, on which to hold the data or the operations to be
-performed, coupled with the use of Reverse Polish Notation (RPN).  This may be 
-quite a mouthful, but RPN is very easy to use and understand with only a little 
+performed, coupled with the use of Reverse Polish Notation (RPN).  This may be
+quite a mouthful, but RPN is very easy to use and understand with only a little
 practice - in fact, Hewlett Packard use RPN on many of their calculators.
 
-All standard Forths use integer arithmetic for their operations and can handle up 
-to 32 bit precision if required - floating point mathematics routines could be 
+All standard Forths use integer arithmetic for their operations and can handle up
+to 32 bit precision if required - floating point mathematics routines could be
 incorporated, but with a reduction in the execution speeds of a program.
 
-White Lightning consists of a standard Fig-Forth model, but with over 100 
-extensions to the standard vocabulary of Forth words.  There are two important 
-extensions to White Lightning: the first is the ability to access almost ALL of 
+White Lightning consists of a standard Fig-Forth model, but with over 100
+extensions to the standard vocabulary of Forth words.  There are two important
+extensions to White Lightning: the first is the ability to access almost ALL of
 the Spectrum's own BASIC commands, just as you would when writing a BASIC program,
-and with the addition of many of the high resolution graphics commands (CIRCLE, 
+and with the addition of many of the high resolution graphics commands (CIRCLE,
 DRAW, etc.).  Coupled with the incredible execution speeds of White Lightning, the
 possibilities are limitless!  The second, and possibly most important, addition is
 the IDEAL sub-language.
 
-In addition to the basic vocabulary of White Lightning words, the user can very 
-easily ADD his own NEW WORDS using previously defined words, thus extending the 
-vocabulary and building up as complex a word as is necessary to do the task in 
+In addition to the basic vocabulary of White Lightning words, the user can very
+easily ADD his own NEW WORDS using previously defined words, thus extending the
+vocabulary and building up as complex a word as is necessary to do the task in
 hand.
 
 Fully structured programming methods are also employed as a fundamental feature of
@@ -41,19 +41,19 @@ IF.....ELSE.....ENDIF
 DO.....UNTIL
 
 The standard Spectrum editor can be used to create lines of White Lightning source
-code for later compilation.  Do not allow lines to exceed 64 characters - any 
+code for later compilation.  Do not allow lines to exceed 64 characters - any
 characters after this are ignored.  The standard Forth line editor is included for
-compatibility with existing text. The source code is stored in memory from $CC00 
+compatibility with existing text. The source code is stored in memory from $CC00
 onwards, and can be LOADed or SAVEd to tape as and when required.  Once the source
-code is complete, it may then be compiled into the White Lightning dictionary for 
+code is complete, it may then be compiled into the White Lightning dictionary for
 later execution.
 
-Included in this documentation is a glossary of Fig-Forth terms (courtesy of the 
+Included in this documentation is a glossary of Fig-Forth terms (courtesy of the
 FORTH INTEREST GROUP,PO BOX 1105, SAN CARLOS, CA 94070).
 
-Spectra Forth was written by Stuart Smith, the author of the extremely successful 
-DRAGONFORTH, and is an enhancement of a program written by the Forth Interest 
+Spectra Forth was written by Stuart Smith, the author of the extremely successful
+DRAGONFORTH, and is an enhancement of a program written by the Forth Interest
 Group - to whom we offer our thanks.
 
-At the time of writing, floppy discs are not readily available for the Spectrum 
+At the time of writing, floppy discs are not readily available for the Spectrum
 and instructions referring to discs should be interpreted as accessing RAM.
