@@ -1,16 +1,25 @@
-# TODO: Remove this comment once this file has been proofread
 
 
-FIG-FORTH GLOSSARY 91 
 
-IDEAL GLOSSARY 119 
 
-FORTH/BASIC GLOSSARY 124 
 
-USR CALLS 126 
 
-EXTENDED SPECTRA FORTH GLOSSARY 125 
 
-THE DEMO - A BRIEF DESCRIPTION 128 
 
-SOME SIMPLE PROGRAMMING EXAMPLES    129
+
+
+                                                       Page
+
+FIG-FORTH GLOSSARY                                      91
+
+IDEAL GLOSSARY                                         119
+
+FORTH/BASIC GLOSSARY                                   124
+
+USR CALLS                                              126
+
+EXTENDED SPECTRA FORTH GLOSSARY                        125
+
+THE DEMO - A BRIEF DESCRIPTION                         128
+
+SOME SIMPLE PROGRAMMING EXAMPLES                       129
