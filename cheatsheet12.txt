@@ -1,65 +1,33 @@
-# TODO: Remove this comment once this file has been proofread
-
-  1 OK ENDOF 13 OF OK ENDOF 30 O
-F OK ENDOF 31 OF OK ENDOF 58 OF 
-OK
-  2 ENDOF 59 OF OK ENDOF 91 OF O
-K ENDOF 92 OF OK ENDOF ENDCASE
-  3 ENDIF ENDIF BANG ;
-  4 128 VARIABLE SX 32 VARIABLE 
-SY 63 VARIABEL SFU
-  5 : XG SX +! 16 COL ! 13 ROW !
- 1 HGT ! 16 LEN ! ;
-  6 : RSET1 7 COL ! 3 LEN ! ;
-    : WLEFT -1 XG WRR1V RSET1 ;
-  7 : WRIGHT 1 XG WRL1V RSET1 ;
-     -->
-
-SCR # 16
+  1 OK ENDOF 13 OF OK ENDOF 30 O        SCR # 17
+F OK ENDOF 31 OF OK ENDOF 58 OF           0 : FVEL FU @ 16 / SFU @ - 0< 
+OK                                      IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE
+  2 ENDOF 59 OF OK ENDOF 91 OF O        N !
+K ENDOF 92 OF OK ENDOF ENDCASE            1 -1 NPX ! -1 SFU   +! WCRV RSE
+  3 ENDIF ENDIF BANG ;                  T1 ENDIF ;
+  4 128 VARIABLE SX 32 VARIABLE           2 0  VARIABLE LX
+SY 63 VARIABEL SFU                        3 : MXG 18 ROW ! 16 COL ! 16 L
+  5 : XG SX +! 16 COL ! 13 ROW !        EN ! 1 HGT ! ;
+ 1 HGT ! 16 LEN ! ;                       4 : MLEFT MXG WRL1V -1 LX +! ;
+  6 : RSET1 7 COL ! 3 LEN ! ;               : MRIGHT MXG WRR1V 1 LX +! ;
+    : WLEFT -1 XG WRR1V RSET1 ;           5 : MON PH @ 8 / LX @ - DUP 0 
+  7 : WRIGHT 1 XG WRL1V RSET1 ;         > IF DROP MRIGHT ELSE
+     -->                                  6 0< IF MLEFT ENDIF ENDIF RSET
+                                        1 ;
+SCR # 16                                  7 -->
   0 : XVEL SPD @ 256 + 4 / SX @
- - DUP 0< IF WLEFT DROP ELSE 0 > 
-IF
-  1 WRIGHT ENDIF ENDIF ;
-  2 : YG DUP MINUS NPX ! SY +! 2
-7 COL ! 2 ROW ! 8 HGT ! 1 LEN !
-  3 WCRV RSET1 ;
-  4 : WUP -1 YG ;
-    : WDOWN 1 YG ;
-  5 : YVEL VEL @ 256 + 8 / SY @ 
-- DUP 0< IF WUP DROP ELSE 0 > IF
-  6 WDOWN ENDIF ENDIF ;
-  7 -->
-
-SCR # 17
-  0 : FVEL FU @ 16 / SFU @ - 0< 
-IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE
-N !
-  1 -1 NPX ! -1 SFU   +! WCRV RSE
-T1 ENDIF ;
-  2 0  VARIABLE LX
-  3 : MXG 18 ROW ! 16 COL ! 16 L
-EN ! 1 HGT ! ;
-  4 : MLEFT MXG WRL1V -1 LX +! ;
-    : MRIGHT MXG WRR1V 1 LX +! ;
-  5 : MON PH @ 8 / LX @ - DUP 0 
-> IF DROP MRIGHT ELSE
-  6 0< IF MLEFT ENDIF ENDIF RSET
-1 ;
-  7 -->
-
-SCR # 18
-  0 : OFF PANEL PREP ' DEC INT-O
-N BEGIN TICK THRUST MV MON XVEL
-  1 YVEL FVEL MON LAND MON UNTIL
- INT-OFF ;
-  2 : TST 256 SPD ! 0 PH ! 1008
-FU ! 40 XP ! 8 VEL ! 128 SX !
-  3 32 SY ! 63 SFU ! 0 LX ! OPEN
- OFF ;
-  4
-  5
-  6
-  7
+ - DUP 0< IF WLEFT DROP ELSE 0 >        SCR # 18
+IF                                        0 : OFF PANEL PREP ' DEC INT-O
+  1 WRIGHT ENDIF ENDIF ;                N BEGIN TICK THRUST MV MON XVEL
+  2 : YG DUP MINUS NPX ! SY +! 2          1 YVEL FVEL MON LAND MON UNTIL
+7 COL ! 2 ROW ! 8 HGT ! 1 LEN !          INT-OFF ;
+  3 WCRV RSET1 ;                          2 : TST 256 SPD ! 0 PH ! 1008
+  4 : WUP -1 YG ;                       FU ! 40 XP ! 8 VEL ! 128 SX !
+    : WDOWN 1 YG ;                        3 32 SY ! 63 SFU ! 0 LX ! OPEN
+  5 : YVEL VEL @ 256 + 8 / SY @          OFF ;
+- DUP 0< IF WUP DROP ELSE 0 > IF          4
+  6 WDOWN ENDIF ENDIF ;                   5
+  7 -->                                   6
+                                          7
 
 
 

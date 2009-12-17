@@ -1,121 +1,61 @@
-# TODO: Remove this comment once this file has been proofread
-
-SCR # 6
-  0 : SETUP 0 COL ! 6 ROW ! 24 S
-PN ! CLS PUTBLS 2 HGT ! 32 LOW ! ;
-  1 : LEFT WRL1V ; : RIGHT WRR1V
- ;
-  2 : KEYS 1 1 KB IF LEFT ENDIF 
-8 1 KB IF RIGHT ENDIF ;
-  3 : TESTA ATTOFF SETUP BEGIN K
-EYS 8 2 KB UNTIL ;
-  4 : TESTB ATTOFF EXX SETUP EXX
+SCR # 6                                   2 : SET2 103 100 DO I SP1 ! I
+  0 : SETUP 0 COL ! 6 ROW ! 24 S        1+ DUP SP2 ! SPN ! COPYM WRR1M
+PN ! CLS PUTBLS 2 HGT ! 32 LOW ! ;        3 WRR1M LOOP ;
+  1 : LEFT WRL1V ; : RIGHT WRR1V          4 : TESTE CLS 0 COL ! 4 0 DO I
+ ;                                       100 + SPN ! I DUP + ROW ! PUTBL
+  2 : KEYS 1 1 KB IF LEFT ENDIF         S
+8 1 KB IF RIGHT ENDIF ;                   5 LOOP 8 0 AT ;
+  3 : TESTA ATTOFF SETUP BEGIN K          6 : HPLOT 4 /MOD COL ! 100 + S
+EYS 8 2 KB UNTIL ;                      PN ! PUTBLS ;
+  4 : TESTB ATTOFF EXX SETUP EXX          7
  ' KEYS INT-ON ;
-  5
-  6
-  7
-
-SCR # 7
-  0 : MAKE 62 SPN ! 4 HGT ! 4 LE
-N ! TEST 0= IF ISPRITE CLSM ENDI
-F
-  1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2
-4 SP1 ! GWBLM ;
-  2 : UP 7 1 KB IF ROW @ 0 > MIN
-US ROW +! ENDIF ;
-  3 : DOWN 8 1 KB IF ROW @ 20 < 
-ROW +! ENDIF ;
-  4 : LEFT 1 1 KB IF COL @ 0 > M
+  5                                     SCR # 10
+  6                                       0 : MAKE 3 HGT ! 3 LEN ! 116 1
+  7                                     00 DO I SPN ! ISPRITE CLSM SETAM
+                                          1 LOOP ;
+SCR # 7                                   2 : SET3 -2 NPX ! 104 100 DO I
+  0 : MAKE 62 SPN ! 4 HGT ! 4 LE         DUP 12 + SWAP DO I DUP 4 + DUP
+N ! TEST 0= IF ISPRITE CLSM ENDI        SP2
+F                                         3 ! SPN ! SP1 ! GWBLM SCRM 4 
+  1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2       +LOOP LOOP ;
+4 SP1 ! GWBLM ;                           4 : XYPUT 4 /MOD COL ! SWAP 4 
+  2 : UP 7 1 KB IF ROW @ 0 > MIN        /MOD ROW ! DUP + DUP + + 100 + S
+US ROW +! ENDIF ;                       PN
+  3 : DOWN 8 1 KB IF ROW @ 20 <           5 ! ;
+ROW +! ENDIF ;                            6
+  4 : LEFT 1 1 KB IF COL @ 0 > M          7
 INUS COL +! ENDIF ;
-  5 : RIGHT 1 2 KB IF COL @ 28 <
- COL +! ENDIF ;
-  6 : TESTC 62 SPN ! 10 COL ! 10
- ROW ! CLS BEGIN UP DOWN LEFT RI
-GHT
-  7 : ADJM PWBLS 6 1 KB UNTIL ;
-
-SCR # 8
-  0 : SETUP 4 SPN ! 1 3 2 4 
-5 6 3 5 12 10 9 12 4 6 0 DO ROW ! COL 
-!
-  1 : PUTORS LOOP ; : KCHK KB DUP
-ROT OR SWAP ;
-  2 : UP 7 1 KCHK IF ROW @ 0 > M
-INUS ROW +! ENDIF ;
-  3 : DOWN 8 1 KCHK IF ROW @ 20 
-< ROW +! ENDIF ;
+  5 : RIGHT 1 2 KB IF COL @ 28 <        SCR # 11
+ COL +! ENDIF ;                           0 0 VARIABLE TSPN 0 VARIABLE T
+  6 : TESTC 62 SPN ! 10 COL ! 10        COL 0 VARIABLE TROW 0 VARIABLE 
+ ROW ! CLS BEGIN UP DOWN LEFT RI        XC
+GHT                                       1 0 VARIABLE YC 100 CONSTANT F
+  7 : ADJM PWBLS 6 1 KB UNTIL ;         SPN 0 VARIABLE FLAG
+                                          2 : PLOAD COL ! ROW ! SPN ! PU
+SCR # 8                                 TXRS ;
+  0 : SETUP 4 SPN ! 1 3 2 4               3 : PSET TSPN @ TROW @ TCOL @
+5 6 3 5 12 10 9 12 4 6 0 DO ROW ! COL   ;
+!                                         4 : PCAL 4 /MOD TCOL ! SWAP 4
+  1 : PUTORS LOOP ; : KCHK KB DUP       /MOD TROW ! DUP + DUP + FSPN + +
+ROT OR SWAP ;                             5 TSPN ! ;
+  2 : UP 7 1 KCHK IF ROW @ 0 > M          6 : PLACE YC @ XC @ PCAL PSET 
+INUS ROW +! ENDIF ;                     PLOAD ;
+  3 : DOWN 8 1 KCHK IF ROW @ 20           7 : MOVE YC @ XC @ PCAL PSET P
+< ROW +! ENDIF ;                        UTXRS PLOAD ;
   4 : LEFT 1 1 KCHK IF COL @ 0 >
- MINUS COL +! ENDIF ;
-  5 : RIGHT 1 2 KCHK IF COL @ 28
- < COL +! ENDIF ;
-  6 : TESTD CLS BEGIN COL @ ROW 
-@ SETUP ROW ! COL ! 62 SPN !
-  7 0 UP DOWN LEFT RIGHT IF ADJM
- PWBLS ENDIF 6 1 KB UNTIL ;
-
-SCR # 9
-  0 : MAKE 2 HGT ! 3 LEN ! 104 1
-00 DO I SPN ! ISPRITE CLSM LOOP 
-;
-  1 : SET1 0 SROW ! 0 SCOL ! 24
-SP1 ! 100 SP2 ! GWBLM ;
-  2 : SET2 103 100 DO I SP1 ! I
-1+ DUP SP2 ! SPN ! COPYM WRR1M
-  3 WRR1M LOOP ;
-  4 : TESTE CLS 0 COL ! 4 0 DO I
- 100 + SPN ! I DUP + ROW ! PUTBL
-S
-  5 LOOP 8 0 AT ;
-  6 : HPLOT 4 /MOD COL ! 100 + S
-PN ! PUTBLS ;
-  7
-
-SCR # 10
-  0 : MAKE 3 HGT ! 3 LEN ! 116 1
-00 DO I SPN ! ISPRITE CLSM SETAM
-  1 LOOP ;
-  2 : SET3 -2 NPX ! 104 100 DO I
- DUP 12 + SWAP DO I DUP 4 + DUP
-SP2
-  3 ! SPN ! SP1 ! GWBLM SCRM 4 
- +LOOP LOOP ;
-  4 : XYPUT 4 /MOD COL ! SWAP 4 
-/MOD ROW ! DUP + DUP + + 100 + S
-PN
-  5 ! ;
-  6
-  7
-
-SCR # 11
-  0 0 VARIABLE TSPN 0 VARIABLE T
-COL 0 VARIABLE TROW 0 VARIABLE 
-XC
-  1 0 VARIABLE YC 100 CONSTANT F
-SPN 0 VARIABLE FLAG
-  2 : PLOAD COL ! ROW ! SPN ! PU
-TXRS ;
-  3 : PSET TSPN @ TROW @ TCOL @
-;
-  4 : PCAL 4 /MOD TCOL ! SWAP 4
-/MOD TROW ! DUP + DUP + FSPN + +
-  5 TSPN ! ;
-  6 : PLACE YC @ XC @ PCAL PSET 
-PLOAD ;
-  7 : MOVE YC @ XC @ PCAL PSET P
-UTXRS PLOAD ;
-
-SCR # 12
-  0 : KCHK KB DUP ROT OR SWAP ;
-  1 : UP 7 1 KCHK IF YC @ 4 > MI
-NUS YC +! ENDIF ;
-  2 : DOWN 8 1 KCHK IF YC @ 83 <
- YC +! ENDIF ;
-  3 : LEFT 1 1 KCHK IF XC @ 4 > 
-MINUS XC +! ENDIF ;
-  4 : RIGHT 1 2 KCHK IF XC @ 115
- < XC +! ENDIF ;
-  5 : KREAD 0 UP DOWN LEFT RIGHT
- ;
-  6 : TESTF 10 XC ! 10 YC ! PLAC
-E BEGIN KREAD IF MOVE ENDIF 6 1 KB
-  7 UNTIL ;
+ MINUS COL +! ENDIF ;                   SCR # 12
+  5 : RIGHT 1 2 KCHK IF COL @ 28          0 : KCHK KB DUP ROT OR SWAP ;
+ < COL +! ENDIF ;                         1 : UP 7 1 KCHK IF YC @ 4 > MI
+  6 : TESTD CLS BEGIN COL @ ROW         NUS YC +! ENDIF ;
+@ SETUP ROW ! COL ! 62 SPN !              2 : DOWN 8 1 KCHK IF YC @ 83 <
+  7 0 UP DOWN LEFT RIGHT IF ADJM         YC +! ENDIF ;
+ PWBLS ENDIF 6 1 KB UNTIL ;               3 : LEFT 1 1 KCHK IF XC @ 4 > 
+                                        MINUS XC +! ENDIF ;
+SCR # 9                                   4 : RIGHT 1 2 KCHK IF XC @ 115
+  0 : MAKE 2 HGT ! 3 LEN ! 104 1         < XC +! ENDIF ;
+00 DO I SPN ! ISPRITE CLSM LOOP           5 : KREAD 0 UP DOWN LEFT RIGHT
+;                                        ;
+  1 : SET1 0 SROW ! 0 SCOL ! 24           6 : TESTF 10 XC ! 10 YC ! PLAC
+SP1 ! 100 SP2 ! GWBLM ;                 E BEGIN KREAD IF MOVE ENDIF 6 1
+                                        KB
+                                          7 UNTIL ;

@@ -1,5 +1,3 @@
-# TODO: Remove this comment once this file has been proofread
-
 Sprites 1 to 100 are produced using the sprite generator program.  Sprites 101 to 
 107 are created in the main program using the word SET.  Sprite 128 is constructed 
 from sprites 10 to 25 in the main program using the word MAKE.
@@ -39,45 +37,24 @@ game.
 Let's now look at the program in more detail.
 
 
-SCR # 6
-  0 : COLOUR 0 ROW ! 16 COL ! 16
- LEN ! 23 HGT ! 7 INK 1 BRIGHT
-  1 SETAV ATTON ;
-  2 : VTSC COL ! 10 2 DO I ROW !
- PUTBLS LOOP ;
-  3 : SCLE 26 SPN ! 18 VTSC 26 V
-TSC MIRM 21 VTSC 29 VTSC MIRM ;
-  4 : VTCL ROW ! COL ! LEN ! HGT
- ! PAPER SETAV ;
-  5 : BARS 4 6 1 20 2 VTCL 2 2 1
- 20 8 VTCL 5 4  1 28 2 VTCL
-  6 2 3 1 28 7 VTCL 5 1 16 16 14
+SCR # 6                                   2 44 SPN ! 17 ROW ! 6 COL ! PU
+  0 : COLOUR 0 ROW ! 16 COL ! 16        TXRS ;
+ LEN ! 23 HGT ! 7 INK 1 BRIGHT            3 : PTST SPN ! COL ! ROW ! PUT 
+  1 SETAV ATTON ;                       BLS ;
+  2 : VTSC COL ! 10 2 DO I ROW !          4 : BARST 14 23 31 PTST MIRM 1
+ PUTBLS LOOP ;                          4 24 31 PTST MIRM 6 28 28 PTST
+  3 : SCLE 26 SPN ! 18 VTSC 26 V          5 19 16 32 PTST 19 24 33 PTST 
+TSC MIRM 21 VTSC 29 VTSC MIRM ;         ;
+  4 : VTCL ROW ! COL ! LEN ! HGT          6 : LETR 7 INK 0 PAPER 1 18 AT
+ ! PAPER SETAV ;                         ." FUEL" 0 26 AT ." VERT" 1 26
+  5 : BARS 4 6 1 20 2 VTCL 2 2 1        AT
+ 20 8 VTCL 5 4  1 28 2 VTCL               7 ." VEL" 11 20 AT ." HORZ VEL
+  6 2 3 1 28 7 VTCL 5 1 16 16 14        " ; -->
  VTCL ;
-  7 -->
-
-SCR # 7
-  0 : LND 6 COL ! 17 ROW ! 44 SP
-N ! PUTBLS BEGIN 7 1 KB UNTIL
-  1 20 ROW ! 43 SPN ! 7 COL ! 20
- 0 DO PUTXRS 100 100 BLEEP LOOP
-  2 44 SPN ! 17 ROW ! 6 COL ! PU
-TXRS ;
-  3 : PTST SPN ! COL ! ROW ! PUT 
-BLS ;
-  4 : BARST 14 23 31 PTST MIRM 1
-4 24 31 PTST MIRM 6 28 28 PTST
-  5 19 16 32 PTST 19 24 33 PTST 
-;
-  6 : LETR 7 INK 0 PAPER 1 18 AT
- ." FUEL" 0 26 AT ." VERT" 1 26
-AT
-  7 ." VEL" 11 20 AT ." HORZ VEL
-" ; -->
-
-SCR # 8
-  0 : HRSC 32 16 DO 12 I 29 PTST
- 17 I 29 PTST LOOP 16 16 1 PTST 
-;
-  1 : MARK 152 159 PLOT 7 0 DRAW
- 216 127 PLOT 7 0 DRAW 128 71 PL
-OT
+  7 -->                                 SCR # 8
+                                          0 : HRSC 32 16 DO 12 I 29 PTST
+SCR # 7                                  17 I 29 PTST LOOP 16 16 1 PTST 
+  0 : LND 6 COL ! 17 ROW ! 44 SP        ;
+N ! PUTBLS BEGIN 7 1 KB UNTIL             1 : MARK 152 159 PLOT 7 0 DRAW
+  1 20 ROW ! 43 SPN ! 7 COL ! 20         216 127 PLOT 7 0 DRAW 128 71 PL
+ 0 DO PUTXRS 100 100 BLEEP LOOP         OT

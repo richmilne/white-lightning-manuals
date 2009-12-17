@@ -1,123 +1,61 @@
-# TODO: Remove this comment once this file has been proofread
-
-  2 0 -7 DRAW ;
-  3 : PANEL 0 PAPER COLOUR SCLE 
-BARS BARST HRSC LETR MARK ;
-  4 : MAKE 128 SPN ! 3 HGT ! 128
- LEN ! 0 SROW ! 128 SP2 ! ISPRIT
-E
-  5 16 0 DO I 10 + DUP SPN ! SP1
- ! I 8 * SCOL ! GWBLM GWATIM DSP
+  2 0 -7 DRAW ;                           4 : UL SS -200 < IF SL8 ELSE S
+  3 : PANEL 0 PAPER COLOUR SCLE         L4 ENDIF ;
+BARS BARST HRSC LETR MARK ;               5 : LL SS -7 < IF SL1 ELSE SO 
+  4 : MAKE 128 SPN ! 3 HGT ! 128        ENDIF ;
+ LEN ! 0 SROW ! 128 SP2 ! ISPRIT          6 : LF SS -100 < IF UL ELSE LL
+E                                        ENDIF ;
+  5 16 0 DO I 10 + DUP SPN ! SP1          7 : DEC SS 0< IF LF ELSE RT EN
+ ! I 8 * SCOL ! GWBLM GWATIM DSP        DIF ;
 RITE
-  6 LOOP ;
-    0 VARIABLE PH
-  7 256 VARIABLE SPD 0 VARIABLE 
-DOWN 1008 VARIABLE FU -->
-
-SCR # 9
-  0 : S1 1023 AND 8 / SCOL ! 1 L
-EN ! PUTBLS 16 LEN ! ;
-  1 : NBR PH @ S1 ;
-    : NBL PH @ 128 + S1 ;
-  2 : OPEN 0 PAPER 5 INK CLS 0 P
-H ! EXX 128 SPN ! 16 LEN ! 0 COL
- !
-  3 3 HGT ! 21 ROW ! 0 SCOL ! 0 
-SROW ! PWBLS PWATTS 2 HGT ! EXX
-  4 0 PAPER 1008 FU ! 0 BORDER ;
+  6 LOOP ;                              SCR # 12
+    0 VARIABLE PH                         0 : SET -1 NPX ! 3 LEN ! 6 HGT
+  7 256 VARIABLE SPD 0 VARIABLE          ! 107 100 DO I SP1 ! I 1+ DUP S
+DOWN 1008 VARIABLE FU -->               P2 !
+                                          1  SPN ! ISPRITE COPYM WCRM LO
+SCR # 9                                 OP ;
+  0 : S1 1023 AND 8 / SCOL ! 1 L          2 40 VARIABLE XP 8 VARIABLE V
+EN ! PUTBLS 16 LEN ! ;                  EL
+  1 : NBR PH @ S1 ;                       3 : PREP 7 COL ! 0 DOWN ! 40 X
+    : NBL PH @ 128 + S1 ;               P ! ;
+  2 : OPEN 0 PAPER 5 INK CLS 0 P          4 : TICK VEL @ 255 > IF ELSE 1 
+H ! EXX 128 SPN ! 16 LEN ! 0 COL        VEL +! ENDIF ;
+ !                                        5 : THRUST FU @ IF 7 1 KB IF V
+  3 3 HGT ! 21 ROW ! 0 SCOL ! 0         EL @ -252 > IF -4 VEL +! FUEL
+SROW ! PWBLS PWATTS 2 HGT ! EXX           6 ENDIF ENDIF ENDIF ;
+  4 0 PAPER 1008 FU ! 0 BORDER ;          7 -->
     : SH8 PH @ DUP 7 AND 0= ;
-  5 : FUEL -1 FU +! ;
-    : SR SH8 IF NBR ENDIF ;
-  6 : SL SH8 IF NBL ENDIF ;
-    : SH4 PH @ DUP 3 AND 0= ;
-  7 : SP SPD +! ;
-    : SS SPD @  ; -->
-
-SCR # 10
-  0 : POLL FU @ IF 8 1 KB IF SS 
--252 > MINUS SF FUEL ENDIF
-  1 1 1 KB IF SS 256 < SF FUEL E
-NDIF ENDIF ;
-  2 : -P - PH ! POLL ;
-    : +P + PH ! POLL ;
+  5 : FUEL -1 FU +! ;                   SCR # 13
+    : SR SH8 IF NBR ENDIF ;               0 : MV VEL @ XP @ + DUP 5631 >
+  6 : SL SH8 IF NBL ENDIF ;              IF DROP 5631 1 DOWN ! ENDIF DUP
+    : SH4 PH @ DUP 3 AND 0= ;             1 XP ! 32 / 8 /MOD 5 - ROW ! 7
+  7 : SP SPD +! ;                        AND 100 + SPN ! ROW @ 0< IF ADJ
+    : SS SPD @  ; -->                   M
+                                          2 PWBLS ELSE VEL @ 0< IF 1 SRO
+SCR # 10                                W ! ROW @ 15 > IF 4 HGT ! ELSE
+  0 : POLL FU @ IF 8 1 KB IF SS           3 5 HGT ! ENDIF ELSE 0 SROW !
+-252 > MINUS SF FUEL ENDIF              5 HGT ! ENDIF ROW @ DUP SROW @ +
+  1 1 1 KB IF SS 256 < SF FUEL E          4 ROW ! PWBLS ROW ! ENDIF ;
+NDIF ENDIF ;                              5
+  2 : -P - PH ! POLL ;                    6
+    : +P + PH ! POLL ;                    7 -->
   3 : SR1 SR WRR1V 1 -P ;
-    : SL1 SL WRL1V 1 +P ;
-  4 : SR4 SH4 IF SR WRR4V 4 -P E
-LSE SR1 ENDIF DROP ;
-  5 : SL4 SH4 IF SL WRL4V 4 +P E
-LSE SL1 ENDIF DROP ;
-  6 : SO DOWN @ IF ELSE SS ABS 2
-56 < IF POLL ENDIF ENDIF ;
-  7 : SR8 SH8 IF NBR WRR8V 8 -P 
-ELSE SR4 ENDIF DROP ; -->
-
-SCR # 11
-  0 : SL8 SH8 IF NBL WRL8V 8 +P
-ELSE SL4 ENDIF ;
-  1 : UR SS 200 > IF SR8 ELSE SR
-4 ENDIF ;
+    : SL1 SL WRL1V 1 +P ;               SCR # 14
+  4 : SR4 SH4 IF SR WRR4V 4 -P E          0 : BANG DOWN @ DUP IF 19 ROW
+LSE SR1 ENDIF DROP ;                    ! 43 SPN ! -5 NPX ! 7 HGT ! 3 LE
+  5 : SL4 SH4 IF SL WRL4V 4 +P E        N !
+LSE SL1 ENDIF DROP ;                      1 40 10 DO PUTXRS I 20 + I DO 
+  6 : SO DOWN @ IF ELSE SS ABS 2        J I BLEEP LOOP PUTXRS 17 ROW !
+56 < IF POLL ENDIF ENDIF ;                2 SCRV 19 ROW ! 5 +LOOP SS ABS
+  7 : SR8 SH8 IF NBR WRR8V 8 -P          8 < IF 21 ROW ! 45 SPN ! PUTBLS
+ELSE SR4 ENDIF DROP ; -->                 3 ENDIF ENDIF XP @ 5631 = IF D
+                                        OWN @ 0= IF 7 COL ! LND 7 COL !
+SCR # 11                                  4 MV 0 VEL ! ENDIF INT-OFF BEG
+  0 : SL8 SH8 IF NBL WRL8V 8 +P         IN 7 1 KB UNTIL
+ELSE SL4 ENDIF ;                          5  ' DEC INT-ON ENDIF ;
+  1 : UR SS 200 > IF SR8 ELSE SR          6 : OK 0 DOWN ! ;
+4 ENDIF ;                                 7 -->
   2 : LR SS 7 > IF SR1 ELSE SO E
-NDIF ;
-  3 : RT SS 100 > IF UR ELSE LR 
-ENDIF ;
-  4 : UL SS -200 < IF SL8 ELSE S
-L4 ENDIF ;
-  5 : LL SS -7 < IF SL1 ELSE SO 
-ENDIF ;
-  6 : LF SS -100 < IF UL ELSE LL
- ENDIF ;
-  7 : DEC SS 0< IF LF ELSE RT EN
-DIF ;
-
-SCR # 12
-  0 : SET -1 NPX ! 3 LEN ! 6 HGT
- ! 107 100 DO I SP1 ! I 1+ DUP S
-P2 !
-  1  SPN ! ISPRITE COPYM WCRM LO
-OP ;
-  2 40 VARIABLE XP 8 VARIABLE V
-EL
-  3 : PREP 7 COL ! 0 DOWN ! 40 X
-P ! ;
-  4 : TICK VEL @ 255 > IF ELSE 1 
-VEL +! ENDIF ;
-  5 : THRUST FU @ IF 7 1 KB IF V
-EL @ -252 > IF -4 VEL +! FUEL
-  6 ENDIF ENDIF ENDIF ;
-  7 -->
-
-SCR # 13
-  0 : MV VEL @ XP @ + DUP 5631 >
- IF DROP 5631 1 DOWN ! ENDIF DUP
-  1 XP ! 32 / 8 /MOD 5 - ROW ! 7
- AND 100 + SPN ! ROW @ 0< IF ADJ
-M
-  2 PWBLS ELSE VEL @ 0< IF 1 SRO
-W ! ROW @ 15 > IF 4 HGT ! ELSE
-  3 5 HGT ! ENDIF ELSE 0 SROW !
-5 HGT ! ENDIF ROW @ DUP SROW @ +
-  4 ROW ! PWBLS ROW ! ENDIF ;
-  5
-  6
-  7 -->
-
-SCR # 14
-  0 : BANG DOWN @ DUP IF 19 ROW
-! 43 SPN ! -5 NPX ! 7 HGT ! 3 LE
-N !
-  1 40 10 DO PUTXRS I 20 + I DO 
-J I BLEEP LOOP PUTXRS 17 ROW !
-  2 SCRV 19 ROW ! 5 +LOOP SS ABS
- 8 < IF 21 ROW ! 45 SPN ! PUTBLS
-  3 ENDIF ENDIF XP @ 5631 = IF D
-OWN @ 0= IF 7 COL ! LND 7 COL !
-  4 MV 0 VEL ! ENDIF INT-OFF BEG
-IN 7 1 KB UNTIL
-  5  ' DEC INT-ON ENDIF ;
-  6 : OK 0 DOWN ! ;
-  7 -->
-
-SCR # 15
-  0 : LAND SS ABS 8 < IF VEL @ 3
-2 < IF PH @ 1023 AND 8 / CASE 12
- OF
+NDIF ;                                  SCR # 15
+  3 : RT SS 100 > IF UR ELSE LR           0 : LAND SS ABS 8 < IF VEL @ 3
+ENDIF ;                                 2 < IF PH @ 1023 AND 8 / CASE 12
+                                         OF
