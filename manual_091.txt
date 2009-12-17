@@ -46,7 +46,7 @@ operation or description of any of the FORTH words defined in this documentation
 DO NOT use DR0, DR1 or GO.
 
 
-!               n addr ---                                                       L0
+!               n addr ---                                L0
 
 Store 16 bits of n at address.  Pronounced "store". 
 

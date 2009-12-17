@@ -1,4 +1,4 @@
-WORD                 c ---                                                       L0
+WORD                 c ---                                L0
 
 Read the next text characters from the input stream being interpreted, until a 
 delimiter c is found, storing the packed character string beginning at the 
@@ -16,12 +16,12 @@ line of text from the terminal or within a disc buffer, as both buffers always
 have a null at the end. 
 
 
-XOR              nl n2 --- xor                                                   L1
+XOR              nl n2 --- xor                            L1
 
 Leave the bit-wise logical Exclusive-OR of two values. 
 
 
-[                                                                              P,L1
+[                                                       P,L1
 
 Used in a colon-definition in the form:
                   : xxx   words   more   ;
@@ -30,7 +30,7 @@ calculation or compilation exceptions before resuming compilation with ].  See
 LITERAL, ].
 
 
-[COMPILE]                                                                       P,C
+[COMPILE]                                                P,C
 
 Used in a colon-definition in the form:
                   : xxx [COMPILE] FORTH  ;
@@ -39,7 +39,7 @@ otherwise execute during compilation. The above example will select the FORTH
 vocabulary when xxx executes, rather than at compile time. 
 
 
-]                                                                                L1
+]                                                         L1
 
 Resume compilation, to the completion of a colon-definition.  See [. 
 

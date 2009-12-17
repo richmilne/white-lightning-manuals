@@ -1,11 +1,11 @@
-LIT                    --- n                                                   C,L0
+LIT                    --- n                            C,L0
 
 Within a colon-definition, LIT is automatically compiled before each 16 bit 
 literal number encountered in input text.  Later execution of LIT causes the 
 contents of the next dictionary address to be pushed to the stack. 
 
 
-LITERAL              n --- (compiling)                                      P,C2,L0
+LITERAL              n --- (compiling)               P,C2,L0
 
 If compiling, then compile the stack value n as a 16 bit literal.  This definition 
 is immediate so that it will execute during a colon definition.  The intended use 
@@ -15,13 +15,13 @@ Compilation is suspended for the compile time calculation of a value.  Compilati
 is resumed and LITERAL compiles this value. 
 
 
-LOAD                 n ---                                                       L0
+LOAD                 n ---                                L0
 
 Begin interpretation of screen n.  Loading will terminate at the end of the screen 
 or at ;S.  See ;S and -->. 
 
 
-LOOP            addr n --- (compiling)                                      P,C2,L0
+LOOP            addr n --- (compiling)               P,C2,L0
 
 Occurs in a colon-definition in form:
               DO  ...  LOOP
@@ -54,7 +54,7 @@ An unsigned mixed magnitude math operation which leaves a double quotient ud4 an
 remainder u3, from a double dividend ud1 and single divisor u2. 
 
 
-MAX              n1 n2 --- max                                                   L0
+MAX              n1 n2 --- max                            L0
 
 Leaves the greater of two numbers. 
 

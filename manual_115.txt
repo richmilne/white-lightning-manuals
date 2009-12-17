@@ -5,7 +5,7 @@ dividend ud and unsigned divisor u1.
 
 
 UNTIL                f --- (run-time)                                              
-                addr n --- (compile)                                        P,C2,L0
+                addr n --- (compile)                 P,C2,L0
 
 Occurs within a colon-definition in the form:
                          BEGIN ... UNTIL
@@ -17,7 +17,7 @@ At compile-time, UNTIL compiles (0BRANCH) and an offset from HERE to addr.  n is
 used for error tests. 
 
 
-UPDATE                                                                           L0
+UPDATE                                                    L0
 
 Marks the most recently referenced block (pointed to by PREV) as altered.  The 
 block will subsequently be transferred to disc should it's buffer be required for 
@@ -30,7 +30,7 @@ A variable containing the address of the block buffer to use next, as the least
 recently written. 
 
 
-USER                 n ---                                                       L0
+USER                 n ---                                L0
 
 A defining word used in the form:
                    n USER cccc
@@ -40,7 +40,7 @@ When cccc is later executed, it places the sum of it's offset and the user base
 address on the stack, as the storage address of that particular variable. 
 
 
-VARIABLE                                                                       E,LO
+VARIABLE                                                E,LO
 
 A defining word used in the form:
                    n VARIABLE cccc
@@ -50,7 +50,7 @@ initialised to n.  When cccc is later executed, the address of its parameter fie
 location. 
 
 
-VOC-LINK               --- addr                                                   U
+VOC-LINK               --- addr                            U
 
 A user variable containing the address of a field in the definition of the most 
 recently created vocabulary.  All vocabulary names are linked by these fields, to 

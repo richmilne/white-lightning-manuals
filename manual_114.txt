@@ -8,12 +8,12 @@ TEXT                 c ---
 
 Accept the following test to PAD.  c is the text delimiter.
 
-THEN                                                                        P,C0,L0
+THEN                                                 P,C0,L0
 
 An alias for ENDIF. 
 
 
-TIB                    --- addr                                                   U
+TIB                    --- addr                            U
 
 A user variable containing the address of the terminal input buffer. 
 
@@ -31,7 +31,7 @@ toward low memory.  The addr2 resulting is the address of the other end of the
 name. 
 
 
-TYPE        addr count ---                                                       L0
+TYPE        addr count ---                                L0
 
 Transmit count characters from addr to the selected output device. 
 

@@ -39,7 +39,7 @@ and restart via ABORT.  May be called from the terminal to remove application
 programs and restart. 
 
 
-COMPILE                                                                          C2
+COMPILE                                                   C2
 
 When the word containing COMPILE executes, the execution address of the word 
 following COMPILE is copied (compiled) into the dictionary.  This allows specific 
@@ -47,7 +47,7 @@ compilation situations to be handled in addition to simply compiling an executio
 address (which the interpreter already does). 
 
 
-CONSTANT             n ---                                                       L0
+CONSTANT             n ---                                L0
 
 A defining word used in the form:
               n  CONSTANT  cccc
@@ -55,7 +55,7 @@ to create word cccc, with its parameter field containing n.  When cccc is later
 executed, it will push the value of n to the stack. 
 
 
-CONTEXT                --- addr                                                U,L0
+CONTEXT                --- addr                         U,L0
 
 A user variable containing a pointer to the vocabulary within which dictionary 
 searches will first begin. 

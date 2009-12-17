@@ -1,4 +1,4 @@
-COUNT            addr1 --- addr2 n                                               L0
+COUNT            addr1 --- addr2 n                        L0
 
 Leave the byte address addr2 and byte count n of a message text beginning at 
 address addr1.  It is presumed that the first byte at addr1 contains the text byte 
@@ -6,7 +6,7 @@ count and that the actual text starts with the second byte.  Typically, COUNT is
 followed by TYPE. 
 
 
-CR                                                                               L0
+CR                                                        L0
 
 Transmit a carriage return and line feed to the selected output device. 
 
@@ -20,7 +20,7 @@ definition.  The code field contains the address of the word's parameter field. 
 new word is created in the CURRENT vocabulary. 
 
 
-CSP                    --- addr                                                   U
+CSP                    --- addr                            U
 
 A user variable temporarily storing the stack pointer position, for compilation 
 error checking. 
@@ -36,7 +36,7 @@ D+-               d1 n --- d2
 Apply the sign of n to the double number d1, leaving it as d2. 
 
 
-D.                   d ---                                                       L1
+D.                   d ---                                L1
 
 Print a signed double number from a 32 bit two's complement value.  The high-order 
 l6 bits are most accessable on the stack.  Conversion is performed according to 
@@ -53,7 +53,7 @@ DABS                 d --- ud
 Leave the absolute value of a double number. 
 
 
-DECIMAL                                                                          L0
+DECIMAL                                                   L0
 
 Set the numeric conversion BASE for decimal input-output. 
 

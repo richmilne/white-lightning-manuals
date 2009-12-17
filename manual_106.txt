@@ -4,14 +4,14 @@ Execute the definition whose code field address is on the stack.  The code field
 address is also called the compilation address. 
 
 
-EXPECT      addr count ---                                                       L0
+EXPECT      addr count ---                                L0
 
 Transfer characters from the terminal to address, until a return or the count of 
 characters has been received.  One or more nulls are added at the end of the 
 text. 
 
 
-FENCE                  --- addr                                                   U
+FENCE                  --- addr                            U
 
 A user variable containing an address below which FORGETting is trapped.  To 
 forget below this point the user must alter the contents of FENCE. 
@@ -27,20 +27,20 @@ FIRST                  --- n
 A constant that leaves the address of the first (lowest) block buffer. 
 
 
-FLD                    --- addr                                                   U
+FLD                    --- addr                            U
 
 A user variable for control of number output field width.  Presently unused in 
 Fig-FORTH. 
 
 
-FORGET                                                                         E,L0
+FORGET                                                  E,L0
 
 Deletes definition named cccc from the dictionary with all entries physically 
 following it.  In Fig-FORTH, an error message will occur if the CURRENT and 
 CONTEXT vocabularies are not currently the same. 
 
 
-FORTH                                                                          P,L1
+FORTH                                                   P,L1
 
 The name of the primary vocabulary.  Execution makes FORTH the CONTEXT vocabulary.
 Until additional user vocabularies are defined, new user definitions become a part 
@@ -48,12 +48,12 @@ of FORTH.  FORTH is immediate, so it will execute during the creation of a
 colon-definition, to select this vocabulary at compile time. 
 
 
-HERE                   --- addr                                                  L0
+HERE                   --- addr                           L0
 
 Leave the address of the next available dictionary location. 
 
 
-HEX                                                                              L0
+HEX                                                       L0
 
 Set the numeric conversion base to sixteen (hexadecimal). 
 

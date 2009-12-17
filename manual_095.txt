@@ -13,13 +13,13 @@ Adjusts the character count n1 of a text string beginning address to suppress th
 output of trailing blanks.  i.e. the characters at addr+n1 to addr+n2 are blanks. 
 
 
-.                    n ---                                                       L0
+.                    n ---                                L0
 
 Print a number from a signed l6 bit two's complement value, converted according to 
 the numeric BASE.  A trailing blanks follows.  Pronounced "dot". 
 
 
-."                                                                             P,L0
+."                                                      P,L0
 
 Used in the form:  ." cccc " 
 
@@ -40,12 +40,12 @@ Print the number n1 right aligned in a field whose width is n2.  No following
 blanks printed. 
 
 
-/                n1 n2 --- quot                                                  L0
+/                n1 n2 --- quot                           L0
 
 Leave the signed quotient of n1/n2. 
 
 
-/MOD             n1 n2 --- rem quot                                              L0
+/MOD             n1 n2 --- rem quot                       L0
 
 Leave the remainder and signed quotient of n1/n2.  The remainder has the sign of 
 the dividend. 

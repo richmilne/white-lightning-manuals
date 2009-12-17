@@ -16,7 +16,7 @@ number value will be left.  The decimal point has no other purpose than to force
 this action.  See NUMBER. 
 
 
-KEY                    --- c                                                     L0
+KEY                    --- c                              L0
 
 Leave the ASCII value of the next terminal key struck. 
 
@@ -26,7 +26,7 @@ LATEST                 --- addr
 Leave the name field address of the topmost word in the CURRENT vocabulary. 
 
 
-LEAVE                                                                          C,L0
+LEAVE                                                   C,L0
 
 Force termination of a DO-LOOP at the next opportunity by setting the loop limit 
 equal to the current value of the index.  The index itself remains unchanged, and 
@@ -51,7 +51,7 @@ Leave address of line n of current screen.  This address will be in the disc
 buffer area
 
 
-LIST                 n ---                                                       L0
+LIST                 n ---                                L0
 
 Display the ASCII text of screen n on the selected output device.  SCR contains 
 the screen number during and after this process. 

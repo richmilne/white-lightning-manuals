@@ -1,10 +1,10 @@
-HLD                    --- addr                                                  L0
+HLD                    --- addr                           L0
 
 A user variable that holds the address of the latest character of text during 
 numeric output conversion. 
 
 
-HOLD                 c ---                                                       L0
+HOLD                 c ---                                L0
 
 Used between <# and #> to insert an ASCII character into a pictured numeric output 
 string.  
@@ -12,7 +12,7 @@ string.
 e.g.  2E HOLD will place a decimal point. 
 
 
-I                      --- n                                                   C,L0
+I                      --- n                            C,L0
 
 Used within a DO-LOOP to copy the loop index to the stack.  Other use is 
 implementation dependent.  See R. 
@@ -24,7 +24,7 @@ Print a definition's name from its name field address.
 
 
 IF                   f ---          (run-time)
-                       --- addr n   (compile)                               P,C2,L0
+                       --- addr n   (compile)        P,C2,L0
 
 Occurs is a colon-definition in the form:
               IF  (tp)  ...  ENDIF
@@ -48,7 +48,7 @@ rather than build them into the fundamental compiler.  The user may force
 compilation of an immediate definition by preceeding it with [COMPILE].
 
 
-IN                     --- addr                                                  L0
+IN                     --- addr                           L0
 
 A user variable containing the byte offset within the current input text buffer 
 (terminal or disc) from which the next text will be accepted.  WORD uses and moves 

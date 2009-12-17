@@ -1,15 +1,15 @@
-OUT                    --- addr                                                   U
+OUT                    --- addr                            U
 
 A user variable that contains a value incremented by EMIT.  The user may alter and 
 examine OUT to control display formating. 
 
 
-OVER             nl n2 --- nl n2 n1                                              L0
+OVER             nl n2 --- nl n2 n1                       L0
 
 Copy the second stack value, placing it as the new top. 
 
 
-PAD                    --- addr                                                  L0
+PAD                    --- addr                           L0
 
 Leave the address of the text output buffer, which is a fixed offset above HERE. 
 
@@ -52,7 +52,7 @@ Input 80 characters of text (or until a "return") from the operator's terminal.
 Text is positioned at the address contained in TIB with IN set to zero. 
 
 
-QUIT                                                                       L1      
+QUIT                                                      L1
 
 Clear the return stack, stop compilation, and return control to the operator's 
 terminal.  No message is given. 

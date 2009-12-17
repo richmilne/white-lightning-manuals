@@ -1,15 +1,15 @@
-S0                     --- addr                                                   U
+S0                     --- addr                            U
 
 A user variable that contains the initial value for the stack pointer.  Pronounced 
 S-zero.  See SP!
 
 
-SCR                    --- addr                                                   U
+SCR                    --- addr                            U
 
 A user variable containing the screen number most recently reference by LIST. 
 
 
-SIGN               n d --- d                                                     L0
+SIGN               n d --- d                              L0
 
 Stores an ASCII "-"  sign just before a converted numeric output string in the 
 text output buffer when n is negative.  n is discarded, but double number d is 
@@ -40,18 +40,18 @@ SPACE
 Transmit an ASCII blank to the output device. 
 
 
-SPACES               n ---                                                       L0
+SPACES               n ---                                L0
 
 Transmit n ASCII blanks to the output device. 
 
 
-STATE                  --- addr                                                L0,U
+STATE                  --- addr                         L0,U
 
 A user variable containing the compilation state.  A non-zero indicates 
 compilation.  The value itself may be implementation dependent. 
 
 
-SWAP             nl n2 --- n2 n1                                                 L0
+SWAP             nl n2 --- n2 n1                          L0
 
 Exchange the top two values On the stack. 
 

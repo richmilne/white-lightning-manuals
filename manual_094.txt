@@ -1,4 +1,4 @@
-+!              n addr ---                                                       L0
++!              n addr ---                                L0
 
 Add n to the value at the address.  Pronounced "plus-store". 
 
@@ -16,7 +16,7 @@ PREV.
 
 
 +LOOP               n1 --- (run)                                                   
-               addr n2 --- (compile)                                        P,C2,L0
+               addr n2 --- (compile)                 P,C2,L0
 
 Used in a colon-definition in the form: 
                 DO  ...  n1  +LOOP 
@@ -39,24 +39,24 @@ minimum address unit, either byte or word.  This definition is used to access or
 modify the boot-up parameters at the origin area. 
 
 
-,                    n --- ,                                                     L0
+,                    n --- ,                              L0
 
 Store n into the next available dictionary memory cell, advancing the dictionary 
 pointer.  (comma)
 
 
--                n1 n2 --- diff                                                  L0
+-                n1 n2 --- diff                           L0
 
 Leave the difference of n1-n2. 
 
 
--->                                                                            P,L0
+-->                                                     P,L0
 
 Continue interpretation with the next screen.  (Pronounced next-screen). 
 
 
 -DUP                n1 --- n1     (if zero)                           
-                    n1 --- n1 n1  (non-zero)                                     L0
+                    n1 --- n1 n1  (non-zero)              L0
 
 Reproduce n1 only if it is non-zero.  This is usually used to copy a value just 
 before IF, to eliminate the need for an ELSE part to drop it.

@@ -1,11 +1,11 @@
-#                   d1 --- d2                                                    L0
+#                   d1 --- d2                             L0
 
 Generate from a double number d1, the next ASCII character which is placed in an 
 output string.  Result d2 is the quotient after division by BASE, and is 
 maintained for further processing.  Used between <# and #>.  See #S. 
 
 
-#>                   d --- addr count                                            L0
+#>                   d --- addr count                     L0
 
 Terminates numeric output conversion by dropping d, leaving the text address and 
 character count suitable for TYPE. 
@@ -16,13 +16,13 @@ character count suitable for TYPE.
 A constant returning the number of disc buffers allocated.
 
 
-#S                  d1 --- d2                                                    L0
+#S                  d1 --- d2                             L0
 
 Generates ascii text in the text output buffer, by the use of #, until a zero 
 double number results.  Used between <# and #>. 
 
 
-'                      --- addr                                                P,L0
+'                      --- addr                         P,L0
 
 Used in the form:  ' nnnn 
 
@@ -32,7 +32,7 @@ the word is not found after a search of CONTEXT and CURRENT, an appropriate erro
 message is given.  Pronounced "tick". 
 
 
-(                                                                              P,L0
+(                                                       P,L0
 
 Used in the form: (cccc) 
 
@@ -41,20 +41,20 @@ May occur during execution or in a colon-definition.  A blank after the leading
 parenthesis is required. 
 
 
-(.")                                                                             C+
+(.")                                                      C+
 
 The run-time procedure, compiled by ." which transmits the following in-line text 
 to the selected output device.  See ."
 
 
-(;CODE)                                                                           C
+(;CODE)                                                    C
 
 The run-time procedure, compiled by ;CODE, that re-writes the code field of the 
 most recently defined word to point to the following machine code sequence.  See 
 ;CODE. 
 
 
-(+LOOP)              n ---                                                       C2
+(+LOOP)              n ---                                C2
 
 The run-time procedure compiled by +LOOP, which increments the loop index by n and 
 tests for loop completion.  See +LOOP. 

@@ -6,17 +6,17 @@ text such as report headers.  If WARNING is zero, the message will simply be
 printed as a number (disc unavailable). 
 
 
-MIN              n1 n2 --- min                                                   L0
+MIN              n1 n2 --- min                            L0
 
 Leave the smaller of two numbers. 
 
 
-MINUS               n1 --- n2                                                    L0
+MINUS               n1 --- n2                             L0
 
 Leave the two's complement of a number. 
 
 
-MOD              n1 n2 --- mod                                                   L0
+MOD              n1 n2 --- mod                            L0
 
 Leave the remainder of n1/n2, with the same sign as n1. 
 
@@ -46,14 +46,14 @@ in the text, its position will be given in DPL, but no other effect occurs.  If
 numeric conversion is not possible, an error message will be given. 
 
 
-OFFSET                 --- addr                                                   U
+OFFSET                 --- addr                            U
 
 A user variable which may contain a block offset to disc drives.  The contents of 
 OFFSET is added to the stack number by BLOCK.  Messages by MESSAGE are independent 
 of OFFSET.  See BLOCK, DR0, DR1, MESSAGE. 
 
 
-OR               n1 n2 --- or                                                    L0
+OR               n1 n2 --- or                             L0
 
 Leave the bit-wise logical "OR" of two l6 bit values. 
 

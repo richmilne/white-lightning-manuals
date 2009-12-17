@@ -7,7 +7,7 @@ and the offset to the first character not included.  This procedure will not
 process past an ASCII 'null', treating it as an unconditional delimiter. 
 
 
-END                                                                         P,C2,L0
+END                                                  P,C2,L0
 
 This is an 'alias' or duplicate definition for UNTIL. 
 
@@ -24,7 +24,7 @@ At run-time ENDCASE marks the conclusion of a CASE statement.
 At compile time ENDCASE computes forward branch offsets.
 
 
-ENDIF           addr n --- (compile)                                        P,CO,L0
+ENDIF           addr n --- (compile)                 P,CO,L0
 
 At run-time, ENDIF serves only as the destination of a forward branch from IF or 
 ELSE.  It marks the conclusion of the conditional structure.  THEN is another name 

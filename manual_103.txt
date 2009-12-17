@@ -1,4 +1,4 @@
-DEFINITIONS                                                                      L1
+DEFINITIONS                                               L1
 
 Used in the form:
               cccc DEFINITIONS
@@ -16,7 +16,7 @@ flag.
 
 
 DLITERAL             d --- d  (executing)
-                     d ---    (compiling)                                         P
+                     d ---    (compiling)                  P
 
 If compiling, compile a stack double number into a literal.  Later execution of 
 the definition containing the literal will push it to the stack.  If executing, 
@@ -29,7 +29,7 @@ Convert d1 to its double number two's complement.
 
 
 DO               n1 n2 --- (execute)
-                addr n --- (compile)                                        P,C2,L0
+                addr n --- (compile)                 P,C2,L0
 
 Occurs in a colon-definition in form:
               DO  ...  LOOP
@@ -47,7 +47,7 @@ When compiling within the colon definition, DO compiles (DO), leaving the
 following address addr and n for later error checking.
 
 
-DOES>                                                                            L0
+DOES>                                                     L0
 
 A word which defines the run-time action within a high-level defining word.  DOES> 
 alters the code field and first parameter of the new word, to execute the sequence 

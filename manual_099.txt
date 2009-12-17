@@ -1,15 +1,15 @@
-ABORT                                                                            L0
+ABORT                                                     L0
 
 Clear the stacks and enter the execution state.  Return control to the operator's 
 terminal, printing a message appropriate to the installation. 
 
 
-ABS                  n --- u                                                     L0
+ABS                  n --- u                              L0
 
 Leave the absolute value of n as u. 
 
 
-AGAIN           addr n --- (compiling)                                      P,C2,L0
+AGAIN           addr n --- (compiling)               P,C2,L0
 
 Used in a colon-definition in the form:
                 BEGIN  ...  AGAIN
@@ -21,14 +21,14 @@ At compile time, AGAIN compiles BRANCH with an offset from HERE to addr.  n is
 used for compile-time error checking. 
 
 
-ALLOT                n ---                                                       L0
+ALLOT                n ---                                L0
 
 Add the signed number to the dictionary pointer DP.  May be used to reserve 
 dictionary space or re-origin memory.  n is with regard to computer address type 
 (byte or word). 
 
 
-AND              n1 n2 --- n2                                                    L0
+AND              n1 n2 --- n2                             L0
 
 Leave the bitwise logical "AND" of n1 and n2 as n3. 
 

@@ -1,4 +1,4 @@
-BEGIN                  --- addr n (compilation)                                P,L0
+BEGIN                  --- addr n (compilation)         P,L0
 
 Occurs in a colon-definition in form:
               BEGIN  ...  UNTIL
@@ -22,13 +22,13 @@ BLANKS      addr count ---
 Fill in an area of memory beginning at addr with blanks. 
 
 
-BLK                    --- addr                                                  L0
+BLK                    --- addr                           L0
 
 A user variable containing the block number being interpreted.  If zero, input is 
 being taken from the terminal input buffer. 
 
 
-BLOCK                n --- addr                                                  L0
+BLOCK                n --- addr                           L0
 
 Leave the memory address of the block buffer containing block n.  If the block is 
 not already in memory, it is transferred from disc to whichever buffer was least 
@@ -37,7 +37,7 @@ it is re-written to disc before block n is read into the buffer. See also BUFFER
 R/W UPDATE FLUSH.
 
 
-BRANCH                                                                        C2,L0
+BRANCH                                                 C2,L0
 
 The run-time procedure to unconditionally branch.  An in-line offset is added to 
 the interpretive pointer IP to branch ahead or back.  BRANCH is compiled by ELSE, 
