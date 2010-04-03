@@ -36,7 +36,7 @@ horizontal co-ords have been placed on the stack.
 So to PUT at X-position 30 (pixel 60)
              Y-position 17 (pixel 34)
 
-use	         17 30 XYPUT PUTBLS
+use          17 30 XYPUT PUTBLS
 
 Note that the 100 + SPN ! at the end of the definition of XYPUT should be amended
 so that the number is the sprite number of the first of your 16 sprites.
