@@ -1,5 +1,6 @@
 import os
 import sys
+import codecs
 
 files = os.listdir('.')
 files = [f for f in files if 'cheat' in f or 'manual' in f]
@@ -15,7 +16,7 @@ def parse_formatting(line):
     plain_text = []
     stack = []
     offset = 0
-    
+
     state = 0
     for i, c in enumerate(line):
         if state == 0:
@@ -39,25 +40,25 @@ def parse_formatting(line):
                 else:
                     stack.append(c)
             state = 0
-            
+
     assert len(bold_pos) % 2 == 0
     assert len(under_pos) % 2 == 0
     assert len(stack) == 0
-    
+
     bold_pos = [(num, '*') for num in bold_pos]
     under_pos = [(num, '_') for num in under_pos]
-    
+
     markers = bold_pos + under_pos
     markers.sort()
-    
+
     plain_text = ''.join(plain_text)
 
     return((plain_text, tuple(markers)))
-    
+
 def output_text(line):
     return line[0]
-    
-def output_formatting(line, markup = None):
+
+def output_formatting(line, markup = None, escape = False):
 
     output = []
     stack = [0]
@@ -66,11 +67,13 @@ def output_formatting(line, markup = None):
     markers = line[1]
     if markers is not None:
         length = len(markers)
+        print line[0]
+        print markers
     pointer = 0
     first_space = False
-    
+
     for i, c in enumerate(line[0]):
-        if pointer < length and i == markers[pointer][0]:
+        while pointer < length and i == markers[pointer][0]:
             pos, marker = markers[pointer]
             pointer += 1
             if marker == stack[-1]:
@@ -92,12 +95,15 @@ def output_formatting(line, markup = None):
                 output.append(markup[c])
                 first_space = False
         else:
-            output.append(c)
+            if escape and ord(c) > 255:
+                output.append("\\u" + str(ord(c))+'?')
+            else:
+                output.append(c)
             first_space = False
 
-    assert len(stack) in [1, 2]
-    if len(stack) == 2:
+    while len(stack) > 1:
         output.append(markup[stack[-1]][1])
+        stack.pop()
 
     return ''.join(output)
 
@@ -125,10 +131,17 @@ rtf_markup['{'] = '\\{'
 rtf_markup['}'] = '\\}'
 rtf_markup['\\'] = '\\\\'
 
+rtf_header = r"""{\rtf1\ansi\adeflang1025
+{\fonttbl{\f0 Courier New;}}
+{\info{\title White Lightning Manual}{\author Richard Milne}{\creatim\yr2010\mo4\dy8\hr13\min1}}
+\fs18
+"""
 
 for f in files:
     marked = []
-    lines = file(f).readlines()
+    handle = codecs.open(f, 'r', encoding='utf-8')
+    lines = handle.readlines()
+    handle.close()
     for line_num, l in enumerate(lines):
         l = l.rstrip()
         if '**' in l or '__' in l:
@@ -143,13 +156,20 @@ for f in files:
                 raise
         else:
             marked.append((l, None))
-            
+
+    handle = open('output.rtf', 'w')
+    handle.write(rtf_header)
     for m in marked:
+        handle.write(output_formatting(m, rtf_markup, True))
+        handle.write('\\par\n')
+    handle.write('}')
+    handle.close()
+
+    while False:
         html = output_formatting(m, html_markup)
         if html != m[0]:
             print
             print output_text(m)
             print output_formatting(m, markup)
             print html
-            print output_formatting(m, rtf_markup)
-
+            print output_formatting(m, rtf_markup, True)
