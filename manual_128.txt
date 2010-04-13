@@ -21,7 +21,7 @@ The radar dish on top of the space ship, sprite 34, is animated by sequentially
 placing sprites 35 to 42, giving the effect of constant rotation.
 
 Just before the spaceship takes off, an explosion, sprite 43, is XORed over the
-spaceahlp using PUTXRS.  It is removed again by a second PUTXRS.
+spaceship using PUTXRS.  It is removed again by a second PUTXRS.
 
 The spaceship is then scrolled up in a vertical window by 1 pixel.  The Lunar
 surface, sprite 44, is also scolled by 1 pixel, to the right using WRR1V.

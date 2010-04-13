@@ -39,7 +39,7 @@ Apply the sign of n to the double number d1, leaving it as d2.
 D.                   d ---                                L1
 
 Print a signed double number from a 32 bit two's complement value.  The high-order
-l6 bits are most accessable on the stack.  Conversion is performed according to
+l6 bits are most accessible on the stack.  Conversion is performed according to
 the current base.  A blank follows.  Pronounced D-dot.
 
 

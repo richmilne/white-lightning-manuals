@@ -8,8 +8,8 @@ ALLOT.
 DPL                    --- addr                         U,L0
 
 A user variable containing the number of digits to the right of the decimal on
-double integer input.  It may also be used hold output column location of a
-decimal point, in user generated formating.  The default value on single number
+double integer input.  It may also be used to hold output column location of a
+decimal point, in user generated formatting.  The default value on single number
 input is -1.
 
 

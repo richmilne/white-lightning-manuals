@@ -45,7 +45,7 @@ Mark the most recently made definition so that when encountered at compile time 
 will be executed rather than compiled, i.e.  the precedence bit in its header is
 set.  This method allows definitions to handle unusual compiling situations,
 rather than build them into the fundamental compiler.  The user may force
-compilation of an immediate definition by preceeding it with [COMPILE].
+compilation of an immediate definition by preceding it with [COMPILE].
 
 
 IN                     --- addr                           L0

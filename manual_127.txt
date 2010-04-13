@@ -4,7 +4,7 @@ This demonstrates the 3 precisions of scrolls available - 1, 4 and 8 pixels.
 
 Sprite 1, the vintage car, demonstrates the fine 1 pixel scroll using SCL1V.
 
-Sprite 2, the van, demnstrates the faster 4 pixel scroll using SCL4V.
+Sprite 2, the van, demonstrates the faster 4 pixel scroll using SCL4V.
 
 Sprite 3, the dragster, demonstrates, the very fast 8 pixel, or 1 character
 scroll, using SCL8V.

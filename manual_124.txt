@@ -41,9 +41,9 @@ OVER     N1                 Zero or one, as Sinclair's own.
 
 INVERSE  N1                 Zero or one, as Sinclair's own.
 
-BRIGHT   N1                 Zero or one, as Sinclalr's own.
+BRIGHT   N1                 Zero or one, as Sinclair's own.
 
-FLASH    N1                 Zero or one, as Sinclalr's own.
+FLASH    N1                 Zero or one, as Sinclair's own.
 
 PAPER    N1                 Set paper colour, as Sinclair's own.
 

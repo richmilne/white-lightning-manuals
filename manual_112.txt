@@ -40,7 +40,7 @@ At compile-time, REPEAT compiles BRANCH and the offset from HERE to addr.  n is
 used for error testing.
 
 
-ROT           nl n2 n3 --- n2 n3 nl                       L0
+ROT           n1 n2 n3 --- n2 n3 n1                       L0
 
 Rotate the top three values on the stack, bringing the third to the top.
 

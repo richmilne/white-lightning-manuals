@@ -16,7 +16,7 @@ line of text from the terminal or within a disc buffer, as both buffers always
 have a null at the end.
 
 
-XOR              nl n2 --- xor                            L1
+XOR              n1 n2 --- xor                            L1
 
 Leave the bit-wise logical Exclusive-OR of two values.
 

@@ -51,6 +51,6 @@ A user variable containing the compilation state.  A non-zero indicates
 compilation.  The value itself may be implementation dependent.
 
 
-SWAP             nl n2 --- n2 n1                          L0
+SWAP             n1 n2 --- n2 n1                          L0
 
 Exchange the top two values On the stack.

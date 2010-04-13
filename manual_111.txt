@@ -1,10 +1,10 @@
 ﻿OUT                    --- addr                            U
 
 A user variable that contains a value incremented by EMIT.  The user may alter and
-examine OUT to control display formating.
+examine OUT to control display formatting.
 
 
-OVER             nl n2 --- nl n2 n1                       L0
+OVER             n1 n2 --- n1 n2 n1                       L0
 
 Copy the second stack value, placing it as the new top.
 

@@ -35,7 +35,7 @@ and line number of where this is.
 
 
 WHILE                f --- (run-time)
-              addr1 nl --- addr1 n1 addr2 n2            P,C2
+              addr1 n1 --- addr1 n1 addr2 n2            P,C2
 
 Occurs in a colon-definition in the form:
                   BEGIN ... WHILE (tp) ... REPEAT
