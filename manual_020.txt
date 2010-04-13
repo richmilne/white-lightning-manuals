@@ -1,7 +1,7 @@
-﻿EMITC   :  As EMIT but Control characters are also dealt with.
+﻿**EMITC**   :  As EMIT but Control characters are also dealt with.
 
 
-KEY     :  This will poll the keyboard, wait for a key to be pressed and push
+**KEY**     :  This will poll the keyboard, wait for a key to be pressed and push
            the ASCII code for that key onto the stack, without displaying it on
            the terminal.
 
@@ -25,10 +25,10 @@ Ignore the top one and try again.  This problem only occurs because when you pre
 <CR> held down.  In a normal Forth definition you won't have this problem.
 
 
-CR      :  This will transmit a carriage return and line feed to the display.
+**CR**      :  This will transmit a carriage return and line feed to the display.
 
 
-.       :  Convert the number held on the stack using the current BASE and
+**.**       :  Convert the number held on the stack using the current BASE and
            print it on the screen with a trailing space.
 
 e.g   Suppose the stack contains 16H and BASE is decimal (10), then . will print
@@ -38,8 +38,8 @@ In order to see this Working we will alter the BASE and push numbers onto the
 stack - remember, that just by typing in a valid number will result in it being
 pushed onto the stack.  There are two words to alter the BASE:
 
-HEX     :  Use hexadecimal base
-DECIMAL :  Use decimal base
+**HEX**     :  Use hexadecimal base
+**DECIMAL** :  Use decimal base
 
 Try:
 
@@ -54,7 +54,7 @@ Try:
       Remember that . will remove the number from the stack that it is printing.
 
 
-U.      :  Prints the number held on the top of the stack as an unsigned number.
+**U.**      :  Prints the number held on the top of the stack as an unsigned number.
 
 e.g.  HEX C000 U. <CR>
 

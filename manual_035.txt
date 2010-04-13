@@ -41,7 +41,7 @@ To use the above word, type the first screen number, last screen number, SLIST.
 e.g.  6 9 SLIST <CR> will list screens 6-9 to the printer.
 
 
-FORTH ERROR MESSAGES
+**FORTH ERROR MESSAGES**
 
 The following error messages may occur, and will be printed out in the form FRED ?
 MSG #0   standing for FRED ? ERROR MESSAGE NUMBER 0 .

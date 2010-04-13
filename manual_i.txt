@@ -1,10 +1,10 @@
-﻿                           WHITE LIGHTNING
+﻿                           **WHITE LIGHTNING**
 
-                          by OASIS SOFTWARE
+                          **by OASIS SOFTWARE**
 
 
 
-Copyright Notice
+**Copyright Notice**
 
 Copyright © 1984 by Oasis Software.  No part of this manual may be
 reproduced on any media without prior written permission from Oasis
@@ -12,7 +12,7 @@ Software.
 
 
 
-This Manual
+**This Manual**
 
 Piracy has reached epidemic proportions and it is with regret that we are
 forced to reproduce this manual in a form which cannot be photocopied.  Our
@@ -60,4 +60,4 @@ of parties infringing this Copyright Notice.
 
 
 
-                       Copyright © by Oasis Software
+                       **Copyright © by Oasis Software**

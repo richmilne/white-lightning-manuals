@@ -29,7 +29,7 @@ It should be noted that whenever sprites are saved or loaded, there are 3 distin
 sets of data which the generator stores and retrieves.
 
 
-CONCLUSIONS
+**CONCLUSIONS**
 
 Well, there's nothing to stop you now!  Going through the examples will help you
 to familiarise yourself with all of the Function Keys.  It won't be long before

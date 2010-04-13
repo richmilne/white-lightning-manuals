@@ -1,10 +1,10 @@
-﻿                                 SECTION 1
+﻿                                 **SECTION 1**
 
-                       THE SPRITE GENERATOR PROGRAM
-                              by Paul Newnham
+                       **THE SPRITE GENERATOR PROGRAM**
+                              **by Paul Newnham**
 
 
-INTRODUCTION
+**INTRODUCTION**
 
 The Sprite Generator Program was developed to compliment the White Lightning
 language.  The language is comprised of commands for manipulating sprites and
@@ -16,7 +16,7 @@ In practice the two areas of work will probably be carried out simultaneously.
 For those of you who are not artistically inclined, there are two sets of
 previously defined graphics characters ready to use.
 
-The Arcade Character Set
+**The Arcade Character Set**
 
 The arcade character set is an integral part of the sprite generator program - 167
 characters are provided in all.  To see these, LOAD and run DEMO B using LOAD "".
@@ -24,7 +24,7 @@ The demo will auto-run.  This will tell you which characters can be called up by
 which number, using Function Key Z.  These characters are summarised as the
 penultimate part of this section.
 
-The Demonstration Sprites
+**The Demonstration Sprites**
 
 Directly after White Lightning on side A you will find the demonstration sprites.
 By running the tape past White Lightning and using the LOAD SPRITES FROM TAPE
@@ -32,7 +32,7 @@ facility, these can be loaded and edited for your own use.  The various sprites
 are tabulated at the end of this section.
 
 
-USING SPRITES WITH WHITE LIGHTNING
+**USING SPRITES WITH WHITE LIGHTNING**
 
 Once you have completed an editing session, the sprites generated should be Saved
 to tape for further editing sessions, or for use with the White Lightning language
@@ -45,7 +45,7 @@ response to the "LOAD SPRITES Y/N" prompt. The sprites will be Loaded at the
 address from which they were saved using the sprite generator program.
 
 
-COLDSTART
+**COLD START**
 
 If you enter the sprite generator program via a COLD start, then all sprites
 previously stored will be cleared and all system variables reset.  If, for
@@ -53,7 +53,7 @@ instance, you wish to use the demonstration sprites, you would enter via a COLD
 start.  The program must always be initially entered via a COLD start.
 
 
-WARM START
+**WARM START**
 
 If you enter the program via a WARM start then all sprites will be conserved and
 all system variables left unchanged.  It is provided principally for re-entering

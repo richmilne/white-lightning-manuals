@@ -33,7 +33,7 @@ We get  1F47
 We will now resume our explanation of the mathematical operators.
 
 
--       :  This will subtract the top number on the stack from the second number
+**-**       :  This will subtract the top number on the stack from the second number
            on the stack and leave the result as the top number.
 i.e.    N1 = N2 - N1
 
@@ -50,7 +50,7 @@ before the subtraction, and
 after the subtraction.
 
 
-*       : This will multiply the top two numbers on the stack and leave the
+*** **       : This will multiply the top two numbers on the stack and leave the
           result on the top of the stack.
 i.e.    N1 = N1 x N2
 

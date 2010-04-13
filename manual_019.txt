@@ -1,4 +1,4 @@
-﻿AN INTRODUCTION TO SPECTRA FORTH
+﻿**AN INTRODUCTION TO SPECTRA FORTH**
 
 This introduction does not set out to teach Forth programming, but rather to serve
 as a supplement to available texts on the subject; references include:
@@ -45,10 +45,10 @@ have to operate have been input.
 We will now discuss some of the words in greater depth.
 
 
-1. INPUT/OUTPUT Operators.
+**1. INPUT/OUTPUT Operators.**
 
 
-EMIT    :  This will take the number held on the top of the stack and display it
+**EMIT**    :  This will take the number held on the top of the stack and display it
            on the terminal, as its original ASCII character.
 
 e.g.    HEX  41  EMIT  CR  <CR>

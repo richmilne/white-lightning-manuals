@@ -1,4 +1,4 @@
-﻿OPERATING INSTRUCTIONS
+﻿**OPERATING INSTRUCTIONS**
 
 1)  Rewind the tape marked "White Lightning".  Disconnect interface
     1 if fitted.
@@ -22,7 +22,7 @@
     program will auto-run.
 
 
-TO THE NEWCOMER
+**TO THE NEWCOMER**
 
 When you have run the demonstration tape and have seen what can be done, this may
 give you the incentive to learn all you can to produce full specification games

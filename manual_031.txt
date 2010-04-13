@@ -1,4 +1,4 @@
-﻿       STACK            OPERATION           OUTPUT (if any)
+﻿       **STACK**            **OPERATION**           **OUTPUT (if any)**
 
         empty            DECIMAL
         0                0

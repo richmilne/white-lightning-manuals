@@ -1,9 +1,9 @@
-﻿0=      :  This will leave a true flag on the top of the stack if the number on
+﻿**0=**      :  This will leave a true flag on the top of the stack if the number on
            the top of the stack is equal to zero, otherwise it will leave a
            false flag.
 
 
-<       :  This will leave a true flag if the second number on the stack is less
+**<**       :  This will leave a true flag if the second number on the stack is less
            than the top number, otherwise it will leave a false flag.
 
 e.g.    40 25 < . <CR>
@@ -18,14 +18,14 @@ If we look at the stack during this operation we will see:
               .                empty
 
 
->       :  This will leave a true flag if the second number on the stack is
+**>**       :  This will leave a true flag if the second number on the stack is
            greater than the top number, else a false flag will be left.
 
 e.g.    40 25 > . <CR>
 will print 1 (true flag).
 
 
-=       :  This will leave a true flag if the two top numbers are equal,
+**=**       :  This will leave a true flag if the two top numbers are equal,
            otherwise it will leave a false flag.
 
 Now for some examples using the conditional branching structures, type:

@@ -14,10 +14,10 @@ and after ROT is:
             2
 
 
-4. OTHER OPERATIONS
+**4. OTHER OPERATIONS**
 
 
-!       :  This will store the second number on the stack at the address held on
+**!**       :  This will store the second number on the stack at the address held on
            the top of the stack. (pronounced "store").
 
 e.g.    Suppose the stack is as follows:
@@ -37,7 +37,7 @@ i.e     C000 contains low byte 00
 Remember that each 16 bit number takes up 2 bytes.
 
 
-@       :  This will replace the address held on the top of the stack, with the
+**@**       :  This will replace the address held on the top of the stack, with the
            16 bit contents of that address. (Pronounced "at")
 
 Suppose the memory contents are as follows:
@@ -52,7 +52,7 @@ If you wish to deal with single bytes, then a variation of the above will be
 used.
 
 
-C!      :  Will store a single byte held in the second number on the stack at the
+**C!**      :  Will store a single byte held in the second number on the stack at the
            address held on the top of the stack.
 
 e.g.    FF C000 C! <CR>

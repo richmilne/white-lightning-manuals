@@ -1,22 +1,22 @@
-﻿P      :  Put the following text on the line number held on the stack, by
+﻿**P**      :  Put the following text on the line number held on the stack, by
           overwriting its present contents.
 
 
-INS    :  INSert the text from PAD to the line number held on the stack.
+**INS**    :  INSert the text from PAD to the line number held on the stack.
           The original and subsequent lines are moved down by 1 with the last
           line being lost.
 
 
-EDIT   :  Works just like the normal Sinclair line editor.  Also, it does an
+**EDIT**   :  Works just like the normal Sinclair line editor.  Also, it does an
           automatic list and an automatic flush.  This is far and away the best
           way to edit and the above are included only for compatibility
           with existing Forths.
 
-CLEAR  :  Clear the screen number held on the stack and make it the current
+**CLEAR**  :  Clear the screen number held on the stack and make it the current
           screen.
 
 
-WHERE  :  If an error occurs during the loading of White Lightning's text
+**WHERE**  :  If an error occurs during the loading of White Lightning's text
           screens, then keying in WHERE will result in the screen number and
           the offending line being displayed.  You can now use the other editing
           commands to edit the screen, or you may move to another screen by

@@ -1,9 +1,9 @@
-﻿I       : This will copy the loop index from the return stack onto the data
+﻿**I**       : This will copy the loop index from the return stack onto the data
           stack.
 
-J       : This will push the value of the nested LOOP index to the stack.
+**J**       : This will push the value of the nested LOOP index to the stack.
 
-K       : This will push the value of the double nested LOOP index to the stack.
+**K**       : This will push the value of the double nested LOOP index to the stack.
 
 
 
@@ -21,15 +21,15 @@ will print:          1  1  2
 and so on.
 
 
-7. CONDITIONAL BRANCHING
+**7. CONDITIONAL BRANCHING**
 
 Conditional branching must again he used only within a colon definition and uses
 the form:
 
-IF (true part) ... (Forth WORDS) ... ENDIF
+**IF** (true part) ... (Forth WORDS) ... **ENDIF**
 
-IF (true part) ... (Forth WORDS) ... ELSE (false part) ... (Forth WORDS) ...
-ENDIF
+**IF** (true part) ... (Forth WORDS) ... **ELSE** (false part) ... (Forth WORDS) ...
+**ENDIF**
 
 These conditional statements rely on testing the top number on the stack to decide
 whether to execute the TRUE part, or the FALSE part of the condition.
@@ -44,7 +44,7 @@ flag, or a false (zero) flag on the stack to be tested for by IF.
 
 These are:
 
-0<      :  This will leave a true flag on the stack if the number on the top
+**0<**      :  This will leave a true flag on the stack if the number on the top
            of the stack is less than zero, otherwise it leaves a false flag.
 
 e.g.    -4 0< <CR>

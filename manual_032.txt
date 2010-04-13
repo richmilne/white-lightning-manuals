@@ -1,4 +1,4 @@
-﻿8. CONSTANTS AND VARIABLES
+﻿**8. CONSTANTS AND VARIABLES**
 
 White Lightning also allows you to define your own constants and variables using
 the Fourth words:
@@ -38,7 +38,7 @@ R Q + .  will print the value of R + Q i.e. 1064
   Y X !  will store the address of Y in the variable X
   4 X !  will store the value 4 in variable X
 
-BASIC statement       Forth Equivalent
+**BASIC statement**       **Forth Equivalent**
 
 LET X = Y             Y @ X !
 LET X = R             R X !
@@ -46,16 +46,16 @@ LET X = 4             4 X !
 LET X = X + 5         5 X +!
 
 
-OTHER COMMONLY USED FORTH WORDS
+**OTHER COMMONLY USED FORTH WORDS**
 
 
-LIST    : This will list the contents of the screen number held on the top of
+**LIST**    : This will list the contents of the screen number held on the top of
           the stack.
 
 e.g.  6 LIST will list screen 6 to the screen.  Note that if source has not been
 typed into any of the screens, they will probably contain garbage.
 
 
-FORGET  : This is used to delete part of the Lightning dictionary.  Please note
+**FORGET**  : This is used to delete part of the Lightning dictionary.  Please note
           that not only will the word following FORGET be erased, but so will
           every word defined after it!

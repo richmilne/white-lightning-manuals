@@ -1,4 +1,4 @@
-﻿The Sprite Screen Cursors
+﻿**The Sprite Screen Cursors**
 
 Now that you're used to moving the CHR$ SQR cursor around, moving the sprite
 screen cursors is a piece of cake:
@@ -14,7 +14,8 @@ NOTE:  If you've never been able to remember which is the X or which is
 2.  Move the Y cursor by pressing SYMBOL SHIFT and the 7 or 6 key to move up or
 down respectively.
 
-Character Building
+
+**Character Building**
 
 No, not yours - building up characters to mike up sprites!  You've probably got
 quite a mess in the CHR$ SQR, so let's clear it:

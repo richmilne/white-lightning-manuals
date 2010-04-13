@@ -1,4 +1,4 @@
-﻿OPERATING INSTRUCTIONS
+﻿**OPERATING INSTRUCTIONS**
 
 Insert the Sprite Generator Program Tape, type LOAD"" and load into the computer
 as normal.
@@ -11,7 +11,7 @@ A further screen message will now appear asking if you wish to change the buffer
 size - this has a default value of 256 bytes.  For now, press N.  This function
 will become more apparent later.
 
-NOTES:
+**NOTES:**
 
 1. A WARM START will not destroy any sprites already in memory and if ever the
 program is accidently caused to BREAK, type GOTO 3 and in response to the screen
@@ -22,13 +22,13 @@ prompt, execute a WARM START.
 3. WARM STARTs can only be executed after an initial COLD START.
 
 
-GETTING FAMILIAR WITH THE FUNCTION KEYS
+**GETTING FAMILIAR WITH THE FUNCTION KEYS**
 
 Now lets get familiar with some of the Function Keys - a full list will be found
 at the end of this section.
 
 
-THE CHR$ SQR
+**THE CHR$ SQR**
 
 This is the grid square on which you create and edit characters for your own
 sprite library.  To move the cursor:

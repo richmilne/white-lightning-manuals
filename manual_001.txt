@@ -1,8 +1,8 @@
-﻿                                WHITE LIGHTNING
-                               by Oasis Software
+﻿                                **WHITE LIGHTNING**
+                               **by Oasis Software**
 
 
-INTRODUCTION
+**INTRODUCTION**
 
 White Lightning is a high level graphics development system for the Spectrum 48k.
 It is aimed primarily at the user who has commercial games writing in mind and has
@@ -49,7 +49,7 @@ sufficient interest is shown we will start a News Letter, and possibly, even a
 User Group.
 
 
-SPRITE DEVELOPMENT
+**SPRITE DEVELOPMENT**
 
 Included with White Lightning is a sprite generator. This comes complete with a
 pre-defined character set which, when suitably combined, makes up to 167 full

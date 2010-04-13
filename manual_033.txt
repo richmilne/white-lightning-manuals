@@ -2,12 +2,12 @@
 other words defined after it.
 
 
-VLIST   : This is just typed in as a single word with no parameters.  It will
+**VLIST**   : This is just typed in as a single word with no parameters.  It will
           cause a list of all the words defined so far; pressing BREAK
           (CAPS SHIFT & SPACE as in BASIC) will stop the listing.
 
 
-LOAD    : This will compile the source code that you have created using the
+**LOAD**    : This will compile the source code that you have created using the
           editor into the White Lightning dictionary, to become new Lightning
           words.  Loading will terminate at the end of a screen or at the
           Forth word ;S  unless the "continue loading" word --> is used at the
@@ -15,14 +15,14 @@ LOAD    : This will compile the source code that you have created using the
           next section on editing.
 
 
-USING THE EDITOR
+**USING THE EDITOR**
 
 Generally speaking, most users will want to use the Spectrum editor to type and
 edit the source, but a full Forth line editor is included for compatibility with
 existing texts.  The maximum length of any line is 64 characters.  Any characters
 after this will be ignored.
 
-Line Editor
+**Line Editor**
 
 Included in this version of White Lightning is a line editor to enable you to
 create source or text files.  To facilitate text editing, the text is organised
@@ -36,27 +36,27 @@ background facility is utilised, text is stored from CC00 onwards in screens 6 t
 Here is a list of the editor commands and their descriptions:
 
 
-H      :  This will Hold the text pointed to by the top number on the stack of
+**H**      :  This will Hold the text pointed to by the top number on the stack of
           the current screen in a temporary area known as PAD.
 
 e.g.  4 H will hold line 4 of the current screen in PAD.
 
 
-S      :  Fill (Spread) the line number at the top of the stack with blanks, and
+**S**      :  Fill (Spread) the line number at the top of the stack with blanks, and
           shift down all subsequent lines by 1, with the last line being lost.
 
 e.g.  6 S will fill line 6 with blanks and move all other lines down by one,
 pushing the last line off the screen.
 
 
-D      :  Delete the line number held on the stack.  All other lines are moved
+**D**      :  Delete the line number held on the stack.  All other lines are moved
           up by 1.  The line is held in PAD in case it is still needed.
           Line 7 cannot be deleted.
 
 
-E      :  Erase the line number at the top of the stack by filling it with
+**E**      :  Erase the line number at the top of the stack by filling it with
           spaces.
 
 
-RE     :  REplace the line number at the top of the stack with the line
+**RE**     :  REplace the line number at the top of the stack with the line
           currently held in PAD.

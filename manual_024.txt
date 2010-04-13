@@ -1,11 +1,11 @@
-﻿MOD     :  This will leave the remainder of N2/N1 on the top of the stack with
+﻿**MOD**     :  This will leave the remainder of N2/N1 on the top of the stack with
            the same sign as N2
 
 e.g.    17 3 MOD . <CR>
 will print 2  (17/3 = 5 remainder 2)
 
 
-/MOD    :  This will leave the remainder and the quotient on the stack of N2/N1
+**/MOD**    :  This will leave the remainder and the quotient on the stack of N2/N1
            such that the quotient becomes the top number on the stack and the
            remainder becomes the second.
 
@@ -14,28 +14,28 @@ will print 5 (quotient)
            2 (remainder)
 
 
-3. STACK OPERATORS
+**3. STACK OPERATORS**
 
 
-DUP     :  This will duplicate the top number on the stack.
+**DUP**     :  This will duplicate the top number on the stack.
 
 e.g.    719 DUP . . <CR>
 will print  719 719
 
 
-DROP    :  This will drop the number from the top of the stack.
+**DROP**    :  This will drop the number from the top of the stack.
 
 e.g.    111 222 DROP . <CR>
 will print  111
 
 
-SWAP    :  This will swap the top two numbers on the stack.
+**SWAP**    :  This will swap the top two numbers on the stack.
 
 e.g.    111 222 SWAP . . <CR>
 will print  111 222
 
 
-OVER    :  This will copy the second number on the stack, making it a new number
+**OVER**    :  This will copy the second number on the stack, making it a new number
            at the top of the stack without destroying the other numbers.
 
 e.g.    111 222 OVER . CR . CR . <CR>
@@ -55,5 +55,5 @@ and after OVER is:
             111
 
 
-ROT     :  This will rotate the top three numbers on the stack, bringing the
+**ROT**     :  This will rotate the top three numbers on the stack, bringing the
            third number to the top of the stack.

@@ -19,15 +19,15 @@ control structures can only be incorporated in colon definitions, or an error wi
 result.
 
 
-6. CONTROL STRUCTURES
+**6. CONTROL STRUCTURES**
 
 LOOPS
 
 There are essentially two forms of loop operation:
 
- (i)  DO...  LOOP
+ (i)  **DO...  LOOP**
 
-(ii)  DO... +LOOP
+(ii)  **DO... +LOOP**
 
 The first loop structure is used as follows:
 

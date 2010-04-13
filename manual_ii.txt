@@ -1,56 +1,56 @@
-﻿                       CONTENTS
+﻿                       **CONTENTS**
 
 
 
-                                                       Page
+                                                       **Page**
 
-INTRODUCTION                                             1
+**INTRODUCTION**                                             **1**
 
-OPERATING INSTRUCTIONS                                   3
+**OPERATING INSTRUCTIONS**                                   **3**
 
-SPRITE GENERATOR PROGRAM                                 4
-    Introduction                                         4
-    Operating Instructions                               6
-    Getting Familiar with the Function Keys              6
+**SPRITE GENERATOR PROGRAM**                                 **4**
+    Introduction                                         **4**
+    Operating Instructions                               **6**
+    Getting Familiar with the Function Keys              **6**
 
-SPECTRA FORTH                                           18
-    Introduction                                        19
-    Input/Output Operators                              19
-    Mathematical Operators                              21
-    Stack Operations                                    24
-    Other Operations                                    25
-    Colon Definitions                                   26
-    Control Structures                                  77
-    Conditional Branching                               28
-    Constants and Variables                             32
-    Other Commonly Used Forth Words                     32
-    Using the Editor                                    33
-    Forth Error Messages                                35
+**SPECTRA FORTH**                                           **18**
+    Introduction                                        **19**
+    Input/Output Operators                              **19**
+    Mathematical Operators                              **21**
+    Stack Operations                                    **24**
+    Other Operations                                    **25**
+    Colon Definitions                                   **26**
+    Control Structures                                  **77**
+    Conditional Branching                               **28**
+    Constants and Variables                             **32**
+    Other Commonly Used Forth Words                     **32**
+    Using the Editor                                    **33**
+    Forth Error Messages                                **35**
 
-IDEAL                                                   38
-    Introduction                                        38
-    IDEAL Variables                                     40
-    Errors                                              42
-    Sprite Buffer Organisation                          42
-    Loading Sprites from Tape                           43
-    The Buffer                                          43
-    Background Scrolling                                43
-    IDEAL Mnemonics                                     44
-    General Points                                      46
-    Sprite Utilities                                    48
-    Scrolling                                           52
-    GETs and PUTs                                       55
-    Sprite Transformations                              59
-    Interrupt Related Words                             61
-    BASIC Interface Words                               82
-    Miscellaneous Words                                 62
-    Forth/BASIC words                                   66
-    Foreground/Background                               87
-    Logical Operations                                  71
-    Collision Detection and Sprite Recognition          73
-    The BASIC Interface                                 76
-    Program Development                                 79
-    Table of Screen Addresses                           82
-    Function Key Summary                                83
-    Arcade Graphics Library                             89
-    Demo Sprite Library                                 89
+**IDEAL**                                                   **38**
+    Introduction                                        **38**
+    IDEAL Variables                                     **40**
+    Errors                                              **42**
+    Sprite Buffer Organisation                          **42**
+    Loading Sprites from Tape                           **43**
+    The Buffer                                          **43**
+    Background Scrolling                                **43**
+    IDEAL Mnemonics                                     **44**
+    General Points                                      **46**
+    Sprite Utilities                                    **48**
+    Scrolling                                           **52**
+    GETs and PUTs                                       **55**
+    Sprite Transformations                              **59**
+    Interrupt Related Words                             **61**
+    BASIC Interface Words                               **82**
+    Miscellaneous Words                                 **62**
+    Forth/BASIC words                                   **66**
+    Foreground/Background                               **87**
+    Logical Operations                                  **71**
+    Collision Detection and Sprite Recognition          **73**
+    The BASIC Interface                                 **76**
+    Program Development                                 **79**
+    Table of Screen Addresses                           **82**
+    Function Key Summary                                **83**
+    Arcade Graphics Library                             **89**
+    Demo Sprite Library                                 **89**

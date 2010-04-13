@@ -8,18 +8,18 @@
 
 
 
-                                                       Page
+                                                       **Page**
 
-FIG-FORTH GLOSSARY                                      91
+**FIG-FORTH GLOSSARY**                                      **91**
 
-IDEAL GLOSSARY                                         119
+**IDEAL GLOSSARY**                                         **119**
 
-FORTH/BASIC GLOSSARY                                   124
+**FORTH/BASIC GLOSSARY**                                   **124**
 
-USR CALLS                                              126
+**USR CALLS**                                              **126**
 
-EXTENDED SPECTRA FORTH GLOSSARY                        125
+**EXTENDED SPECTRA FORTH GLOSSARY**                        **125**
 
-THE DEMO - A BRIEF DESCRIPTION                         128
+**THE DEMO - A BRIEF DESCRIPTION**                         **128**
 
-SOME SIMPLE PROGRAMMING EXAMPLES                       129
+**SOME SIMPLE PROGRAMMING EXAMPLES**                       **129**

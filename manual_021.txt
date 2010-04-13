@@ -5,7 +5,7 @@
 will print -4000
 
 
-?       :  Print the value contained at the address on top of the stack using the
+**?**       :  Print the value contained at the address on top of the stack using the
            current base.
 
 Suppose the top of the stack contains FF40H, location FF40/41H contains 0014H, and
@@ -13,7 +13,7 @@ current BASE is 10 (DECIMAL), then ? will print 20 which is the decimal equivale
 of 14 Hex.
 
 
-TYPE    :  This uses the top TWO numbers held on the stack and will print a
+**TYPE**    :  This uses the top TWO numbers held on the stack and will print a
            selected number of characters starting at a specific
            address onto the screen.  The top number on the stack is the
            character count and the second number is the address to
@@ -27,11 +27,11 @@ unrecognisable unless the data contains correct ASCII codes, such as for numbers
 and letters).
 
 
-DUMP    :  This takes the top number on the stack and prints out 80H bytes
+**DUMP**    :  This takes the top number on the stack and prints out 80H bytes
            starting at this address.
 
 
-"       :  This is used in the form ." character string " and will display
+**"**       :  This is used in the form ." character string " and will display
            the string contained within " " on the screen.
 
 e.g.   ." THIS IS A CHARACTER STRING " <CR>
@@ -39,19 +39,19 @@ will put THIS IS A CHARACTER STRING on the screen.  Note the spaces between the
 string and the quotes.
 
 
-SPACE   :  This will display a single blank/space on the screen.
+**SPACE**   :  This will display a single blank/space on the screen.
 
 
-SPACES  :  This will display n spaces on the screen, where n is the number on the
+**SPACES**  :  This will display n spaces on the screen, where n is the number on the
            top of the stack.
 
 e.g.    DECIMAL 10 SPACES <CR>
 will print 10 spaces on the screen.
 
 
-2. MATHEMATICAL OPERATORS
+**2. MATHEMATICAL OPERATORS**
 
-+       :  This will add the top two numbers on the stack and leave the result
+**+**       :  This will add the top two numbers on the stack and leave the result
            as a single number.
 
 e.g.    1 2 + . <CR>

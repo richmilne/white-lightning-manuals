@@ -1,6 +1,6 @@
-﻿BEGIN  ....  (Forth WORDS)  ....  UNTIL
+﻿**BEGIN**  ....  (Forth WORDS)  ....  **UNTIL**
 
-BEGIN  ....  (Forth WORDS)  ....  WHILE  ....  (Forth WORDS)  ....  REPEAT
+**BEGIN**  ....  (Forth WORDS)  ....  **WHILE**  ....  (Forth WORDS)  ....  **REPEAT**
 
 Using the BEGIN .... UNTIL the value at the top of the stack is tested upon
 reaching UNTIL.  If the flag is false (0) then the loop starting from BEGIN is

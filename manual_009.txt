@@ -15,13 +15,13 @@ You've used quite a few functions!  Have a go at calling up some more Arcade
 Characters, change them if you wish, then GET them into memory and PUT them onto
 the SPRITE SCREEN.
 
-The Information Rectangle
+**The Information Rectangle**
 
-             MEMORY LEFT 12486  X POS 4   Y POS 4
-             SPRITE 65266       SPRITE HEIGHT  -1
-             SPST   65266       SPRITE LENGTH  -1
-             SPND   65280       SPRITE NUMBER  -1
-                  The text line
+             **MEMORY LEFT 12486  X POS 4   Y POS 4**
+             **SPRITE 65266       SPRITE HEIGHT  -1**
+             **SPST   65266       SPRITE LENGTH  -1**
+             **SPND   65280       SPRITE NUMBER  -1**
+                  **The text line**
 
 This is a most useful facility which can be of great service to you.  Most of the
 information is fairly obvious, but we'll run through it all:

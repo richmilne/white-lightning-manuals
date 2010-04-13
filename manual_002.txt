@@ -1,4 +1,4 @@
-﻿IDEAL
+﻿**IDEAL**
 
 The main part of the package is the White Lightning language itself. The language
 can be thought of as being divided into two parts: firstly, there is a super fast
@@ -9,7 +9,7 @@ importance to games designers, there is the IDEAL sub-language. IDEAL stands for
 accessed from BASIC.
 
 
-Interrupt Driven
+**Interrupt Driven**
 
 Forth/IDEAL words can be executed under interrupt; this means that programs can be
 run in foreground and background at the same time. Suppose, for instance, the
@@ -22,7 +22,7 @@ features of the entire package.  Background words can be executed up to 50 times
 second.
 
 
-Extendible
+**Extendible**
 
 Forth is extendible and was chosen as the most suitable host language for IDEAL
 because of this extremely useful feature. New words can be defined in terms of any
@@ -30,7 +30,7 @@ of the Forth/IDEAL words, or your own previously defined words. This means you c
 create diagonal scrolls for instance, by combining individual scrolls.
 
 
-Animation Language
+**Animation Language**
 
 Very careful planning went into the designing of the IDEAL animation language, to
 make it as portable as possible between micros. If you've written a very
@@ -42,7 +42,7 @@ Some implementations will not allow attributes to be moved separately from pixel
 data, so to be certain of higher portability, move attributes and data together.
 
 
-ACCESS FROM BASIC
+**ACCESS FROM BASIC**
 
 If you are not familiar with Forth and want to get reasonable software quickly,
 you can access the IDEAL language from BASIC. Programs will no longer be portable
