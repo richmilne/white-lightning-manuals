@@ -55,7 +55,7 @@ COLOUR          PAPER     Set the PAPER colour to the value at the top
                           of the stack.
 
 FLAG            OVER.     Note the full stop at the end of OVER.
-                          This sets the printing mode aceording to
+                          This sets the printing mode according to
                           the value of FLAG which is zero or one.
 
 FLAG            INVERSE   As for OVER.

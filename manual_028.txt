@@ -40,7 +40,7 @@ execution of the false part will take place.  If the ELSE part is missing, then
 execution skips to just after the ENDIF statement.
 
 There are several mathematical operators which will leave either a true (non-zero)
-flag, or a false (zero) flag m the stack to be tested for by IF.
+flag, or a false (zero) flag on the stack to be tested for by IF.
 
 These are:
 

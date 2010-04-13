@@ -21,16 +21,16 @@ frequencies.  Suppose they are as follows.
 We now define a variable to count interrupts and four constants to store the
 frequencies.
 
-0 VARIABIE ICNT 50 CONSTANT Fl 20 CONSTANT F2 4 CONSTANT F3 5 CONSTANT F4 <CR>
+0 VARIABLE ICNT 50 CONSTANT F1 20 CONSTANT F2 4 CONSTANT F3 5 CONSTANT F4 <CR>
 : MAO MOD ABS 0= ; <CR>
 : IRUN ICNT @ DUP DUP DUP <CR>
-Fl MAO IF INVV ENDIF <CR>
+F1 MAO IF INVV ENDIF <CR>
 F2 MAO IF MIRV ENDIF <CR>
 F3 MAO IF WRR1V ENDIF <CR>
 F4 MAO IF WCRV ENDIF <CR>
 1 ICNT @ +! ; <CR>
 
-All we need to do now is set up the psrartnters by typing:
+All we need to do now is set up the parameters by typing:
 
 10 COL' ! 10 ROW' ! 6 HGT' ! 8 LEN' ! 2 NPX' ! <CR>
 

@@ -39,17 +39,17 @@ IDEAL                                                   38
     General Points                                      46
     Sprite Utilities                                    48
     Scrolling                                           52
-    GETs and Furs                                       55
+    GETs and PUTs                                       55
     Sprite Transformations                              59
     Interrupt Related Words                             61
     BASIC Interface Words                               82
     Miscellaneous Words                                 62
     Forth/BASIC words                                   66
-    Foreground/Backgrourd                               87
+    Foreground/Background                               87
     Logical Operations                                  71
     Collision Detection and Sprite Recognition          73
     The BASIC Interface                                 76
-    Program Developmst                                  79
+    Program Development                                 79
     Table of Screen Addresses                           82
     Function Key Summary                                83
     Arcade Graphics Library                             89

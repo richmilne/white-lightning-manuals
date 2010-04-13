@@ -25,7 +25,7 @@ off its parameters and then executes the background word.  The background word
 will then execute fully before continuing execution of the foreground program,
 from the exact point at which it was halted.  Three important points should be
 bourne in mind.  Firstly, if the execution time of the background word exceeds a
-fiftieth of a sceond, it is not possible to execute it more than twenty five times
+fiftieth of a second, it is not possible to execute it more than twenty five times
 a second, if it exceeds a twenty-fifth of a second, it can only be executed at
 half that frequency, and so on.  There is, however, no limit to the length of the
 background execution time itself.  Secondly, as the execution time approaches a

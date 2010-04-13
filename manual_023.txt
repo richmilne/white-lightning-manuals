@@ -12,7 +12,7 @@ e.g.    371 309 MAX . <CR>
 will print 371
 
 
-MIN     :  Thls will leave the smaller of the two numbers on the stack.
+MIN     :  This will leave the smaller of the two numbers on the stack.
 
 e.g.    371 309 MIN . <CR>
 will print 309

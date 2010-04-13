@@ -3,7 +3,7 @@
 All the sprite utilities described in this section are available at run-time, but
 we strongly recommend that all sprite allocation is undertaken at the sprite
 development stage to save laboriously reloading sprite data if an error is made at
-run-time.  They are provided for advanced programing applications only and should
+run-time.  They are provided for advanced programming applications only and should
 never be executed in background.
 
 
@@ -39,7 +39,7 @@ should then be assigned with 65520-SLEN.
 
 Example:
 
-Suppose you wished to allocate space for 10 4 by 4 spritss, 3 8 by 6 sprites and a
+Suppose you wished to allocate space for 10 4 by 4 sprites, 3 8 by 6 sprites and a
 5 by 4 sprite.  Suppose also that a 4 pixel scroll will be required for a 4
 character wide sprite, and a screen window 9 characters wide will need to be
 scrolled 3 pixels.  The 8 by 6 sprite is also to be rotated.  The following

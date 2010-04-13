@@ -1,6 +1,6 @@
 ﻿AN INTRODUCTION TO SPECTRA FORTH
 
-This introduction does not set out to teach Forth programning, but rather to serve
+This introduction does not set out to teach Forth programming, but rather to serve
 as a supplement to available texts on the subject; references include:
 
 'Starting Forth' by Brodie, published by Prentice Hall.
@@ -32,7 +32,7 @@ In order to program in white Lightning, it is necessary to define new words base
 on the words already in the vocabulary.  Values to be passed to these words are
 pushed onto the stack and if required, the word will pull these values from the
 stack, operate on them, and push the result onto the stack for use by another
-Lightning word.  As mentionod previously, Spectra Forth (as with all Forths) uses
+Lightning word.  As mentioned previously, Spectra Forth (as with all Forths) uses
 Reverse Polish Notation and integer numbers, therefore no precedence of operators
 is available, thus all operations are performed in the sequence in which they are
 found on the stack.
@@ -56,5 +56,5 @@ e.g.    HEX  41  EMIT  CR  <CR>
 will instruct the Forth to move into hexadecimal mode, push 41H onto the stack,
 and then take that number and display it on the terminal - in this example the
 character displayed will be an "A".  The actual character displayed my be any of
-the reoognisable ASCII characers, a graphic character, or a control code depending
+the recognisable ASCII characers, a graphic character, or a control code depending
 on the value of the number on the stack.

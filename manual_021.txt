@@ -5,7 +5,7 @@
 will print -4000
 
 
-?       :  Print the value contained at the aadress on top of the stack using the
+?       :  Print the value contained at the address on top of the stack using the
            current base.
 
 Suppose the top of the stack contains FF40H, location FF40/41H contains 0014H, and

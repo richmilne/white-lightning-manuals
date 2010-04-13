@@ -15,7 +15,7 @@ In this case you would use the following:
 SPND will be automatically set to 62070.
 
 If all this seems a bit complicated, don't worry.  A far simpler way of setting up
-sprites is to use the ISPRITE and DSPRITE canmnds described later in this
+sprites is to use the ISPRITE and DSPRITE commands described later in this
 section.  You won't even need to execute a COLD# command.
 
 
@@ -41,7 +41,7 @@ initialised and may contain garbage.  If a sprite is being set up at run-time, b
 sure that sufficient memory is available.  If a sprite number is given that has
 been previously used, the old sprite is destroyed and recreated with the new
 dimensions.  If sufficient memory is not available, then either an old sprite can
-be destroyed or the wbole of sprite space can be relocated downwards if space is
+be destroyed or the whole of sprite space can be relocated downwards if space is
 available.  Most users will probably not use the SPRITE command, but instead, will
 use the far simpler ISPRITE command.
 

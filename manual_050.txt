@@ -11,9 +11,9 @@ value in MLEN will relocate sprites to high memory and a negative value will
 relocate them downward.  All pointers are reset.
 
 
-Parametcr             Use
+Parameter             Use
 
-MIEN          Size and direction of relocation
+MLEN          Size and direction of relocation
 
 
 Command              Action
@@ -31,7 +31,7 @@ do this use the following:
 
 TEST
 
-For advanced applications there is a arnnatul to interrogate sprite details.  SPN
+For advanced applications there is a command to interrogate sprite details.  SPN
 is loaded with the number of the sprite to be interrogated, and after execution,
 the following parameters will be set:
 

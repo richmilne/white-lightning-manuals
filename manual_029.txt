@@ -28,7 +28,7 @@ will print 1 (true flag).
 =       :  This will leave a true flag if the two top numbers are equal,
            otherwise it will leave a false flag.
 
-Now for some examples using the conitional branching structures, type:
+Now for some examples using the conditional branching structures, type:
 
 : TEST= = IF ." BOTH ARE EQUAL " ENDIF ." FINISHED " ; <CR>
 

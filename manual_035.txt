@@ -57,4 +57,4 @@ e.g.  109Z <CR>
          take more values from the stack than exist. Try:
 
         : TEST1  1000  0  DO  ?STACK  DROP LOOP  ; <CR>
-          TESTl <CR>
+          TEST1 <CR>

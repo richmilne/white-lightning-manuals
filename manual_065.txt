@@ -15,8 +15,8 @@ unless you have a machine code routine at HEX D000!
 
  ZAP         Once program development is completed and you have compiled
              your final program into the dictionary, typing ZAP will
-             producee a run-time version. The length of the final
-             version is displayed to the screen aid a copy can be saved
+             produce a run-time version.  The length of the final
+             version is displayed to the screen and a copy can be saved
              by typing:
 
                         SAVE "filename" CODE 24832, LENGTH

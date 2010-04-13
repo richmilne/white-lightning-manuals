@@ -21,8 +21,8 @@ SPRITE TRANSFORMATIONS
 
 To increase the utility of the package, four extra words have been added to
 invert, spin, reflect and enlarge sprites.  The inversion and reflection routines
-work for screen and sprite data but the rotation and enlargement comnands work
-only on sprites and a dumny sprite is required to rotate or enlarqe into.
+work for screen and sprite data but the rotation and enlargement commands work
+only on sprites and a dummy sprite is required to rotate or enlarge into.
 
 
 Inversions

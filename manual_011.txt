@@ -36,7 +36,7 @@ ATIRIBUTES - watch the screen as you press 3, it happens very quickly!  The red
 Dalek becomes green and the green Dalek becomes red.
 
 
-Right then - we'll move on a little.  We'll oonsider some sprite operations.
+Right then - we'll move on a little.  We'll consider some sprite operations.
 These are operations which take place in memory on the stored sprites.  We'll
 begin by setting up a new sprite comprising two arcade characters and then go on
 to change their positions in the sprite in memory. Have a go at this:

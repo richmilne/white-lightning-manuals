@@ -13,7 +13,7 @@ generator - GETting a sprite into a larger sprite:
 
 6.  Press X (INK) and set to 0.
 
-7.  Press C (PAPFR) and set to 6 (yellow).
+7.  Press C (PAPER) and set to 6 (yellow).
 
 8.  Press V (FLASH) and set to 0 (OFF).
 
@@ -47,7 +47,7 @@ Let's move on to look at some of the utility functions - Test and Wipe.
 
 3.  Press L (Length) and enter 2, then press H (Height) and enter 2.
 
-4.  Press S (Sprite Nunber) and enter 19.
+4.  Press S (Sprite Number) and enter 19.
 
 5.  Press G (GET).
 
@@ -55,5 +55,5 @@ Let's move on to look at some of the utility functions - Test and Wipe.
 
 7.  Clear the sprite screen.
 
-8.  Press T (Test Sprite) and note that the information rectangle oontains the
+8.  Press T (Test Sprite) and note that the information rectangle contains the
 following:

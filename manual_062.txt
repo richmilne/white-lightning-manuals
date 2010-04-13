@@ -44,7 +44,7 @@ There are 18 words provided which cover general aspects of games development.
 
 Command                 Action
 
-SETAV        Set the attributes to the current INK and PAPER oolours in
+SETAV        Set the attributes to the current INK and PAPER colours in
              the screen window defined by HGT, LEN, COL, ROW.
 
 SETAM        Set the attributes to the current INK and PAPER colours in

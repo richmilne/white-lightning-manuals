@@ -6,7 +6,7 @@
 
 7.  The G key GETs your sprite into memory.
 
-8.  The P key PUTs your sprite fran memory onto the SPRITE SCREEN.
+8.  The P key PUTs your sprite from memory onto the SPRITE SCREEN.
 
 9.  The D key enables you to enter a character by DIRECT DATA to the SPRITE
 SCREEN.

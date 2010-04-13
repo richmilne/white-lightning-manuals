@@ -16,7 +16,7 @@ SPN          Number of the sprite to be used (1 to 255)
 COL          Left hand column of target screen window (0 to 31)
 ROW          Top row of target screen window (0 to 23)
 
-Ccmmand                Action
+Command                Action
 
 GETBLS       Block move screen window into sprite
 GETORS       OR screen window into sprite

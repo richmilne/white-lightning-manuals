@@ -2,7 +2,7 @@
 
 SPND         Used to hold the end of sprite space, i.e. the first free byte
              after the last sprite.  This is the address of the
-             foreground scrollinq buffer.
+             foreground scrolling buffer.
 
 SLEN         Used to hold the length of sprite space to be cleared
              by the COLD# command.
@@ -14,7 +14,7 @@ MLEN         Used to hold the size and direction of the relocation.
 SPTR         On return from the TEST command, SPTR points to the start
              of the sprite.
 
-DPTR         On return from the TEST crnnand, DPTR points to the start
+DPTR         On return from the TEST command, DPTR points to the start
              of the pixel data.
 
 

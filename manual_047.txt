@@ -39,7 +39,7 @@
 
 23.  Never execute the NEW or CLEAR commands when in BASIC.
 
-24.  If a sprite driven under interrupt disappears fran the screen or
+24.  If a sprite driven under interrupt disappears from the screen or
      flickers, it is probably a timing related problem and re-ordering
      the code will almost certainly solve the problem.
 

@@ -9,7 +9,7 @@ ATTDNV     Scroll attributes down  1 character with wrap
 SPRITE SCROLLS
 
 The format for these commands is similar to that for the screen scrolls, except
-that these commands are postflred with an M as opposed to a V.
+that these commands are postfixed with an M as opposed to a V.
 
 
 Horizontal Scrolls

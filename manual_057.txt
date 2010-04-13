@@ -49,7 +49,7 @@ screen or sprite.
 Example:
 
 To block move a window 3 characters high and 4 characters wide from row 2, column
-3 of the screen to row 4, column 6 of sprite nuMber 7, use the following:
+3 of the screen to row 4, column 6 of sprite number 7, use the following:
 
 7 SPN ! 3 HGT ! 4 LEN ! 2 ROW ! 3 COL ! 4 SROW ! 6 SCOL ! GWBLS
 

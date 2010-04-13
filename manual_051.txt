@@ -1,6 +1,6 @@
 ﻿ISPRITE AND DSPRITE
 
-it sprites are located at the top of rtntnry, then ISPRITE and DSPRITE can be used
+it sprites are located at the top of memory, then ISPRITE and DSPRITE can be used
 to create and destroy sprites without the need for any complex calculations.
 ISPRITE will insert a sprite at the top of memory, maintain the buffer space and
 automatically relocate the rest of sprite space downward.  DSPRITE will destroy an
@@ -21,7 +21,7 @@ HGT          Height of the sprite to be inserted
 LEN          Length of the sprite be be inserted
 
 
-command              Action
+Command              Action
 
 ISPRITE      Create new sprite and adjust memory
 
@@ -31,7 +31,7 @@ Parameter             Use
 SPN          Number of sprite to be inserted
 
 
-Canmnd               Action
+Command              Action
 
 DSPRITE      Wipe old sprite and adjust memory
 

@@ -4,7 +4,7 @@ BEGIN  ....  (Forth WORDS)  ....  WHILE  ....  (Forth WORDS)  ....  REPEAT
 
 Using the BEGIN .... UNTIL the value at the top of the stack is tested upon
 reaching UNTIL.  If the flag is false (0) then the loop starting from BEGIN is
-repeated.  If the value is true (non-zero) then an exit from the loop cccurs.
+repeated.  If the value is true (non-zero) then an exit from the loop occurs.
 
 Try typing the following example:
 

@@ -47,7 +47,7 @@ Q
 R        Activates the ROTATE SPRITE function.
          Rotates a sprite, in memory, by 90 degrees, leaving the original
          sprite unaffected.  The new Rotated sprite must be given a new
-         sprite numoer, as asked for.  Attributes are autanatically
+         sprite number, as asked for.  Attributes are automatically
          Rotated with the pixel data.
 
 S        Activates the SPRITE NUMBER variable.

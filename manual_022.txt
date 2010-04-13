@@ -1,7 +1,7 @@
 ﻿For the purposes of the following examples, let us refer to the numbers on the
 stack as follows:
 
- Nl  =  top    number on stack (i.e. first to be removed)
+ N1  =  top    number on stack (i.e. first to be removed)
  N2  =  second number on stack (i.e. second to be removed)
  N3  =  third  number on stack (i.e. third to be removed)
 
@@ -16,7 +16,7 @@ The stack will look like this:
         01FA
 
 Note that this illustrates the property of the stack, that it is, Last In First
-Out or LIFO; therefore v.e have:
+Out or LIFO; therefore we have:
 
         N1  =  1F47
         N2  =  0019
@@ -30,7 +30,7 @@ We get  1F47
           19
          1FA
 
-ne will now resume our explanation of the mathematical operators.
+We will now resume our explanation of the mathematical operators.
 
 
 -       :  This will subtract the top number on the stack from the second number
@@ -45,7 +45,7 @@ will print -4, since the stack would contain
 
 before the subtraction, and
 
-        Nl     -4    TOS
+        N1     -4    TOS
 
 after the subtraction.
 

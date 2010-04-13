@@ -38,7 +38,7 @@ so be sure that either a COLD# has been executed, or that SPND has been set.  It
 is safe practice to develop sprites using the software provided, and to allow 256
 bytes buffer at the top before linking with the main program.  Be sure also that
 the scroll length is not greater than the window's size.  On entry to White
-Lightning a COLD# is automataically executed and a scrolling buffer of 256 bytes
+Lightning a COLD# is automatiacally executed and a scrolling buffer of 256 bytes
 is set up.  This is maintained so long as ISPRITE and DSPRITE are used in
 preference to SPRITE and WIPE.
 

@@ -43,7 +43,7 @@ than 5 then "FREDA" is executed and ICNT set back to zero.
 It would be useful to be able to control the speed that "FREDA" ran at, so, let's
 modify "FREDA" to do this.  First, type INT-OFF FORGET FREDA <CR> to get rid of
 the old definition and then set up a new variable and construct a slightly
-different program.  A variable wbich sets the limit on the number of interrupts
+different program.  A variable which sets the limit on the number of interrupts
 needs to he set up, so type: 4 VARIABLE LCNT <CR>.  The new definition is set up
 by typing:
 

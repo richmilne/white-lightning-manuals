@@ -30,7 +30,7 @@ Now type:
 
 1 SPN ! PUTBLS 2 SPN ! 27 COL ! PUTBLS <CR>
 
-These are the tao sprites before the operations begin.
+These are the two sprites before the operations begin.
 
 Now type:
 
@@ -44,7 +44,7 @@ sprite 2 is now in sprite 1.  Finally, type:
 
 GWXRM 6 ROW ! 23 COL ! 1 SPN ! PUTBLS 27 COL ! 2 SPN ! PUTBLS <CR>
 
-The operation is now commplete.
+The operation is now complete.
 
 If we wanted to add a new word to the language which swaps two equally sized
 sprites whose numbers were in SP1 and SP2, we would now do so.

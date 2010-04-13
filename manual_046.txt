@@ -27,7 +27,7 @@
 12.  If you wish to make something appear at lightning speed, leave the data
      on the screen and fill the window with zero attributes or attributes with
      the same INK and PAPER colour.  To make the sprite appear you need only
-     download the attributes usinq PWATTS; to make it disappear use
+     download the attributes using PWATTS; to make it disappear use
      PWATTS again, but this time, download stored attributes with the same ink
      and paper colour, or use SETAV.
 

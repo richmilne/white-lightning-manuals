@@ -48,5 +48,5 @@ therefore, to provide only two parameters instead of four.
 
 parameter                 Use
 
-SPl          Number of first sprite
+SP1          Number of first sprite
 SP2          Number of second sprite

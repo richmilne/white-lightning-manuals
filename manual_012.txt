@@ -19,7 +19,7 @@ combined sprite:
 5.  Press G (GET Function) and respond to the prompt with Y.
 
 
-We have now set up a 4 by 2 sprite oontaining both characters. Now lets change
+We have now set up a 4 by 2 sprite containing both characters. Now lets change
 them over in memory:
 
 1.  Press M (Sprite Memory Functions), respond to the prompt with Y, and press 2

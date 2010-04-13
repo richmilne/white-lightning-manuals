@@ -49,7 +49,7 @@ Now that you know how to move the cursor, let's fill in a few squares:
 
 3.  Now move the direction keys and fill in a few sore squares.
 
-Now that we have set som squares, what about deleting a few of then?  This is
+Now that we have set some squares, what about deleting a few of then?  This is
 simple:
 
 1.  Move the cursor to a square that you have set and release the keys.

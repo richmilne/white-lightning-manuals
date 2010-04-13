@@ -1,7 +1,7 @@
 ﻿Now type:
 
 : IRUN ICNT @ DUP DUP DUP <CR>
-F1 MOD ABS PHl = IF INVV ENDIF <CR>
+F1 MOD ABS PH1 = IF INVV ENDIF <CR>
 F2 MOD ABS PH2 = IF MIRV ENDIF <CR>
 F3 MOD ABS PH3 = IF WRR1V ENDIF <CR>
 F4 MOD ABS PH4 = IF WCRV ENDIF <CR>
@@ -23,4 +23,4 @@ re-entrant.  This means that these words cannot be executed in foreground and
 background simultaneously.  The FORTH words ." , . and U. should also not be
 executed simultanteously with themselves or any of the BASIC words.  None of the
 Forth/BASIC words, ." , . or U. should be executed in background while Forth is in
-command mde.
+command mode.

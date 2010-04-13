@@ -33,7 +33,7 @@ The first loop structure is used as follows:
 
 limit start DO ... 'Forth words' ... LOOP
 
-The Forth words within the loop are executed until start = limit, increnenting the
+The Forth words within the loop are executed until start = limit, incrementing the
 start (or index) by one each time. Type:
 
 : TEST1 5 0 DO ." Forth " CR LOOP ; <CR>
@@ -48,7 +48,7 @@ The second loop structure is used as follows:
 
 limit start DO ...'Forth words' increment +LOOP
 
-The Forth words within the loop are executed fran start to limit, with the index
+The Forth words within the loop are executed from start to limit, with the index
 being incremented or decremented by the value increment. Try:
 
 : TEST2 5 0 CO ." HELLO " 2 +LOOP ; <CR>
