@@ -53,7 +53,7 @@ So to PUT at X-position 27 (54 pixels from the left hand column) just use:
 27 HPLOT
 
 The previous example is useful in that it indicates a way of producing high
-resolution PUTtinq but as it stands cannot be used for animation because it does
+resolution PUTting but as it stands cannot be used for animation because it does
 not enable the removal of prevously placed orientations.  Before looking at a
 scheme for animating these orientations let's generalise this example to cover
 high resolution vertical movement as well as horizontal movement.

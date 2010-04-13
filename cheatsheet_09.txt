@@ -11,7 +11,7 @@ PLACE EXX ' TESTG INT-ON BEGIN 6          3 : STEP4 COL @ - SCOL ! ROW @
   6                                       6 FLAG @ IF 100 100 BLEEP 0 FL
   7                                     AG ! ENDIF ;
                                           7 : MOVE YC @ XC @ PCAL PSET S
-SCR # 14                                TEPl STEP2 STEP3 STEP4 STEP5 ;
+SCR # 14                                TEP1 STEP2 STEP3 STEP4 STEP5 ;
 0 : STEP1 -1 COL +! -1 ROW +!
 SPN @ 117 SPN ! GETBLS ;
 
@@ -31,7 +31,7 @@ Variables
 PH      Horizontal Phase of scrolling landscape
 SPD     Horizontal Velocity of strolling landscape
 DOWN    Set to 1 if Lander crashes
-FU      Renaininq fuel
+FU      Remaining fuel
 XP      Vertical Position of Lander
 VEL     Vertical Velocity of Lander
 SX      Phase of X-Velocity dial

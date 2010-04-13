@@ -33,7 +33,7 @@ The complete word becomes:
 : TESTF 10 XC ! 10 YC ! PLACE BEGIN KREAD IF MOVE ENDIF 6 1 KB UNTIL ;
 
 Note that this loop assumes no interference with the values of COL, ROW or SPN
-between cycles, if you are executinq another Forth word, for example a word called
+between cycles, if you are executing another Forth word, for example a word called
 TRY, then make sure you temporarily stack COL, ROW and SPN, e.g.
 
 ... BEGIN KREAD IF MOVE ENDIF COL @ ROW @ SPN @ TRY SPN ! ROW ! COL ! 0 1 KB UNTIL

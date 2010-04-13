@@ -1,4 +1,4 @@
-﻿Please note that this cartridge shoule be clearly labelled and used exclusively
+﻿Please note that this cartridge should be clearly labelled and used exclusively
 for SAVEing and LOADing Forth source code while you are editing Forth screens.
 Sprites, BASIC and blocks of machine code should be SAVEd on a separate cartridge
 or cartridges.  There are no commands within White Lightning to manipulate

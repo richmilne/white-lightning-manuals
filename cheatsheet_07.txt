@@ -33,7 +33,7 @@ word MOVE needs to be modified.
 Define Sprites as for previous example and execute MAKED then use:
 
 : STEP1 -1 COL +! -1 ROW +! SPN @ 117 SPN ! GETBLS ;
-: STEP2 1 SCOL ! 1 SROW ! 117 SP2 ! SPl ! GWXRM ;
+: STEP2 1 SCOL ! 1 SROW ! 117 SP2 ! SP1 ! GWXRM ;
 : STEP3 116 SP2 ! TSPN @ SP1 ! COPYM ;
 : STEP4 COL @ - SCOL ! ROW @ - SROW ! 117 SP2 ! 116 SP1 ! PWNDM 116 SPN ! SCANM
 FLAG +! ;

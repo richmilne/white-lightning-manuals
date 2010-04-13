@@ -1,4 +1,4 @@
-﻿Before a cartridge can be used to stor sprites, it has to be specially formatted.
+﻿Before a cartridge can be used to store sprites, it has to be specially formatted.
 This is done using the Sprite Generator Program by typing SYMBOL SHIFT F (TO).
 This will format the cartridge and set up five dummy files, numbered 1 to 5.  From
 now on, whenever you save a file of sprites, the old file of that number will be

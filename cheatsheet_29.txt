@@ -40,7 +40,7 @@ The first thing to do is to transfer the program onto a microdrive cartridge.
 
 2.  Type LOAD"":LOAD""CODE
 
-3.  Place a formateed cartridge in microdrive 1.
+3.  Place a formatted cartridge in microdrive 1.
 
 4.  Type GOTO 9998.
 
@@ -54,7 +54,7 @@ The microdrive version can now be LOADed and RUN by typing:
 
 SAVING AND LOADING SPRITES
 
-The micrdorive version of the Sprite Development Program still allows sprites to
+The microdrive version of the Sprite Development Program still allows sprites to
 be loaded and saved from and to tape as described in the manual.
 
 A separate cartridge is required to store sprites.  The program will allow you to

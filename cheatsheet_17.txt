@@ -16,7 +16,7 @@ Main program loop.
 
 TST
 
-Final execution word.  Initialises paramters and then executes main program
+Final execution word.  Initialises parameters and then executes main program
 loop.
 
 
@@ -53,6 +53,6 @@ CREATION OF THE 64x3 CHARACTER LANDSCAPE SPRITE
 This sprite will be made up of 8 8x3 character sprites, which will be joined
 together into one large sprite in the White Lightning program itself.
 
-Set the ink to 7, the iaper to 0, the flash to 0 and the bright to 1 clear the
+Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1 clear the
 CHR$ square by pressing the Q key.  Using the sprites 4,5,6,7,8,9 and the CHR$
 square (referred to as 0) build up sprites 10 to 25 as layed out in diagram 1.
