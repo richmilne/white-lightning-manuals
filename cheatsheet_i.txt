@@ -1,30 +1,63 @@
-﻿                            CONTENTS
+﻿                           WHITE LIGHTNING
+
+                          by OASIS SOFTWARE
 
 
-                                                       Page
 
-Creating Large Sprites                                   1
-Moving Sprites                                           2
-Screen Scrolling                                         2
-Simple Putting                                           2
-More Advanced Techniques                                 4
-Collision Detection                                      6
-Sample Source Listings                                   8
-The Lunar Lander Program                                 9
-Table 1 (Lunar Sprites)                                 20
+Copyright Notice
+
+Copyright © 1984 by Oasis Software.  No part of this manual may be
+reproduced on any media without prior written permission from Oasis
+Software.
 
 
-APPENDIX A - THE MICRODRIVE VERSION                     26
-Introduction                                            26
-Implementing on Microdrive                              26
-Preparing a Cartridge for Source Code                   26
-Editing Forth Screens                                   27
-The Edit Buffers                                        27
-Transferring Old Source                                 27
-Bad Sectors                                             28
-Additional Error Messages                               28
-The Microdrive Sprite Generator                         29
-Implementing on Microdrive                              29
-Saving and Loading Sprites                              29
-Creating Large Sprites                                  30
-Merging Sprites                                         30
+
+This Manual
+
+Piracy has reached epidemic proportions and it is with regret that we are
+forced to reproduce this manual in a form which cannot be photocopied.  Our
+apologies for the inconvenience this may cause to our genuine customers.  A
+reward will be paid for information leading to the successful prosecution
+of parties infringing this Copyright Notice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       Copyright © by Oasis Software
