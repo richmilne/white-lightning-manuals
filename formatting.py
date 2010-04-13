@@ -134,9 +134,6 @@ class text_formatter(object):
         markers = line[1]
         if markers is not None:
             length = len(markers)
-            print
-            print line[0]
-            print markers
         pointer = 0
         first_space = False
 
@@ -163,8 +160,8 @@ class text_formatter(object):
                     output.append(markup[c])
                     first_space = False
             else:
-                if ord(c) > 255:
-                    output.append(self.encode_char(c))#"\\u" + str(ord(c))+'?')
+                if ord(c) > 127:
+                    output.append(self.encode_char(c))
                 else:
                     output.append(c)
                 first_space = False
@@ -252,22 +249,29 @@ class rtf_formatter(text_formatter):
 
         replacement_dict = {9617: '#',
                             8595: 'v',
-                            9484: '+', 9472: '-', 9516: 'T', 9488: "\'ac",
+                            9484: '+', 9472: '-', 9516: 'T', 9488: "\\'ac",
                             9474: '|',
                             9500: '+', 9532: '+', 9508: '+',
                             9492: 'L', 9524: '+', 9496: ']',
+                            169: 'C',    # Copyright symbol
+                            177: '#',    # Plus/Minus sign
+                            178: '2',    # To the second power
+                            179: '3',    # To the third power
                             }
 
         char = ord(char)
         if char == 65279:   # BOM
             return ''
         if char not in replacement_dict:
-            print "Can't find substitute for char %d." % char
+            print "Can't find substitute for char %d. (%s)" % (char, unichr(char))
             replace = '?'
         else:
             replace = replacement_dict[char]
 
-        return '\\u%d%s' % (char, replace)
+        if char > 255:
+            return '\\u%d%s' % (char, replace)
+        else:
+            return "\\'%s" % hex(char)[2:]
 
 
 class html_formatter(text_formatter):
