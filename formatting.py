@@ -118,6 +118,7 @@ class text_formatter(object):
                 marked.append((l, None))
 
         self.lines = marked
+        self.first_line = True
 
     def encode_char(self, char):
         if ord(char) == 65279:   # BOM
@@ -156,7 +157,9 @@ class text_formatter(object):
                         first_space = True
                         space_toggle = False
 
-                    if first_space and i == 0:  # First space in line
+                    if first_space and (i == 0 or (i == 1 and self.first_line)):
+                    # First space in line, bearing in mind first char
+                    # might be BOM
                         space_toggle = True
 
                     if space_toggle:                    
@@ -177,7 +180,8 @@ class text_formatter(object):
         while len(stack) > 1:
             output.append(markup[stack[-1]][1])
             stack.pop()
-
+            
+        self.first_line = False
         return ''.join(output)
 
     def convert_files(self, file_list, file_stub = None, filename = None):
