@@ -136,6 +136,7 @@ class text_formatter(object):
             length = len(markers)
         pointer = 0
         first_space = False
+        space_toggle = False
 
         for i, c in enumerate(line[0]):
             while pointer < length and i == markers[pointer][0]:
@@ -153,9 +154,16 @@ class text_formatter(object):
                 if c == ' ':
                     if not(first_space):
                         first_space = True
-                        output.append(c)
-                    else:
+                        space_toggle = False
+
+                    if first_space and i == 0:  # First space in line
+                        space_toggle = True
+
+                    if space_toggle:                    
                         output.append(markup[' '])
+                    else:                    
+                        output.append(c)
+                    space_toggle = not(space_toggle)
                 else:
                     output.append(markup[c])
                     first_space = False
@@ -310,5 +318,5 @@ class html_formatter(text_formatter):
             return '&#%d;' % char
 
 files = list_files()
-outputter = text_formatter()
-outputter.convert_files(files)
+outputter = html_formatter()
+outputter.convert_files(files, filename = 'all_text.html')
