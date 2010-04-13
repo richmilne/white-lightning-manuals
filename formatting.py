@@ -43,7 +43,7 @@ class text_formatter(object):
                             '\\': '\\'}
         self.lines = None
         self.extension = '.txt'
-        self.header = '\xEF\xBB\xBF'    # BOM
+        self.header = unichr(65279)    # BOM
         self.footer = ''
         self.line_end = '\n'
         self.page_sep = '\x0c'
@@ -123,7 +123,7 @@ class text_formatter(object):
         if ord(char) == 65279:   # BOM
             return ''
         else:
-            return char.encode('utf-8')
+            return char
 
     def encode_line(self, line):
         output = []
@@ -173,8 +173,6 @@ class text_formatter(object):
             output.append(markup[stack[-1]][1])
             stack.pop()
 
-        if length > 0:
-            print ''.join(output)
         return ''.join(output)
 
     def convert_files(self, file_list, file_stub = None, filename = None):
@@ -184,6 +182,10 @@ class text_formatter(object):
 
         first = True
         for i, f in enumerate(file_list):
+
+            self.load_file(f)
+            num_lines = len(self.lines)-1
+
             if first:
                 if filename is not None:
                     name = filename
@@ -193,23 +195,21 @@ class text_formatter(object):
                     else:
                         name = f[:-4]
                     name += self.extension
-                out_file = codecs.open(name, encoding='utf-8', mode='w')
-                # Does this automatically create the BOM
 
+                out_file = codecs.open(name, encoding='utf-8', mode='w')
                 out_file.write(self.header)
                 first = False
 
-            self.load_file(f)
-            for line in self.lines:
+            for j, line in enumerate(self.lines):
                 out_file.write(self.encode_line(line))
-                out_file.write(self.line_end)
+                if j < num_lines:
+                    out_file.write(self.line_end)
 
             if filename is None:
                 out_file.write(self.footer)
                 out_file.close()
                 first = True
             else:
-                out_file.seek(-len(self.line_end),2)
                 out_file.write(self.page_sep)
 
         if filename is not None:
@@ -305,9 +305,6 @@ class html_formatter(text_formatter):
         else:
             return '&#%d;' % char
 
-# outputter = html_formatter()
-# outputter.convert_files(['cheat000.txt', 'cheat002.txt'], 'tester', 'tester.html')
-
 files = list_files()
-for f in files:
-    print f
+outputter = text_formatter()
+outputter.convert_files(files)
