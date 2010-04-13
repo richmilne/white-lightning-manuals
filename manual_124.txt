@@ -1,4 +1,4 @@
-ATTON                       Enable attribute switch.
+ï»¿ATTON                       Enable attribute switch.
 
 ATTOFF                      Disable attribute switch.
 
@@ -18,11 +18,11 @@ BORDER   N1                 Set border colour to N1.
 CLS                         Clear whole screen, home cursor and fill
                             with current attributes.
 
-DRAW-ARC N1, N2, N3         ±X,±Y,ANGLE.  As Sinclair's own.
+DRAW-ARC N1, N2, N3         Â±X,Â±Y,ANGLE.  As Sinclair's own.
 
 CIRCLE   N1, N2, N3         X,Y,RADIUS.  As Sinclair's own.
 
-DRAW     N1, N2             ±X,±Y.  As Sinclair's own.
+DRAW     N1, N2             Â±X,Â±Y.  As Sinclair's own.
 
 PLOT     N1, N2             X,Y.  As Sinclair's own.
 

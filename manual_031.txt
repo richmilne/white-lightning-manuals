@@ -1,4 +1,4 @@
-       STACK            OPERATION           OUTPUT (if any)
+ï»¿       STACK            OPERATION           OUTPUT (if any)
 
         empty            DECIMAL
         0                0
@@ -11,20 +11,20 @@
     N N N                DUP
   N N N N                DUP
 N N N N N                DUP
-  N N N N²               *
-    N N N³               *
-  N N N³N³               DUP
-N N N³N³3000             3000
-  N N N³flag (1 or 0)    <
+  N N N NÂ²               *
+    N N NÂ³               *
+  N N NÂ³NÂ³               DUP
+N N NÂ³NÂ³3000             3000
+  N N NÂ³flag (1 or 0)    <
 
 If TRUE:
 
-    N N N³               WHILE
+    N N NÂ³               WHILE
                          ." THE CUBE OF "   THE CUBE OF
-    N N³N                SWAP
-      N N³               .                   N
+    N NÂ³N                SWAP
+      N NÂ³               .                   N
                          ." IS "             IS
-        N                .                   N³
+        N                .                   NÂ³
         N                CR                  carriage return
         N                REPEAT              (branch back to BEGIN)
 
