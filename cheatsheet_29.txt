@@ -1,0 +1,61 @@
+SUMMARY OF MICRODRIVE WHITE LIGHTNING
+
+1.  Only use specially prepared cartridges for EDITing and use them
+    exclusively for storing screens.
+
+2.  CLEAR a screen before using it for the first time and change the
+    previous screen to skip over it if it is a bad sector.  Do not use
+    this screen again.
+
+3.  Microdrive commands such as ERASE, VERIFY etc. can be executed after
+    entering BASIC using PROG.
+
+4.  Do NOT break into the program (SHIFT and SPACE) while the microdrive
+    is running.
+
+5.  RESERVE no longer executes.
+
+6.  There are some additional error messages (listed above).
+
+7.  Always execute a FLUSH after editing of a screen is complete.
+
+
+
+THE MICRODRIVE SPRITE GENERATOR
+
+
+INTRODUCTION
+
+The microdrive Sprite Generator Program is upwardly compatible with the current
+tape based version and tape LOADing and SAVEing is still supported.  An extra
+command has been added to make the creation of large sprites easier and the arcade
+character set has been re-organised to give extra sprite space.
+
+
+IMPLEMENTING ON MICRODRIVE
+
+The first thing to do is to transfer the program onto a microdrive cartridge.
+
+1.  Insert Tape 1 in your cassette and rewind to Side A.
+
+2.  Type LOAD"":LOAD""CODE
+
+3.  Place a formateed cartridge in microdrive 1.
+
+4.  Type GOTO 9998.
+
+This will save and verify the generator onto the microdrive.  Now type PRINT USR 0
+to clear memory.
+
+The microdrive version can now be LOADed and RUN by typing:
+
+        LOAD *"M";1;"S"
+
+
+SAVING AND LOADING SPRITES
+
+The micrdorive version of the Sprite Development Program still allows sprites to
+be loaded and saved from and to tape as described in the manual.
+
+A separate cartridge is required to store sprites.  The program will allow you to
+save five files of sprites per cartridge, these being numbered 1 to 5.

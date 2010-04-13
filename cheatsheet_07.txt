@@ -1,0 +1,50 @@
+Collision Detection
+
+To produce the smoothest movement of all, and include collision detection, a six
+stage operation is used.  The technique utilises two dummy sprites, and all
+intermediate stages of the operation are carried out in memory.  For this example
+let's number the dummy sprites 116 and 117.  To set up the sprites use:
+
+: MAKED 3 HGT ! 3 LEN ! 116 SPN ! ISPRITE 5 HGT ! 5 LEN ! 117 SPN ! ISPRITE ;
+
+This needs to be typed in and executed before executing the Source Code or error
+MSG# 10 will be produced.
+
+The six stage procedure is as follows:
+
+1.  The last orientation PUT, together with a one character surround, are G0T into
+the 5x5 dummy sprite.
+
+2.  The last orientation is GWXRM'ed out of the 5x5, restoring the original screen
+data.
+
+3.  The new orientation is COPYM'ed into the 3x3 dummy.
+
+4.  The screen data in the 5x5 is PWNDM'ed into the 3x3 and SCANM performed on the
+3x3 to detect any collision.  A flag is set.
+
+5.  The new orientation is GWXRM'ed into the 5x5 dummy.
+
+6.  The 5x5 is PUTBLS'ed onto the screen.
+
+The code for this algorithm is the same as the previous example except that the
+word MOVE needs to be modified.
+
+Define Sprites as for previous example and execute MAKED then use:
+
+: STEP1 -1 COL +! -1 ROW +! SPN @ 117 SPN ! GETBLS ;
+: STEP2 1 SCOL ! 1 SROW ! 117 SP2 ! SPl ! GWXRM ;
+: STEP3 116 SP2 ! TSPN @ SP1 ! COPYM ;
+: STEP4 COL @ - SCOL ! ROW @ - SROW ! 117 SP2 ! 116 SP1 ! PWNDM 116 SPN ! SCANM
+FLAG +! ;
+: STEP5 SP1 ! GWXRM 117 SPN ! PUTBLS PSET COL ! ROW ! SPN ! FLAG @ IF 100 100
+BLEEP 0 FLAG ! ENDIF ;
+: MOVE YC @ XC @ PCAL PSET STEP1 STEP2 STEP3 STEP4 STEP5 ;
+
+To use the source code type COLD to clear all previous examples then:
+
+11 LOAD FORGET MOVE 14 LOAD 12 LOAD 13 LOAD
+
+to compile the words TESTF and TESTH.
+
+The Bleep will sound when the sprite collides with any other screen data.

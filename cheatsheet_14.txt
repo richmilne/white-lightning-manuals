@@ -1,0 +1,59 @@
+FUEL
+
+Decrements the amount of fuel left.
+
+SR
+
+Checks to see if a character boundary is crossed (see SH8) and if so executes NBR.
+
+SL
+
+As SR but checks when movement is left.
+
+SH4
+
+Checks to see if phase is crossing a half character boundary, scrolling can only
+increase from one pixel to four pixel movements on such a boundary or scrolling
+will go out of phase.
+
+SF
+
+Accelerates horizontal speed (deccelerates if negative) by the amount on the
+stack.
+
+SS
+
+Puts the current horizontal speed on the stack.
+
+POLL
+
+Checks to see if there's any Fuel left (a non zero value of FU will act as a true
+flag) then first checks SPACE to accelerate right if not travelling too fast then
+check CAPS SHIFT to accelerate left if not travelling too fast.  If a key is
+pressed fuel is decremented.
+
+-P
+
+Updates phase and does a POLL when moving right.
+
++P
+
+Updates phase and does a POLL when moving left.
+
+SR1
+
+Moves landscape 1 pixel right and adjusts pointers.
+
+SR4
+
+Moves landscape 4 pixels right and adjusts pointers provided a half character
+boundary has been reached.  If not, a further 1 pixel movement must be made.
+
+SL4
+
+As SR4 when moving left.
+
+SO
+
+When speed is less than 7, keyboard is polled but no scrolling of the screen is
+executed.  The lander is treated as horizontally stationary.

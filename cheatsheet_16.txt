@@ -1,0 +1,61 @@
+THRUST
+
+If the lander still has fuel and hasn't reached terminal upward velocity then
+increase upward velocity.
+
+MV
+
+A fairly complicated word which moves the lander vertically.  The velocity is
+added to the position (physicists note that unit time has elapsed etc).  If the
+lander goes under the base its position is put equal to the base and DOWN is SET
+to 1.  The row and orientation are then calculated.
+
+BANG
+
+Another fairly involved word which executes a crash if DOWN=1.  It checks to see
+if a safe landing was made and if not decides what sort of crash is required.
+
+OK
+
+A short word which sets DOWN to 0, indicating a safe landing.
+
+LAND
+
+If the lander has zero sideways velocity then vertical velocity and horizontal
+position are checked for a safe landing or a crash.  DOWN is set accordingly.
+
+XG
+
+Updates X-VEL PHASE and sets window for scroll.
+
+RSET1
+
+Sets COL and LEN back after XG.
+
+XVEL
+
+Controlling routine for XVEL gauge.
+
+YG
+
+Used to adjust Y-VEL gauge.
+
+WUP
+
+Move up Y-VEL gauge.
+
+WDOWN
+
+Move down Y-VEL gauge.
+
+YVEL
+
+Controlling routine for Y-VEL gauge.
+
+FVEL
+
+Controlling routine for fuel gauge.
+
+MXG
+
+Used to set up window for small screen movement.

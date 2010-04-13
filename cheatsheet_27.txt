@@ -1,0 +1,60 @@
+Please note that this cartridge shoule be clearly labelled and used exclusively
+for SAVEing and LOADing Forth source code while you are editing Forth screens.
+Sprites, BASIC and blocks of machine code should be SAVEd on a separate cartridge
+or cartridges.  There are no commands within White Lightning to manipulate
+microdrives, therefore all such commands (e.g. FORMAT, ERASE, OPEN#) are executed
+from BASIC after exiting via the PROG command.
+
+
+EDITING FORTH SCREENS
+
+Forth source code is still EDITed in exactly the same way as the tape version
+(using EDIT,P,S,D etc.) except that EDIT will not automatically execute a FLUSH.
+This means that your EDITs will not be updated on microdrive until you type FLUSH,
+so be sure to remember to do this before moving on to another screen.
+
+
+THE EDIT BUFFERS
+
+To give some idea of how White Lightning uses the microdrive for Forth source,
+the following brief description may be helpful.
+
+There exists in RAM an area of 1024 bytes called the edit buffer, which can hold
+two 512 byte Forth screens.  If you issue a command which requires the use of a
+screen (LIST, CLEAR or INDEX) then this screen will be read from the microdrive
+into the edit buffer.  If the edit buffer already contains two screens and they
+have been altered in any way since they were last loaded, then they must first be
+saved (using FLUSH) back to the drive in order to allow the currently required
+screen to be loaded in.
+
+Note that before a screen is first edited it will need to be cleared using the
+CLEAR command as it will probably contain garbage.  For example, before using
+screen 20 for the first time, type:
+
+        20 CLEAR 20 LIST
+
+
+TRANSFERRING OLD SOURCE
+
+If you have already written a sizeable program with the tape based White
+Lightning, then you will want to transfer it to your microdrive based White
+Lightning without having to completely re-type it.  To do this, use the
+following:
+
+1.  Type OLD <CR>.
+
+2.  Type PROG <CR> and load your old source code from the tape in the normal way.
+    Then re-enter Forth as normal.
+
+3.  Transfer each screen from its old number in memory to its new number on
+    the microdrive using:
+
+    OLDSCREEN NEWSCREEN TRANS <CR>
+
+    So, for example, to transfer the old screen 6 to microdrive screen
+    25, use:
+
+    6 25 TRANS <CR>
+
+    If a bad sector is encountered you will get error message 8.  Skip
+    over this sector and try the next one (see next section on BAD SECTORS).
