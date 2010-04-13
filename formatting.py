@@ -2,11 +2,23 @@ import os
 import sys
 import codecs
 
+def sort_file(name):
+    roman = ['i', 'ii', 'iii', 'iv']
+
+    pos = name.find('_')
+    assert pos > 0
+    num = name[pos+1:-4]
+    if num in roman:
+        num = -100 + roman.index(num)
+    else:
+        num = int(num)
+    return (name[:pos], num)
+
 def list_files(which = 'all'):
 
     options = ['all', 'cheatsheet', 'manual']
     assert which in options
-    index = options.find(which)
+    index = options.index(which)
 
     files = os.listdir('.')
     files = [f for f in files if f[-4:].lower() == '.txt']
@@ -14,8 +26,8 @@ def list_files(which = 'all'):
         files = [f for f in files if options[1] in f or options[2] in f]
     else:
         files = [f for f in files if options[index] in f]
-    files.sort()
 
+    files.sort(key = sort_file)
     return files
 
 class text_formatter(object):
@@ -293,5 +305,9 @@ class html_formatter(text_formatter):
         else:
             return '&#%d;' % char
 
-outputter = html_formatter()
-outputter.convert_files(['cheat000.txt', 'cheat002.txt'], 'tester', 'tester.html')
+# outputter = html_formatter()
+# outputter.convert_files(['cheat000.txt', 'cheat002.txt'], 'tester', 'tester.html')
+
+files = list_files()
+for f in files:
+    print f
