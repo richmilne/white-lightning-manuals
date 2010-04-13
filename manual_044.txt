@@ -1,4 +1,4 @@
-# TODO: Remove this comment once this file has been proofread
+﻿# TODO: Remove this comment once this file has been proofread
 
 sprite space and assign SPND' to point to the space after the foreground buffer.
 Suppose, for example, the foreground program requires 200 bytes and the background

@@ -1,4 +1,4 @@
-MOD     :  This will leave the remainder of N2/N1 on the top of the stack with
+﻿MOD     :  This will leave the remainder of N2/N1 on the top of the stack with
            the same sign as N2
 
 e.g.    17 3 MOD . <CR>

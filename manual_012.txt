@@ -1,4 +1,4 @@
-9.  Move the sprite screen X cursor by +2.
+﻿9.  Move the sprite screen X cursor by +2.
 
 10. Change the INK (X) to 4 (green).
 

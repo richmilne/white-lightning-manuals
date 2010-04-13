@@ -1,4 +1,4 @@
-8. CONSTANTS AND VARIABLES
+﻿8. CONSTANTS AND VARIABLES
 
 White Lightning also allows you to define your own constants and variables using
 the Fourth words:

@@ -1,4 +1,4 @@
-BUFFER SIZE
+﻿BUFFER SIZE
 
 When White Lightning runs programs in Background mode (see Section 3) the top end
 of memory is used as a scratch pad.  The size of this area depends on the

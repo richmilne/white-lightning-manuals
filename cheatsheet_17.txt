@@ -1,4 +1,4 @@
-MLEFT
+﻿MLEFT
 
 Move pointer left on small screen.
 

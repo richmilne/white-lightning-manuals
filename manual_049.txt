@@ -1,4 +1,4 @@
-A dummy sprite 6 by 8 is also required for the rotation so:
+﻿A dummy sprite 6 by 8 is also required for the rotation so:
 
  1  6 by 8 sprite requires       1*(6*8*9+5) =  437 bytes
 

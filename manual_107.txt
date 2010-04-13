@@ -1,4 +1,4 @@
-HLD                    --- addr                           L0
+﻿HLD                    --- addr                           L0
 
 A user variable that holds the address of the latest character of text during
 numeric output conversion.

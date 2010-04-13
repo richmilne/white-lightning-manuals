@@ -1,4 +1,4 @@
-LOGICAL OPERATIONS
+﻿LOGICAL OPERATIONS
 
 There are three types of logical operation included in the IDEAL sub-language;
 these are OR, XOR and AND.  To get the best out of this package it is important to

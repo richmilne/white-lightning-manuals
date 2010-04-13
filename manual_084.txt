@@ -1,4 +1,4 @@
-G        Activates GET SPRITE function.
+﻿G        Activates GET SPRITE function.
          Gets a sprite of the dimensions held in the "Sprite height" and
          "Sprite length" variables, using the number held in the "Sprite
          Number" variable and at the window indicated by the sprite screen

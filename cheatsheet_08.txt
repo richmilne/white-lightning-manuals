@@ -1,4 +1,4 @@
-SCR # 6                                   2 : SET2 103 100 DO I SP1 ! I
+﻿SCR # 6                                   2 : SET2 103 100 DO I SP1 ! I
   0 : SETUP 0 COL ! 6 ROW ! 24 S        1+ DUP SP2 ! SPN ! COPYM WRR1M
 PN ! CLS PUTBLS 2 HGT ! 32 LOW ! ;        3 WRR1M LOOP ;
   1 : LEFT WRL1V ; : RIGHT WRR1V          4 : TESTE CLS 0 COL ! 4 0 DO I

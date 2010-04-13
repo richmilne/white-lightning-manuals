@@ -1,4 +1,4 @@
-: MAKE 62 SPN ! 4 HGT ! 4 LEN ! TEST 0= IF ISPRITE CLSM ENDIF ;
+﻿: MAKE 62 SPN ! 4 HGT ! 4 LEN ! TEST 0= IF ISPRITE CLSM ENDIF ;
 
 This will create and clear sprite 62.  Now use:
 

@@ -1,4 +1,4 @@
-COUNT            addr1 --- addr2 n                        L0
+﻿COUNT            addr1 --- addr2 n                        L0
 
 Leave the byte address addr2 and byte count n of a message text beginning at
 address addr1.  It is presumed that the first byte at addr1 contains the text byte

@@ -1,4 +1,4 @@
-THRUST
+﻿THRUST
 
 If the lander still has fuel and hasn't reached terminal upward velocity then
 increase upward velocity.

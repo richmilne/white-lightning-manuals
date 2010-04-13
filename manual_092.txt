@@ -1,4 +1,4 @@
-#                   d1 --- d2                             L0
+﻿#                   d1 --- d2                             L0
 
 Generate from a double number d1, the next ASCII character which is placed in an
 output string.  Result d2 is the quotient after division by BASE, and is

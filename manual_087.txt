@@ -1,4 +1,4 @@
-_        Activates the IOAD SPRITES FROM TAPE facility.
+﻿_        Activates the IOAD SPRITES FROM TAPE facility.
 (SYMBOL  Place tape in your cassette recorder.  Press SYMBOL SHIFT J
 SHIFT    and press PLAY on the cassette recorder.  Three groups of data
 J)       will load.  When loaded, the Text Line will clear and the

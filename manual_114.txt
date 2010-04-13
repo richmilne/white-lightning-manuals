@@ -1,4 +1,4 @@
-TASK
+﻿TASK
 
 A no-operation word which can mark the boundary between applications.  By
 forgetting TASK and re-compiling, an application can be discarded in its entirety.

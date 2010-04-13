@@ -1,4 +1,4 @@
-ATTOFF       After the execution of ATOFF, group GETs and PUTs will move
+﻿ATTOFF       After the execution of ATOFF, group GETs and PUTs will move
              pixel data only.
 
 

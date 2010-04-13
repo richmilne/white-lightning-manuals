@@ -1,4 +1,4 @@
-OPERATING INSTRUCTIONS
+﻿OPERATING INSTRUCTIONS
 
 Insert the Sprite Generator Program Tape, type LOAD"" and load into the computer
 as normal.

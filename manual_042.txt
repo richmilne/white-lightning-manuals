@@ -1,4 +1,4 @@
-In the above example we set background variables from foreground.  If we were to
+﻿In the above example we set background variables from foreground.  If we were to
 set the background variables actually in the background program, then foreground
 and background variables would already have been switched before execution.  To
 set up the same windows, we would now have to use ROW, COL, HGT and LEN, and not

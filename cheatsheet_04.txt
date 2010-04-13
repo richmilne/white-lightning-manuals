@@ -1,4 +1,4 @@
-More Advanced Techniques
+﻿More Advanced Techniques
 
 Often it is not practical to repeatedly PUT the screen data which accompanies the
 moving sprite and more frequently movement is required with a higher resolution

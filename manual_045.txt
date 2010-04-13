@@ -1,4 +1,4 @@
- 9. WR implies that the data will be scrolled with wrap.
+﻿ 9. WR implies that the data will be scrolled with wrap.
 
 10. SC implies that data will be scrolled without wrap.
 

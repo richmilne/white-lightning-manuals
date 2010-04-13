@@ -1,4 +1,4 @@
-BEGIN                  --- addr n (compilation)         P,L0
+﻿BEGIN                  --- addr n (compilation)         P,L0
 
 Occurs in a colon-definition in form:
               BEGIN  ...  UNTIL

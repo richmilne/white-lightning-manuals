@@ -1,4 +1,4 @@
-P      :  Put the following text on the line number held on the stack, by
+﻿P      :  Put the following text on the line number held on the stack, by
           overwriting its present contents.
 
 

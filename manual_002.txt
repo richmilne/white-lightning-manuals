@@ -1,4 +1,4 @@
-IDEAL
+﻿IDEAL
 
 The main part of the package is the White Lightning language itself. The language
 can be thought of as being divided into two parts: firstly, there is a super fast

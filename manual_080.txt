@@ -1,4 +1,4 @@
-To save BASIC source, type PROG <CR> to enter BASIC if you're not already there,
+﻿To save BASIC source, type PROG <CR> to enter BASIC if you're not already there,
 then just type SAVE "filename" as normal and re-enter White Lightning with PRINT
 USR 24836.  Likewise, source can be reloaded by entering BASIC with a PROG, using
 LOAD "filename" and then re-entering Forth with a PRINT USR 24836.

@@ -1,4 +1,4 @@
-If we're going to give the same resolution of movement (2 pixels) in the vertical
+﻿If we're going to give the same resolution of movement (2 pixels) in the vertical
 plane, we're going to need 4 vertically shifted orientations for each of the
 horizontally offset orientations - 16 sprites in all.  This time they will need to
 be 3x3 as opposed to the previously defined 2x3.  If you've typed in the last

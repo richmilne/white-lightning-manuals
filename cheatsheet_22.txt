@@ -1,4 +1,4 @@
-TABLE 1 (Continued)
+﻿TABLE 1 (Continued)
 -------
 
 SPRITE   H    L    INK    PAPER    FLASH    BRIGHT    XPOS    YPOS      1     2     3     4     5     6     7     8

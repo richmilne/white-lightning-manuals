@@ -1,4 +1,4 @@
-LIT                    --- n                            C,L0
+﻿LIT                    --- n                            C,L0
 
 Within a colon-definition, LIT is automatically compiled before each 16 bit
 literal number encountered in input text.  Later execution of LIT causes the

@@ -1,4 +1,4 @@
-     TOS               OPERATION              RESULT
+﻿     TOS               OPERATION              RESULT
   empty
       9                 9 SQUARE
       9                 CR                  carriage return

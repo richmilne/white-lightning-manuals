@@ -1,4 +1,4 @@
-PROGRAM DEVELOPMENT
+﻿PROGRAM DEVELOPMENT
 
 At any one time, there are up to five areas of development:  Forth source code,
 BASIC source code, sprites, the Forth language itself, and finally the compiled

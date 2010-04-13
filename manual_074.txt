@@ -1,4 +1,4 @@
-Finally, consider the case where the object being tested contains extraneous data
+﻿Finally, consider the case where the object being tested contains extraneous data
 in addition to one of the possible sprites.  This time, the dummy  sprite is
 loaded with the contents of the screen window, but the candidates are first
 "AND"ed into the dumy to remove extraneous data before the XOR and SCANM.

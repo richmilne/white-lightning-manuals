@@ -1,4 +1,4 @@
-Command                Action
+﻿Command                Action
 
 PUTBLS      Block move sprite window into screen
 PUTORS      OR sprite window into screen

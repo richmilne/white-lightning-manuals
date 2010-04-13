@@ -1,4 +1,4 @@
-Enlargement
+﻿Enlargement
 
 One command is provided for enlarging a sprite and its attributes into a second
 sprite which has dimensions exactly double those of the sprite being enlarged.

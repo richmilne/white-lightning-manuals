@@ -1,4 +1,4 @@
- 8.  If you wish to PUT a sprite onto the screen over the top of the existing
+﻿ 8.  If you wish to PUT a sprite onto the screen over the top of the existing
      data in the window, then you should use PUTORS.
 
  9.  Points 6-8 apply to operations in memory, although the words used are

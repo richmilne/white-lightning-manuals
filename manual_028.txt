@@ -1,4 +1,4 @@
-I       : This will copy the loop index from the return stack onto the data
+﻿I       : This will copy the loop index from the return stack onto the data
           stack.
 
 J       : This will push the value of the nested LOOP index to the stack.

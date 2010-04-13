@@ -1,4 +1,4 @@
-;CODE                                                 P,C,L0
+﻿;CODE                                                 P,C,L0
 
 Used in the form:
                : cccc  ....  ;CODE

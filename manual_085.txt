@@ -1,4 +1,4 @@
-         NOTE:  ATTR = 0 leaves the attributes of the sprite as they are.
+﻿         NOTE:  ATTR = 0 leaves the attributes of the sprite as they are.
          ATTR = 1 takes the attributes from the screen and places them
          into the sprite.
 

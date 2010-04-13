@@ -1,4 +1,4 @@
-4.  Now press the S key to give your character a sprite number.  For now, just
+﻿4.  Now press the S key to give your character a sprite number.  For now, just
 enter the number 1 and press ENTER.
 
 5.  Press the G key to GET the character into memory as a sprite and answer Y to

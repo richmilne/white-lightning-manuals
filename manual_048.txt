@@ -1,4 +1,4 @@
-SPRITE UTILITIES
+﻿SPRITE UTILITIES
 
 All the sprite utilities described in this section are available at run-time, but
 we strongly recommend that all sprite allocation is undertaken at the sprite

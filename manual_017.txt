@@ -1,4 +1,4 @@
-Now one of the interesting properties of the logical XOR, is that if the operation
+﻿Now one of the interesting properties of the logical XOR, is that if the operation
 is repeated, the original character is restored - to mend the Robot:
 
 1.  Press P(PUT) and enter 3 - a fully restored Robot!

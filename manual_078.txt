@@ -1,4 +1,4 @@
-0 VARIABLE CONTROL CONTROL U. <CR>
+﻿0 VARIABLE CONTROL CONTROL U. <CR>
 
 This will set up a variable called CONTROL, set it to zero and then print the
 address of the least significant byte which we'll use to pass the information.

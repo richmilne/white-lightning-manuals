@@ -1,4 +1,4 @@
-?STACK is a word which tests the stack for out of bounds.
+﻿?STACK is a word which tests the stack for out of bounds.
 
 
  # 2  -  this indicates that either the dictionary has grown up to meet the

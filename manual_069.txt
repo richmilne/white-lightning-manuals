@@ -1,4 +1,4 @@
-To speed up "FREDA" type: 0 ICNT ! 2 LCNT ! <CR> and to slow "FREDA" type 10 LCNT
+﻿To speed up "FREDA" type: 0 ICNT ! 2 LCNT ! <CR> and to slow "FREDA" type 10 LCNT
 ! <CR> and so on.  Type: INT-OFF <CR> to halt FREDA.  Now type: FORGET FREDA <CR>
 
 

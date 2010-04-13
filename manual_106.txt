@@ -1,4 +1,4 @@
-EXECUTE           addr ---
+﻿EXECUTE           addr ---
 
 Execute the definition whose code field address is on the stack.  The code field
 address is also called the compilation address.

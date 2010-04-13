@@ -1,4 +1,4 @@
-THE PLAGUE OF CRABS
+﻿THE PLAGUE OF CRABS
 
 The crabs, sprite 33, are placed on the screen using PUTBLS.
 

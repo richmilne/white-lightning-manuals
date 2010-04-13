@@ -1,4 +1,4 @@
-4.  Finally type NEW <CR> to restore the editing buffers to their
+﻿4.  Finally type NEW <CR> to restore the editing buffers to their
     microdrive addresses.
 
 

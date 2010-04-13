@@ -1,4 +1,4 @@
-    The relocate command uses the value held in MLEN as the relocation
+﻿    The relocate command uses the value held in MLEN as the relocation
     length, a negative value, as above, relocates downward and a positive
     value upward.
 

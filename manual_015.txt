@@ -1,4 +1,4 @@
-    A)  SPRITE HEIGHT = 2
+﻿    A)  SPRITE HEIGHT = 2
     B)  SPRITE LENGTH = 2
     C)  SPRITE NUMBER = 19
     D)  MEMORY LEFT   = The remaining memory for sprites.

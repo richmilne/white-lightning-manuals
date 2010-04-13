@@ -1,4 +1,4 @@
-OUT                    --- addr                            U
+﻿OUT                    --- addr                            U
 
 A user variable that contains a value incremented by EMIT.  The user may alter and
 examine OUT to control display formating.

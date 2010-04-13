@@ -1,4 +1,4 @@
-Example 11
+﻿Example 11
 
 To place sprite 24 into the screen of sprite 13 use:
 

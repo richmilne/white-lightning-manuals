@@ -1,4 +1,4 @@
-SCR #13                                   1 : STEP2 1 SCOL ! 1 SROW ! 11
+﻿SCR #13                                   1 : STEP2 1 SCOL ! 1 SROW ! 11
   0 : TESTG KREAD IF MOVE ENDIF         7 SP2 ! SP1 ! GWXRM ;
 ;                                         2 : STEP3 116 SP2 ! TSPN SP1
   1 : TESTH 10 XC ! 10 YC ! EXX         ! COPYM ;

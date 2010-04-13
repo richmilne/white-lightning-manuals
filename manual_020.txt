@@ -1,4 +1,4 @@
-EMITC   :  As EMIT but Control characters are also dealt with.
+﻿EMITC   :  As EMIT but Control characters are also dealt with.
 
 
 KEY     :  This will poll the keyboard, wait for a key to be pressed and push

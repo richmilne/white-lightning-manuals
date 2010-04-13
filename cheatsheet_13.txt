@@ -1,4 +1,4 @@
-LAND
+﻿LAND
 
 This word controls the landing sequence.  The landed sprite is placed on the pad
 and sits until ENTER is pressed.  The explosion is then produced beneath the

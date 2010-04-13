@@ -1,4 +1,4 @@
-COLLISION DETECTION AND SPRITE RECOGNITION
+﻿COLLISION DETECTION AND SPRITE RECOGNITION
 
 Two words are provided for collision detection, these are SCANV and SCANM.
 

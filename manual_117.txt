@@ -1,4 +1,4 @@
-WORD                 c ---                                L0
+﻿WORD                 c ---                                L0
 
 Read the next text characters from the input stream being interpreted, until a
 delimiter c is found, storing the packed character string beginning at the

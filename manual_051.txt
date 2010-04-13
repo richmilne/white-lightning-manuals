@@ -1,4 +1,4 @@
-ISPRITE AND DSPRITE
+﻿ISPRITE AND DSPRITE
 
 it sprites are located at the top of rtntnry, then ISPRITE and DSPRITE can be used
 to create and destroy sprites without the need for any complex calculations.

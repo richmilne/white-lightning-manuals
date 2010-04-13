@@ -1,4 +1,4 @@
-14. Move the X cursor by +2.
+﻿14. Move the X cursor by +2.
 
 15. Press P (PUT) and respond with 1 - the characters have been "ORed" (merged).
 

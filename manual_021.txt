@@ -1,4 +1,4 @@
-If we use just . we will get a negative result.
+﻿If we use just . we will get a negative result.
 
       HEX C000 . <CR>
 

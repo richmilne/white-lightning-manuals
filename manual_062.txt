@@ -1,4 +1,4 @@
-BASIC INTERFACE WORDS
+﻿BASIC INTERFACE WORDS
 
 These words are provided to enable you to mix BASIC and Forth in your program.
 The section covering the access of BASIC should be read carefully before an

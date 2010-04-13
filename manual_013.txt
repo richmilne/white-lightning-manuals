@@ -1,4 +1,4 @@
-7.  Press Z (Arcade Character) and enter 151 (a Robot).
+﻿7.  Press Z (Arcade Character) and enter 151 (a Robot).
 
 8.  Set HEIGHT (H) to 2 and LENGTH (L) to 2.
 

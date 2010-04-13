@@ -1,4 +1,4 @@
-Reflections
+﻿Reflections
 
 There are four commands in this group for reflecting screen and memory, pixel and
 attribute data.  A sprite is often required to point in two directions and the

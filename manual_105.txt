@@ -1,4 +1,4 @@
-ENCLOSE        addr1 c --- addr1 n1 n2 n3
+﻿ENCLOSE        addr1 c --- addr1 n1 n2 n3
 
 The text scanning primitive used by WORD.  From the text address addr1 and an
 ASCII delimiting character c, is determined the byte offset to the first

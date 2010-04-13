@@ -1,4 +1,4 @@
-9 CLEAR <CR>
+﻿9 CLEAR <CR>
 
 This sets the current screen to 9.  To insert text use the EDIT command. Type 0
 EDIT <CR> followed by the text below:

@@ -1,4 +1,4 @@
-e.g.  FORGET EXAMPLE will delete the word EXAMPLE (if it exists) along with any
+﻿e.g.  FORGET EXAMPLE will delete the word EXAMPLE (if it exists) along with any
 other words defined after it.
 
 

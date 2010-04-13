@@ -1,4 +1,4 @@
-AN INTRODUCTION TO SPECTRA FORTH
+﻿AN INTRODUCTION TO SPECTRA FORTH
 
 This introduction does not set out to teach Forth programning, but rather to serve
 as a supplement to available texts on the subject; references include:

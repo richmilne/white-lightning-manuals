@@ -1,4 +1,4 @@
-DSPRITE  SPN                Delete Sprite and recover bytes from below.
+﻿DSPRITE  SPN                Delete Sprite and recover bytes from below.
 
 ISPRITE  SPN, HGT, LEN      Create Sprite and move current Sprites
                             down to accommodate.

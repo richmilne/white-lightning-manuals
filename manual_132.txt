@@ -1,4 +1,4 @@
-ERRATA - WHITE LIGHTNING MANUAL
+﻿ERRATA - WHITE LIGHTNING MANUAL
 
 Page 7, line 24:
 "enter the number 75" should read

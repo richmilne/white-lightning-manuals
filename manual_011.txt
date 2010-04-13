@@ -1,4 +1,4 @@
-1.  Press E (Screen Functions), answer Y and press 2 (Mirror) - the character is
+﻿1.  Press E (Screen Functions), answer Y and press 2 (Mirror) - the character is
 reflected!
 
 2.  Now press S (Sprite Number) and enter 11.

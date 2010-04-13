@@ -1,4 +1,4 @@
-T        Activates the TEST SPRITE function.
+﻿T        Activates the TEST SPRITE function.
          Performs a test on the sprite whose number is held in the "Sprite
          Number" variable, and does the following:
 

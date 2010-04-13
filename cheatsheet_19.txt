@@ -1,4 +1,4 @@
-XVEL
+﻿XVEL
 
 The horizontal velocity is represented by one of 3 scroll speeds but safe landings
 can only be made if the pointer is in the "safe" region in the centre of the

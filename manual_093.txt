@@ -1,4 +1,4 @@
-(ABORT)
+﻿(ABORT)
 
 Executes after an error when WARNING is -1.  This word normally executes ABORT,
 but may be altered (with care) to a user's alternative procedure.  See WARNING.

@@ -1,4 +1,4 @@
-Group 3
+﻿Group 3
 
 This group, possibly the most useful in the whole set, comprises commands which
 support operations between sprites and sprite windows.  The same set of commands

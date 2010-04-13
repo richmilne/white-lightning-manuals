@@ -1,4 +1,4 @@
-For the purposes of the following examples, let us refer to the numbers on the
+﻿For the purposes of the following examples, let us refer to the numbers on the
 stack as follows:
 
  Nl  =  top    number on stack (i.e. first to be removed)

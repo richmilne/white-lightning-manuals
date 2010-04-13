@@ -1,4 +1,4 @@
-  1 OK ENDOF 13 OF OK ENDOF 30 O        SCR # 17
+﻿  1 OK ENDOF 13 OF OK ENDOF 30 O        SCR # 17
 F OK ENDOF 31 OF OK ENDOF 58 OF           0 : FVEL FU @ 16 / SFU @ - 0<
 OK                                      IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE
   2 ENDOF 59 OF OK ENDOF 91 OF O        N !

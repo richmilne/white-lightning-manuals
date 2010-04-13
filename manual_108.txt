@@ -1,4 +1,4 @@
-INDEX          from to ---
+﻿INDEX          from to ---
 
 Print the first line of each screen over the range from, to.  This is used to view
 the comment lines of an area of text on disc screens.

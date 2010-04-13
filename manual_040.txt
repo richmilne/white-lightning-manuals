@@ -1,4 +1,4 @@
-SPRITE/SPRITE OPERATIONS
+﻿SPRITE/SPRITE OPERATIONS
 
 These are operations between sprites which usually have the same dimensions, or,
 as in the case of the SPIN command, transposed dimensions.  SP1 and SP2 hold the

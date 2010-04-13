@@ -1,4 +1,4 @@
-Now type:
+﻿Now type:
 
 CLS ." LOGICAL AND " CR ." LOGICAL AND " PUTNDS <CR>
 

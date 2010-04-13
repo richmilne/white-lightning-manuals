@@ -1,4 +1,4 @@
-FORTH/BASIC WORDS
+﻿FORTH/BASIC WORDS
 
 For those users who have mastered and grown used to the Spectrum's own graphics
 commands, a set of 18 Forth implementations of Spectrum words is provided.

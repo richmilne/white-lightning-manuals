@@ -1,4 +1,4 @@
-SR8
+﻿SR8
 
 Moves landscapes 8 pixels (1 character) right and adjusts pointers provided a full
 character boundary has been reached.  If not a further 4 pixel scroll is

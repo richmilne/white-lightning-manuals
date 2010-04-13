@@ -1,4 +1,4 @@
-MESSAGE              n ---
+﻿MESSAGE              n ---
 
 Print on the selected output device the text of line n relative to screen 4 of
 drive 0.  n may be positive or negative.  MESSAGE may be used to print incidental

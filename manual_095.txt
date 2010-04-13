@@ -1,4 +1,4 @@
--FIND                  --- pfa b tf  (found)
+﻿-FIND                  --- pfa b tf  (found)
                        --- ff        (not found)
 
 Accepts the next text word (delimited by blanks) in the input stream to HERE, then

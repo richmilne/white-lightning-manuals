@@ -1,4 +1,4 @@
-THE THREE VEHICLE SCROLLING DEMO
+﻿THE THREE VEHICLE SCROLLING DEMO
 
 This demonstrates the 3 precisions of scrolls available - 1, 4 and 8 pixels.
 

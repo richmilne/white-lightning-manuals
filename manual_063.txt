@@ -1,4 +1,4 @@
-ADJM         This command is used to ensure the execution of group2 GET
+﻿ADJM         This command is used to ensure the execution of group2 GET
              and PUT instructions.  The parameters are SPN, COL and ROW.
              First HGT and LEN are set to the dimensions of the sprite
              whose number is held in SPN.  If COL or ROW are "off

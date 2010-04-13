@@ -1,4 +1,4 @@
-C,                   b ---
+﻿C,                   b ---
 
 Store 8 bits of b into the next available dictionary byte, advancing the
 dictionary pointer.

@@ -1,4 +1,4 @@
- #  21 -  this means that you have tried to delete something in the protected
+﻿ #  21 -  this means that you have tried to delete something in the protected
           part of the Forth dictionary, e.g.
 
           FORGET D0

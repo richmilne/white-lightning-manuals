@@ -1,4 +1,4 @@
-Fourth byte             Holds the width of the sprite in characters (1 to 255).
+﻿Fourth byte             Holds the width of the sprite in characters (1 to 255).
 
 Fifth byte              Holds the height of the sprite in characters (1 to 255).
 

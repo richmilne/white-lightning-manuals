@@ -1,4 +1,4 @@
-Sprites 1 to 100 are produced using the sprite generator program.  Sprites 101 to
+﻿Sprites 1 to 100 are produced using the sprite generator program.  Sprites 101 to
 107 are created in the main program using the word SET.  Sprite 128 is constructed
 from sprites 10 to 25 in the main program using the word MAKE.
 

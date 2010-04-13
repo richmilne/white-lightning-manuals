@@ -1,4 +1,4 @@
-THE BASIC INTERFACE
+﻿THE BASIC INTERFACE
 
 The BASIC interface was provided to increase the flexibility of the language and
 allow the newcomer to Forth, a gradual transition.  Some applications are actually

@@ -1,4 +1,4 @@
-SCRM     SPN                Scroll the Sprite vertically without wrap
+﻿SCRM     SPN                Scroll the Sprite vertically without wrap
                             by NPX pixels.
 
 WRR1M    SPN                Scroll the Sprite 1 pixel right with wrap.

@@ -1,4 +1,4 @@
-U/               ud u1 --- u2 u3
+﻿U/               ud u1 --- u2 u3
 
 Leave the unsigned remainder u2 and unsigned quotient u3 from the unsigned double
 dividend ud and unsigned divisor u1.

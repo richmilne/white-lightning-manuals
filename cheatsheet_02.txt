@@ -1,4 +1,4 @@
-Moving Sprites
+﻿Moving Sprites
 
 The chief problem facing the programmer who wants to move sprites around the
 screen is choosing from the numerous schemes available.  We now consider some of

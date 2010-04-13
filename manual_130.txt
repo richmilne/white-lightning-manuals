@@ -1,4 +1,4 @@
-Example 5
+﻿Example 5
 
 Often it is useful to define a word which carries out an operation that is used
 frequently and which saves typing - for instance:

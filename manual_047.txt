@@ -1,4 +1,4 @@
-15.  If a word ending in V (screen operation) does not execute, it is almost
+﻿15.  If a word ending in V (screen operation) does not execute, it is almost
      always because the window you have defined does not lie wholly on the
      screen.  That is to say, that COL + LEN is not in the range 1 to 32, or
      ROW + HGT is not in the range 1 to 24.  See ADJV.

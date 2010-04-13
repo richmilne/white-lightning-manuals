@@ -1,4 +1,4 @@
-                                    SECTION 2
+﻿                                    SECTION 2
 
                                   SPECTRA FORTH
                                  by Stuart Smith

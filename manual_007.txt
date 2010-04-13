@@ -1,4 +1,4 @@
-The Sprite Screen Cursors
+﻿The Sprite Screen Cursors
 
 Now that you're used to moving the CHR$ SQR cursor around, moving the sprite
 screen cursors is a piece of cake:

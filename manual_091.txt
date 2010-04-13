@@ -1,4 +1,4 @@
-Fig-FORTH GLOSSARY
+﻿Fig-FORTH GLOSSARY
 
 
 This glossary contains all of the word definitions in Release 1 of fig-FORTH.  The

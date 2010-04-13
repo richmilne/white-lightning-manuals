@@ -1,4 +1,4 @@
-Collision Detection
+﻿Collision Detection
 
 To produce the smoothest movement of all, and include collision detection, a six
 stage operation is used.  The technique utilises two dummy sprites, and all

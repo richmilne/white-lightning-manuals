@@ -1,4 +1,4 @@
-Position the X and Y Pos cursors to the appropriate co-ordinates.  Input
+﻿Position the X and Y Pos cursors to the appropriate co-ordinates.  Input
 the relevant sprite number and put the sprite to the screen by pressing the
 D key and then 1.  In the case of 0 press J to DUMP the empty CHR$ square
 to the sprite screen.

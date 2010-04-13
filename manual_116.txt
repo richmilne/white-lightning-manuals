@@ -1,4 +1,4 @@
-VOCABULARY                                               E,L
+﻿VOCABULARY                                               E,L
 
 A defining word used in the form:
                VOCABULARY cccc

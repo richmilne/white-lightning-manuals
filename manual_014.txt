@@ -1,4 +1,4 @@
-This next example illustrates one of the more complicated functions of the
+﻿This next example illustrates one of the more complicated functions of the
 generator - GETting a sprite into a larger sprite:
 
 1.  Clear the sprite screen and position the cursors to X POS 1 Y POS 1.

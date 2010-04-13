@@ -1,4 +1,4 @@
-  2 0 -7 DRAW ;                           4 : UL SS -200 < IF SL8 ELSE S
+﻿  2 0 -7 DRAW ;                           4 : UL SS -200 < IF SL8 ELSE S
   3 : PANEL 0 PAPER COLOUR SCLE         L4 ENDIF ;
 BARS BARST HRSC LETR MARK ;               5 : LL SS -7 < IF SL1 ELSE SO
   4 : MAKE 128 SPN ! 3 HGT ! 128        ENDIF ;

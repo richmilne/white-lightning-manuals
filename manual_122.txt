@@ -1,4 +1,4 @@
-PWNDM    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of Sprite
+﻿PWNDM    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of Sprite
          SROW               SP2 into Sprite SP1.
 
 PWATTM   SP1, SP2, SCOL,    Block move attributes of window at

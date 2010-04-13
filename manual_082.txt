@@ -1,4 +1,4 @@
-Compiled and Completed Programs
+﻿Compiled and Completed Programs
 
 Once the program is fully debugged and running, a final run-time version can be
 produced.  This is the only form in which programs generated from White Lightning

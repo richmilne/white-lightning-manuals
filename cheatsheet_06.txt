@@ -1,4 +1,4 @@
-TSPN     Temporary Value for SPN
+﻿TSPN     Temporary Value for SPN
 TCOL     Temporary Value for COL
 TROW     Temporary Value for ROW
 XC       X co-ordinate

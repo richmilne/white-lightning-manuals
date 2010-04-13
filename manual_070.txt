@@ -1,4 +1,4 @@
-Now type:
+﻿Now type:
 
 : IRUN ICNT @ DUP DUP DUP <CR>
 F1 MOD ABS PHl = IF INVV ENDIF <CR>

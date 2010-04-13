@@ -1,4 +1,4 @@
-More Function Keys
+﻿More Function Keys
 
 Let's move on.  BREAK the program - CAPS SHIFT/BREAK keys, type GOTO 3 and press
 ENTER.  Execute a COLD (C) START and answer N to BUFFER SIZE CHANGE.  Nothing of
