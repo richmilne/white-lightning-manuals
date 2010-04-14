@@ -1,4 +1,4 @@
-﻿Example 5
+﻿**Example 5**
 
 Often it is useful to define a word which carries out an operation that is used
 frequently and which saves typing - for instance:
@@ -11,7 +11,7 @@ type would be:
 34 5 6 DEM5
 
 
-Example 6
+**Example 6**
 
 To scroll sprite 29 in memory by 1 pixel to the right with wrap and PUT it on the
 screen at row 10, column 11 - use:
@@ -21,7 +21,7 @@ screen at row 10, column 11 - use:
 To run DEM6 in background use: ' DEM6 INT-ON
 
 
-Example 7
+**Example 7**
 
 To fill a screen window, at column 17, row 5, 5 characters long and 10 characters
 high, with the attributes - 6 INK, 2 PAPER and 1 FLASH - use the following:
@@ -30,21 +30,21 @@ high, with the attributes - 6 INK, 2 PAPER and 1 FLASH - use the following:
 INK 1 PAPER ;
 
 
-Example 8
+**Example 8**
 
 To change the green face of sprite 28 into a red one use:
 
 : DEM8 28 SPN ! 2 INK ! 1 BRIGHT 0 PAPER SETAM PUTBLS ;
 
 
-Example 9
+**Example 9**
 
 To pick a random number between 0 and 100 use:
 
 : DEM9 100 RND . ;
 
 
-Example 10
+**Example 10**
 
 To pick a random INK colour and change sprite 34's INK colour to this colour, and
 then put it at column 10, row 10, use:

@@ -1,10 +1,10 @@
 ﻿Command                Action
 
-COPYM        Copy first sprite pixel data into second sprite
-COPORM       OR first sprite pixel data into second sprite
-COPXRM       XOR first sprite pixel data into second sprite
-COPNDM       AND first sprite pixel data into second sprite
-COPATTM      Copy first sprite attribute data into second sprite
+**COPYM**        Copy first sprite pixel data into second sprite
+**COPORM**       OR first sprite pixel data into second sprite
+**COPXRM**       XOR first sprite pixel data into second sprite
+**COPNDM**       AND first sprite pixel data into second sprite
+**COPATTM**      Copy first sprite attribute data into second sprite
 
 Note:
 If the dimensions of the two sprites are not identical, then the command will not
@@ -17,7 +17,7 @@ To make a complete copy of sprite 10 into sprite 8, use the following:
 8 SP1 ! 10 SP2 ! COPYM COPATTM
 
 
-SPRITE TRANSFORMATIONS
+**SPRITE TRANSFORMATIONS**
 
 To increase the utility of the package, four extra words have been added to
 invert, spin, reflect and enlarge sprites.  The inversion and reflection routines
@@ -25,7 +25,7 @@ work for screen and sprite data but the rotation and enlargement commands work
 only on sprites and a dummy sprite is required to rotate or enlarge into.
 
 
-Inversions
+**Inversions**
 
 The sprite is "1's complemented"; in other words, all the pixels which are set
 "on", became set "off" and vice-versa.  The attributes, however, remain
@@ -39,7 +39,7 @@ SPN          The number of the sprite to be inverted
 
 Command             Action
 
-INVM         The sprite is inverted (1's complemented)
+**INVM**         The sprite is inverted (1's complemented)
 
 
 Parameter             Use
@@ -52,4 +52,4 @@ HGT          Height of the screen window (1 to 24)
 
 Command             Action
 
-INVV         Invert screen window
+**INVV**         Invert screen window

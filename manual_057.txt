@@ -1,12 +1,12 @@
 ﻿Command                Action
 
-PUTBLS      Block move sprite window into screen
-PUTORS      OR sprite window into screen
-PUTXRS      XOR sprite window into screen
-PUTNDS      AND sprite window into screen
+**PUTBLS**      Block move sprite window into screen
+**PUTORS**      OR sprite window into screen
+**PUTXRS**      XOR sprite window into screen
+**PUTNDS**      AND sprite window into screen
 
 
-Group 2
+**Group 2**
 
 
 These commands allow operations between sprite windows and screen windows.  Unlike
@@ -30,16 +30,16 @@ SPN          Sprite number
 
 Command                    Action
 
-GWBLS        Get block of pixel data from screen window into sprite window
-GWORS        OR pixel data from screen window into sprite window
-GWXRS        XOR pixel data from screen window into sprite window
-GWNDS        AND pixel data from screen window into sprite window
-GWATTS       GET block of attribute data from screen window into sprite window
-PWBLS        PUT block of pixel data from screen window into sprite window
-PWORS        OR pixel data from sprite window into screen window
-PWXRS        XOR pixel data from sprite window into screen window
-PWNDS        AND pixel data from sprite window into screen window
-PWATTS       PUT block of attribute data from sprite window into screen window
+**GWBLS**        Get block of pixel data from screen window into sprite window
+**GWORS**        OR pixel data from screen window into sprite window
+**GWXRS**        XOR pixel data from screen window into sprite window
+**GWNDS**        AND pixel data from screen window into sprite window
+**GWATTS**       GET block of attribute data from screen window into sprite window
+**PWBLS**        PUT block of pixel data from screen window into sprite window
+**PWORS**        OR pixel data from sprite window into screen window
+**PWXRS**        XOR pixel data from sprite window into screen window
+**PWNDS**        AND pixel data from sprite window into screen window
+**PWATTS**       PUT block of attribute data from sprite window into screen window
 
 Note:
 

@@ -4,7 +4,7 @@
  2 OF ." LEFT " ENDOF <CR>
  4 OF ." DOWN " ENDOF <CR>
  8 OF ." UP " ENDOF <CR>
- 9 OP ." UPRIGHT " ENDOF <CR>
+ 9 OF ." UPRIGHT " ENDOF <CR>
 10 OF ." UPLEFT " ENDOF <CR>
  5 OF ." DOWNRIGHT " ENDOF <CR>
  6 OF ." DOWNLEFT " ENDOF <CR>
@@ -19,7 +19,7 @@ JTEST <CR>
 To halt press CAPS SHIFT
 
 
-KB           This command is provided for the detection of multiple key
+**KB**           This command is provided for the detection of multiple key
              presses.  All it does, in fact, is test the specified key
              and stack a true flag if the key is pressed and a false flag if
              it is not.  The key to he tested is specified by the top two
@@ -44,7 +44,7 @@ Columns are organised from 1 to 5 and counted from the outside in.  This is the
 order above.
 
 
-BLEEP        This operates in the same way as the Spectrum's BEEP
+**BLEEP**        This operates in the same way as the Spectrum's BEEP
              command with the second number on the stack providing
              duration and top number pitch.
 Example:
@@ -52,7 +52,7 @@ Example:
 100 200 BLEEP
 
 
-ATTON        After the execution of ATTON, group 1 GETs and PUTs will GET
+**ATTON**        After the execution of ATTON, group 1 GETs and PUTs will GET
              and PUT attribute data at the same time as they GET and PUT
              pixel data.  The GW and PW commands, however, are unaffected
              by ATTON or ATTOFF and always use separate commands to

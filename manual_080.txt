@@ -4,7 +4,7 @@ USR 24836.  Likewise, source can be reloaded by entering BASIC with a PROG, usin
 LOAD "filename" and then re-entering Forth with a PRINT USR 24836.
 
 
-Sprites
+**Sprites**
 
 Sprites can be saved from White Lightning and then re-Loaded into White Lightning,
 but sprites saved by White Lightning, cannot be loaded into the sprite development
@@ -24,7 +24,7 @@ then do the following:
 5.  Re-enter White Lightning using PRINT USR 24836.
 
 
-Merging Sprites
+**Merging Sprites**
 
 Two blocks of sprites can be merged together in the main program using the
 following procedure:

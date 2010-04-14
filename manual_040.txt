@@ -1,4 +1,4 @@
-﻿SPRITE/SPRITE OPERATIONS
+﻿**SPRITE/SPRITE OPERATIONS**
 
 These are operations between sprites which usually have the same dimensions, or,
 as in the case of the SPIN command, transposed dimensions.  SP1 and SP2 hold the
@@ -6,55 +6,55 @@ sprite numbers.  Commands in this group are postfixed with a "M", e.g. COPORM,
 SPINM.
 
 
-DUMMY SPRITE
+**DUMMY SPRITE**
 
 A dummy sprite is a sprite which does not contain data for display.  It may be
 used, for instance, to store a machine code subroutine, an array, or maybe a
 collision detection sprite.
 
 
-IDEAL VARIABLES
+**IDEAL VARIABLES**
 
 The IDEAL sublanguage uses 27 variables in all, these are:
 
-VARIABLE                              USE
+**VARIABLE**                              **USE**
 
-ROW          Used to hold the row (Y co-ord) in characters, measured
+**ROW**          Used to hold the row (Y co-ord) in characters, measured
              from the top of the screen (0-23).
 
-LEN          Used to hold the width of the current screen window
+**LEN**          Used to hold the width of the current screen window
              (1-32), or the width of the sprite being defined (1-255).
              Units are characters.
 
-COL          Used to hold the column (X co-ord) in characters, measured
+**COL**          Used to hold the column (X co-ord) in characters, measured
              from the left of the screen (0-31).
 
-HGT          Used to hold the height of the current screen window
+**HGT**          Used to hold the height of the current screen window
              (1-24), or the height of the sprite being defined (1-255).
              Units are characters.
 
-SROW         Used to hold the row (Y co-ord) within the sprite whose
+**SROW**         Used to hold the row (Y co-ord) within the sprite whose
              number is held in SP2, measured from the top (0-(HGT-1)).
              Units are characters.
 
-SCOL         Used to hold the column (X co-ord) within the sprite
+**SCOL**         Used to hold the column (X co-ord) within the sprite
              whose number is held in SP2, measured from the left
              (0-(LEN-1)).  Units are characters.
 
-NPX          Used to hold the size and direction of the vertical scrolls.
+**NPX**          Used to hold the size and direction of the vertical scrolls.
              Positive scrolls are upward and negative downward.
              Units are pixels and not characters.
 
-SPN          Used to hold the sprite number for those words which
+**SPN**          Used to hold the sprite number for those words which
              operate on only one sprite (1-255).
 
-SP1          Where operations involve a sprite and a sprite window,
+**SP1**          Where operations involve a sprite and a sprite window,
              SP1 holds the number of the sprite which does not contain
              the window (1-255).  Where a sprite is to be spun into a
              second sprite, SP1 holds the number of the first sprite
              (1-255).
 
-SP2          Where operations involve a sprite and a sprite window,
+**SP2**          Where operations involve a sprite and a sprite window,
              SP2 holds the number of the sprite which does contain
              the window (1-255).  Where a sprite is to be spun into a second
              sprite, SP2 holds the number of the second sprite

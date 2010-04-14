@@ -1,6 +1,4 @@
-﻿# TODO: Remove this comment once this file has been proofread
-
-sprite space and assign SPND' to point to the space after the foreground buffer.
+﻿sprite space and assign SPND' to point to the space after the foreground buffer.
 Suppose, for example, the foreground program requires 200 bytes and the background
 300 bytes, with the buffer currently set to 256 bytes.  500 bytes are needed in
 all, so sprites need to be relocated down by 500 - 256 = 244 bytes.  Type:
@@ -31,7 +29,7 @@ sprites.  The only time you really need to worry about changing buffer sizes or
 positions is when you have a dire need to save a few extra bytes.
 
 
-IDEAL MNEMONICS
+**IDEAL MNEMONICS**
 
 To get the best out of the White Lightning package, please read these next
 sections carefully and note the parameters.  The words have been selected so as to

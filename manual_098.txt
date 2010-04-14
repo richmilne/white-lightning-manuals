@@ -1,57 +1,57 @@
-﻿>R                   n ---                              C,L0
+﻿**>R**                   n ---                              C,L0
 
 Remove a number from the computation stack and place as the most accessible on the
 return stack.  Use should be balanced with R> in the same definition.
 
 
-?                 addr ---                                L0
+**?**                 addr ---                                L0
 
 Print the value contained at the address in free format according to the current
 base.
 
 
-?COMP
+**?COMP**
 
 Issue error message if not compiling.
 
 
-?CSP
+**?CSP**
 
 Issue error message if stack position differs from value saved in CSP.
 
 
-ERROR              f n ---
+**ERROR**              f n ---
 
 Issue an error message number n, if the boolean flag is true.
 
 
-?EXEC
+**?EXEC**
 
 Issue an error message if not executing.
 
 
-?LOADING
+**?LOADING**
 
 Issue an error message if not loading
 
 
-?PAIRS           n1 n2 ---
+**?PAIRS**           n1 n2 ---
 
 Issue an error message if n1 does not equal n2.  The message indicates that
 compiled conditionals do not match.
 
 
-?STACK
+**?STACK**
 
 Issue an error message is the stack is out of bounds.
 
 
-?TERMINAL              --- f
+**?TERMINAL**              --- f
 
 Perform a test of the terminal keyboard for actuation of the break key.  A true
 flag indicates actuation.
 
 
-@                 addr --- n                              L0
+**@**                 addr --- n                              L0
 
 Leave the 16 bit contents of address.

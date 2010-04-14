@@ -1,4 +1,4 @@
-﻿ATTRIBUTE DATA
+﻿**ATTRIBUTE DATA**
 
 The colour of the INK and PAPER in each particular cell, together with the
 BRIGHTNESS and FLASHING attributes of the character, are controlled by a separate
@@ -7,7 +7,7 @@ referred to as Attribute data.  Pixel data and Attribute data are frequently
 treated as separate entities.
 
 
-SCREEN OPERATIONS
+**SCREEN OPERATIONS**
 
 Often, it is required to carry out an operation, such as a scroll or a reflection,
 on one particular section of the screen.  Four variables are used to define a
@@ -19,7 +19,7 @@ range 1 to 24.  Commands in this group are postfixed with a "V", e.g. WRL1V, INV
 MIRV.
 
 
-SCREEN/SPRITE OPERATIONS
+**SCREEN/SPRITE OPERATINS**
 
 These are operations between the screen and a sprite.  The dimensions of the
 sprite are used as the dimensions of the screen window, and COL and ROW are used
@@ -29,7 +29,7 @@ group are the PUTs and GETs, which move sprites between the screen and memory.
 Commands in this group are postfixed with an "S"; e.g. PUTBLS, GETXRS.
 
 
-SPRITE OPERATIONS
+**SPRITE OPERATIONS**
 
 These cover more or less the same commands as the screen operations, but this time
 a complete sprite is used instead of a screen window.  The only parameter required
@@ -37,7 +37,7 @@ is the sprite number stored in SPN.  Commands in this group are postfixed with a
 "M", e.g. WRR4M, ATTUPM.
 
 
-SCREEN/SPRITE WINDOW OPERATIONS
+**SCREEN/SPRITE WINDOW OPERATIONS**
 
 These are operations between a screen window and a sprite window.  As before, ROW,
 COL, HGT and LEN define the screen window, but this time, SCOL and SROW are used
@@ -48,7 +48,7 @@ the sprite width, the commands will not execute.  These commands are postfixed
 with an "S", e.g. GWATTS, PWORS.
 
 
-SPRITE/SPRITE WINDOW OPERATIONS
+**SPRITE/SPRITE WINDOW OPERATIONS**
 
 These are operations between a whole sprite and a sprite window.  The two sprite
 numbers are held in SP1 (the whole sprite) and SP2 (the sprite which contains the

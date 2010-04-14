@@ -1,20 +1,20 @@
-﻿FUNCTION KEY SUMMARY
+﻿**FUNCTION KEY SUMMARY**
 
-KEY
+**KEY**
 
-A        Activates the ATIRIBUTE switch.
+**A**        Activates the ATIRIBUTE switch.
          Press 1 to set switch ON.
          Press 0 to set switch OFF.
 
-B        Activates the BRIGHT variable.
+**B**        Activates the BRIGHT variable.
          Press 1 to set BRIGHT to ON.
          Press 0 to set BRIGHT to OFF.
 
-C        Activates the PAPER variable.
+**C**        Activates the PAPER variable.
          Press any key between 0 and 7 to activate the colour indicated
          above the key.
 
-D        Activates DIRECT DATA INPUT
+**D**        Activates DIRECT DATA INPUT
          Accepts 8 bytes of data, one byte at a time, followed by ENTER, via
          the keyboard, to the position on the sprite Screen indicated by
          the cursors.  Inputted data must be in the range 0 to 255 Decimal
@@ -23,7 +23,7 @@ D        Activates DIRECT DATA INPUT
          NOTE:  If Attribute switch = 1, then the four current attributes will
          be used at the same position as well.
 
-E        Activates the SCREEN FUNCTIONS.
+**E**        Activates the SCREEN FUNCTIONS.
          You will be given three options: press 1, 2 or 3.
 
          1 INVERT
@@ -47,7 +47,7 @@ E        Activates the SCREEN FUNCTIONS.
          Attributes will take place about the vertical centre of the screen
          window
 
-F        Activates FLASH WINDOW.
+**F**        Activates FLASH WINDOW.
          Flashes the current screen window whose height is held in the
          SPRITE HEIGHT variable and whose length is held in the SPRITE LENGTH
          variable.  The Flash will take place at the position of the sprite

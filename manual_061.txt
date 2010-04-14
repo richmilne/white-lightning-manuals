@@ -1,4 +1,4 @@
-﻿Enlargement
+﻿**Enlargement**
 
 One command is provided for enlarging a sprite and its attributes into a second
 sprite which has dimensions exactly double those of the sprite being enlarged.
@@ -13,7 +13,7 @@ SP2          Number of the sprite being enlarged.
 
 Command                Action
 
-DSPM         Enlarge sprite SP2 into sprite SP1.
+**DSPM**         Enlarge sprite SP2 into sprite SP1.
 
 Note:
 
@@ -21,7 +21,7 @@ If the dimensions of sprite SP1 are not twice those of sprite SP2 the command wi
 not execute.
 
 
-INTERRUPT RELATED WORDS
+**INTERRUPT RELATED WORDS**
 
 Six interrupt related words are provided which control the Foreground/Background
 execution of White Lightning words.  The first four have no parameters.
@@ -29,23 +29,23 @@ execution of White Lightning words.  The first four have no parameters.
 
 Command                 Action
 
-HALT        Suspend CPU operation until the next interrupt.  Executing
+**HALT**        Suspend CPU operation until the next interrupt.  Executing
             HALT in background mode will freeze the system permanently.
 
-EI          Enable the interrupt.
+**EI**          Enable the interrupt.
 
-DI          Disable the interrupt.
+**DI**          Disable the interrupt.
 
-EXX         Exchange IDEAL variables with the alternate IDEAL variables.
+**EXX**         Exchange IDEAL variables with the alternate IDEAL variables.
             This command is executed automatically each time an
             interrupt occurs and at the end of the interrupt routine
             to restore foreground variables.  If a background program
             is not being used EXX can be used to provide extra variables.
 
-INT-ON      The specified word (see next example) is executed on the
+**INT-ON**      The specified word (see next example) is executed on the
             receipt of each interrupt.
 
-INT-OFF     Following execution of INT-0FF the Z8O returns to interrupt
+**INT-OFF**     Following execution of INT-0FF the Z8O returns to interrupt
             mode 1 and polls the keyboard 50 times a second.  The
             background program ceases execution.
 

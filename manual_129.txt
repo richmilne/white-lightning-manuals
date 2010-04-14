@@ -1,6 +1,6 @@
-﻿SOME SIMPLE PROGRAMMING EXAMPLES
+﻿**SOME SIMPLE PROGRAMMING EXAMPLES**
 
-Example 1
+**Example 1**
 
 To scroll a window at row 8, column 9, 5 characters high by 10 characters long, 1
 pixel to the left with wrap - type:
@@ -19,7 +19,7 @@ To execute DEM1 in background type: ' DEM1 INT-ON <CR>
 To halt the background execution of DEM1 type: INT-OFF <CR>
 
 
-Example 2
+**Example 2**
 
 To scroll a window at column 12, row 3, 10 characters high and 5 characters wide,
 downward by 3 pixels with wrap - type:
@@ -35,7 +35,7 @@ To run DEM3 in background type:
 To halt the background execution type: INT-OFF <CR>
 
 
-Example 3
+**Example 3**
 
 To invert a window at column 10, row 5, 4 characters high and 4 characters wide -
 type:
@@ -45,7 +45,7 @@ type:
 and then DEM4 <CR> to execute.
 
 
-Example 4
+**Example 4**
 
 It is not always necessary to use colon definitions to achieve a particular
 result.  To PUT sprite 34 (If you've got the Demo sprites loaded or have already

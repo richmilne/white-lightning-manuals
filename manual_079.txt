@@ -1,11 +1,11 @@
-﻿PROGRAM DEVELOPMENT
+﻿**PROGRAM DEVELOPMENT**
 
 At any one time, there are up to five areas of development:  Forth source code,
 BASIC source code, sprites, the Forth language itself, and finally the compiled
 and completed program.
 
 
-Forth Source
+**Forth Source**
 
 As previously discussed under the section on editing, Forth source is divided into
 screens, each of 512 bytes in length.   Each screen can be individually loaded,
@@ -47,7 +47,7 @@ re-entered with a PRINT USR 24836.  Do not use RANDOMISE USR 24836 or an OUT OF
 SCREEN error may occur.
 
 
-BASIC Source
+**BASIC Source**
 
 Before BASIC source can be used in White Lightning programs, the user must execute
 a RESERVE to make space for the BASIC program.  To reserve, for example, 1K, type:

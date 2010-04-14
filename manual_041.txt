@@ -1,24 +1,24 @@
-﻿SPST         Used to hold the start address of sprite space.
+﻿**SPST**         Used to hold the start address of sprite space.
 
-SPND         Used to hold the end of sprite space, i.e. the first free byte
+**SPND**         Used to hold the end of sprite space, i.e. the first free byte
              after the last sprite.  This is the address of the
              foreground scrolling buffer.
 
-SLEN         Used to hold the length of sprite space to be cleared
+**SLEN**         Used to hold the length of sprite space to be cleared
              by the COLD# command.
 
-MLEN         Used to hold the size and direction of the relocation.
+**MLEN**         Used to hold the size and direction of the relocation.
              A positive value relocates sprites to higher memory and
              a negative value to lower memory.
 
-SPTR         On return from the TEST command, SPTR points to the start
+**SPTR**         On return from the TEST command, SPTR points to the start
              of the sprite.
 
-DPTR         On return from the TEST command, DPTR points to the start
+**DPTR**         On return from the TEST command, DPTR points to the start
              of the pixel data.
 
 
-Alternate Variables
+**Alternate Variables**
 
 Eleven of the previously listed variables are replecated for use by the background
 program (see Foreground/Background).  These are ROW', COL', LEN', HGT', NPX',

@@ -9,7 +9,7 @@ extreme case of the screen window containing all pixels set, then an agreement
 would be found with all the sprites tested.
 
 
-SCROLLING LANDSCAPES
+**SCROLLING LANDSCAPES**
 
 Scrolling landscapes are an integral part of so many video games that it is worth
 a brief description of how they can best be produced using White Lightning.
@@ -38,7 +38,7 @@ dummy column is then loaded from the appropriate sprite column and so on.  The
 method can be simply adapted to make the landscape wrap and is usually implemented
 under interrupt.
 
-PROGRAMMABLE SPRITES
+**PROGRAMMABLE SPRITES**
 
 One of the most common applications of the background mode is the setting of
 sprites into automatic motion.  Perhaps the chief advantage that a language has

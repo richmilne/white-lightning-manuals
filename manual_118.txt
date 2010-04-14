@@ -1,9 +1,9 @@
-﻿NOOP                   ---
+﻿**NOOP**                   ---
 
 This will perform a no-operation, i.e. do nothing.
 
 
-WARM->COLD
+**WARM->COLD**
 
 This allows you to preserve any FORTH word defined to date, so that a COLD start
 will not delete them.  When saving your code, save from 24832 to HERE.

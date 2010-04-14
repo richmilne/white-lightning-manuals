@@ -1,4 +1,4 @@
-﻿THE THREE VEHICLE SCROLLING DEMO
+﻿**THE THREE VEHICLE SCROLLING DEMO**
 
 This demonstrates the 3 precisions of scrolls available - 1, 4 and 8 pixels.
 
@@ -10,7 +10,7 @@ Sprite 3, the dragster, demonstrates, the very fast 8 pixel, or 1 character
 scroll, using SCL8V.
 
 
-THE TELEVISION
+**THE TELEVISION**
 
 The television, sprite 13, is placed on the screen, a window is defined inside the
 screen.
@@ -22,7 +22,7 @@ Sprite 4, the duck, is used to demonstrate the 4 pixel scrool with wrap, WRR4V.
 Sprite 6, the rocket, is used to demonstrate the 8 pixel scroll with wrap, WRR8V.
 
 
-THE THREE SPACESHIPS
+**THE THREE SPACESHIPS**
 
 In this demonstration the 3 spaceships, sprite 15, are placed on the screen along
 with their shadows, sprite 16.
@@ -36,7 +36,7 @@ execution with the foreground being scrolled two characters per execution to giv
 a sense of perspective.
 
 
-THE BOUNCING MAN WITH HAT
+**THE BOUNCING MAN WITH HAT**
 
 The bouncing man is animated using sprites 28 and 29.  The sprites are placed on
 the screen using PUTXRS, and removed again using PUTXRS, such that the character
@@ -48,7 +48,7 @@ Disabling interrupts, using DI, during the animation appeared to reduce the slig
 flicker of the character, the interrupts where enabled again using EI.
 
 
-THE CIRCLE OF ROTATING INVADERS
+**THE CIRCLE OF ROTATING INVADERS**
 
 From the original invader, sprite 24, sprites 25, 26 and 27 were created using the
 'ROTATE' facility of the sprite development package.

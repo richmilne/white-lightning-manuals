@@ -28,7 +28,7 @@ previous example is a little confusing at first, carry out your own
 experimentation until it becomes clear.
 
 
-ERRORS
+**ERRORS**
 
 The graphics commands do not in many cases provide the user with error messages,
 but instead, if an attempt is made to execute a command which is not possible, for
@@ -40,7 +40,7 @@ made to access a non-existent sprite, or to insert an already existing sprite
 using ISPRITE.
 
 
-SPRITE AND BUFFER ORGANISATION
+**SPRITE AND BUFFER ORGANISATION**
 
 Before discussing the sprite manipulation commands in detail, it is worth
 describing the organisation of sprites in some detail.  The user does not need

@@ -13,7 +13,7 @@ Sprite numbers do not need to run sequentially, but the earlier a sprite is
 defined, the more rapid its access.
 
 
-LOADING SPRITES FROM TAPE
+**LOADING SPRITES FROM TAPE**
 
 Sprites saved to tape using the development software can be loaded into the main
 program at the start of the session when the "LOAD SPRITES Y/N" prompt appears.
@@ -25,7 +25,7 @@ If sprites are saved and later loaded from White Lightning, SPST and SPND will
 need to be set by hand.
 
 
-THE BUFFER
+**THE BUFFER**
 
 When vertical scrolling takes place, be it for pixel data or attributes, with or
 without wrap, data has to be temporarily stored for later retrieval.  If a
@@ -49,7 +49,7 @@ space, you can always relocate sprite space downward and likewise, if you have
 more than you need, you can relocate upwards.
 
 
-BACKGROUND SCROLLING
+**BACKGROUND SCROLLING**
 
 When programs are executed in background (see Foreground/Background) it is risky
 to share a common scrolling buffer, since the background program could execute

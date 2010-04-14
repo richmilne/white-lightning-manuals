@@ -8,7 +8,7 @@ above, this time at column 10 and without wrap, you could use the following:
 10 COL ! SCL4V <CR>
 
 
-Vertical scrolls
+**Vertical scrolls**
 
 These work in a similar way to the horizontal scrolls, but in addition to setting
 up the window with the four window parameters COL, ROW, HGT and LEN, a further
@@ -26,8 +26,8 @@ HGT          Height of the window (1-24)
 
 Command               Action
 
-WCRV         Vertical scroll with wrap
-SCRV         Vertical scroll, no wrap
+**WCRV**         Vertical scroll with wrap
+**SCRV**         Vertical scroll, no wrap
 
 Note:
 
@@ -43,7 +43,7 @@ is set up.  This is maintained so long as ISPRITE and DSPRITE are used in
 preference to SPRITE and WIPE.
 
 
-Attribute Scrolls
+**Attribute Scrolls**
 
 Attribute scrolls are similar to the pixel data scrolls but all scrolls are always
 by one character, with wrap.

@@ -1,7 +1,7 @@
-﻿THE DEMONSTRATION PROGRAM - A BRIEF DESCRIPTION
+﻿**THE DEMONSTRATION PROGRAM - A BRIEF DESCRIPTION**
 
 
-THE WHITE LIGHTNING SCREEN
+**THE WHITE LIGHTNING SCREEN**
 
 The green text at the top of the screen, sprites 59 and 60, is scrolled right in
 background.
@@ -15,7 +15,7 @@ window is scrolled left and the right window scrolled right using SCL8V and SCR8
 respectively.
 
 
-THE TRAIN
+**THE TRAIN**
 
 The steam engine is comprised of sprites 9, with sprites 18, 19, 20, and 21 for
 the wheels in their four positions.  The coaches are comprised of sprites 14 with
@@ -25,7 +25,7 @@ The track, sprite 10, is scrolled left using WRL1V.  By means of an increasing a
 decreasing delay loop, acceleration and decceleration effects are achieved.
 
 
-THE SPIDERS
+**THE SPIDERS**
 
 Five spiders, sprite 7, are placed on the screen.  From the left, spider 1 is
 scrolled down by 1 pixel, spider 3 is scrolled up 8 pixels and spider 5 is
@@ -34,7 +34,7 @@ scrolled up 4 pixels all - in background.
 Spiders 2 and 4 are animated up and down using sprites 7 and 8.
 
 
-THE SIDEWAYS SCROLLING CIRCLE OF INVADERS
+**THE SIDEWAYS SCROLLING CIRCLE OF INVADERS**
 
 Twelve Invaders, sprite 24, are placed in a circle on the screen, using either
 WRR1M, WRR4M or WRR8M they are scrolled in memory and then placed on the screen
@@ -44,14 +44,14 @@ The Invader in the centre of the screen is scrolled left by 1 pixel in
 background.
 
 
-THE ARRAY OF CLOCKWORK TOYS
+**THE ARRAY OF CLOCKWORK TOYS**
 
 The green clockwork toys are animated using sprites 49 and 50.  Each sprite in the
 array is individualy placed on the screen using PUTBLS.  The movement is
 controlled by simple 'DO LOOPS'.
 
 
-THE VERTICAL ATTRIBUTE SCROLL
+**THE VERTICAL ATTRIBUTE SCROLL**
 
 Using ATTUPV and decreasing and increasing delay loops the attributes placed on
 the screen are scrolled up, whilst a random border colour change is executed.

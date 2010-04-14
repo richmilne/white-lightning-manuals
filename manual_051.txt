@@ -1,4 +1,4 @@
-﻿ISPRITE AND DSPRITE
+﻿**ISPRITE AND DSPRITE**
 
 it sprites are located at the top of memory, then ISPRITE and DSPRITE can be used
 to create and destroy sprites without the need for any complex calculations.
@@ -23,7 +23,7 @@ LEN          Length of the sprite be be inserted
 
 Command              Action
 
-ISPRITE      Create new sprite and adjust memory
+**ISPRITE**      Create new sprite and adjust memory
 
 
 Parameter             Use
@@ -33,7 +33,7 @@ SPN          Number of sprite to be inserted
 
 Command              Action
 
-DSPRITE      Wipe old sprite and adjust memory
+**DSPRITE**      Wipe old sprite and adjust memory
 
 
 Note:

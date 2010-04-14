@@ -1,4 +1,4 @@
-﻿THE BASIC INTERFACE
+﻿**THE BASIC INTERFACE**
 
 The BASIC interface was provided to increase the flexibility of the language and
 allow the newcomer to Forth, a gradual transition.  Some applications are actually
@@ -10,7 +10,7 @@ There are four words to master at the Forth end and 3 USR calls to master at the
 BASIC end.  Do not use CLEAR or NEW whilst in BASIC.
 
 
-The Command Level
+**The Command Level**
 
 When White Lightning is first entered from a COLD start, BASIC is located beneath
 Forth and there is approximately 1k of program space if microdrives are not in
@@ -29,7 +29,7 @@ This is the normal WARM start entry.  Note that PRINT USR must be used and not
 RANDOMIZE USR, or an OUT OF SCREEN error may occur.
 
 
-BASIC AS A SUBROUTINE
+**BASIC AS A SUBROUTINE**
 
 At the next level, lines of BASIC can be executed as if they were subroutines and
 then return made to your Forth program.  The word at the Forth end is GOTO.  To

@@ -1,4 +1,4 @@
-﻿DEFINITIONS                                               L1
+﻿**DEFINITIONS**                                               L1
 
 Used in the form:
               cccc DEFINITIONS
@@ -7,7 +7,7 @@ vocabulary name cccc made it in the CONTEXT vocabulary, and executing DEFINITION
 made both specify vocabulary cccc.
 
 
-DIGIT             c n1 --- n2 tf  (ok)
+**DIGIT**             c n1 --- n2 tf  (ok)
                   c n1 --- ff     (bad)
 
 Converts the ASCII characters c (using base n1) to its binary equivalent n2,
@@ -15,7 +15,7 @@ accompanied by a true flag.  If the conversion is invalid, leaves only a false
 flag.
 
 
-DLITERAL             d --- d  (executing)
+**DLITERAL**             d --- d  (executing)
                      d ---    (compiling)                  P
 
 If compiling, compile a stack double number into a literal.  Later execution of
@@ -23,12 +23,12 @@ the definition containing the literal will push it to the stack.  If executing,
 the number will remain on the stack.
 
 
-DMINUS              d1 --- d2
+**DMINUS**              d1 --- d2
 
 Convert d1 to its double number two's complement.
 
 
-DO               n1 n2 --- (execute)
+**DO**               n1 n2 --- (execute)
                 addr n --- (compile)                 P,C2,L0
 
 Occurs in a colon-definition in form:
@@ -47,7 +47,7 @@ When compiling within the colon definition, DO compiles (DO), leaving the
 following address addr and n for later error checking.
 
 
-DOES>                                                     L0
+**DOES>**                                                     L0
 
 A word which defines the run-time action within a high-level defining word.  DOES>
 alters the code field and first parameter of the new word, to execute the sequence

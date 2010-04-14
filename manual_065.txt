@@ -1,8 +1,8 @@
-﻿ATTOFF       After the execution of ATOFF, group GETs and PUTs will move
+﻿**ATTOFF**       After the execution of ATOFF, group GETs and PUTs will move
              pixel data only.
 
 
-CALL         Control jumps to a machine code subroutine whose address
+**CALL**         Control jumps to a machine code subroutine whose address
              is held at the top of the stack.
 
 Example:
@@ -13,7 +13,7 @@ would execute a machine code subroutine at location D000 HEX. Don't type this
 unless you have a machine code routine at HEX D000!
 
 
- ZAP         Once program development is completed and you have compiled
+**ZAP**          Once program development is completed and you have compiled
              your final program into the dictionary, typing ZAP will
              produce a run-time version.  The length of the final
              version is displayed to the screen and a copy can be saved
@@ -30,7 +30,7 @@ unless you have a machine code routine at HEX D000!
               can be commercially sold.
 
 
- ZAPINT       As above except that programs which utilise the
+**ZAPINT**        As above except that programs which utilise the
               Foreground/8ackground facility must be produced using the
               ZAPINT command as opposed to the ZAP command.  The only
               real difference is that the first five screens also need
@@ -38,13 +38,13 @@ unless you have a machine code routine at HEX D000!
               used by the final program.
 
 
- PRT-ON       All subsequent screen output is to ZX-Printer only.
+**PRT-ON**        All subsequent screen output is to ZX-Printer only.
 
 
- PRT-OFF      All subsequent output is to screen only.
+**PRT-OFF**       All subsequent output is to screen only.
 
 Example:
 
-PRT-0N VLIST PRT-OFF
+PRT-ON VLIST PRT-OFF
 
 will list the current FORTH dictionary to the ZX-Printer.

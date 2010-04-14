@@ -1,59 +1,59 @@
-﻿DSPRITE  SPN                Delete Sprite and recover bytes from below.
+﻿**DSPRITE**  SPN                Delete Sprite and recover bytes from below.
 
-ISPRITE  SPN, HGT, LEN      Create Sprite and move current Sprites
+**ISPRITE**  SPN, HGT, LEN      Create Sprite and move current Sprites
                             down to accommodate.
 
-WIPE     SPN                Delete Sprite and recover bytes from above.
+**WIPE**     SPN                Delete Sprite and recover bytes from above.
 
-SPRITE   SPN, HGT, LEN      Create Sprite at free space after last
+**SPRITE**   SPN, HGT, LEN      Create Sprite at free space after last
                             Sprite.
 
-RELOCATE MLEN               Relocate Sprite space by signed 16 bit
+**RELOCATE** MLEN               Relocate Sprite space by signed 16 bit
                             length MLEN.
 
-COLD#    SPST, SLEN         Reset Sprite space to begin at SPST with
+**COLD#**    SPST, SLEN         Reset Sprite space to begin at SPST with
                             SLEN bytes cleared to zeros.
 
-SETAV    HGT, LEN, COL,     Fill the screen window with the current
+**SETAV**    HGT, LEN, COL,     Fill the screen window with the current
          ROW                attributes.
 
-SETAM    SPN                Fill the Sprite with the current attributes.
+**SETAM**    SPN                Fill the Sprite with the current attributes.
 
-CLSV     HGT, LEN, COL,     Clear the screen window and fill with the
+**CLSV**     HGT, LEN, COL,     Clear the screen window and fill with the
          ROW                current attributes.
 
-CLSM     SPN                Clear the Sprite.
+**CLSM**     SPN                Clear the Sprite.
 
-ADJV     HGT, LEN, COL,     Adjust the screen window to lie on the
+**ADJV**     HGT, LEN, COL,     Adjust the screen window to lie on the
          ROW                screen.
 
-ADJM     SPN, COL, ROW      Adjust COL, ROW, HGT, LEN, SCOL, SROW such
+**ADJM**     SPN, COL, ROW      Adjust COL, ROW, HGT, LEN, SCOL, SROW such
                             that GETS and PUTS lie on the screen.
 
-RND      N1                 Leave a random number between 0 and N1 on
+**RND**      N1                 Leave a random number between 0 and N1 on
                             the stack.
 
-OUT#     N1, N2             Output LSB of N1 to 16 bit port address N2.
+**OUT#**     N1, N2             Output LSB of N1 to 16 bit port address N2.
 
-IN#      N1                 Leave on the stack, byte from 16 bit port
+**IN#**      N1                 Leave on the stack, byte from 16 bit port
                             address N1.
 
-ZAPINT                      Create run time program with interrupt
+**ZAPINT**                      Create run time program with interrupt
                             facility.
 
-ZAP                         Create run time program without interrupt
+**ZAP**                         Create run time program without interrupt
                             facility.
 
-CALL     N1                 Execute machine code subroutine at address
+**CALL**     N1                 Execute machine code subroutine at address
                             N1.
 
-KB       N1, N2             Test for key press at row N1, col N2 and
+**KB**       N1, N2             Test for key press at row N1, col N2 and
                             stack true or false flag.
 
-SCANV    COL, ROW           The character position is scanned for screen
+**SCANV**    COL, ROW           The character position is scanned for screen
                             data and a true or false flag stacked.
 
-SCANM    SPN                The Sprite is scanned for data and a true
+**SCANM**    SPN                The Sprite is scanned for data and a true
                             or false flag stacked.
 
-BLEEP    N1, N2             Sinclair BEEP.  N1 is duration, N2 is pitch.
+**BLEEP**    N1, N2             Sinclair BEEP.  N1 is duration, N2 is pitch.

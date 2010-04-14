@@ -23,7 +23,7 @@
     DSPRITE, then the second occurrence will be found.
 
 
-Extending the Forth Itself
+**Extending the Forth Itself**
 
 One of the beauties of the Forth language is that it is extendible, so if you've
 added a few of your own commands which you would like to become a permanent

@@ -2,7 +2,7 @@
 ! <CR> and so on.  Type: INT-OFF <CR> to halt FREDA.  Now type: FORGET FREDA <CR>
 
 
-Frequency and Phase
+**Frequency and Phase**
 
 One of the problems with executing a word on each interrupt,  is that the dot
 scanning the screen may overtake the screen operation in the same position on each

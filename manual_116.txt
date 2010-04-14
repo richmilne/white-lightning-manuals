@@ -1,4 +1,4 @@
-﻿VOCABULARY                                               E,L
+﻿**VOCABULARY**                                               E,L
 
 A defining word used in the form:
                VOCABULARY cccc
@@ -13,13 +13,13 @@ Forth.  By convention, vocabulary names are to be declared IMMEDIATE.  See
 VOC-LINK.
 
 
-VLIST
+**VLIST**
 
 List the names of the definitions in the context vocabulary.  Pressing "Break"
 will terminate the listing.
 
 
-WARNING                --- addr                            U
+**WARNING**                --- addr                            U
 
 A user variable containing a value controlling messages.
 If = 1 disc is present, and screen 4 of drive 0 is the base location for messages.
@@ -27,14 +27,14 @@ If = 0, no disc is present and messages will be presented by number.  If = -1,
 execute (ABORT)  for a user specified procedure.  See MESSAGE, ERROR, ABORT.
 
 
-WHERE            n1 n2 ---
+**WHERE**            n1 n2 ---
 
 If an error occurs during LOAD from disc, ERROR leaves these values on the stack
 to show the user where the error occurred. WHERE uses these to print the screen
 and line number of where this is.
 
 
-WHILE                f --- (run-time)
+**WHILE**                f --- (run-time)
               addr1 n1 --- addr1 n1 addr2 n2            P,C2
 
 Occurs in a colon-definition in the form:
@@ -48,7 +48,7 @@ At compile time, WHILE emplaces (0BRANCH) and leaves addr2 of the reserved offse
 The stack values will be resolved by REPEAT.
 
 
-WIDTH                  --- addr                            U
+**WIDTH**                  --- addr                            U
 
 In Fig-FORTH, a user variable containing the maximum number of letters saved in
 the compilation of a definitions name.  It must be 1 through to 31, having a

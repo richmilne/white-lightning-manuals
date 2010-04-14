@@ -1,9 +1,9 @@
 ﻿Command              Action
 
-WIPE         Destroy a sprite and adjust memory
+**WIPE**         Destroy a sprite and adjust memory
 
 
-RELOCATE
+**RELOCATE**
 
 An alternative method for creating more space to define new sprites, is to
 relocate sprite space downward.  Only one parameter is required, MLEN.  A positive
@@ -18,7 +18,7 @@ MLEN          Size and direction of relocation
 
 Command              Action
 
-RELOCATE      Relocate all sprite data and reset pointers
+**RELOCATE**      Relocate all sprite data and reset pointers
 
 Example:
 
@@ -29,7 +29,7 @@ do this use the following:
 -149 MLEN ! RELOCATE
 
 
-TEST
+**TEST**
 
 For advanced applications there is a command to interrogate sprite details.  SPN
 is loaded with the number of the sprite to be interrogated, and after execution,

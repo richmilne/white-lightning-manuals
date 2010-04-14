@@ -1,7 +1,7 @@
-﻿                                    SECTION 3
+﻿                                    **SECTION 3**
 
-                                      IDEAL
-                                  by John Gross
+                                      **IDEAL**
+                                  **by John Gross**
 
 IDEAL has been designed to facilitate the manipulation of sprites and screen data,
 and with its 100 or so instructions, provides a powerful and comprehensive
@@ -13,13 +13,13 @@ technique effectively will save a great deal of space and, in many cases,
 execution time.
 
 
-SPRITE
+**SPRITE**
 
 A sprite is a software controllable graphics character.  White Lightning supports
 up to 255 sprites with user selectable dimensions.
 
 
-SCREEN WINDOWS
+**SCREEN WINDOWS**
 
 A screen window is a section of the screen defined by the four variables COL, ROW,
 HGT and LEN.  Columns are in the range 0 to 31, Rows are in the range 0 to 23,
@@ -34,7 +34,7 @@ example type:
 The window has been inverted to mark it out.
 
 
-SPRITE WINDOWS
+**SPRITE WINDOWS**
 
 A sprite window is a section of the sprite defined by the Forth variables SCOL,
 SROW, HGT and LEN.  This time SCOL and SROW specify the position of the top left
@@ -42,7 +42,7 @@ hand corner of the sprite window.  HGT and LEN are again used to specify the
 dimensions of the window.
 
 
-SPRITE SPACE
+**SPRITE SPACE**
 
 Sprite space is the area of memory containing the previously defined sprites.  The
 variable SPST holds the address of the start of sprite space, so SPST should never
@@ -52,7 +52,7 @@ sprite space.  SPND should never be higher than FFF0 Hex if routines are being
 executed in Background.
 
 
-PIXEL DATA
+**PIXEL DATA**
 
 For those not acquainted with the workings of the Spectrum screen display, each
 character on the screen is produced as follows:  each character cell is an array

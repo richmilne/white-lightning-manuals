@@ -1,4 +1,4 @@
-﻿SPRITE UTILITIES
+﻿**SPRITE UTILITIES**
 
 All the sprite utilities described in this section are available at run-time, but
 we strongly recommend that all sprite allocation is undertaken at the sprite
@@ -7,7 +7,7 @@ run-time.  They are provided for advanced programming applications only and shou
 never be executed in background.
 
 
-COLD #
+**COLD #**
 
 This command sets the end of sprite space pointer SPND, to the value in SPST, the
 start of sprite space pointer.  It then clears memory above SPST.  The size of the

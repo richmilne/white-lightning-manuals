@@ -1,59 +1,59 @@
-﻿PWNDM    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of Sprite
+﻿**PWNDM**    SP1, SP2, SCOL,    Logically AND window at SCOL,SROW of Sprite
          SROW               SP2 into Sprite SP1.
 
-PWATTM   SP1, SP2, SCOL,    Block move attributes of window at
+**PWATTM**   SP1, SP2, SCOL,    Block move attributes of window at
          SROW               SCOL,SROW of Sprite SP2 into Sprite SP1.
 
-COPYM    SP1, SP2           As GWBLM but SCOL,SROW assumed zero.
+**COPYM**    SP1, SP2           As GWBLM but SCOL,SROW assumed zero.
 
-COPXRM   SP1, SP2           As GWXRM but SCOL,SROW assumed zero.
+**COPXRM**   SP1, SP2           As GWXRM but SCOL,SROW assumed zero.
 
-COPORM   SP1, SP2           As GWORM but SCOL,SROW assumed zero.
+**COPORM**   SP1, SP2           As GWORM but SCOL,SROW assumed zero.
 
-COPNDM   SP1, SP2           As GWNDM but SCOL,SROW assumed zero.
+**COPNDM**   SP1, SP2           As GWNDM but SCOL,SROW assumed zero.
 
-COPATTM  SP1, SP2           As GWATTM but SCOL,SROW assumed zero.
+**COPATTM**  SP1, SP2           As GWATTM but SCOL,SROW assumed zero.
 
-INVV     HGT, LEN, COL,     Invert screen window.
+**INVV**     HGT, LEN, COL,     Invert screen window.
          ROW
 
-MIRV     HGT, LEN, COL,     Mirror screen window about its centre.
+**MIRV**     HGT, LEN, COL,     Mirror screen window about its centre.
          ROW
 
-MARV     HGT, LEN, COL,     Mirror screen window attributes about
+**MARV**     HGT, LEN, COL,     Mirror screen window attributes about
          ROW                centre.
 
-INVM     SPN                Invert Sprite data.
+**INVM**     SPN                Invert Sprite data.
 
-MIRM     SPN                Mirror Sprite about its centre.
+**MIRM**     SPN                Mirror Sprite about its centre.
 
-MARM     SPN                Mirror Sprite attributes about centre.
+**MARM**     SPN                Mirror Sprite attributes about centre.
 
-SPINM    SP1, SP2           Rotate Sprite SP2 90 degrees clockwise
+**SPINM**    SP1, SP2           Rotate Sprite SP2 90 degrees clockwise
                             into Sprite SP1.
 
-DSPM     SP1, SP2           Enlarge Sprite SP2 into Sprite SP1.
+**DSPM**     SP1, SP2           Enlarge Sprite SP2 into Sprite SP1.
 
-HALT                        Suspend CPU operation until next interrupt.
+**HALT**                        Suspend CPU operation until next interrupt.
 
-EI                          Enable interrupt.
+**EI**                          Enable interrupt.
 
-DI                          Disable interrupt.
+**DI**                          Disable interrupt.
 
-EXX                         Exchange Ideal variables with the alternate
+**EXX**                         Exchange Ideal variables with the alternate
                             Ideal variables.
 
-INT-ON   FORTH WORD         Execute specified Forth Word under interrupt.
+**INT-ON**   FORTH WORD         Execute specified Forth Word under interrupt.
 
-INT-OFF                     Terminate execution of interrupt driven
+**INT-OFF**                     Terminate execution of interrupt driven
                             word.
 
-PROG                        Enter BASIC.
+**PROG**                        Enter BASIC.
 
-RESERVE  N1                 Reserve N1 bytes in the dictionary for
+**RESERVE**  N1                 Reserve N1 bytes in the dictionary for
                             BASIC source.
 
-GOTO     N1                 Begin execution of BASIC at line N1.
+**GOTO**     N1                 Begin execution of BASIC at line N1.
 
-RETUSR                      Return to BASIC from RANDOMIZE USR 30000
+**RETUSR**                      Return to BASIC from RANDOMIZE USR 30000
                             call.

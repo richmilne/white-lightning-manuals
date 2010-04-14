@@ -1,4 +1,4 @@
-﻿;CODE                                                 P,C,L0
+﻿**;CODE**                                                 P,C,L0
 
 Used in the form:
                : cccc  ....  ;CODE
@@ -15,25 +15,25 @@ code following cccc.  That is, when nnnn is executed, it does so by jumping to t
 code after nnnn.  An existing defining word must exist in cccc prior to ;CODE.
 
 
-;S                                                      P,L0
+**;S**                                                      P,L0
 
 Stop interpretation of a screen.  ;S is also the run-time word compiled at the end
 of a colon-definition, which returns execution to the calling procedure.
 
 
-<                n1 n2 --- f                              L0
+**<**                n1 n2 --- f                              L0
 
 Leave a true flag if n1 is less than n2; otherwise leave a false flag.
 
 
-<#                                                        L0
+**<#**                                                        L0
 
 Setup for pictured numeric output formatting using the words:
                <#  #  #S  SIGN  #>
 The conversion is done on a double number producing text at PAD.
 
 
-<BUILDS                                                 C,L0
+**<BUILDS**                                                 C,L0
 
 Used within a colon-definition:
              :  cccc  <BUILDS  ...
@@ -48,11 +48,11 @@ run-time procedures to written in high-level, rather than in assembler code (as
 required by ;CODE).
 
 
-=                n1 n2 --- f                              L0
+**=**                n1 n2 --- f                              L0
 
 Leave a true flag if n1=n2 otherwise leave a false flag.
 
 
->                n1 n2 --- f                              L0
+**>**                n1 n2 --- f                              L0
 
 Leave a true flag if n1 is greater than n2 otherwise a false flag.

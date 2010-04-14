@@ -1,42 +1,42 @@
-﻿                                   USR CALLS
+﻿                                   **USR CALLS**
 
 
-PRINT USR 24832             Enter Forth from BASIC via a COLD START.
+**PRINT USR 24832**             Enter Forth from BASIC via a COLD START.
 
-PRINT USR 24836             Enter Forth from BASIC via a WARM START.
+**PRINT USR 24836**             Enter Forth from BASIC via a WARM START.
 
-PRINT USR 30006             Re-enter Forth from BASIC and continue
+**PRINT USR 30006**             Re-enter Forth from BASIC and continue
                             execution of the next Forth word.
 
-RANDOMIZE USR 30000         Call Forth and continue execution
+**RANDOMIZE USR 30000**         Call Forth and continue execution
                             up to the first occurrence of the Forth
                             word RETUSR.
 
 
 
-                        EXTENDED SPECTRA-FORTH GLOSSARY
+                        **EXTENDED SPECTRA-FORTH GLOSSARY**
 
 
-WORD     PARAMETERS         ACTION
+**WORD**     **PARAMETERS**         **ACTION**
 
 
-PRT-ON                      Send all subsequent output to the printer.
+**PRT-ON**                      Send all subsequent output to the printer.
 
-PRT-OFF                     Send all subsequent output to the screen.
+**PRT-OFF**                     Send all subsequent output to the screen.
 
-EDIT     N1                 Edit line number N1 from the current screen.
+**EDIT**     N1                 Edit line number N1 from the current screen.
 
-WARM->COL                   Create extended Forth.
+**WARM->COLD**                  Create extended Forth.
 
-J                           Copy second loop index to the top of the
+**J**                           Copy second loop index to the top of the
                             stack.
 
-K                           Copy third loop index to the top of the
+**K**                           Copy third loop index to the top of the
                             stack.
 
-DUMP     N1                 Memory dump from address N1.
+**DUMP**     N1                 Memory dump from address N1.
 
-WARM                        Perform a warm start.
+**WARM**                        Perform a warm start.
 
-EMITC    N1                 As EMIT but control characters are also
+**EMITC**    N1                 As EMIT but control characters are also
                             supported.

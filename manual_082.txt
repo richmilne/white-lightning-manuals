@@ -1,4 +1,4 @@
-﻿Compiled and Completed Programs
+﻿**Compiled and Completed Programs**
 
 Once the program is fully debugged and running, a final run-time version can be
 produced.  This is the only form in which programs generated from White Lightning
@@ -19,8 +19,8 @@ Remember that a lot of run-time software is saved with your final code, so even 
 your program is only two lines long, the resulting program will be pretty large.
 
 
-                             TABLE 1
-                  Table of Screen Numbers and Addresses
+                             **TABLE 1**
+                  **Table of Screen Numbers and Addresses**
 
 
 Screen           Start

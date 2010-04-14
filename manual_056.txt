@@ -1,14 +1,14 @@
 ﻿Command                Action
 
-ATTON    Enable the flow of attribute data between the sprite and the screen
+**ATTON**    Enable the flow of attribute data between the sprite and the screen
          window
-ATTOFF   Disable the flow of attributes between the sprite and the screen
+**ATTOFF**   Disable the flow of attributes between the sprite and the screen
          window
 
 We now come to the group 1 commands themselves:
 
 
-GETS
+**GETS**
 
 Parameter                 Use
 
@@ -18,10 +18,10 @@ ROW          Top row of target screen window (0 to 23)
 
 Command                Action
 
-GETBLS       Block move screen window into sprite
-GETORS       OR screen window into sprite
-GETXRS       XOR screen window into sprite
-GETNDS       AND screen window into sprite
+**GETBLS**       Block move screen window into sprite
+**GETORS**       OR screen window into sprite
+**GETXRS**       XOR screen window into sprite
+**GETNDS**       AND screen window into sprite
 
 Note:
 
@@ -43,7 +43,7 @@ Note that if ATTON was the last switch command, it would not be needed in the
 above.
 
 
-PUTS
+**PUTS**
 
 These commands are identical to the group 1 "GETS" except that data transfer is
 from the sprite to the screen.  The results of the various operations are

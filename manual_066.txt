@@ -1,4 +1,4 @@
-﻿FORTH/BASIC WORDS
+﻿**FORTH/BASIC WORDS**
 
 For those users who have mastered and grown used to the Spectrum's own graphics
 commands, a set of 18 Forth implementations of Spectrum words is provided.
@@ -8,56 +8,56 @@ should be re-entered via a WARM start, i.e. PRINT USR 24836.  For a full
 description of the action of each of these words refer to your Spectrum manual.
 
 
-PARAMETERS      WORD      ACTION
+**PARAMETERS**      **WORD**      **ACTION**
 
-                COPY      The screen in 'dumped' to the ZX-Printer.
+                **COPY**      The screen in 'dumped' to the ZX-Printer.
 
-ROW, COL        AT        The print position is moved the specified
+ROW, COL        **AT**        The print position is moved the specified
                           Column and Row.
 
-COLOUR          BORDER    The border colour is set to one of the 8
+COLOUR          **BORDER**    The border colour is set to one of the 8
                           Spectrum colours.
 
-                CLS       The screen is cleared of pixel data and the
+                **CLS**       The screen is cleared of pixel data and the
                           attributes set to the current INK, PAPER,
                           BRIGHT and FLASH values.
 
-X,Y,ANGLE       DRAW-ARC  See Spectrum manual page 122.
+X,Y,ANGLE       **DRAW-ARC**  See Spectrum manual page 122.
 
-X,Y,RADIUS      CIRCLE    See Spectrum manual page 123.
+X,Y,RADIUS      **CIRCLE**    See Spectrum manual page 123.
 
-X,Y             DRAW      See Spectrum manual page 121.
+X,Y             **DRAW**      See Spectrum manual page 121.
 
-X,Y             PLOT      See Spectrum manual page 121.
+X,Y             **PLOT**      See Spectrum manual page 121.
 
-ROW, COL        SCREEN$   The character at the screen position defined
+ROW, COL        **SCREEN$**   The character at the screen position defined
                           by the two values at the top of the stack is
                           tested to see if it is one of the Spectrum's
                           pre-defined characters.  The ASCII value
                           is left on the stack.
 
-ROW, COL        ATTR      The code for the attribute at the screen
+ROW, COL        **ATTR**      The code for the attribute at the screen
                           position defined by the top two values on the
                           stack is left on the stack.
 
-X,Y             POINT     The pixel at the (x,y) co-ord defined by the
+X,Y             **POINT**     The pixel at the (x,y) co-ord defined by the
                           top two values on the stack is tested and
                           a true or false flag stacked depending on
                           whether the pixel is set or not.
 
-COL             TAB       Set the horizontal print position to the
+COL             **TAB**       Set the horizontal print position to the
                           value at the top of the stack.
 
-COLOUR          INK       Set the INK colour to the value at the top
+COLOUR          **INK**       Set the INK colour to the value at the top
                           of the stack.
 
-COLOUR          PAPER     Set the PAPER colour to the value at the top
+COLOUR          **PAPER**     Set the PAPER colour to the value at the top
                           of the stack.
 
-FLAG            OVER.     Note the full stop at the end of OVER.
+FLAG            **OVER.**     Note the full stop at the end of OVER.
                           This sets the printing mode according to
                           the value of FLAG which is zero or one.
 
-FLAG            INVERSE   As for OVER.
+FLAG            **INVERSE**   As for OVER.
 
-FLAG            BRIGHT    As for OVER.
+FLAG            **BRIGHT**    As for OVER.

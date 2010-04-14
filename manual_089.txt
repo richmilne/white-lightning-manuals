@@ -1,9 +1,9 @@
-﻿                           THE WHITE LIGHTNING ARCADE
-                                GRAPHICS LIBRARY
+﻿                           **THE WHITE LIGHTNING ARCADE**
+                                **GRAPHICS LIBRARY**
 
 
-     ARCADE CHAR-
-     ACTER NUMBER
+     **ARCADE CHAR-**
+     **ACTER NUMBER**
 
          1-  8            Asteroids Space Ships
          9- 11            Asteroids
@@ -33,12 +33,12 @@
 
 
 
-                         WHITE LIGHTNING DEMONSTRATION
-                                SPRITE LIBRARY
+                         **WHITE LIGHTNING DEMONSTRATION**
+                                **SPRITE LIBRARY**
 
 
-SPRITE        DESCRIPTION       INK   PAPER   LENGTH  HEIGHT
-NUMBER                          COL    COL
+**SPRITE**        **DESCRIPTION**       **INK**   **PAPER**   **LENGTH**  **HEIGHT**
+**NUMBER**                          **COL**    **COL**
 
   1     VINTAGE CAR               4     0        4       2
   2     VAN                       5     0        4       2

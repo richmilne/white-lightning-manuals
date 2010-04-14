@@ -1,10 +1,10 @@
-﻿INDEX          from to ---
+﻿**INDEX**          from to ---
 
 Print the first line of each screen over the range from, to.  This is used to view
 the comment lines of an area of text on disc screens.
 
 
-INTERPRET
+**INTERPRET**
 
 The outer text interpreter which sequentially executes or compiles text from the
 input stream (terminal or disc) depending on STATE.  If the word name cannot be
@@ -16,42 +16,42 @@ number value will be left.  The decimal point has no other purpose than to force
 this action.  See NUMBER.
 
 
-KEY                    --- c                              L0
+**KEY**                    --- c                              L0
 
 Leave the ASCII value of the next terminal key struck.
 
 
-LATEST                 --- addr
+**LATEST**                 --- addr
 
 Leave the name field address of the topmost word in the CURRENT vocabulary.
 
 
-LEAVE                                                   C,L0
+**LEAVE**                                                   C,L0
 
 Force termination of a DO-LOOP at the next opportunity by setting the loop limit
 equal to the current value of the index.  The index itself remains unchanged, and
 execution proceeds normally until LOOP or +LOOP is encountered.
 
 
-LFA                pfa --- lfa
+**LFA**                pfa --- lfa
 
 Convert the parameter field address of a dictionary definition to its link field
 address.
 
 
-LIMIT                  --- n
+**LIMIT**                  --- n
 
 A constant leaving the address just above the highest memory available for a disc
 buffer.  Usually this is the highest system memory.
 
 
-LINE                 n --- addr
+**LINE**                 n --- addr
 
 Leave address of line n of current screen.  This address will be in the disc
 buffer area
 
 
-LIST                 n ---                                L0
+**LIST**                 n ---                                L0
 
 Display the ASCII text of screen n on the selected output device.  SCR contains
 the screen number during and after this process.

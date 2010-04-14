@@ -1,6 +1,6 @@
-﻿SCROLLING
+﻿**SCROLLING**
 
-SCREEN SCROLLS
+**SCREEN SCROLLS**
 
 The horizontal screen scrolls are by 1, 4 or 8 pixels, left or right and with or
 without wrap.  The vertical scrolls are slightly more flexible.  The variable NPX
@@ -20,18 +20,18 @@ HGT         Height of the window (1-24)
 
 Command                 Action
 
-WRL1V       Scroll left  1 pixel  with wrap
-WRR1V       Scroll right 1 pixel  with wrap
-SCL1V       Scroll left  1 pixel,   no wrap
-SCR1V       Scroll right 1 pixel,   no wrap
-WRL4V       Scroll left  4 pixels with wrap
-WRR4V       Scroll right 4 pixels with wrap
-SCL4V       Scroll left  4 pixels,  no wrap
-SCR4V       Scroll right 4 pixels,  no wrap
-WRL8V       Scroll left  8 pixels with wrap
-WRR8V       Scroll right 8 pixels with wrap
-SCL8V       Scroll left  8 pixels,  no wrap
-SCR8V       Scroll right 8 pixels,  no wrap
+**WRL1V**       Scroll left  1 pixel  with wrap
+**WRR1V**       Scroll right 1 pixel  with wrap
+**SCL1V**       Scroll left  1 pixel,   no wrap
+**SCR1V**       Scroll right 1 pixel,   no wrap
+**WRL4V**       Scroll left  4 pixels with wrap
+**WRR4V**       Scroll right 4 pixels with wrap
+**SCL4V**       Scroll left  4 pixels,  no wrap
+**SCR4V**       Scroll right 4 pixels,  no wrap
+**WRL8V**       Scroll left  8 pixels with wrap
+**WRR8V**       Scroll right 8 pixels with wrap
+**SCL8V**       Scroll left  8 pixels,  no wrap
+**SCR8V**       Scroll right 8 pixels,  no wrap
 
 Note:
 

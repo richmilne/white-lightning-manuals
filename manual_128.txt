@@ -1,4 +1,4 @@
-﻿THE PLAGUE OF CRABS
+﻿**THE PLAGUE OF CRABS**
 
 The crabs, sprite 33, are placed on the screen using PUTBLS.
 
@@ -6,7 +6,7 @@ The ROW and COL varables for the PUTBLS are loaded up each time by a random numb
 produced by using the Forth word RND.
 
 
-THE BOUNCING BALL
+**THE BOUNCING BALL**
 
 This is a sprite or to be more precise, 4 sprites, moving in background.  The ball
 is defined in four orientations to give half character resolution.  The movement
@@ -15,7 +15,7 @@ old sprite with a second PUTXRS and then repeating the cycle. The listing for th
 screen is given in section 3 under the heading - Programmable Sprites.
 
 
-THE LUNAR SPACE SHIP
+**THE LUNAR SPACE SHIP**
 
 The radar dish on top of the space ship, sprite 34, is animated by sequentially
 placing sprites 35 to 42, giving the effect of constant rotation.
@@ -27,7 +27,7 @@ The spaceship is then scrolled up in a vertical window by 1 pixel.  The Lunar
 surface, sprite 44, is also scolled by 1 pixel, to the right using WRR1V.
 
 
-THE ROTATING BALLS
+**THE ROTATING BALLS**
 
 Four sprites were used to give the impression of rotation, these being sprites 45,
 46, 47, and 48.
@@ -37,7 +37,7 @@ placing the sprites to the screen with an increasing and decreasing time delay
 between each PUTBLS.
 
 
-THE CREDITS
+**THE CREDITS**
 
 To achieve the text scrolling up from the bottom of the screen, the bottom line
 was set with 0 INK and 0 PAPER colours, while the rest of the screen had 7 INK and

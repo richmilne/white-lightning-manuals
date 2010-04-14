@@ -1,42 +1,42 @@
-﻿0<                   n --- f                              L0
+﻿**0<**                   n --- f                              L0
 
 Leave a true flag if the number is less than zero (negative), otherwise leave a
 false flag.
 
 
-0=                   n --- f                              L0
+**0=**                   n --- f                              L0
 
 Leave a true flag is the number is equal to zero, otherwise leave a false flag.
 
 
-0BRANCH              f ---                                C2
+**0BRANCH**              f ---                                C2
 
 The run-time procedure to conditionally branch.  If f is false (zero), the
 following in-line parameter is added to the interpretive pointer to branch ahead
 or back.  Compiled by IF, UNTIL, and WHILE.
 
 
-1+                  n1 --- n2                             L1
+**1+**                  n1 --- n2                             L1
 
 Increment n1 by l.
 
 
-2+                  n1 --- n2                             L1
+**2+**                  n1 --- n2                             L1
 
 Leave n1 incremented by 2.
 
 
-2@                addr --- nlow nhigh
+**2@**                addr --- nlow nhigh
 
 32 bit fetch, nhigh is fetched from addr; nlow is fetched from addr-2.
 
 
-2DUP             n2 n1 --- n2 n1 n2 n1
+**2DUP**             n2 n1 --- n2 n1 n2 n1
 
 Duplicates the top two values on the stack.  Equivalent to OVER OVER.
 
 
-:                                                     P,E,L0
+**:**                                                     P,E,L0
 
 Used in the form called a colon-definition:
                : cccc  ...  ;
@@ -47,7 +47,7 @@ details are that the CONTEXT vocabulary is set to the CURRENT vocabulary and tha
 words with the precedence bit set (P) are executed rather than being compiled.
 
 
-;                                                     P,C,L0
+**;**                                                     P,C,L0
 
 Terminate a colon-definition and stop further compilation.  Compiles the run-time
 ;S.

@@ -1,60 +1,60 @@
-﻿SCRM     SPN                Scroll the Sprite vertically without wrap
+﻿**SCRM**     SPN                Scroll the Sprite vertically without wrap
                             by NPX pixels.
 
-WRR1M    SPN                Scroll the Sprite 1 pixel right with wrap.
+**WRR1M**    SPN                Scroll the Sprite 1 pixel right with wrap.
 
-WRL1M    SPN                Scroll the Sprite 1 pixel left with wrap.
+**WRL1M**    SPN                Scroll the Sprite 1 pixel left with wrap.
 
-WRR4M    SPN                Scroll the Sprite 4 pixels right with wrap.
+**WRR4M**    SPN                Scroll the Sprite 4 pixels right with wrap.
 
-WRL4M    SPN                Scroll the Sprite 4 pixels left with wrap.
+**WRL4M**    SPN                Scroll the Sprite 4 pixels left with wrap.
 
-WRR8M    SPN                Scroll the Sprite 8 pixels right with wrap.
+**WRR8M**    SPN                Scroll the Sprite 8 pixels right with wrap.
 
-WRL8M    SPN                Scroll the Sprite 8 pixels left with wrap.
+**WRL8M**    SPN                Scroll the Sprite 8 pixels left with wrap.
 
-SCR1M    SPN                Scroll the Sprite 1 pixel right without wrap.
+**SCR1M**    SPN                Scroll the Sprite 1 pixel right without wrap.
 
-SCL1M    SPN                Scroll the Sprite 1 pixel left without wrap.
+**SCL1M**    SPN                Scroll the Sprite 1 pixel left without wrap.
 
-SCR4M    SPN                Scroll the Sprite 4 pixels right without wrap.
+**SCR4M**    SPN                Scroll the Sprite 4 pixels right without wrap.
 
-SCL4M    SPN                Scroll the Sprite 4 pixels left without wrap.
+**SCL4M**    SPN                Scroll the Sprite 4 pixels left without wrap.
 
-SCR8M    SPN                Scroll the Sprite 8 pixels right without wrap.
+**SCR8M**    SPN                Scroll the Sprite 8 pixels right without wrap.
 
-SCL8M    SPN                Scroll the Sprite 8 pixels left without wrap.
+**SCL8M**    SPN                Scroll the Sprite 8 pixels left without wrap.
 
-ATTRM    SPN                Scroll the Sprite attributes 1 character
+**ATTRM**    SPN                Scroll the Sprite attributes 1 character
                             right with wrap.
 
-ATTLM    SPN                Scroll the Sprite attributes 1 character
+**ATTLM**    SPN                Scroll the Sprite attributes 1 character
                             left with wrap.
 
-ATTUPM   SPN                Scroll the Sprite attributes 1 character
+**ATTUPM**   SPN                Scroll the Sprite attributes 1 character
                             up with wrap.
 
-ATTDNM   SPN                Scroll the Sprite attributes 1 character
+**ATTDNM**   SPN                Scroll the Sprite attributes 1 character
                             down with wrap.
 
-GETBLS   SPN, COL, ROW      Block move screen data from screen to
+**GETBLS**   SPN, COL, ROW      Block move screen data from screen to
                             Sprite.
 
-GETXRS   SPN, COL, ROW      Logically XOR screen data into Sprite data.
+**GETXRS**   SPN, COL, ROW      Logically XOR screen data into Sprite data.
 
-GETORS   SPN, COL, ROW      Logically OR screen data into Sprite data.
+**GETORS**   SPN, COL, ROW      Logically OR screen data into Sprite data.
 
-GETNDS   SPN, COL, ROW      Logically AND screen data into Sprite data.
+**GETNDS**   SPN, COL, ROW      Logically AND screen data into Sprite data.
 
-PUTBLS   SPN, COL, ROW      Block move Sprite data from Sprite to
+**PUTBLS**   SPN, COL, ROW      Block move Sprite data from Sprite to
                             screen.
 
-PUTXRS   SPN, COL, ROW      Logically XOR Sprite data into screen data.
+**PUTXRS**   SPN, COL, ROW      Logically XOR Sprite data into screen data.
 
-PUTORS   SPN, COL, ROW      Logically OR Sprite data into screen data.
+**PUTORS**   SPN, COL, ROW      Logically OR Sprite data into screen data.
 
-PUTNDS   SPN, COL, ROW      Logically AND Sprite data into screen data.
+**PUTNDS**   SPN, COL, ROW      Logically AND Sprite data into screen data.
 
-GWBLS    SPN, COL, ROW,     Block move screen data from screen window
+**GWBLS**    SPN, COL, ROW,     Block move screen data from screen window
          SCOL, SROW, HGT,   into Sprite window.
          LEN.

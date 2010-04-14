@@ -14,7 +14,7 @@
          unaffected).
 
 
-p        Activates the PUT functions.
+**P**        Activates the PUT functions.
          You will be given four options.  Each option PUTS a sprite
          whose number is Specified in the variable "Sprite Number" onto
          the sprite screen, having a top left-hand corner at the sprite
@@ -36,21 +36,21 @@ p        Activates the PUT functions.
          4 PUTNDS, ANDs the sprite data with the data on the sprite screen,
          leaving the result on the screen (Sprite unaffected).
 
-O        Activates the CLEAR CHR$ SQR function.  Sets all CHR$ SQR bits
+**Q**        Activates the CLEAR CHR$ SQR function.  Sets all CHR$ SQR bits
          to zero.
 
-SYMBOL   Activates the CLEAR SPRITE SCREEN function.  Clears the sprite
-SHIFT    screen of all data and attributes.
-Q
+**SYMBOL**   Activates the CLEAR SPRITE SCREEN function.  Clears the sprite
+**SHIFT**    screen of all data and attributes.
+**Q**
 (<=)
 
-R        Activates the ROTATE SPRITE function.
+**R**        Activates the ROTATE SPRITE function.
          Rotates a sprite, in memory, by 90 degrees, leaving the original
          sprite unaffected.  The new Rotated sprite must be given a new
          sprite number, as asked for.  Attributes are automatically
          Rotated with the pixel data.
 
-S        Activates the SPRITE NUMBER variable.
+**S**        Activates the SPRITE NUMBER variable.
          Permits the defining of sprites and asks for a sprite number in
          the range 1 to 255
 

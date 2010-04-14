@@ -1,4 +1,4 @@
-﻿Fig-FORTH GLOSSARY
+﻿**Fig-FORTH GLOSSARY**
 
 
 This glossary contains all of the word definitions in Release 1 of fig-FORTH.  The
@@ -49,11 +49,11 @@ operation or description of any of the FORTH words defined in this documentation
 DO NOT use DR0, DR1 or GO.
 
 
-!               n addr ---                                                       L0
+**!**               n addr ---                                                       L0
 
 Store 16 bits of n at address.  Pronounced "store".
 
 
-!CSP
+**!CSP**
 
 Save the stack position in CSP.  Used as part of the compiler security.

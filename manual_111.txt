@@ -1,58 +1,58 @@
-﻿OUT                    --- addr                            U
+﻿**OUT**                    --- addr                            U
 
 A user variable that contains a value incremented by EMIT.  The user may alter and
 examine OUT to control display formatting.
 
 
-OVER             n1 n2 --- n1 n2 n1                       L0
+**OVER**             n1 n2 --- n1 n2 n1                       L0
 
 Copy the second stack value, placing it as the new top.
 
 
-PAD                    --- addr                           L0
+**PAD**                    --- addr                           L0
 
 Leave the address of the text output buffer, which is a fixed offset above HERE.
 
 
-PFA                nfa --- pfa
+**PFA**                nfa --- pfa
 
 Convert the name field address of a compiled definition to its parameter field
 address.
 
 
-POP
+**POP**
 
 The code sequence to remove a stack value and return to NEXT.  POP is not directly
 executable, but is s Forth re-entry point after machine code.
 
 
-PREV                   --- addr
+**PREV**                   --- addr
 
 A variable containing the address of the disc buffer most recently referenced.
 The UPDATE command marks this buffer to be later written to disc.
 
 
-PUSH
+**PUSH**
 
 This code sequence pushes machine registers to the computation stack and returns
 to NEXT.  It is not directly executable, but is a Forth re-entry point after
 machine code.
 
 
-PUT
+**PUT**
 
 This code sequence stores machine register contents over the topmost computation
 value and returns to NEXT.  It is not directly executable, but is a Forth re-entry
 point after machine code.
 
 
-QUERY
+**QUERY**
 
 Input 80 characters of text (or until a "return") from the operator's terminal.
 Text is positioned at the address contained in TIB with IN set to zero.
 
 
-QUIT                                                      L1
+**QUIT**                                                      L1
 
 Clear the return stack, stop compilation, and return control to the operator's
 terminal.  No message is given.

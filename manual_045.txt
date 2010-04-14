@@ -1,20 +1,20 @@
-﻿ 9. WR implies that the data will be scrolled with wrap.
+﻿ 9.  WR implies that the data will be scrolled with wrap.
 
-10. SC implies that data will be scrolled without wrap.
+10.  SC implies that data will be scrolled without wrap.
 
-11. GW "Get Window" implies that data is being moved from a window into a
-    sprite.
+11.  GW "Get Window" implies that data is being moved from a window into a
+     sprite.
 
-12. PW "Put Window" implies that data is being put into a window from a sprite.
+12.  PW "Put Window" implies that data is being put into a window from a sprite.
 
-13. COP implies an operation between two sprites with the same dimensions.
+13.  COP implies an operation between two sprites with the same dimensions.
 
 The best way to become familiar with the language is to use it!
 
 There are also some general points worth noting.
 
 
-GENERAL POINTS
+**GENERAL POINTS**
 
  1.  Vertical scrolls will require some buffer space at the end of sprite space,
      so make sure that either you have set up sprite space with the development

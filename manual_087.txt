@@ -1,58 +1,58 @@
-﻿_        Activates the IOAD SPRITES FROM TAPE facility.
-(SYMBOL  Place tape in your cassette recorder.  Press SYMBOL SHIFT J
-SHIFT    and press PLAY on the cassette recorder.  Three groups of data
-J)       will load.  When loaded, the Text Line will clear and the
+﻿**-**        Activates the IOAD SPRITES FROM TAPE facility.
+**(SYMBOL**  Place tape in your cassette recorder.  Press SYMBOL SHIFT J
+**SHIFT**    and press PLAY on the cassette recorder.  Three groups of data
+**J)**       will load.  When loaded, the Text Line will clear and the
          program will resume.
 
          NOTE:  Any sprites in memory will be destroyed when this command
          is executed.
 
-5        Activates the MOVE CHR$ SQR CURSOR 1 place to the left - non-
+**5**        Activates the MOVE CHR$ SQR CURSOR 1 place to the left - non-
          destructive.
 
-6        Activates the MOVE CHR$ SQR CURSOR 1 place down - non-destructive.
+**6**        Activates the MOVE CHR$ SQR CURSOR 1 place down - non-destructive.
 
-7        Activates the MOVE CHR$ SQR CURSOR 1 place up - non-destructive.
+**7**        Activates the MOVE CHR$ SQR CURSOR 1 place up - non-destructive.
 
-8        Activates the MOVE CHR$ SQR CURSOR 1 place to the right -
+**8**        Activates the MOVE CHR$ SQR CURSOR 1 place to the right -
          non-destructive.
 
-9        Activates the SET CHR$ at current position.
+**9**        Activates the SET CHR$ at current position.
 
-0        Activates the CLEAR CHR$ SQR at current position.
+**0**        Activates the CLEAR CHR$ SQR at current position.
 
-%        Activates the MOVE SPRITE SCREEN CURSOR 1 place to the left.
-(SYMBOL
-SHIFT
-5)
+**%**        Activates the MOVE SPRITE SCREEN CURSOR 1 place to the left.
+**(SYMBOL**
+**SHIFT**
+**5)**
 
-&        Activates the MOVE SPRITE SCREEN CURSOR 1 place down.
-(SYMBOL
-SHIFT
-6)
+**&**        Activates the MOVE SPRITE SCREEN CURSOR 1 place down.
+**(SYMBOL**
+**SHIFT**
+**6)**
 
-'        Activates the  MOVE SPRITE SCREEN CURSOR 1 place up.
-(SYMBOL
-SHIFT
-7)
+**'**        Activates the  MOVE SPRITE SCREEN CURSOR 1 place up.
+**(SYMBOL**
+**SHIFT**
+**7)**
 
-(        Activates the MOVE SPRITE SCREEN CURSOR 1 place to the right.
-SYMBOL
-SHIFT
-8)
+**(**        Activates the MOVE SPRITE SCREEN CURSOR 1 place to the right.
+**SYMBOL**
+**SHIFT**
+**8)**
 
-<        Activates the RELOCATE SPRITES function.
-SYMBOL   Allows the user to move the sprite data about in memory,
-SHIFT    between the top of the Sprite Generator Program and address
-R)       65520.
+**<**        Activates the RELOCATE SPRITES function.
+**SYMBOL**   Allows the user to move the sprite data about in memory,
+**SHIFT**    between the top of the Sprite Generator Program and address
+**R)**       65520.
 
          e.g.  a positive number i.e. 50, moves the data 50 bytes up
          in memory.  A negative number i.e. -50, moves the data 50
          bytes down in memory.
          CAUTION - use this function with care.
 
-BREAK    Activates the PLACE SPRITE INTO SPRITE WINDOW function.
-and      This allows you to place a sprite of smaller dimensions into
-SPACE    a sprite of greater dimensions, at a position of ROW,
+**BREAK**    Activates the PLACE SPRITE INTO SPRITE WINDOW function.
+**and**      This allows you to place a sprite of smaller dimensions into
+**SPACE**    a sprite of greater dimensions, at a position of ROW,
          COL in the greater sprite in memory - the smaller sprite is
          left unaltered.

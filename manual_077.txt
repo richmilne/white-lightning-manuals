@@ -19,7 +19,7 @@ saving.  BASIC source is saved and loaded in the normal way from the reserved
 BASIC area.
 
 
-Forth As A Subroutine
+**Forth As A Subroutine**
 
 If you're an "out and out BASIC person" you're probably more likely to want to
 execute Forth as a subroutine.  To return to BASIC from Forth use the word RETUSR.
@@ -52,7 +52,7 @@ Now type
 FORGET FBDEM <CR>
 
 
-Passing Parameters
+**Passing Parameters**
 
 Forth variables can easily be PEEK'ed and POKE'd from BASIC and used not only to
 pass data, but also to control the execution of Forth.  As an example, suppose we

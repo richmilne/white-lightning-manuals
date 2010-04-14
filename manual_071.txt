@@ -1,4 +1,4 @@
-﻿LOGICAL OPERATIONS
+﻿**LOGICAL OPERATIONS**
 
 There are three types of logical operation included in the IDEAL sub-language;
 these are OR, XOR and AND.  To get the best out of this package it is important to
@@ -24,7 +24,7 @@ where pixels were set in either but reset where pixels were set or reset in both
 These results are summarised as follows and should make things a little clearer:
 
 
-SOURCE         DESTINATION         OPERATION        RESULT
+**SOURCE**         **DESTINATION**         **OPERATION**        **RESULT**
 
   on               on                 OR              on
   on               off                OR              on

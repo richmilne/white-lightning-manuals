@@ -1,4 +1,4 @@
-﻿Group 3
+﻿**Group 3**
 
 This group, possibly the most useful in the whole set, comprises commands which
 support operations between sprites and sprite windows.  The same set of commands
@@ -19,17 +19,17 @@ SROW       Top row of target sprite window
 
 Command                 Action
 
-GWBLM      Block move pixel data from first sprite into window in second sprite
-GWORM      OR pixel data from first sprite into window in second sprite
-GWXRM      XOR pixel data from first sprite into window in second sprite
-GWNDM      AND pixel data from first sprite into window in second sprite
-GWATTM     Block move attribute data from first sprite into window in second
+**GWBLM**      Block move pixel data from first sprite into window in second sprite
+**GWORM**      OR pixel data from first sprite into window in second sprite
+**GWXRM**      XOR pixel data from first sprite into window in second sprite
+**GWNDM**      AND pixel data from first sprite into window in second sprite
+**GWATTM**     Block move attribute data from first sprite into window in second
            sprite
-PWBLM      Block move pixel data from window in second sprite into first sprite
-PWORM      OR pixel data from window in second sprite into first sprite
-PWXRM      XOR pixel data from window in second sprite into first sprite
-PWNDM      AND pixel data from window in second sprite into first sprite
-PWATTM     Block move attribute data from window in second sprite into first
+**PWBLM**      Block move pixel data from window in second sprite into first sprite
+**PWORM**      OR pixel data from window in second sprite into first sprite
+**PWXRM**      XOR pixel data from window in second sprite into first sprite
+**PWNDM**      AND pixel data from window in second sprite into first sprite
+**PWATTM**     Block move attribute data from window in second sprite into first
            sprite
 
 Note:
@@ -39,14 +39,14 @@ added to SROW exceeds either the width or height of the second sprite
 respectively, then the command will not execute.
 
 
-COPY COMMANDS
+**COPY COMMANDS**
 
 These five commands, are in fact a sub-group of the Group 3 commands and allow
 operations between pairs of sprites with the same dimensions.  It is necessary,
 therefore, to provide only two parameters instead of four.
 
 
-parameter                 Use
+Parameter                 Use
 
 SP1          Number of first sprite
 SP2          Number of second sprite

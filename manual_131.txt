@@ -1,4 +1,4 @@
-﻿Example 11
+﻿**Example 11**
 
 To place sprite 24 into the screen of sprite 13 use:
 
@@ -6,7 +6,7 @@ To place sprite 24 into the screen of sprite 13 use:
 ;
 
 
-Example 12
+**Example 12**
 
 To XOR sprite 43, the explosion, with sprite 27, the 270 degree rotated Invader,
 in memory, use:
@@ -14,21 +14,21 @@ in memory, use:
 : DEM12 43 SP1 ! 27 SP2 ! COPXRM 10 ROW ! 10 COL ! 27 SPN ! ATTON PUTBLS ;
 
 
-Example 13
+**Example 13**
 
 To invert sprite 7, the spider, in memory use:
 
 : DEM13 7 SPN ! INVM 10 ROW ! 10 COL ! PUTBLS ;
 
 
-Example 14
+**Example 14**
 
 To enlarge sprite 24 into sprite 45 using the DSPM command use:
 
 : DEM14 45 SP1 ! 24 SP2 ! DSPM 45 SPN ! 10 COL ! 10 ROW ! PUTBLS ;
 
 
-Example 15
+**Example 15**
 
 To search through sprite space, locate any existing sprites, print out the start
 of data, length and height, use:
@@ -37,7 +37,7 @@ of data, length and height, use:
 SPACE CR THEN LOOP ;
 
 
-Example 16
+**Example 16**
 
 To scroll a landscape sprite numbered 128, 2 characters high and 64 characters
 wide, left by 1 pixel under interrupt, use the following:

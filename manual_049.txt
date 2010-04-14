@@ -19,7 +19,7 @@ sprites is to use the ISPRITE and DSPRITE commands described later in this
 section.  You won't even need to execute a COLD# command.
 
 
-SPRITE
+**SPRITE**
 
 Once the sprite space has been cleared, the sprites themselves can be set up.
 
@@ -32,7 +32,7 @@ LEN           Width of the sprite in characters
 
 Command                  Action
 
-SPRITE        The five byte leader is set up and SPND adjusted
+**SPRITE**        The five byte leader is set up and SPND adjusted
 
 Note:
 
@@ -46,7 +46,7 @@ available.  Most users will probably not use the SPRITE command, but instead, wi
 use the far simpler ISPRITE command.
 
 
-WIPE
+**WIPE**
 
 This command will destroy the sprite whose number is held in SPN, relocate the
 sprites above it downward, update the variable SPND (marking the end of sprite

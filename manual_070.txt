@@ -12,7 +12,7 @@ Halted using: INT-0FF <CR>
 and cleared using: FORGET IRUN <CR>
 
 
-Forth/BASIC Words
+**Forth/BASIC Words**
 
 Sinclair's graphics and sound commands have been replicated as Forth words for
 continuity - they also execute slightly more rapidly than their BASIC

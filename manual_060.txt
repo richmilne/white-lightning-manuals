@@ -1,4 +1,4 @@
-﻿Reflections
+﻿**Reflections**
 
 There are four commands in this group for reflecting screen and memory, pixel and
 attribute data.  A sprite is often required to point in two directions and the
@@ -13,8 +13,8 @@ SPN          Number of sprite to be reflected (1 to 255)
 
 Command             Action
 
-MIRM         Reflect sprite pixel data about its centre
-MARM         Reflect sprite attribute data about its centre
+**MIRM**         Reflect sprite pixel data about its centre
+**MARM**         Reflect sprite attribute data about its centre
 
 
 Parameter            Use
@@ -26,11 +26,11 @@ HGT          Height of screen window (1 to 24)
 
 
 Command            Action
-MIRV         Reflect screen pixel data about window centre
-MARV         Reflect screen attribute data about window centre
+**MIRV**         Reflect screen pixel data about window centre
+**MARV**         Reflect screen attribute data about window centre
 
 
-Spin
+**Spin**
 
 This command involves an operation between two sprites with transposed dimensions.
 If, for example, a sprite with dimensions 8 by 3 is to he spun into a second
@@ -49,7 +49,7 @@ SP1         Number of sprite to be rotated into
 
 Command             Action
 
-SPINM       Rotate 90 degrees clockwise sprite SP2 into sprite SP1.
+**SPINM**       Rotate 90 degrees clockwise sprite SP2 into sprite SP1.
 
 
 Note:
