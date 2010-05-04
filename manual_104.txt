@@ -1,4 +1,4 @@
-﻿**DP**                     --- addr                          U,L
+**DP**                     --- addr                          U,L
 
 A user variable, the dictionary pointer, which contains the address of the next
 free memory above the dictionary.  The value may be read by HERE and altered by
@@ -29,7 +29,8 @@ contents are shown in the current numeric base.
 Duplicate the value on the stack.
 
 
-**ELSE**          addr1 n1 --- addr2 n2 (compiling)      P,C2,L0
+**ELSE**          addr1 n1 --- addr2 n2 
+                    (compiling)                      P,C2,L0
 
 Occurs within a colon-definition within the form:
               IF  ...  ELSE  ...  ENDIF

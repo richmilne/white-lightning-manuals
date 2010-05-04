@@ -1,4 +1,4 @@
-﻿**FORTH/BASIC WORDS**
+**FORTH/BASIC WORDS**
 
 For those users who have mastered and grown used to the Spectrum's own graphics
 commands, a set of 18 Forth implementations of Spectrum words is provided.
@@ -8,7 +8,7 @@ should be re-entered via a WARM start, i.e. PRINT USR 24836.  For a full
 description of the action of each of these words refer to your Spectrum manual.
 
 
-**PARAMETERS**      **WORD**      **ACTION**
+PARAMETERS      WORD      ACTION
 
                 **COPY**      The screen in 'dumped' to the ZX-Printer.
 

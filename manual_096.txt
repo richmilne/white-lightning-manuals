@@ -1,4 +1,4 @@
-﻿**0<**                   n --- f                              L0
+**0<**                   n --- f                              L0
 
 Leave a true flag if the number is less than zero (negative), otherwise leave a
 false flag.
@@ -24,6 +24,11 @@ Increment n1 by l.
 **2+**                  n1 --- n2                             L1
 
 Leave n1 incremented by 2.
+
+
+**2!**     nlow nhigh addr ---
+
+32 bit store, nhigh is stored at addr; nlow is stored at addr+2.
 
 
 **2@**                addr --- nlow nhigh

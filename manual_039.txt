@@ -1,4 +1,4 @@
-﻿**ATTRIBUTE DATA**
+**ATTRIBUTE DATA**
 
 The colour of the INK and PAPER in each particular cell, together with the
 BRIGHTNESS and FLASHING attributes of the character, are controlled by a separate
@@ -19,7 +19,7 @@ range 1 to 24.  Commands in this group are postfixed with a "V", e.g. WRL1V, INV
 MIRV.
 
 
-**SCREEN/SPRITE OPERATINS**
+**SCREEN/SPRITE OPERATIONS**
 
 These are operations between the screen and a sprite.  The dimensions of the
 sprite are used as the dimensions of the screen window, and COL and ROW are used
