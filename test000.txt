@@ -1,0 +1,51 @@
+﻿                                **WHITE LIGHTNING** Start of __manual__
+                                WHITE LIGHTNING Start of manual
+[32, 47]
+[57, 63]
+                               **by Oasis Software**
+                               by Oasis Software
+             **__SPRITE__ 22**
+**__boldunderline__**
+__**underlinenold**__
+
+Copyright © by Oasis Software
+
+  N N N N²               *
+    N N N³               *
+  N N N³N³               DUP
+N N N³N³3000             3000
+  N N N³flag (1 or 0)    <
+
+If TRUE:
+
+    N N N³               WHILE
+                         ." THE CUBE OF "   THE CUBE OF
+    N N³N                SWAP
+      N N³               .                   N
+                         ." IS "             IS
+        N                .                   N³
+        N                CR                  carriage return
+
+**INTRODUCTION**
+INTRODUCTION
+          0 INK
+           ↓
+            4   5   6   7   8   9   A   B
+1234567890┌───┬───┬───┬───┬───┬───┬───┬───┐
+        6 │ 0 │░░░░░░░SPRITE 3░░░░░░░░│ 9 │
+          ├───┼───┼───┼───┼───┼───┼───┼───┤
+        7 │ 5 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │      **__SPRITE__ 22**
+          ├───┼───┼───┼───┼───┼───┼───┼───┤
+        8 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │
+          └───┴───┴───┴───┴───┴───┴───┴───┘
+The sides of the above table should be aligned in html output; otherwise you've stuffed up the initial space escaping!!
+One space  Two spaces   Three spaces
+
+Highlighted ***** asterisks *** ** and spacing **o** afterwards
+
+line with {various rtf __and__ html} \escape <b>characters   and **significant** \\spacing.
+Line with     significant spacing
+Test of **unba__lan__ced** formatting
+Test of <b>html markup</u> **with**         significant spacing
+
+Test of <b>html markup</u> **with**     <    significant spacing

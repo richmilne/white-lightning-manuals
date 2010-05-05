@@ -1,0 +1,54 @@
+﻿                                **WHITE LIGHTNING** Start of __manual__
+                                WHITE LIGHTNING Start of manual
+             **__CHEAT__ 002**.txt
+**__boldunderline__**
+__**underlinenold**__
+[31, 48]
+[]
+**INTRODUCTION**
+INTRODUCTION
+          0 INK
+           ↓
+            4   5   6   7   8   9   A   B
+          ┌───┬───┬───┬───┬───┬───┬───┬───┐
+        6 │ 0 │░░░░░░░SPRITE 3░░░░░░░░│ 9 │
+          ├───┼───┼───┼───┼───┼───┼───┼───┤
+        7 │ 5 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │      **__SPRITE__ 22**
+          ├───┼───┼───┼───┼───┼───┼───┼───┤
+        8 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │ 6 │
+          └───┴───┴───┴───┴───┴───┴───┴───┘
+
+* One asterisk (Norman Hale)
+\** Two asterisk
+\*\* Another two asterisks
+*\* And a different two
+*\no escape
+\* escaped star
+*\** Three asterisk, middle escape
+*\*** Four asterisk, middle escape**
+**** Four asterisk
+**\*** Five asterisk
+**\**** Six asterisk
+**bold ***** bold again**
+This star ***** should be bold
+while this ** star ***** shouldn't **
+These stars **** do nothing and should disappear.
+45*93
+
+*
+****
+**\ **
+\
+*\
+\\\\
+\\\
+\
+Text \\**bold** and \**not bold*
+
+line with {various rtf __and__ html} \escape <b>characters   and **significant** \\spacing.
+Line with     significant spacing
+Test of **unba__lan__ced** formatting
+Test of <b>html markup</u> **with**         significant spacing
+
+Test of <b>html markup</u> **with**    <    significant spacing
+
