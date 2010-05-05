@@ -14,7 +14,7 @@
 
 
 
-                        **EXTENDED SPECTRAFORTH GLOSSARY**
+                        **EXTENDED SPECTRA FORTH GLOSSARY**
 
 
 **WORD**     **PARAMETERS**         **ACTION**

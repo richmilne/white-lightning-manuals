@@ -38,19 +38,19 @@ is accumulated into double number d1, being left as d2.  Addr2 is the address of
 the first unconvertible digit.  Used by NUMBER.
 
 
-*** **                n1 n2 --- prod                           L0
+*****                n1 n2 --- prod                           L0
 
 Leave the signed product of two signed numbers.
 
 
-***// **           n1 n2 n3 --- n4                             L0
+***/**            n1 n2 n3 --- n4                             L0
 
 Leave the ratio n4 = n1*n2/n3 where all are signed numbers.  Retention of an
 intermediate 31 bit product permits greater accuracy than would be available with
 the sequence n1 n2 * n3 /.
 
 
-***//MOD**         n1 n2 n3 --- n4 n5                          L0
+***/MOD**         n1 n2 n3 --- n4 n5                          L0
 
 Leave the quotient n5 and remainder n4 of the operation n1*n2/n3.  A 31 bit
 intermediate product is used as for */.
