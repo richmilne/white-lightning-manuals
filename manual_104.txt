@@ -1,4 +1,4 @@
-**DP**                     --- addr                          U,L
+﻿**DP**                     --- addr                          U,L
 
 A user variable, the dictionary pointer, which contains the address of the next
 free memory above the dictionary.  The value may be read by HERE and altered by

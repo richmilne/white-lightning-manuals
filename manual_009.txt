@@ -1,4 +1,4 @@
-4.  The K key transfers a character from the SPRITE SCREEN to the CHR$ SQR.
+﻿4.  The K key transfers a character from the SPRITE SCREEN to the CHR$ SQR.
 
 5.  The J key transfers a character from the CHR$ SQR to the SPRITE SCREEN.
 

@@ -1,4 +1,4 @@
-**ATTRIBUTE DATA**
+﻿**ATTRIBUTE DATA**
 
 The colour of the INK and PAPER in each particular cell, together with the
 BRIGHTNESS and FLASHING attributes of the character, are controlled by a separate
