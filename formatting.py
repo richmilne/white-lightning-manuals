@@ -2,6 +2,11 @@ import os
 import sys
 import codecs
 
+enums = ['TEXT', 'BOLD', 'UNDER', 'ESC']
+enum_chars = [None, '*', '_', '\\']
+for i, e in enumerate(enums):
+    globals()[e] = i
+
 def sort_file(name):
     roman = ['i', 'ii', 'iii', 'iv']
 
@@ -33,8 +38,9 @@ def list_files(which = 'all'):
 class text_formatter(object):
     def __init__(self):
 
-        self.markup_dict = {'*':  ['', ''],
-                            '_':  ['', ''],
+        self.markup_dict = {BOLD: ['', ''],
+                            UNDER:['', ''],
+                            ESC:  '',
                             '<':  '<',
                             '>':  '>',
                             ' ':  ' ',
@@ -48,52 +54,151 @@ class text_formatter(object):
         self.line_end = '\n'
         self.page_sep = '\x0c'
 
+    def add_text_token(self, tokens, new_token):
+        if len(tokens) > 0 and (tokens[-1][0] == new_token[0] == TEXT):
+            tokens[-1].extend(new_token[1:])
+        else:
+            tokens.append(new_token)
+
     def parse_formatting(self, line):
 
+        # First split the line up into chunks containing only the same type of
+        # chars - either text, or runs of either of the three formatting chars.
         last_code = None
-        bold_pos = []
-        under_pos = []
-        plain_text = []
-        stack = []
-        offset = 0
+        pieces = []
+        piece = []
 
         state = 0
-        for i, c in enumerate(line):
+        for c in line:
             if state == 0:
-                if c in '*_':
+                if c in '\*_':
                     last_code = c
                     state = 1
-                else:
-                    plain_text.append(c)
+                    if len(piece) > 0:
+                        pieces.append(piece)
+                        piece = []
+
+                piece.append(c)
+
             elif state == 1:
                 if c != last_code:
-                    plain_text.append(last_code)
-                    last_code = None
-                else:
-                    offset += 2
-                    if c == '*':
-                        bold_pos.append(i+1-offset)
-                    elif c == '_':
-                        under_pos.append(i+1-offset)
-                    if len(stack) != 0 and stack[-1] == c:
-                        stack.pop()
+                    pieces.append(piece)
+                    piece = []
+                    if c in '\*_':
+                        last_code = c
                     else:
-                        stack.append(c)
-                state = 0
+                        state = 0
 
-        assert len(bold_pos) % 2 == 0
-        assert len(under_pos) % 2 == 0
-        assert len(stack) == 0
+                piece.append(c)
 
-        bold_pos = [(num, '*') for num in bold_pos]
-        under_pos = [(num, '_') for num in under_pos]
+        pieces.append(piece)
 
-        markers = bold_pos + under_pos
-        markers.sort()
+        # Convert the pieces from the previous step into tokens.
+        # A piece consisting of escape backslashes may convert the first
+        # character of the next piece into a text token.
+        # For runs of formatting chars, only the first or last two chars will
+        # be considered a formatting token, and all the other chars will be 
+        # considered as ordinary text.
 
-        plain_text = ''.join(plain_text)
+        tokens = []
+        num_pieces = len(pieces)
+        index = 0
+        stack = [None]
+        # Load stack with dummy value so we can just test for last value; we
+        # don't have to test if stack is non-empty before checking last value...
 
-        return((plain_text, tuple(markers)))
+        while index < num_pieces:
+            piece = pieces[index]
+            index += 1
+            if len(piece) == 0:
+                continue
+
+            first = piece[0]
+            if first not in '\*_':
+                self.add_text_token(tokens, [TEXT] + piece)
+
+            elif first == '\\':
+                escapes = len(piece)
+                if escapes % 2 == 0:
+                    evens = escapes / 2
+                    odd = False
+                else:
+                    evens = (escapes-1)/2
+                    odd = True
+
+                if evens > 0:
+                    for i in xrange(evens):
+                        tokens.append([ESC])
+                        tokens.append([TEXT, '\\'])
+
+                if odd:
+                    if index != num_pieces and pieces[index][0] in '*_':
+                        tokens.append([ESC])
+                        char = pieces[index].pop(0)
+                        tokens.append([TEXT, char])
+                    else:
+                        self.add_text_token(tokens, [TEXT, '\\'])
+
+            else:
+                count = len(piece)
+                if count == 1:
+                    self.add_text_token(tokens, [TEXT, piece[0]])
+                    continue
+                elif count == 4:
+                    # Either close an open a section of formatting, or open
+                    # and close. Either way, it has no effect, so drop.
+                    continue
+
+                if first == '*':
+                    token = BOLD
+                else:
+                    token = UNDER
+                open = False
+                if stack[-1] == token:
+                    # This is the closing marker
+                    pass
+                else:
+                    # It's the opening marker. We can't have formatting nested
+                    # more than two deep, so we check for this. Remember that
+                    # stack starts with dummy value so we have to compare with 3
+                    if len(stack) >= 3:
+                        print
+                        print "Finish previous formatting block before you open another one!"
+                        raise AssertionError
+                    open = True
+
+                if count == 2:
+                    if open:
+                        stack.append(token)
+                    else:
+                        stack.pop()
+                    tokens.append([token])
+
+                elif count == 3:
+                    if open:
+                        stack.append(token)
+                        tokens.append([token])
+                        tokens.append([TEXT, first])
+                    else:
+                        stack.pop()
+                        self.add_text_token(tokens, [TEXT, first])
+                        tokens.append([token])
+
+                else:
+                    chars = count - 4
+                    tokens.append([token])
+                    tokens.append([TEXT] + [first]*chars)
+                    tokens.append([token])
+
+        if len(stack) != 1:
+            print 'You forgot to close a section of formatting.'
+            raise AssertionError
+
+        for i, t in enumerate(tokens):
+            if t[0] == TEXT:
+                tokens[i] = [TEXT, ''.join(t[1:])]
+
+        return tokens
 
     def load_file(self, filename):
 
@@ -104,18 +209,18 @@ class text_formatter(object):
 
         for line_num, l in enumerate(lines):
             l = l.rstrip()
-            if '**' in l or '__' in l:
+            if '**' in l or '__' in l or '\\' in l:
                 try:
                     marked.append(self.parse_formatting(l))
                 except:
                     print
                     print 'Error in file:', filename
-                    print 'At line number:', line_num
+                    print 'At line number:', line_num+1
                     print lines[line_num]
                     print
                     raise
             else:
-                marked.append((l, None))
+                marked.append([[TEXT, l]])
 
         self.lines = marked
         self.first_line = True
@@ -126,61 +231,60 @@ class text_formatter(object):
         else:
             return char
 
-    def encode_line(self, line):
+    def encode_line(self, tokens):
         output = []
-        stack = [0]
+        stack = [None]
 
         length = 0
         markup = self.markup_dict
-        markers = line[1]
-        if markers is not None:
-            length = len(markers)
-        pointer = 0
         first_space = False
         space_toggle = False
+        i = -1
 
-        for i, c in enumerate(line[0]):
-            while pointer < length and i == markers[pointer][0]:
-                pos, marker = markers[pointer]
-                pointer += 1
+        for t in tokens:
+            marker = t[0]
+            if marker == TEXT:
+                for c in t[1]:
+                    i += 1
+                    if c in ' <>{}\\':
+                        if c == ' ':
+                            if not(first_space):
+                                first_space = True
+                                space_toggle = False
+
+                            if first_space and \
+                                       (i == 0 or (i == 1 and self.first_line)):
+                                # First space in line, bearing in mind first
+                                # char might be BOM
+                                space_toggle = True
+
+                            if space_toggle:
+                                output.append(markup[' '])
+                            else:
+                                output.append(c)
+                            space_toggle = not(space_toggle)
+                        else:
+                            output.append(markup[c])
+                            first_space = False
+                    else:
+                        if ord(c) > 127:
+                            output.append(self.encode_char(c))
+                        else:
+                            output.append(c)
+                        first_space = False
+
+            elif marker == ESC:
+                output.append(markup[ESC])
+            else:
                 if marker == stack[-1]:
                     index = 1
                     stack.pop()
                 else:
                     index = 0
-                    stack.append(marker)
+                    stack.append(t[0])
+                    pass
                 output.append(markup[marker][index])
 
-            if c in ' <>{}\\':
-                if c == ' ':
-                    if not(first_space):
-                        first_space = True
-                        space_toggle = False
-
-                    if first_space and (i == 0 or (i == 1 and self.first_line)):
-                    # First space in line, bearing in mind first char
-                    # might be BOM
-                        space_toggle = True
-
-                    if space_toggle:                    
-                        output.append(markup[' '])
-                    else:                    
-                        output.append(c)
-                    space_toggle = not(space_toggle)
-                else:
-                    output.append(markup[c])
-                    first_space = False
-            else:
-                if ord(c) > 127:
-                    output.append(self.encode_char(c))
-                else:
-                    output.append(c)
-                first_space = False
-
-        while len(stack) > 1:
-            output.append(markup[stack[-1]][1])
-            stack.pop()
-            
         self.first_line = False
         return ''.join(output)
 
@@ -230,16 +334,18 @@ class markup_formatter(text_formatter):
     def __init__(self):
         text_formatter.__init__(self)
 
-        self.markup_dict['*'] = ['**', '**']
-        self.markup_dict['_'] = ['__', '__']
+        self.markup_dict[BOLD] = ['**', '**']
+        self.markup_dict[UNDER] = ['__', '__']
+        self.markup_dict[ESC] = '\\'
 
 
 class rtf_formatter(text_formatter):
     def __init__(self):
         text_formatter.__init__(self)
 
-        self.markup_dict['*'] = ['{\\b ', '}']
-        self.markup_dict['_'] = ['{\\ul ', '}']
+        self.markup_dict[BOLD] = ['{\\b ', '}']
+        self.markup_dict[UNDER] = ['{\\ul ', '}']
+        self.markup_dict[ESC] = ''
         self.markup_dict['{'] = '\\{'
         self.markup_dict['}'] = '\\}'
         self.markup_dict['\\'] = '\\\\'
@@ -290,8 +396,9 @@ class html_formatter(text_formatter):
     def __init__(self):
         text_formatter.__init__(self)
 
-        self.markup_dict['*'] = ['<b>', '</b>']
-        self.markup_dict['_'] = ['<u>', '</u>']
+        self.markup_dict[BOLD] = ['<b>', '</b>']
+        self.markup_dict[UNDER] = ['<u>', '</u>']
+        self.markup_dict[ESC] = ''
         self.markup_dict['>'] = '&gt;'
         self.markup_dict['<'] = '&lt;'
         self.markup_dict[' '] = '&nbsp;'
@@ -311,7 +418,7 @@ class html_formatter(text_formatter):
 """
         self.footer = '</body>'
         self.line_end = '<br/>\n'
-        self.page_sep = '<!-- New Page -->\n'
+        self.page_sep = '<br/><br/>\n<font color="red"><b>' + '-'*83 + '</b></font><br/><!-- New Page -->\n'
 
     def encode_char(self, char):
 
