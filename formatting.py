@@ -55,7 +55,7 @@ class text_formatter(object):
         self.footer = ''
         self.line_end = '\n'
         self.page_sep = '\x0c'
-        self.page_nums = False
+        self.page_nums = None
         
         self.title = title
         
@@ -237,7 +237,7 @@ class text_formatter(object):
         self.lines = marked
         self.first_line = True
 
-        if not(self.page_nums):
+        if self.page_nums is None:
             return
 
         num_str = filename[:-4].split('_')[1]
@@ -246,13 +246,19 @@ class text_formatter(object):
             return
 
         num = int(num_str)
-        spaces = 83 - len(num_str)
+        num_str = str(num)
+        spaces = 82 - len(num_str)
+
         if num % 2 == 0:
-            num_str = str(num)
-            spaces = 83 - len(num_str)
-            footer = (' ' * spaces) + num_str
+            if self.page_nums is True:
+                footer = (' ' * spaces) + num_str
+            else:
+                footer = num_str
         else:
-            footer = str(num)
+            if self.page_nums is True:
+                footer = num_str
+            else:
+                footer = (' ' * spaces) + num_str
 
         num_lines = len(self.lines)
         pad_lines = 64 - num_lines
@@ -402,6 +408,7 @@ class rtf_formatter(text_formatter):
              self.rev_date.minute)
         info.append(creation)
         info.append('{\subject Revision: %d, %s}' % (self.rev_num, str(self.rev_date)[:19]))
+        info.append('{\keywords http://www.worldofspectrum.org/infoseekid.cgi?id=0008967}')
         info.append('{\\title %s}' % self.title)
         info.append('}\n\\fs18\n')
         self.header += ''.join(info)
@@ -455,7 +462,9 @@ class html_formatter(text_formatter):
         
         meta = ['<meta http-equiv="Content-Style-Type" content="text/css">']
         meta.append('<meta name="author" description="Richard Milne (RichMilne AT users DOT noreply DOT github DOT com">')
-        meta.append('<meta name="generator" description="Rev %d, %s">' % (self.rev_num, str(self.rev_date)[:19]))
+        meta.append('<meta name="version" description="%d">' % self.rev_num)
+        meta.append('<meta name="creation" description="%s">' % str(self.rev_date)[:19])
+        meta.append('<meta name="host" description="http://www.worldofspectrum.org/infoseekid.cgi?id=0008967">')
         meta.append('<title>%s</title>' % self.title)
 
         self.header = r"""<html>
@@ -479,12 +488,12 @@ class html_formatter(text_formatter):
         else:
             return '&#%d;' % char
 
-for book in ['cheatsheet', 'manual']:
+for i, book in enumerate(['cheatsheet', 'manual']):
     files = list_files(book)
     title = 'White Lightning Documentation - %s' % book.title()
     for ext in ['rtf', 'html']:
         outputter = globals()['%s_formatter' % ext](title)
-        outputter.page_nums = True
+        outputter.page_nums = bool(i)
         name = 'WhiteLightning%s.%s' % (book.title(), ext)
         print '='*83
         print name
