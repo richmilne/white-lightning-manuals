@@ -23,3 +23,49 @@ Page 104, DUMP:
 Throughout the manual, the Forth word
 "-->" is constructed as "- - >", i.e.
 two minus signs and a greater than.
+
+
+**ADDITIONAL ERRATA**
+
+Becuase the above errata were noted and published by Oasis, the corrections have
+been incorporated into this version. However, while OCRing and proofreading the
+scans of the original manual, I also noted the following typos, which (with the
+exception of the one on p75) have NOT been corrected.
+
+__Cheatsheet__
+
+Page  4, line 57: 'previously' for 'prevously'
+Page 10, line 12: 'exercise' for 'excercise'
+Page 14, line 21: 'decelerates' for 'deccelerates'
+Page 17, line 36: 'inputting' for 'inputing'
+Page 17, line 37: 'inputting' for 'inputing'
+Page 17, line 58: 'laid' for 'layed'
+
+__Manual__
+
+Page   2, line  7: 'Extendible' for 'Extendable'
+Page   2, line 38: 'difficulty' for 'difficilty'
+Page   2, line 38: 'accommodate' for 'accomodate'
+Page   6, line 17: 'accidentally' for 'accidently'
+Page  16, line 55: 'hear' for 'here'
+Page  17, line 17: 'sprites' for 'srites'
+Page  19, line 59: 'characters' for 'characers'
+Page  26, line 25: 'screenfull' for 'screenful'
+Page  41, line 23: 'replicated' for 'replecated'
+Page  52, line 57: "didn't" for "did'nt"
+Page  53, line 41: 'automatically' for 'automatiacally'
+Page  55, line 37: 'designed' for 'desiged'
+Page  55, line 51: 'separate' for 'seperate'
+Page  63, line 29: 'character' for 'charater'
+Page  67, line 27: 'borne' for 'bourne'
+Page  70, line 24: 'simultaneously' for 'simultanteously'
+Page  75, line 12: 'VARIABLE' for 'VARIABALE'
+Page  80, line 11: 'preceding' for 'preceeding'
+Page 105, line 33: 'compile time' for 'compiletime'
+Page 110, line 43: 'preceding' for 'preceeding'
+Page 126, line 25: 'deceleration' for 'decceleration'
+Page 126, line 50: 'individually' for 'individualy'
+Page 127, line 20: 'scroll' for 'scrool'
+Page 127, line 33: 'foreground' for 'forground'
+Page 128, line  5: 'variables' for 'varables'
+Page 128, line 27: 'scrolled' for 'scolled'
