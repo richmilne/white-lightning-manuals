@@ -1,6 +1,8 @@
 import os
 import sys
 import codecs
+import pysvn
+from datetime import datetime
 
 enums = ['TEXT', 'BOLD', 'UNDER', 'ESC']
 enum_chars = [None, '*', '_', '\\']
@@ -36,7 +38,7 @@ def list_files(which = 'all'):
     return files
 
 class text_formatter(object):
-    def __init__(self):
+    def __init__(self, title):
 
         self.markup_dict = {BOLD: ['', ''],
                             UNDER:['', ''],
@@ -54,7 +56,16 @@ class text_formatter(object):
         self.line_end = '\n'
         self.page_sep = '\x0c'
         self.page_nums = False
+        
+        self.title = title
+        
+        client = pysvn.Client()
+        # client.update('.')
+        info = client.info('.')
 
+        self.rev_num = info['revision'].number
+        self.rev_date = datetime.fromtimestamp(info['commit_time'])
+        
     def add_text_token(self, tokens, new_token):
         if len(tokens) > 0 and (tokens[-1][0] == new_token[0] == TEXT):
             tokens[-1].extend(new_token[1:])
@@ -363,8 +374,8 @@ class markup_formatter(text_formatter):
 
 
 class rtf_formatter(text_formatter):
-    def __init__(self):
-        text_formatter.__init__(self)
+    def __init__(self, title):
+        text_formatter.__init__(self, title)
 
         self.markup_dict[BOLD] = ['{\\b ', '}']
         self.markup_dict[UNDER] = ['{\\ul ', '}']
@@ -374,17 +385,28 @@ class rtf_formatter(text_formatter):
         self.markup_dict['\\'] = '\\\\'
 
         self.extension = '.rtf'
-        self.header = r"""{\rtf1\ansi\deff0
-{\fonttbl{\f0 Courier New;}}
-{\info{\title White Lightning Manual}{\author Richard Milne}}
-\fs18
-"""
-
-    #TODO: Do you want to add creation time, and possibly revision number, to the info block?
-    # e.g. {\creatim\yr2010\mo4\dy8\hr13\min1}}
         self.footer = '}'
         self.line_end = '\\par\n'
         self.page_sep = '\\page\n'
+
+        self.header = r"""{\rtf1\ansi\deff0\n{\fonttbl{\f0 Courier New;}}"""
+        info = ['{\info',
+                '{\\author Richard Milne',
+                ' (RichMilne AT users DOT noreply DOT github DOT com)}']
+        info.append('{\\version%d}' % self.rev_num)
+        creation = '{\creatim\yr%d\mo%d\dy%d\hr%d\min%d}' % (
+             self.rev_date.year,
+             self.rev_date.month,
+             self.rev_date.day,
+             self.rev_date.hour,
+             self.rev_date.minute)
+        info.append(creation)
+        info.append('{\subject Revision: %d, %s}' % (self.rev_num, str(self.rev_date)[:19]))
+        info.append('{\\title %s}' % self.title)
+        info.append('}\n\\fs18\n')
+        self.header += ''.join(info)
+
+#{\subject Subject field}{\keywords Keywords}{\doccomm This is my comment text}}
 
     def encode_char(self, char):
 
@@ -416,8 +438,8 @@ class rtf_formatter(text_formatter):
 
 
 class html_formatter(text_formatter):
-    def __init__(self):
-        text_formatter.__init__(self)
+    def __init__(self, title):
+        text_formatter.__init__(self, title)
 
         self.markup_dict[BOLD] = ['<b>', '</b>']
         self.markup_dict[UNDER] = ['<u>', '</u>']
@@ -427,9 +449,18 @@ class html_formatter(text_formatter):
         self.markup_dict[' '] = '&nbsp;'
 
         self.extension = '.html'
+        self.footer = '</body>'
+        self.line_end = '<br/>\n'
+        self.page_sep = '\n<div style="page-break-after:always">' + '-'*83 + '</div>\n'
+        
+        meta = ['<meta http-equiv="Content-Style-Type" content="text/css">']
+        meta.append('<meta name="author" description="Richard Milne (RichMilne AT users DOT noreply DOT github DOT com">')
+        meta.append('<meta name="generator" description="Rev %d, %s">' % (self.rev_num, str(self.rev_date)[:19]))
+        meta.append('<title>%s</title>' % self.title)
+
         self.header = r"""<html>
     <head>
-        <meta http-equiv="Content-Style-Type" content="text/css">
+        %s
         <style type="text/css">
         <!--
         * {font-family: "Courier New", monospace;
@@ -438,10 +469,7 @@ class html_formatter(text_formatter):
         </style>
    </head>
    <body>
-"""
-        self.footer = '</body>'
-        self.line_end = '<br/>\n'
-        self.page_sep = '\n<div style="page-break-after:always">' + '-'*83 + '</div>\n'
+""" % '\n        '.join(meta)
 
     def encode_char(self, char):
 
@@ -451,7 +479,14 @@ class html_formatter(text_formatter):
         else:
             return '&#%d;' % char
 
-files = list_files()
-outputter = html_formatter()
-outputter.page_nums = True
-outputter.convert_files(files, filename = 'all_text.html')
+for book in ['cheatsheet', 'manual']:
+    files = list_files(book)
+    title = 'White Lightning Documentation - %s' % book.title()
+    for ext in ['rtf', 'html']:
+        outputter = globals()['%s_formatter' % ext](title)
+        outputter.page_nums = True
+        name = 'WhiteLightning%s.%s' % (book.title(), ext)
+        print '='*83
+        print name
+        print '='*83        
+        outputter.convert_files(files, filename = name)
