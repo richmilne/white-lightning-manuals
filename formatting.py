@@ -53,6 +53,7 @@ class text_formatter(object):
         self.footer = ''
         self.line_end = '\n'
         self.page_sep = '\x0c'
+        self.page_nums = False
 
     def add_text_token(self, tokens, new_token):
         if len(tokens) > 0 and (tokens[-1][0] == new_token[0] == TEXT):
@@ -97,7 +98,7 @@ class text_formatter(object):
         # A piece consisting of escape backslashes may convert the first
         # character of the next piece into a text token.
         # For runs of formatting chars, only the first or last two chars will
-        # be considered a formatting token, and all the other chars will be 
+        # be considered a formatting token, and all the other chars will be
         # considered as ordinary text.
 
         tokens = []
@@ -224,6 +225,28 @@ class text_formatter(object):
 
         self.lines = marked
         self.first_line = True
+
+        if not(self.page_nums):
+            return
+
+        num_str = filename[:-4].split('_')[1]
+        print filename
+        if not(48 <= ord(num_str[0]) <= 57):
+            return
+
+        num = int(num_str)
+        spaces = 83 - len(num_str)
+        if num % 2 == 0:
+            num_str = str(num)
+            spaces = 83 - len(num_str)
+            footer = (' ' * spaces) + num_str
+        else:
+            footer = str(num)
+
+        num_lines = len(self.lines)
+        pad_lines = 64 - num_lines
+        self.lines.extend([[[TEXT, ''*83]]]*pad_lines)
+        self.lines.append([[TEXT, footer]])
 
     def encode_char(self, char):
         if ord(char) == 65279:   # BOM
@@ -410,7 +433,7 @@ class html_formatter(text_formatter):
         <style type="text/css">
         <!--
         * {font-family: "Courier New", monospace;
-           font-size: 18}
+           font-size: 11}
         -->
         </style>
    </head>
@@ -418,7 +441,7 @@ class html_formatter(text_formatter):
 """
         self.footer = '</body>'
         self.line_end = '<br/>\n'
-        self.page_sep = '<br/><br/>\n<font color="red"><b>' + '-'*83 + '</b></font><br/><!-- New Page -->\n'
+        self.page_sep = '\n<div style="page-break-after:always">' + '-'*83 + '</div>\n'
 
     def encode_char(self, char):
 
@@ -430,4 +453,5 @@ class html_formatter(text_formatter):
 
 files = list_files()
 outputter = html_formatter()
+outputter.page_nums = True
 outputter.convert_files(files, filename = 'all_text.html')
