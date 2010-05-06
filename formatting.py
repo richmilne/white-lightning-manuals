@@ -242,7 +242,7 @@ class text_formatter(object):
 
         num_str = filename[:-4].split('_')[1]
         print filename
-        if not(48 <= ord(num_str[0]) <= 57):
+        if not(48 <= ord(num_str[0]) <= 57) or num_str == '132':
             return
 
         num = int(num_str)
