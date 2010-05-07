@@ -1,0 +1,15 @@
+﻿**ADDITIONAL ERRATA**
+
+While OCRing and proofreading the scans of the White Lightning manuals, I have
+tried to preserve, as best as I was able, the original pagination, layout,
+spacing and formatting of the originals. That includes all the spelling mistakes
+and typos that I saw, which I have listed below.
+
+__Cheatsheet__
+
+Page  4, line 57: 'previously' for 'prevously'
+Page 10, line 12: 'exercise' for 'excercise'
+Page 14, line 21: 'decelerates' for 'deccelerates'
+Page 17, line 36: 'inputting' for 'inputing'
+Page 17, line 37: 'inputting' for 'inputing'
+Page 17, line 58: 'laid' for 'layed'
