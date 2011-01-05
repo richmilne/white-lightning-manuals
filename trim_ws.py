@@ -9,6 +9,8 @@ files.sort()
 global_width = -1
 global_length = -1
 
+lengths = []
+
 for f in files:
 
     trimmed = []
@@ -36,7 +38,8 @@ for f in files:
         global_width = width
     if length > global_length:
         global_length = length
-            
+        
+    lengths.append((f, width, length))            
     print '%s %s %s' % (f.ljust(30), str(width).rjust(3), str(length).rjust(3))
     
     handle = open(f, 'wb')
@@ -48,3 +51,11 @@ for f in files:
     
 print
 print '%s %s %s' % ('Totals:'.ljust(30), str(global_width).rjust(3), str(global_length).rjust(3))
+
+lengths.sort(key = lambda x:x[1])
+print
+for key in ['cheatsheet', 'manual']:
+    print
+    for l in lengths:
+        if key in l[0]:
+            print l
