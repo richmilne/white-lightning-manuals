@@ -1,0 +1,2108 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta name="author" description="Richard Milne (RichMilne AT users DOT noreply DOT github DOT com">
+        <meta name="version" description="133">
+        <meta name="creation" description="2010-05-07 09:29:15">
+        <meta name="host" description="http://www.worldofspectrum.org/infoseekid.cgi?id=0008967">
+        <title>White Lightning Documentation - Cheatsheet</title>
+        <style type="text/css">
+        <!--
+        * {font-family: "Courier New", monospace;
+           font-size: 11}
+        -->
+        </style>
+   </head>
+   <body>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>WHITE LIGHTNING</b><br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CHEAT SHEET<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MICRODRIVE MANUAL<br/>
+<br/>
+<b>Copyright Notice</b><br/>
+<br/>
+Copyright &#169; 1984 by Oasis Software. &nbsp;No part of this manual may be<br/>
+reproduced on any media without prior written permission from Oasis<br/>
+Software.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+Piracy has reached epidemic proportions and it is with regret that we are<br/>
+forced to reproduce this manual in a form which cannot be photocopied. &nbsp;Our<br/>
+apologies for the inconvenience this may cause to our genuine customers. &nbsp;A<br/>
+reward will be paid for information leading to the successful prosecution<br/>
+of parties infringing this Copyright Notice.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>Do not lose this manual as separate manuals cannot be</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>supplied under any circumstances</b><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>Copyright &#169; by Oasis Software</b>
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CONTENTS<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Page<br/>
+<br/>
+Creating Large Sprites &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1<br/>
+Moving Sprites &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2<br/>
+Screen Scrolling &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2<br/>
+Simple Putting &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2<br/>
+More Advanced Techniques &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4<br/>
+Collision Detection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6<br/>
+Sample Source Listings &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8<br/>
+The Lunar Lander Program &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9<br/>
+Table 1 (Lunar Sprites) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 20<br/>
+<br/>
+<br/>
+APPENDIX A - THE MICRODRIVE VERSION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 26<br/>
+Introduction &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26<br/>
+Implementing on Microdrive &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26<br/>
+Preparing a Cartridge for Source Code &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 26<br/>
+Editing Forth Screens &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 27<br/>
+The Edit Buffers &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;27<br/>
+Transferring Old Source &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 27<br/>
+Bad Sectors &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 28<br/>
+Additional Error Messages &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 28<br/>
+The Microdrive Sprite Generator &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 29<br/>
+Implementing on Microdrive &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29<br/>
+Saving and Loading Sprites &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;29<br/>
+Creating Large Sprites &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30<br/>
+Merging Sprites &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 30
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>WHITE LIGHTNING</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CHEAT SHEET<br/>
+<br/>
+This sheet is intended as a supplement to the User Manual and is provided only to<br/>
+"get you started". &nbsp;The best way to use it is to type in the source code at the<br/>
+end of this section and execute the appropriate section as you go. &nbsp;You will need<br/>
+the demonstration sprites in memory but sprites 25 to 255 should be deleted to<br/>
+make enough memory available. &nbsp;A word to do this is:<br/>
+<br/>
+: CLRS 256 25 DO I SPN ! TEST IF DSPRITE ENDIF LOOP ; &lt;CR&gt;<br/>
+Type this in then type CLRS &lt;CR&gt;<br/>
+<br/>
+It is also worth deleting the large sprites 9, 12, 13 and 14 using:<br/>
+<br/>
+&nbsp;9 SPN ! DSPRITE &lt;CR&gt;<br/>
+12 SPN ! DSPRITE &lt;CR&gt;<br/>
+13 SPN ! DSPRITE &lt;CR&gt;<br/>
+14 SPN ! DSPRITE &lt;CR&gt;<br/>
+<br/>
+where &lt;CR&gt; means press ENTER. &nbsp;After execution CLRS should be FORGOTTEN using<br/>
+FORGET CLRS &lt;CR&gt;<br/>
+<br/>
+Following the example source there is a listing of a complete game. You won't be<br/>
+able to run it without the sprites but we can provide a tape with the source and<br/>
+sprites for one pound seventy five pence if you think it would to helpful.<br/>
+<br/>
+<br/>
+Creating Large Sprites<br/>
+<br/>
+Quite often in games writing large sprites are required which may extend across<br/>
+several screens. &nbsp;The sprite development software can produce sprites with<br/>
+dimensions of up to 15 by 15 characters. &nbsp;Larger sprites need to be constructed in<br/>
+the White Lightning itself.<br/>
+<br/>
+The sample listing for the Lunar Lander contains a routine which we can use as an<br/>
+example. &nbsp;The Sprite Development Program was used to produce 16 sprites, each was<br/>
+3 high by 8 wide, having sprite numbers 10 to 25. &nbsp;The following routine sets up<br/>
+sprite 128 which is 3 high by 128 wide, and then fills it with the 16 small<br/>
+sprites before deleting them to save memory.<br/>
+<br/>
+SCR#8<br/>
+0 : MAKE 128 SPN ! 3 HGT ! 128 LEN ! 0 SROW ! 128 SP2 ! ISPRITE<br/>
+1 16 0 DO I 10 + DUP SPN ! SP1 ! I 8 * SCOL ! GWBLM GWATTM DSPRITE<br/>
+2 LOOP ;<br/>
+<br/>
+Line 0 just defines the big sprite in memory and sets SROW to 0.<br/>
+<br/>
+Line 1 loops round 16 times with I taking the values 0 to 15. I 10 + calculates<br/>
+the sprite number of the smaller sprite and I 8 * calculates the column in the big<br/>
+sprite that this smaller sprite is to be put into. &nbsp;GWBLM GWATTM moves the pixel<br/>
+data, then the attributes, from the individual small sprites into the big sprite.<br/>
+You won't be able to execute this example without the 16 3 by 8 sprites but it<br/>
+illustrates how big sprites are achieved.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+Moving Sprites<br/>
+<br/>
+The chief problem facing the programmer who wants to move sprites around the<br/>
+screen is choosing from the numerous schemes available. &nbsp;We now consider some of<br/>
+these methods, each with its own merits for speed, simplicity, smoothness and<br/>
+storage. We'll begin with the easiest to implement and then work up to some of the<br/>
+more elaborate techniques.<br/>
+<br/>
+<br/>
+Screen Scrolling<br/>
+<br/>
+Where an object is to be moved within a screen window that does not contain any<br/>
+other objects the screen itself can be scrolled. &nbsp;This is particularly applicable<br/>
+where movement is either horizontal or vertical. &nbsp;Diagonal movement is also<br/>
+possible however. &nbsp;In some cases the object is constrained to move on the screen<br/>
+because parts of the object scrolled off the screen without wrap are lost.<br/>
+<br/>
+To begin with let's consider a very simple example - moving an invader (demo<br/>
+sprite 24) 2 characters high and 2 characters wide left and right under keyboard<br/>
+control.<br/>
+<br/>
+The routine is in three sections: &nbsp;the first sets up the base and initial<br/>
+parameters, the second moves left or right and the third polls the keyboard and<br/>
+controls the movement.<br/>
+<br/>
+: SETUP 0 COL ! 6 ROW ! 24 SPN ! CLS SETAM PUTBLS 2 HGT ! 32 LEN ! ;<br/>
+: LEFT WRL1V ; : RIGHT WRR1V ;<br/>
+: KEYS 1 1 KB IF LEFT ENDIF 8 1 KB IF RIGHT ENDIF ;<br/>
+<br/>
+This will move the base by 1 pixel left or right but by changing the words LEFT<br/>
+and RIGHT to be WRR4V and WRL4V or WRR8V and WRL8V movement of 4 or 8 pixels can<br/>
+be achieved.<br/>
+<br/>
+To try these routines we'll need a small test routine.<br/>
+<br/>
+: TESTA ATTOFF SETUP BEGIN KEYS 8 2 KB UNTIL ;<br/>
+<br/>
+TESTA will loop around until SYMBOL SHIFT is pressed. &nbsp;Pressing CAPS SHIFT will<br/>
+move the base left, pressing space will move the base right and pressing SYMBOL<br/>
+SHIFT will exit the loop.<br/>
+<br/>
+This routine can also be executed in background using:<br/>
+<br/>
+: TESTB EXX SETUP EXX ' KEYS INT-ON ;<br/>
+<br/>
+To halt, just type INT-OFF.<br/>
+<br/>
+If you've typed in the source at the end of this section type 6 LOAD to compile<br/>
+and then TESTA or TESTB to execute.<br/>
+<br/>
+<br/>
+Simple Putting<br/>
+<br/>
+Another fairly simple means of moving sprites around the screen is to simply PUT<br/>
+sprites with a blank border around them. &nbsp;Suppose the sprite you want to move is 2<br/>
+characters high and 2 characters wide. &nbsp;You will need to construct a 4 by 4 sprite<br/>
+so that the 2 by 2 sprite can be contained with a border around the outside. Make<br/>
+sure background is off by typing INT-OFF.<br/>
+<br/>
+Suppose for example, sprite 24 is a 2 by 2 sprite (you can use demo sprite 24 for<br/>
+the purposes of this example). &nbsp;We'll use sprite 62 for the sprite to be moved.<br/>
+To set up sprite 62 use:<br/>
+<br/>
+<br/>
+2
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+: MAKE 62 SPN ! 4 HGT ! 4 LEN ! TEST 0= IF ISPRITE CLSM ENDIF ;<br/>
+<br/>
+This will create and clear sprite 62. &nbsp;Now use:<br/>
+<br/>
+1 SCOL ! 1 SROW ! 62 SP2 ! 24 SP1 ! GWBLM<br/>
+<br/>
+Sprite 62 is now set up ready for use. &nbsp;We now need four words to move the sprite<br/>
+UP, DOWN, LEFT and RIGHT.<br/>
+<br/>
+: UP &nbsp; &nbsp;7 1 KB IF ROW @ &nbsp;0 &gt; MINUS ROW +! ENDIF ;<br/>
+: DOWN &nbsp;8 1 KB IF ROW @ 20 &lt; ROW +! ENDIF ;<br/>
+: LEFT &nbsp;1 1 KB IF COL @ &nbsp;0 &gt; MINUS COL +! ENDIF ;<br/>
+: RIGHT 1 2 KB IF COL @ 28 &lt; COL +! ENDIF ;<br/>
+<br/>
+The ENTER and SPACE keys will move the sprite up and down and CAPS SHIFT and Z<br/>
+will move the sprite left and right respectively.<br/>
+<br/>
+The full word to animate the sprite becomes:<br/>
+<br/>
+: TESTC 62 SPN ! 10 COL ! 10 ROW ! BEGIN UP DOWN LEFT RIGHT ADJM PWBLS 6 1 KB<br/>
+UNTIL ;<br/>
+<br/>
+To exit TEST we press the key at 6 1, this is the "P" key.<br/>
+<br/>
+If you're using the source at the end of this section type 7 LOAD MAKE TESTC. &nbsp;The<br/>
+great limitation of this routine, however, is that data already on the screen will<br/>
+be replaced by the sprite being PUT and subsequently lost. &nbsp;Before considering the<br/>
+more sophisticated methods available to us which overcome this limitation let's<br/>
+just consider some simpler methods of circumventing this problem, which will work<br/>
+for similar situations.<br/>
+<br/>
+Supposing the screen holds half a dozen or so fixed objects and we wish to move<br/>
+the invader in the last example through these objects.<br/>
+<br/>
+First of all let's set up a screen with these objects scattered throughout.<br/>
+<br/>
+: SETUP 4 SPN ! 3 2 4 5 6 3 5 12 10 9 12 14 6 0 DO ROW ! COL ! PUTRS LOOP ;<br/>
+<br/>
+Notice that we use the PUTORS word to OR data to the screen; the reason for this<br/>
+will become clear.<br/>
+<br/>
+We'll now redefine UP, DOWN, LEFT and RIGHT so that sprite 62 is only 'PUT' if it<br/>
+is moved, the new code becomes:<br/>
+<br/>
+: KCHK KB DUP ROT OR SWAP ;<br/>
+: UP &nbsp; &nbsp;7 1 KCHK IF ROW @ &nbsp;0 &gt; MINUS ROW +! ENDIF ;<br/>
+: DOWN &nbsp;8 1 KCHK IF ROW @ 20 &lt; ROW +! ENDIF ;<br/>
+: LEFT &nbsp;1 1 KCHK IF COL @ &nbsp;0 &gt; MINUS COL +! ENDIF ;<br/>
+: RIGHT 1 2 KCHK IF COL @ 28 &lt; COL +! ENDIF ;<br/>
+<br/>
+The complete word becomes:<br/>
+<br/>
+: TESTD CLS BEGIN COL @ ROW @ SETUP ROW ! COL ! 62 SPN ! @ UP DOWN LEFT RIGHT IF<br/>
+ADJM PWBLS ENDIF 6 1 KB UNTIL ;<br/>
+<br/>
+What is happening is that as soon as the moving sprite is PUT to the screen all<br/>
+screen data is immediately "OR"ed so that if any was blotted out, it is<br/>
+immediately replaced. &nbsp;Type "P" to exit.<br/>
+<br/>
+To use the source code listings type 8 LOAD TESTD<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+More Advanced Techniques<br/>
+<br/>
+Often it is not practical to repeatedly PUT the screen data which accompanies the<br/>
+moving sprite and more frequently movement is required with a higher resolution<br/>
+than one character.<br/>
+<br/>
+To begin with, let's consider the problem of improving the resolution of the<br/>
+movement. &nbsp;Let's work again with a 2x2 sprite (sprite 24 of the demo sprites will<br/>
+do). &nbsp;Type COLD to clear previous examples.<br/>
+<br/>
+Suppose we wish to move the sprite around the screen with 2 pixel resolution.<br/>
+This means that between 2 successive columns there are 4 intermediate<br/>
+orientations, each successive orientation being 2 pixels right shifted. &nbsp;This<br/>
+means we need 4 sprites in all before the cycle is repeated at the next column<br/>
+position.<br/>
+<br/>
+To begin with let's set up the 4 sprites and number them 100, 101, 102 and 103.<br/>
+To create these 4 sprites, type:<br/>
+<br/>
+: MAKE 2 HGT ! 3 LEN ! 104 100 DO I SPN ! ISPRITE CLSM LOOP ;<br/>
+<br/>
+This will define and clear the 4 sprites and we can now put the character in its<br/>
+various orientations, into these sprites. &nbsp;There are two stages to this operation.<br/>
+Firstly sprite 24 needs to be put into sprite 100, then sprites 100 to 103 need to<br/>
+be scrolled and PUT successively to build up the four orientations.<br/>
+<br/>
+: SET1 0 SROW ! 0 SCOL ! 24 SP1 ! 100 SP2 ! GWBLM ;<br/>
+<br/>
+This sets up sprite 100 and the remaining 3 orientations are set up from this<br/>
+sprite using:<br/>
+<br/>
+: SET2 103 100 DO I SP1 ! I 1+ DUP SP2 ! SPN ! COPYM WRR1M WRR1M LOOP ;<br/>
+<br/>
+It's worth putting these sprites on the screen to see what they look like.<br/>
+Assuming you've executed the words MAKE, SET1 and SET2 use:<br/>
+<br/>
+: TESTE CLS 0 COL ! 4 0 D0 I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;<br/>
+<br/>
+This will place the 4 orientations, one above the other, so that the resolution of<br/>
+the movement can be seen.<br/>
+<br/>
+To use the source version type 9 LOAD MAKE SET1 SET2 TESTE<br/>
+<br/>
+This now gives us 2 pixel horizontal resolution so that we now have 128 horizontal<br/>
+plotting positions in the range 0 to 127. We need a simple formula which will<br/>
+calculate the sprite number and the column from the horizontal plotting position.<br/>
+This turns out to be very simple:<br/>
+<br/>
+: HPLOT 4 /MOD COL ! 100 + SPN ! PUTBLS ;<br/>
+<br/>
+So to PUT at X-position 27 (54 pixels from the left hand column) just use:<br/>
+<br/>
+27 HPLOT<br/>
+<br/>
+The previous example is useful in that it indicates a way of producing high<br/>
+resolution PUTting but as it stands cannot be used for animation because it does<br/>
+not enable the removal of prevously placed orientations. &nbsp;Before looking at a<br/>
+scheme for animating these orientations let's generalise this example to cover<br/>
+high resolution vertical movement as well as horizontal movement.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+4
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+If we're going to give the same resolution of movement (2 pixels) in the vertical<br/>
+plane, we're going to need 4 vertically shifted orientations for each of the<br/>
+horizontally offset orientations - 16 sprites in all. &nbsp;This time they will need to<br/>
+be 3x3 as opposed to the previously defined 2x3. &nbsp;If you've typed in the last<br/>
+example you'll need to delete the old sprites numbered 100 to 103. &nbsp;If so, type:<br/>
+<br/>
+100 SPN ! DSPRITE &lt;CR&gt;<br/>
+101 SPN ! DSPRITE &lt;CR&gt;<br/>
+102 SPN ! DSPRITE &lt;CR&gt;<br/>
+103 SPN ! DSPRITE &lt;CR&gt;<br/>
+<br/>
+Now type COLD to clear the dictionary.<br/>
+<br/>
+To create the 16 new sprites use:<br/>
+<br/>
+: MAKE 3 HGT ! 3 LEN ! 116 100 DO I SPN ! ISPRITE CLSM SETAM &nbsp;LOOP ;<br/>
+<br/>
+SET1 and SET2 are now used in exactly the same form as in the previous example to<br/>
+set up the first 4 sprites 100 to 103. &nbsp;Each of the horizontally offset<br/>
+orientations needs to be vertically offset by 2 pixels into 4 further<br/>
+orientations. &nbsp;100 will be offset into 104, 108 and 112; 101 will be offset into<br/>
+105, 109 and 113 and so on. &nbsp;We'll need a third word SET3 to do this.<br/>
+<br/>
+: SET3 -2 NPX ! 104 100 DO I DUP 12 + SWAP DO I DUP 4 + DUP SP2 ! SPN ! SP1 !<br/>
+GWBLM SCRM 4 +LOOP LOOP ;<br/>
+<br/>
+Once SET1, SET2 and SET3 have been entered, compiled and executed, the definitions<br/>
+can be forgotten. &nbsp;Since we now have 2 pixel resolution in the vertical and<br/>
+horizontal directions we have 128 horizontal positions and 96 vertical positions.<br/>
+We need a word which can calculate sprite number, column and row from the 2 pixel<br/>
+resolution co-ords X and Y. &nbsp;The following word assumes the vertical then<br/>
+horizontal co-ords have been placed on the stack.<br/>
+<br/>
+: XYPUT 4 /MOD COL ! SWAP 4 /MOD ROW ! DUP + DUP + + 100 + SPN ! ;<br/>
+<br/>
+So to PUT at X-position 30 (pixel 60)<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Y-position 17 (pixel 34)<br/>
+<br/>
+use &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;17 30 XYPUT PUTBLS<br/>
+<br/>
+Note that the 100 + SPN ! at the end of the definition of XYPUT should be amended<br/>
+so that the number is the sprite number of the first of your 16 sprites.<br/>
+<br/>
+To use the source type 9 LOAD 10 LOAD MAKE SET1 SET2 SET3 (Ignore MSG# 4's)<br/>
+<br/>
+Let's now deal with the animation of the sprite itself.<br/>
+<br/>
+Perhaps the most powerful method of sprite animation is via the XOR operation.<br/>
+The usefulness of this operation stems from the fact that when an object is XOR'ed<br/>
+with the screen, the screen can he restored simply by repeating the operation.<br/>
+The area of screen is restored to the same state as it was before the first<br/>
+operation (see page 22 of the White Lightning manual).<br/>
+<br/>
+We can now write a routine which moves a sprite around the screen under keyboard<br/>
+control using a slightly amended form of the word XYPUT. &nbsp;The routine below<br/>
+assumes the 10 sprites in the range 100 to 115, which each have dimensions 3x3,<br/>
+have been set up in the last example.<br/>
+<br/>
+The following variables will be used:<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+TSPN &nbsp; &nbsp; Temporary Value for SPN<br/>
+TCOL &nbsp; &nbsp; Temporary Value for COL<br/>
+TROW &nbsp; &nbsp; Temporary Value for ROW<br/>
+XC &nbsp; &nbsp; &nbsp; X co-ordinate<br/>
+YC &nbsp; &nbsp; &nbsp; Y co-ordinate<br/>
+FLAG &nbsp; &nbsp; Collision Flag<br/>
+<br/>
+We'll also use a constant FSPN which holds the number of the first sprite in the<br/>
+series of 16. &nbsp;To adapt these routines for your own use just change FSPN.<br/>
+<br/>
+: PLOAD COL ! ROW ! SPN ! PUTXRS ;<br/>
+: PSET TSPN @ TROW @ TCOL @ ;<br/>
+: PCAL 4 /MOD TCOL ! SWAP 4 /MOD TROW ! DUP + DUP + FSPN + + TSPN ! ;<br/>
+: MOVE YC @ XC @ PCAL PSET PUTXRS PLOAD ;<br/>
+: PLACE YC @ XC @ PCAL PSET PLOAD ;<br/>
+<br/>
+We now need to poll the keyboard:<br/>
+<br/>
+We use the KCHK word again an that the character is not re-PUT unless a key has<br/>
+been pressed.<br/>
+<br/>
+: KCHK KB DUP ROT OR SWAP ;<br/>
+: UP 7 1 KCHK IF YC @ 4 &gt; MINUS YC +! ENDIF ;<br/>
+: DOWN 8 1 KCHK IF YC @ 83 &lt; YC +! ENDIF ;<br/>
+: LEFT 1 1 KCHK IF XC @ 4 &gt; MINUS XC +! ENDIF ;<br/>
+: RIGHT 1 2 KCHK IF XC @ 115 &lt; XC +! ENDIF ;<br/>
+: KREAD 0 UP DOWN LEFT RIGHT ;<br/>
+<br/>
+KREAD will leave 0 on the stack if no key was pressed or 1 if a key was pressed.<br/>
+<br/>
+The complete word becomes:<br/>
+<br/>
+: TESTF 10 XC ! 10 YC ! PLACE BEGIN KREAD IF MOVE ENDIF 6 1 KB UNTIL ;<br/>
+<br/>
+Note that this loop assumes no interference with the values of COL, ROW or SPN<br/>
+between cycles, if you are executing another Forth word, for example a word called<br/>
+TRY, then make sure you temporarily stack COL, ROW and SPN, e.g.<br/>
+<br/>
+... BEGIN KREAD IF MOVE ENDIF COL @ ROW @ SPN @ TRY SPN ! ROW ! COL ! 0 1 KB UNTIL<br/>
+...<br/>
+<br/>
+This word can be easily executed under interrupt using<br/>
+<br/>
+: TESTG KREAD IF MOVE ENDIF ;<br/>
+: TESTH 10 XC ! 10 YC ! EXX PLACE EXX ' TESTG INT-ON BEGIN 6 1 KB UNTIL INT-OFF<br/>
+;<br/>
+<br/>
+You will notice, however, that if you do execute this routine under interrupt then<br/>
+the sprite may flicker in passage through certain areas of the screen. &nbsp;This is<br/>
+due to the finite time taken for the dot to scan the screen and can be very annoying.<br/>
+<br/>
+To execute from source type 11 LOAD 12 LOAD then TESTF or TESTH<br/>
+<br/>
+Let's look now at some more powerful techniques which not only help with the<br/>
+flickering but also include collision detection facilities.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+6
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+Collision Detection<br/>
+<br/>
+To produce the smoothest movement of all, and include collision detection, a six<br/>
+stage operation is used. &nbsp;The technique utilises two dummy sprites, and all<br/>
+intermediate stages of the operation are carried out in memory. &nbsp;For this example<br/>
+let's number the dummy sprites 116 and 117. &nbsp;To set up the sprites use:<br/>
+<br/>
+: MAKED 3 HGT ! 3 LEN ! 116 SPN ! ISPRITE 5 HGT ! 5 LEN ! 117 SPN ! ISPRITE ;<br/>
+<br/>
+This needs to be typed in and executed before executing the Source Code or error<br/>
+MSG# 10 will be produced.<br/>
+<br/>
+The six stage procedure is as follows:<br/>
+<br/>
+1. &nbsp;The last orientation PUT, together with a one character surround, are G0T into<br/>
+the 5x5 dummy sprite.<br/>
+<br/>
+2. &nbsp;The last orientation is GWXRM'ed out of the 5x5, restoring the original screen<br/>
+data.<br/>
+<br/>
+3. &nbsp;The new orientation is COPYM'ed into the 3x3 dummy.<br/>
+<br/>
+4. &nbsp;The screen data in the 5x5 is PWNDM'ed into the 3x3 and SCANM performed on the<br/>
+3x3 to detect any collision. &nbsp;A flag is set.<br/>
+<br/>
+5. &nbsp;The new orientation is GWXRM'ed into the 5x5 dummy.<br/>
+<br/>
+6. &nbsp;The 5x5 is PUTBLS'ed onto the screen.<br/>
+<br/>
+The code for this algorithm is the same as the previous example except that the<br/>
+word MOVE needs to be modified.<br/>
+<br/>
+Define Sprites as for previous example and execute MAKED then use:<br/>
+<br/>
+: STEP1 -1 COL +! -1 ROW +! SPN @ 117 SPN ! GETBLS ;<br/>
+: STEP2 1 SCOL ! 1 SROW ! 117 SP2 ! SP1 ! GWXRM ;<br/>
+: STEP3 116 SP2 ! TSPN @ SP1 ! COPYM ;<br/>
+: STEP4 COL @ - SCOL ! ROW @ - SROW ! 117 SP2 ! 116 SP1 ! PWNDM 116 SPN ! SCANM<br/>
+FLAG +! ;<br/>
+: STEP5 SP1 ! GWXRM 117 SPN ! PUTBLS PSET COL ! ROW ! SPN ! FLAG @ IF 100 100<br/>
+BLEEP 0 FLAG ! ENDIF ;<br/>
+: MOVE YC @ XC @ PCAL PSET STEP1 STEP2 STEP3 STEP4 STEP5 ;<br/>
+<br/>
+To use the source code type COLD to clear all previous examples then:<br/>
+<br/>
+11 LOAD FORGET MOVE 14 LOAD 12 LOAD 13 LOAD<br/>
+<br/>
+to compile the words TESTF and TESTH.<br/>
+<br/>
+The Bleep will sound when the sprite collides with any other screen data.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+SCR # 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 : SET2 103 100 DO I SP1 ! I<br/>
+&nbsp; 0 : SETUP 0 COL ! 6 ROW ! 24 S &nbsp; &nbsp; &nbsp; &nbsp;1+ DUP SP2 ! SPN ! COPYM WRR1M<br/>
+PN ! CLS PUTBLS 2 HGT ! 32 LOW ! ; &nbsp; &nbsp; &nbsp; &nbsp;3 WRR1M LOOP ;<br/>
+&nbsp; 1 : LEFT WRL1V ; : RIGHT WRR1V &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 : TESTE CLS 0 COL ! 4 0 DO I<br/>
+&nbsp;; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100 + SPN ! I DUP + ROW ! PUTBL<br/>
+&nbsp; 2 : KEYS 1 1 KB IF LEFT ENDIF &nbsp; &nbsp; &nbsp; &nbsp; S<br/>
+8 1 KB IF RIGHT ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 LOOP 8 0 AT ;<br/>
+&nbsp; 3 : TESTA ATTOFF SETUP BEGIN K &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 : HPLOT 4 /MOD COL ! 100 + S<br/>
+EYS 8 2 KB UNTIL ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PN ! PUTBLS ;<br/>
+&nbsp; 4 : TESTB ATTOFF EXX SETUP EXX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7<br/>
+&nbsp;' KEYS INT-ON ;<br/>
+&nbsp; 5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SCR # 10<br/>
+&nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 : MAKE 3 HGT ! 3 LEN ! 116 1<br/>
+&nbsp; 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 00 DO I SPN ! ISPRITE CLSM SETAM<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 LOOP ;<br/>
+SCR # 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 : SET3 -2 NPX ! 104 100 DO I<br/>
+&nbsp; 0 : MAKE 62 SPN ! 4 HGT ! 4 LE &nbsp; &nbsp; &nbsp; &nbsp; DUP 12 + SWAP DO I DUP 4 + DUP<br/>
+N ! TEST 0= IF ISPRITE CLSM ENDI &nbsp; &nbsp; &nbsp; &nbsp;SP2<br/>
+F &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 ! SPN ! SP1 ! GWBLM SCRM 4<br/>
+&nbsp; 1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2 &nbsp; &nbsp; &nbsp; +LOOP LOOP ;<br/>
+4 SP1 ! GWBLM ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : XYPUT 4 /MOD COL ! SWAP 4<br/>
+&nbsp; 2 : UP 7 1 KB IF ROW @ 0 &gt; MIN &nbsp; &nbsp; &nbsp; &nbsp;/MOD ROW ! DUP + DUP + + 100 + S<br/>
+US ROW +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PN<br/>
+&nbsp; 3 : DOWN 8 1 KB IF ROW @ 20 &lt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 ! ;<br/>
+ROW +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6<br/>
+&nbsp; 4 : LEFT 1 1 KB IF COL @ 0 &gt; M &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7<br/>
+INUS COL +! ENDIF ;<br/>
+&nbsp; 5 : RIGHT 1 2 KB IF COL @ 28 &lt; &nbsp; &nbsp; &nbsp; &nbsp;SCR # 11<br/>
+&nbsp;COL +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 0 VARIABLE TSPN 0 VARIABLE T<br/>
+&nbsp; 6 : TESTC 62 SPN ! 10 COL ! 10 &nbsp; &nbsp; &nbsp; &nbsp;COL 0 VARIABLE TROW 0 VARIABLE<br/>
+&nbsp;ROW ! CLS BEGIN UP DOWN LEFT RI &nbsp; &nbsp; &nbsp; &nbsp;XC<br/>
+GHT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 0 VARIABLE YC 100 CONSTANT F<br/>
+&nbsp; 7 : ADJM PWBLS 6 1 KB UNTIL ; &nbsp; &nbsp; &nbsp; &nbsp; SPN 0 VARIABLE FLAG<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 : PLOAD COL ! ROW ! SPN ! PU<br/>
+SCR # 8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TXRS ;<br/>
+&nbsp; 0 : SETUP 4 SPN ! 1 3 2 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 : PSET TSPN @ TROW @ TCOL @<br/>
+5 6 3 5 12 10 9 12 4 6 0 DO ROW ! COL &nbsp; ;<br/>
+! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : PCAL 4 /MOD TCOL ! SWAP 4<br/>
+&nbsp; 1 : PUTORS LOOP ; : KCHK KB DUP &nbsp; &nbsp; &nbsp; /MOD TROW ! DUP + DUP + FSPN + +<br/>
+ROT OR SWAP ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 TSPN ! ;<br/>
+&nbsp; 2 : UP 7 1 KCHK IF ROW @ 0 &gt; M &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 : PLACE YC @ XC @ PCAL PSET<br/>
+INUS ROW +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PLOAD ;<br/>
+&nbsp; 3 : DOWN 8 1 KCHK IF ROW @ 20 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7 : MOVE YC @ XC @ PCAL PSET P<br/>
+&lt; ROW +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;UTXRS PLOAD ;<br/>
+&nbsp; 4 : LEFT 1 1 KCHK IF COL @ 0 &gt;<br/>
+&nbsp;MINUS COL +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SCR # 12<br/>
+&nbsp; 5 : RIGHT 1 2 KCHK IF COL @ 28 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 : KCHK KB DUP ROT OR SWAP ;<br/>
+&nbsp;&lt; COL +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 : UP 7 1 KCHK IF YC @ 4 &gt; MI<br/>
+&nbsp; 6 : TESTD CLS BEGIN COL @ ROW &nbsp; &nbsp; &nbsp; &nbsp; NUS YC +! ENDIF ;<br/>
+@ SETUP ROW ! COL ! 62 SPN ! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 : DOWN 8 1 KCHK IF YC @ 83 &lt;<br/>
+&nbsp; 7 0 UP DOWN LEFT RIGHT IF ADJM &nbsp; &nbsp; &nbsp; &nbsp; YC +! ENDIF ;<br/>
+&nbsp;PWBLS ENDIF 6 1 KB UNTIL ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 : LEFT 1 1 KCHK IF XC @ 4 &gt;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MINUS XC +! ENDIF ;<br/>
+SCR # 9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : RIGHT 1 2 KCHK IF XC @ 115<br/>
+&nbsp; 0 : MAKE 2 HGT ! 3 LEN ! 104 1 &nbsp; &nbsp; &nbsp; &nbsp; &lt; XC +! ENDIF ;<br/>
+00 DO I SPN ! ISPRITE CLSM LOOP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 : KREAD 0 UP DOWN LEFT RIGHT<br/>
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;;<br/>
+&nbsp; 1 : SET1 0 SROW ! 0 SCOL ! 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6 : TESTF 10 XC ! 10 YC ! PLAC<br/>
+SP1 ! 100 SP2 ! GWBLM ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; E BEGIN KREAD IF MOVE ENDIF 6 1<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; KB<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7 UNTIL ;<br/>
+<br/>
+<br/>
+<br/>
+8
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+SCR #13 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 : STEP2 1 SCOL ! 1 SROW ! 11<br/>
+&nbsp; 0 : TESTG KREAD IF MOVE ENDIF &nbsp; &nbsp; &nbsp; &nbsp; 7 SP2 ! SP1 ! GWXRM ;<br/>
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 : STEP3 116 SP2 ! TSPN SP1<br/>
+&nbsp; 1 : TESTH 10 XC ! 10 YC ! EXX &nbsp; &nbsp; &nbsp; &nbsp; ! COPYM ;<br/>
+PLACE EXX ' TESTG INT-ON BEGIN 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 : STEP4 COL @ - SCOL ! ROW @<br/>
+&nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - SROW ! 117 SP2 ! 116<br/>
+&nbsp; 2 KB UNTIL INT-OFF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 SP1 ! PWNDM 116 SPN ! SCANM<br/>
+&nbsp; 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FLAG +! ;<br/>
+&nbsp; 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 : STEP5 SP1 ! GWXRM 117 SPN<br/>
+&nbsp; 5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ! PUTBLS PSET COL ! ROW ! SPN !<br/>
+&nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6 FLAG @ IF 100 100 BLEEP 0 FL<br/>
+&nbsp; 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AG ! ENDIF ;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7 : MOVE YC @ XC @ PCAL PSET S<br/>
+SCR # 14 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TEP1 STEP2 STEP3 STEP4 STEP5 ;<br/>
+0 : STEP1 -1 COL +! -1 ROW +!<br/>
+SPN @ 117 SPN ! GETBLS ;<br/>
+<br/>
+<br/>
+<br/>
+NOTE<br/>
+<br/>
+Make sure that you delete the unwanted sprites 25 to 255, 9, 12, 13 and 14 BEFORE<br/>
+loading source code from tape or the source code will over-run the sprites.<br/>
+<br/>
+<br/>
+LUNAR LANDER<br/>
+<br/>
+<br/>
+Variables<br/>
+<br/>
+PH &nbsp; &nbsp; &nbsp;Horizontal Phase of scrolling landscape<br/>
+SPD &nbsp; &nbsp; Horizontal Velocity of strolling landscape<br/>
+DOWN &nbsp; &nbsp;Set to 1 if Lander crashes<br/>
+FU &nbsp; &nbsp; &nbsp;Remaining fuel<br/>
+XP &nbsp; &nbsp; &nbsp;Vertical Position of Lander<br/>
+VEL &nbsp; &nbsp; Vertical Velocity of Lander<br/>
+SX &nbsp; &nbsp; &nbsp;Phase of X-Velocity dial<br/>
+SY &nbsp; &nbsp; &nbsp;Phase of Y-Velocity dial<br/>
+SFU &nbsp; &nbsp; Phase of Fuel Gauge<br/>
+IX &nbsp; &nbsp; &nbsp;Phase of Horizontal Position Dial<br/>
+<br/>
+<br/>
+Sprites<br/>
+<br/>
+NUMBERS &nbsp; &nbsp; &nbsp; &nbsp;HEIGHT &nbsp; &nbsp; &nbsp; &nbsp; LENGTH &nbsp; &nbsp; &nbsp; &nbsp; DESCRIPTION<br/>
+<br/>
+&nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; POINTER<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LANDING PAD<br/>
+&nbsp; 4-9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BLOCKS FOR LANDSCAPE SPRITES<br/>
+&nbsp;10-25 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LANDSCAPE SECTIONS<br/>
+26,28,29,31 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PANEL SPRITES<br/>
+&nbsp;32,33 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MINI LANDSCAPE<br/>
+&nbsp; 43 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EXPLOSION<br/>
+&nbsp; 44 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LANDED LUNAR LANDER<br/>
+&nbsp; 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CRASHED LUNAR LANDER<br/>
+&nbsp;100 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LUNAR LANDER<br/>
+<br/>
+101-107 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LUNAR LANDER ORIENTATIONS<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(CONSTRUCTED)<br/>
+&nbsp;128 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;128 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMPLETE LANDSCAPE<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(CONSTRUCTED)<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+Sprites 1 to 100 are produced using the sprite generator program. &nbsp;Sprites 101 to<br/>
+107 are created in the main program using the word SET. &nbsp;Sprite 128 is constructed<br/>
+from sprites 10 to 25 in the main program using the word MAKE.<br/>
+<br/>
+<br/>
+The Lunar Lander<br/>
+<br/>
+This listing is provided as an example of White Lightning programming. &nbsp;In order<br/>
+to run the game you will need to enter the sprites as described in the next<br/>
+section. &nbsp;This is a fairly laborious task so we can offer the fainthearted,<br/>
+sprites and demo on tape for one pound seventy five pence. &nbsp;We recommend, however,<br/>
+that you take the time to build up the sprites yourself as an excercise in self<br/>
+discipline if nothing else!<br/>
+<br/>
+The program executes one word in foreground and one word in background. &nbsp;The<br/>
+program can be roughly sub-divided the following way:<br/>
+<br/>
+Screens 6,7,8<br/>
+<br/>
+These set up the screen display, dials etc.<br/>
+<br/>
+Screens 9,10,11<br/>
+<br/>
+These three screens form the routine which scrolls the landscape at one of three<br/>
+speeds. &nbsp;This routine is executed in background to give smoother movement.<br/>
+<br/>
+Screens 11,12,13,14,15,16,17<br/>
+<br/>
+These control the flight of the lander, manipulate the dials, execute the crashes<br/>
+and so on.<br/>
+<br/>
+Screen 18<br/>
+<br/>
+This executes all the previous definitions in the right order to produce the final<br/>
+game.<br/>
+<br/>
+Let's now look at the program in more detail.<br/>
+<br/>
+<br/>
+SCR # 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 44 SPN ! 17 ROW ! 6 COL ! PU<br/>
+&nbsp; 0 : COLOUR 0 ROW ! 16 COL ! 16 &nbsp; &nbsp; &nbsp; &nbsp;TXRS ;<br/>
+&nbsp;LEN ! 23 HGT ! 7 INK 1 BRIGHT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 : PTST SPN ! COL ! ROW ! PUT<br/>
+&nbsp; 1 SETAV ATTON ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BLS ;<br/>
+&nbsp; 2 : VTSC COL ! 10 2 DO I ROW ! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 : BARST 14 23 31 PTST MIRM 1<br/>
+&nbsp;PUTBLS LOOP ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 24 31 PTST MIRM 6 28 28 PTST<br/>
+&nbsp; 3 : SCLE 26 SPN ! 18 VTSC 26 V &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 19 16 32 PTST 19 24 33 PTST<br/>
+TSC MIRM 21 VTSC 29 VTSC MIRM ; &nbsp; &nbsp; &nbsp; &nbsp; ;<br/>
+&nbsp; 4 : VTCL ROW ! COL ! LEN ! HGT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 : LETR 7 INK 0 PAPER 1 18 AT<br/>
+&nbsp;! PAPER SETAV ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ." FUEL" 0 26 AT ." VERT" 1 26<br/>
+&nbsp; 5 : BARS 4 6 1 20 2 VTCL 2 2 1 &nbsp; &nbsp; &nbsp; &nbsp;AT<br/>
+&nbsp;20 8 VTCL 5 4 &nbsp;1 28 2 VTCL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7 ." VEL" 11 20 AT ." HORZ VEL<br/>
+&nbsp; 6 2 3 1 28 7 VTCL 5 1 16 16 14 &nbsp; &nbsp; &nbsp; &nbsp;" ; --&gt;<br/>
+&nbsp;VTCL ;<br/>
+&nbsp; 7 --&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SCR # 8<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 : HRSC 32 16 DO 12 I 29 PTST<br/>
+SCR # 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;17 I 29 PTST LOOP 16 16 1 PTST<br/>
+&nbsp; 0 : LND 6 COL ! 17 ROW ! 44 SP &nbsp; &nbsp; &nbsp; &nbsp;;<br/>
+N ! PUTBLS BEGIN 7 1 KB UNTIL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 : MARK 152 159 PLOT 7 0 DRAW<br/>
+&nbsp; 1 20 ROW ! 43 SPN ! 7 COL ! 20 &nbsp; &nbsp; &nbsp; &nbsp; 216 127 PLOT 7 0 DRAW 128 71 PL<br/>
+&nbsp;0 DO PUTXRS 100 100 BLEEP LOOP &nbsp; &nbsp; &nbsp; &nbsp; OT<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+10
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+&nbsp; 2 0 -7 DRAW ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : UL SS -200 &lt; IF SL8 ELSE S<br/>
+&nbsp; 3 : PANEL 0 PAPER COLOUR SCLE &nbsp; &nbsp; &nbsp; &nbsp; L4 ENDIF ;<br/>
+BARS BARST HRSC LETR MARK ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 : LL SS -7 &lt; IF SL1 ELSE SO<br/>
+&nbsp; 4 : MAKE 128 SPN ! 3 HGT ! 128 &nbsp; &nbsp; &nbsp; &nbsp;ENDIF ;<br/>
+&nbsp;LEN ! 0 SROW ! 128 SP2 ! ISPRIT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 : LF SS -100 &lt; IF UL ELSE LL<br/>
+E &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ENDIF ;<br/>
+&nbsp; 5 16 0 DO I 10 + DUP SPN ! SP1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 : DEC SS 0&lt; IF LF ELSE RT EN<br/>
+&nbsp;! I 8 * SCOL ! GWBLM GWATIM DSP &nbsp; &nbsp; &nbsp; &nbsp;DIF ;<br/>
+RITE<br/>
+&nbsp; 6 LOOP ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SCR # 12<br/>
+&nbsp; &nbsp; 0 VARIABLE PH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 : SET -1 NPX ! 3 LEN ! 6 HGT<br/>
+&nbsp; 7 256 VARIABLE SPD 0 VARIABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;! 107 100 DO I SP1 ! I 1+ DUP S<br/>
+DOWN 1008 VARIABLE FU --&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P2 !<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp;SPN ! ISPRITE COPYM WCRM LO<br/>
+SCR # 9 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OP ;<br/>
+&nbsp; 0 : S1 1023 AND 8 / SCOL ! 1 L &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 40 VARIABLE XP 8 VARIABLE V<br/>
+EN ! PUTBLS 16 LEN ! ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;EL<br/>
+&nbsp; 1 : NBR PH @ S1 ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 : PREP 7 COL ! 0 DOWN ! 40 X<br/>
+&nbsp; &nbsp; : NBL PH @ 128 + S1 ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P ! ;<br/>
+&nbsp; 2 : OPEN 0 PAPER 5 INK CLS 0 P &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 : TICK VEL @ 255 &gt; IF ELSE 1<br/>
+H ! EXX 128 SPN ! 16 LEN ! 0 COL &nbsp; &nbsp; &nbsp; &nbsp;VEL +! ENDIF ;<br/>
+&nbsp;! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 : THRUST FU @ IF 7 1 KB IF V<br/>
+&nbsp; 3 3 HGT ! 21 ROW ! 0 SCOL ! 0 &nbsp; &nbsp; &nbsp; &nbsp; EL @ -252 &gt; IF -4 VEL +! FUEL<br/>
+SROW ! PWBLS PWATTS 2 HGT ! EXX &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6 ENDIF ENDIF ENDIF ;<br/>
+&nbsp; 4 0 PAPER 1008 FU ! 0 BORDER ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 --&gt;<br/>
+&nbsp; &nbsp; : SH8 PH @ DUP 7 AND 0= ;<br/>
+&nbsp; 5 : FUEL -1 FU +! ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SCR # 13<br/>
+&nbsp; &nbsp; : SR SH8 IF NBR ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 : MV VEL @ XP @ + DUP 5631 &gt;<br/>
+&nbsp; 6 : SL SH8 IF NBL ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;IF DROP 5631 1 DOWN ! ENDIF DUP<br/>
+&nbsp; &nbsp; : SH4 PH @ DUP 3 AND 0= ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 XP ! 32 / 8 /MOD 5 - ROW ! 7<br/>
+&nbsp; 7 : SP SPD +! ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AND 100 + SPN ! ROW @ 0&lt; IF ADJ<br/>
+&nbsp; &nbsp; : SS SPD @ &nbsp;; --&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; M<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 PWBLS ELSE VEL @ 0&lt; IF 1 SRO<br/>
+SCR # 10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;W ! ROW @ 15 &gt; IF 4 HGT ! ELSE<br/>
+&nbsp; 0 : POLL FU @ IF 8 1 KB IF SS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 5 HGT ! ENDIF ELSE 0 SROW !<br/>
+-252 &gt; MINUS SF FUEL ENDIF &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 HGT ! ENDIF ROW @ DUP SROW @ +<br/>
+&nbsp; 1 1 1 KB IF SS 256 &lt; SF FUEL E &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 ROW ! PWBLS ROW ! ENDIF ;<br/>
+NDIF ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5<br/>
+&nbsp; 2 : -P - PH ! POLL ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6<br/>
+&nbsp; &nbsp; : +P + PH ! POLL ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 --&gt;<br/>
+&nbsp; 3 : SR1 SR WRR1V 1 -P ;<br/>
+&nbsp; &nbsp; : SL1 SL WRL1V 1 +P ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SCR # 14<br/>
+&nbsp; 4 : SR4 SH4 IF SR WRR4V 4 -P E &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 : BANG DOWN @ DUP IF 19 ROW<br/>
+LSE SR1 ENDIF DROP ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;! 43 SPN ! -5 NPX ! 7 HGT ! 3 LE<br/>
+&nbsp; 5 : SL4 SH4 IF SL WRL4V 4 +P E &nbsp; &nbsp; &nbsp; &nbsp;N !<br/>
+LSE SL1 ENDIF DROP ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 40 10 DO PUTXRS I 20 + I DO<br/>
+&nbsp; 6 : SO DOWN @ IF ELSE SS ABS 2 &nbsp; &nbsp; &nbsp; &nbsp;J I BLEEP LOOP PUTXRS 17 ROW !<br/>
+56 &lt; IF POLL ENDIF ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 SCRV 19 ROW ! 5 +LOOP SS ABS<br/>
+&nbsp; 7 : SR8 SH8 IF NBR WRR8V 8 -P &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8 &lt; IF 21 ROW ! 45 SPN ! PUTBLS<br/>
+ELSE SR4 ENDIF DROP ; --&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 ENDIF ENDIF XP @ 5631 = IF D<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OWN @ 0= IF 7 COL ! LND 7 COL !<br/>
+SCR # 11 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 MV 0 VEL ! ENDIF INT-OFF BEG<br/>
+&nbsp; 0 : SL8 SH8 IF NBL WRL8V 8 +P &nbsp; &nbsp; &nbsp; &nbsp; IN 7 1 KB UNTIL<br/>
+ELSE SL4 ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp;' DEC INT-ON ENDIF ;<br/>
+&nbsp; 1 : UR SS 200 &gt; IF SR8 ELSE SR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 : OK 0 DOWN ! ;<br/>
+4 ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7 --&gt;<br/>
+&nbsp; 2 : LR SS 7 &gt; IF SR1 ELSE SO E<br/>
+NDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SCR # 15<br/>
+&nbsp; 3 : RT SS 100 &gt; IF UR ELSE LR &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 : LAND SS ABS 8 &lt; IF VEL @ 3<br/>
+ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 &lt; IF PH @ 1023 AND 8 / CASE 12<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OF<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 11
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+&nbsp; 1 OK ENDOF 13 OF OK ENDOF 30 O &nbsp; &nbsp; &nbsp; &nbsp;SCR # 17<br/>
+F OK ENDOF 31 OF OK ENDOF 58 OF &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 : FVEL FU @ 16 / SFU @ - 0&lt;<br/>
+OK &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE<br/>
+&nbsp; 2 ENDOF 59 OF OK ENDOF 91 OF O &nbsp; &nbsp; &nbsp; &nbsp;N !<br/>
+K ENDOF 92 OF OK ENDOF ENDCASE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 -1 NPX ! -1 SFU &nbsp; +! WCRV RSE<br/>
+&nbsp; 3 ENDIF ENDIF BANG ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;T1 ENDIF ;<br/>
+&nbsp; 4 128 VARIABLE SX 32 VARIABLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 0 &nbsp;VARIABLE LX<br/>
+SY 63 VARIABEL SFU &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 : MXG 18 ROW ! 16 COL ! 16 L<br/>
+&nbsp; 5 : XG SX +! 16 COL ! 13 ROW ! &nbsp; &nbsp; &nbsp; &nbsp;EN ! 1 HGT ! ;<br/>
+&nbsp;1 HGT ! 16 LEN ! ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : MLEFT MXG WRL1V -1 LX +! ;<br/>
+&nbsp; 6 : RSET1 7 COL ! 3 LEN ! ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : MRIGHT MXG WRR1V 1 LX +! ;<br/>
+&nbsp; &nbsp; : WLEFT -1 XG WRR1V RSET1 ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 : MON PH @ 8 / LX @ - DUP 0<br/>
+&nbsp; 7 : WRIGHT 1 XG WRL1V RSET1 ; &nbsp; &nbsp; &nbsp; &nbsp; &gt; IF DROP MRIGHT ELSE<br/>
+&nbsp; &nbsp; &nbsp;--&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 0&lt; IF MLEFT ENDIF ENDIF RSET<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 ;<br/>
+SCR # 16 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 --&gt;<br/>
+&nbsp; 0 : XVEL SPD @ 256 + 4 / SX @<br/>
+&nbsp;- DUP 0&lt; IF WLEFT DROP ELSE 0 &gt; &nbsp; &nbsp; &nbsp; &nbsp;SCR # 18<br/>
+IF &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 : OFF PANEL PREP ' DEC INT-O<br/>
+&nbsp; 1 WRIGHT ENDIF ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N BEGIN TICK THRUST MV MON XVEL<br/>
+&nbsp; 2 : YG DUP MINUS NPX ! SY +! 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 YVEL FVEL MON LAND MON UNTIL<br/>
+7 COL ! 2 ROW ! 8 HGT ! 1 LEN ! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INT-OFF ;<br/>
+&nbsp; 3 WCRV RSET1 ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 : TST 256 SPD ! 0 PH ! 1008<br/>
+&nbsp; 4 : WUP -1 YG ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FU ! 40 XP ! 8 VEL ! 128 SX !<br/>
+&nbsp; &nbsp; : WDOWN 1 YG ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 32 SY ! 63 SFU ! 0 LX ! OPEN<br/>
+&nbsp; 5 : YVEL VEL @ 256 + 8 / SY @ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;OFF ;<br/>
+- DUP 0&lt; IF WUP DROP ELSE 0 &gt; IF &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4<br/>
+&nbsp; 6 WDOWN ENDIF ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5<br/>
+&nbsp; 7 --&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WORD DESCRIPTIONS<br/>
+<br/>
+<br/>
+COLOUR<br/>
+<br/>
+Sets the attributes in the right hand half of the screen.<br/>
+<br/>
+VTSC<br/>
+<br/>
+Produces a row of sprites with the current sprite number at the column on the<br/>
+stack. &nbsp;Used to build up the gauges.<br/>
+<br/>
+SCLE<br/>
+<br/>
+Uses VTSC to build up the gauges.<br/>
+<br/>
+VTCL<br/>
+<br/>
+Sets up a specified window with specified attributes.<br/>
+<br/>
+BARS<br/>
+<br/>
+Uses VTCL to set the attributes for the gauges.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+12
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+LAND<br/>
+<br/>
+This word controls the landing sequence. &nbsp;The landed sprite is placed on the pad<br/>
+and sits until ENTER is pressed. &nbsp;The explosion is then produced beneath the<br/>
+lander to simulate take off and the landed lander is then exclusively OR'ed off of<br/>
+the pad.<br/>
+<br/>
+PTST<br/>
+<br/>
+General purpose word which sets ROW, COL and SPN from the stack and then performs<br/>
+a PUTBLS.<br/>
+<br/>
+BARST<br/>
+<br/>
+Adds the finishing touches to the gauges by putting sprites 28,31,32 and 33 in the<br/>
+appropriate positions. &nbsp;Uses PTST.<br/>
+<br/>
+LETR<br/>
+<br/>
+Places the gauge titles above the gauges.<br/>
+<br/>
+HRSC<br/>
+<br/>
+Puts the horizontal scale on the screen.<br/>
+<br/>
+MARK<br/>
+<br/>
+Draws the indicators used in the gauges.<br/>
+<br/>
+PANEL<br/>
+<br/>
+Execution word to set up the whole right hand side of the screen ie. all previous<br/>
+words.<br/>
+<br/>
+MAKE<br/>
+<br/>
+See 'Creating Large Sprites'.<br/>
+<br/>
+S1<br/>
+<br/>
+Used to calculate the next column in the large landscape sprite, to be put to the<br/>
+screen. &nbsp;LEN is set back to 16 for the next operation.<br/>
+<br/>
+NBR<br/>
+<br/>
+Gets the appropriate column (calculated by S1) when the landscape is moving<br/>
+right.<br/>
+<br/>
+NBL<br/>
+<br/>
+Gets the appropriate column when the landscape is moving left.<br/>
+<br/>
+OPEN<br/>
+<br/>
+Builds up the initial picture for the left of the screen. &nbsp;Notice the use of EXX<br/>
+to set up background variables for execution under interrupt.<br/>
+<br/>
+SH8<br/>
+<br/>
+PH describes the phase of the landscape with pixel resolution. &nbsp;SH8 checks to see<br/>
+if this phase is a multiple of 8 and if so sets a flag to indicate that a fresh<br/>
+column should be GOT from the landscape sprite. &nbsp;PH is also left on the stack.<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 13
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+FUEL<br/>
+<br/>
+Decrements the amount of fuel left.<br/>
+<br/>
+SR<br/>
+<br/>
+Checks to see if a character boundary is crossed (see SH8) and if so executes NBR.<br/>
+<br/>
+SL<br/>
+<br/>
+As SR but checks when movement is left.<br/>
+<br/>
+SH4<br/>
+<br/>
+Checks to see if phase is crossing a half character boundary, scrolling can only<br/>
+increase from one pixel to four pixel movements on such a boundary or scrolling<br/>
+will go out of phase.<br/>
+<br/>
+SF<br/>
+<br/>
+Accelerates horizontal speed (deccelerates if negative) by the amount on the<br/>
+stack.<br/>
+<br/>
+SS<br/>
+<br/>
+Puts the current horizontal speed on the stack.<br/>
+<br/>
+POLL<br/>
+<br/>
+Checks to see if there's any Fuel left (a non zero value of FU will act as a true<br/>
+flag) then first checks SPACE to accelerate right if not travelling too fast then<br/>
+check CAPS SHIFT to accelerate left if not travelling too fast. &nbsp;If a key is<br/>
+pressed fuel is decremented.<br/>
+<br/>
+-P<br/>
+<br/>
+Updates phase and does a POLL when moving right.<br/>
+<br/>
++P<br/>
+<br/>
+Updates phase and does a POLL when moving left.<br/>
+<br/>
+SR1<br/>
+<br/>
+Moves landscape 1 pixel right and adjusts pointers.<br/>
+<br/>
+SR4<br/>
+<br/>
+Moves landscape 4 pixels right and adjusts pointers provided a half character<br/>
+boundary has been reached. &nbsp;If not, a further 1 pixel movement must be made.<br/>
+<br/>
+SL4<br/>
+<br/>
+As SR4 when moving left.<br/>
+<br/>
+SO<br/>
+<br/>
+When speed is less than 7, keyboard is polled but no scrolling of the screen is<br/>
+executed. &nbsp;The lander is treated as horizontally stationary.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+14
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+SR8<br/>
+<br/>
+Moves landscapes 8 pixels (1 character) right and adjusts pointers provided a full<br/>
+character boundary has been reached. &nbsp;If not a further 4 pixel scroll is<br/>
+executed.<br/>
+<br/>
+SL8<br/>
+<br/>
+As SR8 when movement is to the left.<br/>
+<br/>
+UR<br/>
+<br/>
+If speed is greater than 200, try and scroll right 8 pixels right, f not, try and<br/>
+scroll by 4 pixels right.<br/>
+<br/>
+LR<br/>
+<br/>
+If speed is greater than 7 then scroll 1 pixel right else no scroll.<br/>
+<br/>
+RT<br/>
+<br/>
+If speed is greater than 100 then do a UR if not do an LR.<br/>
+<br/>
+UL<br/>
+<br/>
+As UR when speed is negative.<br/>
+<br/>
+LL<br/>
+<br/>
+As LR when speed is negative.<br/>
+<br/>
+LF<br/>
+<br/>
+As RF when speed is negative.<br/>
+<br/>
+DEC<br/>
+<br/>
+The execution word which does all the scrolling logic. &nbsp;The words UR to LF are<br/>
+effectively the nodes of a tree which produce one of 7 possible scrolls from -8<br/>
+pixels to +8 pixels. &nbsp;A detailed understanding of the workings are not necessary<br/>
+as long as you can adapt the routine to serve your needs.<br/>
+<br/>
+SET<br/>
+<br/>
+Creates 7 new orientations of the lander from the original in sprite 100, making 8<br/>
+in all, each lander being 1 pixel shifted vertically from the one before. &nbsp;This<br/>
+enables single pixel resolution in the lander movement.<br/>
+<br/>
+PREP<br/>
+<br/>
+Used to set up initial values.<br/>
+<br/>
+TICK<br/>
+<br/>
+Increments vertical velocity (acts like gravity) unless terminal velocity has been<br/>
+reached. &nbsp;If you want to make the game more difficult change 1 VEL +! to 2 VEL +!<br/>
+and thus double the planets gravity.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+THRUST<br/>
+<br/>
+If the lander still has fuel and hasn't reached terminal upward velocity then<br/>
+increase upward velocity.<br/>
+<br/>
+MV<br/>
+<br/>
+A fairly complicated word which moves the lander vertically. &nbsp;The velocity is<br/>
+added to the position (physicists note that unit time has elapsed etc). &nbsp;If the<br/>
+lander goes under the base its position is put equal to the base and DOWN is SET<br/>
+to 1. &nbsp;The row and orientation are then calculated.<br/>
+<br/>
+BANG<br/>
+<br/>
+Another fairly involved word which executes a crash if DOWN=1. &nbsp;It checks to see<br/>
+if a safe landing was made and if not decides what sort of crash is required.<br/>
+<br/>
+OK<br/>
+<br/>
+A short word which sets DOWN to 0, indicating a safe landing.<br/>
+<br/>
+LAND<br/>
+<br/>
+If the lander has zero sideways velocity then vertical velocity and horizontal<br/>
+position are checked for a safe landing or a crash. &nbsp;DOWN is set accordingly.<br/>
+<br/>
+XG<br/>
+<br/>
+Updates X-VEL PHASE and sets window for scroll.<br/>
+<br/>
+RSET1<br/>
+<br/>
+Sets COL and LEN back after XG.<br/>
+<br/>
+XVEL<br/>
+<br/>
+Controlling routine for XVEL gauge.<br/>
+<br/>
+YG<br/>
+<br/>
+Used to adjust Y-VEL gauge.<br/>
+<br/>
+WUP<br/>
+<br/>
+Move up Y-VEL gauge.<br/>
+<br/>
+WDOWN<br/>
+<br/>
+Move down Y-VEL gauge.<br/>
+<br/>
+YVEL<br/>
+<br/>
+Controlling routine for Y-VEL gauge.<br/>
+<br/>
+FVEL<br/>
+<br/>
+Controlling routine for fuel gauge.<br/>
+<br/>
+MXG<br/>
+<br/>
+Used to set up window for small screen movement.<br/>
+<br/>
+<br/>
+<br/>
+16
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+MLEFT<br/>
+<br/>
+Move pointer left on small screen.<br/>
+<br/>
+MRIGHT<br/>
+<br/>
+Move pointer right on small screen.<br/>
+<br/>
+MON<br/>
+<br/>
+Control routine for scroll screen.<br/>
+<br/>
+OFF<br/>
+<br/>
+Main program loop.<br/>
+<br/>
+TST<br/>
+<br/>
+Final execution word. &nbsp;Initialises parameters and then executes main program<br/>
+loop.<br/>
+<br/>
+<br/>
+THE GAME ITSELF<br/>
+<br/>
+CREATION OF SPRITES<br/>
+<br/>
+Load up the sprite development package and create all the sprites listed in table<br/>
+1.<br/>
+<br/>
+Once the sprite development package has loaded execute a cold start by pressing<br/>
+the C key and hit Y for yes and then N for the change buffer size prompt.<br/>
+<br/>
+Set the attribute switch to 1 by pressing the A key and then 1.<br/>
+<br/>
+With reference to table 1 set the sprite number to the required value by pressing<br/>
+the S key and then inputing the required value. &nbsp;Input the dimensions (Height and<br/>
+Length) of the sprite by pressing the H or C keys and then inputing the<br/>
+appropriate values. &nbsp;Set the respective ink, paper, flash and bright values using<br/>
+the X, C, V and B keys.<br/>
+<br/>
+Position the sprite screen X and Y pos cursors to their settings using the symbol<br/>
+shift 5, 6, 7 or 8 keys.<br/>
+<br/>
+Using the direct data input function, key D, input the 8 bytes of data. &nbsp;Move the<br/>
+X and Y pos cursors to the next position and input the data until the sprite is<br/>
+complete on the screen. Set both the X and Y position cursors to 1 and then GET<br/>
+the sprite into memory by pressing the G key. &nbsp;Clear the sprite screen by pressing<br/>
+symbol shift Q and then create the next sprite.<br/>
+<br/>
+<br/>
+CREATION OF THE 64x3 CHARACTER LANDSCAPE SPRITE<br/>
+<br/>
+This sprite will be made up of 8 8x3 character sprites, which will be joined<br/>
+together into one large sprite in the White Lightning program itself.<br/>
+<br/>
+Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1 clear the<br/>
+CHR$ square by pressing the Q key. &nbsp;Using the sprites 4,5,6,7,8,9 and the CHR$<br/>
+square (referred to as 0) build up sprites 10 to 25 as layed out in diagram 1.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+Position the X and Y Pos cursors to the appropriate co-ordinates. &nbsp;Input<br/>
+the relevant sprite number and put the sprite to the screen by pressing the<br/>
+D key and then 1. &nbsp;In the case of 0 press J to DUMP the empty CHR$ square<br/>
+to the sprite screen.<br/>
+<br/>
+The landing pad, sprite 3, is also placed in these sprites.<br/>
+<br/>
+Once the 8 by 3 sprites have been created on the screen, position the X and<br/>
+Y pos cursors to the top left corner of the sprite. &nbsp;Set the sprite number<br/>
+to the appropriate value, set the length to 8 and the height to 3 then<br/>
+press G to get the sprite.<br/>
+<br/>
+Note that the left hand column of sprite 10 must have a 0 ink value as well<br/>
+as the right hand column of sprite 11.<br/>
+<br/>
+Once all the sprites have been created save them off to tape using the<br/>
+symbol SHIFT S key.<br/>
+<br/>
+Load in White Lightning, load in the lunar sprites. &nbsp;Carefully type in the<br/>
+Lunar Lander program as listed and check your program against the original.<br/>
+It is now best to save your source off to tape.<br/>
+<br/>
+Exit to BASIC using: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PROG &lt;CR&gt;<br/>
+<br/>
+then save to tape using: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SAVE"LUNAR" CODE 52224,6656<br/>
+<br/>
+Go back into White Lightning using: PRINT USR 24836<br/>
+<br/>
+Now type &nbsp; &nbsp; 6 LOAD &lt;CR&gt;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MAKE &lt;CR&gt; &nbsp;to create the landscape<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SET &nbsp;&lt;CR&gt; &nbsp;to create the landers<br/>
+<br/>
+To run the program type &nbsp;TST &lt;CR&gt;<br/>
+<br/>
+Please note that if there is an error in your source the last few screens<br/>
+can no longer be listed or compiled, since the creation of extra sprites<br/>
+has overwritten the end screens, thus the source would have to be reloaded<br/>
+for editing purposes.<br/>
+<br/>
+<br/>
+PLAYING THE GAME<br/>
+<br/>
+The game itself is more of a simulation than a game. &nbsp;The idea is to land<br/>
+on all four bases without running out of fuel or crashing. &nbsp;The gauges are<br/>
+self explanatory.<br/>
+<br/>
+The controls are: &nbsp; &nbsp; &nbsp;CAPS SHIFT &nbsp; &nbsp; Thrust to the left<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BREAK SPACE &nbsp; &nbsp;Thrust to the right<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ENTER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Vertical thrust<br/>
+<br/>
+Once the game is over, hit the ENTER key to escape and then TST &lt;CR&gt; for a<br/>
+new game.<br/>
+<br/>
+FUEL<br/>
+<br/>
+If fuel runs out the controls will no longer function.<br/>
+<br/>
+YVEL<br/>
+<br/>
+A safe landing is only made if the VEL gauge registers a velocity in the<br/>
+"safe" region of the centre of the gauge.<br/>
+<br/>
+<br/>
+<br/>
+18
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+XVEL<br/>
+<br/>
+The horizontal velocity is represented by one of 3 scroll speeds but safe landings<br/>
+can only be made if the pointer is in the "safe" region in the centre of the<br/>
+gauge.<br/>
+<br/>
+THE SMALL SCREEN<br/>
+<br/>
+This gives a macroscopic view of the 8 screens. &nbsp;The bases are marked. &nbsp;The gauge<br/>
+sometimes cannot keep up with the lander movement but at scroll speeds of a pixel<br/>
+it will soon "catch up" with the real positions. &nbsp;This is not a "feature" we must<br/>
+admit, keeping up with the gauge slows the foreground program down a lot.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 19
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+TABLE 1<br/>
+-------<br/>
+<br/>
+SPRITE &nbsp; H &nbsp; &nbsp;L &nbsp; &nbsp;INK &nbsp; &nbsp;PAPER &nbsp; &nbsp;FLASH &nbsp; &nbsp;BRIGHT &nbsp; &nbsp;XPOS &nbsp; &nbsp;YPOS &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; 2 &nbsp; &nbsp; 3 &nbsp; &nbsp; 4 &nbsp; &nbsp; 5 &nbsp; &nbsp; 6 &nbsp; &nbsp; 7 &nbsp; &nbsp; 8<br/>
+------ &nbsp; - &nbsp; &nbsp;- &nbsp; &nbsp;--- &nbsp; &nbsp;----- &nbsp; &nbsp;----- &nbsp; &nbsp;------ &nbsp; &nbsp;---- &nbsp; &nbsp;---- &nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; -<br/>
+&nbsp; &nbsp;1 &nbsp; &nbsp; 1 &nbsp; &nbsp;2 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp;29 &nbsp; &nbsp;29 &nbsp; &nbsp;28 &nbsp; &nbsp;15 &nbsp; &nbsp; 7 &nbsp; &nbsp; 3 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; &nbsp;1 &nbsp; &nbsp; 1 &nbsp; &nbsp;2 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp;92 &nbsp; &nbsp;92 &nbsp; &nbsp;28 &nbsp; 120 &nbsp; 112 &nbsp; &nbsp;96 &nbsp; 128 &nbsp; 128<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; 1 &nbsp; &nbsp;6 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 255 &nbsp; 227 &nbsp; 127 &nbsp; &nbsp; 0 &nbsp; &nbsp;60 &nbsp; &nbsp;24 &nbsp; &nbsp;60 &nbsp; 126<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; 1 &nbsp; &nbsp;6 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 255 &nbsp; 142 &nbsp; 255 &nbsp; &nbsp;63 &nbsp; &nbsp;31 &nbsp; &nbsp;63 &nbsp; &nbsp;31 &nbsp; &nbsp;63<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; 1 &nbsp; &nbsp;6 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 255 &nbsp; &nbsp;28 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; 1 &nbsp; &nbsp;6 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 255 &nbsp; &nbsp;28 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; 1 &nbsp; &nbsp;6 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 255 &nbsp; 113 &nbsp; 255 &nbsp; 254 &nbsp; 252 &nbsp; 254 &nbsp; 252 &nbsp; 254<br/>
+&nbsp; &nbsp;3 &nbsp; &nbsp; 1 &nbsp; &nbsp;6 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 255 &nbsp; 199 &nbsp; 254 &nbsp; &nbsp; 0 &nbsp; &nbsp;60 &nbsp; &nbsp;24 &nbsp; &nbsp;60 &nbsp; 126<br/>
+&nbsp; &nbsp;4 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 128 &nbsp; &nbsp;64 &nbsp; 160 &nbsp; &nbsp;80 &nbsp; 168 &nbsp; &nbsp;84 &nbsp; 170 &nbsp; &nbsp;85<br/>
+&nbsp; &nbsp;5 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 1 &nbsp; &nbsp; 2 &nbsp; &nbsp; 5 &nbsp; &nbsp;10 &nbsp; &nbsp;21 &nbsp; &nbsp;42 &nbsp; &nbsp;85<br/>
+&nbsp; &nbsp;6 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85<br/>
+&nbsp; &nbsp;7 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 128 &nbsp; &nbsp;65 &nbsp; 162 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85<br/>
+&nbsp; &nbsp;8 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 8 &nbsp; &nbsp;20 &nbsp; &nbsp;42 &nbsp; &nbsp;85<br/>
+&nbsp; &nbsp;9 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp;16 &nbsp; &nbsp;40 &nbsp; &nbsp;85<br/>
+&nbsp; 26 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 254 &nbsp; &nbsp; 2 &nbsp; &nbsp; 2 &nbsp; &nbsp; 2 &nbsp; &nbsp;30 &nbsp; &nbsp; 2 &nbsp; &nbsp; 2 &nbsp; &nbsp; 2<br/>
+&nbsp; 28 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 29 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 128 &nbsp; 128 &nbsp; 128 &nbsp; 136 &nbsp; 136 &nbsp; 136 &nbsp; 255 &nbsp; &nbsp; 0<br/>
+&nbsp; 31 &nbsp; &nbsp; 1 &nbsp; &nbsp;1 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 254 &nbsp; 254 &nbsp; 254 &nbsp; 254 &nbsp; 254 &nbsp; 254 &nbsp; 254 &nbsp; 254<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 1 &nbsp; 155 &nbsp; 155 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 226 &nbsp; 230 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp;63 &nbsp; &nbsp;33 &nbsp; 127 &nbsp; 127 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp;59 &nbsp; 251 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; 2 &nbsp; 223 &nbsp; 223 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 240 &nbsp; &nbsp;16 &nbsp; 254 &nbsp; 254 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp;24 &nbsp; 127 &nbsp; 127 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 32 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 231 &nbsp; 231 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 126 &nbsp; &nbsp;66 &nbsp; 254 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp;16 &nbsp; 126 &nbsp; 126 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 143 &nbsp; 143 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 254 &nbsp; 254 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 126 &nbsp; &nbsp;66 &nbsp; 127 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp;18 &nbsp; &nbsp;18 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;7 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+&nbsp; 33 &nbsp; &nbsp; 1 &nbsp; &nbsp;8 &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 167 &nbsp; 167 &nbsp; 255 &nbsp; 255 &nbsp; 255 &nbsp; 255<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+20
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+TABLE 1 (Continued)<br/>
+-------<br/>
+<br/>
+SPRITE &nbsp; H &nbsp; &nbsp;L &nbsp; &nbsp;INK &nbsp; &nbsp;PAPER &nbsp; &nbsp;FLASH &nbsp; &nbsp;BRIGHT &nbsp; &nbsp;XPOS &nbsp; &nbsp;YPOS &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; 2 &nbsp; &nbsp; 3 &nbsp; &nbsp; 4 &nbsp; &nbsp; 5 &nbsp; &nbsp; 6 &nbsp; &nbsp; 7 &nbsp; &nbsp; 8<br/>
+------ &nbsp; - &nbsp; &nbsp;- &nbsp; &nbsp;--- &nbsp; &nbsp;----- &nbsp; &nbsp;----- &nbsp; &nbsp;------ &nbsp; &nbsp;---- &nbsp; &nbsp;---- &nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; -<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp;96 &nbsp; 114 &nbsp; &nbsp;88 &nbsp; &nbsp;46 &nbsp; 181 &nbsp; &nbsp;26 &nbsp; &nbsp;21 &nbsp; &nbsp;90<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp;16 &nbsp; &nbsp;41 &nbsp; &nbsp;88 &nbsp; 104 &nbsp; 212 &nbsp; 174 &nbsp; &nbsp;85 &nbsp; 170<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 128 &nbsp; &nbsp; 2 &nbsp; &nbsp;14 &nbsp; &nbsp;20 &nbsp; &nbsp;40 &nbsp; 208 &nbsp; &nbsp;98 &nbsp; 224<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp;13 &nbsp; &nbsp;10 &nbsp; &nbsp;53 &nbsp; 234 &nbsp; &nbsp;61 &nbsp; &nbsp;10 &nbsp; &nbsp;21 &nbsp; &nbsp;42<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp;64 &nbsp; 160 &nbsp; &nbsp;80 &nbsp; 174 &nbsp; 120 &nbsp; 192 &nbsp; &nbsp;64 &nbsp; 226<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;85 &nbsp; 170 &nbsp; 255 &nbsp; &nbsp; 2 &nbsp; &nbsp;70 &nbsp; &nbsp;13 &nbsp; &nbsp;42 &nbsp; &nbsp;12<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;89 &nbsp; 168 &nbsp; 208 &nbsp; &nbsp;49 &nbsp; &nbsp;16 &nbsp; &nbsp; 0<br/>
+&nbsp; 43 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;96 &nbsp; 180 &nbsp; 168 &nbsp; 216 &nbsp; &nbsp;40 &nbsp; &nbsp;20 &nbsp; &nbsp;74 &nbsp; &nbsp; 7<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 1 &nbsp; &nbsp; 1 &nbsp; &nbsp; 7 &nbsp; &nbsp; 6<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 165 &nbsp; 255 &nbsp; &nbsp;66 &nbsp; &nbsp;36<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 128 &nbsp; 128 &nbsp; 224 &nbsp; &nbsp;96<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;12 &nbsp; &nbsp;15 &nbsp; &nbsp; 5 &nbsp; &nbsp; 0 &nbsp; &nbsp; 7 &nbsp; &nbsp;13 &nbsp; 213 &nbsp; &nbsp;47<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;24 &nbsp; 255 &nbsp; &nbsp;90 &nbsp; &nbsp; 0 &nbsp; 255 &nbsp; &nbsp;90 &nbsp; &nbsp;90 &nbsp; 255<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;48 &nbsp; 240 &nbsp; 160 &nbsp; &nbsp; 0 &nbsp; 224 &nbsp; 176 &nbsp; 171 &nbsp; 244<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 1 &nbsp; &nbsp; 6 &nbsp; &nbsp; 9 &nbsp; &nbsp;22 &nbsp; &nbsp;72 &nbsp; &nbsp;48<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; 237 &nbsp; 221 &nbsp; 127 &nbsp; 140 &nbsp; &nbsp;48 &nbsp; 192 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp;36 &nbsp; 165 &nbsp; 255 &nbsp; 129 &nbsp; &nbsp;44 &nbsp; &nbsp;94 &nbsp; 191 &nbsp; 191<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; 183 &nbsp; 187 &nbsp; 254 &nbsp; &nbsp;49 &nbsp; &nbsp;12 &nbsp; &nbsp; 3 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp; 44 &nbsp; &nbsp; 4 &nbsp; &nbsp;5 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; 128 &nbsp; &nbsp;96 &nbsp; 144 &nbsp; 104 &nbsp; &nbsp;18 &nbsp; &nbsp;12<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp;18 &nbsp; &nbsp; 9 &nbsp; &nbsp; 9 &nbsp; &nbsp;55 &nbsp; &nbsp;33 &nbsp; &nbsp;65<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp;12 &nbsp; &nbsp;24 &nbsp; &nbsp;56 &nbsp; 112 &nbsp; 231 &nbsp; 207<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp;32 &nbsp; &nbsp;80 &nbsp; &nbsp; 8 &nbsp; &nbsp; 4 &nbsp; &nbsp;58 &nbsp; 196 &nbsp; 201<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 21
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+TABLE 1 (Continued)<br/>
+-------<br/>
+<br/>
+SPRITE &nbsp; H &nbsp; &nbsp;L &nbsp; &nbsp;INK &nbsp; &nbsp;PAPER &nbsp; &nbsp;FLASH &nbsp; &nbsp;BRIGHT &nbsp; &nbsp;XPOS &nbsp; &nbsp;YPOS &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; 2 &nbsp; &nbsp; 3 &nbsp; &nbsp; 4 &nbsp; &nbsp; 5 &nbsp; &nbsp; 6 &nbsp; &nbsp; 7 &nbsp; &nbsp; 8<br/>
+------ &nbsp; - &nbsp; &nbsp;- &nbsp; &nbsp;--- &nbsp; &nbsp;----- &nbsp; &nbsp;----- &nbsp; &nbsp;------ &nbsp; &nbsp;---- &nbsp; &nbsp;---- &nbsp; &nbsp; &nbsp;- &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; - &nbsp; &nbsp; -<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp;67 &nbsp; &nbsp;71 &nbsp; &nbsp;46 &nbsp; &nbsp;60 &nbsp; &nbsp;56 &nbsp; &nbsp;17 &nbsp; 131 &nbsp; &nbsp;64<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; 191 &nbsp; &nbsp;44 &nbsp; &nbsp;78 &nbsp; 187 &nbsp; 119 &nbsp; &nbsp;46 &nbsp; &nbsp;25 &nbsp; 123<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp;18 &nbsp; &nbsp;37 &nbsp; 194 &nbsp; &nbsp; 5 &nbsp; 138 &nbsp; 197 &nbsp; 138 &nbsp; &nbsp; 5<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; 160 &nbsp; &nbsp;81 &nbsp; 162 &nbsp; &nbsp;82 &nbsp; 170 &nbsp; &nbsp;84 &nbsp; 170 &nbsp; &nbsp;85<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 6 &nbsp; 230 &nbsp; 248 &nbsp; 248 &nbsp; 244 &nbsp; 163 &nbsp; &nbsp;82 &nbsp; &nbsp;85<br/>
+&nbsp; 45 &nbsp; &nbsp; 3 &nbsp; &nbsp;3 &nbsp; &nbsp; 7 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp;42 &nbsp; &nbsp;21 &nbsp; &nbsp;42 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85 &nbsp; 170 &nbsp; &nbsp;85<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; 1 &nbsp; &nbsp; 7 &nbsp; &nbsp; 6 &nbsp; &nbsp;12 &nbsp; &nbsp;15 &nbsp; &nbsp; 5 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; 165 &nbsp; 255 &nbsp; &nbsp;66 &nbsp; &nbsp;36 &nbsp; &nbsp;24 &nbsp; 255 &nbsp; &nbsp;90 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; 128 &nbsp; 128 &nbsp; 224 &nbsp; &nbsp;96 &nbsp; &nbsp;48 &nbsp; 240 &nbsp; 160 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 7 &nbsp; &nbsp;13 &nbsp; 213 &nbsp; &nbsp;47 &nbsp; 237 &nbsp; 221 &nbsp; &nbsp;11 &nbsp; &nbsp;21<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; 255 &nbsp; &nbsp;90 &nbsp; &nbsp;90 &nbsp; 255 &nbsp; &nbsp;36 &nbsp; 165 &nbsp; 255 &nbsp; 129<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; 224 &nbsp; 176 &nbsp; 171 &nbsp; 244 &nbsp; 183 &nbsp; 187 &nbsp; 208 &nbsp; 168<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp;34 &nbsp; &nbsp;68 &nbsp; 248 &nbsp; 144 &nbsp; 160 &nbsp; &nbsp;64 &nbsp; 144 &nbsp; &nbsp;96<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp;44 &nbsp; &nbsp;94 &nbsp; 191 &nbsp; 191 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp;68 &nbsp; &nbsp;34 &nbsp; &nbsp;31 &nbsp; &nbsp; 9 &nbsp; &nbsp; 5 &nbsp; &nbsp; 2 &nbsp; &nbsp; 9 &nbsp; &nbsp; 6<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+&nbsp;100 &nbsp; &nbsp; 6 &nbsp; &nbsp;3 &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0 &nbsp; &nbsp; 0<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+22
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+<b>DIAGRAM 1</b><br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>0 INK</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>&#8595;</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 4 &#9474; 0 &#9474; 0 &#9474; 8 &#9474; 9 &#9474; 0 &#9474; 5 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 4 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 10</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>&#8595; 0 INK</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 4 &#9474; 8 &#9474; 9 &#9474; 0 &#9474; 0 &#9474; 9 &#9474; 8 &#9474; 0 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 4 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 11</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 0 &#9474; 9 &#9474;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;<b>SPRITE 3</b>&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 12</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 9 &#9474; 0 &#9474; 5 &#9474; 4 &#9474; 8 &#9474; 0 &#9474; 8 &#9474; 8 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 13</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 5 &#9474; 4 &#9474; 0 &#9474; 9 &#9474; 5 &#9474; 4 &#9474;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;<b>SPRITE 3</b>&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 14</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+6 &#9474;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;<b>SPRITE 3</b>&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9474; 8 &#9474; 5 &#9474; 4 &#9474; 0 &#9474;<br/>
+&nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 4 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 15</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 23
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+<b>DIAGRAM 1 CONTINUED</b><br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 0 &#9474; 9 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 4 &#9474; 8 &#9474; 9 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 16</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 5 &#9474; 4 &#9474; 8 &#9474; 0 &#9474; 0 &#9474; 5 &#9474; 7 &#9474; 4 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 17</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 9 &#9474;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;<b>SPRITE 3</b>&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9474; 0 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 4 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 18</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 0 &#9474; 8 &#9474; 5 &#9474; 6 &#9474; 4 &#9474; 8 &#9474; 9 &#9474; 0 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 19</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 8 &#9474; 0 &#9474; 0 &#9474; 0 &#9474; 5 &#9474; 7 &#9474; 7 &#9474; 4 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 7 &#9474; 4 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 20</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 8 &#9474; 5 &#9474; 4 &#9474; 5 &#9474; 4 &#9474; 8 &#9474; 9 &#9474; 0 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 4 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 21</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+24
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+<b>DIAGRAM 1 CONTINUED</b><br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 0 &#9474;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;<b>SPRITE 3</b>&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9474; 9 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 22</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 8 &#9474; 9 &#9474; 5 &#9474; 6 &#9474; 7 &#9474; 7 &#9474; 6 &#9474; 4 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 23</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 9 &#9474; 5 &#9474; 4 &#9474; 8 &#9474; 9 &#9474; 9 &#9474; 5 &#9474; 7 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 24</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9484;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9516;&#9472;&#9472;&#9472;&#9488;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 6 &#9474; 4 &#9474; 0 &#9474; 8 &#9474; 0 &#9474; 0 &#9474; 8 &#9474; 5 &#9474; 7 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 7 &#9474; 6 &#9474; 4 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 25</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MICRODRIVE WHITE LIGHTNING<br/>
+<br/>
+<br/>
+INTRODUCTION<br/>
+<br/>
+In order to make maximum use of the Spectrum's 48k of memory the tape based White<br/>
+Lightning was located at 24832 decimal. &nbsp;This leaves room for a small BASIC loader<br/>
+program. &nbsp;If, however, interface &nbsp;is fitted, the execution of any of the shadow<br/>
+ROM commands will cause BASIC to be relocated upwards and result in insufficient<br/>
+memory for the tape based loader program.<br/>
+<br/>
+It was therefore decided, on completion of the tape based program, to develop<br/>
+another version which would not only be microdrive compatible but would also<br/>
+utilise the drives to compile source code. &nbsp;Unfortunately, because of the way that<br/>
+the shadow ROM operates, the BASIC interface part of the software is no longer<br/>
+practical and therefore Microdrive White Lightning no longer has this feature.<br/>
+<br/>
+The editing buffers have now been moved up to occupy the old screens 6, 7 and 8,<br/>
+and an extra 1k of dictionary space is now available. Source code is now compiled<br/>
+directly from microdrives and so sprites can be stored from 53760 onwards.<br/>
+Microdrive screens 1 to 19 are utilised by the system but you can edit any of the<br/>
+screens 20 to 150. &nbsp;This means that Microdrive White Lightning can handle six<br/>
+times as much source code without any troublesome reloading from tape.<br/>
+<br/>
+<br/>
+IMPLEMENTING ON MICRODRIVE<br/>
+<br/>
+1. &nbsp;Insert Tape 1 in your cassette and rewind to Side A.<br/>
+<br/>
+2. &nbsp;Type LOAD"" and when "MWL" has loaded it will auto-run, format your<br/>
+&nbsp; &nbsp; microdrive and save the BASIC loader and the machine code.<br/>
+<br/>
+3. &nbsp;To run the microdrive version just type LOAD *"M";1;"MWL" and it will<br/>
+&nbsp; &nbsp; load and execute.<br/>
+<br/>
+<br/>
+PREPARING A CARTRIDGE FOR SOURCE CODE<br/>
+<br/>
+Before using the microdrive version it is necessary to set up a separate cartridge<br/>
+for storing and loading source code. &nbsp;This version has been designed to work<br/>
+exclusively with microdrive number 1.<br/>
+<br/>
+To set up the cartridge, insert it in microdrive 1 and execute the following:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; FORMAT"M";1;"name":OPEN#4;"M";1;"a":<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; FOR I=1 TO 100000: PRINT#4;CHR$ 32 ; : NEXT I<br/>
+<br/>
+Note the lower case "a" used in the filename.<br/>
+<br/>
+After several minutes, the error message "MICRODRIVE FULL" will be printed. You<br/>
+should now key in:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; CLOSE#4<br/>
+<br/>
+to close this file. &nbsp;To check that you have a correctly prepared cartridge, type:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; CAT 1<br/>
+<br/>
+"a" should be printed on the screen to indicate a single file called "a" and 0 to<br/>
+indicate zero bytes free.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+26
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+Please note that this cartridge should be clearly labelled and used exclusively<br/>
+for SAVEing and LOADing Forth source code while you are editing Forth screens.<br/>
+Sprites, BASIC and blocks of machine code should be SAVEd on a separate cartridge<br/>
+or cartridges. &nbsp;There are no commands within White Lightning to manipulate<br/>
+microdrives, therefore all such commands (e.g. FORMAT, ERASE, OPEN#) are executed<br/>
+from BASIC after exiting via the PROG command.<br/>
+<br/>
+<br/>
+EDITING FORTH SCREENS<br/>
+<br/>
+Forth source code is still EDITed in exactly the same way as the tape version<br/>
+(using EDIT,P,S,D etc.) except that EDIT will not automatically execute a FLUSH.<br/>
+This means that your EDITs will not be updated on microdrive until you type FLUSH,<br/>
+so be sure to remember to do this before moving on to another screen.<br/>
+<br/>
+<br/>
+THE EDIT BUFFERS<br/>
+<br/>
+To give some idea of how White Lightning uses the microdrive for Forth source,<br/>
+the following brief description may be helpful.<br/>
+<br/>
+There exists in RAM an area of 1024 bytes called the edit buffer, which can hold<br/>
+two 512 byte Forth screens. &nbsp;If you issue a command which requires the use of a<br/>
+screen (LIST, CLEAR or INDEX) then this screen will be read from the microdrive<br/>
+into the edit buffer. &nbsp;If the edit buffer already contains two screens and they<br/>
+have been altered in any way since they were last loaded, then they must first be<br/>
+saved (using FLUSH) back to the drive in order to allow the currently required<br/>
+screen to be loaded in.<br/>
+<br/>
+Note that before a screen is first edited it will need to be cleared using the<br/>
+CLEAR command as it will probably contain garbage. &nbsp;For example, before using<br/>
+screen 20 for the first time, type:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 20 CLEAR 20 LIST<br/>
+<br/>
+<br/>
+TRANSFERRING OLD SOURCE<br/>
+<br/>
+If you have already written a sizeable program with the tape based White<br/>
+Lightning, then you will want to transfer it to your microdrive based White<br/>
+Lightning without having to completely re-type it. &nbsp;To do this, use the<br/>
+following:<br/>
+<br/>
+1. &nbsp;Type OLD &lt;CR&gt;.<br/>
+<br/>
+2. &nbsp;Type PROG &lt;CR&gt; and load your old source code from the tape in the normal way.<br/>
+&nbsp; &nbsp; Then re-enter Forth as normal.<br/>
+<br/>
+3. &nbsp;Transfer each screen from its old number in memory to its new number on<br/>
+&nbsp; &nbsp; the microdrive using:<br/>
+<br/>
+&nbsp; &nbsp; OLDSCREEN NEWSCREEN TRANS &lt;CR&gt;<br/>
+<br/>
+&nbsp; &nbsp; So, for example, to transfer the old screen 6 to microdrive screen<br/>
+&nbsp; &nbsp; 25, use:<br/>
+<br/>
+&nbsp; &nbsp; 6 25 TRANS &lt;CR&gt;<br/>
+<br/>
+&nbsp; &nbsp; If a bad sector is encountered you will get error message 8. &nbsp;Skip<br/>
+&nbsp; &nbsp; over this sector and try the next one (see next section on BAD SECTORS).<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 27
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+4. &nbsp;Finally type NEW &lt;CR&gt; to restore the editing buffers to their<br/>
+&nbsp; &nbsp; microdrive addresses.<br/>
+<br/>
+<br/>
+BAD SECTORS<br/>
+<br/>
+Regrettably, at the time of writing, whilst the microdrive cartridge costs about<br/>
+twice as much as a standard 5 1/4 inch floppy, the number of bad sectors is still<br/>
+extremely high. &nbsp;Forth screens map directly to microdrive sectors, so screen 25<br/>
+uses sector 25 and so on. &nbsp;So as we shall see, some screens may be unusable.<br/>
+<br/>
+A bad sector will be identified by White Lightning the first time a read or write<br/>
+operation is carried out, and error 8 generated. &nbsp;Note that executing CLEAR will<br/>
+mean that you can find bad sectors before editing into them. &nbsp;If you do find a bad<br/>
+sector, keep a note of it and don't use that screen. &nbsp;There is a simple way around<br/>
+this problem as we shall see in the following example. &nbsp;Assume we want to edit<br/>
+into screens 25 to 28 and that we did the following:<br/>
+<br/>
+1. &nbsp;Type 25 CLEAR 0 EDIT<br/>
+<br/>
+2. &nbsp;Key in text for lines 0 to 6.<br/>
+<br/>
+3. &nbsp;Type 7 EDIT then key in --&gt; to indicate continue with next screen when<br/>
+&nbsp; &nbsp; LOADing.<br/>
+<br/>
+4. &nbsp;Type 26 CLEAR 0 EDIT.<br/>
+<br/>
+5. &nbsp;Key in text for lines 0 to 6.<br/>
+<br/>
+6. &nbsp;Type 7 EDIT and key in --&gt; .<br/>
+<br/>
+Now suppose when we typed in 27 CLEAR, that we got error 8, indicating drive error.<br/>
+This would mean that sector 27 was a bad sector and therefore that screen 27 was<br/>
+unusable.<br/>
+<br/>
+Remember that in screen 26 the last line was:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 --&gt;<br/>
+<br/>
+which tells Forth to continue LOADing on the next screen. &nbsp;The next screen is<br/>
+screen 27 which is unusable, so we have to change the last line of screen 26 to<br/>
+become:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 7 28 LOAD<br/>
+<br/>
+which tells Forth to continue LOADing at screen 28. &nbsp;This will then skip over the<br/>
+bad sector.<br/>
+<br/>
+<br/>
+ADDITIONAL ERROR MESSAGES<br/>
+<br/>
+# 3 &nbsp; - &nbsp;Incorrect Addressing Mode<br/>
+<br/>
+# 7 &nbsp; - &nbsp;Stack Overflow<br/>
+<br/>
+# 8 &nbsp; - &nbsp;Microdrive read/write error (bad sector).<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+28
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+SUMMARY OF MICRODRIVE WHITE LIGHTNING<br/>
+<br/>
+1. &nbsp;Only use specially prepared cartridges for EDITing and use them<br/>
+&nbsp; &nbsp; exclusively for storing screens.<br/>
+<br/>
+2. &nbsp;CLEAR a screen before using it for the first time and change the<br/>
+&nbsp; &nbsp; previous screen to skip over it if it is a bad sector. &nbsp;Do not use<br/>
+&nbsp; &nbsp; this screen again.<br/>
+<br/>
+3. &nbsp;Microdrive commands such as ERASE, VERIFY etc. can be executed after<br/>
+&nbsp; &nbsp; entering BASIC using PROG.<br/>
+<br/>
+4. &nbsp;Do NOT break into the program (SHIFT and SPACE) while the microdrive<br/>
+&nbsp; &nbsp; is running.<br/>
+<br/>
+5. &nbsp;RESERVE no longer executes.<br/>
+<br/>
+6. &nbsp;There are some additional error messages (listed above).<br/>
+<br/>
+7. &nbsp;Always execute a FLUSH after editing of a screen is complete.<br/>
+<br/>
+<br/>
+<br/>
+THE MICRODRIVE SPRITE GENERATOR<br/>
+<br/>
+<br/>
+INTRODUCTION<br/>
+<br/>
+The microdrive Sprite Generator Program is upwardly compatible with the current<br/>
+tape based version and tape LOADing and SAVEing is still supported. &nbsp;An extra<br/>
+command has been added to make the creation of large sprites easier and the arcade<br/>
+character set has been re-organised to give extra sprite space.<br/>
+<br/>
+<br/>
+IMPLEMENTING ON MICRODRIVE<br/>
+<br/>
+The first thing to do is to transfer the program onto a microdrive cartridge.<br/>
+<br/>
+1. &nbsp;Insert Tape 1 in your cassette and rewind to Side A.<br/>
+<br/>
+2. &nbsp;Type LOAD"":LOAD""CODE<br/>
+<br/>
+3. &nbsp;Place a formatted cartridge in microdrive 1.<br/>
+<br/>
+4. &nbsp;Type GOTO 9998.<br/>
+<br/>
+This will save and verify the generator onto the microdrive. &nbsp;Now type PRINT USR 0<br/>
+to clear memory.<br/>
+<br/>
+The microdrive version can now be LOADed and RUN by typing:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; LOAD *"M";1;"S"<br/>
+<br/>
+<br/>
+SAVING AND LOADING SPRITES<br/>
+<br/>
+The microdrive version of the Sprite Development Program still allows sprites to<br/>
+be loaded and saved from and to tape as described in the manual.<br/>
+<br/>
+A separate cartridge is required to store sprites. &nbsp;The program will allow you to<br/>
+save five files of sprites per cartridge, these being numbered 1 to 5.<br/>
+<br/>
+<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 29
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+Before a cartridge can be used to store sprites, it has to be specially formatted.<br/>
+This is done using the Sprite Generator Program by typing SYMBOL SHIFT F (TO).<br/>
+This will format the cartridge and set up five dummy files, numbered 1 to 5. &nbsp;From<br/>
+now on, whenever you save a file of sprites, the old file of that number will be<br/>
+erased to conserve cartridge storage space.<br/>
+<br/>
+For example, if you wished to save a file of sprites currently in memory, to file<br/>
+1, use:<br/>
+<br/>
+1. &nbsp;Type SYMBOL SHIFT S (save sprites).<br/>
+<br/>
+2. &nbsp;Type N &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(we don't want tape).<br/>
+<br/>
+3. &nbsp;Type Y &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(save to drive).<br/>
+<br/>
+4. &nbsp;Insert the formatted cartridge.<br/>
+<br/>
+5. &nbsp;Press any key.<br/>
+<br/>
+6. &nbsp;Type 1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(save to file 1).<br/>
+<br/>
+To load sprites just press SYMBOL SHIFT J and then follow the same sequence as<br/>
+that used to save.<br/>
+<br/>
+<br/>
+AVAILABLE MEMORY<br/>
+<br/>
+You have 13595 bytes available for sprites. &nbsp;Please note that the bottom 2816<br/>
+bytes, locations 51685 to 54501 are used to store the arcade character library<br/>
+accesses by the 'Z' key. &nbsp;If, by creating lots of sprites, you overwrite this area<br/>
+of memory, you should not try to access any of these characters.<br/>
+<br/>
+<br/>
+CREATION OF LARGE SPRITES<br/>
+<br/>
+The microdrive version of the Sprite Development Package allows the creation of<br/>
+large sprites (larger than the 15x15 screen) in memory. &nbsp;These sprites can be said<br/>
+to be empty when created and have to be filled by placing smaller sprites into<br/>
+them using the 'place sprite into sprite window' function (BREAK SPACE key).<br/>
+<br/>
+To create a large sprite hit CAPS SHIFT C and enter the dimensions as instructed.<br/>
+<br/>
+<br/>
+MERGING SPRITES FROM MICRODRIVE<br/>
+<br/>
+The actual microdrive file that contains the sprite data has the capital letter B<br/>
+after it (CHR$ 66) such that, for example, the sprite data for sprite file '5' is<br/>
+file '5B'.<br/>
+<br/>
+So with reference to line 5 on page 81 of the White Lightning manual: &nbsp;to merge<br/>
+from microdrive the sprites of sprite file 5 in White Lightning, exit to BASIC and<br/>
+then type:<br/>
+<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; LOAD *"M";1;"5B"CODE<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+30
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+<b>ADDITIONAL ERRATA</b><br/>
+<br/>
+While OCRing and proofreading the scans of the White Lightning manuals, I have<br/>
+tried to preserve, as best as I was able, the original pagination, layout,<br/>
+spacing and formatting of the originals. That includes all the spelling mistakes<br/>
+and typos that I saw, which I have listed below.<br/>
+<br/>
+<u>Cheatsheet</u><br/>
+<br/>
+Page &nbsp;4, line 57: 'previously' for 'prevously'<br/>
+Page 10, line 12: 'exercise' for 'excercise'<br/>
+Page 14, line 21: 'decelerates' for 'deccelerates'<br/>
+Page 17, line 36: 'inputting' for 'inputing'<br/>
+Page 17, line 37: 'inputting' for 'inputing'<br/>
+Page 17, line 58: 'laid' for 'layed'
+<div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
+</body>

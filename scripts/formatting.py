@@ -1,16 +1,26 @@
+#! /usr/bin/env python3
+# Parse the markup in the source files and output single-file html- and rtf-
+# formatted versions of the texts.
 import os
 import sys
 import codecs
-import pysvn
+# import pysvn     # now need to extract info from git; commit id, branch, time?
 from datetime import datetime
+
+from pathlib import Path
+
+basedir = Path(__file__).parent
+texts = (basedir / '..' / 'texts').resolve()
+rendered = (basedir / '..' / 'rendered').resolve()
 
 enums = ['TEXT', 'BOLD', 'UNDER', 'ESC']
 enum_chars = [None, '*', '_', '\\']
 for i, e in enumerate(enums):
     globals()[e] = i
 
-def sort_file(name):
+def sort_file(filepath):
     roman = ['i', 'ii', 'iii', 'iv']
+    name = filepath.name
 
     pos = name.find('_')
     assert pos > 0
@@ -23,16 +33,26 @@ def sort_file(name):
 
 def list_files(which = 'all'):
 
+    # Position dependent - 'all' must appear first
     options = ['all', 'cheatsheet', 'manual']
     assert which in options
     index = options.index(which)
 
     files = os.listdir('.')
-    files = [f for f in files if f[-4:].lower() == '.txt']
-    if which == 'all':
-        files = [f for f in files if options[1] in f or options[2] in f]
-    else:
-        files = [f for f in files if options[index] in f]
+    files = []
+    for root, dirs_, files_ in os.walk(texts):
+        for f in files_:
+            filepath = Path(root) / f
+            if filepath.suffix.lower() != '.txt': continue
+
+            if which == 'all':
+                for opt in options[1:]:
+                    if opt in filepath.name:
+                        files.append(filepath)
+                        break
+            else:
+                if options[index] in filepath.name:
+                    files.append(filepath)
 
     files.sort(key = sort_file)
     return files
@@ -51,21 +71,22 @@ class text_formatter(object):
                             '\\': '\\'}
         self.lines = None
         self.extension = '.txt'
-        self.header = unichr(65279)    # BOM
+        self.header = chr(65279)    # BOM
         self.footer = ''
         self.line_end = '\n'
         self.page_sep = '\x0c'
         self.page_nums = None
-        
-        self.title = title
-        
-        client = pysvn.Client()
-        # client.update('.')
-        info = client.info('.')
 
-        self.rev_num = info['revision'].number
-        self.rev_date = datetime.fromtimestamp(info['commit_time'])
-        
+        self.title = title
+
+        if 0:
+            client = pysvn.Client()
+            # client.update('.')
+            info = client.info('.')
+
+        self.rev_num = 134                  # info['revision'].number
+        self.rev_date = datetime.now()      #fromtimestamp(info['commit_time'])
+
     def add_text_token(self, tokens, new_token):
         if len(tokens) > 0 and (tokens[-1][0] == new_token[0] == TEXT):
             tokens[-1].extend(new_token[1:])
@@ -139,7 +160,7 @@ class text_formatter(object):
                     odd = True
 
                 if evens > 0:
-                    for i in xrange(evens):
+                    for i in range(evens):
                         tokens.append([ESC])
                         tokens.append([TEXT, '\\'])
 
@@ -174,8 +195,8 @@ class text_formatter(object):
                     # more than two deep, so we check for this. Remember that
                     # stack starts with dummy value so we have to compare with 3
                     if len(stack) >= 3:
-                        print
-                        print "Finish previous formatting block before you open another one!"
+                        print()
+                        print("Finish previous formatting block before you open another one!")
                         raise AssertionError
                     open = True
 
@@ -203,7 +224,7 @@ class text_formatter(object):
                     tokens.append([token])
 
         if len(stack) != 1:
-            print 'You forgot to close a section of formatting.'
+            print('You forgot to close a section of formatting.')
             raise AssertionError
 
         for i, t in enumerate(tokens):
@@ -225,11 +246,11 @@ class text_formatter(object):
                 try:
                     marked.append(self.parse_formatting(l))
                 except:
-                    print
-                    print 'Error in file:', filename
-                    print 'At line number:', line_num+1
-                    print lines[line_num]
-                    print
+                    print()
+                    print('Error in file:', filename)
+                    print('At line number:', line_num+1)
+                    print(lines[line_num])
+                    print()
                     raise
             else:
                 marked.append([[TEXT, l]])
@@ -240,8 +261,8 @@ class text_formatter(object):
         if self.page_nums is None:
             return
 
-        num_str = filename[:-4].split('_')[1]
-        print filename
+        num_str = filename.name[:-4].split('_')[1]
+        print(filename)
         if not(48 <= ord(num_str[0]) <= 57) or num_str == '132':
             return
 
@@ -335,7 +356,6 @@ class text_formatter(object):
 
         first = True
         for i, f in enumerate(file_list):
-
             self.load_file(f)
             num_lines = len(self.lines)-1
 
@@ -349,7 +369,7 @@ class text_formatter(object):
                         name = f[:-4]
                     name += self.extension
 
-                out_file = codecs.open(name, encoding='utf-8', mode='w')
+                out_file = codecs.open(rendered / name, encoding='utf-8', mode='w')
                 out_file.write(self.header)
                 first = False
 
@@ -365,7 +385,7 @@ class text_formatter(object):
             else:
                 out_file.write(self.page_sep)
 
-        if filename is not None:
+        if file_list and filename is not None:
             out_file.write(self.footer)
             out_file.close()
 
@@ -433,7 +453,7 @@ class rtf_formatter(text_formatter):
         if char == 65279:   # BOM
             return ''
         if char not in replacement_dict:
-            print "Can't find substitute for char %d. (%s)" % (char, unichr(char))
+            print("Can't find substitute for char %d. (%s)" % (char, chr(char)))
             replace = '?'
         else:
             replace = replacement_dict[char]
@@ -459,7 +479,7 @@ class html_formatter(text_formatter):
         self.footer = '</body>'
         self.line_end = '<br/>\n'
         self.page_sep = '\n<div style="page-break-after:always">' + '-'*83 + '</div>\n'
-        
+
         meta = ['<meta http-equiv="Content-Style-Type" content="text/css">']
         meta.append('<meta name="author" description="Richard Milne (RichMilne AT users DOT noreply DOT github DOT com">')
         meta.append('<meta name="version" description="%d">' % self.rev_num)
@@ -495,7 +515,7 @@ for i, book in enumerate(['cheatsheet', 'manual']):
         outputter = globals()['%s_formatter' % ext](title)
         outputter.page_nums = bool(i)
         name = 'WhiteLightning%s.%s' % (book.title(), ext)
-        print '='*83
-        print name
-        print '='*83        
+        print('='*83)
+        print(name)
+        print('='*83)
         outputter.convert_files(files, filename = name)

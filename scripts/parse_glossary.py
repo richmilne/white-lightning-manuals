@@ -1,7 +1,17 @@
+#! /usr/bin/env python3
+# Parse the glossary published by the Forth Interest Group and paginate it as it
+# is in the White Lightning manual, as well as uniformly space out the fields of
+# the word definitions.
 import os
 import sys
 
-lines = file('glossary.txt').readlines()
+from pathlib import Path
+
+basedir = Path(__file__).parent
+texts = (basedir / '..' / 'texts').resolve()
+
+lines = open(texts / 'samples' / 'glossary.txt').readlines()
+
 output = ['# TODO: Remove this comment once this file has been proofread\n']
 for line in lines[:45]:
     output.append(line.rstrip())
@@ -16,7 +26,7 @@ def extract_def(line):
 
     temp = line.replace(' ','')
     count = 0
-    for i in xrange(len(temp)-1, -1, -1):
+    for i in range(len(temp)-1, -1, -1):
         c = temp[i]
         count += 1
         if c == ',': count = 0
@@ -137,9 +147,9 @@ def extract_sentences(block):
                 if len(bit) > 0 and bit[-1] == '.':
                     new_sent.append('')
         except:
-            print 'Bits:', bits
-            print 'Sent:', sent
-            print 'Bit:', bit
+            print('Bits:', bits)
+            print('Sent:', sent)
+            print('Bit:', bit)
             raise
         new_sentences.append(' '.join(new_sent))
 
@@ -183,18 +193,17 @@ for block in commands:
         stacks.extend(st)
         
     if len(cmds) > 0 and cmds[0] in page_divisors:
-        name = 'manual_%s.txt' % str(page).zfill(3)
-        handle = open(name, 'w')
-        for line in output:
-            handle.write(line)
-            handle.write('\n')
-        handle.close()
+        name = texts / 'manual' / f'manual_{page:03}.txt'
+        with open(name, 'w') as handle:
+            for line in output:
+                handle.write(line)
+                handle.write('\n')
         output = ['# TODO: Remove this comment once this file has been proofread\n']
         page += 1
 
     num_lines = max([len(cmds), len(stacks)])
     lines = []
-    for i in xrange(num_lines):
+    for i in range(num_lines):
         lines.append([' ']*line_length)
 
     for i, stack in enumerate(stacks):

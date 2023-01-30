@@ -1,0 +1,2061 @@
+{\rtf1\ansi\deff0\n{\fonttbl{\f0 Courier New;}}{\info{\author Richard Milne (RichMilne AT users DOT noreply DOT github DOT com)}{\version134}{\creatim\yr2023\mo1\dy30\hr10\min7}{\subject Revision: 134, 2023-01-30 10:07:07}{\keywords http://www.worldofspectrum.org/infoseekid.cgi?id=0008967}{\title White Lightning Documentation - Cheatsheet}}
+\fs18
+                           {\b WHITE LIGHTNING}\par
+\par
+                             CHEAT SHEET\par
+                                  &\par
+                          MICRODRIVE MANUAL\par
+\par
+{\b Copyright Notice}\par
+\par
+Copyright \'a9 1984 by Oasis Software.  No part of this manual may be\par
+reproduced on any media without prior written permission from Oasis\par
+Software.\par
+\par
+\par
+\par
+\par
+\par
+Piracy has reached epidemic proportions and it is with regret that we are\par
+forced to reproduce this manual in a form which cannot be photocopied.  Our\par
+apologies for the inconvenience this may cause to our genuine customers.  A\par
+reward will be paid for information leading to the successful prosecution\par
+of parties infringing this Copyright Notice.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+             {\b Do not lose this manual as separate manuals cannot be}\par
+                       {\b supplied under any circumstances}\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                       {\b Copyright \'a9 by Oasis Software}\page
+                            CONTENTS\par
+\par
+\par
+                                                       Page\par
+\par
+Creating Large Sprites                                   1\par
+Moving Sprites                                           2\par
+Screen Scrolling                                         2\par
+Simple Putting                                           2\par
+More Advanced Techniques                                 4\par
+Collision Detection                                      6\par
+Sample Source Listings                                   8\par
+The Lunar Lander Program                                 9\par
+Table 1 (Lunar Sprites)                                 20\par
+\par
+\par
+APPENDIX A - THE MICRODRIVE VERSION                     26\par
+Introduction                                            26\par
+Implementing on Microdrive                              26\par
+Preparing a Cartridge for Source Code                   26\par
+Editing Forth Screens                                   27\par
+The Edit Buffers                                        27\par
+Transferring Old Source                                 27\par
+Bad Sectors                                             28\par
+Additional Error Messages                               28\par
+The Microdrive Sprite Generator                         29\par
+Implementing on Microdrive                              29\par
+Saving and Loading Sprites                              29\par
+Creating Large Sprites                                  30\par
+Merging Sprites                                         30\page
+                              {\b WHITE LIGHTNING}\par
+                                CHEAT SHEET\par
+\par
+This sheet is intended as a supplement to the User Manual and is provided only to\par
+"get you started".  The best way to use it is to type in the source code at the\par
+end of this section and execute the appropriate section as you go.  You will need\par
+the demonstration sprites in memory but sprites 25 to 255 should be deleted to\par
+make enough memory available.  A word to do this is:\par
+\par
+: CLRS 256 25 DO I SPN ! TEST IF DSPRITE ENDIF LOOP ; <CR>\par
+Type this in then type CLRS <CR>\par
+\par
+It is also worth deleting the large sprites 9, 12, 13 and 14 using:\par
+\par
+ 9 SPN ! DSPRITE <CR>\par
+12 SPN ! DSPRITE <CR>\par
+13 SPN ! DSPRITE <CR>\par
+14 SPN ! DSPRITE <CR>\par
+\par
+where <CR> means press ENTER.  After execution CLRS should be FORGOTTEN using\par
+FORGET CLRS <CR>\par
+\par
+Following the example source there is a listing of a complete game. You won't be\par
+able to run it without the sprites but we can provide a tape with the source and\par
+sprites for one pound seventy five pence if you think it would to helpful.\par
+\par
+\par
+Creating Large Sprites\par
+\par
+Quite often in games writing large sprites are required which may extend across\par
+several screens.  The sprite development software can produce sprites with\par
+dimensions of up to 15 by 15 characters.  Larger sprites need to be constructed in\par
+the White Lightning itself.\par
+\par
+The sample listing for the Lunar Lander contains a routine which we can use as an\par
+example.  The Sprite Development Program was used to produce 16 sprites, each was\par
+3 high by 8 wide, having sprite numbers 10 to 25.  The following routine sets up\par
+sprite 128 which is 3 high by 128 wide, and then fills it with the 16 small\par
+sprites before deleting them to save memory.\par
+\par
+SCR#8\par
+0 : MAKE 128 SPN ! 3 HGT ! 128 LEN ! 0 SROW ! 128 SP2 ! ISPRITE\par
+1 16 0 DO I 10 + DUP SPN ! SP1 ! I 8 * SCOL ! GWBLM GWATTM DSPRITE\par
+2 LOOP ;\par
+\par
+Line 0 just defines the big sprite in memory and sets SROW to 0.\par
+\par
+Line 1 loops round 16 times with I taking the values 0 to 15. I 10 + calculates\par
+the sprite number of the smaller sprite and I 8 * calculates the column in the big\par
+sprite that this smaller sprite is to be put into.  GWBLM GWATTM moves the pixel\par
+data, then the attributes, from the individual small sprites into the big sprite.\par
+You won't be able to execute this example without the 16 3 by 8 sprites but it\par
+illustrates how big sprites are achieved.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                 1\page
+Moving Sprites\par
+\par
+The chief problem facing the programmer who wants to move sprites around the\par
+screen is choosing from the numerous schemes available.  We now consider some of\par
+these methods, each with its own merits for speed, simplicity, smoothness and\par
+storage. We'll begin with the easiest to implement and then work up to some of the\par
+more elaborate techniques.\par
+\par
+\par
+Screen Scrolling\par
+\par
+Where an object is to be moved within a screen window that does not contain any\par
+other objects the screen itself can be scrolled.  This is particularly applicable\par
+where movement is either horizontal or vertical.  Diagonal movement is also\par
+possible however.  In some cases the object is constrained to move on the screen\par
+because parts of the object scrolled off the screen without wrap are lost.\par
+\par
+To begin with let's consider a very simple example - moving an invader (demo\par
+sprite 24) 2 characters high and 2 characters wide left and right under keyboard\par
+control.\par
+\par
+The routine is in three sections:  the first sets up the base and initial\par
+parameters, the second moves left or right and the third polls the keyboard and\par
+controls the movement.\par
+\par
+: SETUP 0 COL ! 6 ROW ! 24 SPN ! CLS SETAM PUTBLS 2 HGT ! 32 LEN ! ;\par
+: LEFT WRL1V ; : RIGHT WRR1V ;\par
+: KEYS 1 1 KB IF LEFT ENDIF 8 1 KB IF RIGHT ENDIF ;\par
+\par
+This will move the base by 1 pixel left or right but by changing the words LEFT\par
+and RIGHT to be WRR4V and WRL4V or WRR8V and WRL8V movement of 4 or 8 pixels can\par
+be achieved.\par
+\par
+To try these routines we'll need a small test routine.\par
+\par
+: TESTA ATTOFF SETUP BEGIN KEYS 8 2 KB UNTIL ;\par
+\par
+TESTA will loop around until SYMBOL SHIFT is pressed.  Pressing CAPS SHIFT will\par
+move the base left, pressing space will move the base right and pressing SYMBOL\par
+SHIFT will exit the loop.\par
+\par
+This routine can also be executed in background using:\par
+\par
+: TESTB EXX SETUP EXX ' KEYS INT-ON ;\par
+\par
+To halt, just type INT-OFF.\par
+\par
+If you've typed in the source at the end of this section type 6 LOAD to compile\par
+and then TESTA or TESTB to execute.\par
+\par
+\par
+Simple Putting\par
+\par
+Another fairly simple means of moving sprites around the screen is to simply PUT\par
+sprites with a blank border around them.  Suppose the sprite you want to move is 2\par
+characters high and 2 characters wide.  You will need to construct a 4 by 4 sprite\par
+so that the 2 by 2 sprite can be contained with a border around the outside. Make\par
+sure background is off by typing INT-OFF.\par
+\par
+Suppose for example, sprite 24 is a 2 by 2 sprite (you can use demo sprite 24 for\par
+the purposes of this example).  We'll use sprite 62 for the sprite to be moved.\par
+To set up sprite 62 use:\par
+\par
+\par
+2\page
+: MAKE 62 SPN ! 4 HGT ! 4 LEN ! TEST 0= IF ISPRITE CLSM ENDIF ;\par
+\par
+This will create and clear sprite 62.  Now use:\par
+\par
+1 SCOL ! 1 SROW ! 62 SP2 ! 24 SP1 ! GWBLM\par
+\par
+Sprite 62 is now set up ready for use.  We now need four words to move the sprite\par
+UP, DOWN, LEFT and RIGHT.\par
+\par
+: UP    7 1 KB IF ROW @  0 > MINUS ROW +! ENDIF ;\par
+: DOWN  8 1 KB IF ROW @ 20 < ROW +! ENDIF ;\par
+: LEFT  1 1 KB IF COL @  0 > MINUS COL +! ENDIF ;\par
+: RIGHT 1 2 KB IF COL @ 28 < COL +! ENDIF ;\par
+\par
+The ENTER and SPACE keys will move the sprite up and down and CAPS SHIFT and Z\par
+will move the sprite left and right respectively.\par
+\par
+The full word to animate the sprite becomes:\par
+\par
+: TESTC 62 SPN ! 10 COL ! 10 ROW ! BEGIN UP DOWN LEFT RIGHT ADJM PWBLS 6 1 KB\par
+UNTIL ;\par
+\par
+To exit TEST we press the key at 6 1, this is the "P" key.\par
+\par
+If you're using the source at the end of this section type 7 LOAD MAKE TESTC.  The\par
+great limitation of this routine, however, is that data already on the screen will\par
+be replaced by the sprite being PUT and subsequently lost.  Before considering the\par
+more sophisticated methods available to us which overcome this limitation let's\par
+just consider some simpler methods of circumventing this problem, which will work\par
+for similar situations.\par
+\par
+Supposing the screen holds half a dozen or so fixed objects and we wish to move\par
+the invader in the last example through these objects.\par
+\par
+First of all let's set up a screen with these objects scattered throughout.\par
+\par
+: SETUP 4 SPN ! 3 2 4 5 6 3 5 12 10 9 12 14 6 0 DO ROW ! COL ! PUTRS LOOP ;\par
+\par
+Notice that we use the PUTORS word to OR data to the screen; the reason for this\par
+will become clear.\par
+\par
+We'll now redefine UP, DOWN, LEFT and RIGHT so that sprite 62 is only 'PUT' if it\par
+is moved, the new code becomes:\par
+\par
+: KCHK KB DUP ROT OR SWAP ;\par
+: UP    7 1 KCHK IF ROW @  0 > MINUS ROW +! ENDIF ;\par
+: DOWN  8 1 KCHK IF ROW @ 20 < ROW +! ENDIF ;\par
+: LEFT  1 1 KCHK IF COL @  0 > MINUS COL +! ENDIF ;\par
+: RIGHT 1 2 KCHK IF COL @ 28 < COL +! ENDIF ;\par
+\par
+The complete word becomes:\par
+\par
+: TESTD CLS BEGIN COL @ ROW @ SETUP ROW ! COL ! 62 SPN ! @ UP DOWN LEFT RIGHT IF\par
+ADJM PWBLS ENDIF 6 1 KB UNTIL ;\par
+\par
+What is happening is that as soon as the moving sprite is PUT to the screen all\par
+screen data is immediately "OR"ed so that if any was blotted out, it is\par
+immediately replaced.  Type "P" to exit.\par
+\par
+To use the source code listings type 8 LOAD TESTD\par
+\par
+\par
+\par
+\par
+                                                                                 3\page
+More Advanced Techniques\par
+\par
+Often it is not practical to repeatedly PUT the screen data which accompanies the\par
+moving sprite and more frequently movement is required with a higher resolution\par
+than one character.\par
+\par
+To begin with, let's consider the problem of improving the resolution of the\par
+movement.  Let's work again with a 2x2 sprite (sprite 24 of the demo sprites will\par
+do).  Type COLD to clear previous examples.\par
+\par
+Suppose we wish to move the sprite around the screen with 2 pixel resolution.\par
+This means that between 2 successive columns there are 4 intermediate\par
+orientations, each successive orientation being 2 pixels right shifted.  This\par
+means we need 4 sprites in all before the cycle is repeated at the next column\par
+position.\par
+\par
+To begin with let's set up the 4 sprites and number them 100, 101, 102 and 103.\par
+To create these 4 sprites, type:\par
+\par
+: MAKE 2 HGT ! 3 LEN ! 104 100 DO I SPN ! ISPRITE CLSM LOOP ;\par
+\par
+This will define and clear the 4 sprites and we can now put the character in its\par
+various orientations, into these sprites.  There are two stages to this operation.\par
+Firstly sprite 24 needs to be put into sprite 100, then sprites 100 to 103 need to\par
+be scrolled and PUT successively to build up the four orientations.\par
+\par
+: SET1 0 SROW ! 0 SCOL ! 24 SP1 ! 100 SP2 ! GWBLM ;\par
+\par
+This sets up sprite 100 and the remaining 3 orientations are set up from this\par
+sprite using:\par
+\par
+: SET2 103 100 DO I SP1 ! I 1+ DUP SP2 ! SPN ! COPYM WRR1M WRR1M LOOP ;\par
+\par
+It's worth putting these sprites on the screen to see what they look like.\par
+Assuming you've executed the words MAKE, SET1 and SET2 use:\par
+\par
+: TESTE CLS 0 COL ! 4 0 D0 I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;\par
+\par
+This will place the 4 orientations, one above the other, so that the resolution of\par
+the movement can be seen.\par
+\par
+To use the source version type 9 LOAD MAKE SET1 SET2 TESTE\par
+\par
+This now gives us 2 pixel horizontal resolution so that we now have 128 horizontal\par
+plotting positions in the range 0 to 127. We need a simple formula which will\par
+calculate the sprite number and the column from the horizontal plotting position.\par
+This turns out to be very simple:\par
+\par
+: HPLOT 4 /MOD COL ! 100 + SPN ! PUTBLS ;\par
+\par
+So to PUT at X-position 27 (54 pixels from the left hand column) just use:\par
+\par
+27 HPLOT\par
+\par
+The previous example is useful in that it indicates a way of producing high\par
+resolution PUTting but as it stands cannot be used for animation because it does\par
+not enable the removal of prevously placed orientations.  Before looking at a\par
+scheme for animating these orientations let's generalise this example to cover\par
+high resolution vertical movement as well as horizontal movement.\par
+\par
+\par
+\par
+\par
+\par
+4\page
+If we're going to give the same resolution of movement (2 pixels) in the vertical\par
+plane, we're going to need 4 vertically shifted orientations for each of the\par
+horizontally offset orientations - 16 sprites in all.  This time they will need to\par
+be 3x3 as opposed to the previously defined 2x3.  If you've typed in the last\par
+example you'll need to delete the old sprites numbered 100 to 103.  If so, type:\par
+\par
+100 SPN ! DSPRITE <CR>\par
+101 SPN ! DSPRITE <CR>\par
+102 SPN ! DSPRITE <CR>\par
+103 SPN ! DSPRITE <CR>\par
+\par
+Now type COLD to clear the dictionary.\par
+\par
+To create the 16 new sprites use:\par
+\par
+: MAKE 3 HGT ! 3 LEN ! 116 100 DO I SPN ! ISPRITE CLSM SETAM  LOOP ;\par
+\par
+SET1 and SET2 are now used in exactly the same form as in the previous example to\par
+set up the first 4 sprites 100 to 103.  Each of the horizontally offset\par
+orientations needs to be vertically offset by 2 pixels into 4 further\par
+orientations.  100 will be offset into 104, 108 and 112; 101 will be offset into\par
+105, 109 and 113 and so on.  We'll need a third word SET3 to do this.\par
+\par
+: SET3 -2 NPX ! 104 100 DO I DUP 12 + SWAP DO I DUP 4 + DUP SP2 ! SPN ! SP1 !\par
+GWBLM SCRM 4 +LOOP LOOP ;\par
+\par
+Once SET1, SET2 and SET3 have been entered, compiled and executed, the definitions\par
+can be forgotten.  Since we now have 2 pixel resolution in the vertical and\par
+horizontal directions we have 128 horizontal positions and 96 vertical positions.\par
+We need a word which can calculate sprite number, column and row from the 2 pixel\par
+resolution co-ords X and Y.  The following word assumes the vertical then\par
+horizontal co-ords have been placed on the stack.\par
+\par
+: XYPUT 4 /MOD COL ! SWAP 4 /MOD ROW ! DUP + DUP + + 100 + SPN ! ;\par
+\par
+So to PUT at X-position 30 (pixel 60)\par
+             Y-position 17 (pixel 34)\par
+\par
+use          17 30 XYPUT PUTBLS\par
+\par
+Note that the 100 + SPN ! at the end of the definition of XYPUT should be amended\par
+so that the number is the sprite number of the first of your 16 sprites.\par
+\par
+To use the source type 9 LOAD 10 LOAD MAKE SET1 SET2 SET3 (Ignore MSG# 4's)\par
+\par
+Let's now deal with the animation of the sprite itself.\par
+\par
+Perhaps the most powerful method of sprite animation is via the XOR operation.\par
+The usefulness of this operation stems from the fact that when an object is XOR'ed\par
+with the screen, the screen can he restored simply by repeating the operation.\par
+The area of screen is restored to the same state as it was before the first\par
+operation (see page 22 of the White Lightning manual).\par
+\par
+We can now write a routine which moves a sprite around the screen under keyboard\par
+control using a slightly amended form of the word XYPUT.  The routine below\par
+assumes the 10 sprites in the range 100 to 115, which each have dimensions 3x3,\par
+have been set up in the last example.\par
+\par
+The following variables will be used:\par
+\par
+\par
+\par
+\par
+\par
+                                                                                 5\page
+TSPN     Temporary Value for SPN\par
+TCOL     Temporary Value for COL\par
+TROW     Temporary Value for ROW\par
+XC       X co-ordinate\par
+YC       Y co-ordinate\par
+FLAG     Collision Flag\par
+\par
+We'll also use a constant FSPN which holds the number of the first sprite in the\par
+series of 16.  To adapt these routines for your own use just change FSPN.\par
+\par
+: PLOAD COL ! ROW ! SPN ! PUTXRS ;\par
+: PSET TSPN @ TROW @ TCOL @ ;\par
+: PCAL 4 /MOD TCOL ! SWAP 4 /MOD TROW ! DUP + DUP + FSPN + + TSPN ! ;\par
+: MOVE YC @ XC @ PCAL PSET PUTXRS PLOAD ;\par
+: PLACE YC @ XC @ PCAL PSET PLOAD ;\par
+\par
+We now need to poll the keyboard:\par
+\par
+We use the KCHK word again an that the character is not re-PUT unless a key has\par
+been pressed.\par
+\par
+: KCHK KB DUP ROT OR SWAP ;\par
+: UP 7 1 KCHK IF YC @ 4 > MINUS YC +! ENDIF ;\par
+: DOWN 8 1 KCHK IF YC @ 83 < YC +! ENDIF ;\par
+: LEFT 1 1 KCHK IF XC @ 4 > MINUS XC +! ENDIF ;\par
+: RIGHT 1 2 KCHK IF XC @ 115 < XC +! ENDIF ;\par
+: KREAD 0 UP DOWN LEFT RIGHT ;\par
+\par
+KREAD will leave 0 on the stack if no key was pressed or 1 if a key was pressed.\par
+\par
+The complete word becomes:\par
+\par
+: TESTF 10 XC ! 10 YC ! PLACE BEGIN KREAD IF MOVE ENDIF 6 1 KB UNTIL ;\par
+\par
+Note that this loop assumes no interference with the values of COL, ROW or SPN\par
+between cycles, if you are executing another Forth word, for example a word called\par
+TRY, then make sure you temporarily stack COL, ROW and SPN, e.g.\par
+\par
+... BEGIN KREAD IF MOVE ENDIF COL @ ROW @ SPN @ TRY SPN ! ROW ! COL ! 0 1 KB UNTIL\par
+...\par
+\par
+This word can be easily executed under interrupt using\par
+\par
+: TESTG KREAD IF MOVE ENDIF ;\par
+: TESTH 10 XC ! 10 YC ! EXX PLACE EXX ' TESTG INT-ON BEGIN 6 1 KB UNTIL INT-OFF\par
+;\par
+\par
+You will notice, however, that if you do execute this routine under interrupt then\par
+the sprite may flicker in passage through certain areas of the screen.  This is\par
+due to the finite time taken for the dot to scan the screen and can be very annoying.\par
+\par
+To execute from source type 11 LOAD 12 LOAD then TESTF or TESTH\par
+\par
+Let's look now at some more powerful techniques which not only help with the\par
+flickering but also include collision detection facilities.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+6\page
+Collision Detection\par
+\par
+To produce the smoothest movement of all, and include collision detection, a six\par
+stage operation is used.  The technique utilises two dummy sprites, and all\par
+intermediate stages of the operation are carried out in memory.  For this example\par
+let's number the dummy sprites 116 and 117.  To set up the sprites use:\par
+\par
+: MAKED 3 HGT ! 3 LEN ! 116 SPN ! ISPRITE 5 HGT ! 5 LEN ! 117 SPN ! ISPRITE ;\par
+\par
+This needs to be typed in and executed before executing the Source Code or error\par
+MSG# 10 will be produced.\par
+\par
+The six stage procedure is as follows:\par
+\par
+1.  The last orientation PUT, together with a one character surround, are G0T into\par
+the 5x5 dummy sprite.\par
+\par
+2.  The last orientation is GWXRM'ed out of the 5x5, restoring the original screen\par
+data.\par
+\par
+3.  The new orientation is COPYM'ed into the 3x3 dummy.\par
+\par
+4.  The screen data in the 5x5 is PWNDM'ed into the 3x3 and SCANM performed on the\par
+3x3 to detect any collision.  A flag is set.\par
+\par
+5.  The new orientation is GWXRM'ed into the 5x5 dummy.\par
+\par
+6.  The 5x5 is PUTBLS'ed onto the screen.\par
+\par
+The code for this algorithm is the same as the previous example except that the\par
+word MOVE needs to be modified.\par
+\par
+Define Sprites as for previous example and execute MAKED then use:\par
+\par
+: STEP1 -1 COL +! -1 ROW +! SPN @ 117 SPN ! GETBLS ;\par
+: STEP2 1 SCOL ! 1 SROW ! 117 SP2 ! SP1 ! GWXRM ;\par
+: STEP3 116 SP2 ! TSPN @ SP1 ! COPYM ;\par
+: STEP4 COL @ - SCOL ! ROW @ - SROW ! 117 SP2 ! 116 SP1 ! PWNDM 116 SPN ! SCANM\par
+FLAG +! ;\par
+: STEP5 SP1 ! GWXRM 117 SPN ! PUTBLS PSET COL ! ROW ! SPN ! FLAG @ IF 100 100\par
+BLEEP 0 FLAG ! ENDIF ;\par
+: MOVE YC @ XC @ PCAL PSET STEP1 STEP2 STEP3 STEP4 STEP5 ;\par
+\par
+To use the source code type COLD to clear all previous examples then:\par
+\par
+11 LOAD FORGET MOVE 14 LOAD 12 LOAD 13 LOAD\par
+\par
+to compile the words TESTF and TESTH.\par
+\par
+The Bleep will sound when the sprite collides with any other screen data.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                 7\page
+SCR # 6                                   2 : SET2 103 100 DO I SP1 ! I\par
+  0 : SETUP 0 COL ! 6 ROW ! 24 S        1+ DUP SP2 ! SPN ! COPYM WRR1M\par
+PN ! CLS PUTBLS 2 HGT ! 32 LOW ! ;        3 WRR1M LOOP ;\par
+  1 : LEFT WRL1V ; : RIGHT WRR1V          4 : TESTE CLS 0 COL ! 4 0 DO I\par
+ ;                                       100 + SPN ! I DUP + ROW ! PUTBL\par
+  2 : KEYS 1 1 KB IF LEFT ENDIF         S\par
+8 1 KB IF RIGHT ENDIF ;                   5 LOOP 8 0 AT ;\par
+  3 : TESTA ATTOFF SETUP BEGIN K          6 : HPLOT 4 /MOD COL ! 100 + S\par
+EYS 8 2 KB UNTIL ;                      PN ! PUTBLS ;\par
+  4 : TESTB ATTOFF EXX SETUP EXX          7\par
+ ' KEYS INT-ON ;\par
+  5                                     SCR # 10\par
+  6                                       0 : MAKE 3 HGT ! 3 LEN ! 116 1\par
+  7                                     00 DO I SPN ! ISPRITE CLSM SETAM\par
+                                          1 LOOP ;\par
+SCR # 7                                   2 : SET3 -2 NPX ! 104 100 DO I\par
+  0 : MAKE 62 SPN ! 4 HGT ! 4 LE         DUP 12 + SWAP DO I DUP 4 + DUP\par
+N ! TEST 0= IF ISPRITE CLSM ENDI        SP2\par
+F                                         3 ! SPN ! SP1 ! GWBLM SCRM 4\par
+  1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2       +LOOP LOOP ;\par
+4 SP1 ! GWBLM ;                           4 : XYPUT 4 /MOD COL ! SWAP 4\par
+  2 : UP 7 1 KB IF ROW @ 0 > MIN        /MOD ROW ! DUP + DUP + + 100 + S\par
+US ROW +! ENDIF ;                       PN\par
+  3 : DOWN 8 1 KB IF ROW @ 20 <           5 ! ;\par
+ROW +! ENDIF ;                            6\par
+  4 : LEFT 1 1 KB IF COL @ 0 > M          7\par
+INUS COL +! ENDIF ;\par
+  5 : RIGHT 1 2 KB IF COL @ 28 <        SCR # 11\par
+ COL +! ENDIF ;                           0 0 VARIABLE TSPN 0 VARIABLE T\par
+  6 : TESTC 62 SPN ! 10 COL ! 10        COL 0 VARIABLE TROW 0 VARIABLE\par
+ ROW ! CLS BEGIN UP DOWN LEFT RI        XC\par
+GHT                                       1 0 VARIABLE YC 100 CONSTANT F\par
+  7 : ADJM PWBLS 6 1 KB UNTIL ;         SPN 0 VARIABLE FLAG\par
+                                          2 : PLOAD COL ! ROW ! SPN ! PU\par
+SCR # 8                                 TXRS ;\par
+  0 : SETUP 4 SPN ! 1 3 2 4               3 : PSET TSPN @ TROW @ TCOL @\par
+5 6 3 5 12 10 9 12 4 6 0 DO ROW ! COL   ;\par
+!                                         4 : PCAL 4 /MOD TCOL ! SWAP 4\par
+  1 : PUTORS LOOP ; : KCHK KB DUP       /MOD TROW ! DUP + DUP + FSPN + +\par
+ROT OR SWAP ;                             5 TSPN ! ;\par
+  2 : UP 7 1 KCHK IF ROW @ 0 > M          6 : PLACE YC @ XC @ PCAL PSET\par
+INUS ROW +! ENDIF ;                     PLOAD ;\par
+  3 : DOWN 8 1 KCHK IF ROW @ 20           7 : MOVE YC @ XC @ PCAL PSET P\par
+< ROW +! ENDIF ;                        UTXRS PLOAD ;\par
+  4 : LEFT 1 1 KCHK IF COL @ 0 >\par
+ MINUS COL +! ENDIF ;                   SCR # 12\par
+  5 : RIGHT 1 2 KCHK IF COL @ 28          0 : KCHK KB DUP ROT OR SWAP ;\par
+ < COL +! ENDIF ;                         1 : UP 7 1 KCHK IF YC @ 4 > MI\par
+  6 : TESTD CLS BEGIN COL @ ROW         NUS YC +! ENDIF ;\par
+@ SETUP ROW ! COL ! 62 SPN !              2 : DOWN 8 1 KCHK IF YC @ 83 <\par
+  7 0 UP DOWN LEFT RIGHT IF ADJM         YC +! ENDIF ;\par
+ PWBLS ENDIF 6 1 KB UNTIL ;               3 : LEFT 1 1 KCHK IF XC @ 4 >\par
+                                        MINUS XC +! ENDIF ;\par
+SCR # 9                                   4 : RIGHT 1 2 KCHK IF XC @ 115\par
+  0 : MAKE 2 HGT ! 3 LEN ! 104 1         < XC +! ENDIF ;\par
+00 DO I SPN ! ISPRITE CLSM LOOP           5 : KREAD 0 UP DOWN LEFT RIGHT\par
+;                                        ;\par
+  1 : SET1 0 SROW ! 0 SCOL ! 24           6 : TESTF 10 XC ! 10 YC ! PLAC\par
+SP1 ! 100 SP2 ! GWBLM ;                 E BEGIN KREAD IF MOVE ENDIF 6 1\par
+                                        KB\par
+                                          7 UNTIL ;\par
+\par
+\par
+\par
+8\page
+SCR #13                                   1 : STEP2 1 SCOL ! 1 SROW ! 11\par
+  0 : TESTG KREAD IF MOVE ENDIF         7 SP2 ! SP1 ! GWXRM ;\par
+;                                         2 : STEP3 116 SP2 ! TSPN SP1\par
+  1 : TESTH 10 XC ! 10 YC ! EXX         ! COPYM ;\par
+PLACE EXX ' TESTG INT-ON BEGIN 6          3 : STEP4 COL @ - SCOL ! ROW @\par
+ 1                                       - SROW ! 117 SP2 ! 116\par
+  2 KB UNTIL INT-OFF ;                    4 SP1 ! PWNDM 116 SPN ! SCANM\par
+  3                                     FLAG +! ;\par
+  4                                       5 : STEP5 SP1 ! GWXRM 117 SPN\par
+  5                                     ! PUTBLS PSET COL ! ROW ! SPN !\par
+  6                                       6 FLAG @ IF 100 100 BLEEP 0 FL\par
+  7                                     AG ! ENDIF ;\par
+                                          7 : MOVE YC @ XC @ PCAL PSET S\par
+SCR # 14                                TEP1 STEP2 STEP3 STEP4 STEP5 ;\par
+0 : STEP1 -1 COL +! -1 ROW +!\par
+SPN @ 117 SPN ! GETBLS ;\par
+\par
+\par
+\par
+NOTE\par
+\par
+Make sure that you delete the unwanted sprites 25 to 255, 9, 12, 13 and 14 BEFORE\par
+loading source code from tape or the source code will over-run the sprites.\par
+\par
+\par
+LUNAR LANDER\par
+\par
+\par
+Variables\par
+\par
+PH      Horizontal Phase of scrolling landscape\par
+SPD     Horizontal Velocity of strolling landscape\par
+DOWN    Set to 1 if Lander crashes\par
+FU      Remaining fuel\par
+XP      Vertical Position of Lander\par
+VEL     Vertical Velocity of Lander\par
+SX      Phase of X-Velocity dial\par
+SY      Phase of Y-Velocity dial\par
+SFU     Phase of Fuel Gauge\par
+IX      Phase of Horizontal Position Dial\par
+\par
+\par
+Sprites\par
+\par
+NUMBERS        HEIGHT         LENGTH         DESCRIPTION\par
+\par
+   1              1              2           POINTER\par
+   3              1              5           LANDING PAD\par
+  4-9             1              1           BLOCKS FOR LANDSCAPE SPRITES\par
+ 10-25            3              8           LANDSCAPE SECTIONS\par
+26,28,29,31       1              1           PANEL SPRITES\par
+ 32,33            1              8           MINI LANDSCAPE\par
+  43              3              3           EXPLOSION\par
+  44              4              5           LANDED LUNAR LANDER\par
+  65              3              3           CRASHED LUNAR LANDER\par
+ 100              6              3           LUNAR LANDER\par
+\par
+101-107           6              3           LUNAR LANDER ORIENTATIONS\par
+                                             (CONSTRUCTED)\par
+ 128              3            128           COMPLETE LANDSCAPE\par
+                                             (CONSTRUCTED)\par
+\par
+\par
+\par
+                                                                                 9\page
+Sprites 1 to 100 are produced using the sprite generator program.  Sprites 101 to\par
+107 are created in the main program using the word SET.  Sprite 128 is constructed\par
+from sprites 10 to 25 in the main program using the word MAKE.\par
+\par
+\par
+The Lunar Lander\par
+\par
+This listing is provided as an example of White Lightning programming.  In order\par
+to run the game you will need to enter the sprites as described in the next\par
+section.  This is a fairly laborious task so we can offer the fainthearted,\par
+sprites and demo on tape for one pound seventy five pence.  We recommend, however,\par
+that you take the time to build up the sprites yourself as an excercise in self\par
+discipline if nothing else!\par
+\par
+The program executes one word in foreground and one word in background.  The\par
+program can be roughly sub-divided the following way:\par
+\par
+Screens 6,7,8\par
+\par
+These set up the screen display, dials etc.\par
+\par
+Screens 9,10,11\par
+\par
+These three screens form the routine which scrolls the landscape at one of three\par
+speeds.  This routine is executed in background to give smoother movement.\par
+\par
+Screens 11,12,13,14,15,16,17\par
+\par
+These control the flight of the lander, manipulate the dials, execute the crashes\par
+and so on.\par
+\par
+Screen 18\par
+\par
+This executes all the previous definitions in the right order to produce the final\par
+game.\par
+\par
+Let's now look at the program in more detail.\par
+\par
+\par
+SCR # 6                                   2 44 SPN ! 17 ROW ! 6 COL ! PU\par
+  0 : COLOUR 0 ROW ! 16 COL ! 16        TXRS ;\par
+ LEN ! 23 HGT ! 7 INK 1 BRIGHT            3 : PTST SPN ! COL ! ROW ! PUT\par
+  1 SETAV ATTON ;                       BLS ;\par
+  2 : VTSC COL ! 10 2 DO I ROW !          4 : BARST 14 23 31 PTST MIRM 1\par
+ PUTBLS LOOP ;                          4 24 31 PTST MIRM 6 28 28 PTST\par
+  3 : SCLE 26 SPN ! 18 VTSC 26 V          5 19 16 32 PTST 19 24 33 PTST\par
+TSC MIRM 21 VTSC 29 VTSC MIRM ;         ;\par
+  4 : VTCL ROW ! COL ! LEN ! HGT          6 : LETR 7 INK 0 PAPER 1 18 AT\par
+ ! PAPER SETAV ;                         ." FUEL" 0 26 AT ." VERT" 1 26\par
+  5 : BARS 4 6 1 20 2 VTCL 2 2 1        AT\par
+ 20 8 VTCL 5 4  1 28 2 VTCL               7 ." VEL" 11 20 AT ." HORZ VEL\par
+  6 2 3 1 28 7 VTCL 5 1 16 16 14        " ; -->\par
+ VTCL ;\par
+  7 -->                                 SCR # 8\par
+                                          0 : HRSC 32 16 DO 12 I 29 PTST\par
+SCR # 7                                  17 I 29 PTST LOOP 16 16 1 PTST\par
+  0 : LND 6 COL ! 17 ROW ! 44 SP        ;\par
+N ! PUTBLS BEGIN 7 1 KB UNTIL             1 : MARK 152 159 PLOT 7 0 DRAW\par
+  1 20 ROW ! 43 SPN ! 7 COL ! 20         216 127 PLOT 7 0 DRAW 128 71 PL\par
+ 0 DO PUTXRS 100 100 BLEEP LOOP         OT\par
+\par
+\par
+\par
+\par
+10\page
+  2 0 -7 DRAW ;                           4 : UL SS -200 < IF SL8 ELSE S\par
+  3 : PANEL 0 PAPER COLOUR SCLE         L4 ENDIF ;\par
+BARS BARST HRSC LETR MARK ;               5 : LL SS -7 < IF SL1 ELSE SO\par
+  4 : MAKE 128 SPN ! 3 HGT ! 128        ENDIF ;\par
+ LEN ! 0 SROW ! 128 SP2 ! ISPRIT          6 : LF SS -100 < IF UL ELSE LL\par
+E                                        ENDIF ;\par
+  5 16 0 DO I 10 + DUP SPN ! SP1          7 : DEC SS 0< IF LF ELSE RT EN\par
+ ! I 8 * SCOL ! GWBLM GWATIM DSP        DIF ;\par
+RITE\par
+  6 LOOP ;                              SCR # 12\par
+    0 VARIABLE PH                         0 : SET -1 NPX ! 3 LEN ! 6 HGT\par
+  7 256 VARIABLE SPD 0 VARIABLE          ! 107 100 DO I SP1 ! I 1+ DUP S\par
+DOWN 1008 VARIABLE FU -->               P2 !\par
+                                          1  SPN ! ISPRITE COPYM WCRM LO\par
+SCR # 9                                 OP ;\par
+  0 : S1 1023 AND 8 / SCOL ! 1 L          2 40 VARIABLE XP 8 VARIABLE V\par
+EN ! PUTBLS 16 LEN ! ;                  EL\par
+  1 : NBR PH @ S1 ;                       3 : PREP 7 COL ! 0 DOWN ! 40 X\par
+    : NBL PH @ 128 + S1 ;               P ! ;\par
+  2 : OPEN 0 PAPER 5 INK CLS 0 P          4 : TICK VEL @ 255 > IF ELSE 1\par
+H ! EXX 128 SPN ! 16 LEN ! 0 COL        VEL +! ENDIF ;\par
+ !                                        5 : THRUST FU @ IF 7 1 KB IF V\par
+  3 3 HGT ! 21 ROW ! 0 SCOL ! 0         EL @ -252 > IF -4 VEL +! FUEL\par
+SROW ! PWBLS PWATTS 2 HGT ! EXX           6 ENDIF ENDIF ENDIF ;\par
+  4 0 PAPER 1008 FU ! 0 BORDER ;          7 -->\par
+    : SH8 PH @ DUP 7 AND 0= ;\par
+  5 : FUEL -1 FU +! ;                   SCR # 13\par
+    : SR SH8 IF NBR ENDIF ;               0 : MV VEL @ XP @ + DUP 5631 >\par
+  6 : SL SH8 IF NBL ENDIF ;              IF DROP 5631 1 DOWN ! ENDIF DUP\par
+    : SH4 PH @ DUP 3 AND 0= ;             1 XP ! 32 / 8 /MOD 5 - ROW ! 7\par
+  7 : SP SPD +! ;                        AND 100 + SPN ! ROW @ 0< IF ADJ\par
+    : SS SPD @  ; -->                   M\par
+                                          2 PWBLS ELSE VEL @ 0< IF 1 SRO\par
+SCR # 10                                W ! ROW @ 15 > IF 4 HGT ! ELSE\par
+  0 : POLL FU @ IF 8 1 KB IF SS           3 5 HGT ! ENDIF ELSE 0 SROW !\par
+-252 > MINUS SF FUEL ENDIF              5 HGT ! ENDIF ROW @ DUP SROW @ +\par
+  1 1 1 KB IF SS 256 < SF FUEL E          4 ROW ! PWBLS ROW ! ENDIF ;\par
+NDIF ENDIF ;                              5\par
+  2 : -P - PH ! POLL ;                    6\par
+    : +P + PH ! POLL ;                    7 -->\par
+  3 : SR1 SR WRR1V 1 -P ;\par
+    : SL1 SL WRL1V 1 +P ;               SCR # 14\par
+  4 : SR4 SH4 IF SR WRR4V 4 -P E          0 : BANG DOWN @ DUP IF 19 ROW\par
+LSE SR1 ENDIF DROP ;                    ! 43 SPN ! -5 NPX ! 7 HGT ! 3 LE\par
+  5 : SL4 SH4 IF SL WRL4V 4 +P E        N !\par
+LSE SL1 ENDIF DROP ;                      1 40 10 DO PUTXRS I 20 + I DO\par
+  6 : SO DOWN @ IF ELSE SS ABS 2        J I BLEEP LOOP PUTXRS 17 ROW !\par
+56 < IF POLL ENDIF ENDIF ;                2 SCRV 19 ROW ! 5 +LOOP SS ABS\par
+  7 : SR8 SH8 IF NBR WRR8V 8 -P          8 < IF 21 ROW ! 45 SPN ! PUTBLS\par
+ELSE SR4 ENDIF DROP ; -->                 3 ENDIF ENDIF XP @ 5631 = IF D\par
+                                        OWN @ 0= IF 7 COL ! LND 7 COL !\par
+SCR # 11                                  4 MV 0 VEL ! ENDIF INT-OFF BEG\par
+  0 : SL8 SH8 IF NBL WRL8V 8 +P         IN 7 1 KB UNTIL\par
+ELSE SL4 ENDIF ;                          5  ' DEC INT-ON ENDIF ;\par
+  1 : UR SS 200 > IF SR8 ELSE SR          6 : OK 0 DOWN ! ;\par
+4 ENDIF ;                                 7 -->\par
+  2 : LR SS 7 > IF SR1 ELSE SO E\par
+NDIF ;                                  SCR # 15\par
+  3 : RT SS 100 > IF UR ELSE LR           0 : LAND SS ABS 8 < IF VEL @ 3\par
+ENDIF ;                                 2 < IF PH @ 1023 AND 8 / CASE 12\par
+                                         OF\par
+\par
+\par
+\par
+                                                                                11\page
+  1 OK ENDOF 13 OF OK ENDOF 30 O        SCR # 17\par
+F OK ENDOF 31 OF OK ENDOF 58 OF           0 : FVEL FU @ 16 / SFU @ - 0<\par
+OK                                      IF 19 COL ! 2 ROW ! 8 HGT ! 1 LE\par
+  2 ENDOF 59 OF OK ENDOF 91 OF O        N !\par
+K ENDOF 92 OF OK ENDOF ENDCASE            1 -1 NPX ! -1 SFU   +! WCRV RSE\par
+  3 ENDIF ENDIF BANG ;                  T1 ENDIF ;\par
+  4 128 VARIABLE SX 32 VARIABLE           2 0  VARIABLE LX\par
+SY 63 VARIABEL SFU                        3 : MXG 18 ROW ! 16 COL ! 16 L\par
+  5 : XG SX +! 16 COL ! 13 ROW !        EN ! 1 HGT ! ;\par
+ 1 HGT ! 16 LEN ! ;                       4 : MLEFT MXG WRL1V -1 LX +! ;\par
+  6 : RSET1 7 COL ! 3 LEN ! ;               : MRIGHT MXG WRR1V 1 LX +! ;\par
+    : WLEFT -1 XG WRR1V RSET1 ;           5 : MON PH @ 8 / LX @ - DUP 0\par
+  7 : WRIGHT 1 XG WRL1V RSET1 ;         > IF DROP MRIGHT ELSE\par
+     -->                                  6 0< IF MLEFT ENDIF ENDIF RSET\par
+                                        1 ;\par
+SCR # 16                                  7 -->\par
+  0 : XVEL SPD @ 256 + 4 / SX @\par
+ - DUP 0< IF WLEFT DROP ELSE 0 >        SCR # 18\par
+IF                                        0 : OFF PANEL PREP ' DEC INT-O\par
+  1 WRIGHT ENDIF ENDIF ;                N BEGIN TICK THRUST MV MON XVEL\par
+  2 : YG DUP MINUS NPX ! SY +! 2          1 YVEL FVEL MON LAND MON UNTIL\par
+7 COL ! 2 ROW ! 8 HGT ! 1 LEN !          INT-OFF ;\par
+  3 WCRV RSET1 ;                          2 : TST 256 SPD ! 0 PH ! 1008\par
+  4 : WUP -1 YG ;                       FU ! 40 XP ! 8 VEL ! 128 SX !\par
+    : WDOWN 1 YG ;                        3 32 SY ! 63 SFU ! 0 LX ! OPEN\par
+  5 : YVEL VEL @ 256 + 8 / SY @          OFF ;\par
+- DUP 0< IF WUP DROP ELSE 0 > IF          4\par
+  6 WDOWN ENDIF ENDIF ;                   5\par
+  7 -->                                   6\par
+                                          7\par
+\par
+\par
+\par
+\par
+                                 WORD DESCRIPTIONS\par
+\par
+\par
+COLOUR\par
+\par
+Sets the attributes in the right hand half of the screen.\par
+\par
+VTSC\par
+\par
+Produces a row of sprites with the current sprite number at the column on the\par
+stack.  Used to build up the gauges.\par
+\par
+SCLE\par
+\par
+Uses VTSC to build up the gauges.\par
+\par
+VTCL\par
+\par
+Sets up a specified window with specified attributes.\par
+\par
+BARS\par
+\par
+Uses VTCL to set the attributes for the gauges.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+12\page
+LAND\par
+\par
+This word controls the landing sequence.  The landed sprite is placed on the pad\par
+and sits until ENTER is pressed.  The explosion is then produced beneath the\par
+lander to simulate take off and the landed lander is then exclusively OR'ed off of\par
+the pad.\par
+\par
+PTST\par
+\par
+General purpose word which sets ROW, COL and SPN from the stack and then performs\par
+a PUTBLS.\par
+\par
+BARST\par
+\par
+Adds the finishing touches to the gauges by putting sprites 28,31,32 and 33 in the\par
+appropriate positions.  Uses PTST.\par
+\par
+LETR\par
+\par
+Places the gauge titles above the gauges.\par
+\par
+HRSC\par
+\par
+Puts the horizontal scale on the screen.\par
+\par
+MARK\par
+\par
+Draws the indicators used in the gauges.\par
+\par
+PANEL\par
+\par
+Execution word to set up the whole right hand side of the screen ie. all previous\par
+words.\par
+\par
+MAKE\par
+\par
+See 'Creating Large Sprites'.\par
+\par
+S1\par
+\par
+Used to calculate the next column in the large landscape sprite, to be put to the\par
+screen.  LEN is set back to 16 for the next operation.\par
+\par
+NBR\par
+\par
+Gets the appropriate column (calculated by S1) when the landscape is moving\par
+right.\par
+\par
+NBL\par
+\par
+Gets the appropriate column when the landscape is moving left.\par
+\par
+OPEN\par
+\par
+Builds up the initial picture for the left of the screen.  Notice the use of EXX\par
+to set up background variables for execution under interrupt.\par
+\par
+SH8\par
+\par
+PH describes the phase of the landscape with pixel resolution.  SH8 checks to see\par
+if this phase is a multiple of 8 and if so sets a flag to indicate that a fresh\par
+column should be GOT from the landscape sprite.  PH is also left on the stack.\par
+\par
+\par
+                                                                                13\page
+FUEL\par
+\par
+Decrements the amount of fuel left.\par
+\par
+SR\par
+\par
+Checks to see if a character boundary is crossed (see SH8) and if so executes NBR.\par
+\par
+SL\par
+\par
+As SR but checks when movement is left.\par
+\par
+SH4\par
+\par
+Checks to see if phase is crossing a half character boundary, scrolling can only\par
+increase from one pixel to four pixel movements on such a boundary or scrolling\par
+will go out of phase.\par
+\par
+SF\par
+\par
+Accelerates horizontal speed (deccelerates if negative) by the amount on the\par
+stack.\par
+\par
+SS\par
+\par
+Puts the current horizontal speed on the stack.\par
+\par
+POLL\par
+\par
+Checks to see if there's any Fuel left (a non zero value of FU will act as a true\par
+flag) then first checks SPACE to accelerate right if not travelling too fast then\par
+check CAPS SHIFT to accelerate left if not travelling too fast.  If a key is\par
+pressed fuel is decremented.\par
+\par
+-P\par
+\par
+Updates phase and does a POLL when moving right.\par
+\par
++P\par
+\par
+Updates phase and does a POLL when moving left.\par
+\par
+SR1\par
+\par
+Moves landscape 1 pixel right and adjusts pointers.\par
+\par
+SR4\par
+\par
+Moves landscape 4 pixels right and adjusts pointers provided a half character\par
+boundary has been reached.  If not, a further 1 pixel movement must be made.\par
+\par
+SL4\par
+\par
+As SR4 when moving left.\par
+\par
+SO\par
+\par
+When speed is less than 7, keyboard is polled but no scrolling of the screen is\par
+executed.  The lander is treated as horizontally stationary.\par
+\par
+\par
+\par
+\par
+\par
+14\page
+SR8\par
+\par
+Moves landscapes 8 pixels (1 character) right and adjusts pointers provided a full\par
+character boundary has been reached.  If not a further 4 pixel scroll is\par
+executed.\par
+\par
+SL8\par
+\par
+As SR8 when movement is to the left.\par
+\par
+UR\par
+\par
+If speed is greater than 200, try and scroll right 8 pixels right, f not, try and\par
+scroll by 4 pixels right.\par
+\par
+LR\par
+\par
+If speed is greater than 7 then scroll 1 pixel right else no scroll.\par
+\par
+RT\par
+\par
+If speed is greater than 100 then do a UR if not do an LR.\par
+\par
+UL\par
+\par
+As UR when speed is negative.\par
+\par
+LL\par
+\par
+As LR when speed is negative.\par
+\par
+LF\par
+\par
+As RF when speed is negative.\par
+\par
+DEC\par
+\par
+The execution word which does all the scrolling logic.  The words UR to LF are\par
+effectively the nodes of a tree which produce one of 7 possible scrolls from -8\par
+pixels to +8 pixels.  A detailed understanding of the workings are not necessary\par
+as long as you can adapt the routine to serve your needs.\par
+\par
+SET\par
+\par
+Creates 7 new orientations of the lander from the original in sprite 100, making 8\par
+in all, each lander being 1 pixel shifted vertically from the one before.  This\par
+enables single pixel resolution in the lander movement.\par
+\par
+PREP\par
+\par
+Used to set up initial values.\par
+\par
+TICK\par
+\par
+Increments vertical velocity (acts like gravity) unless terminal velocity has been\par
+reached.  If you want to make the game more difficult change 1 VEL +! to 2 VEL +!\par
+and thus double the planets gravity.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                15\page
+THRUST\par
+\par
+If the lander still has fuel and hasn't reached terminal upward velocity then\par
+increase upward velocity.\par
+\par
+MV\par
+\par
+A fairly complicated word which moves the lander vertically.  The velocity is\par
+added to the position (physicists note that unit time has elapsed etc).  If the\par
+lander goes under the base its position is put equal to the base and DOWN is SET\par
+to 1.  The row and orientation are then calculated.\par
+\par
+BANG\par
+\par
+Another fairly involved word which executes a crash if DOWN=1.  It checks to see\par
+if a safe landing was made and if not decides what sort of crash is required.\par
+\par
+OK\par
+\par
+A short word which sets DOWN to 0, indicating a safe landing.\par
+\par
+LAND\par
+\par
+If the lander has zero sideways velocity then vertical velocity and horizontal\par
+position are checked for a safe landing or a crash.  DOWN is set accordingly.\par
+\par
+XG\par
+\par
+Updates X-VEL PHASE and sets window for scroll.\par
+\par
+RSET1\par
+\par
+Sets COL and LEN back after XG.\par
+\par
+XVEL\par
+\par
+Controlling routine for XVEL gauge.\par
+\par
+YG\par
+\par
+Used to adjust Y-VEL gauge.\par
+\par
+WUP\par
+\par
+Move up Y-VEL gauge.\par
+\par
+WDOWN\par
+\par
+Move down Y-VEL gauge.\par
+\par
+YVEL\par
+\par
+Controlling routine for Y-VEL gauge.\par
+\par
+FVEL\par
+\par
+Controlling routine for fuel gauge.\par
+\par
+MXG\par
+\par
+Used to set up window for small screen movement.\par
+\par
+\par
+\par
+16\page
+MLEFT\par
+\par
+Move pointer left on small screen.\par
+\par
+MRIGHT\par
+\par
+Move pointer right on small screen.\par
+\par
+MON\par
+\par
+Control routine for scroll screen.\par
+\par
+OFF\par
+\par
+Main program loop.\par
+\par
+TST\par
+\par
+Final execution word.  Initialises parameters and then executes main program\par
+loop.\par
+\par
+\par
+THE GAME ITSELF\par
+\par
+CREATION OF SPRITES\par
+\par
+Load up the sprite development package and create all the sprites listed in table\par
+1.\par
+\par
+Once the sprite development package has loaded execute a cold start by pressing\par
+the C key and hit Y for yes and then N for the change buffer size prompt.\par
+\par
+Set the attribute switch to 1 by pressing the A key and then 1.\par
+\par
+With reference to table 1 set the sprite number to the required value by pressing\par
+the S key and then inputing the required value.  Input the dimensions (Height and\par
+Length) of the sprite by pressing the H or C keys and then inputing the\par
+appropriate values.  Set the respective ink, paper, flash and bright values using\par
+the X, C, V and B keys.\par
+\par
+Position the sprite screen X and Y pos cursors to their settings using the symbol\par
+shift 5, 6, 7 or 8 keys.\par
+\par
+Using the direct data input function, key D, input the 8 bytes of data.  Move the\par
+X and Y pos cursors to the next position and input the data until the sprite is\par
+complete on the screen. Set both the X and Y position cursors to 1 and then GET\par
+the sprite into memory by pressing the G key.  Clear the sprite screen by pressing\par
+symbol shift Q and then create the next sprite.\par
+\par
+\par
+CREATION OF THE 64x3 CHARACTER LANDSCAPE SPRITE\par
+\par
+This sprite will be made up of 8 8x3 character sprites, which will be joined\par
+together into one large sprite in the White Lightning program itself.\par
+\par
+Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1 clear the\par
+CHR$ square by pressing the Q key.  Using the sprites 4,5,6,7,8,9 and the CHR$\par
+square (referred to as 0) build up sprites 10 to 25 as layed out in diagram 1.\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                17\page
+Position the X and Y Pos cursors to the appropriate co-ordinates.  Input\par
+the relevant sprite number and put the sprite to the screen by pressing the\par
+D key and then 1.  In the case of 0 press J to DUMP the empty CHR$ square\par
+to the sprite screen.\par
+\par
+The landing pad, sprite 3, is also placed in these sprites.\par
+\par
+Once the 8 by 3 sprites have been created on the screen, position the X and\par
+Y pos cursors to the top left corner of the sprite.  Set the sprite number\par
+to the appropriate value, set the length to 8 and the height to 3 then\par
+press G to get the sprite.\par
+\par
+Note that the left hand column of sprite 10 must have a 0 ink value as well\par
+as the right hand column of sprite 11.\par
+\par
+Once all the sprites have been created save them off to tape using the\par
+symbol SHIFT S key.\par
+\par
+Load in White Lightning, load in the lunar sprites.  Carefully type in the\par
+Lunar Lander program as listed and check your program against the original.\par
+It is now best to save your source off to tape.\par
+\par
+Exit to BASIC using:                PROG <CR>\par
+\par
+then save to tape using:            SAVE"LUNAR" CODE 52224,6656\par
+\par
+Go back into White Lightning using: PRINT USR 24836\par
+\par
+Now type     6 LOAD <CR>\par
+             MAKE <CR>  to create the landscape\par
+             SET  <CR>  to create the landers\par
+\par
+To run the program type  TST <CR>\par
+\par
+Please note that if there is an error in your source the last few screens\par
+can no longer be listed or compiled, since the creation of extra sprites\par
+has overwritten the end screens, thus the source would have to be reloaded\par
+for editing purposes.\par
+\par
+\par
+PLAYING THE GAME\par
+\par
+The game itself is more of a simulation than a game.  The idea is to land\par
+on all four bases without running out of fuel or crashing.  The gauges are\par
+self explanatory.\par
+\par
+The controls are:      CAPS SHIFT     Thrust to the left\par
+                       BREAK SPACE    Thrust to the right\par
+                       ENTER          Vertical thrust\par
+\par
+Once the game is over, hit the ENTER key to escape and then TST <CR> for a\par
+new game.\par
+\par
+FUEL\par
+\par
+If fuel runs out the controls will no longer function.\par
+\par
+YVEL\par
+\par
+A safe landing is only made if the VEL gauge registers a velocity in the\par
+"safe" region of the centre of the gauge.\par
+\par
+\par
+\par
+18\page
+XVEL\par
+\par
+The horizontal velocity is represented by one of 3 scroll speeds but safe landings\par
+can only be made if the pointer is in the "safe" region in the centre of the\par
+gauge.\par
+\par
+THE SMALL SCREEN\par
+\par
+This gives a macroscopic view of the 8 screens.  The bases are marked.  The gauge\par
+sometimes cannot keep up with the lander movement but at scroll speeds of a pixel\par
+it will soon "catch up" with the real positions.  This is not a "feature" we must\par
+admit, keeping up with the gauge slows the foreground program down a lot.\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                19\page
+TABLE 1\par
+-------\par
+\par
+SPRITE   H    L    INK    PAPER    FLASH    BRIGHT    XPOS    YPOS      1     2     3     4     5     6     7     8\par
+------   -    -    ---    -----    -----    ------    ----    ----      -     -     -     -     -     -     -     -\par
+   1     1    2     7       0        0         1        1       1      29    29    28    15     7     3     0     0\par
+   1     1    2     7       0        0         1        2       1      92    92    28   120   112    96   128   128\par
+   3     1    6     7       0        0         1        1       1     255   227   127     0    60    24    60   126\par
+   3     1    6     7       0        0         1        2       1     255   142   255    63    31    63    31    63\par
+   3     1    6     7       0        0         1        3       1     255    28   255   255   255   255   255   255\par
+   3     1    6     7       0        0         1        4       1     255    28   255   255   255   255   255   255\par
+   3     1    6     7       0        0         1        5       1     255   113   255   254   252   254   252   254\par
+   3     1    6     7       0        0         1        6       1     255   199   254     0    60    24    60   126\par
+   4     1    1     7       0        0         1        1       1     128    64   160    80   168    84   170    85\par
+   5     1    1     7       0        0         1        1       1       0     1     2     5    10    21    42    85\par
+   6     1    1     7       0        0         1        1       1     170    85   170    85   170    85   170    85\par
+   7     1    1     7       0        0         1        1       1     128    65   162    85   170    85   170    85\par
+   8     1    1     7       0        0         1        1       1       0     0     0     0     8    20    42    85\par
+   9     1    1     7       0        0         1        1       1       0     0     0     0     0    16    40    85\par
+  26     1    1     6       0        0         1        1       1     254     2     2     2    30     2     2     2\par
+  28     1    1     2       4        0         1        1       1       0     0     0     0   255   255   255   255\par
+  29     1    1     6       0        0         1        1       1     128   128   128   136   136   136   255     0\par
+  31     1    1     5       1        0         1        1       1     254   254   254   254   254   254   254   254\par
+  32     1    8     3       0        0         1        1       1       0     1   155   155   255   255   255   255\par
+  32     1    8     3       0        0         1        2       1       0     0   226   230   255   255   255   255\par
+  32     1    8     3       0        0         1        3       1      63    33   127   127   255   255   255   255\par
+  32     1    8     3       0        0         1        4       1       0     0    59   251   255   255   255   255\par
+  32     1    8     3       0        0         1        5       1       3     2   223   223   255   255   255   255\par
+  32     1    8     3       0        0         1        6       1     240    16   254   254   255   255   255   255\par
+  32     1    8     3       0        0         1        7       1       0    24   127   127   255   255   255   255\par
+  32     1    8     3       0        0         1        8       1       0     0   231   231   255   255   255   255\par
+  33     1    8     3       0        0         1        1       1     126    66   254   255   255   255   255   255\par
+  33     1    8     3       0        0         1        2       1       0    16   126   126   255   255   255   255\par
+  33     1    8     3       0        0         1        3       1       0     0   143   143   255   255   255   255\par
+  33     1    8     3       0        0         1        4       1       0     0   254   254   255   255   255   255\par
+  33     1    8     3       0        0         1        5       1     126    66   127   255   255   255   255   255\par
+  33     1    8     3       0        0         1        6       1      18    18   255   255   255   255   255   255\par
+  33     1    8     3       0        0         1        7       1       0     0   255   255   255   255   255   255\par
+  33     1    8     3       0        0         1        8       1       0     0   167   167   255   255   255   255\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+20\page
+TABLE 1 (Continued)\par
+-------\par
+\par
+SPRITE   H    L    INK    PAPER    FLASH    BRIGHT    XPOS    YPOS      1     2     3     4     5     6     7     8\par
+------   -    -    ---    -----    -----    ------    ----    ----      -     -     -     -     -     -     -     -\par
+  43     3    3     6       0        0         1        1       1      96   114    88    46   181    26    21    90\par
+  43     3    3     6       0        0         1        2       1      16    41    88   104   212   174    85   170\par
+  43     3    3     6       0        0         1        3       1     128     2    14    20    40   208    98   224\par
+  43     3    3     6       0        0         1        1       2      13    10    53   234    61    10    21    42\par
+  43     3    3     6       0        0         1        2       2      85   170    85   170    85   170    85   170\par
+  43     3    3     6       0        0         1        3       2      64   160    80   174   120   192    64   226\par
+  43     3    3     6       0        0         1        1       3      85   170   255     2    70    13    42    12\par
+  43     3    3     6       0        0         1        2       3      85   170    89   168   208    49    16     0\par
+  43     3    3     6       0        0         1        3       3      96   180   168   216    40    20    74     7\par
+  44     4    5     5       0        0         1        1       1       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        2       1       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        3       1       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        4       1       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        5       1       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        1       2       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        2       2       0     0     0     0     1     1     7     6\par
+  44     4    5     5       0        0         1        3       2       0     0     0     0   165   255    66    36\par
+  44     4    5     5       0        0         1        4       2       0     0     0     0   128   128   224    96\par
+  44     4    5     5       0        0         1        5       2       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        1       3       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        2       3      12    15     5     0     7    13   213    47\par
+  44     4    5     5       0        0         1        3       3      24   255    90     0   255    90    90   255\par
+  44     4    5     5       0        0         1        4       3      48   240   160     0   224   176   171   244\par
+  44     4    5     5       0        0         1        5       3       0     0     0     0     0     0     0     0\par
+  44     4    5     5       0        0         1        1       4       0     0     1     6     9    22    72    48\par
+  44     4    5     5       0        0         1        2       4     237   221   127   140    48   192     0     0\par
+  44     4    5     5       0        0         1        3       4      36   165   255   129    44    94   191   191\par
+  44     4    5     5       0        0         1        4       4     183   187   254    49    12     3     0     0\par
+  44     4    5     5       0        0         1        5       4       0     0   128    96   144   104    18    12\par
+  45     3    3     7       0        0         1        1       1       0     0    18     9     9    55    33    65\par
+  45     3    3     7       0        0         1        2       1       0     0    12    24    56   112   231   207\par
+  45     3    3     7       0        0         1        3       1       0    32    80     8     4    58   196   201\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                21\page
+TABLE 1 (Continued)\par
+-------\par
+\par
+SPRITE   H    L    INK    PAPER    FLASH    BRIGHT    XPOS    YPOS      1     2     3     4     5     6     7     8\par
+------   -    -    ---    -----    -----    ------    ----    ----      -     -     -     -     -     -     -     -\par
+  45     3    3     7       0        0         1        1       2      67    71    46    60    56    17   131    64\par
+  45     3    3     7       0        0         1        2       2     191    44    78   187   119    46    25   123\par
+  45     3    3     7       0        0         1        3       2      18    37   194     5   138   197   138     5\par
+  45     3    3     7       0        0         1        1       3     160    81   162    82   170    84   170    85\par
+  45     3    3     7       0        0         1        2       3       6   230   248   248   244   163    82    85\par
+  45     3    3     7       0        0         1        3       3      42    21    42    85   170    85   170    85\par
+ 100     6    3     5       0        0         1        1       1       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        2       1       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        3       1       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        1       2       1     1     7     6    12    15     5     0\par
+ 100     6    3     5       0        0         1        2       2     165   255    66    36    24   255    90     0\par
+ 100     6    3     5       0        0         1        3       2     128   128   224    96    48   240   160     0\par
+ 100     6    3     5       0        0         1        1       3       7    13   213    47   237   221    11    21\par
+ 100     6    3     5       0        0         1        2       3     255    90    90   255    36   165   255   129\par
+ 100     6    3     5       0        0         1        3       3     224   176   171   244   183   187   208   168\par
+ 100     6    3     5       0        0         1        1       4      34    68   248   144   160    64   144    96\par
+ 100     6    3     5       0        0         1        2       4      44    94   191   191     0     0     0     0\par
+ 100     6    3     5       0        0         1        3       4      68    34    31     9     5     2     9     6\par
+ 100     6    3     5       0        0         1        1       5       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        2       5       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        3       5       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        1       6       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        2       6       0     0     0     0     0     0     0     0\par
+ 100     6    3     5       0        0         1        3       6       0     0     0     0     0     0     0     0\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+22\page
+{\b DIAGRAM 1}\par
+\par
+          {\b 0 INK}\par
+           {\b \u8595v}\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 4 \u9474| 0 \u9474| 0 \u9474| 8 \u9474| 9 \u9474| 0 \u9474| 5 \u9474| 6 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 4 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 7 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 10}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+                                         {\b \u8595v 0 INK}\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 4 \u9474| 8 \u9474| 9 \u9474| 0 \u9474| 0 \u9474| 9 \u9474| 8 \u9474| 0 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 4 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 7 \u9474|      {\b {\ul SPRITE} 11}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 0 \u9474| 9 \u9474|\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#{\b SPRITE 3}\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 12}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 9 \u9474| 0 \u9474| 5 \u9474| 4 \u9474| 8 \u9474| 0 \u9474| 8 \u9474| 8 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 7 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 13}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 5 \u9474| 4 \u9474| 0 \u9474| 9 \u9474| 5 \u9474| 4 \u9474|\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#{\b SPRITE 3}\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+        7 \u9474| 6 \u9474| 6 \u9474| 7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 14}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+    2   3   4   5   6   7   8   9   A   B\par
+  \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+6 \u9474|\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#{\b SPRITE 3}\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9474| 8 \u9474| 5 \u9474| 4 \u9474| 0 \u9474|\par
+  \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 4 \u9474|      {\b {\ul SPRITE} 15}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                23\page
+{\b DIAGRAM 1 CONTINUED}\par
+\par
+\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 0 \u9474| 9 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 4 \u9474| 8 \u9474| 9 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 16}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 5 \u9474| 4 \u9474| 8 \u9474| 0 \u9474| 0 \u9474| 5 \u9474| 7 \u9474| 4 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 7 \u9474| 7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 17}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 9 \u9474|\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#{\b SPRITE 3}\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9474| 0 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 4 \u9474|      {\b {\ul SPRITE} 18}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 0 \u9474| 8 \u9474| 5 \u9474| 6 \u9474| 4 \u9474| 8 \u9474| 9 \u9474| 0 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 7 \u9474|      {\b {\ul SPRITE} 19}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 8 \u9474| 0 \u9474| 0 \u9474| 0 \u9474| 5 \u9474| 7 \u9474| 7 \u9474| 4 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 7 \u9474| 4 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 20}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 8 \u9474| 5 \u9474| 4 \u9474| 5 \u9474| 4 \u9474| 8 \u9474| 9 \u9474| 0 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 4 \u9474|      {\b {\ul SPRITE} 21}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+24\page
+{\b DIAGRAM 1 CONTINUED}\par
+\par
+\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 0 \u9474|\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#{\b SPRITE 3}\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9617#\u9474| 9 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 22}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 8 \u9474| 9 \u9474| 5 \u9474| 6 \u9474| 7 \u9474| 7 \u9474| 6 \u9474| 4 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 23}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 9 \u9474| 5 \u9474| 4 \u9474| 8 \u9474| 9 \u9474| 9 \u9474| 5 \u9474| 7 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 24}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+            4   5   6   7   8   9   A   B\par
+          \u9484+\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9516T\u9472-\u9472-\u9472-\u9488\'ac\par
+        6 \u9474| 4 \u9474| 0 \u9474| 8 \u9474| 0 \u9474| 0 \u9474| 8 \u9474| 5 \u9474| 7 \u9474|\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        7 \u9474| 6 \u9474| 7 \u9474| 6 \u9474| 4 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 25}\par
+          \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+          \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+                                                                                25\page
+                         MICRODRIVE WHITE LIGHTNING\par
+\par
+\par
+INTRODUCTION\par
+\par
+In order to make maximum use of the Spectrum's 48k of memory the tape based White\par
+Lightning was located at 24832 decimal.  This leaves room for a small BASIC loader\par
+program.  If, however, interface  is fitted, the execution of any of the shadow\par
+ROM commands will cause BASIC to be relocated upwards and result in insufficient\par
+memory for the tape based loader program.\par
+\par
+It was therefore decided, on completion of the tape based program, to develop\par
+another version which would not only be microdrive compatible but would also\par
+utilise the drives to compile source code.  Unfortunately, because of the way that\par
+the shadow ROM operates, the BASIC interface part of the software is no longer\par
+practical and therefore Microdrive White Lightning no longer has this feature.\par
+\par
+The editing buffers have now been moved up to occupy the old screens 6, 7 and 8,\par
+and an extra 1k of dictionary space is now available. Source code is now compiled\par
+directly from microdrives and so sprites can be stored from 53760 onwards.\par
+Microdrive screens 1 to 19 are utilised by the system but you can edit any of the\par
+screens 20 to 150.  This means that Microdrive White Lightning can handle six\par
+times as much source code without any troublesome reloading from tape.\par
+\par
+\par
+IMPLEMENTING ON MICRODRIVE\par
+\par
+1.  Insert Tape 1 in your cassette and rewind to Side A.\par
+\par
+2.  Type LOAD"" and when "MWL" has loaded it will auto-run, format your\par
+    microdrive and save the BASIC loader and the machine code.\par
+\par
+3.  To run the microdrive version just type LOAD *"M";1;"MWL" and it will\par
+    load and execute.\par
+\par
+\par
+PREPARING A CARTRIDGE FOR SOURCE CODE\par
+\par
+Before using the microdrive version it is necessary to set up a separate cartridge\par
+for storing and loading source code.  This version has been designed to work\par
+exclusively with microdrive number 1.\par
+\par
+To set up the cartridge, insert it in microdrive 1 and execute the following:\par
+\par
+        FORMAT"M";1;"name":OPEN#4;"M";1;"a":\par
+        FOR I=1 TO 100000: PRINT#4;CHR$ 32 ; : NEXT I\par
+\par
+Note the lower case "a" used in the filename.\par
+\par
+After several minutes, the error message "MICRODRIVE FULL" will be printed. You\par
+should now key in:\par
+\par
+        CLOSE#4\par
+\par
+to close this file.  To check that you have a correctly prepared cartridge, type:\par
+\par
+        CAT 1\par
+\par
+"a" should be printed on the screen to indicate a single file called "a" and 0 to\par
+indicate zero bytes free.\par
+\par
+\par
+\par
+\par
+26\page
+Please note that this cartridge should be clearly labelled and used exclusively\par
+for SAVEing and LOADing Forth source code while you are editing Forth screens.\par
+Sprites, BASIC and blocks of machine code should be SAVEd on a separate cartridge\par
+or cartridges.  There are no commands within White Lightning to manipulate\par
+microdrives, therefore all such commands (e.g. FORMAT, ERASE, OPEN#) are executed\par
+from BASIC after exiting via the PROG command.\par
+\par
+\par
+EDITING FORTH SCREENS\par
+\par
+Forth source code is still EDITed in exactly the same way as the tape version\par
+(using EDIT,P,S,D etc.) except that EDIT will not automatically execute a FLUSH.\par
+This means that your EDITs will not be updated on microdrive until you type FLUSH,\par
+so be sure to remember to do this before moving on to another screen.\par
+\par
+\par
+THE EDIT BUFFERS\par
+\par
+To give some idea of how White Lightning uses the microdrive for Forth source,\par
+the following brief description may be helpful.\par
+\par
+There exists in RAM an area of 1024 bytes called the edit buffer, which can hold\par
+two 512 byte Forth screens.  If you issue a command which requires the use of a\par
+screen (LIST, CLEAR or INDEX) then this screen will be read from the microdrive\par
+into the edit buffer.  If the edit buffer already contains two screens and they\par
+have been altered in any way since they were last loaded, then they must first be\par
+saved (using FLUSH) back to the drive in order to allow the currently required\par
+screen to be loaded in.\par
+\par
+Note that before a screen is first edited it will need to be cleared using the\par
+CLEAR command as it will probably contain garbage.  For example, before using\par
+screen 20 for the first time, type:\par
+\par
+        20 CLEAR 20 LIST\par
+\par
+\par
+TRANSFERRING OLD SOURCE\par
+\par
+If you have already written a sizeable program with the tape based White\par
+Lightning, then you will want to transfer it to your microdrive based White\par
+Lightning without having to completely re-type it.  To do this, use the\par
+following:\par
+\par
+1.  Type OLD <CR>.\par
+\par
+2.  Type PROG <CR> and load your old source code from the tape in the normal way.\par
+    Then re-enter Forth as normal.\par
+\par
+3.  Transfer each screen from its old number in memory to its new number on\par
+    the microdrive using:\par
+\par
+    OLDSCREEN NEWSCREEN TRANS <CR>\par
+\par
+    So, for example, to transfer the old screen 6 to microdrive screen\par
+    25, use:\par
+\par
+    6 25 TRANS <CR>\par
+\par
+    If a bad sector is encountered you will get error message 8.  Skip\par
+    over this sector and try the next one (see next section on BAD SECTORS).\par
+\par
+\par
+\par
+\par
+                                                                                27\page
+4.  Finally type NEW <CR> to restore the editing buffers to their\par
+    microdrive addresses.\par
+\par
+\par
+BAD SECTORS\par
+\par
+Regrettably, at the time of writing, whilst the microdrive cartridge costs about\par
+twice as much as a standard 5 1/4 inch floppy, the number of bad sectors is still\par
+extremely high.  Forth screens map directly to microdrive sectors, so screen 25\par
+uses sector 25 and so on.  So as we shall see, some screens may be unusable.\par
+\par
+A bad sector will be identified by White Lightning the first time a read or write\par
+operation is carried out, and error 8 generated.  Note that executing CLEAR will\par
+mean that you can find bad sectors before editing into them.  If you do find a bad\par
+sector, keep a note of it and don't use that screen.  There is a simple way around\par
+this problem as we shall see in the following example.  Assume we want to edit\par
+into screens 25 to 28 and that we did the following:\par
+\par
+1.  Type 25 CLEAR 0 EDIT\par
+\par
+2.  Key in text for lines 0 to 6.\par
+\par
+3.  Type 7 EDIT then key in --> to indicate continue with next screen when\par
+    LOADing.\par
+\par
+4.  Type 26 CLEAR 0 EDIT.\par
+\par
+5.  Key in text for lines 0 to 6.\par
+\par
+6.  Type 7 EDIT and key in --> .\par
+\par
+Now suppose when we typed in 27 CLEAR, that we got error 8, indicating drive error.\par
+This would mean that sector 27 was a bad sector and therefore that screen 27 was\par
+unusable.\par
+\par
+Remember that in screen 26 the last line was:\par
+\par
+        7 -->\par
+\par
+which tells Forth to continue LOADing on the next screen.  The next screen is\par
+screen 27 which is unusable, so we have to change the last line of screen 26 to\par
+become:\par
+\par
+        7 28 LOAD\par
+\par
+which tells Forth to continue LOADing at screen 28.  This will then skip over the\par
+bad sector.\par
+\par
+\par
+ADDITIONAL ERROR MESSAGES\par
+\par
+# 3   -  Incorrect Addressing Mode\par
+\par
+# 7   -  Stack Overflow\par
+\par
+# 8   -  Microdrive read/write error (bad sector).\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+28\page
+SUMMARY OF MICRODRIVE WHITE LIGHTNING\par
+\par
+1.  Only use specially prepared cartridges for EDITing and use them\par
+    exclusively for storing screens.\par
+\par
+2.  CLEAR a screen before using it for the first time and change the\par
+    previous screen to skip over it if it is a bad sector.  Do not use\par
+    this screen again.\par
+\par
+3.  Microdrive commands such as ERASE, VERIFY etc. can be executed after\par
+    entering BASIC using PROG.\par
+\par
+4.  Do NOT break into the program (SHIFT and SPACE) while the microdrive\par
+    is running.\par
+\par
+5.  RESERVE no longer executes.\par
+\par
+6.  There are some additional error messages (listed above).\par
+\par
+7.  Always execute a FLUSH after editing of a screen is complete.\par
+\par
+\par
+\par
+THE MICRODRIVE SPRITE GENERATOR\par
+\par
+\par
+INTRODUCTION\par
+\par
+The microdrive Sprite Generator Program is upwardly compatible with the current\par
+tape based version and tape LOADing and SAVEing is still supported.  An extra\par
+command has been added to make the creation of large sprites easier and the arcade\par
+character set has been re-organised to give extra sprite space.\par
+\par
+\par
+IMPLEMENTING ON MICRODRIVE\par
+\par
+The first thing to do is to transfer the program onto a microdrive cartridge.\par
+\par
+1.  Insert Tape 1 in your cassette and rewind to Side A.\par
+\par
+2.  Type LOAD"":LOAD""CODE\par
+\par
+3.  Place a formatted cartridge in microdrive 1.\par
+\par
+4.  Type GOTO 9998.\par
+\par
+This will save and verify the generator onto the microdrive.  Now type PRINT USR 0\par
+to clear memory.\par
+\par
+The microdrive version can now be LOADed and RUN by typing:\par
+\par
+        LOAD *"M";1;"S"\par
+\par
+\par
+SAVING AND LOADING SPRITES\par
+\par
+The microdrive version of the Sprite Development Program still allows sprites to\par
+be loaded and saved from and to tape as described in the manual.\par
+\par
+A separate cartridge is required to store sprites.  The program will allow you to\par
+save five files of sprites per cartridge, these being numbered 1 to 5.\par
+\par
+\par
+\par
+                                                                                29\page
+Before a cartridge can be used to store sprites, it has to be specially formatted.\par
+This is done using the Sprite Generator Program by typing SYMBOL SHIFT F (TO).\par
+This will format the cartridge and set up five dummy files, numbered 1 to 5.  From\par
+now on, whenever you save a file of sprites, the old file of that number will be\par
+erased to conserve cartridge storage space.\par
+\par
+For example, if you wished to save a file of sprites currently in memory, to file\par
+1, use:\par
+\par
+1.  Type SYMBOL SHIFT S (save sprites).\par
+\par
+2.  Type N              (we don't want tape).\par
+\par
+3.  Type Y              (save to drive).\par
+\par
+4.  Insert the formatted cartridge.\par
+\par
+5.  Press any key.\par
+\par
+6.  Type 1              (save to file 1).\par
+\par
+To load sprites just press SYMBOL SHIFT J and then follow the same sequence as\par
+that used to save.\par
+\par
+\par
+AVAILABLE MEMORY\par
+\par
+You have 13595 bytes available for sprites.  Please note that the bottom 2816\par
+bytes, locations 51685 to 54501 are used to store the arcade character library\par
+accesses by the 'Z' key.  If, by creating lots of sprites, you overwrite this area\par
+of memory, you should not try to access any of these characters.\par
+\par
+\par
+CREATION OF LARGE SPRITES\par
+\par
+The microdrive version of the Sprite Development Package allows the creation of\par
+large sprites (larger than the 15x15 screen) in memory.  These sprites can be said\par
+to be empty when created and have to be filled by placing smaller sprites into\par
+them using the 'place sprite into sprite window' function (BREAK SPACE key).\par
+\par
+To create a large sprite hit CAPS SHIFT C and enter the dimensions as instructed.\par
+\par
+\par
+MERGING SPRITES FROM MICRODRIVE\par
+\par
+The actual microdrive file that contains the sprite data has the capital letter B\par
+after it (CHR$ 66) such that, for example, the sprite data for sprite file '5' is\par
+file '5B'.\par
+\par
+So with reference to line 5 on page 81 of the White Lightning manual:  to merge\par
+from microdrive the sprites of sprite file 5 in White Lightning, exit to BASIC and\par
+then type:\par
+\par
+        LOAD *"M";1;"5B"CODE\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+30\page
+{\b ADDITIONAL ERRATA}\par
+\par
+While OCRing and proofreading the scans of the White Lightning manuals, I have\par
+tried to preserve, as best as I was able, the original pagination, layout,\par
+spacing and formatting of the originals. That includes all the spelling mistakes\par
+and typos that I saw, which I have listed below.\par
+\par
+{\ul Cheatsheet}\par
+\par
+Page  4, line 57: 'previously' for 'prevously'\par
+Page 10, line 12: 'exercise' for 'excercise'\par
+Page 14, line 21: 'decelerates' for 'deccelerates'\par
+Page 17, line 36: 'inputting' for 'inputing'\par
+Page 17, line 37: 'inputting' for 'inputing'\par
+Page 17, line 58: 'laid' for 'layed'\page
+}
