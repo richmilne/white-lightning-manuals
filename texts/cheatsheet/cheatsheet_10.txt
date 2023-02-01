@@ -9,7 +9,7 @@ This listing is provided as an example of White Lightning programming.  In order
 to run the game you will need to enter the sprites as described in the next
 section.  This is a fairly laborious task so we can offer the fainthearted,
 sprites and demo on tape for one pound seventy five pence.  We recommend, however,
-that you take the time to build up the sprites yourself as an excercise in self
+that you take the time to build up the sprites yourself as an exercise in self
 discipline if nothing else!
 
 The program executes one word in foreground and one word in background.  The

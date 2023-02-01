@@ -2,13 +2,13 @@
     <head>
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta name="author" description="Richard Milne (RichMilne AT users DOT noreply DOT github DOT com">
-        <meta name="version" description="133">
-        <meta name="creation" description="2010-05-07 09:29:15">
+        <meta name="version" description="134">
+        <meta name="creation" description="2023-02-01 22:19:27">
         <meta name="host" description="http://www.worldofspectrum.org/infoseekid.cgi?id=0008967">
         <title>White Lightning Documentation - Cheatsheet</title>
         <style type="text/css">
         <!--
-        * {font-family: "Courier New", monospace;
+        * {font-family: "Consolas", monospace;
            font-size: 11}
         -->
         </style>
@@ -88,7 +88,7 @@ Moving Sprites &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &n
 Screen Scrolling &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2<br/>
 Simple Putting &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2<br/>
 More Advanced Techniques &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4<br/>
-Collision Detection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6<br/>
+Collision Detection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7<br/>
 Sample Source Listings &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8<br/>
 The Lunar Lander Program &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9<br/>
 Table 1 (Lunar Sprites) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 20<br/>
@@ -343,7 +343,7 @@ sprite using:<br/>
 It's worth putting these sprites on the screen to see what they look like.<br/>
 Assuming you've executed the words MAKE, SET1 and SET2 use:<br/>
 <br/>
-: TESTE CLS 0 COL ! 4 0 D0 I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;<br/>
+: TESTE CLS 0 COL ! 4 0 DO I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;<br/>
 <br/>
 This will place the 4 orientations, one above the other, so that the resolution of<br/>
 the movement can be seen.<br/>
@@ -363,7 +363,7 @@ So to PUT at X-position 27 (54 pixels from the left hand column) just use:<br/>
 <br/>
 The previous example is useful in that it indicates a way of producing high<br/>
 resolution PUTting but as it stands cannot be used for animation because it does<br/>
-not enable the removal of prevously placed orientations. &nbsp;Before looking at a<br/>
+not enable the removal of previously placed orientations. &nbsp;Before looking at a<br/>
 scheme for animating these orientations let's generalise this example to cover<br/>
 high resolution vertical movement as well as horizontal movement.<br/>
 <br/>
@@ -422,7 +422,7 @@ Let's now deal with the animation of the sprite itself.<br/>
 <br/>
 Perhaps the most powerful method of sprite animation is via the XOR operation.<br/>
 The usefulness of this operation stems from the fact that when an object is XOR'ed<br/>
-with the screen, the screen can he restored simply by repeating the operation.<br/>
+with the screen, the screen can be restored simply by repeating the operation.<br/>
 The area of screen is restored to the same state as it was before the first<br/>
 operation (see page 22 of the White Lightning manual).<br/>
 <br/>
@@ -457,7 +457,7 @@ series of 16. &nbsp;To adapt these routines for your own use just change FSPN.<b
 <br/>
 We now need to poll the keyboard:<br/>
 <br/>
-We use the KCHK word again an that the character is not re-PUT unless a key has<br/>
+We use the KCHK word again so that the character is not re-PUT unless a key has<br/>
 been pressed.<br/>
 <br/>
 : KCHK KB DUP ROT OR SWAP ;<br/>
@@ -519,7 +519,7 @@ MSG# 10 will be produced.<br/>
 <br/>
 The six stage procedure is as follows:<br/>
 <br/>
-1. &nbsp;The last orientation PUT, together with a one character surround, are G0T into<br/>
+1. &nbsp;The last orientation PUT, together with a one character surround, are GOT into<br/>
 the 5x5 dummy sprite.<br/>
 <br/>
 2. &nbsp;The last orientation is GWXRM'ed out of the 5x5, restoring the original screen<br/>
@@ -590,7 +590,7 @@ SCR # 7 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &n
 &nbsp; 0 : MAKE 62 SPN ! 4 HGT ! 4 LE &nbsp; &nbsp; &nbsp; &nbsp; DUP 12 + SWAP DO I DUP 4 + DUP<br/>
 N ! TEST 0= IF ISPRITE CLSM ENDI &nbsp; &nbsp; &nbsp; &nbsp;SP2<br/>
 F &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 ! SPN ! SP1 ! GWBLM SCRM 4<br/>
-&nbsp; 1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2 &nbsp; &nbsp; &nbsp; +LOOP LOOP ;<br/>
+&nbsp; 1 1 SCOL ! 1 SROW ! 62 SP2 ! 2 &nbsp; &nbsp; &nbsp; &nbsp; +LOOP LOOP ;<br/>
 4 SP1 ! GWBLM ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : XYPUT 4 /MOD COL ! SWAP 4<br/>
 &nbsp; 2 : UP 7 1 KB IF ROW @ 0 &gt; MIN &nbsp; &nbsp; &nbsp; &nbsp;/MOD ROW ! DUP + DUP + + 100 + S<br/>
 US ROW +! ENDIF ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PN<br/>
@@ -606,8 +606,8 @@ GHT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; 7 : ADJM PWBLS 6 1 KB UNTIL ; &nbsp; &nbsp; &nbsp; &nbsp; SPN 0 VARIABLE FLAG<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 : PLOAD COL ! ROW ! SPN ! PU<br/>
 SCR # 8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TXRS ;<br/>
-&nbsp; 0 : SETUP 4 SPN ! 1 3 2 4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 : PSET TSPN @ TROW @ TCOL @<br/>
-5 6 3 5 12 10 9 12 4 6 0 DO ROW ! COL &nbsp; ;<br/>
+&nbsp; 0 : SETUP 4 SPN ! 3 2 4 5 6 3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 : PSET TSPN @ TROW @ TCOL @<br/>
+5 12 10 9 12 4 6 0 DO ROW ! COL &nbsp; &nbsp; &nbsp; &nbsp; ;<br/>
 ! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 : PCAL 4 /MOD TCOL ! SWAP 4<br/>
 &nbsp; 1 : PUTORS LOOP ; : KCHK KB DUP &nbsp; &nbsp; &nbsp; /MOD TROW ! DUP + DUP + FSPN + +<br/>
 ROT OR SWAP ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 TSPN ! ;<br/>
@@ -691,7 +691,7 @@ NUMBERS &nbsp; &nbsp; &nbsp; &nbsp;HEIGHT &nbsp; &nbsp; &nbsp; &nbsp; LENGTH &nb
 &nbsp;32,33 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MINI LANDSCAPE<br/>
 &nbsp; 43 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EXPLOSION<br/>
 &nbsp; 44 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LANDED LUNAR LANDER<br/>
-&nbsp; 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CRASHED LUNAR LANDER<br/>
+&nbsp; 45 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CRASHED LUNAR LANDER<br/>
 &nbsp;100 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LUNAR LANDER<br/>
 <br/>
 101-107 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LUNAR LANDER ORIENTATIONS<br/>
@@ -714,7 +714,7 @@ This listing is provided as an example of White Lightning programming. &nbsp;In 
 to run the game you will need to enter the sprites as described in the next<br/>
 section. &nbsp;This is a fairly laborious task so we can offer the fainthearted,<br/>
 sprites and demo on tape for one pound seventy five pence. &nbsp;We recommend, however,<br/>
-that you take the time to build up the sprites yourself as an excercise in self<br/>
+that you take the time to build up the sprites yourself as an exercise in self<br/>
 discipline if nothing else!<br/>
 <br/>
 The program executes one word in foreground and one word in background. &nbsp;The<br/>
@@ -987,7 +987,7 @@ will go out of phase.<br/>
 <br/>
 SF<br/>
 <br/>
-Accelerates horizontal speed (deccelerates if negative) by the amount on the<br/>
+Accelerates horizontal speed (decelerates if negative) by the amount on the<br/>
 stack.<br/>
 <br/>
 SS<br/>
@@ -1045,7 +1045,7 @@ As SR8 when movement is to the left.<br/>
 <br/>
 UR<br/>
 <br/>
-If speed is greater than 200, try and scroll right 8 pixels right, f not, try and<br/>
+If speed is greater than 200, try and scroll right 8 pixels right, if not, try and<br/>
 scroll by 4 pixels right.<br/>
 <br/>
 LR<br/>
@@ -1089,7 +1089,7 @@ TICK<br/>
 <br/>
 Increments vertical velocity (acts like gravity) unless terminal velocity has been<br/>
 reached. &nbsp;If you want to make the game more difficult change 1 VEL +! to 2 VEL +!<br/>
-and thus double the planets gravity.<br/>
+and thus double the planet's gravity.<br/>
 <br/>
 <br/>
 <br/>
@@ -1200,8 +1200,8 @@ the C key and hit Y for yes and then N for the change buffer size prompt.<br/>
 Set the attribute switch to 1 by pressing the A key and then 1.<br/>
 <br/>
 With reference to table 1 set the sprite number to the required value by pressing<br/>
-the S key and then inputing the required value. &nbsp;Input the dimensions (Height and<br/>
-Length) of the sprite by pressing the H or C keys and then inputing the<br/>
+the S key and then inputting the required value. &nbsp;Input the dimensions (Height and<br/>
+Length) of the sprite by pressing the H or C keys and then inputting the<br/>
 appropriate values. &nbsp;Set the respective ink, paper, flash and bright values using<br/>
 the X, C, V and B keys.<br/>
 <br/>
@@ -1220,9 +1220,9 @@ CREATION OF THE 64x3 CHARACTER LANDSCAPE SPRITE<br/>
 This sprite will be made up of 8 8x3 character sprites, which will be joined<br/>
 together into one large sprite in the White Lightning program itself.<br/>
 <br/>
-Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1 clear the<br/>
+Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1. Clear the<br/>
 CHR$ square by pressing the Q key. &nbsp;Using the sprites 4,5,6,7,8,9 and the CHR$<br/>
-square (referred to as 0) build up sprites 10 to 25 as layed out in diagram 1.<br/>
+square (referred to as 0) build up sprites 10 to 25 as laid out in diagram 1.<br/>
 <br/>
 <br/>
 <br/>
@@ -1571,7 +1571,7 @@ SPRITE &nbsp; H &nbsp; &nbsp;L &nbsp; &nbsp;INK &nbsp; &nbsp;PAPER &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; 7 &#9474; 6 &#9474; 4 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 7 &#9474; 6 &#9474; 6 &#9474; &nbsp; &nbsp; &nbsp;<b><u>SPRITE</u> 10</b><br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9500;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9508;<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 5 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; 8 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474; 6 &#9474;<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#9492;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9524;&#9472;&#9472;&#9472;&#9496;<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>&#8595; 0 INK</b><br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; A &nbsp; B<br/>
@@ -1766,7 +1766,7 @@ INTRODUCTION<br/>
 <br/>
 In order to make maximum use of the Spectrum's 48k of memory the tape based White<br/>
 Lightning was located at 24832 decimal. &nbsp;This leaves room for a small BASIC loader<br/>
-program. &nbsp;If, however, interface &nbsp;is fitted, the execution of any of the shadow<br/>
+program. &nbsp;If, however, Interface 1 is fitted, the execution of any of the shadow<br/>
 ROM commands will cause BASIC to be relocated upwards and result in insufficient<br/>
 memory for the tape based loader program.<br/>
 <br/>
@@ -1864,7 +1864,7 @@ screen 20 for the first time, type:<br/>
 TRANSFERRING OLD SOURCE<br/>
 <br/>
 If you have already written a sizeable program with the tape based White<br/>
-Lightning, then you will want to transfer it to your microdrive based White<br/>
+Lightning, then you will want to transfer it to your microdrive-based White<br/>
 Lightning without having to completely re-type it. &nbsp;To do this, use the<br/>
 following:<br/>
 <br/>
@@ -2089,20 +2089,18 @@ then type:<br/>
 <br/>
 30
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
-<b>ADDITIONAL ERRATA</b><br/>
+<b>TRANSCRIBER'S NOTE</b><br/>
 <br/>
 While OCRing and proofreading the scans of the White Lightning manuals, I have<br/>
 tried to preserve, as best as I was able, the original pagination, layout,<br/>
-spacing and formatting of the originals. That includes all the spelling mistakes<br/>
-and typos that I saw, which I have listed below.<br/>
+spacing and formatting of the originals - while still incorporating all errata<br/>
+noted and published in previous versions, and with a few (small) edits and<br/>
+corrections of my own.<br/>
 <br/>
-<u>Cheatsheet</u><br/>
+This transcription is still a work in progress. If you discover any further<br/>
+mistakes, please create a pull request (or otherwise report the errors) against<br/>
+the manuals' source repository at:<br/>
 <br/>
-Page &nbsp;4, line 57: 'previously' for 'prevously'<br/>
-Page 10, line 12: 'exercise' for 'excercise'<br/>
-Page 14, line 21: 'decelerates' for 'deccelerates'<br/>
-Page 17, line 36: 'inputting' for 'inputing'<br/>
-Page 17, line 37: 'inputting' for 'inputing'<br/>
-Page 17, line 58: 'laid' for 'layed'
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; https://github.com/richmilne/white-lightning-manuals
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
 </body>

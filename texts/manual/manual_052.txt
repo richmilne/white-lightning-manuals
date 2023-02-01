@@ -54,5 +54,5 @@ If there is no data on the screen, type:
 
 VLIST 4 COL ! 5 ROW ! 4 HGT ! 3 LEN ! WRL4V <CR>
 
-A window column 4 Row 5 has been scrolled left 4 pixels - if you did'nt see it
+A window column 4 Row 5 has been scrolled left 4 pixels - if you didn't see it
 happen type:

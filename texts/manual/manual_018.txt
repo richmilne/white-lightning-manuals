@@ -49,7 +49,7 @@ code is complete, it may then be compiled into the White Lightning dictionary fo
 later execution.
 
 Included in this documentation is a glossary of Fig-Forth terms (courtesy of the
-FORTH INTEREST GROUP,PO BOX 1105, SAN CARLOS, CA 94070).
+FORTH INTEREST GROUP, P.O. BOX 1105, SAN CARLOS, CA 94070).
 
 Spectra Forth was written by Stuart Smith, the author of the extremely successful
 DRAGONFORTH, and is an enhancement of a program written by the Forth Interest

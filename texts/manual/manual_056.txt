@@ -28,7 +28,7 @@ Note:
 The dimensions of the screen window are taken as the dimensions of the sprite.  If
 the command doesn't execute, it is almost certainly because the width of the
 sprite + COL or the height of the sprite + ROW, exceed 32 or 24 respectively, so
-that part of the window lies off the screen.  sprites must be previously set up
+that part of the window lies off the screen.  Sprites must be previously set up
 either by the development software, or the COLD# and SPRITE or ISPRITE commands
 before these commands will execute.
 
@@ -37,7 +37,7 @@ Example:
 To GET a screen sprite into sprite number 4 from column 5, row 4, with attributes
 and "OR" it with the data currently held in sprite number 4, use the following:
 
-4 SPN ! 5 COL ! 4 ROW ! ATT0N GETORS
+4 SPN ! 5 COL ! 4 ROW ! ATTON GETORS
 
 Note that if ATTON was the last switch command, it would not be needed in the
 above.
@@ -48,11 +48,11 @@ above.
 These commands are identical to the group 1 "GETS" except that data transfer is
 from the sprite to the screen.  The results of the various operations are
 therefore displayed to the screen.  The parameters are identical in operation to
-those of the "GETS", and the ATT0N and ATTOFF switch commands also apply.
+those of the "GETS", and the ATTON and ATTOFF switch commands also apply.
 
 
 Parameter                 Use
 
-SPN         Number of the sprite to he used (l to 255)
+SPN         Number of the sprite to be used (1 to 255)
 COL         Left hand column of target screen window (0 to 31)
 ROW         Top row of target screen window (0 to 23)

@@ -1,6 +1,6 @@
 ﻿**OPERATING INSTRUCTIONS**
 
-1)  Rewind the tape marked "White Lightning".  Disconnect interface
+1)  Rewind the tape marked "White Lightning".  Disconnect Interface
     1 if fitted.
 
 2)  Load using LOAD"" then stop the tape.  White Lightning will auto-run.
@@ -12,7 +12,7 @@
     the same tape.  There is a section of data before the sprites which doesn't
     load, but don't worry about this, this is information used by the sprite
     development package.  Once loaded, the LOAD SOURCE Y/N prompt will appear.
-    Press N to enter White Lightning or, if you wish to Load some source code
+    Press N to enter White Lightning or, if you wish to load some source code
     place the appropriate cassette in the recorder, press PLAY and then type Y.
 
 5)  To RUN the demonstrations, just LOAD using LOAD"" and the program will

@@ -2,7 +2,7 @@
 in addition to one of the possible sprites.  This time, the dummy  sprite is
 loaded with the contents of the screen window, but the candidates are first
 "AND"ed into the dummy to remove extraneous data before the XOR and SCANM.
-Finally the dummy needs to he reloaded from the screen before the next test.  This
+Finally the dummy needs to be reloaded from the screen before the next test.  This
 latter test is limited by the fact that its conclusion is only that the screen
 contained all the parts of the sprite with which a comparison was made. In the
 extreme case of the screen window containing all pixels set, then an agreement

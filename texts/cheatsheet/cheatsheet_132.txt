@@ -1,15 +1,13 @@
-﻿**ADDITIONAL ERRATA**
+﻿**TRANSCRIBER'S NOTE**
 
 While OCRing and proofreading the scans of the White Lightning manuals, I have
 tried to preserve, as best as I was able, the original pagination, layout,
-spacing and formatting of the originals. That includes all the spelling mistakes
-and typos that I saw, which I have listed below.
+spacing and formatting of the originals - while still incorporating all errata
+noted and published in previous versions, and with a few (small) edits and
+corrections of my own.
 
-__Cheatsheet__
+This transcription is still a work in progress. If you discover any further
+mistakes, please create a pull request (or otherwise report the errors) against
+the manuals' source repository at:
 
-Page  4, line 57: 'previously' for 'prevously'
-Page 10, line 12: 'exercise' for 'excercise'
-Page 14, line 21: 'decelerates' for 'deccelerates'
-Page 17, line 36: 'inputting' for 'inputing'
-Page 17, line 37: 'inputting' for 'inputing'
-Page 17, line 58: 'laid' for 'layed'
+                            https://github.com/richmilne/white-lightning-manuals

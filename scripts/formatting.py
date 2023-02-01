@@ -415,7 +415,7 @@ class rtf_formatter(text_formatter):
         self.line_end = '\\par\n'
         self.page_sep = '\\page\n'
 
-        self.header = r"""{\rtf1\ansi\deff0\n{\fonttbl{\f0 Courier New;}}"""
+        self.header = r"""{\rtf1\ansi\deff0\n{\fonttbl{\f0 Consolas;}}"""
         info = ['{\info',
                 '{\\author Richard Milne',
                 ' (RichMilne AT users DOT noreply DOT github DOT com)}']
@@ -492,7 +492,7 @@ class html_formatter(text_formatter):
         %s
         <style type="text/css">
         <!--
-        * {font-family: "Courier New", monospace;
+        * {font-family: "Consolas", monospace;
            font-size: 11}
         -->
         </style>

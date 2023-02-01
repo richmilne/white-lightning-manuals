@@ -6,7 +6,7 @@
 
 **INTRODUCTION**
 
-The Sprite Generator Program was developed to compliment the White Lightning
+The Sprite Generator Program was developed to complement the White Lightning
 language.  The language is comprised of commands for manipulating sprites and
 screen data but does not have the facility to directly design graphics characters.
 This means there are two phases to games creation.  The first involves designing
@@ -34,14 +34,14 @@ are tabulated at the end of this section.
 
 **USING SPRITES WITH WHITE LIGHTNING**
 
-Once you have completed an editing session, the sprites generated should be Saved
+Once you have completed an editing session, the sprites generated should be saved
 to tape for further editing sessions, or for use with the White Lightning language
-itself.  To Load your sprites into White Lightning:
+itself.  To load your sprites into White Lightning:
 
 1.   Load White Lightning using LOAD ""
 
 2.   Insert the tape containing your sprites into the tape recorder and press Y in
-response to the "LOAD SPRITES Y/N" prompt. The sprites will be Loaded at the
+response to the "LOAD SPRITES Y/N" prompt. The sprites will be loaded at the
 address from which they were saved using the sprite generator program.
 
 

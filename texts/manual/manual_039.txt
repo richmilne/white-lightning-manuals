@@ -26,7 +26,7 @@ sprite are used as the dimensions of the screen window, and COL and ROW are used
 to give the co-ordinates of the top left of the window.  If the window overlaps
 the edge of the screen, the command will not execute. Typical commands in this
 group are the PUTs and GETs, which move sprites between the screen and memory.
-Commands in this group are postfixed with an "S"; e.g. PUTBLS, GETXRS.
+Commands in this group are postfixed with an "S", e.g. PUTBLS, GETXRS.
 
 
 **SPRITE OPERATIONS**

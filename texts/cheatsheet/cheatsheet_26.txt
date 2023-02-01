@@ -5,7 +5,7 @@ INTRODUCTION
 
 In order to make maximum use of the Spectrum's 48k of memory the tape based White
 Lightning was located at 24832 decimal.  This leaves room for a small BASIC loader
-program.  If, however, interface  is fitted, the execution of any of the shadow
+program.  If, however, Interface 1 is fitted, the execution of any of the shadow
 ROM commands will cause BASIC to be relocated upwards and result in insufficient
 memory for the tape based loader program.
 

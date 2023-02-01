@@ -2,13 +2,13 @@
     <head>
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta name="author" description="Richard Milne (RichMilne AT users DOT noreply DOT github DOT com">
-        <meta name="version" description="133">
-        <meta name="creation" description="2010-05-07 09:29:15">
+        <meta name="version" description="134">
+        <meta name="creation" description="2023-02-01 22:19:28">
         <meta name="host" description="http://www.worldofspectrum.org/infoseekid.cgi?id=0008967">
         <title>White Lightning Documentation - Manual</title>
         <style type="text/css">
         <!--
-        * {font-family: "Courier New", monospace;
+        * {font-family: "Consolas", monospace;
            font-size: 11}
         -->
         </style>
@@ -100,7 +100,7 @@ of parties infringing this Copyright Notice.<br/>
 &nbsp; &nbsp; Stack Operations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>24</b><br/>
 &nbsp; &nbsp; Other Operations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>25</b><br/>
 &nbsp; &nbsp; Colon Definitions &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>26</b><br/>
-&nbsp; &nbsp; Control Structures &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>77</b><br/>
+&nbsp; &nbsp; Control Structures &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>27</b><br/>
 &nbsp; &nbsp; Conditional Branching &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>28</b><br/>
 &nbsp; &nbsp; Constants and Variables &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>32</b><br/>
 &nbsp; &nbsp; Other Commonly Used Forth Words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>32</b><br/>
@@ -116,16 +116,16 @@ of parties infringing this Copyright Notice.<br/>
 &nbsp; &nbsp; The Buffer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>43</b><br/>
 &nbsp; &nbsp; Background Scrolling &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>43</b><br/>
 &nbsp; &nbsp; IDEAL Mnemonics &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>44</b><br/>
-&nbsp; &nbsp; General Points &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>46</b><br/>
+&nbsp; &nbsp; General Points &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>45</b><br/>
 &nbsp; &nbsp; Sprite Utilities &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>48</b><br/>
 &nbsp; &nbsp; Scrolling &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>52</b><br/>
 &nbsp; &nbsp; GETs and PUTs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>55</b><br/>
 &nbsp; &nbsp; Sprite Transformations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>59</b><br/>
 &nbsp; &nbsp; Interrupt Related Words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>61</b><br/>
-&nbsp; &nbsp; BASIC Interface Words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>82</b><br/>
+&nbsp; &nbsp; BASIC Interface Words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>62</b><br/>
 &nbsp; &nbsp; Miscellaneous Words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>62</b><br/>
-&nbsp; &nbsp; Forth/BASIC words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>66</b><br/>
-&nbsp; &nbsp; Foreground/Background &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>87</b><br/>
+&nbsp; &nbsp; Forth/BASIC Words &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>66</b><br/>
+&nbsp; &nbsp; Foreground/Background &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>67</b><br/>
 &nbsp; &nbsp; Logical Operations &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>71</b><br/>
 &nbsp; &nbsp; Collision Detection and Sprite Recognition &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>73</b><br/>
 &nbsp; &nbsp; The BASIC Interface &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>76</b><br/>
@@ -153,11 +153,11 @@ of parties infringing this Copyright Notice.<br/>
 <br/>
 <b>FORTH/BASIC GLOSSARY</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>124</b><br/>
 <br/>
-<b>USR CALLS</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>126</b><br/>
+<b>USR CALLS</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>125</b><br/>
 <br/>
 <b>EXTENDED SPECTRA FORTH GLOSSARY</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>125</b><br/>
 <br/>
-<b>THE DEMO - A BRIEF DESCRIPTION</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>128</b><br/>
+<b>THE DEMO - A BRIEF DESCRIPTION</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>126</b><br/>
 <br/>
 <b>SOME SIMPLE PROGRAMMING EXAMPLES</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>129</b>
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
@@ -174,7 +174,7 @@ stunning results probably won't be produced overnight, but it does have the powe
 and flexibility to produce software of a commercial standard (with a little<br/>
 perseverance!). &nbsp;Software produced using White Lightning can be marketed without<br/>
 restriction, although, we would be very grateful if you felt you could pop a small<br/>
-credit on the sleeve. &nbsp;If you're looking for a publisher - don't forget us !!<br/>
+credit on the sleeve. &nbsp;If you're looking for a publisher - don't forget us!<br/>
 <br/>
 Assembly language has three advantages over high level languages: &nbsp;speed,<br/>
 flexibility and compactness. &nbsp;During the running of an arcade game, the processor<br/>
@@ -233,7 +233,7 @@ The main part of the package is the White Lightning language itself. The languag
 can be thought of as being divided into two parts: firstly, there is a super fast<br/>
 integer Forth, which conforms to a standard Fig-Forth, but secondly, and of most<br/>
 importance to games designers, there is the IDEAL sub-language. IDEAL stands for<br/>
-"Interrupt Driven Extendable Animation Language ". &nbsp;IDEAL has a dictionary of over<br/>
+"Interrupt Driven Extendable Animation Language". &nbsp;IDEAL has a dictionary of over<br/>
 100 words, which can be freely mixed with Forth, or, as we shall see, can be<br/>
 accessed from BASIC.<br/>
 <br/>
@@ -251,9 +251,9 @@ features of the entire package. &nbsp;Background words can be executed up to 50 
 second.<br/>
 <br/>
 <br/>
-<b>Extendible</b><br/>
+<b>Extendable</b><br/>
 <br/>
-Forth is extendible and was chosen as the most suitable host language for IDEAL<br/>
+Forth is extendable and was chosen as the most suitable host language for IDEAL<br/>
 because of this extremely useful feature. New words can be defined in terms of any<br/>
 of the Forth/IDEAL words, or your own previously defined words. This means you can<br/>
 create diagonal scrolls for instance, by combining individual scrolls.<br/>
@@ -264,7 +264,7 @@ create diagonal scrolls for instance, by combining individual scrolls.<br/>
 Very careful planning went into the designing of the IDEAL animation language, to<br/>
 make it as portable as possible between micros. If you've written a very<br/>
 successful program for one micro, you can move the same code across without too<br/>
-much difficilty. The only major changes necessary, are changes to accomodate the<br/>
+much difficulty. The only major changes necessary, are changes to accommodate the<br/>
 different screen formats, ie the number of columns and rows. &nbsp;You don't need to<br/>
 worry about the complexities of various memory mappings, IDEAL does that for you.<br/>
 Some implementations will not allow attributes to be moved separately from pixel<br/>
@@ -295,7 +295,7 @@ more rapidly from Forth.<br/>
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
 <b>OPERATING INSTRUCTIONS</b><br/>
 <br/>
-1) &nbsp;Rewind the tape marked "White Lightning". &nbsp;Disconnect interface<br/>
+1) &nbsp;Rewind the tape marked "White Lightning". &nbsp;Disconnect Interface<br/>
 &nbsp; &nbsp; 1 if fitted.<br/>
 <br/>
 2) &nbsp;Load using LOAD"" then stop the tape. &nbsp;White Lightning will auto-run.<br/>
@@ -307,7 +307,7 @@ more rapidly from Forth.<br/>
 &nbsp; &nbsp; the same tape. &nbsp;There is a section of data before the sprites which doesn't<br/>
 &nbsp; &nbsp; load, but don't worry about this, this is information used by the sprite<br/>
 &nbsp; &nbsp; development package. &nbsp;Once loaded, the LOAD SOURCE Y/N prompt will appear.<br/>
-&nbsp; &nbsp; Press N to enter White Lightning or, if you wish to Load some source code<br/>
+&nbsp; &nbsp; Press N to enter White Lightning or, if you wish to load some source code<br/>
 &nbsp; &nbsp; place the appropriate cassette in the recorder, press PLAY and then type Y.<br/>
 <br/>
 5) &nbsp;To RUN the demonstrations, just LOAD using LOAD"" and the program will<br/>
@@ -367,7 +367,7 @@ Mike Butler.<br/>
 <br/>
 <b>INTRODUCTION</b><br/>
 <br/>
-The Sprite Generator Program was developed to compliment the White Lightning<br/>
+The Sprite Generator Program was developed to complement the White Lightning<br/>
 language. &nbsp;The language is comprised of commands for manipulating sprites and<br/>
 screen data but does not have the facility to directly design graphics characters.<br/>
 This means there are two phases to games creation. &nbsp;The first involves designing<br/>
@@ -395,14 +395,14 @@ are tabulated at the end of this section.<br/>
 <br/>
 <b>USING SPRITES WITH WHITE LIGHTNING</b><br/>
 <br/>
-Once you have completed an editing session, the sprites generated should be Saved<br/>
+Once you have completed an editing session, the sprites generated should be saved<br/>
 to tape for further editing sessions, or for use with the White Lightning language<br/>
-itself. &nbsp;To Load your sprites into White Lightning:<br/>
+itself. &nbsp;To load your sprites into White Lightning:<br/>
 <br/>
 1. &nbsp; Load White Lightning using LOAD ""<br/>
 <br/>
 2. &nbsp; Insert the tape containing your sprites into the tape recorder and press Y in<br/>
-response to the "LOAD SPRITES Y/N" prompt. The sprites will be Loaded at the<br/>
+response to the "LOAD SPRITES Y/N" prompt. The sprites will be loaded at the<br/>
 address from which they were saved using the sprite generator program.<br/>
 <br/>
 <br/>
@@ -457,7 +457,7 @@ character currently held in the CHR$ SQR.<br/>
 <br/>
 <b>THE SPRITE SCREEN CURSORS</b><br/>
 <br/>
-These are the two flashing cursors displayed in the Row beneath the sprite screen<br/>
+These are the two flashing cursors displayed in the row beneath the sprite screen<br/>
 and the column to the right of the sprite screen. &nbsp;They are used to indicate the<br/>
 position of the top left hand corner of the screen window currently being operated<br/>
 upon. &nbsp;The actual cursor positions are measured from the top left hand corner of<br/>
@@ -478,7 +478,7 @@ just press F. &nbsp;The window will flash.<br/>
 <br/>
 This refers to the set of sprites you are currently working with and can contain<br/>
 up to 255 sprites or use 12500 bytes. &nbsp;If your sprite library needs more than<br/>
-12500 bytes you can use the merging procedure detailed in section 3 to Load and<br/>
+12500 bytes you can use the merging procedure detailed in section 3 to load and<br/>
 merge more than one sprite library into White Lightning.<br/>
 <br/>
 <br/>
@@ -507,7 +507,7 @@ will become more apparent later.<br/>
 <b>NOTES:</b><br/>
 <br/>
 1. A WARM START will not destroy any sprites already in memory and if ever the<br/>
-program is accidently caused to BREAK, type GOTO 3 and in response to the screen<br/>
+program is accidentally caused to BREAK, type GOTO 3 and in response to the screen<br/>
 prompt, execute a WARM START.<br/>
 <br/>
 2. A COLD START will destroy any and all sprites defined in memory.<br/>
@@ -517,7 +517,7 @@ prompt, execute a WARM START.<br/>
 <br/>
 <b>GETTING FAMILIAR WITH THE FUNCTION KEYS</b><br/>
 <br/>
-Now lets get familiar with some of the Function Keys - a full list will be found<br/>
+Now let's get familiar with some of the Function Keys - a full list will be found<br/>
 at the end of this section.<br/>
 <br/>
 <br/>
@@ -540,7 +540,7 @@ Now that you know how to move the cursor, let's fill in a few squares:<br/>
 <br/>
 2. &nbsp;Press the 9 key to set the square.<br/>
 <br/>
-3. &nbsp;Now move the direction keys and fill in a few sore squares.<br/>
+3. &nbsp;Now move the direction keys and fill in a few more squares.<br/>
 <br/>
 Now that we have set some squares, what about deleting a few of then? &nbsp;This is<br/>
 simple:<br/>
@@ -576,7 +576,7 @@ down respectively.<br/>
 <br/>
 <b>Character Building</b><br/>
 <br/>
-No, not yours - building up characters to mike up sprites! &nbsp;You've probably got<br/>
+No, not yours - building up characters to make up sprites! &nbsp;You've probably got<br/>
 quite a mess in the CHR$ SQR, so let's clear it:<br/>
 <br/>
 1. &nbsp;Press the Q key and respond to the prompt in the text line by pressing Y and<br/>
@@ -586,7 +586,7 @@ Just to get you used to a similar function, let's clear the Sprite Screen as wel
 even though it's clear:<br/>
 <br/>
 1. &nbsp;As you can see, to clear the CHR$ SQR press Q, to clear the sprite screen<br/>
-press SYMBOL SHIFT Q - cunning eh?<br/>
+press SYMBOL SHIFT Q - cunning, eh?<br/>
 <br/>
 Now that we have clear screens we can start to go places. &nbsp;Have a go at this:<br/>
 <br/>
@@ -709,10 +709,10 @@ the SPRITE SCREEN.<br/>
 <br/>
 <b>The Information Rectangle</b><br/>
 <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>MEMORY LEFT 12486 &nbsp;X POS 4 &nbsp; Y POS 4</b><br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>SPRITE 65266 &nbsp; &nbsp; &nbsp; SPRITE HEIGHT &nbsp;-1</b><br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>SPST &nbsp; 65266 &nbsp; &nbsp; &nbsp; SPRITE LENGTH &nbsp;-1</b><br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>SPND &nbsp; 65280 &nbsp; &nbsp; &nbsp; SPRITE NUMBER &nbsp;-1</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>MEMORY LEFT 12486 &nbsp;X POS 4 &nbsp;Y POS 4</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>SPRITE 65266 &nbsp; SPRITE HEIGHT-1</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>SPST.. 65266 &nbsp; SPRITE LENGTH-1</b><br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>SPND.. 65280 &nbsp; SPRITE NUMBER-1</b><br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>The text line</b><br/>
 <br/>
 This is a most useful facility which can be of great service to you. &nbsp;Most of the<br/>
@@ -894,7 +894,7 @@ and ll.<br/>
 ll. Press Z (Arcade Character) and enter 151 (another Robot).<br/>
 <br/>
 <br/>
-OK, you should have two robots on the sprite screen - lets define them as a<br/>
+OK, you should have two robots on the sprite screen - let's define them as a<br/>
 combined sprite:<br/>
 <br/>
 1. &nbsp;Move the cursors to X POS 1 Y POS 1.<br/>
@@ -908,7 +908,7 @@ combined sprite:<br/>
 5. &nbsp;Press G (GET Function) and respond to the prompt with Y.<br/>
 <br/>
 <br/>
-We have now set up a 4 by 2 sprite containing both characters. Now lets change<br/>
+We have now set up a 4 by 2 sprite containing both characters. Now let's change<br/>
 them over in memory:<br/>
 <br/>
 1. &nbsp;Press M (Sprite Memory Functions), respond to the prompt with Y, and press 2<br/>
@@ -934,7 +934,7 @@ press 1 - now the attributes have mirrored.<br/>
 Let's move on a little further now. &nbsp;We now look at a second sprite transformation<br/>
 - rotation. &nbsp;Try the following:<br/>
 <br/>
-1. &nbsp;Clear the sprite screen and set the X and Y cursors to X P0S 1 Y POS 1.<br/>
+1. &nbsp;Clear the sprite screen and set the X and Y cursors to X POS 1 Y POS 1.<br/>
 <br/>
 2. &nbsp;Set INK (X) to 1 (blue).<br/>
 <br/>
@@ -975,7 +975,7 @@ little further ? Try this:<br/>
 2. &nbsp;Press R (ROTATE) and enter the new sprite number, 15.<br/>
 <br/>
 3. &nbsp;Press P (PUT) and press 1 - this new robot has been rotated by 180 degrees<br/>
-from it's original orientation.<br/>
+from its original orientation.<br/>
 <br/>
 To produce the final (270 degree) orientation:<br/>
 <br/>
@@ -1062,7 +1062,7 @@ your Robot inside the square.<br/>
 <br/>
 Let's move on to look at some of the utility functions - Test and Wipe.<br/>
 <br/>
-1. &nbsp;Clear the sprite screen and position the cursors to X P0S 1 Y POS 1.<br/>
+1. &nbsp;Clear the sprite screen and position the cursors to X POS 1 Y POS 1.<br/>
 <br/>
 2. &nbsp;Press Z (Arcade Character) and enter 135.<br/>
 <br/>
@@ -1113,7 +1113,7 @@ number which has not already been allocated.<br/>
 <br/>
 <br/>
 There's one area we've been avoiding all the way through - the Logic Functions.<br/>
-We don't Want to wade into the depths of Boolean algebra here, but instead,<br/>
+We don't want to wade into the depths of Boolean algebra here, but instead,<br/>
 provide a few examples which hopefully show the application of the XOR, OR and<br/>
 AND operations to this part of the package. &nbsp;They are provided for advanced<br/>
 applications only and their results are summarised on the sprite generator panel.<br/>
@@ -1205,8 +1205,8 @@ Now, lastly, let's look at the XOR function:<br/>
 <br/>
 2. &nbsp;Press Z (Arcade Character) and enter 151 (Robot).<br/>
 <br/>
-3. &nbsp;Press P (PUT) and enter 3 - the Robot has blown up! (At last I here you say<br/>
-!).<br/>
+3. &nbsp;Press P (PUT) and enter 3 - the Robot has blown up! ("At last!", I hear you<br/>
+say!)<br/>
 <br/>
 <br/>
 <br/>
@@ -1220,7 +1220,7 @@ Now, lastly, let's look at the XOR function:<br/>
 Now one of the interesting properties of the logical XOR, is that if the operation<br/>
 is repeated, the original character is restored - to mend the Robot:<br/>
 <br/>
-1. &nbsp;Press P(PUT) and enter 3 - a fully restored Robot!<br/>
+1. &nbsp;Press P (PUT) and enter 3 - a fully restored Robot!<br/>
 <br/>
 <br/>
 Well, there you have it. &nbsp;In fact, the only functions remaining that have not been<br/>
@@ -1233,7 +1233,7 @@ covered by an example are:<br/>
 3. &nbsp;Load Sprites from Tape ( - (SYMBOL SHIFT J) ).<br/>
 <br/>
 The "Relocate Sprites" does simply that, it relocates sprites in memory. &nbsp;Just<br/>
-enter a relocation length - positive to move srites to higher memory and negative<br/>
+enter a relocation length - positive to move sprites to higher memory and negative<br/>
 to move sprites to lower memory. &nbsp;This function is not often used in fact and<br/>
 should be used with great care!<br/>
 <br/>
@@ -1252,11 +1252,11 @@ sets of data which the generator stores and retrieves.<br/>
 <br/>
 Well, there's nothing to stop you now! &nbsp;Going through the examples will help you<br/>
 to familiarise yourself with all of the Function Keys. &nbsp;It won't be long before<br/>
-you'll be happy to press on by yourself - happy sprite generating.<br/>
+you'll be happy to press on by yourself - happy sprite generating!<br/>
 <br/>
 The thing to do now, is to press on with Spectra Forth and IDEAL, these really are<br/>
 not as frightening as they may first appear - after seeing the demo program, what<br/>
-more incentive do you need !<br/>
+more incentive do you need!<br/>
 <br/>
 <br/>
 <br/>
@@ -1334,7 +1334,7 @@ code is complete, it may then be compiled into the White Lightning dictionary fo
 later execution.<br/>
 <br/>
 Included in this documentation is a glossary of Fig-Forth terms (courtesy of the<br/>
-FORTH INTEREST GROUP,PO BOX 1105, SAN CARLOS, CA 94070).<br/>
+FORTH INTEREST GROUP, P.O. BOX 1105, SAN CARLOS, CA 94070).<br/>
 <br/>
 Spectra Forth was written by Stuart Smith, the author of the extremely successful<br/>
 DRAGONFORTH, and is an enhancement of a program written by the Forth Interest<br/>
@@ -1407,7 +1407,7 @@ e.g. &nbsp; &nbsp;HEX &nbsp;41 &nbsp;EMIT &nbsp;CR &nbsp;&lt;CR&gt;<br/>
 will instruct the Forth to move into hexadecimal mode, push 41H onto the stack,<br/>
 and then take that number and display it on the terminal - in this example the<br/>
 character displayed will be an "A". &nbsp;The actual character displayed my be any of<br/>
-the recognisable ASCII characers, a graphic character, or a control code depending<br/>
+the recognisable ASCII characters, a graphic character, or a control code depending<br/>
 on the value of the number on the stack.<br/>
 <br/>
 <br/>
@@ -1504,7 +1504,7 @@ of 14 Hex.<br/>
 <br/>
 e.g. &nbsp; &nbsp;HEX 6100 20 TYPE &lt;CR&gt;<br/>
 (Note that 6100H is pushed onto the stack and 20H is pushed on top of it 20H =<br/>
-T0P; 6100H = second). &nbsp;This will print 20H (32) ASCII characters corresponding to<br/>
+TOP; 6100H = second). &nbsp;This will print 20H (32) ASCII characters corresponding to<br/>
 the data starting at address 6100H . (Note that much of the output will be<br/>
 unrecognisable unless the data contains correct ASCII codes, such as for numbers<br/>
 and letters).<br/>
@@ -1968,7 +1968,7 @@ and so on.<br/>
 <br/>
 <b>7. CONDITIONAL BRANCHING</b><br/>
 <br/>
-Conditional branching must again he used only within a colon definition and uses<br/>
+Conditional branching must again be used only within a colon definition and uses<br/>
 the form:<br/>
 <br/>
 <b>IF</b> (true part) ... (Forth WORDS) ... <b>ENDIF</b><br/>
@@ -2524,7 +2524,7 @@ Try: &nbsp; &nbsp;DO &lt;CR&gt;<br/>
 &nbsp;# 19 - &nbsp;this means that a colon definition contains conditionals that have<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;not been paired.<br/>
 <br/>
-e.g. &nbsp; &nbsp;a LOOP without a D0<br/>
+e.g. &nbsp; &nbsp;a LOOP without a DO<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; an ENDIF without an IF<br/>
 <br/>
 Try: &nbsp; &nbsp;: TEST3 &nbsp;ELSE &nbsp;." WRONG " ; &lt;CR&gt;<br/>
@@ -2540,7 +2540,7 @@ Try: &nbsp; &nbsp;: TEST4 IF ." OK " ; &lt;CR&gt;<br/>
 &nbsp;# &nbsp;21 - &nbsp;this means that you have tried to delete something in the protected<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; part of the Forth dictionary, e.g.<br/>
 <br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FORGET D0<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FORGET DO<br/>
 <br/>
 <br/>
 &nbsp;# &nbsp;22 - &nbsp;this implies the illegal use of --&gt; when not loading text screens.<br/>
@@ -2697,7 +2697,7 @@ sprite are used as the dimensions of the screen window, and COL and ROW are used
 to give the co-ordinates of the top left of the window. &nbsp;If the window overlaps<br/>
 the edge of the screen, the command will not execute. Typical commands in this<br/>
 group are the PUTs and GETs, which move sprites between the screen and memory.<br/>
-Commands in this group are postfixed with an "S"; e.g. PUTBLS, GETXRS.<br/>
+Commands in this group are postfixed with an "S", e.g. PUTBLS, GETXRS.<br/>
 <br/>
 <br/>
 <b>SPRITE OPERATIONS</b><br/>
@@ -2823,7 +2823,7 @@ The IDEAL sublanguage uses 27 variables in all, these are:<br/>
 <br/>
 <b>Alternate Variables</b><br/>
 <br/>
-Eleven of the previously listed variables are replecated for use by the background<br/>
+Eleven of the previously listed variables are replicated for use by the background<br/>
 program (see Foreground/Background). &nbsp;These are ROW', COL', LEN', HGT', NPX',<br/>
 SPN', SP1', SP2', SROW', SCOL' and SPND'.<br/>
 <br/>
@@ -3226,14 +3226,14 @@ There are also some general points worth noting.<br/>
 20. &nbsp;If you wish to do a vertical mirror, just SPIN, do a horizontal<br/>
 &nbsp; &nbsp; &nbsp;mirror, and SPIN back.<br/>
 <br/>
-21. &nbsp;It is good policy always to mike the sprite one character higher and<br/>
+21. &nbsp;It is good policy always to make the sprite one character higher and<br/>
 &nbsp; &nbsp; &nbsp;wider than the graphic character itself; this will enable you to scroll<br/>
 &nbsp; &nbsp; &nbsp;the character within the sprite and give pixel resolution when using<br/>
 &nbsp; &nbsp; &nbsp;the PUT commands.<br/>
 <br/>
 22. &nbsp;If memory permits, it is a good idea to keep a "back-up" of each sprite<br/>
 &nbsp; &nbsp; &nbsp;held under a different number, so that if an error is made and a sprite<br/>
-&nbsp; &nbsp; &nbsp;corrupted, it can he copied back from the copy. &nbsp;They can always be deleted<br/>
+&nbsp; &nbsp; &nbsp;corrupted, it can be copied back from the copy. &nbsp;They can always be deleted<br/>
 &nbsp; &nbsp; &nbsp;from the final program.<br/>
 <br/>
 23. &nbsp;Never execute the NEW or CLEAR commands when in BASIC.<br/>
@@ -3242,7 +3242,7 @@ There are also some general points worth noting.<br/>
 &nbsp; &nbsp; &nbsp;flickers, it is probably a timing related problem and re-ordering<br/>
 &nbsp; &nbsp; &nbsp;the code will almost certainly solve the problem.<br/>
 <br/>
-25. &nbsp;Screens can be moved up and down memory using the OM0VE word. Each screen<br/>
+25. &nbsp;Screens can be moved up and down memory using the CMOVE word. Each screen<br/>
 &nbsp; &nbsp; &nbsp;occupies 512 bytes and the addresses are listed in Table 1, the Table<br/>
 &nbsp; &nbsp; &nbsp;of Screen Addresses.<br/>
 <br/>
@@ -3296,7 +3296,7 @@ order. &nbsp;The best position for sprite space is at the top of memory and it i
 difficult to calculate space required, although the development package does this<br/>
 automatically.<br/>
 <br/>
-To calculate the total sprite space that will he used, use 9*length*height+5 for<br/>
+To calculate the total sprite space that will be used, use 9*length*height+5 for<br/>
 each sprite and then add buffer space for vertical scrolls, 256 should be<br/>
 sufficient for most applications. &nbsp;This total should be assigned to SLEN. &nbsp;SPST<br/>
 should then be assigned with 65520-SLEN.<br/>
@@ -3463,7 +3463,7 @@ To see if sprite 34 exists, and print its dimensions if it does - use:<br/>
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
 <b>ISPRITE AND DSPRITE</b><br/>
 <br/>
-it sprites are located at the top of memory, then ISPRITE and DSPRITE can be used<br/>
+If sprites are located at the top of memory, then ISPRITE and DSPRITE can be used<br/>
 to create and destroy sprites without the need for any complex calculations.<br/>
 ISPRITE will insert a sprite at the top of memory, maintain the buffer space and<br/>
 automatically relocate the rest of sprite space downward. &nbsp;DSPRITE will destroy an<br/>
@@ -3474,7 +3474,7 @@ applications where sprites are created during program execution. &nbsp;If a "ZAP
 program were to execute ISPRITE the sprites would extend downwards and could<br/>
 overwrite the object code of the main program which lies just beneath SPST. &nbsp;If a<br/>
 program runs before being "ZAPPED", but the final run-time version crashes, this<br/>
-is where to look !<br/>
+is where to look!<br/>
 <br/>
 <br/>
 Parameter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Use<br/>
@@ -3583,7 +3583,7 @@ If there is no data on the screen, type:<br/>
 <br/>
 VLIST 4 COL ! 5 ROW ! 4 HGT ! 3 LEN ! WRL4V &lt;CR&gt;<br/>
 <br/>
-A window column 4 Row 5 has been scrolled left 4 pixels - if you did'nt see it<br/>
+A window column 4 Row 5 has been scrolled left 4 pixels - if you didn't see it<br/>
 happen type:<br/>
 <br/>
 <br/>
@@ -3633,7 +3633,7 @@ so be sure that either a COLD# has been executed, or that SPND has been set. &nb
 is safe practice to develop sprites using the software provided, and to allow 256<br/>
 bytes buffer at the top before linking with the main program. &nbsp;Be sure also that<br/>
 the scroll length is not greater than the window's size. &nbsp;On entry to White<br/>
-Lightning a COLD# is automatiacally executed and a scrolling buffer of 256 bytes<br/>
+Lightning a COLD# is automatically executed and a scrolling buffer of 256 bytes<br/>
 is set up. &nbsp;This is maintained so long as ISPRITE and DSPRITE are used in<br/>
 preference to SPRITE and WIPE.<br/>
 <br/>
@@ -3761,7 +3761,7 @@ The second group carry out operations between sprite windows and screen windows.
 The third, and probably most powerful group of commands in the sub-language, cover<br/>
 operations between sprite windows and other sprites.<br/>
 <br/>
-Suppose you have desiged a sprite 160 characters wide (5 screens) and you wish to<br/>
+Suppose you have designed a sprite 160 characters wide (5 screens) and you wish to<br/>
 smoothly pixel scroll through this sprite via a screen window covering the bottom<br/>
 five character rows of the screen. &nbsp;A second dummy sprite, 1 character wider than<br/>
 the screen can be used to GET from the larger sprite, scroll, PUT, scroll, Put and<br/>
@@ -3775,7 +3775,7 @@ backdrops.<br/>
 <br/>
 This group provides block moves and logical operations between sprites and screen<br/>
 windows - these are the fastest commands in the set. &nbsp;This particular group does<br/>
-not include seperate attribute commands but instead uses an attribute switch. &nbsp;If<br/>
+not include separate attribute commands but instead uses an attribute switch. &nbsp;If<br/>
 the switch is on, pixel data and attribute data are moved; if you do not require<br/>
 to move attributes you can increase the speed of operations by switching off the<br/>
 attribute switch.<br/>
@@ -3821,7 +3821,7 @@ Note:<br/>
 The dimensions of the screen window are taken as the dimensions of the sprite. &nbsp;If<br/>
 the command doesn't execute, it is almost certainly because the width of the<br/>
 sprite + COL or the height of the sprite + ROW, exceed 32 or 24 respectively, so<br/>
-that part of the window lies off the screen. &nbsp;sprites must be previously set up<br/>
+that part of the window lies off the screen. &nbsp;Sprites must be previously set up<br/>
 either by the development software, or the COLD# and SPRITE or ISPRITE commands<br/>
 before these commands will execute.<br/>
 <br/>
@@ -3830,7 +3830,7 @@ Example:<br/>
 To GET a screen sprite into sprite number 4 from column 5, row 4, with attributes<br/>
 and "OR" it with the data currently held in sprite number 4, use the following:<br/>
 <br/>
-4 SPN ! 5 COL ! 4 ROW ! ATT0N GETORS<br/>
+4 SPN ! 5 COL ! 4 ROW ! ATTON GETORS<br/>
 <br/>
 Note that if ATTON was the last switch command, it would not be needed in the<br/>
 above.<br/>
@@ -3841,12 +3841,12 @@ above.<br/>
 These commands are identical to the group 1 "GETS" except that data transfer is<br/>
 from the sprite to the screen. &nbsp;The results of the various operations are<br/>
 therefore displayed to the screen. &nbsp;The parameters are identical in operation to<br/>
-those of the "GETS", and the ATT0N and ATTOFF switch commands also apply.<br/>
+those of the "GETS", and the ATTON and ATTOFF switch commands also apply.<br/>
 <br/>
 <br/>
 Parameter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Use<br/>
 <br/>
-SPN &nbsp; &nbsp; &nbsp; &nbsp; Number of the sprite to he used (l to 255)<br/>
+SPN &nbsp; &nbsp; &nbsp; &nbsp; Number of the sprite to be used (1 to 255)<br/>
 COL &nbsp; &nbsp; &nbsp; &nbsp; Left hand column of target screen window (0 to 31)<br/>
 ROW &nbsp; &nbsp; &nbsp; &nbsp; Top row of target screen window (0 to 23)<br/>
 <br/>
@@ -4035,7 +4035,7 @@ Command &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Action<br/>
 <br/>
 Parameter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Use<br/>
 <br/>
-OOL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Column of the left hand edge of the screen window (0 to 31)<br/>
+COL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Column of the left hand edge of the screen window (0 to 31)<br/>
 ROW &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Row of the top edge of the window (0 to 23)<br/>
 LEN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Width of the screen window (1 to 32)<br/>
 HGT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Height of the screen window (1 to 24)<br/>
@@ -4090,7 +4090,7 @@ Command &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Action<br/>
 <b>Spin</b><br/>
 <br/>
 This command involves an operation between two sprites with transposed dimensions.<br/>
-If, for example, a sprite with dimensions 8 by 3 is to he spun into a second<br/>
+If, for example, a sprite with dimensions 8 by 3 is to be spun into a second<br/>
 sprite, this second sprite must have dimensions 3 by 8. &nbsp;Square sprites are, of<br/>
 course, no problem. &nbsp;Pixel and attribute data are both rotated. &nbsp;If the command is<br/>
 to be used, it is important to remember that a second sprite will be needed to be<br/>
@@ -4168,7 +4168,7 @@ Command &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Action<br/>
 <b>INT-ON</b> &nbsp; &nbsp; &nbsp;The specified word (see next example) is executed on the<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; receipt of each interrupt.<br/>
 <br/>
-<b>INT-OFF</b> &nbsp; &nbsp; Following execution of INT-0FF the Z8O returns to interrupt<br/>
+<b>INT-OFF</b> &nbsp; &nbsp; Following execution of INT-OFF the Z80 returns to interrupt<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mode 1 and polls the keyboard 50 times a second. &nbsp;The<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background program ceases execution.<br/>
 <br/>
@@ -4281,7 +4281,7 @@ and ROW will have been made 0 and SCOL and SROW will have the value 1.<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;placed on the stack. &nbsp;This command is used extensively for<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;collision detection.<br/>
 <br/>
-<b>SCANV</b> &nbsp; &nbsp; &nbsp; &nbsp;The charater cell at screen positions defined by COL and<br/>
+<b>SCANV</b> &nbsp; &nbsp; &nbsp; &nbsp;The character cell at screen positions defined by COL and<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ROW is scanned for screen data and a true or false flag<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;stacked accordingly. &nbsp;This command executes more rapidly<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;than SCAM.<br/>
@@ -4343,7 +4343,7 @@ To halt press CAPS SHIFT<br/>
 <b>KB</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This command is provided for the detection of multiple key<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;presses. &nbsp;All it does, in fact, is test the specified key<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;and stack a true flag if the key is pressed and a false flag if<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;it is not. &nbsp;The key to he tested is specified by the top two<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;it is not. &nbsp;The key to be tested is specified by the top two<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;numbers on the stack. &nbsp;The second value specifies the half ROW<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;and the top value the COLUMN. &nbsp;For a full description<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;of the COLUMNS and ROWS of the Spectrum keyboard see page 160<br/>
@@ -4418,7 +4418,7 @@ unless you have a machine code routine at HEX D000!<br/>
 <br/>
 <br/>
 <b>ZAPINT</b> &nbsp; &nbsp; &nbsp; &nbsp;As above except that programs which utilise the<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Foreground/8ackground facility must be produced using the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Foreground/Background facility must be produced using the<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ZAPINT command as opposed to the ZAP command. &nbsp;The only<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; real difference is that the first five screens also need<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; to be saved and that the top 16 bytes of RAM will be<br/>
@@ -4543,7 +4543,7 @@ When an interrupt occurs, the foreground program stops exactly where it is, save
 off its parameters and then executes the background word. &nbsp;The background word<br/>
 will then execute fully before continuing execution of the foreground program,<br/>
 from the exact point at which it was halted. &nbsp;Three important points should be<br/>
-bourne in mind. &nbsp;Firstly, if the execution time of the background word exceeds a<br/>
+borne in mind. &nbsp;Firstly, if the execution time of the background word exceeds a<br/>
 fiftieth of a second, it is not possible to execute it more than twenty five times<br/>
 a second, if it exceeds a twenty-fifth of a second, it can only be executed at<br/>
 half that frequency, and so on. &nbsp;There is, however, no limit to the length of the<br/>
@@ -4629,14 +4629,14 @@ It would be useful to be able to control the speed that "FREDA" ran at, so, let'
 modify "FREDA" to do this. &nbsp;First, type INT-OFF FORGET FREDA &lt;CR&gt; to get rid of<br/>
 the old definition and then set up a new variable and construct a slightly<br/>
 different program. &nbsp;A variable which sets the limit on the number of interrupts<br/>
-needs to he set up, so type: 4 VARIABLE LCNT &lt;CR&gt;. &nbsp;The new definition is set up<br/>
+needs to be set up, so type: 4 VARIABLE LCNT &lt;CR&gt;. &nbsp;The new definition is set up<br/>
 by typing:<br/>
 <br/>
 : FREDA ICNT @ 1+ LCNT @ &gt; IF FRED 0 ICNT ! ELSE 1 ICNT +! FNDIF ; &lt;CR&gt;<br/>
 <br/>
 To execute the new word type:<br/>
 <br/>
-0 ICNT ! ' FREDA INT-0N &lt;CR&gt;<br/>
+0 ICNT ! ' FREDA INT-ON &lt;CR&gt;<br/>
 <br/>
 This program increments ICNT, compares it with LCNT and executes when ICNT is<br/>
 equal to LCNT. &nbsp;Increasing LCNT then, will slow the background execution and<br/>
@@ -4687,7 +4687,7 @@ All we need to do now is set up the parameters by typing:<br/>
 <br/>
 then put some data on to the screen and execute:<br/>
 <br/>
-VLIST 0 0 AT ' IRUN INT-0N &lt;CR&gt;<br/>
+VLIST 0 0 AT ' IRUN INT-ON &lt;CR&gt;<br/>
 <br/>
 To terminate, type INT-OFF &lt;CR&gt;<br/>
 <br/>
@@ -4724,8 +4724,8 @@ F3 MOD ABS PH3 = IF WRR1V ENDIF &lt;CR&gt;<br/>
 F4 MOD ABS PH4 = IF WCRV ENDIF &lt;CR&gt;<br/>
 1 ICNT +! ; &lt;CR&gt;<br/>
 <br/>
-This can be executed using VLIST ' IRUN INT-0N &lt;CR&gt;<br/>
-Halted using: INT-0FF &lt;CR&gt;<br/>
+This can be executed using VLIST ' IRUN INT-ON &lt;CR&gt;<br/>
+Halted using: INT-OFF &lt;CR&gt;<br/>
 and cleared using: FORGET IRUN &lt;CR&gt;<br/>
 <br/>
 <br/>
@@ -4738,7 +4738,7 @@ counterparts. &nbsp;For a full list, see the section on Forth/BASIC WORDS.<br/>
 They all execute code in Sinclair's own ROM which, unlike Forth and IDEAL, is not<br/>
 re-entrant. &nbsp;This means that these words cannot be executed in foreground and<br/>
 background simultaneously. &nbsp;The FORTH words ." , . and U. should also not be<br/>
-executed simultanteously with themselves or any of the BASIC words. &nbsp;None of the<br/>
+executed simultaneously with themselves or any of the BASIC words. &nbsp;None of the<br/>
 Forth/BASIC words, ." , . or U. should be executed in background while Forth is in<br/>
 command mode.<br/>
 <br/>
@@ -4983,7 +4983,7 @@ Finally, consider the case where the object being tested contains extraneous dat
 in addition to one of the possible sprites. &nbsp;This time, the dummy &nbsp;sprite is<br/>
 loaded with the contents of the screen window, but the candidates are first<br/>
 "AND"ed into the dummy to remove extraneous data before the XOR and SCANM.<br/>
-Finally the dummy needs to he reloaded from the screen before the next test. &nbsp;This<br/>
+Finally the dummy needs to be reloaded from the screen before the next test. &nbsp;This<br/>
 latter test is limited by the fact that its conclusion is only that the screen<br/>
 contained all the parts of the sprite with which a comparison was made. In the<br/>
 extreme case of the screen window containing all pixels set, then an agreement<br/>
@@ -5052,7 +5052,7 @@ SCR # 6<br/>
 &nbsp; 3 0 VARIABLE DELAY : WAIT DELAY @ 0 DO NOOP LOOP ;<br/>
 &nbsp; 4 : BASE 0 COL ! 18 ROW ! 32 LEN ! 6 HGT ! 0 PAPER 0 INK<br/>
 &nbsp; 5 SETAV 7 INK ;<br/>
-&nbsp; 6 : G016 6 PAPER 0 INK 0 BORDER CLS 7 0 AT<br/>
+&nbsp; 6 : GO16 6 PAPER 0 INK 0 BORDER CLS 7 0 AT<br/>
 &nbsp; 7 10 0 DO ." WHITE LIGHTNING " LOOP 0 0 AT BASE ; --&gt;<br/>
 <br/>
 SCR # 7<br/>
@@ -5067,13 +5067,13 @@ SCR # 7<br/>
 <br/>
 SCR # 8<br/>
 &nbsp; 0 : SOT PCAL LD EXX LD EXX PUTXRS ;<br/>
-&nbsp; 1 : G0 PCAL MOVE PUTXRS LD PUTXRS ;<br/>
+&nbsp; 1 : GO PCAL MOVE PUTXRS LD PUTXRS ;<br/>
 &nbsp; 2 0 VARIABLE ICNT 2 VARIABLE LCNT<br/>
 &nbsp; 3 : IRUN 1 ICNT +! ICNT @ DUP 2000 = IF -2 DX ! ENDIF DUP 4002 =<br/>
 &nbsp; 4 IF 2 DY ! ENDIF DUP 6000 = IF 3 DY ! ENDIF DUP 8000 = IF 1 DY<br/>
 &nbsp; 5 ! 1 DX ! ENDIF 9000 = IF INT-OFF ENDIF ;<br/>
 &nbsp; 6 : TRY SOT ' GO INT-ON 9000 0 DO IRUN LOOP &nbsp;INT-OFF ;<br/>
-&nbsp; 7 : SCN16 G016 9999 DELAY ! WAIT 1 DX ! 1 DY ! 8 PX ! 8 PY ! --&gt;<br/>
+&nbsp; 7 : SCN16 GO16 9999 DELAY ! WAIT 1 DX ! 1 DY ! 8 PX ! 8 PY ! --&gt;<br/>
 <br/>
 SCR # 9<br/>
 &nbsp; 0 0 ICNT ! TRY WAIT 0 PAPER 7 INK CLS ;<br/>
@@ -5150,7 +5150,7 @@ return to Forth and continue execution use PRINT USR 30006.<br/>
 <br/>
 To begin with, space needs to be made in the dictionary for the basic program.<br/>
 The word used to do this is RESERVE. &nbsp;What RESERVE actually does, is to make space<br/>
-&nbsp;in the dictionary and reset BASIC's system variables to point to this new area.<br/>
+in the dictionary and reset BASIC's system variables to point to this new area.<br/>
 This does mean, however, that if a second reserve is done, without FORGETting the<br/>
 old space, then the old space is lost and can never be re-accessed. &nbsp;Do not<br/>
 execute a Forth COLD start while BASIC is reserved or a RAMTOP error may occur if<br/>
@@ -5385,7 +5385,7 @@ LOAD "filename" and then re-entering Forth with a PRINT USR 24836.<br/>
 <br/>
 Sprites can be saved from White Lightning and then re-Loaded into White Lightning,<br/>
 but sprites saved by White Lightning, cannot be loaded into the sprite development<br/>
-software which requires the additional array information preceeding sprites &nbsp;which<br/>
+software which requires the additional array information preceding sprites &nbsp;which<br/>
 is not SAVEd by White Lightning. &nbsp;Sprite development should always be done using<br/>
 the development software, but if you do wish to save the sprites for later merging<br/>
 then do the following:<br/>
@@ -5468,7 +5468,7 @@ following procedure:<br/>
 <br/>
 <b>Extending the Forth Itself</b><br/>
 <br/>
-One of the beauties of the Forth language is that it is extendible, so if you've<br/>
+One of the beauties of the Forth language is that it is extendable, so if you've<br/>
 added a few of your own commands which you would like to become a permanent<br/>
 feature of your customised version, you will need to make a copy. &nbsp;For this<br/>
 reason, no attempt has been made to protect the software; but we do appeal to<br/>
@@ -5693,11 +5693,11 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 <b>N</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the No, negative response to (Y/N) questions.<br/>
 <br/>
 <b>O</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the Sprite Logic functions.<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;You will he given three options. &nbsp;Each option GETS an area of the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;You will be given three options. &nbsp;Each option GETS an area of the<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sprite screen, the dimensions of which are specified as those of<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;the defined sprite, having a top left-hand corner at the sprite screen<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursor positions and logically GETs the data into the defined sprite -<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- whose number is in the Sprite Number Variable.<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;whose number is in the Sprite Number Variable.<br/>
 <br/>
 <br/>
 <br/>
@@ -5723,7 +5723,7 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 <br/>
 <b>P</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the PUT functions.<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;You will be given four options. &nbsp;Each option PUTS a sprite<br/>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;whose number is Specified in the variable "Sprite Number" onto<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;whose number is specified in the variable "Sprite Number" onto<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;the sprite screen, having a top left-hand corner at the sprite<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;screen cursor positions.<br/>
 <br/>
@@ -5746,10 +5746,10 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 <b>Q</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the CLEAR CHR$ SQR function. &nbsp;Sets all CHR$ SQR bits<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;to zero.<br/>
 <br/>
-<b>SYMBOL</b> &nbsp; Activates the CLEAR SPRITE SCREEN function. &nbsp;Clears the sprite<br/>
-<b>SHIFT</b> &nbsp; &nbsp;screen of all data and attributes.<br/>
-<b>Q</b><br/>
-(&lt;=)<br/>
+<b>&lt;=</b> &nbsp; &nbsp; &nbsp; Activates the CLEAR SPRITE SCREEN function. &nbsp;Clears the sprite<br/>
+<b>(SYMBOL</b> &nbsp; screen of all data and attributes.<br/>
+<b>SHIFT Q)</b><br/>
+<br/>
 <br/>
 <b>R</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the ROTATE SPRITE function.<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Rotates a sprite, in memory, by 90 degrees, leaving the original<br/>
@@ -5820,9 +5820,9 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tape. &nbsp;A list is given at the back of this section.<br/>
 <br/>
 <b>NOT</b> &nbsp; &nbsp; &nbsp;Activates the SAVE SPRITES TO TAPE facility.<br/>
-<b>(SYMBOL</b> &nbsp;Place a suitable cassette in your cassette recorder and<br/>
-<b>SHIFT</b> &nbsp; &nbsp;position as desired. &nbsp;Press NOT, enter your filename (1 to 8<br/>
-<b>S)</b> &nbsp; &nbsp; &nbsp; characters). &nbsp;The program will save three groups of data;<br/>
+<b>(SYMBOL</b> &nbsp; Place a suitable cassette in your cassette recorder and<br/>
+<b>SHIFT S)</b> &nbsp;position as desired. &nbsp;Press NOT, enter your filename (1 to 8<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;characters). &nbsp;The program will save three groups of data;<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;an array and two sections of code.<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;After SAVEing, you will be asked to rewind the tape and VERIFY -<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;be sure to only press PLAY on your cassette recorder.<br/>
@@ -5837,10 +5837,10 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 <br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 86
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
-<b>-</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the IOAD SPRITES FROM TAPE facility.<br/>
+<b>-</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the LOAD SPRITES FROM TAPE facility.<br/>
 <b>(SYMBOL</b> &nbsp;Place tape in your cassette recorder. &nbsp;Press SYMBOL SHIFT J<br/>
-<b>SHIFT</b> &nbsp; &nbsp;and press PLAY on the cassette recorder. &nbsp;Three groups of data<br/>
-<b>J)</b> &nbsp; &nbsp; &nbsp; will load. &nbsp;When loaded, the Text Line will clear and the<br/>
+<b>SHIFT J)</b> and press PLAY on the cassette recorder. &nbsp;Three groups of data<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;will load. &nbsp;When loaded, the Text Line will clear and the<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;program will resume.<br/>
 <br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOTE: &nbsp;Any sprites in memory will be destroyed when this command<br/>
@@ -5862,28 +5862,28 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 <br/>
 <b>%</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the MOVE SPRITE SCREEN CURSOR 1 place to the left.<br/>
 <b>(SYMBOL</b><br/>
-<b>SHIFT</b><br/>
-<b>5)</b><br/>
+<b>SHIFT 5)</b><br/>
+<br/>
 <br/>
 <b>&</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the MOVE SPRITE SCREEN CURSOR 1 place down.<br/>
 <b>(SYMBOL</b><br/>
-<b>SHIFT</b><br/>
-<b>6)</b><br/>
+<b>SHIFT 6)</b><br/>
+<br/>
 <br/>
 <b>'</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the &nbsp;MOVE SPRITE SCREEN CURSOR 1 place up.<br/>
 <b>(SYMBOL</b><br/>
-<b>SHIFT</b><br/>
-<b>7)</b><br/>
+<b>SHIFT 7)</b><br/>
+<br/>
 <br/>
 <b>(</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the MOVE SPRITE SCREEN CURSOR 1 place to the right.<br/>
-<b>SYMBOL</b><br/>
-<b>SHIFT</b><br/>
-<b>8)</b><br/>
+<b>(SYMBOL</b><br/>
+<b>SHIFT 8)</b><br/>
+<br/>
 <br/>
 <b>&lt;</b> &nbsp; &nbsp; &nbsp; &nbsp;Activates the RELOCATE SPRITES function.<br/>
-<b>SYMBOL</b> &nbsp; Allows the user to move the sprite data about in memory,<br/>
-<b>SHIFT</b> &nbsp; &nbsp;between the top of the Sprite Generator Program and address<br/>
-<b>R)</b> &nbsp; &nbsp; &nbsp; 65520.<br/>
+<b>(SYMBOL</b> &nbsp;Allows the user to move the sprite data about in memory,<br/>
+<b>SHIFT R)</b> &nbsp; &nbsp;between the top of the Sprite Generator Program and address<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;65520.<br/>
 <br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.g. &nbsp;a positive number i.e. 50, moves the data 50 bytes up<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;in memory. &nbsp;A negative number i.e. -50, moves the data 50<br/>
@@ -5891,7 +5891,7 @@ Number &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Address<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAUTION - use this function with care.<br/>
 <br/>
 <b>BREAK</b> &nbsp; &nbsp;Activates the PLACE SPRITE INTO SPRITE WINDOW function.<br/>
-<b>and</b> &nbsp; &nbsp; &nbsp;This allows you to place a sprite of smaller dimensions into<br/>
+and &nbsp; &nbsp; &nbsp;This allows you to place a sprite of smaller dimensions into<br/>
 <b>SPACE</b> &nbsp; &nbsp;a sprite of greater dimensions, at a position of ROW,<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;COL in the greater sprite in memory - the smaller sprite is<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;left unaltered.<br/>
@@ -6203,7 +6203,7 @@ message is given. &nbsp;Pronounced "tick".<br/>
 <br/>
 <b>(</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P,L0<br/>
 <br/>
-Used in the form: (cccc)<br/>
+Used in the form: ( cccc)<br/>
 <br/>
 Ignore a comment that will be delimited by a right parenthesis on the same line.<br/>
 May occur during execution or in a colon-definition. &nbsp;A blank after the leading<br/>
@@ -6268,7 +6268,7 @@ for loop completion. &nbsp;See LOOP.<br/>
 <br/>
 <b>(NUMBER)</b> &nbsp; &nbsp; &nbsp;d1 addr1 --- d2 addr2<br/>
 <br/>
-Convert the ASCII text beginning at addr1 + l with regard to BASE. &nbsp;The new value<br/>
+Convert the ASCII text beginning at addr1 + 1 with regard to BASE. &nbsp;The new value<br/>
 is accumulated into double number d1, being left as d2. &nbsp;Addr2 is the address of<br/>
 the first unconvertible digit. &nbsp;Used by NUMBER.<br/>
 <br/>
@@ -7051,13 +7051,13 @@ At run-time ENDCASE marks the conclusion of a CASE statement.<br/>
 At compile time ENDCASE computes forward branch offsets.<br/>
 <br/>
 <br/>
-<b>ENDIF</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; addr n --- (compile) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P,CO,L0<br/>
+<b>ENDIF</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; addr n --- (compile) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P,C0,L0<br/>
 <br/>
 At run-time, ENDIF serves only as the destination of a forward branch from IF or<br/>
 ELSE. &nbsp;It marks the conclusion of the conditional structure. &nbsp;THEN is another name<br/>
 for ENDIF. &nbsp;Both names are supported in Fig-FORTH. &nbsp;See also IF and ELSE.<br/>
 <br/>
-At compiletime, ENDIF computes the forward branch offset from addr to HERE and<br/>
+At compile time, ENDIF computes the forward branch offset from addr to HERE and<br/>
 stores it at addr. &nbsp;n is used for error tests.<br/>
 <br/>
 <br/>
@@ -7185,7 +7185,7 @@ Print a definition's name from its name field address.<br/>
 <b>IF</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; f --- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(run-time)<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;--- addr n &nbsp; (compile) &nbsp; &nbsp; &nbsp; &nbsp;P,C2,L0<br/>
 <br/>
-Occurs is a colon-definition in the form:<br/>
+Occurs in a colon-definition in the form:<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IF &nbsp;(tp) &nbsp;... &nbsp;ENDIF<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IF &nbsp;(tp) &nbsp;... &nbsp;ELSE &nbsp;(fp) &nbsp;... &nbsp;ENDIF<br/>
 At run-time, IF selects execution based on a boolean flag. &nbsp;If f is a true<br/>
@@ -7397,7 +7397,7 @@ Convert the parameter field address of a definition to its name field. See PFA.<
 <br/>
 <b>NUMBER</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;addr --- d<br/>
 <br/>
-Convert a character string left at addr with a preceeding count, to a signed<br/>
+Convert a character string left at addr with a preceding count, to a signed<br/>
 double number, using the current numeric base. &nbsp;If a decimal point is encountered<br/>
 in the text, its position will be given in DPL, but no other effect occurs. &nbsp;If<br/>
 numeric conversion is not possible, an error message will be given.<br/>
@@ -7659,7 +7659,7 @@ Transmit count characters from addr to the selected output device.<br/>
 <br/>
 <b>U&lt;</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u1 u2 --- f<br/>
 <br/>
-Leave the boolean value of any unsigned less-than comparison. &nbsp;Leaves f=1 or u1 &gt;<br/>
+Leave the boolean value of an unsigned less-than comparison. &nbsp;Leaves f=1 for u1 &gt;<br/>
 u2; otherwise leaves 0. &nbsp;This function should be used when comparing memory<br/>
 addresses.<br/>
 <br/>
@@ -7707,7 +7707,7 @@ used for error tests.<br/>
 <b>UPDATE</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;L0<br/>
 <br/>
 Marks the most recently referenced block (pointed to by PREV) as altered. &nbsp;The<br/>
-block will subsequently be transferred to disc should it's buffer be required for<br/>
+block will subsequently be transferred to disc should its buffer be required for<br/>
 storage of a different block.<br/>
 <br/>
 <br/>
@@ -7723,11 +7723,11 @@ A defining word used in the form:<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;n USER cccc<br/>
 which creates a user variable cccc. &nbsp;The parameter field of cccc contains n as a<br/>
 fixed offset relative to the user pointer register UP for this upper variable.<br/>
-When cccc is later executed, it places the sum of it's offset and the user base<br/>
+When cccc is later executed, it places the sum of its offset and the user base<br/>
 address on the stack, as the storage address of that particular variable.<br/>
 <br/>
 <br/>
-<b>VARIABLE</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;E,LO<br/>
+<b>VARIABLE</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;E,L0<br/>
 <br/>
 A defining word used in the form:<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;n VARIABLE cccc<br/>
@@ -7853,7 +7853,7 @@ LITERAL, ].<br/>
 <br/>
 Used in a colon-definition in the form:<br/>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : xxx [COMPILE] FORTH &nbsp;;<br/>
-[COMPILE] will force the compilation of an immediate definitions, that would<br/>
+[COMPILE] will force the compilation of an immediate definition, that would<br/>
 otherwise execute during compilation. The above example will select the FORTH<br/>
 vocabulary when xxx executes, rather than at compile time.<br/>
 <br/>
@@ -8435,7 +8435,7 @@ the wheels in their four positions. &nbsp;The coaches are comprised of sprites 1
 sprites 23 and 24 for the wheels.<br/>
 <br/>
 The track, sprite 10, is scrolled left using WRL1V. &nbsp;By means of an increasing and<br/>
-decreasing delay loop, acceleration and decceleration effects are achieved.<br/>
+decreasing delay loop, acceleration and deceleration effects are achieved.<br/>
 <br/>
 <br/>
 <b>THE SPIDERS</b><br/>
@@ -8460,7 +8460,7 @@ background.<br/>
 <b>THE ARRAY OF CLOCKWORK TOYS</b><br/>
 <br/>
 The green clockwork toys are animated using sprites 49 and 50. &nbsp;Each sprite in the<br/>
-array is individualy placed on the screen using PUTBLS. &nbsp;The movement is<br/>
+array is individually placed on the screen using PUTBLS. &nbsp;The movement is<br/>
 controlled by simple 'DO LOOPS'.<br/>
 <br/>
 <br/>
@@ -8496,7 +8496,7 @@ screen.<br/>
 <br/>
 Sprite 5, the dancer is used to demonstrate the 1 pixel scroll with wrap, WRR1V.<br/>
 <br/>
-Sprite 4, the duck, is used to demonstrate the 4 pixel scrool with wrap, WRR4V.<br/>
+Sprite 4, the duck, is used to demonstrate the 4 pixel scroll with wrap, WRR4V.<br/>
 <br/>
 Sprite 6, the rocket, is used to demonstrate the 8 pixel scroll with wrap, WRR8V.<br/>
 <br/>
@@ -8509,7 +8509,7 @@ with their shadows, sprite 16.<br/>
 They are scrolled to the right by 1 pixel, with alternate 1 pixel up and down<br/>
 scrolls, to give a sense of motion.<br/>
 <br/>
-The attributes of the forground, sprite 17, and the background, sprite 11, are<br/>
+The attributes of the foreground, sprite 17, and the background, sprite 11, are<br/>
 scrolled to the left. &nbsp;The background being scrolled at one character per<br/>
 execution with the foreground being scrolled two characters per execution to give<br/>
 a sense of perspective.<br/>
@@ -8547,7 +8547,7 @@ decreasing rate of the rotating invaders in the outer circle.<br/>
 <br/>
 The crabs, sprite 33, are placed on the screen using PUTBLS.<br/>
 <br/>
-The ROW and COL varables for the PUTBLS are loaded up each time by a random number<br/>
+The ROW and COL variables for the PUTBLS are loaded up each time by a random number<br/>
 produced by using the Forth word RND.<br/>
 <br/>
 <br/>
@@ -8569,7 +8569,7 @@ Just before the spaceship takes off, an explosion, sprite 43, is XORed over the<
 spaceship using PUTXRS. &nbsp;It is removed again by a second PUTXRS.<br/>
 <br/>
 The spaceship is then scrolled up in a vertical window by 1 pixel. &nbsp;The Lunar<br/>
-surface, sprite 44, is also scolled by 1 pixel, to the right using WRR1V.<br/>
+surface, sprite 44, is also scrolled by 1 pixel, to the right using WRR1V.<br/>
 <br/>
 <br/>
 <b>THE ROTATING BALLS</b><br/>
@@ -8807,69 +8807,19 @@ Type: 6 LOAD &lt;CR&gt; to compile and GO &lt;CR&gt; to run.<br/>
 <br/>
 131
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
-ERRATA - WHITE LIGHTNING MANUAL<br/>
 <br/>
-Page 7, line 24:<br/>
-"enter the number 75" should read<br/>
-"enter the number 63".<br/>
-<br/>
-Page 20, line 19:<br/>
-" &nbsp; &nbsp;: Convert the number ... trailing<br/>
-space" should read<br/>
-". &nbsp; &nbsp;: Convert the number ..." etc.<br/>
-<br/>
-Page 72, line 25:<br/>
-"PWTXRM" should read "PWXRM".<br/>
-<br/>
-Page 75, SCR#6, lines 6 & 7:<br/>
-Remove BASE from line 6 and place<br/>
-at end of line 7.<br/>
-(... LOOP 0 0 AT BASE ;)<br/>
-<br/>
-Page 104, DUMP:<br/>
-"addr n ---" should read "addr ---"<br/>
-<br/>
-Throughout the manual, the Forth word<br/>
-"--&gt;" is constructed as "- - &gt;", i.e.<br/>
-two minus signs and a greater than.<br/>
-<br/>
-<br/>
-<b>ADDITIONAL ERRATA</b><br/>
+<b>TRANSCRIBER'S NOTE</b><br/>
 <br/>
 While OCRing and proofreading the scans of the White Lightning manuals, I have<br/>
 tried to preserve, as best as I was able, the original pagination, layout,<br/>
-spacing and formatting of the originals. That includes all the spelling mistakes<br/>
-and typos that I saw. Because the errata listed above were noted and published by<br/>
-Oasis, the corrections have been incorporated into this version, but those listed<br/>
-below (with the exception of the one on p75) have NOT been corrected.<br/>
+spacing and formatting of the originals - while still incorporating all errata<br/>
+noted and published in previous versions, and with a few (small) edits and<br/>
+corrections of my own.<br/>
 <br/>
-<u>Manual</u><br/>
+This transcription is still a work in progress. If you discover any further<br/>
+mistakes, please create a pull request (or otherwise report the errors) against<br/>
+the manuals' source repository at:<br/>
 <br/>
-Page &nbsp; 2, line &nbsp;7: 'Extendible' for 'Extendable'<br/>
-Page &nbsp; 2, line 38: 'difficulty' for 'difficilty'<br/>
-Page &nbsp; 2, line 38: 'accommodate' for 'accomodate'<br/>
-Page &nbsp; 6, line 17: 'accidentally' for 'accidently'<br/>
-Page &nbsp;16, line 55: 'hear' for 'here'<br/>
-Page &nbsp;17, line 17: 'sprites' for 'srites'<br/>
-Page &nbsp;19, line 59: 'characters' for 'characers'<br/>
-Page &nbsp;26, line 25: 'screenfull' for 'screenful'<br/>
-Page &nbsp;41, line 23: 'replicated' for 'replecated'<br/>
-Page &nbsp;52, line 57: "didn't" for "did'nt"<br/>
-Page &nbsp;53, line 41: 'automatically' for 'automatiacally'<br/>
-Page &nbsp;55, line 37: 'designed' for 'desiged'<br/>
-Page &nbsp;55, line 51: 'separate' for 'seperate'<br/>
-Page &nbsp;63, line 29: 'character' for 'charater'<br/>
-Page &nbsp;67, line 27: 'borne' for 'bourne'<br/>
-Page &nbsp;70, line 24: 'simultaneously' for 'simultanteously'<br/>
-Page &nbsp;75, line 12: 'VARIABLE' for 'VARIABALE'<br/>
-Page &nbsp;80, line 11: 'preceding' for 'preceeding'<br/>
-Page 105, line 33: 'compile time' for 'compiletime'<br/>
-Page 110, line 43: 'preceding' for 'preceeding'<br/>
-Page 126, line 25: 'deceleration' for 'decceleration'<br/>
-Page 126, line 50: 'individually' for 'individualy'<br/>
-Page 127, line 20: 'scroll' for 'scrool'<br/>
-Page 127, line 33: 'foreground' for 'forground'<br/>
-Page 128, line &nbsp;5: 'variables' for 'varables'<br/>
-Page 128, line 27: 'scrolled' for 'scolled'
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; https://github.com/richmilne/white-lightning-manuals
 <div style="page-break-after:always">-----------------------------------------------------------------------------------</div>
 </body>

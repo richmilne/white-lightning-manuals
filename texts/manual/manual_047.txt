@@ -27,14 +27,14 @@
 20.  If you wish to do a vertical mirror, just SPIN, do a horizontal
      mirror, and SPIN back.
 
-21.  It is good policy always to mike the sprite one character higher and
+21.  It is good policy always to make the sprite one character higher and
      wider than the graphic character itself; this will enable you to scroll
      the character within the sprite and give pixel resolution when using
      the PUT commands.
 
 22.  If memory permits, it is a good idea to keep a "back-up" of each sprite
      held under a different number, so that if an error is made and a sprite
-     corrupted, it can he copied back from the copy.  They can always be deleted
+     corrupted, it can be copied back from the copy.  They can always be deleted
      from the final program.
 
 23.  Never execute the NEW or CLEAR commands when in BASIC.
@@ -43,7 +43,7 @@
      flickers, it is probably a timing related problem and re-ordering
      the code will almost certainly solve the problem.
 
-25.  Screens can be moved up and down memory using the OM0VE word. Each screen
+25.  Screens can be moved up and down memory using the CMOVE word. Each screen
      occupies 512 bytes and the addresses are listed in Table 1, the Table
      of Screen Addresses.
 

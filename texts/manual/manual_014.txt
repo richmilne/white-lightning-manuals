@@ -41,7 +41,7 @@ your Robot inside the square.
 
 Let's move on to look at some of the utility functions - Test and Wipe.
 
-1.  Clear the sprite screen and position the cursors to X P0S 1 Y POS 1.
+1.  Clear the sprite screen and position the cursors to X POS 1 Y POS 1.
 
 2.  Press Z (Arcade Character) and enter 135.
 

@@ -52,5 +52,5 @@ Now, lastly, let's look at the XOR function:
 
 2.  Press Z (Arcade Character) and enter 151 (Robot).
 
-3.  Press P (PUT) and enter 3 - the Robot has blown up! (At last I here you say
-!).
+3.  Press P (PUT) and enter 3 - the Robot has blown up! ("At last!", I hear you
+say!)

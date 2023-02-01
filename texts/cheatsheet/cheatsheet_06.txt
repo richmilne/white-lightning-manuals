@@ -16,7 +16,7 @@ series of 16.  To adapt these routines for your own use just change FSPN.
 
 We now need to poll the keyboard:
 
-We use the KCHK word again an that the character is not re-PUT unless a key has
+We use the KCHK word again so that the character is not re-PUT unless a key has
 been pressed.
 
 : KCHK KB DUP ROT OR SWAP ;

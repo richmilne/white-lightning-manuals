@@ -8,7 +8,7 @@ Moving Sprites                                           2
 Screen Scrolling                                         2
 Simple Putting                                           2
 More Advanced Techniques                                 4
-Collision Detection                                      6
+Collision Detection                                      7
 Sample Source Listings                                   8
 The Lunar Lander Program                                 9
 Table 1 (Lunar Sprites)                                 20

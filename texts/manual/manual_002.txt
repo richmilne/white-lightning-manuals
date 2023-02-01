@@ -4,7 +4,7 @@ The main part of the package is the White Lightning language itself. The languag
 can be thought of as being divided into two parts: firstly, there is a super fast
 integer Forth, which conforms to a standard Fig-Forth, but secondly, and of most
 importance to games designers, there is the IDEAL sub-language. IDEAL stands for
-"Interrupt Driven Extendable Animation Language ".  IDEAL has a dictionary of over
+"Interrupt Driven Extendable Animation Language".  IDEAL has a dictionary of over
 100 words, which can be freely mixed with Forth, or, as we shall see, can be
 accessed from BASIC.
 
@@ -22,9 +22,9 @@ features of the entire package.  Background words can be executed up to 50 times
 second.
 
 
-**Extendible**
+**Extendable**
 
-Forth is extendible and was chosen as the most suitable host language for IDEAL
+Forth is extendable and was chosen as the most suitable host language for IDEAL
 because of this extremely useful feature. New words can be defined in terms of any
 of the Forth/IDEAL words, or your own previously defined words. This means you can
 create diagonal scrolls for instance, by combining individual scrolls.
@@ -35,7 +35,7 @@ create diagonal scrolls for instance, by combining individual scrolls.
 Very careful planning went into the designing of the IDEAL animation language, to
 make it as portable as possible between micros. If you've written a very
 successful program for one micro, you can move the same code across without too
-much difficilty. The only major changes necessary, are changes to accomodate the
+much difficulty. The only major changes necessary, are changes to accommodate the
 different screen formats, ie the number of columns and rows.  You don't need to
 worry about the complexities of various memory mappings, IDEAL does that for you.
 Some implementations will not allow attributes to be moved separately from pixel

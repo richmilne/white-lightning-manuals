@@ -2,7 +2,7 @@
 
 The crabs, sprite 33, are placed on the screen using PUTBLS.
 
-The ROW and COL varables for the PUTBLS are loaded up each time by a random number
+The ROW and COL variables for the PUTBLS are loaded up each time by a random number
 produced by using the Forth word RND.
 
 
@@ -24,7 +24,7 @@ Just before the spaceship takes off, an explosion, sprite 43, is XORed over the
 spaceship using PUTXRS.  It is removed again by a second PUTXRS.
 
 The spaceship is then scrolled up in a vertical window by 1 pixel.  The Lunar
-surface, sprite 44, is also scolled by 1 pixel, to the right using WRR1V.
+surface, sprite 44, is also scrolled by 1 pixel, to the right using WRR1V.
 
 
 **THE ROTATING BALLS**

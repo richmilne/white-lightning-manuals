@@ -40,7 +40,7 @@ Convert the parameter field address of a definition to its name field. See PFA.
 
 **NUMBER**            addr --- d
 
-Convert a character string left at addr with a preceeding count, to a signed
+Convert a character string left at addr with a preceding count, to a signed
 double number, using the current numeric base.  If a decimal point is encountered
 in the text, its position will be given in DPL, but no other effect occurs.  If
 numeric conversion is not possible, an error message will be given.

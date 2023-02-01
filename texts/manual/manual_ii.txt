@@ -20,7 +20,7 @@
     Stack Operations                                    **24**
     Other Operations                                    **25**
     Colon Definitions                                   **26**
-    Control Structures                                  **77**
+    Control Structures                                  **27**
     Conditional Branching                               **28**
     Constants and Variables                             **32**
     Other Commonly Used Forth Words                     **32**
@@ -36,16 +36,16 @@
     The Buffer                                          **43**
     Background Scrolling                                **43**
     IDEAL Mnemonics                                     **44**
-    General Points                                      **46**
+    General Points                                      **45**
     Sprite Utilities                                    **48**
     Scrolling                                           **52**
     GETs and PUTs                                       **55**
     Sprite Transformations                              **59**
     Interrupt Related Words                             **61**
-    BASIC Interface Words                               **82**
+    BASIC Interface Words                               **62**
     Miscellaneous Words                                 **62**
-    Forth/BASIC words                                   **66**
-    Foreground/Background                               **87**
+    Forth/BASIC Words                                   **66**
+    Foreground/Background                               **67**
     Logical Operations                                  **71**
     Collision Detection and Sprite Recognition          **73**
     The BASIC Interface                                 **76**

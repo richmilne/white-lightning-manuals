@@ -44,7 +44,7 @@ Command             Action
 
 Parameter             Use
 
-OOL          Column of the left hand edge of the screen window (0 to 31)
+COL          Column of the left hand edge of the screen window (0 to 31)
 ROW          Row of the top edge of the window (0 to 23)
 LEN          Width of the screen window (1 to 32)
 HGT          Height of the screen window (1 to 24)

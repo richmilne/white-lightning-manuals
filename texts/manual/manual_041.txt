@@ -20,7 +20,7 @@
 
 **Alternate Variables**
 
-Eleven of the previously listed variables are replecated for use by the background
+Eleven of the previously listed variables are replicated for use by the background
 program (see Foreground/Background).  These are ROW', COL', LEN', HGT', NPX',
 SPN', SP1', SP2', SROW', SCOL' and SPND'.
 

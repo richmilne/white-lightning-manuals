@@ -16,7 +16,7 @@
 
 **P**        Activates the PUT functions.
          You will be given four options.  Each option PUTS a sprite
-         whose number is Specified in the variable "Sprite Number" onto
+         whose number is specified in the variable "Sprite Number" onto
          the sprite screen, having a top left-hand corner at the sprite
          screen cursor positions.
 
@@ -39,10 +39,10 @@
 **Q**        Activates the CLEAR CHR$ SQR function.  Sets all CHR$ SQR bits
          to zero.
 
-**SYMBOL**   Activates the CLEAR SPRITE SCREEN function.  Clears the sprite
-**SHIFT**    screen of all data and attributes.
-**Q**
-(<=)
+**<=**       Activates the CLEAR SPRITE SCREEN function.  Clears the sprite
+**(SYMBOL**   screen of all data and attributes.
+**SHIFT Q)**
+
 
 **R**        Activates the ROTATE SPRITE function.
          Rotates a sprite, in memory, by 90 degrees, leaving the original

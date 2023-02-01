@@ -1,7 +1,7 @@
 ﻿ #  21 -  this means that you have tried to delete something in the protected
           part of the Forth dictionary, e.g.
 
-          FORGET D0
+          FORGET DO
 
 
  #  22 -  this implies the illegal use of --> when not loading text screens.

@@ -26,7 +26,7 @@ and ROW will have been made 0 and SCOL and SROW will have the value 1.
              placed on the stack.  This command is used extensively for
              collision detection.
 
-**SCANV**        The charater cell at screen positions defined by COL and
+**SCANV**        The character cell at screen positions defined by COL and
              ROW is scanned for screen data and a true or false flag
              stacked accordingly.  This command executes more rapidly
              than SCAM.

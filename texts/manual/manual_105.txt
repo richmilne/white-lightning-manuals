@@ -24,13 +24,13 @@ At run-time ENDCASE marks the conclusion of a CASE statement.
 At compile time ENDCASE computes forward branch offsets.
 
 
-**ENDIF**           addr n --- (compile)                 P,CO,L0
+**ENDIF**           addr n --- (compile)                 P,C0,L0
 
 At run-time, ENDIF serves only as the destination of a forward branch from IF or
 ELSE.  It marks the conclusion of the conditional structure.  THEN is another name
 for ENDIF.  Both names are supported in Fig-FORTH.  See also IF and ELSE.
 
-At compiletime, ENDIF computes the forward branch offset from addr to HERE and
+At compile time, ENDIF computes the forward branch offset from addr to HERE and
 stores it at addr.  n is used for error tests.
 
 

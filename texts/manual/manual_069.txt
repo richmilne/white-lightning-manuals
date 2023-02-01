@@ -36,7 +36,7 @@ All we need to do now is set up the parameters by typing:
 
 then put some data on to the screen and execute:
 
-VLIST 0 0 AT ' IRUN INT-0N <CR>
+VLIST 0 0 AT ' IRUN INT-ON <CR>
 
 To terminate, type INT-OFF <CR>
 

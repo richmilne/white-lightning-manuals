@@ -18,7 +18,7 @@ will go out of phase.
 
 SF
 
-Accelerates horizontal speed (deccelerates if negative) by the amount on the
+Accelerates horizontal speed (decelerates if negative) by the amount on the
 stack.
 
 SS

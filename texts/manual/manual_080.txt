@@ -8,7 +8,7 @@ LOAD "filename" and then re-entering Forth with a PRINT USR 24836.
 
 Sprites can be saved from White Lightning and then re-Loaded into White Lightning,
 but sprites saved by White Lightning, cannot be loaded into the sprite development
-software which requires the additional array information preceeding sprites  which
+software which requires the additional array information preceding sprites  which
 is not SAVEd by White Lightning.  Sprite development should always be done using
 the development software, but if you do wish to save the sprites for later merging
 then do the following:

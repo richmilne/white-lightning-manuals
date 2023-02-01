@@ -31,7 +31,7 @@ unless you have a machine code routine at HEX D000!
 
 
 **ZAPINT**        As above except that programs which utilise the
-              Foreground/8ackground facility must be produced using the
+              Foreground/Background facility must be produced using the
               ZAPINT command as opposed to the ZAP command.  The only
               real difference is that the first five screens also need
               to be saved and that the top 16 bytes of RAM will be

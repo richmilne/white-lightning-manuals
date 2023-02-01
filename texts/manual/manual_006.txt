@@ -14,7 +14,7 @@ will become more apparent later.
 **NOTES:**
 
 1. A WARM START will not destroy any sprites already in memory and if ever the
-program is accidently caused to BREAK, type GOTO 3 and in response to the screen
+program is accidentally caused to BREAK, type GOTO 3 and in response to the screen
 prompt, execute a WARM START.
 
 2. A COLD START will destroy any and all sprites defined in memory.
@@ -24,7 +24,7 @@ prompt, execute a WARM START.
 
 **GETTING FAMILIAR WITH THE FUNCTION KEYS**
 
-Now lets get familiar with some of the Function Keys - a full list will be found
+Now let's get familiar with some of the Function Keys - a full list will be found
 at the end of this section.
 
 
@@ -47,7 +47,7 @@ Now that you know how to move the cursor, let's fill in a few squares:
 
 2.  Press the 9 key to set the square.
 
-3.  Now move the direction keys and fill in a few sore squares.
+3.  Now move the direction keys and fill in a few more squares.
 
 Now that we have set some squares, what about deleting a few of then?  This is
 simple:

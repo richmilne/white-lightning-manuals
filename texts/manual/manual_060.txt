@@ -33,7 +33,7 @@ Command            Action
 **Spin**
 
 This command involves an operation between two sprites with transposed dimensions.
-If, for example, a sprite with dimensions 8 by 3 is to he spun into a second
+If, for example, a sprite with dimensions 8 by 3 is to be spun into a second
 sprite, this second sprite must have dimensions 3 by 8.  Square sprites are, of
 course, no problem.  Pixel and attribute data are both rotated.  If the command is
 to be used, it is important to remember that a second sprite will be needed to be

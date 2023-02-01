@@ -34,7 +34,7 @@ The second group carry out operations between sprite windows and screen windows.
 The third, and probably most powerful group of commands in the sub-language, cover
 operations between sprite windows and other sprites.
 
-Suppose you have desiged a sprite 160 characters wide (5 screens) and you wish to
+Suppose you have designed a sprite 160 characters wide (5 screens) and you wish to
 smoothly pixel scroll through this sprite via a screen window covering the bottom
 five character rows of the screen.  A second dummy sprite, 1 character wider than
 the screen can be used to GET from the larger sprite, scroll, PUT, scroll, Put and
@@ -48,7 +48,7 @@ backdrops.
 
 This group provides block moves and logical operations between sprites and screen
 windows - these are the fastest commands in the set.  This particular group does
-not include seperate attribute commands but instead uses an attribute switch.  If
+not include separate attribute commands but instead uses an attribute switch.  If
 the switch is on, pixel data and attribute data are moved; if you do not require
 to move attributes you can increase the speed of operations by switching off the
 attribute switch.

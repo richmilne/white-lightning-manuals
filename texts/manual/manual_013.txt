@@ -20,7 +20,7 @@ little further ? Try this:
 2.  Press R (ROTATE) and enter the new sprite number, 15.
 
 3.  Press P (PUT) and press 1 - this new robot has been rotated by 180 degrees
-from it's original orientation.
+from its original orientation.
 
 To produce the final (270 degree) orientation:
 

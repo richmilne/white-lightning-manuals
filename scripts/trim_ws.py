@@ -60,7 +60,7 @@ for f in files:
 
 if files:
     print()
-    print(f'{"Maximums:":<30} {global_width:3} {global_length:3}')#.ljust(30), str(global_width).rjust(3), str(global_length).rjust(3)))
+    print(f'{"Maximums:":<30} {global_width:3} {global_length:3}')
 
     if 1:
         lengths.sort(key = lambda x:x[1])

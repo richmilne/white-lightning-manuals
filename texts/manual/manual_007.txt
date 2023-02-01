@@ -17,7 +17,7 @@ down respectively.
 
 **Character Building**
 
-No, not yours - building up characters to mike up sprites!  You've probably got
+No, not yours - building up characters to make up sprites!  You've probably got
 quite a mess in the CHR$ SQR, so let's clear it:
 
 1.  Press the Q key and respond to the prompt in the text line by pressing Y and
@@ -27,7 +27,7 @@ Just to get you used to a similar function, let's clear the Sprite Screen as wel
 even though it's clear:
 
 1.  As you can see, to clear the CHR$ SQR press Q, to clear the sprite screen
-press SYMBOL SHIFT Q - cunning eh?
+press SYMBOL SHIFT Q - cunning, eh?
 
 Now that we have clear screens we can start to go places.  Have a go at this:
 

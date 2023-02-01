@@ -56,5 +56,5 @@ e.g.    HEX  41  EMIT  CR  <CR>
 will instruct the Forth to move into hexadecimal mode, push 41H onto the stack,
 and then take that number and display it on the terminal - in this example the
 character displayed will be an "A".  The actual character displayed my be any of
-the recognisable ASCII characers, a graphic character, or a control code depending
+the recognisable ASCII characters, a graphic character, or a control code depending
 on the value of the number on the stack.

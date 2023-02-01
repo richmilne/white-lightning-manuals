@@ -37,7 +37,7 @@ screen 20 for the first time, type:
 TRANSFERRING OLD SOURCE
 
 If you have already written a sizeable program with the tape based White
-Lightning, then you will want to transfer it to your microdrive based White
+Lightning, then you will want to transfer it to your microdrive-based White
 Lightning without having to completely re-type it.  To do this, use the
 following:
 

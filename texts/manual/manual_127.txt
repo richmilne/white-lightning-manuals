@@ -17,7 +17,7 @@ screen.
 
 Sprite 5, the dancer is used to demonstrate the 1 pixel scroll with wrap, WRR1V.
 
-Sprite 4, the duck, is used to demonstrate the 4 pixel scrool with wrap, WRR4V.
+Sprite 4, the duck, is used to demonstrate the 4 pixel scroll with wrap, WRR4V.
 
 Sprite 6, the rocket, is used to demonstrate the 8 pixel scroll with wrap, WRR8V.
 
@@ -30,7 +30,7 @@ with their shadows, sprite 16.
 They are scrolled to the right by 1 pixel, with alternate 1 pixel up and down
 scrolls, to give a sense of motion.
 
-The attributes of the forground, sprite 17, and the background, sprite 11, are
+The attributes of the foreground, sprite 17, and the background, sprite 11, are
 scrolled to the left.  The background being scrolled at one character per
 execution with the foreground being scrolled two characters per execution to give
 a sense of perspective.

@@ -22,7 +22,7 @@ the wheels in their four positions.  The coaches are comprised of sprites 14 wit
 sprites 23 and 24 for the wheels.
 
 The track, sprite 10, is scrolled left using WRL1V.  By means of an increasing and
-decreasing delay loop, acceleration and decceleration effects are achieved.
+decreasing delay loop, acceleration and deceleration effects are achieved.
 
 
 **THE SPIDERS**
@@ -47,7 +47,7 @@ background.
 **THE ARRAY OF CLOCKWORK TOYS**
 
 The green clockwork toys are animated using sprites 49 and 50.  Each sprite in the
-array is individualy placed on the screen using PUTBLS.  The movement is
+array is individually placed on the screen using PUTBLS.  The movement is
 controlled by simple 'DO LOOPS'.
 
 

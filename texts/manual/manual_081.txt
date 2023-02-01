@@ -25,7 +25,7 @@
 
 **Extending the Forth Itself**
 
-One of the beauties of the Forth language is that it is extendible, so if you've
+One of the beauties of the Forth language is that it is extendable, so if you've
 added a few of your own commands which you would like to become a permanent
 feature of your customised version, you will need to make a copy.  For this
 reason, no attempt has been made to protect the software; but we do appeal to

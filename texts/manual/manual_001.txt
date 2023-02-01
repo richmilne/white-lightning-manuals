@@ -11,7 +11,7 @@ stunning results probably won't be produced overnight, but it does have the powe
 and flexibility to produce software of a commercial standard (with a little
 perseverance!).  Software produced using White Lightning can be marketed without
 restriction, although, we would be very grateful if you felt you could pop a small
-credit on the sleeve.  If you're looking for a publisher - don't forget us !!
+credit on the sleeve.  If you're looking for a publisher - don't forget us!
 
 Assembly language has three advantages over high level languages:  speed,
 flexibility and compactness.  During the running of an arcade game, the processor

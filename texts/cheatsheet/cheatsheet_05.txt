@@ -47,7 +47,7 @@ Let's now deal with the animation of the sprite itself.
 
 Perhaps the most powerful method of sprite animation is via the XOR operation.
 The usefulness of this operation stems from the fact that when an object is XOR'ed
-with the screen, the screen can he restored simply by repeating the operation.
+with the screen, the screen can be restored simply by repeating the operation.
 The area of screen is restored to the same state as it was before the first
 operation (see page 22 of the White Lightning manual).
 

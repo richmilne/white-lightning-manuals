@@ -33,7 +33,7 @@ for loop completion.  See LOOP.
 
 **(NUMBER)**      d1 addr1 --- d2 addr2
 
-Convert the ASCII text beginning at addr1 + l with regard to BASE.  The new value
+Convert the ASCII text beginning at addr1 + 1 with regard to BASE.  The new value
 is accumulated into double number d1, being left as d2.  Addr2 is the address of
 the first unconvertible digit.  Used by NUMBER.
 

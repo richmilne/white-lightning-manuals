@@ -20,7 +20,7 @@ used for error tests.
 **UPDATE**                                                    L0
 
 Marks the most recently referenced block (pointed to by PREV) as altered.  The
-block will subsequently be transferred to disc should it's buffer be required for
+block will subsequently be transferred to disc should its buffer be required for
 storage of a different block.
 
 
@@ -36,11 +36,11 @@ A defining word used in the form:
                    n USER cccc
 which creates a user variable cccc.  The parameter field of cccc contains n as a
 fixed offset relative to the user pointer register UP for this upper variable.
-When cccc is later executed, it places the sum of it's offset and the user base
+When cccc is later executed, it places the sum of its offset and the user base
 address on the stack, as the storage address of that particular variable.
 
 
-**VARIABLE**                                                E,LO
+**VARIABLE**                                                E,L0
 
 A defining word used in the form:
                    n VARIABLE cccc

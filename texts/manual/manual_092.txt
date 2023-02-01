@@ -34,7 +34,7 @@ message is given.  Pronounced "tick".
 
 **(**                                                       P,L0
 
-Used in the form: (cccc)
+Used in the form: ( cccc)
 
 Ignore a comment that will be delimited by a right parenthesis on the same line.
 May occur during execution or in a colon-definition.  A blank after the leading

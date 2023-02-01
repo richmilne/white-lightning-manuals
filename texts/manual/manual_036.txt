@@ -51,7 +51,7 @@ Try:    DO <CR>
  # 19 -  this means that a colon definition contains conditionals that have
          not been paired.
 
-e.g.    a LOOP without a D0
+e.g.    a LOOP without a DO
         an ENDIF without an IF
 
 Try:    : TEST3  ELSE  ." WRONG " ; <CR>

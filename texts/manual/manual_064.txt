@@ -22,7 +22,7 @@ To halt press CAPS SHIFT
 **KB**           This command is provided for the detection of multiple key
              presses.  All it does, in fact, is test the specified key
              and stack a true flag if the key is pressed and a false flag if
-             it is not.  The key to he tested is specified by the top two
+             it is not.  The key to be tested is specified by the top two
              numbers on the stack.  The second value specifies the half ROW
              and the top value the COLUMN.  For a full description
              of the COLUMNS and ROWS of the Spectrum keyboard see page 160

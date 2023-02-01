@@ -12,7 +12,7 @@ MSG# 10 will be produced.
 
 The six stage procedure is as follows:
 
-1.  The last orientation PUT, together with a one character surround, are G0T into
+1.  The last orientation PUT, together with a one character surround, are GOT into
 the 5x5 dummy sprite.
 
 2.  The last orientation is GWXRM'ed out of the 5x5, restoring the original screen

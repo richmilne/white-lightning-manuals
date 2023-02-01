@@ -1,7 +1,7 @@
 ﻿Now one of the interesting properties of the logical XOR, is that if the operation
 is repeated, the original character is restored - to mend the Robot:
 
-1.  Press P(PUT) and enter 3 - a fully restored Robot!
+1.  Press P (PUT) and enter 3 - a fully restored Robot!
 
 
 Well, there you have it.  In fact, the only functions remaining that have not been
@@ -14,7 +14,7 @@ covered by an example are:
 3.  Load Sprites from Tape ( - (SYMBOL SHIFT J) ).
 
 The "Relocate Sprites" does simply that, it relocates sprites in memory.  Just
-enter a relocation length - positive to move srites to higher memory and negative
+enter a relocation length - positive to move sprites to higher memory and negative
 to move sprites to lower memory.  This function is not often used in fact and
 should be used with great care!
 
@@ -33,8 +33,8 @@ sets of data which the generator stores and retrieves.
 
 Well, there's nothing to stop you now!  Going through the examples will help you
 to familiarise yourself with all of the Function Keys.  It won't be long before
-you'll be happy to press on by yourself - happy sprite generating.
+you'll be happy to press on by yourself - happy sprite generating!
 
 The thing to do now, is to press on with Spectra Forth and IDEAL, these really are
 not as frightening as they may first appear - after seeing the demo program, what
-more incentive do you need !
+more incentive do you need!

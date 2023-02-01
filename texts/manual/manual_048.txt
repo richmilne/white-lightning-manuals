@@ -31,7 +31,7 @@ order.  The best position for sprite space is at the top of memory and it is not
 difficult to calculate space required, although the development package does this
 automatically.
 
-To calculate the total sprite space that will he used, use 9*length*height+5 for
+To calculate the total sprite space that will be used, use 9*length*height+5 for
 each sprite and then add buffer space for vertical scrolls, 256 should be
 sufficient for most applications.  This total should be assigned to SLEN.  SPST
 should then be assigned with 65520-SLEN.

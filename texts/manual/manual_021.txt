@@ -21,7 +21,7 @@ of 14 Hex.
 
 e.g.    HEX 6100 20 TYPE <CR>
 (Note that 6100H is pushed onto the stack and 20H is pushed on top of it 20H =
-T0P; 6100H = second).  This will print 20H (32) ASCII characters corresponding to
+TOP; 6100H = second).  This will print 20H (32) ASCII characters corresponding to
 the data starting at address 6100H . (Note that much of the output will be
 unrecognisable unless the data contains correct ASCII codes, such as for numbers
 and letters).

@@ -52,8 +52,8 @@
 **N**        Activates the No, negative response to (Y/N) questions.
 
 **O**        Activates the Sprite Logic functions.
-         You will he given three options.  Each option GETS an area of the
+         You will be given three options.  Each option GETS an area of the
          sprite screen, the dimensions of which are specified as those of
          the defined sprite, having a top left-hand corner at the sprite screen
          cursor positions and logically GETs the data into the defined sprite -
-         - whose number is in the Sprite Number Variable.
+         whose number is in the Sprite Number Variable.

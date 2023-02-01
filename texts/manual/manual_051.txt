@@ -1,6 +1,6 @@
 ﻿**ISPRITE AND DSPRITE**
 
-it sprites are located at the top of memory, then ISPRITE and DSPRITE can be used
+If sprites are located at the top of memory, then ISPRITE and DSPRITE can be used
 to create and destroy sprites without the need for any complex calculations.
 ISPRITE will insert a sprite at the top of memory, maintain the buffer space and
 automatically relocate the rest of sprite space downward.  DSPRITE will destroy an
@@ -11,7 +11,7 @@ applications where sprites are created during program execution.  If a "ZAPPED"
 program were to execute ISPRITE the sprites would extend downwards and could
 overwrite the object code of the main program which lies just beneath SPST.  If a
 program runs before being "ZAPPED", but the final run-time version crashes, this
-is where to look !
+is where to look!
 
 
 Parameter              Use

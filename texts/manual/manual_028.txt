@@ -23,7 +23,7 @@ and so on.
 
 **7. CONDITIONAL BRANCHING**
 
-Conditional branching must again he used only within a colon definition and uses
+Conditional branching must again be used only within a colon definition and uses
 the form:
 
 **IF** (true part) ... (Forth WORDS) ... **ENDIF**

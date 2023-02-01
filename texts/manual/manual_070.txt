@@ -7,8 +7,8 @@ F3 MOD ABS PH3 = IF WRR1V ENDIF <CR>
 F4 MOD ABS PH4 = IF WCRV ENDIF <CR>
 1 ICNT +! ; <CR>
 
-This can be executed using VLIST ' IRUN INT-0N <CR>
-Halted using: INT-0FF <CR>
+This can be executed using VLIST ' IRUN INT-ON <CR>
+Halted using: INT-OFF <CR>
 and cleared using: FORGET IRUN <CR>
 
 
@@ -21,6 +21,6 @@ counterparts.  For a full list, see the section on Forth/BASIC WORDS.
 They all execute code in Sinclair's own ROM which, unlike Forth and IDEAL, is not
 re-entrant.  This means that these words cannot be executed in foreground and
 background simultaneously.  The FORTH words ." , . and U. should also not be
-executed simultanteously with themselves or any of the BASIC words.  None of the
+executed simultaneously with themselves or any of the BASIC words.  None of the
 Forth/BASIC words, ." , . or U. should be executed in background while Forth is in
 command mode.

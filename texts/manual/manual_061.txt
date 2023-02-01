@@ -45,7 +45,7 @@ Command                 Action
 **INT-ON**      The specified word (see next example) is executed on the
             receipt of each interrupt.
 
-**INT-OFF**     Following execution of INT-0FF the Z8O returns to interrupt
+**INT-OFF**     Following execution of INT-OFF the Z80 returns to interrupt
             mode 1 and polls the keyboard 50 times a second.  The
             background program ceases execution.
 

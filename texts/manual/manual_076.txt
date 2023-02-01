@@ -37,7 +37,7 @@ return to Forth and continue execution use PRINT USR 30006.
 
 To begin with, space needs to be made in the dictionary for the basic program.
 The word used to do this is RESERVE.  What RESERVE actually does, is to make space
- in the dictionary and reset BASIC's system variables to point to this new area.
+in the dictionary and reset BASIC's system variables to point to this new area.
 This does mean, however, that if a second reserve is done, without FORGETting the
 old space, then the old space is lost and can never be re-accessed.  Do not
 execute a Forth COLD start while BASIC is reserved or a RAMTOP error may occur if

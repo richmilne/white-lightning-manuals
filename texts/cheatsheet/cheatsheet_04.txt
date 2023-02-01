@@ -34,7 +34,7 @@ sprite using:
 It's worth putting these sprites on the screen to see what they look like.
 Assuming you've executed the words MAKE, SET1 and SET2 use:
 
-: TESTE CLS 0 COL ! 4 0 D0 I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;
+: TESTE CLS 0 COL ! 4 0 DO I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;
 
 This will place the 4 orientations, one above the other, so that the resolution of
 the movement can be seen.
@@ -54,6 +54,6 @@ So to PUT at X-position 27 (54 pixels from the left hand column) just use:
 
 The previous example is useful in that it indicates a way of producing high
 resolution PUTting but as it stands cannot be used for animation because it does
-not enable the removal of prevously placed orientations.  Before looking at a
+not enable the removal of previously placed orientations.  Before looking at a
 scheme for animating these orientations let's generalise this example to cover
 high resolution vertical movement as well as horizontal movement.

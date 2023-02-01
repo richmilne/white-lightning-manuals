@@ -34,7 +34,7 @@ LITERAL, ].
 
 Used in a colon-definition in the form:
                   : xxx [COMPILE] FORTH  ;
-[COMPILE] will force the compilation of an immediate definitions, that would
+[COMPILE] will force the compilation of an immediate definition, that would
 otherwise execute during compilation. The above example will select the FORTH
 vocabulary when xxx executes, rather than at compile time.
 

@@ -30,7 +30,7 @@ character currently held in the CHR$ SQR.
 
 **THE SPRITE SCREEN CURSORS**
 
-These are the two flashing cursors displayed in the Row beneath the sprite screen
+These are the two flashing cursors displayed in the row beneath the sprite screen
 and the column to the right of the sprite screen.  They are used to indicate the
 position of the top left hand corner of the screen window currently being operated
 upon.  The actual cursor positions are measured from the top left hand corner of
@@ -51,5 +51,5 @@ just press F.  The window will flash.
 
 This refers to the set of sprites you are currently working with and can contain
 up to 255 sprites or use 12500 bytes.  If your sprite library needs more than
-12500 bytes you can use the merging procedure detailed in section 3 to Load and
+12500 bytes you can use the merging procedure detailed in section 3 to load and
 merge more than one sprite library into White Lightning.

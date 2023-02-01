@@ -1,4 +1,4 @@
-{\rtf1\ansi\deff0\n{\fonttbl{\f0 Courier New;}}{\info{\author Richard Milne (RichMilne AT users DOT noreply DOT github DOT com)}{\version134}{\creatim\yr2023\mo1\dy30\hr10\min7}{\subject Revision: 134, 2023-01-30 10:07:07}{\keywords http://www.worldofspectrum.org/infoseekid.cgi?id=0008967}{\title White Lightning Documentation - Cheatsheet}}
+{\rtf1\ansi\deff0\n{\fonttbl{\f0 Consolas;}}{\info{\author Richard Milne (RichMilne AT users DOT noreply DOT github DOT com)}{\version134}{\creatim\yr2023\mo2\dy1\hr22\min19}{\subject Revision: 134, 2023-02-01 22:19:27}{\keywords http://www.worldofspectrum.org/infoseekid.cgi?id=0008967}{\title White Lightning Documentation - Cheatsheet}}
 \fs18
                            {\b WHITE LIGHTNING}\par
 \par
@@ -73,7 +73,7 @@ Moving Sprites                                           2\par
 Screen Scrolling                                         2\par
 Simple Putting                                           2\par
 More Advanced Techniques                                 4\par
-Collision Detection                                      6\par
+Collision Detection                                      7\par
 Sample Source Listings                                   8\par
 The Lunar Lander Program                                 9\par
 Table 1 (Lunar Sprites)                                 20\par
@@ -324,7 +324,7 @@ sprite using:\par
 It's worth putting these sprites on the screen to see what they look like.\par
 Assuming you've executed the words MAKE, SET1 and SET2 use:\par
 \par
-: TESTE CLS 0 COL ! 4 0 D0 I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;\par
+: TESTE CLS 0 COL ! 4 0 DO I 100 + SPN ! I DUP + ROW ! PUTBLS LOOP 8 0 AT ;\par
 \par
 This will place the 4 orientations, one above the other, so that the resolution of\par
 the movement can be seen.\par
@@ -344,7 +344,7 @@ So to PUT at X-position 27 (54 pixels from the left hand column) just use:\par
 \par
 The previous example is useful in that it indicates a way of producing high\par
 resolution PUTting but as it stands cannot be used for animation because it does\par
-not enable the removal of prevously placed orientations.  Before looking at a\par
+not enable the removal of previously placed orientations.  Before looking at a\par
 scheme for animating these orientations let's generalise this example to cover\par
 high resolution vertical movement as well as horizontal movement.\par
 \par
@@ -402,7 +402,7 @@ Let's now deal with the animation of the sprite itself.\par
 \par
 Perhaps the most powerful method of sprite animation is via the XOR operation.\par
 The usefulness of this operation stems from the fact that when an object is XOR'ed\par
-with the screen, the screen can he restored simply by repeating the operation.\par
+with the screen, the screen can be restored simply by repeating the operation.\par
 The area of screen is restored to the same state as it was before the first\par
 operation (see page 22 of the White Lightning manual).\par
 \par
@@ -436,7 +436,7 @@ series of 16.  To adapt these routines for your own use just change FSPN.\par
 \par
 We now need to poll the keyboard:\par
 \par
-We use the KCHK word again an that the character is not re-PUT unless a key has\par
+We use the KCHK word again so that the character is not re-PUT unless a key has\par
 been pressed.\par
 \par
 : KCHK KB DUP ROT OR SWAP ;\par
@@ -497,7 +497,7 @@ MSG# 10 will be produced.\par
 \par
 The six stage procedure is as follows:\par
 \par
-1.  The last orientation PUT, together with a one character surround, are G0T into\par
+1.  The last orientation PUT, together with a one character surround, are GOT into\par
 the 5x5 dummy sprite.\par
 \par
 2.  The last orientation is GWXRM'ed out of the 5x5, restoring the original screen\par
@@ -567,7 +567,7 @@ SCR # 7                                   2 : SET3 -2 NPX ! 104 100 DO I\par
   0 : MAKE 62 SPN ! 4 HGT ! 4 LE         DUP 12 + SWAP DO I DUP 4 + DUP\par
 N ! TEST 0= IF ISPRITE CLSM ENDI        SP2\par
 F                                         3 ! SPN ! SP1 ! GWBLM SCRM 4\par
-  1 : 1 SCOL ! 1 SROW ! 62 SP2 ! 2       +LOOP LOOP ;\par
+  1 1 SCOL ! 1 SROW ! 62 SP2 ! 2         +LOOP LOOP ;\par
 4 SP1 ! GWBLM ;                           4 : XYPUT 4 /MOD COL ! SWAP 4\par
   2 : UP 7 1 KB IF ROW @ 0 > MIN        /MOD ROW ! DUP + DUP + + 100 + S\par
 US ROW +! ENDIF ;                       PN\par
@@ -583,8 +583,8 @@ GHT                                       1 0 VARIABLE YC 100 CONSTANT F\par
   7 : ADJM PWBLS 6 1 KB UNTIL ;         SPN 0 VARIABLE FLAG\par
                                           2 : PLOAD COL ! ROW ! SPN ! PU\par
 SCR # 8                                 TXRS ;\par
-  0 : SETUP 4 SPN ! 1 3 2 4               3 : PSET TSPN @ TROW @ TCOL @\par
-5 6 3 5 12 10 9 12 4 6 0 DO ROW ! COL   ;\par
+  0 : SETUP 4 SPN ! 3 2 4 5 6 3           3 : PSET TSPN @ TROW @ TCOL @\par
+5 12 10 9 12 4 6 0 DO ROW ! COL         ;\par
 !                                         4 : PCAL 4 /MOD TCOL ! SWAP 4\par
   1 : PUTORS LOOP ; : KCHK KB DUP       /MOD TROW ! DUP + DUP + FSPN + +\par
 ROT OR SWAP ;                             5 TSPN ! ;\par
@@ -667,7 +667,7 @@ NUMBERS        HEIGHT         LENGTH         DESCRIPTION\par
  32,33            1              8           MINI LANDSCAPE\par
   43              3              3           EXPLOSION\par
   44              4              5           LANDED LUNAR LANDER\par
-  65              3              3           CRASHED LUNAR LANDER\par
+  45              3              3           CRASHED LUNAR LANDER\par
  100              6              3           LUNAR LANDER\par
 \par
 101-107           6              3           LUNAR LANDER ORIENTATIONS\par
@@ -689,7 +689,7 @@ This listing is provided as an example of White Lightning programming.  In order
 to run the game you will need to enter the sprites as described in the next\par
 section.  This is a fairly laborious task so we can offer the fainthearted,\par
 sprites and demo on tape for one pound seventy five pence.  We recommend, however,\par
-that you take the time to build up the sprites yourself as an excercise in self\par
+that you take the time to build up the sprites yourself as an exercise in self\par
 discipline if nothing else!\par
 \par
 The program executes one word in foreground and one word in background.  The\par
@@ -958,7 +958,7 @@ will go out of phase.\par
 \par
 SF\par
 \par
-Accelerates horizontal speed (deccelerates if negative) by the amount on the\par
+Accelerates horizontal speed (decelerates if negative) by the amount on the\par
 stack.\par
 \par
 SS\par
@@ -1015,7 +1015,7 @@ As SR8 when movement is to the left.\par
 \par
 UR\par
 \par
-If speed is greater than 200, try and scroll right 8 pixels right, f not, try and\par
+If speed is greater than 200, try and scroll right 8 pixels right, if not, try and\par
 scroll by 4 pixels right.\par
 \par
 LR\par
@@ -1059,7 +1059,7 @@ TICK\par
 \par
 Increments vertical velocity (acts like gravity) unless terminal velocity has been\par
 reached.  If you want to make the game more difficult change 1 VEL +! to 2 VEL +!\par
-and thus double the planets gravity.\par
+and thus double the planet's gravity.\par
 \par
 \par
 \par
@@ -1168,8 +1168,8 @@ the C key and hit Y for yes and then N for the change buffer size prompt.\par
 Set the attribute switch to 1 by pressing the A key and then 1.\par
 \par
 With reference to table 1 set the sprite number to the required value by pressing\par
-the S key and then inputing the required value.  Input the dimensions (Height and\par
-Length) of the sprite by pressing the H or C keys and then inputing the\par
+the S key and then inputting the required value.  Input the dimensions (Height and\par
+Length) of the sprite by pressing the H or C keys and then inputting the\par
 appropriate values.  Set the respective ink, paper, flash and bright values using\par
 the X, C, V and B keys.\par
 \par
@@ -1188,9 +1188,9 @@ CREATION OF THE 64x3 CHARACTER LANDSCAPE SPRITE\par
 This sprite will be made up of 8 8x3 character sprites, which will be joined\par
 together into one large sprite in the White Lightning program itself.\par
 \par
-Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1 clear the\par
+Set the ink to 7, the paper to 0, the flash to 0 and the bright to 1. Clear the\par
 CHR$ square by pressing the Q key.  Using the sprites 4,5,6,7,8,9 and the CHR$\par
-square (referred to as 0) build up sprites 10 to 25 as layed out in diagram 1.\par
+square (referred to as 0) build up sprites 10 to 25 as laid out in diagram 1.\par
 \par
 \par
 \par
@@ -1533,7 +1533,7 @@ SPRITE   H    L    INK    PAPER    FLASH    BRIGHT    XPOS    YPOS      1     2 
           \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
         7 \u9474| 6 \u9474| 4 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 7 \u9474| 6 \u9474| 6 \u9474|      {\b {\ul SPRITE} 10}\par
           \u9500+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9532+\u9472-\u9472-\u9472-\u9508+\par
-        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 5 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
+        8 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474| 6 \u9474|\par
           \u9492L\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9524+\u9472-\u9472-\u9472-\u9496]\par
                                          {\b \u8595v 0 INK}\par
             4   5   6   7   8   9   A   B\par
@@ -1725,7 +1725,7 @@ INTRODUCTION\par
 \par
 In order to make maximum use of the Spectrum's 48k of memory the tape based White\par
 Lightning was located at 24832 decimal.  This leaves room for a small BASIC loader\par
-program.  If, however, interface  is fitted, the execution of any of the shadow\par
+program.  If, however, Interface 1 is fitted, the execution of any of the shadow\par
 ROM commands will cause BASIC to be relocated upwards and result in insufficient\par
 memory for the tape based loader program.\par
 \par
@@ -1822,7 +1822,7 @@ screen 20 for the first time, type:\par
 TRANSFERRING OLD SOURCE\par
 \par
 If you have already written a sizeable program with the tape based White\par
-Lightning, then you will want to transfer it to your microdrive based White\par
+Lightning, then you will want to transfer it to your microdrive-based White\par
 Lightning without having to completely re-type it.  To do this, use the\par
 following:\par
 \par
@@ -2043,19 +2043,17 @@ then type:\par
 \par
 \par
 30\page
-{\b ADDITIONAL ERRATA}\par
+{\b TRANSCRIBER'S NOTE}\par
 \par
 While OCRing and proofreading the scans of the White Lightning manuals, I have\par
 tried to preserve, as best as I was able, the original pagination, layout,\par
-spacing and formatting of the originals. That includes all the spelling mistakes\par
-and typos that I saw, which I have listed below.\par
+spacing and formatting of the originals - while still incorporating all errata\par
+noted and published in previous versions, and with a few (small) edits and\par
+corrections of my own.\par
 \par
-{\ul Cheatsheet}\par
+This transcription is still a work in progress. If you discover any further\par
+mistakes, please create a pull request (or otherwise report the errors) against\par
+the manuals' source repository at:\par
 \par
-Page  4, line 57: 'previously' for 'prevously'\par
-Page 10, line 12: 'exercise' for 'excercise'\par
-Page 14, line 21: 'decelerates' for 'deccelerates'\par
-Page 17, line 36: 'inputting' for 'inputing'\par
-Page 17, line 37: 'inputting' for 'inputing'\par
-Page 17, line 58: 'laid' for 'layed'\page
+                            https://github.com/richmilne/white-lightning-manuals\page
 }

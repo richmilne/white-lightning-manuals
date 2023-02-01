@@ -26,7 +26,7 @@ Print a definition's name from its name field address.
 **IF**                   f ---          (run-time)
                        --- addr n   (compile)        P,C2,L0
 
-Occurs is a colon-definition in the form:
+Occurs in a colon-definition in the form:
               IF  (tp)  ...  ENDIF
               IF  (tp)  ...  ELSE  (fp)  ...  ENDIF
 At run-time, IF selects execution based on a boolean flag.  If f is a true

@@ -52,7 +52,7 @@ NUMBERS        HEIGHT         LENGTH         DESCRIPTION
  32,33            1              8           MINI LANDSCAPE
   43              3              3           EXPLOSION
   44              4              5           LANDED LUNAR LANDER
-  65              3              3           CRASHED LUNAR LANDER
+  45              3              3           CRASHED LUNAR LANDER
  100              6              3           LUNAR LANDER
 
 101-107           6              3           LUNAR LANDER ORIENTATIONS

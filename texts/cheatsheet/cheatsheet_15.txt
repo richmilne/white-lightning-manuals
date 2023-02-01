@@ -10,7 +10,7 @@ As SR8 when movement is to the left.
 
 UR
 
-If speed is greater than 200, try and scroll right 8 pixels right, f not, try and
+If speed is greater than 200, try and scroll right 8 pixels right, if not, try and
 scroll by 4 pixels right.
 
 LR
@@ -54,4 +54,4 @@ TICK
 
 Increments vertical velocity (acts like gravity) unless terminal velocity has been
 reached.  If you want to make the game more difficult change 1 VEL +! to 2 VEL +!
-and thus double the planets gravity.
+and thus double the planet's gravity.

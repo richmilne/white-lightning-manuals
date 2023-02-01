@@ -16,10 +16,10 @@
 
 **FORTH/BASIC GLOSSARY**                                   **124**
 
-**USR CALLS**                                              **126**
+**USR CALLS**                                              **125**
 
 **EXTENDED SPECTRA FORTH GLOSSARY**                        **125**
 
-**THE DEMO - A BRIEF DESCRIPTION**                         **128**
+**THE DEMO - A BRIEF DESCRIPTION**                         **126**
 
 **SOME SIMPLE PROGRAMMING EXAMPLES**                       **129**

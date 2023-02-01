@@ -38,7 +38,7 @@ Transmit count characters from addr to the selected output device.
 
 **U<**               u1 u2 --- f
 
-Leave the boolean value of any unsigned less-than comparison.  Leaves f=1 or u1 >
+Leave the boolean value of an unsigned less-than comparison.  Leaves f=1 for u1 >
 u2; otherwise leaves 0.  This function should be used when comparing memory
 addresses.
 

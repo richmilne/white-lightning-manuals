@@ -47,9 +47,9 @@
          tape.  A list is given at the back of this section.
 
 **NOT**      Activates the SAVE SPRITES TO TAPE facility.
-**(SYMBOL**  Place a suitable cassette in your cassette recorder and
-**SHIFT**    position as desired.  Press NOT, enter your filename (1 to 8
-**S)**       characters).  The program will save three groups of data;
+**(SYMBOL**   Place a suitable cassette in your cassette recorder and
+**SHIFT S)**  position as desired.  Press NOT, enter your filename (1 to 8
+         characters).  The program will save three groups of data;
          an array and two sections of code.
          After SAVEing, you will be asked to rewind the tape and VERIFY -
          be sure to only press PLAY on your cassette recorder.
