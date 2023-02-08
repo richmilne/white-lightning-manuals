@@ -47,7 +47,7 @@ dimensions of the window.
 Sprite space is the area of memory containing the previously defined sprites.  The
 variable SPST holds the address of the start of sprite space, so SPST should never
 be loaded with a new value unless a COLD# command is being executed, or you're
-quite sure you know what you're doing!!  SPND points to the first free byte after
+quite sure you know what you're doing!  SPND points to the first free byte after
 sprite space.  SPND should never be higher than FFF0 Hex if routines are being
 executed in Background.
 

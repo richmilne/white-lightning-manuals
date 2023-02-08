@@ -47,7 +47,8 @@ This word can be easily executed under interrupt using
 
 You will notice, however, that if you do execute this routine under interrupt then
 the sprite may flicker in passage through certain areas of the screen.  This is
-due to the finite time taken for the dot to scan the screen and can be very annoying.
+due to the finite time taken for the dot to scan the screen and can be very
+annoying.
 
 To execute from source type 11 LOAD 12 LOAD then TESTF or TESTH
 

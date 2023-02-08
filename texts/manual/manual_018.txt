@@ -25,7 +25,7 @@ extensions to the standard vocabulary of Forth words.  There are two important
 extensions to White Lightning: the first is the ability to access almost ALL of
 the Spectrum's own BASIC commands, just as you would when writing a BASIC program,
 and with the addition of many of the high resolution graphics commands (CIRCLE,
-DRAW, etc.).  Coupled with the incredible execution speeds of White Lightning, the
+DRAW, etc.)  Coupled with the incredible execution speeds of White Lightning, the
 possibilities are limitless!  The second, and possibly most important, addition is
 the IDEAL sub-language.
 

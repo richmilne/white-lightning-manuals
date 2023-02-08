@@ -43,7 +43,7 @@
 
 **<**        Activates the RELOCATE SPRITES function.
 **(SYMBOL**  Allows the user to move the sprite data about in memory,
-**SHIFT R)**    between the top of the Sprite Generator Program and address
+**SHIFT R)** between the top of the Sprite Generator Program and address
          65520.
 
          e.g.  a positive number i.e. 50, moves the data 50 bytes up
