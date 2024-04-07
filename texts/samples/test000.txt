@@ -6,7 +6,7 @@
                                by Oasis Software
              **__SPRITE__ 22**
 **__boldunderline__**
-__**underlinenold**__
+__**underlinebold**__
 
 Copyright © by Oasis Software
 

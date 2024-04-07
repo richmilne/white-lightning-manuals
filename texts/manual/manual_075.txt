@@ -14,9 +14,9 @@ SCR # 7
   2 2 /MOD CL ! PY @ ABS 2 /MOD RW ! DUP + + 251 + SP ! ;
   3 : MOVE PX @ 56 > IF DX @ MINUS DX ! ENDIF PX @ 0 > IF NOOP
   4 ELSE DX @ MINUS DX ! ENDIF
-  5 PY @ 28 > IF DY @ MINUS DY ! FNDIF PY @ 0 > IF NOOP ELSE DY @
+  5 PY @ 28 > IF DY @ MINUS DY ! ENDIF PY @ 0 > IF NOOP ELSE DY @
   6 MINUS DY ! ENDIF DY @ PY @ + PY ! DX @ PX @ + PX ! ;
-  7 : LO RW @ ROW ! CL @ COL 1 SP @ SPN ! ; -->
+  7 : LD RW @ ROW ! CL @ COL 1 SP @ SPN ! ; -->
 
 SCR # 8
   0 : SOT PCAL LD EXX LD EXX PUTXRS ;

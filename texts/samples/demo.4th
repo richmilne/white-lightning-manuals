@@ -1,0 +1,46 @@
+# From page 75 of the main manual
+# Compiles. Ball bounces up and down, but not across screen. Should it?
+
+┌─┬───┤SCR # 6├────────────────────────────────────────────────────┐
+│0│                                                                │
+│1│                                                                │
+│2│                                                                │
+│3│0 VARIABLE DELAY : WAIT DELAY @ 0 DO NOOP LOOP ;                │
+│4│: BASE 0 COL ! 18 ROW ! 32 LEN ! 6 HGT ! 0 PAPER 0 INK          │
+│5│SETAV 7 INK ;                                                   │
+│6│: GO16 6 PAPER 0 INK 0 BORDER CLS 7 0 AT                        │
+│7│10 0 DO ." WHITE LIGHTNING " LOOP 0 0 AT BASE ; -->             │
+└─┴────────────────────────────────────────────────────────────────┘
+
+┌─┬───┤SCR # 7├────────────────────────────────────────────────────┐
+│0│8 VARIABLE PX 8 VARIABLE PY 1 VARIABLE DX 1 VARIABLE DY         │
+│1│0 VARIABLE SP 0 VARIABLE CL 0 VARIABLE RW : PCAL PX @ ABS       │
+│2│2 /MOD CL ! PY @ ABS 2 /MOD RW ! DUP + + 251 + SP ! ;           │
+│3│: MOVE PX @ 56 > IF DX @ MINUS DX ! ENDIF PX @ 0 > IF NOOP      │
+│4│ELSE DX @ MINUS DX ! ENDIF                                      │
+│5│PY @ 28 > IF DY @ MINUS DY ! ENDIF PY @ 0 > IF NOOP ELSE DY @   │
+│6│MINUS DY ! ENDIF DY @ PY @ + PY ! DX @ PX @ + PX ! ;            │
+│7│: LD RW @ ROW ! CL @ COL 1 SP @ SPN ! ; -->                     │
+└─┴────────────────────────────────────────────────────────────────┘
+
+┌─┬───┤SCR # 8├────────────────────────────────────────────────────┐
+│0│: SOT PCAL LD EXX LD EXX PUTXRS ;                               │
+│1│: GO PCAL MOVE PUTXRS LD PUTXRS ;                               │
+│2│0 VARIABLE ICNT 2 VARIABLE LCNT                                 │
+│3│: IRUN 1 ICNT +! ICNT @ DUP 2000 = IF -2 DX ! ENDIF DUP 4002 =  │
+│4│IF 2 DY ! ENDIF DUP 6000 = IF 3 DY ! ENDIF DUP 8000 = IF 1 DY   │
+│5│! 1 DX ! ENDIF 9000 = IF INT-OFF ENDIF ;                        │
+│6│: TRY SOT ' GO INT-ON 9000 0 DO IRUN LOOP  INT-OFF ;            │
+│7│: SCN16 GO16 9999 DELAY ! WAIT 1 DX ! 1 DY ! 8 PX ! 8 PY ! -->  │
+└─┴────────────────────────────────────────────────────────────────┘
+
+┌─┬───┤SCR # 9├────────────────────────────────────────────────────┐
+│0│0 ICNT ! TRY WAIT 0 PAPER 7 INK CLS ;                           │
+│1│                                                                │
+│2│                                                                │
+│3│                                                                │
+│4│                                                                │
+│5│                                                                │
+│6│                                                                │
+│7│                                                                │
+└─┴────────────────────────────────────────────────────────────────┘

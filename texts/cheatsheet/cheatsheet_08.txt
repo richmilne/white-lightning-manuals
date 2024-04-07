@@ -1,6 +1,6 @@
 ﻿SCR # 6                                   2 : SET2 103 100 DO I SP1 ! I
   0 : SETUP 0 COL ! 6 ROW ! 24 S        1+ DUP SP2 ! SPN ! COPYM WRR1M
-PN ! CLS PUTBLS 2 HGT ! 32 LOW ! ;        3 WRR1M LOOP ;
+PN ! CLS PUTBLS 2 HGT ! 32 ROW ! ;        3 WRR1M LOOP ;
   1 : LEFT WRL1V ; : RIGHT WRR1V          4 : TESTE CLS 0 COL ! 4 0 DO I
  ;                                       100 + SPN ! I DUP + ROW ! PUTBL
   2 : KEYS 1 1 KB IF LEFT ENDIF         S
@@ -27,10 +27,10 @@ ROW +! ENDIF ;                            6
 INUS COL +! ENDIF ;
   5 : RIGHT 1 2 KB IF COL @ 28 <        SCR # 11
  COL +! ENDIF ;                           0 0 VARIABLE TSPN 0 VARIABLE T
-  6 : TESTC 62 SPN ! 10 COL ! 10        COL 0 VARIABLE TROW 0 VARIABLE
+  6 : TESTC 62 SPN ! 10 COL ! 10        COL 0 VARIABLE TROW  0 VARIABLE
  ROW ! CLS BEGIN UP DOWN LEFT RI        XC
 GHT                                       1 0 VARIABLE YC 100 CONSTANT F
-  7 : ADJM PWBLS 6 1 KB UNTIL ;         SPN 0 VARIABLE FLAG
+  7 ADJM PWBLS 6 1 KB UNTIL ;           SPN 0 VARIABLE FLAG
                                           2 : PLOAD COL ! ROW ! SPN ! PU
 SCR # 8                                 TXRS ;
   0 : SETUP 4 SPN ! 3 2 4 5 6 3           3 : PSET TSPN @ TROW @ TCOL @
