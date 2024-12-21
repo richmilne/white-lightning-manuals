@@ -34,7 +34,7 @@ INK 1 PAPER ;
 
 To change the green face of sprite 28 into a red one use:
 
-: DEM8 28 SPN ! 2 INK ! 1 BRIGHT 0 PAPER SETAM PUTBLS ;
+: DEM8 28 SPN ! 2 INK 1 BRIGHT 0 PAPER SETAM PUTBLS ;
 
 
 **Example 9**
