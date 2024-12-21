@@ -30,7 +30,7 @@ screenful of memory.
 
 
  # 10 -  this indicates that one of the IDEAL words made reference to a sprite
-         which did not exist, or that an attempt was mode to insert a sprite
+         which did not exist, or that an attempt was made to insert a sprite
          using ISPRITE with a number previously allocated to an existing sprite.
 
 

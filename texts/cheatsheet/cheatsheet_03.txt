@@ -20,7 +20,7 @@ The full word to animate the sprite becomes:
 : TESTC 62 SPN ! 10 COL ! 10 ROW ! BEGIN UP DOWN LEFT RIGHT ADJM PWBLS 6 1 KB
 UNTIL ;
 
-To exit TEST we press the key at 6 1, this is the "P" key.
+To exit TESTC we press the key at 6 1, this is the "P" key.
 
 If you're using the source at the end of this section type 7 LOAD MAKE TESTC.  The
 great limitation of this routine, however, is that data already on the screen will
@@ -34,7 +34,7 @@ the invader in the last example through these objects.
 
 First of all let's set up a screen with these objects scattered throughout.
 
-: SETUP 4 SPN ! 3 2 4 5 6 3 5 12 10 9 12 14 6 0 DO ROW ! COL ! PUTRS LOOP ;
+: SETUP 4 SPN ! 3 2 4 5 6 3 5 12 10 9 12 14 6 0 DO ROW ! COL ! PUTORS LOOP ;
 
 Notice that we use the PUTORS word to OR data to the screen; the reason for this
 will become clear.

@@ -23,7 +23,7 @@ address.
 **POP**
 
 The code sequence to remove a stack value and return to NEXT.  POP is not directly
-executable, but is s Forth re-entry point after machine code.
+executable, but is a Forth re-entry point after machine code.
 
 
 **PREV**                   --- addr

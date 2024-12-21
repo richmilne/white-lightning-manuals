@@ -43,7 +43,7 @@ BLEEP 0 FLAG ! ENDIF ;
 
 To use the source code type COLD to clear all previous examples then:
 
-11 LOAD FORGET MOVE 14 LOAD 12 LOAD 13 LOAD
+11 LOAD FORGET MOVE 14 LOAD 12 LOAD
 
 to compile the words TESTF and TESTH.
 
